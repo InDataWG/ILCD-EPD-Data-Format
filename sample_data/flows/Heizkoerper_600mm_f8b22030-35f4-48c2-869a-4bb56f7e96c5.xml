@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet version="1.0" href="../../stylesheets/flow2html.xsl" type="text/xsl"?>
+<flowDataSet xmlns="http://lca.jrc.it/ILCD/Flow" xmlns:common="http://lca.jrc.it/ILCD/Common" xmlns:epd="http://www.iai.kit.edu/EPD/2013"
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://lca.jrc.it/ILCD/Flow ../../schemas/ILCD_FlowDataSet.xsd http://www.iai.kit.edu/EPD/2013 ../../schemas/EPD_Extensions_2013.xsd" locations="../ILCDLocations.xml"
+    version="1.1">
+    <flowInformation>
+        <dataSetInformation>
+            <common:UUID>f8b22030-35f4-48c2-869a-4bb56f7e96c5</common:UUID>
+            <name>
+                <baseName xml:lang="de">Heizkörper 600mm</baseName>
+            </name>
+            <classificationInformation>
+                <common:classification name="OEKOBAU.DAT">
+                    <common:class level="0" classId="8">Gebäudetechnik</common:class>
+                    <common:class level="1" classId="8.1">Heizung</common:class>
+                    <common:class level="2" classId="8.1.02">Wärmeverteilung und Abgabe</common:class>
+                </common:classification>
+            </classificationInformation>
+            <common:other>
+                <epd:isA type="flow data set" uri="287ca0ed-f629-42ee-a8aa-acf58a7d8ae0.xml" refObjectId="287ca0ed-f629-42ee-a8aa-acf58a7d8ae0">
+                    <common:shortDescription xml:lang="de">Heizkörper</common:shortDescription>
+                </epd:isA>
+            </common:other>
+        </dataSetInformation>
+        <quantitativeReference>
+            <referenceToReferenceFlowProperty>0</referenceToReferenceFlowProperty>
+        </quantitativeReference>
+    </flowInformation>
+    <modellingAndValidation>
+        <LCIMethod>
+            <typeOfDataSet>Product flow</typeOfDataSet>
+        </LCIMethod>
+    </modellingAndValidation>
+    <administrativeInformation>
+        <dataEntryBy>
+            <common:timeStamp>2011-11-01T00:00:00+01:00</common:timeStamp>
+            <common:referenceToDataSetFormat refObjectId="a97a0155-0234-4b87-b4ce-a45da52f2a40" type="source data set"
+                uri="../sources/ILCD_Format_a97a0155-0234-4b87-b4ce-a45da52f2a40.xml">
+                <common:shortDescription xml:lang="de">ILCD format 1.1</common:shortDescription>
+            </common:referenceToDataSetFormat>
+            <common:referenceToDataSetFormat type="source data set" refObjectId="cba73800-7874-11e3-981f-0800200c9a66" uri="../sources/cba73800-7874-11e3-981f-0800200c9a66.xml">
+                <common:shortDescription xml:lang="en">EPD Data Format Extensions</common:shortDescription>
+                <common:shortDescription xml:lang="de">EPD-Datenformaterweiterungen</common:shortDescription>
+            </common:referenceToDataSetFormat>
+        </dataEntryBy>
+        <publicationAndOwnership>
+            <common:dataSetVersion>20.00.000</common:dataSetVersion>
+            <common:referenceToOwnershipOfDataSet refObjectId="623edf96-39d1-4e6f-9892-674c7228546b" type="contact data set"
+                uri="../contacts/623edf96-39d1-4e6f-9892-674c7228546b.xml">
+                <common:shortDescription xml:lang="de">PE INTERNATIONAL</common:shortDescription>
+            </common:referenceToOwnershipOfDataSet>
+        </publicationAndOwnership>
+    </administrativeInformation>
+    <flowProperties>
+    <flowProperty dataSetInternalID="0">
+      <referenceToFlowPropertyDataSet refObjectId="93a60a56-a3c8-11da-a746-0800200b9a66" type="flow property data set" uri="../flowproperties/93a60a56-a3c8-11da-a746-0800200b9a66.xml">
+        <common:shortDescription xml:lang="de">Masse</common:shortDescription>
+      </referenceToFlowPropertyDataSet>
+      <meanValue>37.5</meanValue>
+    </flowProperty>
+  </flowProperties>
+</flowDataSet>

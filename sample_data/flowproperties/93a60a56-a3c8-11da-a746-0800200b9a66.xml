@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="http://iai-uiserv1.iai.kit.edu/EPD/stylesheets/flowproperty2html.xsl"?><flowPropertyDataSet xmlns="http://lca.jrc.it/ILCD/FlowProperty"
+                     xmlns:common="http://lca.jrc.it/ILCD/Common"
+                     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                     xsi:schemaLocation="http://lca.jrc.it/ILCD/FlowProperty ../../schemas/ILCD_FlowPropertyDataSet.xsd"
+                     version="1.1">
+   <flowPropertiesInformation>
+      <dataSetInformation>
+         <common:UUID>93a60a56-a3c8-11da-a746-0800200b9a66</common:UUID>
+         <common:name xml:lang="de">Masse</common:name>
+		 <common:name xml:lang="en">Mass</common:name>
+         <classificationInformation>
+            <common:classification>
+               <common:class level="0">Technical flow properties</common:class>
+            </common:classification>
+         </classificationInformation>
+      </dataSetInformation>
+      <quantitativeReference>
+         <referenceToReferenceUnitGroup refObjectId="ad38d542-3fe9-439d-9b95-2f5f7752acaf" type="unit group data set"
+                                        uri="../unitgroups/ad38d542-3fe9-439d-9b95-2f5f7752acaf.xml">
+            <common:shortDescription xml:lang="de">Masseneinheit</common:shortDescription>
+         </referenceToReferenceUnitGroup>
+      </quantitativeReference>
+   </flowPropertiesInformation>
+   <modellingAndValidation>
+      <dataSourcesTreatmentAndRepresentativeness/>
+   </modellingAndValidation>
+   <administrativeInformation>
+      <dataEntryBy>
+         <common:timeStamp>2014-07-24T14:02:23.024+02:00</common:timeStamp>
+         <common:referenceToDataSetFormat refObjectId="a97a0155-0234-4b87-b4ce-a45da52f2a40" type="source data set"
+                                          uri="../sources/ILCD_Format_a97a0155-0234-4b87-b4ce-a45da52f2a40.xml">
+            <common:shortDescription xml:lang="de">ILCD format 1.1</common:shortDescription>
+         </common:referenceToDataSetFormat>
+      </dataEntryBy>
+      <publicationAndOwnership>
+         <common:dataSetVersion>03.00.000</common:dataSetVersion>
+      </publicationAndOwnership>
+   </administrativeInformation>
+</flowPropertyDataSet>
