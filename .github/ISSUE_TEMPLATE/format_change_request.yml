@@ -7,8 +7,8 @@ body:
     id: problem
     attributes:
       label: Problem description
-      description: Please describe the problem you are trying to solve with this change request in detail.
-      placeholder: Please include links to documents and further information if applicable.
+      description: Please include links, documents or further information if applicable.
+      placeholder: Please describe the problem you are trying to solve with this change request in detail.
     validations:
       required: true
   - type: textarea
