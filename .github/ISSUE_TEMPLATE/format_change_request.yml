@@ -4,7 +4,7 @@ title: "Please specify the name of your change request"
 labels: ["change request", "triage"]
 body:
   - type: checkboxes
-    id: Change request reason
+    id: reason
     attributes:
       label: I raise this change request because...
       options:
@@ -18,16 +18,12 @@ body:
       label: Problem description
       description: Please include links, documents or further information in English if applicable.
       placeholder: Please describe the regulation or standard you try to comply with or problem you are trying to solve with this change request.
-    validations:
-      required: true
   - type: textarea
     id: solution
     attributes:
       label: Describe the proferred solution from your point of view.
       description: Please describe the problem you are trying to solve in detail.
       placeholder: Please include links to documents and further information if applicable.
-    validations:
-      required: true
   - type: textarea
     id: relevance
     attributes:
