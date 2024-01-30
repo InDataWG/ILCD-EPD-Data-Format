@@ -6,18 +6,17 @@ body:
   - type: dropdown
     id: browsers
     attributes:
-      label: Why do you raise this change request? Please select the most applicable option!
-      multiple: true
+      label: Do you raise this change request because the ILCD+EPD format currently lacks...
       options:
         - Compliance with regualtions
         - Conformaty with standards
-        - Other use case
+        - Other reason
   - type: textarea
     id: problem
     attributes:
       label: Problem description
       description: Please include links, documents or further information if applicable.
-      placeholder: Please describe the problem you are trying to solve with this change request in detail.
+      placeholder: Please describe the regulation or standard you try to comply with or problem you are trying to solve with this change request.
     validations:
       required: true
   - type: textarea
