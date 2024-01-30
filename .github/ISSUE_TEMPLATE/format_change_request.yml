@@ -4,7 +4,7 @@ title: "Please specify the name of your change request"
 labels: ["change request", "triage"]
 body:
 - type: markdown
-    value: "## Welcome!"
+    value: "Welcome!"
 - type: markdown
     value: Thanks for taking the time to fill out this bug! If you need real-time help, join us on Discord.
   - type: checkboxes
