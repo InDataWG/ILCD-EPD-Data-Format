@@ -3,16 +3,16 @@ description: Please describe the details of the problem that is adressed by this
 title: "Please specify the name of your change request"
 labels: ["change request", "triage"]
 body:
-  - type: dropdown
-    id: browsers
+  - type: checkboxes
+    id: Change request reason
     attributes:
       label: I raise this change request because...
       options:
-        - the ILCD+EPD format lacks compliance with regualtions.
-        - the ILCD+EPD format lacks conformaty with standards.
-        - the ILCD+EPD format needs to be improved regarding existing format or master data elements.
-        - there is another problem or use case I´m trying to address.
-  - type: textarea
+        - label: the ILCD+EPD format lacks compliance with regualtions.
+        - label: the ILCD+EPD format lacks conformaty with standards.
+        - label: the ILCD+EPD format needs to be improved regarding existing format or master data elements.
+        - label: there is another problem or use case I´m trying to address.
+  - type: input
     id: problem
     attributes:
       label: Problem description
@@ -20,7 +20,7 @@ body:
       placeholder: Please describe the regulation or standard you try to comply with or problem you are trying to solve with this change request.
     validations:
       required: true
-  - type: textarea
+  - type: input
     id: solution
     attributes:
       label: Describe the proferred solution from your point of view.
@@ -28,7 +28,7 @@ body:
       placeholder: Please include links to documents and further information if applicable.
     validations:
       required: true
-  - type: textarea
+  - type: input
     id: relevance
     attributes:
       label: Describe the relevance or added value of your solution.
