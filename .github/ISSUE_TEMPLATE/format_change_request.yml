@@ -1,5 +1,5 @@
 name: Change Request
-description: Thanks for describing the details of the bug, problem or improvement that is adressed by your change request! Your request will be reviewed and further specified by members of InData technical committee.
+description: Thanks for describing the details of the bug, problem or improvement that is adressed by your change request!
 title: "Please specify the name of your change request"
 labels: ["change request", "triage"]
 body:
