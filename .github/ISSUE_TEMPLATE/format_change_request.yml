@@ -6,7 +6,7 @@ body:
   - type: dropdown
     id: browsers
     attributes:
-      label: Do you raise this change request because the ILCD+EPD format...
+      label: I raise this change request because the ILCD+EPD format...
       options:
         - lacks compliance with regualtions.
         - lacks conformaty with standards.
