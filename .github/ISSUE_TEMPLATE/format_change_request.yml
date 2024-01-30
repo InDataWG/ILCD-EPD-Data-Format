@@ -7,13 +7,11 @@ body:
     id: browsers
     attributes:
       label: Why do you raise this change request? Please select the most applicable option!
-      multiple: false
+      multiple: true
       options:
         - Compliance with regualtions
         - Conformaty with standards
         - Other use case
-      validations:
-      required: true
   - type: textarea
     id: problem
     attributes:
