@@ -12,8 +12,8 @@ body:
         - label: the ILCD+EPD format lacks conformaty with standards.
         - label: the ILCD+EPD format needs to be improved regarding existing format or master data elements.
         - label: there is another problem or use case I´m trying to address.
-      validations:
-        required: true
+    validations:
+      required: true
   - type: textarea
     id: problem
     attributes:
