@@ -1,0 +1,21 @@
+name: Format Change Request
+description: File a change request for the format
+title: "[CR]: "
+labels: ["format cr", "triage"]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: What happened?
+      description: Please describe the problem you are trying to solve in detail.
+      placeholder: Please include links to documents and further information if applicable.
+    validations:
+      required: true
+  - type: textarea
+    id: solution
+    attributes:
+      label: Describe the solution you'd like.
+      description: Please describe the problem you are trying to solve in detail.
+      placeholder: Please include links to documents and further information if applicable.
+    validations:
+      required: true
