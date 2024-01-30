@@ -6,12 +6,14 @@ body:
   - type: dropdown
     id: browsers
     attributes:
-      label: Which of the following options is the main reason for your change request?
+      label: Why do you raise this change request? Please select the most applicable option!
       multiple: true
       options:
         - Compliance with regualtions
         - Conformaty with standards
         - Other use case
+      validations:
+      required: true
   - type: textarea
     id: problem
     attributes:
