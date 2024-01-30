@@ -7,7 +7,7 @@ body:
     id: browsers
     attributes:
       label: Why do you raise this change request? Please select the most applicable option!
-      multiple: true
+      multiple: false
       options:
         - Compliance with regualtions
         - Conformaty with standards
