@@ -8,6 +8,7 @@ body:
     attributes:
       label: I raise this change request because...
       options:
+      multiple: false
         - label: the ILCD+EPD format lacks compliance with regualtions.
         - label: the ILCD+EPD format lacks conformaty with standards.
         - label: the ILCD+EPD format needs to be improved regarding existing format or master data elements.
