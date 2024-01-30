@@ -3,6 +3,15 @@ description: Please describe the details of the problem that is adressed by this
 title: "Please specify the name of your change request "
 labels: ["change request", "triage"]
 body:
+  - type: dropdown
+    id: browsers
+    attributes:
+      label: Which of the following options is the main reason for your change request?
+      multiple: true
+      options:
+        - Compliance with regualtions
+        - Conformaty with standards
+        - Other use case
   - type: textarea
     id: problem
     attributes:
