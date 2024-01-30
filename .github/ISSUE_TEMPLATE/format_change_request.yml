@@ -6,11 +6,11 @@ body:
   - type: dropdown
     id: browsers
     attributes:
-      label: Do you raise this change request because the ILCD+EPD format currently lacks...
+      label: Do you raise this change request because the ILCD+EPD format...
       options:
-        - Compliance with regualtions
-        - Conformaty with standards
-        - Other reason
+        - lacks compliance with regualtions.
+        - lacks conformaty with standards.
+        - has another problem or use case I´m trying to adress.
   - type: textarea
     id: problem
     attributes:
