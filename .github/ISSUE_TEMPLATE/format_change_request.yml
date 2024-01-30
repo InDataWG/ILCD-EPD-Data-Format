@@ -25,14 +25,14 @@ body:
   - type: textarea
     id: solution
     attributes:
-      label: Describe the proferred solution from your point of view.
-      description: Please describe the problem you are trying to solve in detail.
+      label: Solution description
+      description: Please describe the preferred solution from your point of view.
       placeholder: Please include links to documents and further information if applicable.
     validations:
       required: true
   - type: textarea
     id: relevance
     attributes:
-      label: Describe the relevance or added value of your solution.
+      label: Relevance or added value
       description: Please describe the relevance or added value of your solution.
       placeholder: Please include links to documents and further information if applicable.
