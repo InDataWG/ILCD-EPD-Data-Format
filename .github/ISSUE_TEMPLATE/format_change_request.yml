@@ -26,8 +26,8 @@ body:
     id: solution
     attributes:
       label: Solution description
-      description: Please describe the preferred solution from your point of view.
-      placeholder: Please include links to documents and further information if applicable.
+      description: Please include links to documents and further information if applicable.
+      placeholder: Please describe the preferred solution from your point of view.
     validations:
       required: true
   - type: textarea
