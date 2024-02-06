@@ -41,7 +41,7 @@ body:
       validations:
         required: true
 - type: textarea
-    id: relevance
+    id: further information
     attributes:
       label: Further information
       description: Please include links, documents or further information in English if any.
