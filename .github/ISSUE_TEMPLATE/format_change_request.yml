@@ -40,7 +40,7 @@ body:
         - label: high
     validations:
       required: true
-  - type: textarea
+- type: textarea
     id: relevance
     attributes:
       label: Further information
