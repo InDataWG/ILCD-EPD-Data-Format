@@ -30,7 +30,7 @@ body:
       placeholder: Please describe the preferred solution from your point of view.
     validations:
       required: true
- - type: checkboxes
+   - type: checkboxes
      id: reason
      attributes:
         label: The relevance of this issue is expected to be...
@@ -38,8 +38,8 @@ body:
         - label: low
         - label: medium
         - label: high
-    validations:
-      required: true
+      validations:
+        required: true
 - type: textarea
     id: relevance
     attributes:
