@@ -1,4 +1,4 @@
-name: Change request template
+name: Change Request
 description: Thanks for describing the details of the bug, problem or improvement that is adressed by your change request!
 title: "Please specify the name of your change request"
 labels: ["change request", "triage"]
