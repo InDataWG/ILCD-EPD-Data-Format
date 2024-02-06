@@ -30,9 +30,19 @@ body:
       placeholder: Please describe the preferred solution from your point of view.
     validations:
       required: true
+   - type: checkboxes
+     id: reason
+     attributes:
+        label: The relevance of this issue is expected to be...
+        options:
+        - label: low
+        - label: medium
+        - label: high
+    validations:
+      required: true
   - type: textarea
     id: relevance
     attributes:
-      label: Relevance or added value
-      description: Please include links, documents or further information in English if applicable.
-      placeholder: Please describe the relevance or added value of your solution.
+      label: Further information
+      description: Please include links, documents or further information in English if any.
+      placeholder: Please include links, documents or further information in English if any.
