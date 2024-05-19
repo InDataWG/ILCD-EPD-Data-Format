@@ -3,10 +3,10 @@ name: Create ILCD-EPD-Data-Format ZIP Archive
 on:
   push:
     branches:
-      - main
+      - gitActions
   pull_request:
     branches:
-      - main
+      - gitActions
   workflow_dispatch:
 
 jobs:
