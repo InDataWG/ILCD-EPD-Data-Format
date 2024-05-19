@@ -18,7 +18,7 @@ jobs:
       uses: actions/checkout@v4
 
     - name: Create ZIP archive
-      run: zip -r ILCD-EPD-Data-Format-$(date +%Y.%m.%d-%H:%M).zip .
+      run: zip -r ILCD-EPD-Data-Format-$(date +%Y-%m-%d_%H-%M).zip .
 
     - name: Upload ZIP archive
       uses: actions/upload-artifact@v4
