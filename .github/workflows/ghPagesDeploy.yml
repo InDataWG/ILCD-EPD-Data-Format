@@ -1,0 +1,25 @@
+name: Deploy schemadoc to GitHub Pages
+
+on:
+  push:
+    branches:
+      - gitAction
+  pull_request:
+    branches:
+      - gitAction
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Deploy to GitHub Pages
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./doc/schemadoc
+        publish_branch: gh-pages
