@@ -26,19 +26,19 @@ jobs:
         name: ILCD-EPD-Data-Format-zip
         path: ILCD-EPD-Data-Format-*.zip
 
-  deploy:
-    runs-on: ubuntu-latest
+  # deploy:
+  #   runs-on: ubuntu-latest
 
-    steps:
-    - name: Checkout repository
-      uses: actions/checkout@v4
+  #   steps:
+  #   - name: Checkout repository
+  #     uses: actions/checkout@v4
 
-    - name: Deploy to GitHub Pages
-      uses: peaceiris/actions-gh-pages@v3
-      with:
-        personal_token: ${{ secrets.ACTIONS_DEPLOY_KEY }}
-        publish_dir: ./doc/schemadoc
-        publish_branch: gh-pages
+  #   - name: Deploy to GitHub Pages
+  #     uses: peaceiris/actions-gh-pages@v3
+  #     with:
+  #       personal_token: ${{ secrets.ACTIONS_DEPLOY_KEY }}
+  #       publish_dir: ./doc/schemadoc
+  #       publish_branch: gh-pages
 
   # deploy:
   #   runs-on: ubuntu-latest
