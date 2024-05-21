@@ -1,9 +1,9 @@
-name: Create ILCD-EPD-Data-Format ZIP Archive and Deploy to GitHub Pages
+name: Create ILCD-EPD-Data-Format ZIP
 
 on:
-  push:
-    branches:
-      - gitActions
+  # push:
+  #   branches:
+  #     - gitActions
   pull_request:
     branches:
       - gitActions
@@ -25,36 +25,3 @@ jobs:
       with:
         name: ILCD-EPD-Data-Format-zip
         path: ILCD-EPD-Data-Format-*.zip
-
-  # deploy:
-  #   runs-on: ubuntu-latest
-
-  #   steps:
-  #   - name: Checkout repository
-  #     uses: actions/checkout@v4
-
-  #   - name: Deploy to GitHub Pages
-  #     uses: peaceiris/actions-gh-pages@v3
-  #     with:
-  #       personal_token: ${{ secrets.ACTIONS_DEPLOY_KEY }}
-  #       publish_dir: ./doc/schemadoc
-  #       publish_branch: gh-pages
-
-  # deploy:
-  #   runs-on: ubuntu-latest
-  #   needs: build
-
-  #   steps:
-  #   - name: Checkout repository
-  #     uses: actions/checkout@v4
-
-  #   - name: Deploy to GitHub Pages
-  #     uses: peaceiris/actions-gh-pages@v3
-  #     with:
-  #       github_token: ${{ secrets.GITHUB_TOKEN }}
-  #       publish_dir: ./doc
-  #       publish_branch: gh-pages
-
-  #   - name: Create deployment link
-  #     run: |
-  #       echo "GitHub Pages deployed at: https://github.com/${{ github.repository }}/tree/gh-pages"
