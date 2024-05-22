@@ -24,6 +24,11 @@ jobs:
         python -m pip install --upgrade pip
         pip install pandas
 
+    - name: List CSV files
+      run: |
+        echo "Listing CSV files in the /doc/ directory"
+        ls -l doc/*.csv || echo "No CSV files found in /doc/"
+
     - name: Convert CSV to HTML
       run: |
         python - <<EOF
@@ -35,40 +40,44 @@ jobs:
         output_dir = "html_output"
         os.makedirs(output_dir, exist_ok=True)
 
-        # Get all CSV files in the current directory
-        csv_files = glob.glob("*.csv")
-
-        for csv_file in csv_files:
-            # Read the CSV file
-            df = pd.read_csv(csv_file)
-            
-            # Convert the DataFrame to an HTML table
-            html_table = df.to_html(index=False, classes='table table-striped', border=0)
-            
-            # Save the HTML table to a file
-            html_filename = os.path.join(output_dir, csv_file.replace('.csv', '.html'))
-            with open(html_filename, 'w') as f:
-                f.write(f"""
-                <!DOCTYPE html>
-                <html>
-                <head>
-                    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-                    <title>{csv_file}</title>
-                </head>
-                <body>
-                    <div class="container">
-                        <h1>{csv_file}</h1>
-                        {html_table}
-                    </div>
-                </body>
-                </html>
-                """)
+        # Get all CSV files in the /doc/ directory
+        csv_files = glob.glob("doc/*.csv")
+        if not csv_files:
+            print("No CSV files found to process.")
+        else:
+            for csv_file in csv_files:
+                print(f"Processing {csv_file}...")
+                # Read the CSV file
+                df = pd.read_csv(csv_file)
+                
+                # Convert the DataFrame to an HTML table
+                html_table = df.to_html(index=False, classes='table table-striped', border=0)
+                
+                # Save the HTML table to a file
+                html_filename = os.path.join(output_dir, os.path.basename(csv_file).replace('.csv', '.html'))
+                with open(html_filename, 'w') as f:
+                    f.write(f"""
+                    <!DOCTYPE html>
+                    <html>
+                    <head>
+                        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+                        <title>{os.path.basename(csv_file)}</title>
+                    </head>
+                    <body>
+                        <div class="container">
+                            <h1>{os.path.basename(csv_file)}</h1>
+                            {html_table}
+                        </div>
+                    </body>
+                    </html>
+                    """)
+            print(f"HTML files generated: {os.listdir(output_dir)}")
         EOF
 
     - name: Check HTML output
       run: |
-        ls -l html_output
-      shell: bash
+        echo "Listing files in html_output directory"
+        ls -l html_output || echo "html_output directory not found or is empty"
 
     - name: Commit and push HTML files
       if: success()
