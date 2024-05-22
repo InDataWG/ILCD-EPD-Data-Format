@@ -1,8 +1,9 @@
-name: Convert CSV to HTML and Deploy to GitHub Pages
+name: Convert CSV to HTML
 
 on:
   push:
     branches:
+      - main
       - gitActions
 
 jobs:
@@ -22,6 +23,11 @@ jobs:
       run: |
         python -m pip install --upgrade pip
         pip install pandas
+
+    - name: List CSV files
+      run: |
+        echo "Listing CSV files in the /doc/ directory"
+        ls -l doc/*.csv || echo "No CSV files found in /doc/"
 
     - name: Convert CSV to HTML
       run: |
@@ -68,8 +74,18 @@ jobs:
             print(f"HTML files generated: {os.listdir(output_dir)}")
         EOF
 
-    - name: Deploy to GitHub Pages
-      uses: peaceiris/actions-gh-pages@v3
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./html_output
+    - name: Check HTML output
+      run: |
+        echo "Listing files in html_output directory"
+        ls -l html_output || echo "html_output directory not found or is empty"
+
+    - name: Commit and push HTML files
+      if: success()
+      run: |
+        git config --global user.name 'github-actions[bot]'
+        git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+        git add html_output/*.html || exit 0
+        git commit -m 'Automated conversion of CSV to HTML'
+        git push origin gitActions
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
