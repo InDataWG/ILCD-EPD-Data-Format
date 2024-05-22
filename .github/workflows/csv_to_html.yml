@@ -3,8 +3,7 @@ name: Convert CSV to HTML
 on:
   push:
     branches:
-      - main
-      - gh-pages
+      - gitActions
 
 jobs:
   build:
@@ -71,6 +70,6 @@ jobs:
         git config --global user.email 'github-actions[bot]@users.noreply.github.com'
         git add html_output/*.html
         git commit -m 'Automated conversion of CSV to HTML'
-        git push origin gh-pages
+        git push origin gitActions
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
