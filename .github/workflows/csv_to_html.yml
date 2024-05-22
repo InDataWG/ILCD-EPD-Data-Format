@@ -68,7 +68,7 @@ jobs:
       run: |
         git config --global user.name 'github-actions[bot]'
         git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-        git add html_output/*.html
+        git add htmlData/*.html
         git commit -m 'Automated conversion of CSV to HTML'
         git push origin gitActions
       env:
