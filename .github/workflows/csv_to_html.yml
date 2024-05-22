@@ -3,7 +3,8 @@ name: Convert CSV to HTML
 on:
   push:
     branches:
-      - gitActions
+      - main
+      - gh-pages
 
 jobs:
   build:
@@ -31,7 +32,7 @@ jobs:
         import os
 
         # Create the output directory if it doesn't exist
-        output_dir = "htmlData"
+        output_dir = "html_output"
         os.makedirs(output_dir, exist_ok=True)
 
         # Get all CSV files in the current directory
@@ -64,12 +65,18 @@ jobs:
                 """)
         EOF
 
+    - name: Check HTML output
+      run: |
+        ls -l html_output
+      shell: bash
+
     - name: Commit and push HTML files
+      if: success()
       run: |
         git config --global user.name 'github-actions[bot]'
         git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-        git add htmlData/*.html
+        git add html_output/*.html || exit 0
         git commit -m 'Automated conversion of CSV to HTML'
-        git push origin gitActions
+        git push origin gh-pages
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
