@@ -79,13 +79,8 @@ jobs:
         echo "Listing files in html_output directory"
         ls -l html_output || echo "html_output directory not found or is empty"
 
-    - name: Commit and push HTML files
-      if: success()
-      run: |
-        git config --global user.name 'github-actions[bot]'
-        git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-        git add html_output/*.html || exit 0
-        git commit -m 'Automated conversion of CSV to HTML'
-        git push origin gitActions
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    - name: Upload HTML files as artifacts
+      uses: actions/upload-artifact@v3
+      with:
+        name: html-files
+        path: html_output
