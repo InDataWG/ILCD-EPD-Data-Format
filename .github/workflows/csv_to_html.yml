@@ -5,7 +5,7 @@ on:
     branches:
       - main
       - gitActions
-
+      
 permissions:
   contents: write  # Set permissions for the entire workflow
 
@@ -27,6 +27,11 @@ jobs:
         python -m pip install --upgrade pip
         pip install pandas
 
+    - name: List CSV files
+      run: |
+        echo "Listing CSV files in the /doc/ directory"
+        ls -l doc/*.csv || echo "No CSV files found in /doc/"
+
     - name: Convert CSV to HTML
       run: |
         python - <<EOF
@@ -35,7 +40,7 @@ jobs:
         import os
 
         # Create the output directory if it doesn't exist
-        output_dir = "doc/html_output"
+        output_dir = "html_output"
         os.makedirs(output_dir, exist_ok=True)
 
         # Get all CSV files in the /doc/ directory
@@ -59,21 +64,13 @@ jobs:
                     <html>
                     <head>
                         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-                        <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.0/xlsx.full.min.js"></script>
                         <title>{os.path.basename(csv_file)}</title>
                     </head>
                     <body>
                         <div class="container">
                             <h1>{os.path.basename(csv_file)}</h1>
-                            <button id='download-button' class='btn btn-primary'>Download as Excel</button>
                             {html_table}
                         </div>
-                        <script>
-                            document.getElementById('download-button').addEventListener('click', function () {
-                                var wb = XLSX.utils.table_to_book(document.querySelector('.table'), {sheet: 'Sheet JS'});
-                                XLSX.writeFile(wb, '{os.path.basename(csv_file).replace('.csv', '.xlsx')}');
-                            });
-                        </script>
                     </body>
                     </html>
                     """)
@@ -82,14 +79,16 @@ jobs:
 
     - name: Check HTML output
       run: |
-        echo "Listing files in doc/html_output directory"
-        ls -l doc/html_output || echo "doc/html_output directory not found or is empty"
+        echo "Listing files in html_output directory"
+        ls -l html_output || echo "html_output directory not found or is empty"
 
     - name: Commit and push HTML files
       if: success()
       run: |
         git config --global user.name 'github-actions[bot]'
         git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-        git add doc/html_output/*.html || exit 0
+        git add html_output/*.html || exit 0
         git commit -m 'Automated conversion of CSV to HTML'
-        git push origin HEAD:gitActions
+        git push origin gitActions
+    
+        
