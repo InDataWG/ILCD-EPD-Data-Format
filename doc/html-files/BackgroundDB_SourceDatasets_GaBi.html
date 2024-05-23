@@ -3,11 +3,13 @@
             <html>
             <head>
                 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.0/xlsx.full.min.js"></script>
                 <title>BackgroundDB_SourceDatasets_GaBi.csv</title>
             </head>
             <body>
                 <div class="container">
                     <h1>BackgroundDB_SourceDatasets_GaBi.csv</h1>
+                    <button id='download-button' class='btn btn-primary'>Download as Excel</button>
                     <table class="dataframe table table-striped">
   <thead>
     <tr style="text-align: right;">
@@ -135,6 +137,12 @@
   </tbody>
 </table>
                 </div>
+                <script>
+                    document.getElementById('download-button').addEventListener('click', function () {
+                        var wb = XLSX.utils.table_to_book(document.querySelector('.table'), {sheet: 'Sheet JS'});
+                        XLSX.writeFile(wb, 'BackgroundDB_SourceDatasets_GaBi.xlsx');
+                    });
+                </script>
             </body>
             </html>
             
