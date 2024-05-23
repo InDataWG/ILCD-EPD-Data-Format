@@ -1,8 +1,9 @@
-name: Convert CSV to HTML and Save as Artifacts
+name: Convert CSV to HTML
 
 on:
   push:
     branches:
+      - main
       - gitActions
 
 jobs:
@@ -31,7 +32,7 @@ jobs:
         import os
 
         # Create the output directory if it doesn't exist
-        output_dir = "html_output"
+        output_dir = "doc/html_output"
         os.makedirs(output_dir, exist_ok=True)
 
         # Get all CSV files in the /doc/ directory
@@ -47,7 +48,7 @@ jobs:
                 # Convert the DataFrame to an HTML table
                 html_table = df.to_html(index=False, classes='table table-striped', border=0)
                 
-                # Save the HTML table to a file with download button and script
+                # Save the HTML table to a file
                 html_filename = os.path.join(output_dir, os.path.basename(csv_file).replace('.csv', '.html'))
                 with open(html_filename, 'w') as f:
                     f.write(f"""
@@ -65,10 +66,10 @@ jobs:
                             {html_table}
                         </div>
                         <script>
-                            document.getElementById('download-button').addEventListener('click', function () {{
-                                var wb = XLSX.utils.table_to_book(document.querySelector('.table'), {{sheet: 'Sheet JS'}});
+                            document.getElementById('download-button').addEventListener('click', function () {
+                                var wb = XLSX.utils.table_to_book(document.querySelector('.table'), {sheet: 'Sheet JS'});
                                 XLSX.writeFile(wb, '{os.path.basename(csv_file).replace('.csv', '.xlsx')}');
-                            }});
+                            });
                         </script>
                     </body>
                     </html>
@@ -76,8 +77,18 @@ jobs:
             print(f"HTML files generated: {os.listdir(output_dir)}")
         EOF
 
-    - name: Upload HTML artifacts
-      uses: actions/upload-artifact@v2
-      with:
-        name: html-files
-        path: html_output
+    - name: Check HTML output
+      run: |
+        echo "Listing files in doc/html_output directory"
+        ls -l doc/html_output || echo "doc/html_output directory not found or is empty"
+
+    - name: Commit and push HTML files
+      if: success()
+      env:
+        PERSONAL_ACCESS_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+      run: |
+        git config --global user.name 'github-actions[bot]'
+        git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+        git add doc/html_output/*.html || exit 0
+        git commit -m 'Automated conversion of CSV to HTML'
+        git push https://<your-username>:${{ secrets.PERSONAL_ACCESS_TOKEN }}@github.com/ILCD-EPD-Data-Format/ILCD-EPD-Data-Format.git gitActions
