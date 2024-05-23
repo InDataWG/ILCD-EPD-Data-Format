@@ -18,8 +18,8 @@
 - [Flow properties and unit groups](doc/html_output/Flow_properties_and_unit_groups.html)
 
 
-- [Background Data](docs/excel_output/BackgroundData.xlsx)
-- [Indicators](docs/excel_output/Indicators.xlsx)
+- [Background Data](doc/excel_output/BackgroundData.xlsx)
+- [Indicators](doc/excel_output/Indicators.xlsx)
 
 
 
