@@ -40,7 +40,7 @@ jobs:
         import os
 
         # Create the output directory if it doesn't exist
-        output_dir = "html_output"
+        output_dir = "doc/html_output"
         os.makedirs(output_dir, exist_ok=True)
 
         # Get all CSV files in the /doc/ directory
@@ -79,16 +79,14 @@ jobs:
 
     - name: Check HTML output
       run: |
-        echo "Listing files in html_output directory"
-        ls -l html_output || echo "html_output directory not found or is empty"
+        echo "Listing files in doc/html_output directory"
+        ls -l doc/html_output || echo "doc/html_output directory not found or is empty"
 
     - name: Commit and push HTML files
       if: success()
       run: |
         git config --global user.name 'github-actions[bot]'
         git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-        git add html_output/*.html || exit 0
+        git add doc/html_output/*.html || exit 0
         git commit -m 'Automated conversion of CSV to HTML'
-        git push origin gitActions
-    
-        
+        git push origin HEAD:gitActions
