@@ -51,7 +51,7 @@ jobs:
             "BackgroundDB_SourceDatasets_ecoinvent": "doc/BackgroundDB_SourceDatasets_ecoinvent.csv",
             "BackgroundDB_SourceDatasets_GaBi": "doc/BackgroundDB_SourceDatasets_GaBi.csv",
             "Common_references": "doc/Common_references.csv",
-            "Country_specific_indicators": "doc/Country-specific_indicators.csv",
+            "Country-specific_indicators": "doc/Country-specific_indicators.csv",
             "EN15804+A1_indicators": "doc/EN15804+A1_indicators.csv",
             "EN15804+A2_indicators": "doc/EN15804+A2_indicators.csv",
             "Flow_properties_and_unit_groups": "doc/Flow_properties_and_unit_groups.csv"
@@ -84,7 +84,7 @@ jobs:
       run: |
         mkdir -p doc/excel_output
         ssconvert --merge-to=doc/excel_output/BackgroundData.xlsx doc/BackgroundDB_SourceDatasets_ecoinvent.csv doc/BackgroundDB_SourceDatasets_GaBi.csv
-        ssconvert --merge-to=doc/excel_output/Indicators.xlsx doc/Common_references.csv doc/Country_specific_indicators.csv doc/EN15804+A1_indicators.csv doc/EN15804+A2_indicators.csv doc/Flow_properties_and_unit_groups.csv
+        ssconvert --merge-to=doc/excel_output/Indicators.xlsx doc/Common_references.csv doc/Country-specific_indicators.csv doc/EN15804+A1_indicators.csv doc/EN15804+A2_indicators.csv doc/Flow_properties_and_unit_groups.csv
 
     - name: Check output
       run: |
