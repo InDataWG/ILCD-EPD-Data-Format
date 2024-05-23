@@ -26,9 +26,8 @@ jobs:
 
     - name: Install dependencies
       run: |
-        sudo apt-get install -y gnumeric
         python -m pip install --upgrade pip
-        pip install pandas
+        pip install pandas openpyxl
 
     - name: List CSV files
       run: |
@@ -39,7 +38,6 @@ jobs:
       run: |
         python - <<EOF
         import pandas as pd
-        import glob
         import os
 
         # Create the output directory if it doesn't exist
@@ -51,7 +49,7 @@ jobs:
             "BackgroundDB_SourceDatasets_ecoinvent": "doc/BackgroundDB_SourceDatasets_ecoinvent.csv",
             "BackgroundDB_SourceDatasets_GaBi": "doc/BackgroundDB_SourceDatasets_GaBi.csv",
             "Common_references": "doc/Common_references.csv",
-            "Country-specific_indicators": "doc/Country-specific_indicators.csv",
+            "Country_specific_indicators": "doc/Country_specific_indicators.csv",
             "EN15804+A1_indicators": "doc/EN15804+A1_indicators.csv",
             "EN15804+A2_indicators": "doc/EN15804+A2_indicators.csv",
             "Flow_properties_and_unit_groups": "doc/Flow_properties_and_unit_groups.csv"
@@ -82,9 +80,39 @@ jobs:
 
     - name: Convert CSV to Excel
       run: |
-        mkdir -p doc/excel_output
-        ssconvert --merge-to=doc/excel_output/BackgroundData.xlsx doc/BackgroundDB_SourceDatasets_ecoinvent.csv doc/BackgroundDB_SourceDatasets_GaBi.csv
-        ssconvert --merge-to=doc/excel_output/Indicators.xlsx doc/Common_references.csv doc/Country-specific_indicators.csv doc/EN15804+A1_indicators.csv doc/EN15804+A2_indicators.csv doc/Flow_properties_and_unit_groups.csv
+        python - <<EOF
+        import pandas as pd
+        import os
+
+        # Create the output directory if it doesn't exist
+        output_dir = "doc/excel_output"
+        os.makedirs(output_dir, exist_ok=True)
+
+        # Function to write multiple CSVs to a single Excel file
+        def write_to_excel(output_file, sheets):
+            with pd.ExcelWriter(output_file, engine='openpyxl') as writer:
+                for sheet_name, file_path in sheets.items():
+                    if os.path.exists(file_path):
+                        df = pd.read_csv(file_path)
+                        df.to_excel(writer, index=False, sheet_name=sheet_name)
+
+        # Background data
+        background_sheets = {
+            "BackgroundDB_SourceDatasets_ecoinvent": "doc/BackgroundDB_SourceDatasets_ecoinvent.csv",
+            "BackgroundDB_SourceDatasets_GaBi": "doc/BackgroundDB_SourceDatasets_GaBi.csv"
+        }
+        write_to_excel("doc/excel_output/BackgroundData.xlsx", background_sheets)
+
+        # Indicator data
+        indicator_sheets = {
+            "Common_references": "doc/Common_references.csv",
+            "Country_specific_indicators": "doc/Country_specific_indicators.csv",
+            "EN15804+A1_indicators": "doc/EN15804+A1_indicators.csv",
+            "EN15804+A2_indicators": "doc/EN15804+A2_indicators.csv",
+            "Flow_properties_and_unit_groups": "doc/Flow_properties_and_unit_groups.csv"
+        }
+        write_to_excel("doc/excel_output/Indicators.xlsx", indicator_sheets)
+        EOF
 
     - name: Check output
       run: |
