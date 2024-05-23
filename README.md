@@ -9,6 +9,8 @@
 - [ILCD_SourceDataSet](doc/schemadoc/ILCD_SourceDataSet.html)
 - [ILCD_UnitGroupDataSet](doc/schemadoc/ILCD_UnitGroupDataSet.html)
 
-- [BackgroundDB_SourceDatasets_ecoinvent](doc/html-files/BackgroundDB_SourceDatasets_ecoinvent.html)
+- [BackgroundDB_SourceDatasets_ecoinvent](doc/html_output/BackgroundDB_SourceDatasets_ecoinvent.html)
+- [BackgroundDB_SourceDatasets_GaBi](doc/html_output/BackgroundDB_SourceDatasets_GaBi.html)
+
 
   
