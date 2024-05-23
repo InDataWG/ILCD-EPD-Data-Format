@@ -17,7 +17,9 @@
 - [EN15804+A2 indicators](doc/html_output/EN15804+A2_indicators.html)
 - [Flow properties and unit groups](doc/html_output/Flow_properties_and_unit_groups.html)
 
-- [download](doc/html_output/download.html)
+
+- [Background Data](docs/excel_output/BackgroundData.xlsx)
+- [Indicators](docs/excel_output/Indicators.xlsx)
 
 
 
