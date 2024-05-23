@@ -49,7 +49,7 @@ jobs:
             "BackgroundDB_SourceDatasets_ecoinvent": "doc/BackgroundDB_SourceDatasets_ecoinvent.csv",
             "BackgroundDB_SourceDatasets_GaBi": "doc/BackgroundDB_SourceDatasets_GaBi.csv",
             "Common_references": "doc/Common_references.csv",
-            "Country_specific_indicators": "doc/Country_specific_indicators.csv",
+            "Country-specific_indicators": "doc/Country-specific_indicators.csv",
             "EN15804+A1_indicators": "doc/EN15804+A1_indicators.csv",
             "EN15804+A2_indicators": "doc/EN15804+A2_indicators.csv",
             "Flow_properties_and_unit_groups": "doc/Flow_properties_and_unit_groups.csv"
@@ -106,7 +106,7 @@ jobs:
         # Indicator data
         indicator_sheets = {
             "Common_references": "doc/Common_references.csv",
-            "Country_specific_indicators": "doc/Country_specific_indicators.csv",
+            "Country-specific_indicators": "doc/Country-specific_indicators.csv",
             "EN15804+A1_indicators": "doc/EN15804+A1_indicators.csv",
             "EN15804+A2_indicators": "doc/EN15804+A2_indicators.csv",
             "Flow_properties_and_unit_groups": "doc/Flow_properties_and_unit_groups.csv"
