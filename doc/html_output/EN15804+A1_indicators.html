@@ -3,12 +3,13 @@
             <html>
             <head>
                 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.0/xlsx.full.min.js"></script>
                 <title>EN15804+A1_indicators.csv</title>
             </head>
             <body>
                 <div class="container">
                     <h1>EN15804+A1_indicators.csv</h1>
-                    <table class="dataframe table table-striped">
+                    <table class="dataframe table table-striped" id="EN15804+A1_indicators">
   <thead>
     <tr style="text-align: right;">
       <th>UUID</th>
@@ -170,7 +171,40 @@
     </tr>
   </tbody>
 </table>
+                    <button id='download-button' class='btn btn-primary'>Download as Excel</button>
                 </div>
+                <script>
+                    document.getElementById('download-button').addEventListener('click', function () {
+                        var wb = XLSX.utils.book_new();
+
+                        // Add sheets for background data
+                        var ecoinventTable = document.querySelector('#BackgroundDB_SourceDatasets_ecoinvent');
+                        var gabiTable = document.querySelector('#BackgroundDB_SourceDatasets_GaBi');
+                        var ecoinventWS = XLSX.utils.table_to_sheet(ecoinventTable);
+                        var gabiWS = XLSX.utils.table_to_sheet(gabiTable);
+                        XLSX.utils.book_append_sheet(wb, ecoinventWS, 'BackgroundDB_SourceDatasets_ecoinvent');
+                        XLSX.utils.book_append_sheet(wb, gabiWS, 'BackgroundDB_SourceDatasets_GaBi');
+
+                        // Add sheets for indicators
+                        var commonRefsTable = document.querySelector('#Common_references');
+                        var countrySpecificTable = document.querySelector('#Country_specific_indicators');
+                        var en15804A1Table = document.querySelector('#EN15804+A1_indicators');
+                        var en15804A2Table = document.querySelector('#EN15804+A2_indicators');
+                        var flowPropsTable = document.querySelector('#Flow_properties_and_unit_groups');
+                        var commonRefsWS = XLSX.utils.table_to_sheet(commonRefsTable);
+                        var countrySpecificWS = XLSX.utils.table_to_sheet(countrySpecificTable);
+                        var en15804A1WS = XLSX.utils.table_to_sheet(en15804A1Table);
+                        var en15804A2WS = XLSX.utils.table_to_sheet(en15804A2Table);
+                        var flowPropsWS = XLSX.utils.table_to_sheet(flowPropsTable);
+                        XLSX.utils.book_append_sheet(wb, commonRefsWS, 'Common_references');
+                        XLSX.utils.book_append_sheet(wb, countrySpecificWS, 'Country_specific_indicators');
+                        XLSX.utils.book_append_sheet(wb, en15804A1WS, 'EN15804+A1_indicators');
+                        XLSX.utils.book_append_sheet(wb, en15804A2WS, 'EN15804+A2_indicators');
+                        XLSX.utils.book_append_sheet(wb, flowPropsWS, 'Flow_properties_and_unit_groups');
+
+                        XLSX.writeFile(wb, 'Converted_CSVs.xlsx');
+                    });
+                </script>
             </body>
             </html>
             
