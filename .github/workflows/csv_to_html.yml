@@ -5,6 +5,8 @@ on:
     branches:
       - main
       - gitActions
+    paths:
+      - 'doc/*.csv' # only execute when there is a change in a csv file
       
 permissions:
   contents: write  # Set permissions for the entire workflow
