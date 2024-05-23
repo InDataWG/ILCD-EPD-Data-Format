@@ -5,9 +5,9 @@ on:
     branches:
       - main
       - gitActions
-    paths:
-      - 'doc/*.csv' # only execute when there is a change in a csv file
-      
+    # paths:
+    #   - 'doc/*.csv' # only execute when there is a change in a csv file
+
 permissions:
   contents: write  # Set permissions for the entire workflow
 
@@ -45,34 +45,69 @@ jobs:
         output_dir = "doc/html_output"
         os.makedirs(output_dir, exist_ok=True)
 
-        # Get all CSV files in the /doc/ directory
-        csv_files = glob.glob("doc/*.csv")
-        if not csv_files:
-            print("No CSV files found to process.")
-        else:
-            for csv_file in csv_files:
-                print(f"Processing {csv_file}...")
-                # Read the CSV file
-                df = pd.read_csv(csv_file)
-                
-                # Convert the DataFrame to an HTML table
-                html_table = df.to_html(index=False, classes='table table-striped', border=0)
-                
-                # Save the HTML table to a file
-                html_filename = os.path.join(output_dir, os.path.basename(csv_file).replace('.csv', '.html'))
+        # Define the files and their IDs
+        files_with_ids = {
+            "BackgroundDB_SourceDatasets_ecoinvent": "doc/BackgroundDB_SourceDatasets_ecoinvent.csv",
+            "BackgroundDB_SourceDatasets_GaBi": "doc/BackgroundDB_SourceDatasets_GaBi.csv",
+            "Common_references": "doc/Common_references.csv",
+            "Country_specific_indicators": "doc/Country_specific_indicators.csv",
+            "EN15804+A1_indicators": "doc/EN15804+A1_indicators.csv",
+            "EN15804+A2_indicators": "doc/EN15804+A2_indicators.csv",
+            "Flow_properties_and_unit_groups": "doc/Flow_properties_and_unit_groups.csv"
+        }
+
+        for file_id, file_path in files_with_ids.items():
+            if os.path.exists(file_path):
+                df = pd.read_csv(file_path)
+                html_table = df.to_html(index=False, classes='table table-striped', border=0, table_id=file_id)
+                html_filename = os.path.join(output_dir, os.path.basename(file_path).replace('.csv', '.html'))
                 with open(html_filename, 'w') as f:
                     f.write(f"""
                     <!DOCTYPE html>
                     <html>
                     <head>
                         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-                        <title>{os.path.basename(csv_file)}</title>
+                        <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.0/xlsx.full.min.js"></script>
+                        <title>{os.path.basename(file_path)}</title>
                     </head>
                     <body>
                         <div class="container">
-                            <h1>{os.path.basename(csv_file)}</h1>
+                            <h1>{os.path.basename(file_path)}</h1>
                             {html_table}
+                            <button id='download-button' class='btn btn-primary'>Download as Excel</button>
                         </div>
+                        <script>
+                            document.getElementById('download-button').addEventListener('click', function () {{
+                                var wb = XLSX.utils.book_new();
+
+                                // Add sheets for background data
+                                var ecoinventTable = document.querySelector('#BackgroundDB_SourceDatasets_ecoinvent');
+                                var gabiTable = document.querySelector('#BackgroundDB_SourceDatasets_GaBi');
+                                var ecoinventWS = XLSX.utils.table_to_sheet(ecoinventTable);
+                                var gabiWS = XLSX.utils.table_to_sheet(gabiTable);
+                                XLSX.utils.book_append_sheet(wb, ecoinventWS, 'BackgroundDB_SourceDatasets_ecoinvent');
+                                XLSX.utils.book_append_sheet(wb, gabiWS, 'BackgroundDB_SourceDatasets_GaBi');
+
+                                // Add sheets for indicators
+                                var commonRefsTable = document.querySelector('#Common_references');
+                                var countrySpecificTable = document.querySelector('#Country_specific_indicators');
+                                var en15804A1Table = document.querySelector('#EN15804+A1_indicators');
+                                var en15804A2Table = document.querySelector('#EN15804+A2_indicators');
+                                var flowPropsTable = document.querySelector('#Flow_properties_and_unit_groups');
+                                var commonRefsWS = XLSX.utils.table_to_sheet(commonRefsTable);
+                                var countrySpecificWS = XLSX.utils.table_to_sheet(countrySpecificTable);
+                                var en15804A1WS = XLSX.utils.table_to_sheet(en15804A1Table);
+                                var en15804A2WS = XLSX.utils.table_to_sheet(en15804A2Table);
+                                var flowPropsWS = XLSX.utils.table_to_sheet(flowPropsTable);
+                                XLSX.utils.book_append_sheet(wb, commonRefsWS, 'Common_references');
+                                XLSX.utils.book_append_sheet(wb, countrySpecificWS, 'Country_specific_indicators');
+                                XLSX.utils.book_append_sheet(wb, en15804A1WS, 'EN15804+A1_indicators');
+                                XLSX.utils.book_append_sheet(wb, en15804A2WS, 'EN15804+A2_indicators');
+                                XLSX.utils.book_append_sheet(wb, flowPropsWS, 'Flow_properties_and_unit_groups');
+
+                                XLSX.writeFile(wb, 'Converted_CSVs.xlsx');
+                            }});
+                        </script>
                     </body>
                     </html>
                     """)
