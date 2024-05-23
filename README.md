@@ -1,4 +1,6 @@
 # ILCD-EPD-Data-Format
+
+## Schema Documentation
 - [EPD_DataSet](doc/schemadoc/EPD_DataSet.html)
 - [EPD_FlowDataSet](doc/schemadoc/EPD_FlowDataSet.html)
 - [ILCD_Common_DataTypes](doc/schemadoc/ILCD_Common_DataTypes.html)
@@ -9,28 +11,17 @@
 - [ILCD_SourceDataSet](doc/schemadoc/ILCD_SourceDataSet.html)
 - [ILCD_UnitGroupDataSet](doc/schemadoc/ILCD_UnitGroupDataSet.html)
 
+## Background Database
 - [BackgroundDB_SourceDatasets_ecoinvent](doc/html_output/BackgroundDB_SourceDatasets_ecoinvent.html)
 - [BackgroundDB_SourceDatasets_GaBi](doc/html_output/BackgroundDB_SourceDatasets_GaBi.html)
-- [Common references](doc/html_output/Common_references.html)
-- [Country specific indicators](doc/html_output/Country-specific_indicators.html)
+  
+## Indicators
 - [EN15804+A1 indicators](doc/html_output/EN15804+A1_indicators.html)
 - [EN15804+A2 indicators](doc/html_output/EN15804+A2_indicators.html)
+- [Common references](doc/html_output/Common_references.html)
+- [Country specific indicators](doc/html_output/Country_specific_indicators.html)
 - [Flow properties and unit groups](doc/html_output/Flow_properties_and_unit_groups.html)
 
-
-- [Background Data](doc/excel_output/BackgroundData.xlsx)
-- [Indicators](doc/excel_output/Indicators.xlsx)
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
+## Download Excel Files
+- [Download Background Database](doc/excel_output/BackgroundData.xlsx)
+- [Download Indicators](doc/excel_output/Indicators.xlsx)
