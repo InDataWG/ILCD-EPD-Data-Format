@@ -6,6 +6,9 @@ on:
       - main
       - gitActions
 
+permissions:
+  contents: write  # Set permissions for the entire workflow
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -84,11 +87,9 @@ jobs:
 
     - name: Commit and push HTML files
       if: success()
-      env:
-        PERSONAL_ACCESS_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
       run: |
         git config --global user.name 'github-actions[bot]'
         git config --global user.email 'github-actions[bot]@users.noreply.github.com'
         git add doc/html_output/*.html || exit 0
         git commit -m 'Automated conversion of CSV to HTML'
-        git push https://<your-username>:${{ secrets.PERSONAL_ACCESS_TOKEN }}@github.com/ILCD-EPD-Data-Format/ILCD-EPD-Data-Format.git gitActions
+        git push origin HEAD:gitActions
