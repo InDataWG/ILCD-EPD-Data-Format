@@ -5,8 +5,8 @@ on:
     branches:
       - main
       - gitActions
-    paths:
-      - 'doc/*.csv' 
+    # paths:
+    #   - 'doc/*.csv' 
 
 permissions:
   contents: write 
