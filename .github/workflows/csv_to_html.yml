@@ -89,12 +89,12 @@ jobs:
         output_dir = "doc/excel_output"
         os.makedirs(output_dir, exist_ok=True)
 
-        # Function to auto-adjust column widths
+        # Function to auto-adjust excel column widths
         def auto_adjust_column_widths(workbook):
             for sheet in workbook.worksheets:
                 for col in sheet.columns:
                     max_length = 0
-                    column = col[0].column_letter # Get the column name
+                    column = col[0].column_letter 
                     for cell in col:
                         try:
                             if len(str(cell.value)) > max_length:
