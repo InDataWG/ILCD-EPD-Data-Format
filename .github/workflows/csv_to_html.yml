@@ -133,6 +133,7 @@ jobs:
       run: |
         git config --global user.name 'github-actions[bot]'
         git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+        git pull origin gitActions --rebase
         git add doc/data/html_output/*.html doc/data/excel_output/*.xlsx || exit 0
         git commit -m 'Automated conversion of CSV to HTML and Excel'
         git push origin HEAD:gitActions
