@@ -1,166 +1,12 @@
-# name: Convert CSV to HTML and Excel
-
-# on:
-#   push:
-#     branches:
-#       - main
-#       - gitActions
-#     paths:
-#       - 'doc/*.csv' 
-
-# permissions:
-#   contents: write 
-
-# jobs:
-#   build:
-#     runs-on: ubuntu-latest
-
-#     steps:
-#     - name: Checkout repository
-#       uses: actions/checkout@v2
-
-#     - name: Set up Python
-#       uses: actions/setup-python@v2
-#       with:
-#         python-version: '3.x'
-
-#     - name: Install dependencies
-#       run: |
-#         python -m pip install --upgrade pip
-#         pip install pandas openpyxl
-
-#     - name: List CSV files
-#       run: |
-#         echo "Listing CSV files in the /doc/data/ directory"
-#         ls -l doc/data/*.csv || echo "No CSV files found in /doc/data/"
-
-#     - name: Convert CSV to HTML
-#       run: |
-#         python - <<EOF
-#         import pandas as pd
-#         import os
-
-#         # Create the output directory if it doesn't exist
-#         output_dir = "doc/data/html_output"
-#         os.makedirs(output_dir, exist_ok=True)
-
-#         # Define the files and their IDs
-#         files_with_ids = {
-#             "BackgroundDB_SourceDatasets_ecoinvent": "doc/data/BackgroundDB_SourceDatasets_ecoinvent.csv",
-#             "BackgroundDB_SourceDatasets_GaBi": "doc/data/BackgroundDB_SourceDatasets_GaBi.csv",
-#             "Common_references": "doc/data/Common_references.csv",
-#             "Country-specific_indicators": "doc/data/Country-specific_indicators.csv",
-#             "EN15804+A1_indicators": "doc/data/EN15804+A1_indicators.csv",
-#             "EN15804+A2_indicators": "doc/data/EN15804+A2_indicators.csv",
-#             "Flow_properties_and_unit_groups": "doc/data/Flow_properties_and_unit_groups.csv"
-#         }
-
-#         for file_id, file_path in files_with_ids.items():
-#             if os.path.exists(file_path):
-#                 df = pd.read_csv(file_path)
-#                 html_table = df.to_html(index=False, classes='table table-striped', border=0, table_id=file_id)
-#                 html_filename = os.path.join(output_dir, os.path.basename(file_path).replace('.csv', '.html'))
-#                 with open(html_filename, 'w') as f:
-#                     f.write(f"""
-#                     <!DOCTYPE html>
-#                     <html>
-#                     <head>
-#                         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-#                         <title>{os.path.basename(file_path)}</title>
-#                     </head>
-#                     <body>
-#                         <div class="container">
-#                             <h1>{os.path.basename(file_path)}</h1>
-#                             {html_table}
-#                         </div>
-#                     </body>
-#                     </html>
-#                     """)
-#         EOF
-
-#     - name: Convert CSV to Excel
-#       run: |
-#         python - <<EOF
-#         import pandas as pd
-#         import os
-#         from openpyxl import load_workbook
-
-#         # Create the output directory if it doesn't exist
-#         output_dir = "doc/data/excel_output"
-#         os.makedirs(output_dir, exist_ok=True)
-
-#         # Function to auto-adjust excel column widths
-#         def auto_adjust_column_widths(workbook):
-#             for sheet in workbook.worksheets:
-#                 for col in sheet.columns:
-#                     max_length = 0
-#                     column = col[0].column_letter # Get the column name
-#                     for cell in col:
-#                         try:
-#                             if len(str(cell.value)) > max_length:
-#                                 max_length = len(cell.value)
-#                         except:
-#                             pass
-#                     adjusted_width = (max_length + 2)
-#                     sheet.column_dimensions[column].width = adjusted_width
-
-#         # Function to write multiple CSVs to a single Excel file
-#         def write_to_excel(output_file, sheets):
-#             with pd.ExcelWriter(output_file, engine='openpyxl') as writer:
-#                 for sheet_name, file_path in sheets.items():
-#                     if os.path.exists(file_path):
-#                         df = pd.read_csv(file_path)
-#                         df.to_excel(writer, index=False, sheet_name=sheet_name)
-#             workbook = load_workbook(output_file)
-#             auto_adjust_column_widths(workbook)
-#             workbook.save(output_file)
-
-#         # Background data
-#         background_sheets = {
-#             "BackgroundDB_SourceDatasets_ecoinvent": "doc/data/BackgroundDB_SourceDatasets_ecoinvent.csv",
-#             "BackgroundDB_SourceDatasets_GaBi": "doc/data/BackgroundDB_SourceDatasets_GaBi.csv"
-#         }
-#         write_to_excel("doc/data/excel_output/BackgroundData.xlsx", background_sheets)
-
-#         # Indicator data
-#         indicator_sheets = {
-#             "Common_references": "doc/data/Common_references.csv",
-#             "Country-specific_indicators": "doc/data/Country-specific_indicators.csv",
-#             "EN15804+A1_indicators": "doc/data/EN15804+A1_indicators.csv",
-#             "EN15804+A2_indicators": "doc/data/EN15804+A2_indicators.csv",
-#             "Flow_properties_and_unit_groups": "doc/data/Flow_properties_and_unit_groups.csv"
-#         }
-#         write_to_excel("doc/data/excel_output/Indicators.xlsx", indicator_sheets)
-#         EOF
-
-#     - name: Check output
-#       run: |
-#         echo "Listing files in doc/data/html_output directory"
-#         ls -l doc/data/html_output || echo "doc/data/html_output directory not found or is empty"
-#         echo "Listing files in doc/data/excel_output directory"
-#         ls -l doc/data/excel_output || echo "doc/data/excel_output directory not found or is empty"
-
-#     - name: Commit and push HTML and Excel files
-#       if: success()
-#       run: |
-#         git config --global user.name 'github-actions[bot]'
-#         git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-#         git add doc/data/html_output/*.html doc/data/excel_output/*.xlsx || exit 0
-#         git commit -m 'Automated conversion of CSV to HTML and Excel'
-#         git push origin HEAD:gitActions
-
-
-name: Convert CSV, Create Release and Deploy GitHub Pages
+name: Convert CSV and Deploy GitHub Pages
 
 on:
   push:
     tags:
       - 'v*.*.*'
-  branches:
-    - main
-    - gitActions
-  # paths:
-  #   - 'doc/*.csv' 
+    branches:
+      - main
+      - gitActions
 
 permissions:
   contents: write
@@ -299,28 +145,28 @@ jobs:
         git commit -m "Update README for version ${TAG_NAME}"
         git push origin HEAD:main
 
-  release:
-    runs-on: ubuntu-latest
-    needs: build
-
-    steps:
-    - name: Checkout repository
-      uses: actions/checkout@v2
-
-    - name: Create Release
-      id: create_release
-      uses: actions/create-release@v1
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      with:
-        tag_name: ${{ github.ref }}
-        release_name: Release ${{ github.ref }}
-        body: |
-          Release notes for version ${{ github.ref }}
-        draft: false
-        prerelease: false
-
-    - name: Create Release Asset
-      run: |
-        zip -r release.zip .
-        gh release upload ${{ github.ref }} release.zip
+#   release:
+#     runs-on: ubuntu-latest
+#     needs: build
+#
+#     steps:
+#     - name: Checkout repository
+#       uses: actions/checkout@v2
+#
+#     - name: Create Release
+#       id: create_release
+#       uses: actions/create-release@v1
+#       env:
+#         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+#       with:
+#         tag_name: ${{ github.ref }}
+#         release_name: Release ${{ github.ref }}
+#         body: |
+#           Release notes for version ${{ github.ref }}
+#         draft: false
+#         prerelease: false
+#
+#     - name: Create Release Asset
+#       run: |
+#         zip -r release.zip .
+#         gh release upload ${{ github.ref }} release.zip
