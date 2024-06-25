@@ -1,0 +1,93 @@
+name: Create Version and Release
+
+on:
+  push:
+    tags:
+      - 'v*.*.*'  # Triggers on version tags like v1.0.0
+
+permissions:
+  contents: write  # Grants write permissions to the contents of the repository
+
+jobs:
+  create-release:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.x'
+
+    - name: Create release zip
+      run: |
+        TAG_NAME=${GITHUB_REF##*/}
+        ZIP_FILE="doc/releases/${TAG_NAME}.zip"
+        mkdir -p doc/releases
+        zip -r $ZIP_FILE .
+        echo "Created zip file: $ZIP_FILE"
+
+    - name: Extract Documentation
+      run: |
+        TAG_NAME=${GITHUB_REF##*/}
+        ZIP_FILE="doc/releases/${TAG_NAME}.zip"
+        UNZIP_DIR="docs/${TAG_NAME}"
+        mkdir -p $UNZIP_DIR
+        unzip $ZIP_FILE -d $UNZIP_DIR
+
+    - name: Create Versioned Documentation Page
+      run: |
+        TAG_NAME=${GITHUB_REF##*/}
+        DOC_DIR="docs/${TAG_NAME}"
+        cat <<EOF > ${DOC_DIR}/index.md
+# ILCD-EPD-Data-Format
+
+## Schema Documentation
+- [EPD_DataSet](EPD_DataSet.html)
+- [EPD_FlowDataSet](EPD_FlowDataSet.html)
+- [ILCD_Common_DataTypes](ILCD_Common_DataTypes.html)
+- [ILCD_Common_EnumerationValues](ILCD_Common_EnumerationValues.html)
+- [ILCD_ContactDataSet](ILCD_ContactDataSet.html)
+- [ILCD_FlowPropertyDataSet](ILCD_FlowPropertyDataSet.html)
+- [ILCD_LCIAMethodDataSet](ILCD_LCIAMethodDataSet.html)
+- [ILCD_SourceDataSet](ILCD_SourceDataSet.html)
+- [ILCD_UnitGroupDataSet](ILCD_UnitGroupDataSet.html)
+
+## Background Database
+- [BackgroundDB_SourceDatasets_ecoinvent](BackgroundDB_SourceDatasets_ecoinvent.html)
+- [BackgroundDB_SourceDatasets_GaBi](BackgroundDB_SourceDatasets_GaBi.html)
+
+## Indicators
+- [EN15804+A1 indicators](EN15804+A1_indicators.html)
+- [EN15804+A2 indicators](EN15804+A2_indicators.html)
+- [Common references](Common_references.html)
+- [Country specific indicators](Country_specific_indicators.html)
+- [Flow properties and unit groups](Flow_properties_and_unit_groups.html)
+
+## Download Excel Files
+- [Download Background Database](excel_output/BackgroundData.xlsx)
+- [Download Indicators](excel_output/Indicators.xlsx)
+EOF
+
+        git add ${DOC_DIR}/index.md
+        git commit -m "Add versioned documentation for ${TAG_NAME}"
+        git push origin HEAD:${GITHUB_REF}
+
+    - name: Update Previous Versions in README
+      run: |
+        TAG_NAME=${GITHUB_REF##*/}
+        echo "- [${TAG_NAME}](https://<your-username>.github.io/<your-repo-name>/${TAG_NAME}/index.html)" >> README.md
+        git config --global user.name 'github-actions[bot]'
+        git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+        git add README.md
+        git commit -m "Add ${TAG_NAME} to Previous versions in README"
+        git push origin HEAD:${GITHUB_REF}
+
+    - name: Deploy to GitHub Pages
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./docs
+        destination_dir: .  # Ensure we don't create an additional subdirectory
