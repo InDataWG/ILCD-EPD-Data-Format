@@ -89,11 +89,9 @@ EOF
     - name: Update Previous Versions in README
       run: |
         TAG_NAME=${GITHUB_REF##*/}
-        echo "- [${TAG_NAME}](https://<your-username>.github.io/<your-repo-name>/docs/${TAG_NAME}/index.html)" >> README.md
+        echo "- [${TAG_NAME}](https://indatawg.github.io/ILCD-EPD-Data-Format/docs/${TAG_NAME}/index.html)" >> README.md
         git config --global user.name 'github-actions[bot]'
         git config --global user.email 'github-actions[bot]@users.noreply.github.com'
         git add README.md
         git commit -m "Add ${TAG_NAME} to Previous versions in README"
         git push origin HEAD:${GITHUB_REF}
-
-  
