@@ -53,16 +53,16 @@ jobs:
             <style>
                 body {
                     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-                    line-height: 1.6;
+                    line-height: 1.5;
                     margin: 0;
                     padding: 0;
                     background-color: #fff;
                     color: #24292e;
                 }
                 .container {
-                    max-width: 800px;
-                    margin: 40px auto;
-                    padding: 20px;
+                    max-width: 1012px;
+                    margin: 32px auto;
+                    padding: 16px;
                 }
                 h1, h2, h3 {
                     border-bottom: 1px solid #eaecef;
@@ -78,11 +78,14 @@ jobs:
                     font-size: 1.25em;
                 }
                 ul {
-                    list-style: none;
-                    padding: 0;
+                    list-style: disc;
+                    padding: 0 0 0 20px;
                 }
                 ul li {
                     padding: 5px 0;
+                }
+                ul li::marker {
+                    color: #24292e;
                 }
                 ul li a {
                     text-decoration: none;
@@ -94,7 +97,7 @@ jobs:
             </style>
         </head>
         <body>
-            <div class="container">
+            <div class="container markdown-body">
                 <h1>ILCD-EPD-Data-Format</h1>
                 <h2>${TAG_NAME} Documentation</h2>
                 <h3>Schema Documentation</h3>
@@ -134,7 +137,6 @@ jobs:
             </div>
         </body>
         </html>
-
         EOF
 
     - name: Commit and push documentation and zip
