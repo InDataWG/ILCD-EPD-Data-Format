@@ -34,12 +34,12 @@ jobs:
         git config --global user.name 'github-actions[bot]'
         git config --global user.email 'github-actions[bot]@users.noreply.github.com'
 
-    - name: Determine branch name
-      id: get_branch
-      run: |
-        TAG_NAME=${GITHUB_REF##*/}
-        BRANCH_NAME=$(git branch -r --contains $TAG_NAME | grep -Eo 'origin/[^ ]+' | head -1 | sed 's|origin/||')
-        echo "branch_name=$BRANCH_NAME" >> $GITHUB_ENV
+    # - name: Determine branch name
+    #   id: get_branch
+    #   run: |
+    #     TAG_NAME=${GITHUB_REF##*/}
+    #     BRANCH_NAME=$(git branch -r --contains $TAG_NAME | grep -Eo 'origin/[^ ]+' | head -1 | sed 's|origin/||')
+    #     echo "branch_name=$BRANCH_NAME" >> $GITHUB_ENV
 
     - name: Create Versioned Documentation Page
       run: |
@@ -102,7 +102,7 @@ jobs:
         git config --global user.email 'github-actions[bot]@users.noreply.github.com'
         git add doc/releases/${TAG_NAME}/index.html
         git commit -m "Add versioned documentation for ${TAG_NAME}"
-        git push origin "HEAD:refs/heads/${{ env.branch_name }}"  # Push to the branch from which the tag was created
+        git push origin HEAD:gitActions
 
     - name: Update Previous Versions in README
       if: success()
@@ -113,4 +113,4 @@ jobs:
         git config --global user.email 'github-actions[bot]@users.noreply.github.com'
         git add README.md
         git commit -m "Add ${TAG_NAME} to Previous versions in README"
-        git push origin "HEAD:refs/heads/${{ env.branch_name }}"  # Push to the branch from which the tag was created
+        git push origin HEAD:gitActions
