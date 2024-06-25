@@ -24,8 +24,9 @@ jobs:
     - name: Create release zip
       run: |
         TAG_NAME=${GITHUB_REF##*/}
-        ZIP_FILE="doc/releases/${TAG_NAME}.zip"
-        mkdir -p doc/releases
+        DOC_DIR="doc/releases/${TAG_NAME}"
+        mkdir -p ${DOC_DIR}
+        ZIP_FILE="doc/releases/${TAG_NAME}/${TAG_NAME}.zip"
         zip -r $ZIP_FILE .
         echo "Created zip file: $ZIP_FILE"
 
@@ -45,7 +46,6 @@ jobs:
       run: |
         TAG_NAME=${GITHUB_REF##*/}
         DOC_DIR="doc/releases/${TAG_NAME}"
-        mkdir -p ${DOC_DIR}
         cat <<EOF > ${DOC_DIR}/index.html
         <!DOCTYPE html>
         <html lang="en">
