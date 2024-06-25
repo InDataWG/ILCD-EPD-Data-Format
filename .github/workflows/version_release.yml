@@ -27,8 +27,8 @@ jobs:
         DOC_DIR="doc/releases/${TAG_NAME}"
         mkdir -p ${DOC_DIR}
         ZIP_FILE="${DOC_DIR}/${TAG_NAME}.zip"
-        # Create the zip file
-        zip -r $ZIP_FILE .
+        # Create the zip file, excluding the releases directory
+        zip -r $ZIP_FILE . -x "doc/releases/*"
         echo "Created zip file: $ZIP_FILE"
         # Copy the contents of the doc folder to the DOC_DIR
         rsync -av --exclude=${DOC_DIR} doc/ ${DOC_DIR}/doc/
