@@ -21,14 +21,18 @@ jobs:
       with:
         python-version: '3.x'
 
-    - name: Create release zip
+    - name: Create release zip and copy contents
       run: |
         TAG_NAME=${GITHUB_REF##*/}
         DOC_DIR="doc/releases/${TAG_NAME}"
         mkdir -p ${DOC_DIR}
-        ZIP_FILE="doc/releases/${TAG_NAME}/${TAG_NAME}.zip"
+        ZIP_FILE="${DOC_DIR}/${TAG_NAME}.zip"
+        # Create the zip file
         zip -r $ZIP_FILE .
         echo "Created zip file: $ZIP_FILE"
+        # Copy the contents to the DOC_DIR
+        cp -r * ${DOC_DIR}/
+        echo "Copied contents to: ${DOC_DIR}"
 
     - name: Configure Git
       run: |
@@ -101,7 +105,7 @@ jobs:
       if: success()
       run: |
         TAG_NAME=${GITHUB_REF##*/}
-        echo "- [${TAG_NAME}](https://indatawg.github.io/ILCD-EPD-Data-Format/doc/releases/${TAG_NAME}/index.html)" >> README.md
+        echo "- [${TAG_NAME}](doc/releases/${TAG_NAME}/index.html)" >> README.md
         git config --global user.name 'github-actions[bot]'
         git config --global user.email 'github-actions[bot]@users.noreply.github.com'
         git add README.md
