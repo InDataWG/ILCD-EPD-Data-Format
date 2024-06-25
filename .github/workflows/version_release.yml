@@ -15,8 +15,6 @@ jobs:
     steps:
     - name: Checkout repository
       uses: actions/checkout@v2
-      with:
-        fetch-depth: 0
 
     - name: Set up Python
       uses: actions/setup-python@v2
@@ -35,12 +33,6 @@ jobs:
       run: |
         git config --global user.name 'github-actions[bot]'
         git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-
-    - name: Determine branch name
-      id: vars
-      run: |
-        BRANCH_NAME=$(git symbolic-ref --short HEAD)
-        echo "branch_name=${BRANCH_NAME}" >> $GITHUB_ENV
 
     - name: Create Versioned Documentation Page
       run: |
@@ -96,15 +88,16 @@ jobs:
         EOF
 
     - name: Commit and push documentation
+      if: success()
       run: |
-        TAG_NAME=${GITHUB_REF##*/}
         git config --global user.name 'github-actions[bot]'
         git config --global user.email 'github-actions[bot]@users.noreply.github.com'
         git add doc/releases/${TAG_NAME}/index.html
         git commit -m "Add versioned documentation for ${TAG_NAME}"
-        git push origin HEAD:${{ env.branch_name }}
+        git push origin HEAD
 
     - name: Update Previous Versions in README
+      if: success()
       run: |
         TAG_NAME=${GITHUB_REF##*/}
         echo "- [${TAG_NAME}](https://indatawg.github.io/ILCD-EPD-Data-Format/doc/releases/${TAG_NAME}/index.html)" >> README.md
@@ -112,4 +105,4 @@ jobs:
         git config --global user.email 'github-actions[bot]@users.noreply.github.com'
         git add README.md
         git commit -m "Add ${TAG_NAME} to Previous versions in README"
-        git push origin HEAD:${{ env.branch_name }}
+        git push origin HEAD
