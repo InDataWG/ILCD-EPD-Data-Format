@@ -34,6 +34,12 @@ jobs:
         git config --global user.name 'github-actions[bot]'
         git config --global user.email 'github-actions[bot]@users.noreply.github.com'
 
+    - name: Determine branch name
+      id: vars
+      run: |
+        BRANCH_NAME=$(git name-rev --name-only HEAD)
+        echo "branch_name=${BRANCH_NAME}" >> $GITHUB_ENV
+
     - name: Create Versioned Documentation Page
       run: |
         TAG_NAME=${GITHUB_REF##*/}
@@ -94,7 +100,7 @@ jobs:
         git config --global user.email 'github-actions[bot]@users.noreply.github.com'
         git add doc/releases/${TAG_NAME}/index.html
         git commit -m "Add versioned documentation for ${TAG_NAME}"
-        git push origin HEAD
+        git push origin HEAD:refs/heads/${{ env.branch_name }}
 
     - name: Update Previous Versions in README
       run: |
@@ -104,4 +110,4 @@ jobs:
         git config --global user.email 'github-actions[bot]@users.noreply.github.com'
         git add README.md
         git commit -m "Add ${TAG_NAME} to Previous versions in README"
-        git push origin HEAD
+        git push origin HEAD:refs/heads/${{ env.branch_name }}
