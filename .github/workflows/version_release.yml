@@ -85,9 +85,13 @@ jobs:
             </ul>
         </body>
         </html>
-        EOF
+EOF
 
-        git add ${DOC_DIR}/index.html
+    - name: Commit and push documentation
+      run: |
+        git config --global user.name 'github-actions[bot]'
+        git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+        git add docs/${TAG_NAME}/index.html
         git commit -m "Add versioned documentation for ${TAG_NAME}"
         git push origin HEAD
 
