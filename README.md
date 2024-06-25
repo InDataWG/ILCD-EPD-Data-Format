@@ -27,3 +27,4 @@
 - [Download Indicators](doc/data/excel_output/Indicators.xlsx)
 ## Previous Versions
 - [v1.0.2](doc/releases/v1.0.2/index.html)
+- [v1.0.0](doc/releases/v1.0.0/index.html)
