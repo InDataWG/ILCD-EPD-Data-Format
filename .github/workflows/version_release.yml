@@ -3,10 +3,10 @@ name: Create Version and Release
 on:
   push:
     tags:
-      - 'v*.*.*' 
+      - 'v*.*.*'
 
 permissions:
-  contents: write 
+  contents: write
 
 jobs:
   create-release:
@@ -21,7 +21,7 @@ jobs:
       with:
         python-version: '3.x'
 
-    - name: Create release zip and copy contents
+    - name: Create release zip and copy doc folder
       run: |
         TAG_NAME=${GITHUB_REF##*/}
         DOC_DIR="doc/releases/${TAG_NAME}"
@@ -30,9 +30,9 @@ jobs:
         # Create the zip file
         zip -r $ZIP_FILE .
         echo "Created zip file: $ZIP_FILE"
-        # Copy the contents to the DOC_DIR
-        cp -r * ${DOC_DIR}/
-        echo "Copied contents to: ${DOC_DIR}"
+        # Copy doc folder to the DOC_DIR
+        cp -r doc ${DOC_DIR}/
+        echo "Copied doc folder to: ${DOC_DIR}"
 
     - name: Configure Git
       run: |
@@ -97,7 +97,7 @@ jobs:
         TAG_NAME=${GITHUB_REF##*/}
         git config --global user.name 'github-actions[bot]'
         git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-        git add doc/releases/${TAG_NAME}/index.html doc/releases/${TAG_NAME}/${TAG_NAME}.zip
+        git add doc/releases/${TAG_NAME}/index.html doc/releases/${TAG_NAME}/${TAG_NAME}.zip doc/releases/${TAG_NAME}/doc
         git commit -m "Add versioned documentation and zip for ${TAG_NAME}"
         git push origin HEAD:gitActions
 
