@@ -1,18 +1,15 @@
-name: Convert CSV to HTML and Excel
+name: Create Version and Release
 
 on:
   push:
-    branches:
-      - main
-      - gitActions
-    # paths:
-    #   - 'doc/data/*.csv' 
+    tags:
+      - 'v*.*.*'  # Triggers on version tags like v1.0.0
 
 permissions:
-  contents: write 
+  contents: write  # Grants write permissions to the contents of the repository
 
 jobs:
-  build:
+  create-release:
     runs-on: ubuntu-latest
 
     steps:
@@ -24,127 +21,77 @@ jobs:
       with:
         python-version: '3.x'
 
-    - name: Install dependencies
+    - name: Create release zip
       run: |
-        python -m pip install --upgrade pip
-        pip install pandas openpyxl
+        TAG_NAME=${GITHUB_REF##*/}
+        ZIP_FILE="doc/releases/${TAG_NAME}.zip"
+        mkdir -p doc/releases
+        zip -r $ZIP_FILE .
+        echo "Created zip file: $ZIP_FILE"
 
-    - name: List CSV files
+    - name: Create Versioned Documentation Page
       run: |
-        echo "Listing CSV files in the /doc/data/ directory"
-        ls -l doc/data/*.csv || echo "No CSV files found in /doc/data/"
+        TAG_NAME=${GITHUB_REF##*/}
+        DOC_DIR="docs/${TAG_NAME}"
+        mkdir -p ${DOC_DIR}
+        cat <<EOF > ${DOC_DIR}/index.html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>${TAG_NAME} Documentation</title>
+</head>
+<body>
+    <h1>ILCD-EPD-Data-Format</h1>
 
-    - name: Convert CSV to HTML
+    <h2>Schema Documentation</h2>
+    <ul>
+        <li><a href="../../releases/${TAG_NAME}/doc/schemadoc/EPD_DataSet.html">EPD_DataSet</a></li>
+        <li><a href="../../releases/${TAG_NAME}/doc/schemadoc/EPD_FlowDataSet.html">EPD_FlowDataSet</a></li>
+        <li><a href="../../releases/${TAG_NAME}/doc/schemadoc/ILCD_Common_DataTypes.html">ILCD_Common_DataTypes</a></li>
+        <li><a href="../../releases/${TAG_NAME}/doc/schemadoc/ILCD_Common_EnumerationValues.html">ILCD_Common_EnumerationValues</a></li>
+        <li><a href="../../releases/${TAG_NAME}/doc/schemadoc/ILCD_ContactDataSet.html">ILCD_ContactDataSet</a></li>
+        <li><a href="../../releases/${TAG_NAME}/doc/schemadoc/ILCD_FlowPropertyDataSet.html">ILCD_FlowPropertyDataSet</a></li>
+        <li><a href="../../releases/${TAG_NAME}/doc/schemadoc/ILCD_LCIAMethodDataSet.html">ILCD_LCIAMethodDataSet</a></li>
+        <li><a href="../../releases/${TAG_NAME}/doc/schemadoc/ILCD_SourceDataSet.html">ILCD_SourceDataSet</a></li>
+        <li><a href="../../releases/${TAG_NAME}/doc/schemadoc/ILCD_UnitGroupDataSet.html">ILCD_UnitGroupDataSet</a></li>
+    </ul>
+
+    <h2>Background Database</h2>
+    <ul>
+        <li><a href="../../releases/${TAG_NAME}/doc/data/html_output/BackgroundDB_SourceDatasets_ecoinvent.html">BackgroundDB_SourceDatasets_ecoinvent</a></li>
+        <li><a href="../../releases/${TAG_NAME}/doc/data/html_output/BackgroundDB_SourceDatasets_GaBi.html">BackgroundDB_SourceDatasets_GaBi</a></li>
+    </ul>
+  
+    <h2>Indicators</h2>
+    <ul>
+        <li><a href="../../releases/${TAG_NAME}/doc/data/html_output/EN15804+A1_indicators.html">EN15804+A1 indicators</a></li>
+        <li><a href="../../releases/${TAG_NAME}/doc/data/html_output/EN15804+A2_indicators.html">EN15804+A2 indicators</a></li>
+        <li><a href="../../releases/${TAG_NAME}/doc/data/html_output/Common_references.html">Common references</a></li>
+        <li><a href="../../releases/${TAG_NAME}/doc/data/html_output/Country_specific_indicators.html">Country specific indicators</a></li>
+        <li><a href="../../releases/${TAG_NAME}/doc/data/html_output/Flow_properties_and_unit_groups.html">Flow properties and unit groups</a></li>
+    </ul>
+
+    <h2>Download Excel Files</h2>
+    <ul>
+        <li><a href="../../releases/${TAG_NAME}/doc/data/excel_output/BackgroundData.xlsx">Download Background Database</a></li>
+        <li><a href="../../releases/${TAG_NAME}/doc/data/excel_output/Indicators.xlsx">Download Indicators</a></li>
+    </ul>
+</body>
+</html>
+EOF
+
+        git add ${DOC_DIR}/index.html
+        git commit -m "Add versioned documentation for ${TAG_NAME}"
+        git push origin HEAD:${GITHUB_REF}
+
+    - name: Update Previous Versions in README
       run: |
-        python - <<EOF
-        import pandas as pd
-        import os
-
-        # Create the output directory if it doesn't exist
-        output_dir = "doc/data/html_output"
-        os.makedirs(output_dir, exist_ok=True)
-
-        # Define the files and their IDs
-        files_with_ids = {
-            "BackgroundDB_SourceDatasets_ecoinvent": "doc/data/BackgroundDB_SourceDatasets_ecoinvent.csv",
-            "BackgroundDB_SourceDatasets_GaBi": "doc/data/BackgroundDB_SourceDatasets_GaBi.csv",
-            "Common_references": "doc/data/Common_references.csv",
-            "Country-specific_indicators": "doc/data/Country-specific_indicators.csv",
-            "EN15804+A1_indicators": "doc/data/EN15804+A1_indicators.csv",
-            "EN15804+A2_indicators": "doc/data/EN15804+A2_indicators.csv",
-            "Flow_properties_and_unit_groups": "doc/data/Flow_properties_and_unit_groups.csv"
-        }
-
-        for file_id, file_path in files_with_ids.items():
-            if os.path.exists(file_path):
-                df = pd.read_csv(file_path)
-                html_table = df.to_html(index=False, classes='table table-striped', border=0, table_id=file_id)
-                html_filename = os.path.join(output_dir, os.path.basename(file_path).replace('.csv', '.html'))
-                with open(html_filename, 'w') as f:
-                    f.write(f"""
-                    <!DOCTYPE html>
-                    <html>
-                    <head>
-                        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-                        <title>{os.path.basename(file_path)}</title>
-                    </head>
-                    <body>
-                        <div class="container">
-                            <h1>{os.path.basename(file_path)}</h1>
-                            {html_table}
-                        </div>
-                    </body>
-                    </html>
-                    """)
-        EOF
-
-    - name: Convert CSV to Excel
-      run: |
-        python - <<EOF
-        import pandas as pd
-        import os
-        from openpyxl import load_workbook
-
-        # Create the output directory if it doesn't exist
-        output_dir = "doc/data/excel_output"
-        os.makedirs(output_dir, exist_ok=True)
-
-        # Function to auto-adjust excel column widths
-        def auto_adjust_column_widths(workbook):
-            for sheet in workbook.worksheets:
-                for col in sheet.columns:
-                    max_length = 0
-                    column = col[0].column_letter 
-                    for cell in col:
-                        try:
-                            if len(str(cell.value)) > max_length:
-                                max_length = len(cell.value)
-                        except:
-                            pass
-                    adjusted_width = (max_length + 2)
-                    sheet.column_dimensions[column].width = adjusted_width
-
-        # Function to write multiple CSVs to a single Excel file
-        def write_to_excel(output_file, sheets):
-            with pd.ExcelWriter(output_file, engine='openpyxl') as writer:
-                for sheet_name, file_path in sheets.items():
-                    if os.path.exists(file_path):
-                        df = pd.read_csv(file_path)
-                        df.to_excel(writer, index=False, sheet_name=sheet_name)
-            workbook = load_workbook(output_file)
-            auto_adjust_column_widths(workbook)
-            workbook.save(output_file)
-
-        # Background data
-        background_sheets = {
-            "BackgroundDB_SourceDatasets_ecoinvent": "doc/data/BackgroundDB_SourceDatasets_ecoinvent.csv",
-            "BackgroundDB_SourceDatasets_GaBi": "doc/data/BackgroundDB_SourceDatasets_GaBi.csv"
-        }
-        write_to_excel("doc/data/excel_output/BackgroundData.xlsx", background_sheets)
-
-        # Indicator data
-        indicator_sheets = {
-            "Common_references": "doc/data/Common_references.csv",
-            "Country-specific_indicators": "doc/data/Country-specific_indicators.csv",
-            "EN15804+A1_indicators": "doc/data/EN15804+A1_indicators.csv",
-            "EN15804+A2_indicators": "doc/data/EN15804+A2_indicators.csv",
-            "Flow_properties_and_unit_groups": "doc/data/Flow_properties_and_unit_groups.csv"
-        }
-        write_to_excel("doc/data/excel_output/Indicators.xlsx", indicator_sheets)
-        EOF
-
-    - name: Check output
-      run: |
-        echo "Listing files in doc/data/html_output directory"
-        ls -l doc/data/html_output || echo "doc/data/html_output directory not found or is empty"
-        echo "Listing files in doc/data/excel_output directory"
-        ls -l doc/data/excel_output || echo "doc/data/excel_output directory not found or is empty"
-
-    - name: Commit and push HTML and Excel files
-      if: success()
-      run: |
+        TAG_NAME=${GITHUB_REF##*/}
+        echo "- [${TAG_NAME}](https://indatawg.github.io/ILCD-EPD-Data-Format/docs/${TAG_NAME}/index.html)" >> README.md
         git config --global user.name 'github-actions[bot]'
         git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-        git add doc/data/html_output/*.html doc/data/excel_output/*.xlsx || exit 0
-        git commit -m 'Automated conversion of CSV to HTML and Excel'
-        git push origin HEAD:gitActions
+        git add README.md
+        git commit -m "Add ${TAG_NAME} to Previous versions in README"
+        git push origin HEAD:${GITHUB_REF}
