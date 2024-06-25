@@ -35,13 +35,6 @@ jobs:
         git config --global user.name 'github-actions[bot]'
         git config --global user.email 'github-actions[bot]@users.noreply.github.com'
 
-    # - name: Determine branch name
-    #   id: get_branch
-    #   run: |
-    #     TAG_NAME=${GITHUB_REF##*/}
-    #     BRANCH_NAME=$(git branch -r --contains $TAG_NAME | grep -Eo 'origin/[^ ]+' | head -1 | sed 's|origin/||')
-    #     echo "branch_name=$BRANCH_NAME" >> $GITHUB_ENV
-
     - name: Create Versioned Documentation Page
       run: |
         TAG_NAME=${GITHUB_REF##*/}
@@ -94,14 +87,14 @@ jobs:
         </html>
         EOF
 
-    - name: Commit and push documentation
+    - name: Commit and push documentation and zip
       if: success()
       run: |
         TAG_NAME=${GITHUB_REF##*/}
         git config --global user.name 'github-actions[bot]'
         git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-        git add doc/releases/${TAG_NAME}/index.html
-        git commit -m "Add versioned documentation for ${TAG_NAME}"
+        git add doc/releases/${TAG_NAME}/index.html doc/releases/${TAG_NAME}/${TAG_NAME}.zip
+        git commit -m "Add versioned documentation and zip for ${TAG_NAME}"
         git push origin HEAD:gitActions
 
     - name: Update Previous Versions in README
