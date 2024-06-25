@@ -29,6 +29,11 @@ jobs:
         zip -r $ZIP_FILE .
         echo "Created zip file: $ZIP_FILE"
 
+    - name: Configure Git
+      run: |
+        git config --global user.name 'github-actions[bot]'
+        git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+
     - name: Create Versioned Documentation Page
       run: |
         TAG_NAME=${GITHUB_REF##*/}
