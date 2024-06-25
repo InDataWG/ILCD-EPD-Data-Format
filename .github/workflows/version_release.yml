@@ -122,7 +122,7 @@ jobs:
                     <li><a href="../../releases/${TAG_NAME}/doc/data/html_output/EN15804+A1_indicators.html">EN15804+A1 indicators</a></li>
                     <li><a href="../../releases/${TAG_NAME}/doc/data/html_output/EN15804+A2_indicators.html">EN15804+A2 indicators</a></li>
                     <li><a href="../../releases/${TAG_NAME}/doc/data/html_output/Common_references.html">Common references</a></li>
-                    <li><a href="../../releases/${TAG_NAME}/doc/data/html_output/Country_specific_indicators.html">Country specific indicators</a></li>
+                    <li><a href="../../releases/${TAG_NAME}/doc/data/html_output/Country-specific_indicators.html">Country specific indicators</a></li>
                     <li><a href="../../releases/${TAG_NAME}/doc/data/html_output/Flow_properties_and_unit_groups.html">Flow properties and unit groups</a></li>
                 </ul>
                 <h3>Download Excel Files</h3>

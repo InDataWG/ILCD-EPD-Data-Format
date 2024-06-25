@@ -19,11 +19,10 @@
 - [EN15804+A1 indicators](doc/data/html_output/EN15804+A1_indicators.html)
 - [EN15804+A2 indicators](doc/data/html_output/EN15804+A2_indicators.html)
 - [Common references](doc/data/html_output/Common_references.html)
-- [Country specific indicators](doc/data/html_output/Country_specific_indicators.html)
+- [Country specific indicators](doc/data/html_output/Country-specific_indicators.html)
 - [Flow properties and unit groups](doc/data/html_output/Flow_properties_and_unit_groups.html)
 
-## Download Excel Files
+## Download Excel FicCles
 - [Download Background Database](doc/data/excel_output/BackgroundData.xlsx)
 - [Download Indicators](doc/data/excel_output/Indicators.xlsx)
-## Previous Versions
-- [v1.0.0](doc/releases/v1.0.0/index.html)
+
