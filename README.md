@@ -26,6 +26,3 @@
 - [Download Background Database](doc/data/excel_output/BackgroundData.xlsx)
 - [Download Indicators](doc/data/excel_output/Indicators.xlsx)
 ## Previous Versions
-- [v1.0.8](https://indatawg.github.io/ILCD-EPD-Data-Format/doc/releases/v1.0.8/index.html)
-- [v1.0.0](https://indatawg.github.io/ILCD-EPD-Data-Format/doc/releases/v1.0.0/index.html)
-- [v1.0.2](https://indatawg.github.io/ILCD-EPD-Data-Format/doc/releases/v1.0.2/index.html)
