@@ -85,7 +85,7 @@ jobs:
             </ul>
         </body>
         </html>
-EOF
+        EOF
 
     - name: Commit and push documentation
       run: |
