@@ -30,8 +30,8 @@ jobs:
         # Create the zip file
         zip -r $ZIP_FILE .
         echo "Created zip file: $ZIP_FILE"
-        # Copy doc folder to the DOC_DIR
-        cp -r doc ${DOC_DIR}/
+        # Copy the contents of the doc folder to the DOC_DIR
+        rsync -av --exclude=${DOC_DIR} doc/ ${DOC_DIR}/doc/
         echo "Copied doc folder to: ${DOC_DIR}"
 
     - name: Configure Git
