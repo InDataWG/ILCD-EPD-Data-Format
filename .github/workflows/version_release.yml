@@ -89,6 +89,9 @@ jobs:
 
         git add ${DOC_DIR}/index.html
         git commit -m "Add versioned documentation for ${TAG_NAME}"
+
+    - name: Push changes
+      run: |
         git push origin HEAD:${GITHUB_REF}
 
     - name: Update Previous Versions in README
