@@ -26,3 +26,4 @@
 - [Download Background Database](doc/data/excel_output/BackgroundData.xlsx)
 - [Download Indicators](doc/data/excel_output/Indicators.xlsx)
 
+- [v0.0.1-test](doc/releases/v0.0.1-test/index.html)
