@@ -29,3 +29,4 @@
 - [v0.0.1-test](doc/releases/v0.0.1-test/index.html)
 - [v0.0.3-test](doc/releases/v0.0.3-test/index.html)
 - [v0.0.4-test](doc/releases/v0.0.4-test/index.html)
+- [v0.0.5-test](doc/releases/v0.0.5-test/index.html)
