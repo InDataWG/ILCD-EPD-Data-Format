@@ -1,0 +1,342 @@
+
+<!--ILCD Format 1.1 Documentation - Data Types - documentation stylesheet version 1.0.6-->
+<html xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <title>ILCD Format 1.1 Documentation - Data Types</title><style type="text/css">
+              table.top {
+              border: 1px solid #AB845D; 
+              background-color: #FFFBF3;
+              }
+              tr {
+              background-color:#FFFFFF;
+              }   
+              a {
+              color:#0A4755;
+              }
+              a:active, a:visited {
+              color:#894C0F;
+              }
+              
+              /* tooltip styles */
+              a.info {
+              position:relative; 
+              z-index:24;
+              color:#000000;
+              text-decoration:none
+              }
+              
+              a.info:hover {
+              z-index:25; 
+              background-color:#FFE8B7;
+              }
+              
+              a.info span {
+              display: none
+              }
+              
+              a.info:hover span {                                               
+              display:block;
+              position:absolute;
+              top:2em; left:2em; width:25em;
+              border:1px solid #7BCBDE;
+              background-color:#B9EDF7; 
+              color:#000000;
+              text-align: left
+              }
+              
+              /*   general styles  */                                               
+              .title 		{ 	
+              font-family: Helvetica,Arial,sans serif;
+              font-size: 14;
+              font-weight: bold;
+              vertical-align: top;
+              background-color: #fc9336 ;
+              color: #000000;
+              }
+              .toc 		{ 	
+              font-family: Helvetica,Arial,sans serif;
+              font-size: 12;
+              font-weight: normal;
+              vertical-align: top;
+              background-color: #FFD783 ;
+              color: #000000;
+              }
+              .section { 	
+              font-family: Helvetica,Arial,sans serif;
+              font-size: 14;
+              font-weight: bold;
+              vertical-align: top;   
+              background-color: #ffb951  ;
+              color: #000000;
+              }
+              .root { 	
+              font-family: Helvetica,Arial,sans serif;
+              font-size: 14;
+              font-weight: bold;
+              vertical-align: top;   
+              background-color: #ffb951  ;
+              color: #000000;
+              }
+              .subsection { 	
+              font-family: Helvetica,Arial,sans serif;
+              font-size: 12;
+              font-weight: bold;
+              vertical-align: top;   
+              background-color: #ffd783  ;
+              color: #000000;
+              }
+              .fieldname { 
+              font-family: Helvetica,Arial,sans serif;
+              font-size: 12;
+              font-weight: normal;
+              vertical-align: top;   
+              background-color: #FFF3D9;
+              color: #002277  ;
+              }
+              .data          { 
+              font-family: Helvetica,Arial,sans serif;
+              font-size: 12;
+              background-color: #FFFFFF;
+              color: #000000;
+              font-weight: normal;						
+              }
+              .data_neutral     { 
+              font-weight: normal;
+              }
+              .data_enum     { 
+              font-weight: normal;
+              font-style: italic;
+              }
+              .referencename   { 
+              font-family: Helvetica,Arial,sans serif;
+              font-size: 12;
+              font-weight: bold;
+              background-color: #FFFFFF ;
+              color: #002277  ;
+              }
+              .referencedata   { 
+              font-family: Helvetica,Arial,sans serif;
+              font-size: 12;
+              color: red;
+              background-color: #FFFFFF ;
+              color: #000000;
+              }
+              .table_header   { 
+              font-family: Helvetica,Arial,sans serif;
+              font-size: 11;
+              font-weight: normal;
+              background-color: #ffeece  ;
+              color: #002277  ;
+              }
+              .exchanges_section   { 
+              font-family: Helvetica,Arial,sans serif;
+              font-size: 9;
+              background-color: #ffeece ;
+              color: #000000;
+              }
+              .exchanges_data   { 
+              font-family: Helvetica,Arial,sans serif;
+              font-size: 9;
+              font-weight: bold;
+              background-color: #FFFFFF ;
+              color: #000000;
+              }
+              tr.highlight td.data {
+              border-width: 2px;
+              border-style: solid;
+              border-color: #A2D3DE;
+              }
+              .lang {
+              font-weight: normal;
+              color: grey;			
+              }
+              .warning {
+              font-weight: bold;
+              color: red;			
+              }
+            </style></head>
+   <body>
+      <h1>ILCD Format 1.1 Documentation - Data Types</h1>
+      <table id="tableID" style="table-layout:fixed;">
+         <tr>
+            <th class="title" style="width:14%">Data Type</th>
+            <th class="title" style="width:14%">Base Type</th>
+            <th class="title">Description</th>
+         </tr>
+         <tr>
+            <td class="subsection" style="padding-left: 10px;"><a name="CASNumber">CASNumber</a></td>
+            <td class="data">xs:string</td>
+            <td class="data">CAS Number, leading zeros are requried.</td>
+         </tr>
+         <tr>
+            <td class="subsection" style="padding-left: 10px;"><a name="FT">FT</a></td>
+            <td class="data">xs:string</td>
+            <td class="data">Free text with an unlimited length.</td>
+         </tr>
+         <tr>
+            <td class="subsection" style="padding-left: 10px;"><a name="FTMultiLang">FTMultiLang</a></td>
+            <td class="data">FT</td>
+            <td class="data">Multi-lang free text with an unlimited length.</td>
+         </tr>
+         <tr>
+            <td class="subsection" style="padding-left: 40px;"><a name="xml:lang">@xml:lang</a></td>
+            <td class="data"></td>
+            <td class="data"></td>
+         </tr>
+         <tr>
+            <td class="subsection" style="padding-left: 10px;"><a name="GIS">GIS</a></td>
+            <td class="data">xs:string</td>
+            <td class="data">Global geographical reference in Latitude and LongitudeExamples: "+42.42;-180", "0;0", "13.22 ; -3</td>
+         </tr>
+         <tr>
+            <td class="subsection" style="padding-left: 10px;"><a name="GlobalReferenceType">GlobalReferenceType</a></td>
+            <td class="data"></td>
+            <td class="data">Represents a reference to another dataset or file. Either refObjectId and version, or uri, or both have to be specified.</td>
+         </tr>
+         <tr>
+            <td class="subsection" style="padding-left: 20px;"><a name="type">@type</a></td>
+            <td class="data">GlobalReferenceTypeValues</td>
+            <td class="data">(required) - indicates the type of the referenced dataset/file. One of GlobalReferenceTypeValues.</td>
+         </tr>
+         <tr>
+            <td class="subsection" style="padding-left: 20px;"><a name="refObjectId">@refObjectId</a></td>
+            <td class="data">UUID</td>
+            <td class="data">UUID of the referenced object</td>
+         </tr>
+         <tr>
+            <td class="subsection" style="padding-left: 20px;"><a name="version">@version</a></td>
+            <td class="data">Version</td>
+            <td class="data">version number of the referenced object</td>
+         </tr>
+         <tr>
+            <td class="subsection" style="padding-left: 20px;"><a name="uri">@uri</a></td>
+            <td class="data">xs:anyURI</td>
+            <td class="data">URI of the referenced object</td>
+         </tr>
+         <tr>
+            <td class="subsection" style="padding-left: 30px;"><a name="subReference">subReference</a></td>
+            <td class="data">String</td>
+            <td class="data">Valid only for references of type "source data set". Allows to make references to sections, pages etc. within a source.</td>
+         </tr>
+         <tr>
+            <td class="subsection" style="padding-left: 30px;"><a name="shortDescription">shortDescription</a></td>
+            <td class="data">STMultiLang</td>
+            <td class="data">Short, clear-text summary of the referenced object that can be used as a hint what to expect behind the reference in cases
+               where it cannot be resolved.
+               
+            </td>
+         </tr>
+         <tr>
+            <td class="subsection" style="padding-left: 30px;"><a name="other">other</a></td>
+            <td class="data"></td>
+            <td class="data"></td>
+         </tr>
+         <tr>
+            <td class="subsection" style="padding-left: 10px;"><a name="Int1">Int1</a></td>
+            <td class="data">xs:integer</td>
+            <td class="data">1-digit integer number</td>
+         </tr>
+         <tr>
+            <td class="subsection" style="padding-left: 10px;"><a name="Int5">Int5</a></td>
+            <td class="data">xs:integer</td>
+            <td class="data">5-digit integer number</td>
+         </tr>
+         <tr>
+            <td class="subsection" style="padding-left: 10px;"><a name="Int6">Int6</a></td>
+            <td class="data">xs:integer</td>
+            <td class="data">6-digit integer number</td>
+         </tr>
+         <tr>
+            <td class="subsection" style="padding-left: 10px;"><a name="LevelType">LevelType</a></td>
+            <td class="data">Int1</td>
+            <td class="data">1-digit integer number, must be equal to or greater than 0</td>
+         </tr>
+         <tr>
+            <td class="subsection" style="padding-left: 10px;"><a name="MatR">MatR</a></td>
+            <td class="data">xs:string</td>
+            <td class="data">Mathematical rule</td>
+         </tr>
+         <tr>
+            <td class="subsection" style="padding-left: 10px;"><a name="MatV">MatV</a></td>
+            <td class="data">xs:string</td>
+            <td class="data">Mathematical variable or parameter</td>
+         </tr>
+         <tr>
+            <td class="subsection" style="padding-left: 10px;"><a name="NullableString">NullableString</a></td>
+            <td class="data">xs:string</td>
+            <td class="data">String with a maximum length of 500 characters. May be empty.</td>
+         </tr>
+         <tr>
+            <td class="subsection" style="padding-left: 10px;"><a name="Perc">Perc</a></td>
+            <td class="data">xs:decimal</td>
+            <td class="data">percentage amount</td>
+         </tr>
+         <tr>
+            <td class="subsection" style="padding-left: 10px;"><a name="Real">Real</a></td>
+            <td class="data">xs:double</td>
+            <td class="data">38-digit real number</td>
+         </tr>
+         <tr>
+            <td class="subsection" style="padding-left: 10px;"><a name="ST">ST</a></td>
+            <td class="data">xs:string</td>
+            <td class="data">Short text with a maximum length of 1000 characters.</td>
+         </tr>
+         <tr>
+            <td class="subsection" style="padding-left: 10px;"><a name="STMultiLang">STMultiLang</a></td>
+            <td class="data">ST</td>
+            <td class="data">Multi-lang short text with a maximum length of 1000 characters.</td>
+         </tr>
+         <tr>
+            <td class="subsection" style="padding-left: 40px;"><a name="xml:lang">@xml:lang</a></td>
+            <td class="data"></td>
+            <td class="data"></td>
+         </tr>
+         <tr>
+            <td class="subsection" style="padding-left: 10px;"><a name="SchemaVersion">SchemaVersion</a></td>
+            <td class="data">xs:string</td>
+            <td class="data">Version number</td>
+         </tr>
+         <tr>
+            <td class="subsection" style="padding-left: 10px;"><a name="String">String</a></td>
+            <td class="data">xs:string</td>
+            <td class="data">String with a maximum length of 500 characters. Must have a minimum length of 1.</td>
+         </tr>
+         <tr>
+            <td class="subsection" style="padding-left: 10px;"><a name="StringMultiLang">StringMultiLang</a></td>
+            <td class="data">String</td>
+            <td class="data">Multi-lang string with a maximum length of 500 characters.</td>
+         </tr>
+         <tr>
+            <td class="subsection" style="padding-left: 40px;"><a name="xml:lang">@xml:lang</a></td>
+            <td class="data"></td>
+            <td class="data"></td>
+         </tr>
+         <tr>
+            <td class="subsection" style="padding-left: 10px;"><a name="UUID">UUID</a></td>
+            <td class="data">xs:string</td>
+            <td class="data">Unique Universal Identifier, 16-byte hex number</td>
+         </tr>
+         <tr>
+            <td class="subsection" style="padding-left: 10px;"><a name="Version">Version</a></td>
+            <td class="data">xs:string</td>
+            <td class="data">Version number</td>
+         </tr>
+         <tr>
+            <td class="subsection" style="padding-left: 10px;"><a name="Year">Year</a></td>
+            <td class="data">xs:integer</td>
+            <td class="data">4-digit year</td>
+         </tr>
+         <tr>
+            <td class="subsection" style="padding-left: 10px;"><a name="boolean">boolean</a></td>
+            <td class="data">xs:boolean</td>
+            <td class="data">true, false, 1, or 0</td>
+         </tr>
+         <tr>
+            <td class="subsection" style="padding-left: 10px;"><a name="dateTime">dateTime</a></td>
+            <td class="data">xs:dateTime</td>
+            <td class="data">Date and time format acc. to ISO 8601, chapter 5.4</td>
+         </tr>
+      </table>
+   </body>
+</html>
