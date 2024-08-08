@@ -48,11 +48,11 @@ jobs:
         files_with_ids = {
             "BackgroundDB_SourceDatasets_ecoinvent": "doc/data/BackgroundDB_SourceDatasets_ecoinvent.csv",
             "BackgroundDB_SourceDatasets_GaBi": "doc/data/BackgroundDB_SourceDatasets_GaBi.csv",
-            "Common_references": "doc/data/Common_references.csv",
-            "Country-specific_indicators": "doc/data/Country-specific_indicators.csv",
-            "EN15804+A1_indicators": "doc/data/EN15804+A1_indicators.csv",
-            "EN15804+A2_indicators": "doc/data/EN15804+A2_indicators.csv",
-            "Flow_properties_and_unit_groups": "doc/data/Flow_properties_and_unit_groups.csv"
+            "Common references": "doc/data/Common_references.csv",
+            "Country-specific indicators": "doc/data/Country-specific_indicators.csv",
+            "EN15804+A1 indicators": "doc/data/EN15804+A1_indicators.csv",
+            "EN15804+A2 indicators": "doc/data/EN15804+A2_indicators.csv",
+            "Flow properties and unit groups": "doc/data/Flow_properties_and_unit_groups.csv"
         }
 
         for file_id, file_path in files_with_ids.items():
@@ -120,7 +120,7 @@ jobs:
             "ecoinvent database - source data sets": "doc/data/BackgroundDB_SourceDatasets_ecoinvent.csv",
             "GaBi database - source data sets": "doc/data/BackgroundDB_SourceDatasets_GaBi.csv"
         }
-        write_to_excel("doc/data/excel_output/BackgroundData.xlsx", background_sheets)
+        write_to_excel("doc/data/excel_output/BackgroundDatabases.xlsx", background_sheets)
 
         # Indicator data
         indicator_sheets = {
