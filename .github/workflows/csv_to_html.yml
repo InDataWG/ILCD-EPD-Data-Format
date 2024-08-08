@@ -46,8 +46,8 @@ jobs:
 
         # Define the files and their IDs
         files_with_ids = {
-            "BackgroundDB_SourceDatasets_ecoinvent": "doc/data/BackgroundDB_SourceDatasets_ecoinvent.csv",
-            "BackgroundDB_SourceDatasets_GaBi": "doc/data/BackgroundDB_SourceDatasets_GaBi.csv",
+            "ecoinvent database: source data sets": "doc/data/BackgroundDB_SourceDatasets_ecoinvent.csv",
+            "GaBi database: source data sets": "doc/data/BackgroundDB_SourceDatasets_GaBi.csv",
             "Common references": "doc/data/Common_references.csv",
             "Country-specific indicators": "doc/data/Country-specific_indicators.csv",
             "EN15804+A1 indicators": "doc/data/EN15804+A1_indicators.csv",
@@ -66,11 +66,11 @@ jobs:
                     <html>
                     <head>
                         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-                        <title>{os.path.basename(file_path)}</title>
+                        <title>{file_id}</title>
                     </head>
                     <body>
                         <div class="container">
-                            <h1>{os.path.basename(file_path)}</h1>
+                            <h1>{file_id}</h1>
                             {html_table}
                         </div>
                     </body>
