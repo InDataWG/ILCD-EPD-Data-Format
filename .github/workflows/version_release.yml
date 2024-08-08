@@ -127,8 +127,8 @@ jobs:
                 </ul>
                 <h3>Download Excel Files</h3>
                 <ul>
-                    <li><a href="../../releases/${TAG_NAME}/doc/data/excel_output/BackgroundData.xlsx">Download Background Database</a></li>
-                    <li><a href="../../releases/${TAG_NAME}/doc/data/excel_output/Indicators.xlsx">Download Indicators</a></li>
+                    <li><a href="../../releases/${TAG_NAME}/doc/data/excel_output/BackgroundDatabases.xlsx">Download list of background databases</a></li>
+                    <li><a href="../../releases/${TAG_NAME}/doc/data/excel_output/Indicators.xlsx">Download list of indicators</a></li>
                 </ul>
                 <h3>Download Package</h3>
                 <ul>
