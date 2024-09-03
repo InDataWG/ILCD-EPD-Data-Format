@@ -106,6 +106,9 @@
          .fieldname_epd2{
             background-color: #EED6F6;
          }
+         .fieldname_epd24{
+            background-color: #d7f7bd;
+         }
          .fieldname_epd2i{
             background-color: #EEFFF6;
          }
@@ -276,23 +279,29 @@
          in the EPD context as well as the additional fields introduced by the format extensions in the EPD namespace. 
          Where the meaning in the EPD context deviates from the original ILCD format definition, it is stated in the
          <i>Definition (en)</i> column; otherwise a ~ mark indicates that there is no deviation from the original definition.
-         </p><table>
-            <tr>
-               <td>Information in the EPD namespace v1.1 is displayed with</td>
-               <td class="fieldname_epd">blue background</td>
-               <td>.</td>
-            </tr>
-            <tr>
-               <td>Information in the EPD namespace v1.2 is displayed with</td>
-               <td class="fieldname_epd2">purple background</td>
-               <td>.</td>
-            </tr>
-             <tr>
-                 <td>Information in the EPD namespace v1.2 that is already <br/>part of the original ILCD namespace is displayed with</td>
-                 <td class="fieldname_epd2i">cyan background</td>
-                 <td>.</td>
-             </tr>
-         </table>
+      </p>
+      <table>
+         <tr>
+            <td>Information in the EPD namespace v1.1 is displayed with</td>
+            <td class="fieldname_epd">blue background</td>
+            <td>.</td>
+         </tr>
+         <tr>
+            <td>Information in the EPD namespace v1.2 is displayed with</td>
+            <td class="fieldname_epd2">purple background</td>
+            <td>.</td>
+         </tr>
+         <tr>
+            <td>Information in the EPD namespace v1.3 is displayed with</td>
+            <td class="fieldname_epd24">green background</td>
+            <td>.</td>
+         </tr>
+         <tr>
+            <td>Information in the EPD namespace v1.2 that is already <br/>part of the original ILCD namespace is displayed with</td>
+            <td class="fieldname_epd2i">cyan background</td>
+            <td>.</td>
+         </tr>
+      </table>
       
       <table id="tableID" style="table-layout:fixed;" width="1616">
          <col/>
@@ -676,6 +685,48 @@
             <td class="fieldname">0</td>
                 <td></td>
                 <td></td>
+         </tr>
+         <tr>
+            <td class="fieldname fieldname_epd24" style="padding-left: 40px;">Produktkennungen</td>
+            <td class="fieldname fieldname_epd24" style="padding-left: 40px;">Product identifiers</td>
+            <td class="fieldname fieldname_epd24" style="padding-left: 40px;">epd24:productIds</td>
+            <td class="fieldname fieldname_epd24">r</td>
+            <td class="fieldname fieldname_epd24">[0,n]</td>
+            <td class="fieldname fieldname_epd24"/>
+            <td class="fieldname fieldname_epd24">Liste verschiedener Produktkennungen, bspw. entsprechende GTIN- / GMN-Kennungen, Handelsnamen, ...</td>
+            <td class="fieldname fieldname_epd24">List of different product idenifiers, e.g. GTIN / GMN codes, trade names, ...</td>
+            <td class="fieldname fieldname_epd24">TODO</td>
+            <td class="fieldname fieldname_epd24">TODO</td>
+            <td/>
+            <td/>
+         </tr>
+         <tr>
+            <td class="fieldname fieldname_epd24" style="padding-left: 50px;">Produktkennung</td>
+            <td class="fieldname fieldname_epd24" style="padding-left: 50px;">Product identifier</td>
+            <td class="fieldname fieldname_epd24" style="padding-left: 50px;">epd24:productId</td>
+            <td class="fieldname fieldname_epd24">m</td>
+            <td class="fieldname fieldname_epd24">[1]</td>
+            <td class="fieldname fieldname_epd24"><a target="_blank" href="ILCD_Common_DataTypes.html#String">String</a></td>
+            <td class="fieldname fieldname_epd24">Produktkennung</td>
+            <td class="fieldname fieldname_epd24">Product idenifier</td>
+            <td class="fieldname fieldname_epd24">TODO</td>
+            <td class="fieldname fieldname_epd24">TODO</td>
+            <td/>
+            <td/>
+         </tr>
+         <tr>
+            <td class="fieldname fieldname_epd24" style="padding-left: 60px;">Kennungstyp</td>
+            <td class="fieldname fieldname_epd24" style="padding-left: 60px;">Identifier type</td>
+            <td class="fieldname fieldname_epd24" style="padding-left: 60px;">@epd24:type</td>
+            <td class="fieldname fieldname_epd24">m</td>
+            <td class="fieldname fieldname_epd24">[1]</td>
+            <td class="fieldname fieldname_epd24"><a target="_blank" href="ILCD_Common_DataTypes.html#String">String</a></td>
+            <td class="fieldname fieldname_epd24">Art der Produktkennung, e.g. 'GTIN', falls es sich um eine GTIN-Nummer handelt.</td>
+            <td class="fieldname fieldname_epd24">Declares the type of product idenifier, 'GTIN' if it is a GTIN number.</td>
+            <td class="fieldname fieldname_epd24">TODO</td>
+            <td class="fieldname fieldname_epd24">TODO</td>
+            <td/>
+            <td/>
          </tr>
          <tr>
             <td class="fieldname fieldname_epd" style="padding-left: 40px;">Sicherheitszuschläge</td>
