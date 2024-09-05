@@ -106,6 +106,9 @@
          .fieldname_epd2{
             background-color: #EED6F6;
          }
+         .fieldname_epd24{
+            background-color: #d7f7bd;
+         }
          .fieldname_epd2i{
             background-color: #EEFFF6;
          }
@@ -276,23 +279,29 @@
          in the EPD context as well as the additional fields introduced by the format extensions in the EPD namespace. 
          Where the meaning in the EPD context deviates from the original ILCD format definition, it is stated in the
          <i>Definition (en)</i> column; otherwise a ~ mark indicates that there is no deviation from the original definition.
-         </p><table>
-            <tr>
-               <td>Information in the EPD namespace v1.1 is displayed with</td>
-               <td class="fieldname_epd">blue background</td>
-               <td>.</td>
-            </tr>
-            <tr>
-               <td>Information in the EPD namespace v1.2 is displayed with</td>
-               <td class="fieldname_epd2">purple background</td>
-               <td>.</td>
-            </tr>
-             <tr>
-                 <td>Information in the EPD namespace v1.2 that is already <br/>part of the original ILCD namespace is displayed with</td>
-                 <td class="fieldname_epd2i">cyan background</td>
-                 <td>.</td>
-             </tr>
-         </table>
+      </p>
+      <table>
+         <tr>
+            <td>Information in the EPD namespace v1.1 is displayed with</td>
+            <td class="fieldname_epd">blue background</td>
+            <td>.</td>
+         </tr>
+         <tr>
+            <td>Information in the EPD namespace v1.2 is displayed with</td>
+            <td class="fieldname_epd2">purple background</td>
+            <td>.</td>
+         </tr>
+         <tr>
+            <td>Information in the EPD namespace v1.3 is displayed with</td>
+            <td class="fieldname_epd24">green background</td>
+            <td>.</td>
+         </tr>
+         <tr>
+            <td>Information in the EPD namespace v1.2 that is already <br/>part of the original ILCD namespace is displayed with</td>
+            <td class="fieldname_epd2i">cyan background</td>
+            <td>.</td>
+         </tr>
+      </table>
       
       <table id="tableID" style="table-layout:fixed;" width="1616">
          <col/>
@@ -676,6 +685,62 @@
             <td class="fieldname">0</td>
                 <td></td>
                 <td></td>
+         </tr>
+         <tr>
+            <td class="fieldname fieldname_epd24" style="padding-left: 40px;">Nutzungsdauer in Jahren</td>
+            <td class="fieldname fieldname_epd24" style="padding-left: 40px;">Service life in years</td>
+            <td class="fieldname fieldname_epd24" style="padding-left: 40px;">epd24:serviceLife</td>
+            <td class="fieldname fieldname_epd24">o</td>
+            <td class="fieldname fieldname_epd24">[0,1]</td>
+            <td class="fieldname fieldname_epd24"/>
+            <td class="fieldname fieldname_epd24">Beschreibt die erwartete Nutzungsdauer in Jahren, vgl. EN 15804+A2 7.3.3.2 'Reference Service Life (RSL)' und ISO 22057 'Estimated Service Life (ESL)'.</td>
+            <td class="fieldname fieldname_epd24">Describes the estimated service life / reference service life in years, c.f. EN 15804+A2 7.3.3.2 'Reference Service Life (RSL)' und ISO 22057 'Estimated Service Life (ESL)'.</td>
+            <td class="fieldname fieldname_epd24"/>
+            <td class="fieldname fieldname_epd24"/>
+            <td></td>
+            <td></td>
+         </tr>
+         <tr>
+            <td class="fieldname fieldname_epd24" style="padding-left: 50px;">Jahre</td>
+            <td class="fieldname fieldname_epd24" style="padding-left: 50px;">Years</td>
+            <td class="fieldname fieldname_epd24" style="padding-left: 50px;">epd24:years</td>
+            <td class="fieldname fieldname_epd24">m</td>
+            <td class="fieldname fieldname_epd24">[1]</td>
+            <td class="fieldname fieldname_epd24">Integer</td>
+            <td class="fieldname fieldname_epd24">Anzahl der Jahre</td>
+            <td class="fieldname fieldname_epd24">Number of years</td>
+            <td class="fieldname fieldname_epd24"/>
+            <td class="fieldname fieldname_epd24"/>
+            <td></td>
+            <td></td>
+         </tr>
+         <tr>
+            <td class="fieldname fieldname_epd24" style="padding-left: 50px;">Referenz zum Standard</td>
+            <td class="fieldname fieldname_epd24" style="padding-left: 50px;">Reference to standard</td>
+            <td class="fieldname fieldname_epd24" style="padding-left: 50px;">epd24:referenceToStandard</td>
+            <td class="fieldname fieldname_epd24">o</td>
+            <td class="fieldname fieldname_epd24">[0,1]</td>
+            <td class="fieldname fieldname_epd24"><a target="_blank" href="ILCD_Common_DataTypes.html#GlobalReferenceType">GlobalReferenceType</a></td>
+            <td class="fieldname fieldname_epd24">Referenz zum der Schätzung/Berechnung zugrundeliegenden Standard</td>
+            <td class="fieldname fieldname_epd24">Reference to the standard used for service life estimation</td>
+            <td class="fieldname fieldname_epd24"/>
+            <td class="fieldname fieldname_epd24"/>
+            <td></td>
+            <td></td>
+         </tr>
+         <tr>
+            <td class="fieldname fieldname_epd24" style="padding-left: 50px;">Kommentar</td>
+            <td class="fieldname fieldname_epd24" style="padding-left: 50px;">Comment</td>
+            <td class="fieldname fieldname_epd24" style="padding-left: 50px;">epd24:comment</td>
+            <td class="fieldname fieldname_epd24">o</td>
+            <td class="fieldname fieldname_epd24">[0,n]</td>
+            <td class="fieldname fieldname_epd24"><a target="_blank" href="ILCD_Common_DataTypes.html#FTMultiLang">FTMultiLang</a></td>
+            <td class="fieldname fieldname_epd24">Kommentarfeld</td>
+            <td class="fieldname fieldname_epd24">Comment field</td>
+            <td class="fieldname fieldname_epd24"/>
+            <td class="fieldname fieldname_epd24"/>
+            <td></td>
+            <td></td>
          </tr>
          <tr>
             <td class="fieldname fieldname_epd" style="padding-left: 40px;">Sicherheitszuschläge</td>
