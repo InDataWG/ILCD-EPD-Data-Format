@@ -8,4 +8,20 @@
    elementFormDefault="qualified" attributeFormDefault="qualified" version="1.1">
    <xs:import namespace="http://lca.jrc.it/ILCD/Common" schemaLocation="ILCD_Common_Groups.xsd"/>
    
+   <xs:element name="serviceLife">
+      <xs:complexType>
+         <xs:sequence>
+            <xs:element name="years" type="xs:int" minOccurs="1" maxOccurs="1"/>
+            <xs:element name="referenceToStandard" type="common:GlobalReferenceType" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="comment" type="common:FTMultiLang" minOccurs="0" maxOccurs="unbounded">
+               <!-- add unique constraint -->
+            </xs:element>
+         </xs:sequence>
+      </xs:complexType>
+      <xs:unique name="commentLangUniqueConstraint">
+         <xs:selector xpath="epd24:comment"/>
+         <xs:field xpath="@xml:lang"/>
+      </xs:unique>
+   </xs:element>
+
 </xs:schema>
