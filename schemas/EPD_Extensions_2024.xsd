@@ -7,5 +7,11 @@
    xmlns:common="http://lca.jrc.it/ILCD/Common" xmlns:process="http://lca.jrc.it/ILCD/Process" xmlns:ilcd="http://lca.jrc.it/ILCD"
    elementFormDefault="qualified" attributeFormDefault="qualified" version="1.1">
    <xs:import namespace="http://lca.jrc.it/ILCD/Common" schemaLocation="ILCD_Common_Groups.xsd"/>
+
+   <xs:element name="SVHC">
+      <xs:complexType>
+         <xs:attribute name="present" type="xs:boolean" use="required"/>
+      </xs:complexType>
+   </xs:element>
    
 </xs:schema>
