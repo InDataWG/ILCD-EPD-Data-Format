@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <processDataSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://lca.jrc.it/ILCD/Process ../../schemas/EPD_DataSet.xsd" xmlns="http://lca.jrc.it/ILCD/Process"
-    xmlns:common="http://lca.jrc.it/ILCD/Common" xmlns:epd="http://www.iai.kit.edu/EPD/2013" xmlns:epd2="http://www.indata.network/EPD/2019" version="1.1" locations="../ILCDLocations.xml"
+    xmlns:common="http://lca.jrc.it/ILCD/Common" xmlns:epd="http://www.iai.kit.edu/EPD/2013" xmlns:epd2="http://www.indata.network/EPD/2019" xmlns:epd24="http://www.indata.network/EPD/2024"
+    version="1.1" locations="../ILCDLocations.xml"
     epd2:epd-version="1.2">
     <processInformation>
         <dataSetInformation>
@@ -65,7 +66,12 @@
                         <epd2:weightPerc epd2:value="3.0"/>
                         <epd2:mass/>
                     </epd2:material>
+                    <epd2:substance epd2:CASNumber="20109-59-5" epd2:ECNumber="243-518-4" epd2:hazardCode="SVHC;H360D;H372">
+                       <epd2:name>Sodium perfluoroheptanoate</epd2:name>
+                       <epd2:weightPerc epd2:value="0.042"/>
+                    </epd2:substance>
                 </epd2:contentDeclaration>
+                <epd24:SVHC epd24:present="true" />
             </common:other>
         </dataSetInformation>
         <quantitativeReference type="Reference flow(s)">
