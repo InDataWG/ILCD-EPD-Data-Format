@@ -1,8 +1,8 @@
 <?xml version='1.0'?>
 <?xml-stylesheet type='text/xsl' href='../../stylesheets/epd2html.xsl' ?>
 <processDataSet xmlns="http://lca.jrc.it/ILCD/Process" xmlns:process="http://lca.jrc.it/ILCD/Process" xmlns:common="http://lca.jrc.it/ILCD/Common" xmlns:epd="http://www.iai.kit.edu/EPD/2013"
-    xmlns:epd2="http://www.indata.network/EPD/2019" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" locations="../ILCDLocations.xml" version="1.1"
-    xsi:schemaLocation="http://lca.jrc.it/ILCD/Process ../../schemas/EPD_DataSet.xsd">
+    xmlns:epd2="http://www.indata.network/EPD/2019" xmlns:epd24="http://www.indata.network/EPD/2024" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" locations="../ILCDLocations.xml"
+    version="1.1" xsi:schemaLocation="http://lca.jrc.it/ILCD/Process ../../schemas/EPD_DataSet.xsd">
     <processInformation>
         <dataSetInformation>
             <common:UUID>57a4ae65-d305-421e-b21f-a3f0c35b8abe</common:UUID>
