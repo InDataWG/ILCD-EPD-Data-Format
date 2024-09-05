@@ -106,6 +106,9 @@
          .fieldname_epd2{
             background-color: #EED6F6;
          }
+         .fieldname_epd24{
+            background-color: #d7f7bd;
+         }
          .fieldname_epd2i{
             background-color: #EEFFF6;
          }
@@ -276,23 +279,29 @@
          in the EPD context as well as the additional fields introduced by the format extensions in the EPD namespace. 
          Where the meaning in the EPD context deviates from the original ILCD format definition, it is stated in the
          <i>Definition (en)</i> column; otherwise a ~ mark indicates that there is no deviation from the original definition.
-         </p><table>
-            <tr>
-               <td>Information in the EPD namespace v1.1 is displayed with</td>
-               <td class="fieldname_epd">blue background</td>
-               <td>.</td>
-            </tr>
-            <tr>
-               <td>Information in the EPD namespace v1.2 is displayed with</td>
-               <td class="fieldname_epd2">purple background</td>
-               <td>.</td>
-            </tr>
-             <tr>
-                 <td>Information in the EPD namespace v1.2 that is already <br/>part of the original ILCD namespace is displayed with</td>
-                 <td class="fieldname_epd2i">cyan background</td>
-                 <td>.</td>
-             </tr>
-         </table>
+      </p>
+      <table>
+         <tr>
+            <td>Information in the EPD namespace v1.1 is displayed with</td>
+            <td class="fieldname_epd">blue background</td>
+            <td>.</td>
+         </tr>
+         <tr>
+            <td>Information in the EPD namespace v1.2 is displayed with</td>
+            <td class="fieldname_epd2">purple background</td>
+            <td>.</td>
+         </tr>
+         <tr>
+            <td>Information in the EPD namespace v1.3 is displayed with</td>
+            <td class="fieldname_epd24">green background</td>
+            <td>.</td>
+         </tr>
+         <tr>
+            <td>Information in the EPD namespace v1.2 that is already <br/>part of the original ILCD namespace is displayed with</td>
+            <td class="fieldname_epd2i">cyan background</td>
+            <td>.</td>
+         </tr>
+      </table>
       
       <table id="tableID" style="table-layout:fixed;" width="1616">
          <col/>
@@ -866,81 +875,81 @@
                 <td></td>
          </tr>
 
-          <tr>
-              <td class="fieldname fieldname_epd" style="padding-left: 40px;">de</td>
-              <td class="fieldname fieldname_epd" style="padding-left: 40px;">en</td>
-              <td class="fieldname fieldname_epd" style="padding-left: 40px;">field</td>
-              <td class="fieldname fieldname_epd">o</td>
-              <td class="fieldname fieldname_epd">[0,1]</td>
-              <td class="fieldname fieldname_epd"><a target="_blank" href="ILCD_Common_DataTypes.html#string">datatype</a></td>
-              <td class="fieldname fieldname_epd">de</td>
-              <td class="fieldname fieldname_epd">en</td>
-              <td class="fieldname fieldname_epd"/>
-              <td class="fieldname fieldname_epd"/>
-                <td></td>
-                <td></td>
-          </tr>
+         <tr>
+            <td class="fieldname fieldname_epd" style="padding-left: 40px;">de</td>
+            <td class="fieldname fieldname_epd" style="padding-left: 40px;">en</td>
+            <td class="fieldname fieldname_epd" style="padding-left: 40px;">field</td>
+            <td class="fieldname fieldname_epd">o</td>
+            <td class="fieldname fieldname_epd">[0,1]</td>
+            <td class="fieldname fieldname_epd"><a target="_blank" href="ILCD_Common_DataTypes.html#string">datatype</a></td>
+            <td class="fieldname fieldname_epd">de</td>
+            <td class="fieldname fieldname_epd">en</td>
+            <td class="fieldname fieldname_epd"/>
+            <td class="fieldname fieldname_epd"/>
+               <td></td>
+               <td></td>
+         </tr>
           
-          <tr>
-              <td class="fieldname fieldname_epd2" style="padding-left: 40px;">Inhaltsangabe</td>
-              <td class="fieldname fieldname_epd2" style="padding-left: 40px;">Content Declaration</td>
-              <td class="fieldname fieldname_epd2" style="padding-left: 40px;">epd2:contentDeclaration</td>
-              <td class="fieldname fieldname_epd2">o</td>
-              <td class="fieldname fieldname_epd2">[0,1]</td>
-              <td class="fieldname fieldname_epd2"></td>
-              <td class="fieldname fieldname_epd2">Inhaltsangabe gemäss EN 15804/ISO 21930.</td>
-              <td class="fieldname fieldname_epd2">Content declaration according to EN 15804/ISO 219301. <br/> The content declaration may contain component,
-                 material and/or substance elements, which may (but do not have to) be nested.</td>
-              <td class="fieldname fieldname_epd2"/>
-              <td class="fieldname fieldname_epd2"/>
-                <td>
-                    <p style="margin: 0.0px 0.0px 0.0px 0.0px">0w$1F7Vk17L8tW8yV$3Vu3</p>
-                </td>
-                <td></td>
-          </tr>
-          <tr>
-              <td class="fieldname fieldname_epd2" style="padding-left: 50px;">Komponente</td>
-              <td class="fieldname fieldname_epd2" style="padding-left: 50px;">Component</td>
-              <td class="fieldname fieldname_epd2" style="padding-left: 50px;">epd2:component</td>
-              <td class="fieldname fieldname_epd2">o</td>
-              <td class="fieldname fieldname_epd2">[0,n]</td>
-              <td class="fieldname fieldname_epd2"></td>
-              <td class="fieldname fieldname_epd2">Beschreibt eine Komponente.</td>
-              <td class="fieldname fieldname_epd2">Describes a component.</td>
-              <td class="fieldname fieldname_epd2"/>
-              <td class="fieldname fieldname_epd2"/>
-                <td></td>
-                <td></td>
-          </tr>
-          <tr>
-              <td class="fieldname fieldname_epd2" style="padding-left: 60px;">Name</td>
-              <td class="fieldname fieldname_epd2" style="padding-left: 60px;">Name</td>
-              <td class="fieldname fieldname_epd2" style="padding-left: 60px;">epd2:name</td>
-              <td class="fieldname fieldname_epd2">m</td>
-              <td class="fieldname fieldname_epd2">[1,1]</td>
-              <td class="fieldname fieldname_epd2"><a target="_blank" href="ILCD_Common_DataTypes.html#StringMultiLang">StringMultiLang</a></td>
-              <td class="fieldname fieldname_epd2">Name der Komponente.</td>
-              <td class="fieldname fieldname_epd2">Name of the component.</td>
-              <td class="fieldname fieldname_epd2"/>
-              <td class="fieldname fieldname_epd2"/>
-                <td></td>
-                <td></td>
-          </tr>
-          <tr>
-              <td class="fieldname fieldname_epd2" style="padding-left: 60px;">Massenanteil in %</td>
-              <td class="fieldname fieldname_epd2" style="padding-left: 60px;">Mass percentage</td>
-              <td class="fieldname fieldname_epd2" style="padding-left: 60px;">epd2:weightPerc</td>
-              <td class="fieldname fieldname_epd2">m</td>
-              <td class="fieldname fieldname_epd2">[1,1]</td>
-              <td class="fieldname fieldname_epd2"></td>
-              <td class="fieldname fieldname_epd2">Massenanteil in % des Gesamtprodukts. Ein diskreter Wert oder ein Wertebereich muß angegeben werden.</td>
-              <td class="fieldname fieldname_epd2">Percentage of the total mass of the product. Either a discrete value or a range of values has to be specified.. Either a discrete value or a range of values has to be specified.. Either a discrete value or a range of values has to be specified. Either a discrete value or a range of values has to be specified.Either a discrete value or a range of values has to be
-                 specified.</td>
-              <td class="fieldname fieldname_epd2"/>
-              <td class="fieldname fieldname_epd2"/>
-                <td></td>
-                <td></td>
-          </tr>
+         <tr>
+            <td class="fieldname fieldname_epd2" style="padding-left: 40px;">Inhaltsangabe</td>
+            <td class="fieldname fieldname_epd2" style="padding-left: 40px;">Content Declaration</td>
+            <td class="fieldname fieldname_epd2" style="padding-left: 40px;">epd2:contentDeclaration</td>
+            <td class="fieldname fieldname_epd2">o</td>
+            <td class="fieldname fieldname_epd2">[0,1]</td>
+            <td class="fieldname fieldname_epd2"></td>
+            <td class="fieldname fieldname_epd2">Inhaltsangabe gemäss EN 15804/ISO 21930.</td>
+            <td class="fieldname fieldname_epd2">Content declaration according to EN 15804/ISO 219301. <br/> The content declaration may contain component,
+               material and/or substance elements, which may (but do not have to) be nested.</td>
+            <td class="fieldname fieldname_epd2"/>
+            <td class="fieldname fieldname_epd2"/>
+               <td>
+                  <p style="margin: 0.0px 0.0px 0.0px 0.0px">0w$1F7Vk17L8tW8yV$3Vu3</p>
+               </td>
+               <td></td>
+         </tr>
+         <tr>
+            <td class="fieldname fieldname_epd2" style="padding-left: 50px;">Komponente</td>
+            <td class="fieldname fieldname_epd2" style="padding-left: 50px;">Component</td>
+            <td class="fieldname fieldname_epd2" style="padding-left: 50px;">epd2:component</td>
+            <td class="fieldname fieldname_epd2">o</td>
+            <td class="fieldname fieldname_epd2">[0,n]</td>
+            <td class="fieldname fieldname_epd2"></td>
+            <td class="fieldname fieldname_epd2">Beschreibt eine Komponente.</td>
+            <td class="fieldname fieldname_epd2">Describes a component.</td>
+            <td class="fieldname fieldname_epd2"/>
+            <td class="fieldname fieldname_epd2"/>
+               <td></td>
+               <td></td>
+         </tr>
+         <tr>
+            <td class="fieldname fieldname_epd2" style="padding-left: 60px;">Name</td>
+            <td class="fieldname fieldname_epd2" style="padding-left: 60px;">Name</td>
+            <td class="fieldname fieldname_epd2" style="padding-left: 60px;">epd2:name</td>
+            <td class="fieldname fieldname_epd2">m</td>
+            <td class="fieldname fieldname_epd2">[1,1]</td>
+            <td class="fieldname fieldname_epd2"><a target="_blank" href="ILCD_Common_DataTypes.html#StringMultiLang">StringMultiLang</a></td>
+            <td class="fieldname fieldname_epd2">Name der Komponente.</td>
+            <td class="fieldname fieldname_epd2">Name of the component.</td>
+            <td class="fieldname fieldname_epd2"/>
+            <td class="fieldname fieldname_epd2"/>
+               <td></td>
+               <td></td>
+         </tr>
+         <tr>
+            <td class="fieldname fieldname_epd2" style="padding-left: 60px;">Massenanteil in %</td>
+            <td class="fieldname fieldname_epd2" style="padding-left: 60px;">Mass percentage</td>
+            <td class="fieldname fieldname_epd2" style="padding-left: 60px;">epd2:weightPerc</td>
+            <td class="fieldname fieldname_epd2">m</td>
+            <td class="fieldname fieldname_epd2">[1,1]</td>
+            <td class="fieldname fieldname_epd2"></td>
+            <td class="fieldname fieldname_epd2">Massenanteil in % des Gesamtprodukts. Ein diskreter Wert oder ein Wertebereich muß angegeben werden.</td>
+            <td class="fieldname fieldname_epd2">Percentage of the total mass of the product. Either a discrete value or a range of values has to be specified.. Either a discrete value or a range of values has to be specified.. Either a discrete value or a range of values has to be specified. Either a discrete value or a range of values has to be specified.Either a discrete value or a range of values has to be
+               specified.</td>
+            <td class="fieldname fieldname_epd2"/>
+            <td class="fieldname fieldname_epd2"/>
+               <td></td>
+               <td></td>
+         </tr>
          <tr>
             <td class="fieldname fieldname_epd2" style="padding-left: 70px;">Diskreter Wert</td>
             <td class="fieldname fieldname_epd2" style="padding-left: 70px;">Discrete value</td>
@@ -985,19 +994,19 @@ value lower than x (e.g. "&lt;42"), only specify the upper value as x.</td>
                 <td></td>
          </tr>
          <tr>
-              <td class="fieldname fieldname_epd2" style="padding-left: 60px;">Masse in kg</td>
-              <td class="fieldname fieldname_epd2" style="padding-left: 60px;">Mass in kg</td>
-              <td class="fieldname fieldname_epd2" style="padding-left: 60px;">epd2:mass</td>
-              <td class="fieldname fieldname_epd2">o</td>
-              <td class="fieldname fieldname_epd2">[0,1]</td>
-              <td class="fieldname fieldname_epd2"></td>
-              <td class="fieldname fieldname_epd2">Absolute Masse dieses Anteils in kg. Ein diskreter Wert oder ein Wertebereich muß angegeben werden.</td>
-              <td class="fieldname fieldname_epd2">Absolute mass of the fraction in kg. Either a discrete value or a range of values has to be specified.</td>
-              <td class="fieldname fieldname_epd2"/>
-              <td class="fieldname fieldname_epd2"/>
-                <td></td>
-                <td></td>
-          </tr>
+            <td class="fieldname fieldname_epd2" style="padding-left: 60px;">Masse in kg</td>
+            <td class="fieldname fieldname_epd2" style="padding-left: 60px;">Mass in kg</td>
+            <td class="fieldname fieldname_epd2" style="padding-left: 60px;">epd2:mass</td>
+            <td class="fieldname fieldname_epd2">o</td>
+            <td class="fieldname fieldname_epd2">[0,1]</td>
+            <td class="fieldname fieldname_epd2"></td>
+            <td class="fieldname fieldname_epd2">Absolute Masse dieses Anteils in kg. Ein diskreter Wert oder ein Wertebereich muß angegeben werden.</td>
+            <td class="fieldname fieldname_epd2">Absolute mass of the fraction in kg. Either a discrete value or a range of values has to be specified.</td>
+            <td class="fieldname fieldname_epd2"/>
+            <td class="fieldname fieldname_epd2"/>
+            <td></td>
+            <td></td>
+         </tr>
          <tr>
             <td class="fieldname fieldname_epd2" style="padding-left: 70px;">Diskreter Wert</td>
             <td class="fieldname fieldname_epd2" style="padding-left: 70px;">Discrete value</td>
@@ -1311,7 +1320,21 @@ value lower than x (e.g. "&lt;42"), only specify the upper value as x.</td>
               <td class="fieldname fieldname_epd2"/>
                 <td></td>
                 <td></td>
-          </tr>          
+          </tr>
+          <tr>
+             <td class="fieldname fieldname_epd24" style="padding-left: 40px;">SVHC Hinweis</td>
+             <td class="fieldname fieldname_epd24" style="padding-left: 40px;">SVHC Indication</td>
+             <td class="fieldname fieldname_epd24" style="padding-left: 40px;">epd24:SVHC</td>
+             <td class="fieldname fieldname_epd24">m</td>
+             <td class="fieldname fieldname_epd24">[1]</td>
+             <td class="fieldname fieldname_epd24">boolean</td>
+             <td class="fieldname fieldname_epd24">Hinweis falls sich SVHC-Substanzen unter den deklarierten Substanzen befinden (substances of very high concern).</td>
+             <td class="fieldname fieldname_epd24">Indication whether there are substances of high concern (SVHC) among the declared substances.</td>
+             <td class="fieldname fieldname_epd24"/>
+             <td class="fieldname fieldname_epd24"/>
+             <td/>
+             <td/>
+          </tr>
           <tr>
             <td class="subsection" style="padding-left: 20px;font-style: italic;">Quantitative Referenz</td>
             <td class="subsection" style="padding-left: 20px;font-style: italic;">Quantitative reference</td>
