@@ -24,8 +24,10 @@
                    <epd24:years>50</epd24:years>
                    <epd24:referenceToStandard type="source data set" refObjectId="c0016b33-8cf7-415c-ac6e-deba0d21440d" version="00.01.000">
                       <common:shortDescription>EN15804+A2</common:shortDescription>
+                      <common:shortDescription xml:lang="de">EN15804+A2</common:shortDescription>
                    </epd24:referenceToStandard>
                    <epd24:comment xml:lang="en">The indicated service life requires installation and maintenance according to manufacturer instructions.</epd24:comment>
+                   <epd24:comment xml:lang="de">The indicated service life requires installation and maintenance according to manufacturer instructions.</epd24:comment>
                 </epd24:serviceLife>
                 <epd:scenarios>
                     <epd:scenario epd:default="true" epd:group="Transport" epd:name="Transport to Gdansk">
