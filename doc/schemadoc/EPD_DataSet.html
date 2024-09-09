@@ -106,11 +106,11 @@
          .fieldname_epd2{
             background-color: #EED6F6;
          }
+         .fieldname_epd2i{
+            background-color: #fedddd;
+         }
          .fieldname_epd24{
             background-color: #d7f7bd;
-         }
-         .fieldname_epd2i{
-            background-color: #EEFFF6;
          }
          .data{
             font-family: Helvetica, Arial, sansserif;
@@ -284,22 +284,22 @@
          <tr>
             <td>Information in the EPD namespace v1.1 is displayed with</td>
             <td class="fieldname_epd">blue background</td>
-            <td>.</td>
+            <td>(Namespace: <i>"http://www.iai.kit.edu/EPD/2013"</i>, prefix used in this document: <i>"epd"</i>)</td>
          </tr>
          <tr>
             <td>Information in the EPD namespace v1.2 is displayed with</td>
             <td class="fieldname_epd2">purple background</td>
-            <td>.</td>
+            <td>(Namespace: <i>"http://www.indata.network/EPD/2019"</i>, prefix used in this document: <i>"epd2"</i>)</td>
+         </tr>
+         <tr>
+            <td>Information in the EPD namespace v1.2 that is already part of the original ILCD namespace is displayed with</td>
+            <td class="fieldname_epd2i">red background</td>
+            <td>(Namespace: <i>"http://lca.jrc.it/ILCD/Process"</i>, prefix used in this document: <i>""</i>)</td>
          </tr>
          <tr>
             <td>Information in the EPD namespace v1.3 is displayed with</td>
             <td class="fieldname_epd24">green background</td>
-            <td>.</td>
-         </tr>
-         <tr>
-            <td>Information in the EPD namespace v1.2 that is already <br/>part of the original ILCD namespace is displayed with</td>
-            <td class="fieldname_epd2i">cyan background</td>
-            <td>.</td>
+            <td>(Namespace: <i>"http://www.indata.network/EPD/2024"</i>, prefix used in this document: <i>"epd24"</i>)</td>
          </tr>
       </table>
       
@@ -874,21 +874,6 @@
                 <td></td>
                 <td></td>
          </tr>
-
-          <tr>
-              <td class="fieldname fieldname_epd" style="padding-left: 40px;">de</td>
-              <td class="fieldname fieldname_epd" style="padding-left: 40px;">en</td>
-              <td class="fieldname fieldname_epd" style="padding-left: 40px;">field</td>
-              <td class="fieldname fieldname_epd">o</td>
-              <td class="fieldname fieldname_epd">[0,1]</td>
-              <td class="fieldname fieldname_epd"><a target="_blank" href="ILCD_Common_DataTypes.html#string">datatype</a></td>
-              <td class="fieldname fieldname_epd">de</td>
-              <td class="fieldname fieldname_epd">en</td>
-              <td class="fieldname fieldname_epd"/>
-              <td class="fieldname fieldname_epd"/>
-                <td></td>
-                <td></td>
-          </tr>
           
           <tr>
               <td class="fieldname fieldname_epd2" style="padding-left: 40px;">Inhaltsangabe</td>
@@ -1493,7 +1478,7 @@ value lower than x (e.g. "&lt;42"), only specify the upper value as x.</td>
          <tr>
             <td class="fieldname fieldname_epd2" style="padding-left: 40px;">Veröffentlichungsdatum der EPD</td>
             <td class="fieldname fieldname_epd2" style="padding-left: 40px;">publication date of EPD</td>
-            <td class="fieldname fieldname_epd2" style="padding-left: 40px;">publicationDateOfEPD</td>
+            <td class="fieldname fieldname_epd2" style="padding-left: 40px;">epd2:publicationDateOfEPD</td>
             <td class="fieldname fieldname_epd2">o</td>
             <td class="fieldname fieldname_epd2">[0,1]</td>
             <td class="fieldname fieldname_epd2">xs:date</td>
@@ -1997,7 +1982,7 @@ value lower than x (e.g. "&lt;42"), only specify the upper value as x.</td>
             <tr>
                 <td class="fieldname fieldname_epd2" style="padding-left: 40px;">Original-EPD</td>
                 <td class="fieldname fieldname_epd2" style="padding-left: 40px;">Original EPD</td>
-                <td class="fieldname fieldname_epd2" style="padding-left: 40px;">referenceToOriginalEPD</td>
+                <td class="fieldname fieldname_epd2" style="padding-left: 40px;">epd2:referenceToOriginalEPD</td>
                 <td class="fieldname fieldname_epd2">r</td>
                 <td class="fieldname fieldname_epd2">[0,n]</td>
                 <td class="fieldname fieldname_epd2"><a target="_blank" href="ILCD_Common_DataTypes.html#GlobalReferenceType">GlobalReferenceType</a></td>
