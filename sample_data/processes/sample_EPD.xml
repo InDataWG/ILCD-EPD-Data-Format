@@ -117,6 +117,27 @@
             <referenceToDataSource uri="" type="source data set" refObjectId="aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa">
                 <common:shortDescription xml:lang="de">Hier können EPDs angehängt werden</common:shortDescription>
             </referenceToDataSource>
+            <common:other>
+                <epd24:manufacturers>
+                   <epd24:manufacturer epd24:isProvidingData="true">
+                      <epd24:contact type="contact data set" refObjectId="12345678-1234-1234-1234-123456789012" version="00.00.000">
+                         <common:shortDescription xml:lang="en">ACME</common:shortDescription>
+                      </epd24:contact>
+                      <epd24:sites>
+                         <epd24:site>
+                            <epd24:name>ACME Base camp</epd24:name>
+                            <epd24:facilityIdentifier>KELLNERDOM</epd24:facilityIdentifier>
+                            <epd24:olc>9F28WXR4+FW2</epd24:olc>
+                            <epd24:geoCode>DE</epd24:geoCode>
+                            <epd24:streetAddress>Domkloster 4, 50667 Cologne, Germany</epd24:streetAddress>
+                         </epd24:site>
+                      </epd24:sites>
+                   </epd24:manufacturer>
+                </epd24:manufacturers>
+                <epd2:referenceToOriginalEPD refObjectId="f79a8947-b608-4eeb-9b3b-97a3ea8cfea5" type="source data set" version="00.00.002">
+                    <common:shortDescription xml:lang="en">Wood Panel EPD</common:shortDescription>
+                </epd2:referenceToOriginalEPD>
+            </common:other>
         </dataSourcesTreatmentAndRepresentativeness>
         <validation>
             <review type="Not reviewed">
