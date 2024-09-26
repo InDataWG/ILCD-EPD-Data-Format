@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <processDataSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://lca.jrc.it/ILCD/Process ../../schemas/EPD_DataSet.xsd" xmlns="http://lca.jrc.it/ILCD/Process"
     xmlns:common="http://lca.jrc.it/ILCD/Common" xmlns:epd="http://www.iai.kit.edu/EPD/2013" xmlns:epd2="http://www.indata.network/EPD/2019" xmlns:epd24="http://www.indata.network/EPD/2024" 
-    version="1.1" locations="../ILCDLocations.xml" epd2:epd-version="1.2">
+    version="1.1" locations="../ILCDLocations.xml" epd2:epd-version="1.3">
     <processInformation>
         <dataSetInformation>
             <common:UUID>57a4ae65-d305-421e-b21f-a3f0c35b8abe</common:UUID>
@@ -20,6 +20,12 @@
                 <common:shortDescription xml:lang="en">Background report for Wood Panel EPD (optional)</common:shortDescription>
             </referenceToExternalDocumentation>
             <common:other>
+                <epd24:productIds>
+                   <epd24:productId epd24:type="GTIN">3234567890126</epd24:productId>
+                   <epd24:productId epd24:type="GTIN">3234567890132</epd24:productId>
+                   <epd24:productId epd24:type="GTIN">3234567890288</epd24:productId>
+                   <epd24:productId epd24:type="GMN">445922</epd24:productId>
+                </epd24:productIds>
                 <epd:scenarios>
                     <epd:scenario epd:default="true" epd:group="Transport" epd:name="Transport to Gdansk">
                         <epd:description>Transport of the product to the construction site in Gdansk, Poland</epd:description>
