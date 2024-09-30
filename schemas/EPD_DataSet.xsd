@@ -6,5 +6,6 @@
     xmlns:process="http://lca.jrc.it/ILCD/Process" elementFormDefault="qualified" version="1.1">
     <xs:import namespace="http://www.iai.kit.edu/EPD/2013" schemaLocation="EPD_Extensions_2013.xsd"/>
     <xs:import namespace="http://www.indata.network/EPD/2019" schemaLocation="EPD_Extensions_2019.xsd"/>
+    <xs:import namespace="http://www.indata.network/EPD/2024" schemaLocation="EPD_Extensions_2024.xsd"/>
     <xs:include schemaLocation="ILCD_ProcessDataSet.xsd"/>
 </xs:schema>
