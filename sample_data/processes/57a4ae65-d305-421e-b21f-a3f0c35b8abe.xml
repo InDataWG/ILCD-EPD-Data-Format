@@ -22,6 +22,13 @@
             <common:other>
                 <epd24:serviceLife>
                    <epd24:years>50</epd24:years>
+                   <epd24:useConditions epd24:factor="A - inherent quality" epd24:degree="1" />
+                   <epd24:useConditions epd24:factor="B - design level" epd24:degree="2"/>
+                   <epd24:useConditions epd24:factor="C - work execution" epd24:degree="1"/>
+                   <epd24:useConditions epd24:factor="D - indoor environment" epd24:degree="1"/>
+                   <epd24:useConditions epd24:factor="E - outdoor environment" epd24:degree="2"/>
+                   <epd24:useConditions epd24:factor="F - usage conditions" epd24:degree="3"/>
+                   <epd24:useConditions epd24:factor="G - maintenance level" epd24:degree="5"/>
                    <epd24:referenceToStandard type="source data set" refObjectId="c0016b33-8cf7-415c-ac6e-deba0d21440d" version="00.01.000">
                        <common:shortDescription xml:lang="en">EN15804+A2</common:shortDescription>
                        <common:shortDescription xml:lang="de">EN15804+A2</common:shortDescription>
