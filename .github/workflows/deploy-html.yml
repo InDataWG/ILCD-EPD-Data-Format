@@ -29,7 +29,7 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         with:
           publish_dir: ./doc/schemadoc  
-          destination_dir: gitBranches/${{ github.ref#refs/heads/ }}  
+          destination_dir: gitBranches/${{ github.ref_name }}
           keep_files: true  
 
   cleanup:
@@ -46,7 +46,7 @@ jobs:
       # Step 2: Remove the subdirectory for the deleted branch
       - name: Remove the subdirectory for the deleted branch
         run: |
-          branch_name=${{ github.ref#refs/heads/ }}  # Extract the branch name from the reference
+          branch_name=${{ github.ref_name }}  # Extract the branch name from the reference
           rm -rf gitBranches/$branch_name  # Remove the folder corresponding to the deleted branch
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
