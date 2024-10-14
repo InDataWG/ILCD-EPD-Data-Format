@@ -1,50 +1,52 @@
-# name: Deploy HTML Documentation
+name: Deploy HTML Documentation
 
-# on:
-#   push:
-#     branches:
-#       - "*"
-#   delete:
-#     branches:
-#       - "*"
+on:
+  create:
+    branches:
+      - "*"  
+  delete:
+    branches:
+      - "*"  
 
-# jobs:
-#   deploy:
-#     runs-on: ubuntu-latest
+permissions:
+  contents: write  
 
-#     steps:
-#       # Step 1: Checkout the current branch
-#       - name: Checkout the repository
-#         uses: actions/checkout@v2
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    if: github.event_name == 'create'  
 
-#       # Step 2: Deploy HTML files when a branch is pushed or updated
-#       - name: Deploy HTML to gitActions
-#         if: github.event_name == 'push'
-#         uses: peaceiris/actions-gh-pages@v3
-#         with:
-#           github_token: ${{ secrets.GITHUB_TOKEN }}
-#           publish_dir: ./doc/schemadoc # Path to the HTML files
-#           destination_dir: ${{ github.ref }} # Use the branch name as the subdirectory
-#           keep_files: true  # Retain files from other branches
+    steps:
+      # Step 1: Checkout the repository
+      - name: Checkout the repository
+        uses: actions/checkout@v2
 
-#   cleanup:
-#     runs-on: ubuntu-latest
-#     if: github.event_name == 'delete'
+      # Step 2: Deploy HTML files when a branch is created
+      - name: Deploy HTML to gitActions
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          publish_dir: ./doc/schemadoc  
+          destination_dir: gitBranches/${{ github.ref#refs/heads/ }}  
+          keep_files: true  
+
+  cleanup:
+    runs-on: ubuntu-latest
+    if: github.event_name == 'delete'  
     
-#     steps:
-#       # Step 1: Checkout the gitActions branch
-#       - name: Checkout gitActions branch
-#         uses: actions/checkout@v2
-#         with:
-#           ref: gitActions
+    steps:
+      # Step 1: Checkout the gitActions branch
+      - name: Checkout gitActions branch
+        uses: actions/checkout@v2
+        with:
+          ref: gitActions
 
-#       # Step 2: Remove the subdirectory of the deleted branch
-#       - name: Remove the subdirectory for the deleted branch
-#         run: |
-#           branch_name=${{ github.event.ref }}
-#           rm -rf $branch_name
-#           git config user.name "github-actions[bot]"
-#           git config user.email "github-actions[bot]@users.noreply.github.com"
-#           git add .
-#           git commit -m "Removed documentation for deleted branch $branch_name"
-#           git push origin gitActions
+      # Step 2: Remove the subdirectory for the deleted branch
+      - name: Remove the subdirectory for the deleted branch
+        run: |
+          branch_name=${{ github.ref#refs/heads/ }}  # Extract the branch name from the reference
+          rm -rf gitBranches/$branch_name  # Remove the folder corresponding to the deleted branch
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add .
+          git commit -m "Removed documentation for deleted branch $branch_name"
+          git push origin gitActions
