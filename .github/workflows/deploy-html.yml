@@ -1,55 +1,53 @@
-name: Deploy HTML Documentation
+name: Deploy HTML Documentation for All Branches
 
 on:
-  create:
-    branches:
-      - "*"  
-  push:
-    branches:
-      - "*"  
-  delete:
-    branches:
-      - "*"  
-
+  workflow_dispatch:  
+  
 permissions:
-  contents: write  
+  contents: write
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    if: github.event_name == 'create'  
 
     steps:
-      # Step 1: Checkout the repository
-      - name: Checkout the repository
-        uses: actions/checkout@v2
-
-      # Step 2: Deploy HTML files when a branch is created
-      - name: Deploy HTML to gitActions
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          publish_dir: ./doc/schemadoc  
-          destination_dir: gitBranches/${{ github.ref_name }}
-          keep_files: true  
-
-  cleanup:
-    runs-on: ubuntu-latest
-    if: github.event_name == 'delete'  
-
-    steps:
-      # Step 1: Checkout the gitActions branch
+      # Step 1: Checkout the gitActions branch to work in it
       - name: Checkout gitActions branch
         uses: actions/checkout@v2
         with:
           ref: gitActions
 
-      # Step 2: Remove the subdirectory for the deleted branch
-      - name: Remove the subdirectory for the deleted branch
+      # Step 2: Fetch all branches from the repository
+      - name: Fetch all branches
+        run: git fetch --all
+
+      # Step 3: Iterate through each branch, except gitActions, and create the subdirectory
+      - name: Create subdirectories for all branches except gitActions
         run: |
-          branch_name=${{ github.ref_name }}  # Extract the branch name from the reference
-          rm -rf gitBranches/$branch_name  # Remove the folder corresponding to the deleted branch
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add .
-          git commit -m "Removed documentation for deleted branch $branch_name"
+          for branch in $(git branch -r | grep -v "gitActions" | grep -v "HEAD" | sed 's/origin\///'); do
+            echo "Processing branch: $branch"
+            
+            # Check if the directory for this branch already exists
+            if [ -d "gitBranches/$branch" ]; then
+              echo "Subfolder for $branch already exists. Skipping."
+            else
+              echo "Creating subfolder for $branch."
+              
+              # Checkout the branch
+              git checkout $branch
+              
+              # Copy HTML files to the corresponding subdirectory
+              mkdir -p gitBranches/$branch
+              cp -r ./doc/schemadoc/* gitBranches/$branch/
+            fi
+          done
+
+      # Step 4: Commit and push changes to gitActions branch
+      - name: Commit and push changes
+        run: |
+          git checkout gitActions
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add gitBranches
+          git commit -m "Added HTML files for all branches"
           git push origin gitActions
