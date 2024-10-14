@@ -4,6 +4,9 @@ on:
   create:
     branches:
       - "*"  
+  push:
+    branches:
+      - "*"  
   delete:
     branches:
       - "*"  
@@ -32,7 +35,7 @@ jobs:
   cleanup:
     runs-on: ubuntu-latest
     if: github.event_name == 'delete'  
-    
+
     steps:
       # Step 1: Checkout the gitActions branch
       - name: Checkout gitActions branch
