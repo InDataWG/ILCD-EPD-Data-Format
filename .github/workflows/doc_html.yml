@@ -1,4 +1,4 @@
-name: Deploy HTML-Documentation
+name: deploy html documentation
 
 on:
   push:
@@ -53,3 +53,5 @@ jobs:
           git add gitBranches
           git commit -m "Added HTML files for all branches"
           git push origin gitActions
+
+html
