@@ -4,7 +4,7 @@ on:
   workflow_dispatch:  
   push:
     branches:
-      - main
+      - feature/test_branch
   
 permissions:
   contents: write
