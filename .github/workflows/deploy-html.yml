@@ -1,4 +1,4 @@
-name: Deploy HTML Documentation for All Branches
+name: Deploy HTML-Documentation
 
 on:
   workflow_dispatch:  
