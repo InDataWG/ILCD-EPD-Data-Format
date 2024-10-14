@@ -1,9 +1,6 @@
 name: deploy html documentation
 
 on:
-  push:
-    branches:
-      - feature/test_branch
   workflow_dispatch:
   
 permissions:
@@ -54,3 +51,5 @@ jobs:
           git add gitBranches
           git commit -m "Added HTML files for all branches"
           git push origin gitActions
+
+  
