@@ -1,21 +1,17 @@
-name: Deploy HTML Documentation for New Branch
+name: deploy html documentation
 
 on:
-  create:
-    branches:
-      - '*'
-
-permissions:
-  contents: write
+  push:
+    paths:
+      - 'doc/schemadoc/**'
 
 jobs:
   deploy:
-    if: ${{ github.event.created }} # Trigger only if the branch is created (first push)
     runs-on: ubuntu-latest
 
     steps:
-      # Step 1: Checkout the newly created branch
-      - name: Checkout newly created branch
+      # Step 1: Checkout the branch where the changes were made
+      - name: Checkout current branch
         uses: actions/checkout@v2
         with:
           ref: ${{ github.ref_name }}
@@ -27,17 +23,17 @@ jobs:
           ref: gitActions
           path: gitActions
 
-      # Step 3: Copy HTML files from the new branch to gitActions/gitBranches
+      # Step 3: Copy HTML files from the current branch to gitActions/gitBranches
       - name: Copy HTML files to gitActions branch
         run: |
-          new_branch=${{ github.ref_name }}
-          echo "Copying HTML files from $new_branch to gitBranches/$new_branch in gitActions branch."
+          branch_name=${{ github.ref_name }}
+          echo "Copying HTML files from $branch_name to gitBranches/$branch_name in gitActions branch."
 
           # Ensure the directory exists in gitActions
-          mkdir -p gitActions/gitBranches/$new_branch
+          mkdir -p gitActions/gitBranches/$branch_name
 
           # Copy the HTML files from the current branch to the gitActions branch folder
-          cp -r ./doc/schemadoc/* gitActions/gitBranches/$new_branch/
+          cp -r ./doc/schemadoc/* gitActions/gitBranches/$branch_name/
 
       # Step 4: Commit and push changes to gitActions branch
       - name: Commit and push changes to gitActions branch
@@ -45,35 +41,37 @@ jobs:
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git add gitBranches
-          git commit -m "Added HTML files for ${{ github.ref_name }}"
+          git add gitBranches/$branch_name
+          git commit -m "Updated HTML files for $branch_name"
           git push origin gitActions
 
-      # Step 5: Update README.md in the new branch with links to HTML files
-      - name: Update README.md in new branch
+      # Step 5: Update README.md in the current branch (Only if it's a new branch)
+      - name: Update README.md in current branch
+        if: ${{ github.event.created }}  # Only run on branch creation
         run: |
-          new_branch=${{ github.ref_name }}
+          branch_name=${{ github.ref_name }}
           readme_path="README.md"
           
-          # Create links for the new branch
+          # Create links for the current branch
           links="
           # ILCD-EPD-Data-Format\n\n
-          - [EPD DataSet](https://indatawg.github.io/ILCD-EPD-Data-Format/gitBranches/$new_branch/EPD_DataSet.html)\n
-          - [EPD FlowDataSet](https://indatawg.github.io/ILCD-EPD-Data-Format/gitBranches/$new_branch/EPD_FlowDataSet.html)\n
-          - [ILCD Common DataTypes](https://indatawg.github.io/ILCD-EPD-Data-Format/gitBranches/$new_branch/ILCD_Common_DataTypes.html)\n
-          - [ILCD Common EnumerationValues](https://indatawg.github.io/ILCD-EPD-Data-Format/gitBranches/$new_branch/ILCD_Common_EnumerationValues.html)\n
-          - [ILCD ContactDataSet](https://indatawg.github.io/ILCD-EPD-Data-Format/gitBranches/$new_branch/ILCD_ContactDataSet.html)\n
-          - [ILCD FlowPropertyDataSet](https://indatawg.github.io/ILCD-EPD-Data-Format/gitBranches/$new_branch/ILCD_FlowPropertyDataSet.html)\n
-          - [ILCD LCIAMethodDataSet](https://indatawg.github.io/ILCD-EPD-Data-Format/gitBranches/$new_branch/ILCD_LCIAMethodDataSet.html)\n
-          - [ILCD SourceDataSet](https://indatawg.github.io/ILCD-EPD-Data-Format/gitBranches/$new_branch/ILCD_SourceDataSet.html)\n
-          - [ILCD UnitGroupDataSet](https://indatawg.github.io/ILCD-EPD-Data-Format/gitBranches/$new_branch/ILCD_UnitGroupDataSet.html)\n
+          - [EPD DataSet](https://indatawg.github.io/ILCD-EPD-Data-Format/gitBranches/$branch_name/EPD_DataSet.html)\n
+          - [EPD FlowDataSet](https://indatawg.github.io/ILCD-EPD-Data-Format/gitBranches/$branch_name/EPD_FlowDataSet.html)\n
+          - [ILCD Common DataTypes](https://indatawg.github.io/ILCD-EPD-Data-Format/gitBranches/$branch_name/ILCD_Common_DataTypes.html)\n
+          - [ILCD Common EnumerationValues](https://indatawg.github.io/ILCD-EPD-Data-Format/gitBranches/$branch_name/ILCD_Common_EnumerationValues.html)\n
+          - [ILCD ContactDataSet](https://indatawg.github.io/ILCD-EPD-Data-Format/gitBranches/$branch_name/ILCD_ContactDataSet.html)\n
+          - [ILCD FlowPropertyDataSet](https://indatawg.github.io/ILCD-EPD-Data-Format/gitBranches/$branch_name/ILCD_FlowPropertyDataSet.html)\n
+          - [ILCD LCIAMethodDataSet](https://indatawg.github.io/ILCD-EPD-Data-Format/gitBranches/$branch_name/ILCD_LCIAMethodDataSet.html)\n
+          - [ILCD SourceDataSet](https://indatawg.github.io/ILCD-EPD-Data-Format/gitBranches/$branch_name/ILCD_SourceDataSet.html)\n
+          - [ILCD UnitGroupDataSet](https://indatawg.github.io/ILCD-EPD-Data-Format/gitBranches/$branch_name/ILCD_UnitGroupDataSet.html)\n
           "
 
           # Add links to README.md
           echo -e "$links" >> $readme_path
 
-      # Step 6: Commit and push the updated README.md to the new branch
+      # Step 6: Commit and push the updated README.md to the current branch (Only on new branch creation)
       - name: Commit and push updated README.md
+        if: ${{ github.event.created }}  # Only run on branch creation
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
