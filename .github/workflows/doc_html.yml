@@ -1,7 +1,7 @@
 name: Deploy HTML Documentation for New Branch
 
 on:
-  push:
+  create:
     branches:
       - '*'
 
