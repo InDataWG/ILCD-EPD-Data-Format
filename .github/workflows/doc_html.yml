@@ -10,6 +10,7 @@ permissions:
 
 jobs:
   deploy:
+    if: ${{ github.event.created }} # Trigger only if the branch is created (first push)
     runs-on: ubuntu-latest
 
     steps:
