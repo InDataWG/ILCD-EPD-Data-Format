@@ -1,7 +1,7 @@
 name: deploy html documentation
 
 on:
-  create:
+  push:
     branches:
       - '*'
 
