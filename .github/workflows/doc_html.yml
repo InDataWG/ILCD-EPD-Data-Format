@@ -1,8 +1,10 @@
 name: deploy html documentation
 
 on:
-  workflow_dispatch:
-  
+  create:
+    branches:
+      - '*'
+
 permissions:
   contents: write
 
@@ -11,45 +13,59 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # Step 1: Checkout the gitActions branch to work in it
-      - name: Checkout gitActions branch
+      # Step 1: Checkout the newly created branch
+      - name: Checkout newly created branch
         uses: actions/checkout@v2
         with:
-          ref: gitActions
+          ref: ${{ github.ref_name }}
 
       # Step 2: Fetch all branches from the repository
       - name: Fetch all branches
         run: git fetch --all
 
-      # Step 3: Iterate through each branch, except gitActions, and create the subdirectory
-      - name: Create subdirectories for all branches except gitActions
+      # Step 3: Create subdirectory for the current branch if it doesn't exist and copy HTML files
+      - name: Create subdirectory and copy HTML files
         run: |
-          for branch in $(git branch -r | grep -v "gitActions" | grep -v "HEAD" | sed 's/origin\///'); do
-            echo "Processing branch: $branch"
-            
-            # Check if the directory for this branch already exists
-            if [ -d "gitBranches/$branch" ]; then
-              echo "Subfolder for $branch already exists. Skipping."
-            else
-              echo "Creating subfolder for $branch."
-              
-              # Checkout the branch
-              git checkout $branch
-              
-              # Copy HTML files to the corresponding subdirectory
-              mkdir -p gitBranches/$branch
-              cp -r ./doc/schemadoc/* gitBranches/$branch/
-            fi
-          done
+          current_branch=${{ github.ref_name }}
+          echo "Processing branch: $current_branch"
 
-      # Step 4: Commit and push changes to gitActions branch
+          # Create subfolder if it doesn't exist
+          if [ -d "gitBranches/$current_branch" ]; then
+            echo "Subfolder for $current_branch already exists. Skipping."
+          else
+            echo "Creating subfolder for $current_branch."
+            mkdir -p gitBranches/$current_branch
+            cp -r ./doc/schemadoc/* gitBranches/$current_branch/
+          fi
+
+      # Step 4: Update README.md with links to the HTML files for the current branch
+      - name: Update README.md
+        run: |
+          current_branch=${{ github.ref_name }}
+          readme_path="README.md"
+
+          echo "Updating README.md for branch $current_branch"
+          links="
+          # ILCD-EPD-Data-Format\n\n
+          - [EPD DataSet](https://indatawg.github.io/ILCD-EPD-Data-Format/gitBranches/$current_branch/EPD_DataSet.html)\n
+          - [EPD FlowDataSet](https://indatawg.github.io/ILCD-EPD-Data-Format/gitBranches/$current_branch/EPD_FlowDataSet.html)\n
+          - [ILCD Common DataTypes](https://indatawg.github.io/ILCD-EPD-Data-Format/gitBranches/$current_branch/ILCD_Common_DataTypes.html)\n
+          - [ILCD Common EnumerationValues](https://indatawg.github.io/ILCD-EPD-Data-Format/gitBranches/$current_branch/ILCD_Common_EnumerationValues.html)\n
+          - [ILCD ContactDataSet](https://indatawg.github.io/ILCD-EPD-Data-Format/gitBranches/$current_branch/ILCD_ContactDataSet.html)\n
+          - [ILCD FlowPropertyDataSet](https://indatawg.github.io/ILCD-EPD-Data-Format/gitBranches/$current_branch/ILCD_FlowPropertyDataSet.html)\n
+          - [ILCD LCIAMethodDataSet](https://indatawg.github.io/ILCD-EPD-Data-Format/gitBranches/$current_branch/ILCD_LCIAMethodDataSet.html)\n
+          - [ILCD SourceDataSet](https://indatawg.github.io/ILCD-EPD-Data-Format/gitBranches/$current_branch/ILCD_SourceDataSet.html)\n
+          - [ILCD UnitGroupDataSet](https://indatawg.github.io/ILCD-EPD-Data-Format/gitBranches/$current_branch/ILCD_UnitGroupDataSet.html)\n
+          "
+
+          # Add links to README.md
+          echo -e "$links" >> $readme_path
+
+      # Step 5: Commit and push changes to the current branch
       - name: Commit and push changes
         run: |
-          git checkout gitActions
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git add gitBranches
-          git commit -m "Added HTML files for all branches"
-          git push origin gitActions
-
-  
+          git add README.md gitBranches
+          git commit -m "Updated README with links to rendered HTML for ${{ github.ref_name }}"
+          git push origin ${{ github.ref_name }}
