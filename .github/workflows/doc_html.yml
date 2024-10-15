@@ -1,6 +1,6 @@
 name: deploy html documentation
 
-oon:
+on:
   # push:
   #   paths:
   #     - 'doc/schemadoc/**'
