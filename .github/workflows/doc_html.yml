@@ -1,9 +1,9 @@
 name: deploy html documentation
 
 on:
-  # push:
-  #   paths:
-  #     - 'doc/schemadoc/**'
+  push:
+    paths:
+      - 'doc/schemadoc/**'
   workflow_dispatch:
 
 jobs:
