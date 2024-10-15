@@ -1,4 +1,4 @@
-name: Deploy HTML Documentation
+name: deploy html documentation
 
 on:
   create:
