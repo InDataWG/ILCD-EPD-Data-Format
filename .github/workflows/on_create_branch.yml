@@ -19,7 +19,36 @@ jobs:
         with:
           ref: ${{ github.event.ref }}
 
-      # Step 2: Update the README.md with links to the HTML files
+      # Step 2: Checkout the gitActions branch
+      - name: Checkout gitActions branch
+        uses: actions/checkout@v2
+        with:
+          ref: gitActions
+          path: gitActions
+
+      # Step 3: Create directory in gitActions and copy doc/schemadoc content
+      - name: Create directory and copy content
+        run: |
+          branch_name=${{ github.event.ref }}
+          echo "Creating directory for $branch_name in gitActions."
+          
+          # Ensure the directory exists in gitActions
+          mkdir -p gitActions/gitBranches/$branch_name
+
+          # Copy the HTML files to the gitActions branch folder
+          cp -r ./doc/schemadoc/* gitActions/gitBranches/$branch_name/
+
+      # Step 4: Commit and push changes to gitActions branch
+      - name: Commit and push changes to gitActions branch
+        working-directory: gitActions
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add gitBranches/$branch_name
+          git commit -m "Created directory and added content for $branch_name"
+          git push origin gitActions
+
+      # Step 5: Update the README.md with links to the HTML files
       - name: Update README.md with links
         run: |
           branch_name=${{ github.event.ref }}
@@ -42,7 +71,7 @@ jobs:
           # Add links to README.md
           echo -e "$links" >> $readme_path
 
-      # Step 3: Commit and push the updated README.md to the new branch
+      # Step 6: Commit and push the updated README.md to the new branch
       - name: Commit and push updated README.md
         run: |
           git config --global user.name "github-actions[bot]"
