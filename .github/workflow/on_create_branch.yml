@@ -2,7 +2,8 @@ name: create branch documentation
 
 on:
   create:
-    types: [branch]  # Trigger when a new branch is created
+    branches:    
+      - '**'
 
 permissions:
   contents: write
