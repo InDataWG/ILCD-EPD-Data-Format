@@ -1,17 +1,16 @@
 name: deploy html documentation
 
 on:
-  # push:
-  #   paths:
-  #     - 'doc/schemadoc/**'
-  workflow_dispatch:
+  push:
+    paths:
+      - 'doc/schemadoc/**' 
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
 
     steps:
-      # Step 1: Checkout the branch where the changes were made
+      # Step 1: Checkout the current branch where the changes were made
       - name: Checkout current branch
         uses: actions/checkout@v2
         with:
@@ -24,11 +23,11 @@ jobs:
           ref: gitActions
           path: gitActions
 
-      # Step 3: Copy HTML files from the current branch to gitActions/gitBranches
+      # Step 3: Copy HTML files from the current branch to gitActions/gitBranches/{branch_name}
       - name: Copy HTML files to gitActions branch
         run: |
           branch_name=${{ github.ref_name }}
-          echo "Copying HTML files from $branch_name to gitBranches/$branch_name in gitActions branch."
+          echo "Updating HTML files from $branch_name to gitBranches/$branch_name in gitActions branch."
 
           # Ensure the directory exists in gitActions
           mkdir -p gitActions/gitBranches/$branch_name
@@ -45,37 +44,3 @@ jobs:
           git add gitBranches/$branch_name
           git commit -m "Updated HTML files for $branch_name"
           git push origin gitActions
-
-      # Step 5: Update README.md in the current branch (Only if it's a new branch)
-      - name: Update README.md in current branch
-        if: ${{ github.event.created }}  # Only run on branch creation
-        run: |
-          branch_name=${{ github.ref_name }}
-          readme_path="README.md"
-          
-          # Create links for the current branch
-          links="
-          # ILCD-EPD-Data-Format\n\n
-          - [EPD DataSet](https://indatawg.github.io/ILCD-EPD-Data-Format/gitBranches/$branch_name/EPD_DataSet.html)\n
-          - [EPD FlowDataSet](https://indatawg.github.io/ILCD-EPD-Data-Format/gitBranches/$branch_name/EPD_FlowDataSet.html)\n
-          - [ILCD Common DataTypes](https://indatawg.github.io/ILCD-EPD-Data-Format/gitBranches/$branch_name/ILCD_Common_DataTypes.html)\n
-          - [ILCD Common EnumerationValues](https://indatawg.github.io/ILCD-EPD-Data-Format/gitBranches/$branch_name/ILCD_Common_EnumerationValues.html)\n
-          - [ILCD ContactDataSet](https://indatawg.github.io/ILCD-EPD-Data-Format/gitBranches/$branch_name/ILCD_ContactDataSet.html)\n
-          - [ILCD FlowPropertyDataSet](https://indatawg.github.io/ILCD-EPD-Data-Format/gitBranches/$branch_name/ILCD_FlowPropertyDataSet.html)\n
-          - [ILCD LCIAMethodDataSet](https://indatawg.github.io/ILCD-EPD-Data-Format/gitBranches/$branch_name/ILCD_LCIAMethodDataSet.html)\n
-          - [ILCD SourceDataSet](https://indatawg.github.io/ILCD-EPD-Data-Format/gitBranches/$branch_name/ILCD_SourceDataSet.html)\n
-          - [ILCD UnitGroupDataSet](https://indatawg.github.io/ILCD-EPD-Data-Format/gitBranches/$branch_name/ILCD_UnitGroupDataSet.html)\n
-          "
-
-          # Add links to README.md
-          echo -e "$links" >> $readme_path
-
-      # Step 6: Commit and push the updated README.md to the current branch (Only on new branch creation)
-      - name: Commit and push updated README.md
-        if: ${{ github.event.created }}  # Only run on branch creation
-        run: |
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git add README.md
-          git commit -m "Updated README.md with links to rendered HTML files"
-          git push origin ${{ github.ref_name }}
