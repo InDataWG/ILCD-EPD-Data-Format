@@ -6,7 +6,9 @@ on:
       - 'doc/schemadoc/**' 
     branches:
       - '**'  
-
+      
+permissions:
+  contents: write
 
 jobs:
   deploy:
