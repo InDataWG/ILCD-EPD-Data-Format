@@ -4,6 +4,9 @@ on:
   push:
     paths:
       - 'doc/schemadoc/**' 
+    branches:
+      - '**'  
+
 
 jobs:
   deploy:
