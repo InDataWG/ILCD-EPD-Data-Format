@@ -1,0 +1,51 @@
+name: create branch documentation
+
+on:
+  create:
+    types: [branch]  # Trigger when a new branch is created
+
+permissions:
+  contents: write
+
+jobs:
+  update_readme:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 1: Checkout the new branch that was just created
+      - name: Checkout new branch
+        uses: actions/checkout@v2
+        with:
+          ref: ${{ github.event.ref }}
+
+      # Step 2: Update the README.md with links to the HTML files
+      - name: Update README.md with links
+        run: |
+          branch_name=${{ github.event.ref }}
+          readme_path="README.md"
+          
+          # Create links for the current branch
+          links="
+          # ILCD-EPD-Data-Format\n\n
+          - [EPD DataSet](https://indatawg.github.io/ILCD-EPD-Data-Format/gitBranches/$branch_name/EPD_DataSet.html)\n
+          - [EPD FlowDataSet](https://indatawg.github.io/ILCD-EPD-Data-Format/gitBranches/$branch_name/EPD_FlowDataSet.html)\n
+          - [ILCD Common DataTypes](https://indatawg.github.io/ILCD-EPD-Data-Format/gitBranches/$branch_name/ILCD_Common_DataTypes.html)\n
+          - [ILCD Common EnumerationValues](https://indatawg.github.io/ILCD-EPD-Data-Format/gitBranches/$branch_name/ILCD_Common_EnumerationValues.html)\n
+          - [ILCD ContactDataSet](https://indatawg.github.io/ILCD-EPD-Data-Format/gitBranches/$branch_name/ILCD_ContactDataSet.html)\n
+          - [ILCD FlowPropertyDataSet](https://indatawg.github.io/ILCD-EPD-Data-Format/gitBranches/$branch_name/ILCD_FlowPropertyDataSet.html)\n
+          - [ILCD LCIAMethodDataSet](https://indatawg.github.io/ILCD-EPD-Data-Format/gitBranches/$branch_name/ILCD_LCIAMethodDataSet.html)\n
+          - [ILCD SourceDataSet](https://indatawg.github.io/ILCD-EPD-Data-Format/gitBranches/$branch_name/ILCD_SourceDataSet.html)\n
+          - [ILCD UnitGroupDataSet](https://indatawg.github.io/ILCD-EPD-Data-Format/gitBranches/$branch_name/ILCD_UnitGroupDataSet.html)\n
+          "
+
+          # Add links to README.md
+          echo -e "$links" >> $readme_path
+
+      # Step 3: Commit and push the updated README.md to the new branch
+      - name: Commit and push updated README.md
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add README.md
+          git commit -m "Added links to HTML documentation for $branch_name"
+          git push origin $branch_name
