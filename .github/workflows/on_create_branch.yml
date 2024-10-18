@@ -62,7 +62,7 @@ jobs:
         
           links="
           # ILCD-EPD-Data-Format
-          ## Schemadocumentations:\n\n
+          ## Schemadocs:\n\n
           - [EPD DataSet](https://indatawg.github.io/ILCD-EPD-Data-Format/gitBranches/$branch_name/EPD_DataSet.html)\n
           - [EPD FlowDataSet](https://indatawg.github.io/ILCD-EPD-Data-Format/gitBranches/$branch_name/EPD_FlowDataSet.html)\n
           - [ILCD Common DataTypes](https://indatawg.github.io/ILCD-EPD-Data-Format/gitBranches/$branch_name/ILCD_Common_DataTypes.html)\n
