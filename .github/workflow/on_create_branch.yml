@@ -59,10 +59,10 @@ jobs:
           branch_name=${{ github.event.ref }}
           readme_path="README.md"
           
-          echo -e "# Schemas:\n" >> $readme_path
-
+        
           links="
-          # ILCD-EPD-Data-Format\n\n
+          # ILCD-EPD-Data-Format
+          ## Schemadocumentations:\n\n
           - [EPD DataSet](https://indatawg.github.io/ILCD-EPD-Data-Format/gitBranches/$branch_name/EPD_DataSet.html)\n
           - [EPD FlowDataSet](https://indatawg.github.io/ILCD-EPD-Data-Format/gitBranches/$branch_name/EPD_FlowDataSet.html)\n
           - [ILCD Common DataTypes](https://indatawg.github.io/ILCD-EPD-Data-Format/gitBranches/$branch_name/ILCD_Common_DataTypes.html)\n
