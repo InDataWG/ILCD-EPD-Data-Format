@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<f:flowDataSet xmlns:m="http://lca.jrc.it/ILCD/LCIAMethod" xmlns:common="http://lca.jrc.it/ILCD/Common" xmlns:s="http://lca.jrc.it/ILCD/Source"
+   xmlns:c="http://lca.jrc.it/ILCD/Contact" xmlns:f="http://lca.jrc.it/ILCD/Flow" xmlns="http://lca.jrc.it/ILCD/Process"
+   xmlns:fp="http://lca.jrc.it/ILCD/FlowProperty" xmlns:u="http://lca.jrc.it/ILCD/UnitGroup" version="1.1">
+   <f:flowInformation>
+      <f:dataSetInformation>
+         <common:UUID>a7432abd-0881-4977-a817-f8aaf627fb91</common:UUID>
+         <f:name>
+            <f:baseName xml:lang="en">wood panel</f:baseName>
+         </f:name>
+         <common:other>
+            <mat:MatML_Doc xmlns:mat="http://www.matml.org/">
+               <mat:Material>
+                  <mat:BulkDetails>
+                     <mat:Name>wood panel</mat:Name>
+                     <mat:PropertyData property="pr4">
+                        <mat:Data format="float">0.042</mat:Data>
+                     </mat:PropertyData>
+                     <mat:PropertyData property="pr2">
+                        <mat:Data format="float">1.38696</mat:Data>
+                     </mat:PropertyData>
+                  </mat:BulkDetails>
+               </mat:Material>
+               <mat:Metadata>
+                  <mat:PropertyDetails id="pr4">
+                     <mat:Name>layer thickness</mat:Name>
+                     <mat:Units description="metres" name="m">
+                        <mat:Unit>
+                           <mat:Name>m</mat:Name>
+                        </mat:Unit>
+                     </mat:Units>
+                  </mat:PropertyDetails>
+                  <mat:PropertyDetails id="pr2">
+                     <mat:Name>grammage</mat:Name>
+                     <mat:Units description="kilograms per square metre" name="kg/m^2">
+                        <mat:Unit>
+                           <mat:Name>kg/m^2</mat:Name>
+                        </mat:Unit>
+                     </mat:Units>
+                  </mat:PropertyDetails>
+               </mat:Metadata>
+            </mat:MatML_Doc>
+         </common:other>
+      </f:dataSetInformation>
+      <f:quantitativeReference>
+         <f:referenceToReferenceFlowProperty>0</f:referenceToReferenceFlowProperty>
+      </f:quantitativeReference>
+   </f:flowInformation>
+   <f:modellingAndValidation>
+      <f:LCIMethod>
+         <f:typeOfDataSet>Product flow</f:typeOfDataSet>
+         <common:other>
+            <epd:vendorSpecificProduct xmlns:epd="http://www.iai.kit.edu/EPD/2013">true</epd:vendorSpecificProduct>
+         </common:other>
+      </f:LCIMethod>
+   </f:modellingAndValidation>
+   <f:administrativeInformation>
+      <f:dataEntryBy>
+         <common:timeStamp>2020-07-10T18:40:10.133+02:00</common:timeStamp>
+      </f:dataEntryBy>
+      <f:publicationAndOwnership>
+         <common:dataSetVersion>00.00.001</common:dataSetVersion>
+      </f:publicationAndOwnership>
+   </f:administrativeInformation>
+   <f:flowProperties>
+      <f:flowProperty dataSetInternalID="0">
+         <f:referenceToFlowPropertyDataSet type="flow property data set" refObjectId="93a60a56-a3c8-11da-a746-0800200b9a66" version="03.00.000">
+            <common:shortDescription xml:lang="de">Masse</common:shortDescription>
+            <common:shortDescription xml:lang="en">Mass</common:shortDescription>
+         </f:referenceToFlowPropertyDataSet>
+         <f:meanValue>1.0</f:meanValue>
+      </f:flowProperty>
+      <f:flowProperty dataSetInternalID="1">
+         <f:referenceToFlowPropertyDataSet type="flow property data set" refObjectId="93a60a56-a3c8-19da-a746-0800200c9a66" version="03.00.000">
+            <common:shortDescription xml:lang="de">Fläche</common:shortDescription>
+            <common:shortDescription xml:lang="en">Area</common:shortDescription>
+         </f:referenceToFlowPropertyDataSet>
+         <f:meanValue>0.721</f:meanValue>
+      </f:flowProperty>
+      <f:flowProperty dataSetInternalID="2">
+         <f:referenceToFlowPropertyDataSet type="flow property data set" refObjectId="62e503ce-544a-4599-b2ad-bcea15a7bf20" version="03.03.000">
+            <common:shortDescription xml:lang="en">Carbon content (biogenic)</common:shortDescription>
+            <common:shortDescription xml:lang="de">biogener Kohlenstoffgehalt</common:shortDescription>
+         </f:referenceToFlowPropertyDataSet>
+         <f:meanValue>0.96</f:meanValue>
+      </f:flowProperty>
+      <f:flowProperty dataSetInternalID="3">
+         <f:referenceToFlowPropertyDataSet type="flow property data set" refObjectId="262a541b-209e-44cc-a426-33bce30de7b1" version="00.01.000">
+            <common:shortDescription xml:lang="en">Carbon content (biogenic) - packaging</common:shortDescription>
+            <common:shortDescription xml:lang="de">biogener Kohlenstoffgehalt in der Verpackung</common:shortDescription>
+         </f:referenceToFlowPropertyDataSet>
+         <f:meanValue>0.042</f:meanValue>
+      </f:flowProperty>
+   </f:flowProperties>
+</f:flowDataSet>

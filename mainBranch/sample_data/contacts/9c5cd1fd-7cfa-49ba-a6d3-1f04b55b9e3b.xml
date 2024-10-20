@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<c:contactDataSet xmlns:m="http://lca.jrc.it/ILCD/LCIAMethod" xmlns:common="http://lca.jrc.it/ILCD/Common" xmlns:s="http://lca.jrc.it/ILCD/Source" xmlns:c="http://lca.jrc.it/ILCD/Contact" xmlns:f="http://lca.jrc.it/ILCD/Flow" xmlns="http://lca.jrc.it/ILCD/Process" xmlns:fp="http://lca.jrc.it/ILCD/FlowProperty" xmlns:u="http://lca.jrc.it/ILCD/UnitGroup" version="1.1">
+    <c:contactInformation>
+        <c:dataSetInformation>
+            <common:UUID>9c5cd1fd-7cfa-49ba-a6d3-1f04b55b9e3b</common:UUID>
+            <common:shortName xml:lang="en">Wood Products S.A.</common:shortName>
+            <common:name xml:lang="en">Wood Products S.A.</common:name>
+            <c:classificationInformation>
+                <common:classification name="ILCD">
+                    <common:class level="0" classId="2">Organisations</common:class>
+                    <common:class level="1" classId="2.1">Private companies</common:class>
+                </common:classification>
+            </c:classificationInformation>
+        </c:dataSetInformation>
+    </c:contactInformation>
+    <c:administrativeInformation>
+        <c:dataEntryBy>
+            <common:timeStamp>2020-09-24T11:04:01.523+02:00</common:timeStamp>
+        </c:dataEntryBy>
+        <c:publicationAndOwnership>
+            <common:dataSetVersion>00.00.002</common:dataSetVersion>
+        </c:publicationAndOwnership>
+    </c:administrativeInformation>
+</c:contactDataSet>

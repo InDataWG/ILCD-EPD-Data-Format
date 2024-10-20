@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet version="1.0" href="../../stylesheets/flow2html.xsl" type="text/xsl"?>
+<flowDataSet xmlns="http://lca.jrc.it/ILCD/Flow" xmlns:common="http://lca.jrc.it/ILCD/Common" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://lca.jrc.it/ILCD/Flow ../../schemas/ILCD_FlowDataSet.xsd" locations="../ILCDLocations.xml" version="1.1" xmlns:epd="http://www.iai.kit.edu/EPD/2013">
+    <flowInformation>
+        <dataSetInformation>
+            <common:UUID>dd226774-92f9-48db-a6b8-b0110cad5d38</common:UUID>
+            <name>
+                <baseName xml:lang="de">ip 420 Weißfeinkalk CL 90-Q, HeidelbergCement AG</baseName>
+            </name>
+            <classificationInformation>
+                <common:classification name="GaBiCategories" classes="../GaBiCategories.xml">
+                    <common:class level="0" classId="4a938ffe-59f7-4b32-a12f-cb240e413585">Wertgüter</common:class>
+                    <common:class level="1" classId="b9671266-d655-43df-adbe-87b6edb87b20">Wertstoffe</common:class>
+                    <common:class level="2" classId="945a7f03-8ddf-4e38-934a-5b467a7a955b">Mineralische Werkstoffe</common:class>
+                </common:classification>
+            </classificationInformation>
+            <sumFormula>CaO</sumFormula>
+            <common:generalComment xml:lang="de">Synonyme: Calciumoxid</common:generalComment>
+            <common:other xmlns="http://www.matml.org/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.matml.org/ ../../schemas/matml31.xsd">
+                <!-- NEU - Referenz auf generisches Produkt -->
+                <epd:isA type="flow data set" uri="Kalk_generisch_6c6bf0f0-4ba1-4032-a92d-5fa52ca1189d.xml" refObjectId="6c6bf0f0-4ba1-4032-a92d-5fa52ca1189d">
+                    <common:shortDescription xml:lang="de">Kalk Feinkalk (gemahlen) (generisches Produkt)</common:shortDescription>
+                </epd:isA>
+                <!-- NEU: eingebettetes MatML für Angabe von Eigenschaften wie Rohdichte -->
+                <MatML_Doc>
+                    <Material>
+                        <BulkDetails>
+                            <Name>(Name of the material)</Name>
+                            <PropertyData property="pr1">
+                                <Data format="float">0.58</Data>
+                            </PropertyData>
+                        </BulkDetails>
+                    </Material>
+                    <Metadata>
+                        <PropertyDetails id="pr1">
+                            <Name>Raw density</Name>
+                            <Units name="kg/m^3" description="kilograms per cubic metre">
+                                <Unit>
+                                    <Name>kg</Name>
+                                </Unit>
+                                <Unit power="-3">
+                                    <Name>m</Name>
+                                </Unit>
+                            </Units>
+                        </PropertyDetails>
+                    </Metadata>
+                </MatML_Doc>
+            </common:other>
+        </dataSetInformation>
+        <quantitativeReference>
+            <referenceToReferenceFlowProperty>0</referenceToReferenceFlowProperty>
+        </quantitativeReference>
+    </flowInformation>
+    <modellingAndValidation>
+        <LCIMethod>
+            <typeOfDataSet>Product flow</typeOfDataSet>
+            <!-- NEU: Informationen, ob es sich um ein herstellerspezifisches Produkt handelt -->
+            <common:other>
+                <epd:vendorSpecificProduct>true</epd:vendorSpecificProduct>
+                <!-- optionale zusätzliche Informationen zum Hersteller etc. -->
+                <epd:referenceToVendor type="contact data set" refObjectId="00000000-0000-0000-0000-000000000000">
+                    <common:shortDescription xml:lang="de">Hersteller</common:shortDescription>
+                </epd:referenceToVendor>
+                <epd:referenceToSource type="source data set" refObjectId="00000000-0000-0000-0000-000000000000">
+                    <common:shortDescription xml:lang="de">Verweis z.B. auf Produktkatalog</common:shortDescription>
+                </epd:referenceToSource>
+            </common:other>
+        </LCIMethod>
+    </modellingAndValidation>
+    <administrativeInformation>
+        <dataEntryBy>
+            <common:timeStamp>2011-11-01T00:00:00+01:00</common:timeStamp>
+            <common:referenceToDataSetFormat refObjectId="a97a0155-0234-4b87-b4ce-a45da52f2a40" type="source data set"
+                uri="../sources/ILCD_Format_a97a0155-0234-4b87-b4ce-a45da52f2a40.xml">
+                <common:shortDescription xml:lang="de">ILCD format 1.1</common:shortDescription>
+            </common:referenceToDataSetFormat>
+            <common:referenceToDataSetFormat type="source data set" refObjectId="cba73800-7874-11e3-981f-0800200c9a66" uri="../sources/cba73800-7874-11e3-981f-0800200c9a66.xml">
+                <common:shortDescription xml:lang="en">EPD Data Format Extensions</common:shortDescription>
+                <common:shortDescription xml:lang="de">EPD-Datenformaterweiterungen</common:shortDescription>
+            </common:referenceToDataSetFormat>
+        </dataEntryBy>
+        <publicationAndOwnership>
+            <common:dataSetVersion>20.00.001</common:dataSetVersion>
+            <common:referenceToOwnershipOfDataSet refObjectId="623edf96-39d1-4e6f-9892-674c7228546b" version="20.00.000" type="contact data set"
+                uri="../contacts/623edf96-39d1-4e6f-9892-674c7228546b_20.00.000.xml">
+                <common:shortDescription xml:lang="de">PE INTERNATIONAL</common:shortDescription>
+            </common:referenceToOwnershipOfDataSet>
+        </publicationAndOwnership>
+    </administrativeInformation>
+    <flowProperties>
+    <flowProperty dataSetInternalID="0">
+      <referenceToFlowPropertyDataSet refObjectId="93a60a56-a3c8-11da-a746-0800200b9a66" version="02.00.000" type="flow property data set" uri="../flowproperties/93a60a56-a3c8-11da-a746-0800200b9a66_02.00.000.xml">
+        <common:shortDescription xml:lang="de">Masse</common:shortDescription>
+      </referenceToFlowPropertyDataSet>
+      <meanValue>1</meanValue>
+    </flowProperty>
+    <flowProperty dataSetInternalID="1">
+      <referenceToFlowPropertyDataSet refObjectId="6b2d044b-73e8-49e9-a6b9-3c0e1a950f2f" version="20.00.000" type="flow property data set" uri="../flowproperties/6b2d044b-73e8-49e9-a6b9-3c0e1a950f2f_20.00.000.xml">
+        <common:shortDescription xml:lang="de">Sonstige Werkstoffe und Werkstoffverbunde (unspezifisch)</common:shortDescription>
+      </referenceToFlowPropertyDataSet>
+      <meanValue>1</meanValue>
+      <relativeStandardDeviation95In>0.000</relativeStandardDeviation95In>
+    </flowProperty>
+  </flowProperties>
+</flowDataSet>

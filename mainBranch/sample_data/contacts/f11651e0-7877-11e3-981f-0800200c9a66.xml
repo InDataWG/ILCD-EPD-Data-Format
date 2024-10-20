@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="../../stylesheets/contact2html.xsl"?>
+<contactDataSet xmlns="http://lca.jrc.it/ILCD/Contact" xmlns:common="http://lca.jrc.it/ILCD/Common" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://lca.jrc.it/ILCD/Contact ../../schemas/ILCD_ContactDataSet.xsd" version="1.1">
+    <contactInformation>
+        <dataSetInformation>
+            <common:UUID>f11651e0-7877-11e3-981f-0800200c9a66</common:UUID>
+            <common:shortName xml:lang="en">BBSR</common:shortName>
+            <common:shortName xml:lang="de">BBSR</common:shortName>
+            <common:name xml:lang="en">The Federal Institute for Research on Building, Urban Affairs and Spatial Development (BBSR) within the Federal Office for Building and Regional Planning (BBR)</common:name>
+            <common:name xml:lang="de">Bundesinstitut für Bau-, Stadt- und Raumforschung (BBSR) im Bundesamt für Bauwesen und Raumordnung (BBR) </common:name>
+            <classificationInformation>
+                <common:classification>
+                    <common:class level="0">Organisations</common:class>
+                    <common:class level="1">Governmental organisations</common:class>
+                </common:classification>
+            </classificationInformation>
+            <contactAddress xml:lang="en">Ernst-Reuter-Haus, Straße des 17. Juni 112, 10623 Berlin, Germany</contactAddress>
+            <telephone>+49 30 18401-0</telephone>
+            <telefax>+49 30 18401-8212</telefax>
+            <WWWAddress>http://www.bbsr.bund.de/</WWWAddress>
+            <referenceToLogo type="source data set" uri="../sources/1bcd10c0-788e-11e3-981f-0800200c9a66.xml" refObjectId="1bcd10c0-788e-11e3-981f-0800200c9a66"/>
+        </dataSetInformation>
+    </contactInformation>
+    <administrativeInformation>
+        <dataEntryBy>
+            <common:timeStamp>2014-01-04T18:13:51.0Z</common:timeStamp>
+            <common:referenceToDataSetFormat type="source data set" uri="../sources/ILCD_Format_a97a0155-0234-4b87-b4ce-a45da52f2a40.xml" refObjectId="a97a0155-0234-4b87-b4ce-a45da52f2a40">
+                <common:shortDescription>ILCD format 1.1</common:shortDescription>
+            </common:referenceToDataSetFormat>
+        </dataEntryBy>
+        <publicationAndOwnership>
+            <common:dataSetVersion>00.01.000</common:dataSetVersion>
+        </publicationAndOwnership>
+    </administrativeInformation>
+</contactDataSet>

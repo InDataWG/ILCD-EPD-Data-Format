@@ -1,0 +1,55 @@
+<entries>
+<entry obd="4d313757-ffa1-4a72-9261-1780a90409be" gabien="b4eb71cf-fda1-41c3-ac1d-d7bd4fc9a518" nameen="Solvent based lacquer"/>
+<entry obd="d94d2efe-7536-44b1-a3e8-f854fab1a2a7" gabien="b4eb71cf-fda1-41c3-ac1d-d7bd4fc9a518" nameen="Coating powder"/>
+<entry obd="a897cd36-63ab-4b94-a79a-116b16ecee00" gabien="b4eb71cf-fda1-41c3-ac1d-d7bd4fc9a518" nameen="Water based lacquer"/>
+<entry obd="fc248441-57f5-4367-a470-76829881dbc9" gabien="4b247337-a35d-492e-b9e7-113b4bc5c288" nameen="Bitumen sheet (G200)"/>
+<entry obd="58c0dc4e-a799-43c0-a7dc-1437477efd89" gabien="4b247337-a35d-492e-b9e7-113b4bc5c288" nameen="Bitumen sheet (V60)"/>
+<entry obd="9fd7ea4e-9489-484a-9f06-271d3f96858a" gabien="0f0ddd66-d3d2-4944-aa12-f5d76474419c" nameen="Rubber floor covering profiled"/>
+<entry obd="e80aef11-0e50-46fb-af97-609bc65f8ae9" gabien="1ac03b7c-0eed-47d7-964f-fd22bdd4c797" nameen="Plastic profile CR"/>
+<entry obd="315f3e38-c534-4e99-aab3-81d6a4f5e5e2" gabien="9e23d894-6be4-430b-ade8-8c07b5f388c3" nameen="Damp insulation (PA)"/>
+<entry obd="a79b2e3b-75d9-480b-8805-a8a320f31736" gabien="a79b2e3b-75d9-480b-8805-a8a320f31736" nameen="Vapour barrier"/>
+<entry obd="e843a2eb-5f8a-4f76-90df-3cc6b7bfca50" gabien="9e23d894-6be4-430b-ade8-8c07b5f388c3" nameen="Damp insulation (PET)"/>
+<entry obd="c8e9319c-78e4-48a0-915b-567cc0dba14e" gabien="10c5bf76-8596-499c-b20b-cfa4b9be77f4" nameen="Elastomer joint tape (Polysulphide)"/>
+<entry obd="280f627e-0e56-4058-b086-6e8b2812926f" gabien="10c5bf76-8596-499c-b20b-cfa4b9be77f4" nameen="Elastomer joint tape (Polyurethane)"/>
+<entry obd="78b05c52-a5bc-44ca-8180-d5167e994cda" gabien="10c5bf76-8596-499c-b20b-cfa4b9be77f4" nameen="Elastomer joint tape (Silicone rubber)"/>
+<entry obd="6330c025-f222-4434-8e94-b5931018126d" gabien="6f8f28fc-e282-40fa-9d92-a049d6b3e3e4" nameen="Joint sealing tape (butyl)"/>
+<entry obd="d74e3804-1848-4f1d-9b16-eac390a13523" gabien="6f8f28fc-e282-40fa-9d92-a049d6b3e3e4" nameen="Joint sealing tape (fabric)"/>
+<entry obd="219b1a9d-99de-4c01-817c-b1ea6b408ab6" gabien="6f8f28fc-e282-40fa-9d92-a049d6b3e3e4" nameen="Joint gasket tape (PE/PP)"/>
+<entry obd="5e4bdc89-6cc2-4304-a5fa-5de452322d7c" gabien="6f8f28fc-e282-40fa-9d92-a049d6b3e3e4" nameen="Joint gasket tape (Polyisobutylen)"/>
+<entry obd="ba9a0847-1ab0-4634-ae1c-cdfd1d781da2" gabien="b55708c1-b422-4935-906a-92e25f3251cb" nameen="Underfloor heating system (copper 100 mm distance)"/>
+<entry obd="3249cd03-a7c1-40c4-846e-6a0ef28f2d53" gabien="b55708c1-b422-4935-906a-92e25f3251cb" nameen="Underfloor heating system (copper 200 mm distance)"/>
+<entry obd="111147c0-97bb-4525-befe-26e091d76230" gabien="b55708c1-b422-4935-906a-92e25f3251cb" nameen="Underfloor heating system (PE-X 100 mm distance)"/>
+<entry obd="950453de-61a2-4745-9fe9-516ab9760c69" gabien="b55708c1-b422-4935-906a-92e25f3251cb" nameen="Underfloor heating system (PE-X 200 mm distance)"/>
+<entry obd="1f92a0a9-9388-40f2-bb6e-d7df1558e4fd" gabien="b55708c1-b422-4935-906a-92e25f3251cb" nameen="Underfloor heating system (PP 100 mm distance)"/>
+<entry obd="450b372f-2f9a-40c9-845d-35521bb428e5" gabien="b55708c1-b422-4935-906a-92e25f3251cb" nameen="Underfloor heating system (PP 200 mm distance)"/>
+<entry obd="4475617e-b751-4aa4-81e7-7c267118c17f" gabien="a1af66a5-b50a-47b0-b3ce-43e39beb6062" nameen="Caoutchouc foam"/>
+<entry obd="91aac224-eb88-4a07-a7ae-5a3bd5658e86" gabien="3adeb602-22d9-453c-b0e1-584c4f3f7ea7" nameen="Plastic sealing band (PE-HD with PP fleece)"/>
+<entry obd="486e3597-0bfa-4de9-bdd1-54148cbee27f" gabien="1ac03b7c-0eed-47d7-964f-fd22bdd4c797" nameen="Plastic profile CR (Chloroprene-Rubber)"/>
+<entry obd="2b71cca2-228b-429a-b2f8-fac20a8e0cff" gabien="1ac03b7c-0eed-47d7-964f-fd22bdd4c797" nameen="Plastic profile (SBR/EPDM)"/>
+<entry obd="eeb9cad8-d022-4298-a287-cc66b5fdb232" gabien="1ac03b7c-0eed-47d7-964f-fd22bdd4c797" nameen="Plastic profile (Silicone)"/>
+<entry obd="85e7b608-1b56-4292-a8df-c02c15ac910a" gabien="b1e9e849-4d0a-4688-acda-bb5363e13f01" nameen="Paint systems wooden facade"/>
+<entry obd="b1e9e849-4d0a-4688-acda-bb5363e13f01" gabien="b1e9e849-4d0a-4688-acda-bb5363e13f01" nameen="Paint systems wooden windows"/>
+<entry obd="b5831134-003e-41de-89ee-f50bb293407f" gabien="c4a1a2e5-873f-46f0-ab5d-8fc5f6a63c07" nameen="Surface (metals coating water-based)"/>
+<entry obd="ba9afd09-3a1c-41f2-95a1-9cfab23322e0" gabien="c4a1a2e5-873f-46f0-ab5d-8fc5f6a63c07" nameen="Surface (metals coating solvent-based)"/>
+<entry obd="1ecc514a-f7b5-4284-858a-77444aef8604" gabien="39757bf4-142b-41e0-bd8a-92acc1a897f2" nameen="Parquet varnish"/>
+<entry obd="e1e79868-0385-41a4-b9b8-75ee42ff78a3" gabien="c9178198-54ce-4686-8c4d-85484188f77d" nameen="Transparent board (PC)"/>
+<entry obd="2b7c9636-695b-49f7-a1f8-c265eb607f08" gabien="c9178198-54ce-4686-8c4d-85484188f77d" nameen="Transparent board (PMMA)"/>
+<entry obd="ce2503ff-20dd-4f79-8945-91c4829af797" gabien="c9178198-54ce-4686-8c4d-85484188f77d" nameen="Transparent board (PVC)"/>
+<entry obd="21536ae9-da94-473e-9655-91048f523874" gabien="b7d0d8fa-e8b6-4ebf-80b0-ad28a9152629" nameen="Drinking water pipe PE-X-Alu"/>
+<entry obd="eda3a44d-dd38-439e-a62b-e1844de99cf8" gabien="27cc3426-4ac2-4120-a6a3-731a94858401" nameen="Underroof membrane (PE)"/>
+<entry obd="9e2817a4-bb02-4985-b4f1-eab0dc8f48cf" gabien="27cc3426-4ac2-4120-a6a3-731a94858401" nameen="Underroof membrane (PP)"/>
+<entry obd="07b8fd2e-94cf-419e-a2f7-a97c4ec8b900" gabien="411f3896-54c9-4143-9e1d-f3e1cf4bce3d" nameen="ETICS gluing and coating synthetic resin plaster"/>
+<entry obd="ea5f4834-53b5-4796-ada4-d24ed86316b3" gabien="411f3896-54c9-4143-9e1d-f3e1cf4bce3d" nameen="ETICS gluing and coating silicate dispersion plaster"/>
+<entry obd="c4745af7-fc6b-4588-866a-fcc7d38f1116" gabien="411f3896-54c9-4143-9e1d-f3e1cf4bce3d" nameen="ETICS gluing and coating silicone dispersion plaster"/>
+<entry obd="e86bc4d9-3669-48ad-85fb-0f568253a502" gabien="352b0505-80b2-42c1-972e-d743f02f63ff" nameen="Gas heat pump (air) 20-70 kW"/>
+<entry obd="5229cf9c-a414-439b-99b2-9999e5192ef6" gabien="352b0505-80b2-42c1-972e-d743f02f63ff" nameen="Electric heat pump (Brine-Water, geothermal collector) 10 kW"/>
+<entry obd="e27536d6-41b9-4ec5-94a6-533384b9d613" gabien="352b0505-80b2-42c1-972e-d743f02f63ff" nameen="Electric heat pump (Brine-Water, geothermal collector) 20 kW"/>
+<entry obd="c6f18904-03f7-4451-884c-0f35855c3638" gabien="352b0505-80b2-42c1-972e-d743f02f63ff" nameen="Electric heat pump (Brine-Water, geothermal collector) 70 kW"/>
+<entry obd="7d9e2be8-978f-4ea9-bd21-e076e04938c8" gabien="352b0505-80b2-42c1-972e-d743f02f63ff" nameen="Electric heat pump (Brine-Water, geothermal probe) 10 kW"/>
+<entry obd="46ce2023-b58c-4757-9f0c-b705d07eabc9" gabien="352b0505-80b2-42c1-972e-d743f02f63ff" nameen="Electric heat pump (Brine-Water, geothermal probe) 20 kW"/>
+<entry obd="70993eb1-b88f-4f50-95ea-e5dc48c85c91" gabien="352b0505-80b2-42c1-972e-d743f02f63ff" nameen="Electric heat pump (Brine-Water, geothermal probe) 70 kW"/>
+<entry obd="2d8e4690-3a78-4454-b5fe-b41afccfba70" gabien="352b0505-80b2-42c1-972e-d743f02f63ff" nameen="Electric heat pump (Water-Water) 10 kW"/>
+<entry obd="04367f4e-c897-4858-a162-58991161a454" gabien="352b0505-80b2-42c1-972e-d743f02f63ff" nameen="Electric heat pump (Water-Water) 20 kW"/>
+<entry obd="5f42e409-0e56-4efc-aea1-713abd97fdbc" gabien="352b0505-80b2-42c1-972e-d743f02f63ff" nameen="Electric heat pump (Water-Water) 70 kW"/>
+<entry obd="1d7cad02-f70e-4375-a5b6-434c54afa7fb" gabien="e797be1d-19ca-41ab-b5de-d8406980cc97" nameen="Corkboard"/>
+</entries>
