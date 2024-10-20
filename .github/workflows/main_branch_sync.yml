@@ -25,13 +25,13 @@ jobs:
           path: gitActions
 
       - name: Clean mainBranch directory in gitActions
-        run: rm -rf gitActions/mainBranch/*
+        run: rm -rf gitActions/mainBranch
 
       - name: Copy content to mainBranch folder in gitActions branch
         run: |
           echo "Updating content from mainTest branch to gitActions/mainBranch."
           mkdir -p gitActions/mainBranch
-          rsync -av --exclude='gitActions' ./ gitActions/mainBranch/
+          rsync -avL --exclude='gitActions' ./ gitActions/mainBranch/
 
       - name: Verify copied files
         run: ls -la gitActions/mainBranch
