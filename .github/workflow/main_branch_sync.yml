@@ -3,7 +3,7 @@ name: Sync Main Branch to GitActions
 on:
   push:
     branches:
-      - 'mainTest'  # Trigger on pushes to mainTest branch
+      - 'mainTest'
 
 permissions:
   contents: write
@@ -13,31 +13,24 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # Step 1: Checkout the mainTest branch where the changes were made
       - name: Checkout mainTest branch
         uses: actions/checkout@v2
         with:
           ref: mainTest
 
-      # Step 2: Checkout the gitActions branch
       - name: Checkout gitActions branch
         uses: actions/checkout@v2
         with:
           ref: gitActions
           path: gitActions
 
-      # Step 3: Copy all content from mainTest branch to gitActions/mainBranch
       - name: Copy content to gitActions branch
         run: |
           echo "Updating content from mainTest branch to gitActions/mainBranch."
 
-          # Ensure the mainBranch directory exists in gitActions
           mkdir -p gitActions/mainBranch
+          rsync -av --exclude='gitActions' ./ gitActions/mainBranch/
 
-          # Copy all content from mainTest to the gitActions mainBranch folder
-          cp -r ./* gitActions/mainBranch/
-
-      # Step 4: Commit and push changes to gitActions branch
       - name: Commit and push changes to gitActions branch
         working-directory: gitActions
         run: |
