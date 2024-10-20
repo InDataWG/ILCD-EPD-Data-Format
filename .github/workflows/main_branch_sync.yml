@@ -1,0 +1,30 @@
+name: Update GitActions with Main Changes
+
+on:
+  push:
+    branches:
+      - mainTest
+
+jobs:
+  sync-main:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout main branch
+        uses: actions/checkout@v3
+        with:
+          ref: main
+
+      - name: Copy files to mainBranch folder
+        run: |
+          mkdir -p mainBranch
+          rsync -av --delete . mainBranch/ --exclude .git
+
+      - name: Commit and push to gitActions branch
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git checkout gitActions
+          mv mainBranch/* .
+          git add -A
+          git commit -m "Update mainBranch folder with latest main branch"
+          git push origin gitActions
