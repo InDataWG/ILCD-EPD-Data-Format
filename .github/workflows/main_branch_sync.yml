@@ -1,4 +1,4 @@
-name: deploy html documentation
+name: Sync Main Branch to GitActions
 
 on:
   push:
