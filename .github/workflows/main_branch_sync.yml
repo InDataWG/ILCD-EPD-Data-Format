@@ -24,17 +24,17 @@ jobs:
           ref: gitActions
           path: gitActions
 
-      - name: Clean gitBranches directory in gitActions
-        run: rm -rf gitActions/gitBranches/*
+      - name: Clean mainBranch directory in gitActions
+        run: rm -rf gitActions/mainBranch/*
 
-      - name: Copy content to gitBranches folder in gitActions branch
+      - name: Copy content to mainBranch folder in gitActions branch
         run: |
-          echo "Updating content from mainTest branch to gitActions/gitBranches."
-          mkdir -p gitActions/gitBranches
-          rsync -av --exclude='gitActions' ./ gitActions/gitBranches/ --relative --prune-empty-dirs
+          echo "Updating content from mainTest branch to gitActions/mainBranch."
+          mkdir -p gitActions/mainBranch
+          rsync -av --exclude='gitActions' ./ gitActions/mainBranch/
 
       - name: Verify copied files
-        run: ls -la gitActions/gitBranches
+        run: ls -la gitActions/mainBranch
 
       - name: Commit and push changes to gitActions branch
         working-directory: gitActions
@@ -42,6 +42,6 @@ jobs:
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git checkout gitActions
-          git add gitBranches
-          git commit -m "Updated content for gitBranches"
+          git add mainBranch
+          git commit -m "Updated content for mainBranch"
           git push origin gitActions --force
