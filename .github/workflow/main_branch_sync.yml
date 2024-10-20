@@ -1,32 +1,40 @@
-name: Update GitActions with Main Changes
+name: Sync Main Branch to GitActions
 
 on:
   push:
     branches:
       - mainTest
+
 permissions:
   contents: write
 
 jobs:
   sync-main:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout mainTest branch
-        uses: actions/checkout@v3
+        uses: actions/checkout@v2
         with:
           ref: mainTest
 
-      - name: Copy files to mainBranch folder
-        run: |
-          mkdir -p mainBranch
-          rsync -av --delete . mainBranch/ --exclude .git
+      - name: Checkout gitActions branch
+        uses: actions/checkout@v2
+        with:
+          ref: gitActions
+          path: gitActions
 
-      - name: Commit and push to gitActions branch
+      - name: Sync Main Branch to gitActions/mainBranch
         run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git checkout gitActions
-          mv mainBranch/* .
-          git add -A
-          git commit -m "Update mainBranch folder with latest main branch"
+          echo "Syncing main branch to gitActions..."
+          mkdir -p gitActions/mainBranch
+          rsync -av --delete . gitActions/mainBranch/ --exclude .git
+
+      - name: Commit and push changes to gitActions branch
+        working-directory: gitActions
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add mainBranch
+          git commit -m "Sync main branch to gitActions" || echo "No changes to commit"
           git push origin gitActions
