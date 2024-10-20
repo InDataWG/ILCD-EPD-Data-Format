@@ -11,10 +11,10 @@ jobs:
   sync-main:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout main branch
+      - name: Checkout mainTest branch
         uses: actions/checkout@v3
         with:
-          ref: main
+          ref: mainTest
 
       - name: Copy files to mainBranch folder
         run: |
