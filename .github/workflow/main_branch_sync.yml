@@ -4,6 +4,8 @@ on:
   push:
     branches:
       - mainTest
+permissions:
+  contents: write
 
 jobs:
   sync-main:
