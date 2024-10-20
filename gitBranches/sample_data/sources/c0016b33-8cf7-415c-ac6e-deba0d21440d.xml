@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet version="1.0" href="../../stylesheets/source2html.xsl" type="text/xsl"?>
+<sourceDataSet xmlns="http://lca.jrc.it/ILCD/Source" xmlns:common="http://lca.jrc.it/ILCD/Common" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://lca.jrc.it/ILCD/Source ../../schemas/ILCD_SourceDataSet.xsd" version="1.1">
+    <sourceInformation>
+        <dataSetInformation>
+            <common:UUID>c0016b33-8cf7-415c-ac6e-deba0d21440d</common:UUID>
+            <common:shortName xml:lang="de">EN 15804+A2</common:shortName>
+            <common:shortName xml:lang="en">EN 15804+A2</common:shortName>
+            <classificationInformation>
+                <common:classification>
+                    <common:class level="0">Compliance systems</common:class>
+                </common:classification>
+            </classificationInformation>
+            <sourceDescriptionOrComment xml:lang="de">EN 15804+A2: Nachhaltigkeit von Bauwerken - Umweltproduktdeklarationen - Grundregeln für die Produktkategorie Bauprodukte</sourceDescriptionOrComment>
+            <sourceDescriptionOrComment xml:lang="en">EN 15804+A2: Sustainability of construction works – Environmental product declarations – Core rules for the product category of construction products</sourceDescriptionOrComment>
+        </dataSetInformation>
+    </sourceInformation>
+    <administrativeInformation>
+        <dataEntryBy>
+            <common:timeStamp>2019-11-05T14:37:42+01:00</common:timeStamp>
+            <common:referenceToDataSetFormat refObjectId="a97a0155-0234-4b87-b4ce-a45da52f2a40" type="source data set"
+                uri="../sources/a97a0155-0234-4b87-b4ce-a45da52f2a40.xml">
+                <common:shortDescription xml:lang="de">ILCD format 1.1</common:shortDescription>
+                <common:shortDescription xml:lang="en">ILCD format 1.1</common:shortDescription>
+            </common:referenceToDataSetFormat>
+        </dataEntryBy>
+        <publicationAndOwnership>
+            <common:dataSetVersion>00.01.000</common:dataSetVersion>
+        </publicationAndOwnership>
+    </administrativeInformation>
+</sourceDataSet>

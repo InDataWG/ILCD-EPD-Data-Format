@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="http://iai-uiserv1.iai.kit.edu/EPD/stylesheets/unitgroup2html.xsl"?><unitGroupDataSet xmlns="http://lca.jrc.it/ILCD/UnitGroup"
+                  xmlns:common="http://lca.jrc.it/ILCD/Common"
+                  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                  xsi:schemaLocation="http://lca.jrc.it/ILCD/UnitGroup ../../schemas/ILCD_UnitGroupDataSet.xsd"
+                  version="1.1">
+   <unitGroupInformation>
+      <dataSetInformation>
+         <common:UUID>ad38d542-3fe9-439d-9b95-2f5f7752acaf</common:UUID>
+         <common:name xml:lang="en">Units of mass</common:name>
+         <common:name xml:lang="de">Masseneinheit</common:name>
+         <classificationInformation>
+            <common:classification name="GaBiCategories" classes="../GaBiCategories.xml">
+               <common:class level="0" classId="30c118c5-1fb2-4c6d-93e3-5450c9698f1e">Technische Einheiten</common:class>
+            </common:classification>
+         </classificationInformation>
+      </dataSetInformation>
+      <quantitativeReference>
+         <referenceToReferenceUnit>0</referenceToReferenceUnit>
+      </quantitativeReference>
+   </unitGroupInformation>
+   <modellingAndValidation/>
+   <administrativeInformation>
+      <dataEntryBy>
+         <common:timeStamp>2014-07-24T14:02:25.015+02:00</common:timeStamp>
+         <common:referenceToDataSetFormat refObjectId="a97a0155-0234-4b87-b4ce-a45da52f2a40" type="source data set"
+                                          uri="../sources/ILCD_Format_a97a0155-0234-4b87-b4ce-a45da52f2a40.xml">
+            <common:shortDescription xml:lang="de">ILCD format 1.1</common:shortDescription>
+         </common:referenceToDataSetFormat>
+      </dataEntryBy>
+      <publicationAndOwnership>
+         <common:dataSetVersion>25.00.000</common:dataSetVersion>
+      </publicationAndOwnership>
+   </administrativeInformation>
+   <units>
+      <unit dataSetInternalID="0">
+         <name>kg</name>
+         <meanValue>1</meanValue>
+      </unit>
+      <unit dataSetInternalID="1">
+         <name>Zentner</name>
+         <meanValue>50</meanValue>
+      </unit>
+      <unit dataSetInternalID="2">
+         <name>g</name>
+         <meanValue>0.001</meanValue>
+      </unit>
+      <unit dataSetInternalID="3">
+         <name>lb</name>
+         <meanValue>0.45359702440352</meanValue>
+      </unit>
+      <unit dataSetInternalID="4">
+         <name>long ton</name>
+         <meanValue>1016.04332408734</meanValue>
+      </unit>
+      <unit dataSetInternalID="5">
+         <name>metrisches Karat</name>
+         <meanValue>0.0002</meanValue>
+      </unit>
+      <unit dataSetInternalID="6">
+         <name>mg</name>
+         <meanValue>1E-6</meanValue>
+      </unit>
+      <unit dataSetInternalID="7">
+         <name>oz</name>
+         <meanValue>0.0283494925440835</meanValue>
+      </unit>
+      <unit dataSetInternalID="8">
+         <name>short ton</name>
+         <meanValue>907.19404880704</meanValue>
+      </unit>
+      <unit dataSetInternalID="9">
+         <name>t</name>
+         <meanValue>1000</meanValue>
+      </unit>
+      <unit dataSetInternalID="10">
+         <name>u</name>
+         <meanValue>1.66055030637153E-27</meanValue>
+      </unit>
+   </units>
+</unitGroupDataSet>
