@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<s:sourceDataSet xmlns:m="http://lca.jrc.it/ILCD/LCIAMethod" xmlns:common="http://lca.jrc.it/ILCD/Common" xmlns:s="http://lca.jrc.it/ILCD/Source" xmlns:c="http://lca.jrc.it/ILCD/Contact" xmlns:f="http://lca.jrc.it/ILCD/Flow" xmlns="http://lca.jrc.it/ILCD/Process" xmlns:fp="http://lca.jrc.it/ILCD/FlowProperty" xmlns:u="http://lca.jrc.it/ILCD/UnitGroup" version="1.1">
+    <s:sourceInformation>
+        <s:dataSetInformation>
+            <common:UUID>f1813e44-818e-4021-8cef-9db3dfb3692f</common:UUID>
+            <common:shortName xml:lang="en">Wood Panel EPD review report</common:shortName>
+            <s:classificationInformation>
+                <common:classification>
+                    <common:class level="0" classId="6">Other source types</common:class>
+                </common:classification>
+            </s:classificationInformation>
+            <s:referenceToContact type="contact data set" refObjectId="7cde93bd-3dba-44ca-a5da-b510d0f780d3" version="00.00.002">
+                <common:shortDescription xml:lang="en">Christian Kind</common:shortDescription>
+            </s:referenceToContact>
+        </s:dataSetInformation>
+    </s:sourceInformation>
+    <s:administrativeInformation>
+        <s:dataEntryBy>
+            <common:timeStamp>2020-09-24T10:50:17.978+02:00</common:timeStamp>
+        </s:dataEntryBy>
+        <s:publicationAndOwnership>
+            <common:dataSetVersion>00.00.003</common:dataSetVersion>
+        </s:publicationAndOwnership>
+    </s:administrativeInformation>
+</s:sourceDataSet>

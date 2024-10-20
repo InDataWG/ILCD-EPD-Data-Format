@@ -1,0 +1,1065 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CategorySystem xmlns="http://lca.jrc.it/ILCD/Categories"
+                xmlns:common="http://lca.jrc.it/ILCD/Common"
+                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                xsi:schemaLocation="http://lca.jrc.it/ILCD/Categories ../schemas/ILCD_Categories.xsd"
+                name="OEKOBAU.DAT">
+   <categories dataType="Process">
+      <category id="1" name="Mineralische Baustoffe">
+         <categoryy id="1" name="Mineralische Baustoffe"/>
+      </category>
+      <category id="1.1" name="Bindemittel">
+         <categoryy id="1.1" name="Bindemittel"/>
+      </category>
+      <category id="1.1.01" name="Zement">
+         <categoryy id="1.1.01" name="Zement"/>
+      </category>
+      <category id="1.1.02" name="Kalk">
+         <categoryy id="1.1.02" name="Kalk"/>
+      </category>
+      <category id="1.1.03" name="Gips">
+         <categoryy id="1.1.03" name="Gips"/>
+      </category>
+      <category id="1.1.04" name="Lehm">
+         <categoryy id="1.1.04" name="Lehm"/>
+      </category>
+      <category id="1.2" name="Zuschläge">
+         <categoryy id="1.2" name="Zuschläge"/>
+      </category>
+      <category id="1.2.01" name="Sand und Kies">
+         <categoryy id="1.2.01" name="Sand und Kies"/>
+      </category>
+      <category id="1.2.02" name="Naturstein">
+         <categoryy id="1.2.02" name="Naturstein"/>
+      </category>
+      <category id="1.2.03" name="Bims">
+         <categoryy id="1.2.03" name="Bims"/>
+      </category>
+      <category id="1.2.04" name="Blähton">
+         <categoryy id="1.2.04" name="Blähton"/>
+      </category>
+      <category id="1.2.05" name="Blähschiefer">
+         <categoryy id="1.2.05" name="Blähschiefer"/>
+      </category>
+      <category id="1.2.06" name="Blähglas">
+         <categoryy id="1.2.06" name="Blähglas"/>
+      </category>
+      <category id="1.2.07" name="Perlite">
+         <categoryy id="1.2.07" name="Perlite"/>
+      </category>
+      <category id="1.2.08" name="Kraftwerksnebenprodukte">
+         <categoryy id="1.2.08" name="Kraftwerksnebenprodukte"/>
+      </category>
+      <category id="1.2.09" name="Puzzolan">
+         <categoryy id="1.2.09" name="Puzzolan"/>
+      </category>
+      <category id="1.3" name="Steine und Elemente">
+         <categoryy id="1.3" name="Steine und Elemente"/>
+      </category>
+      <category id="1.3.01" name="Kalksandstein">
+         <categoryy id="1.3.01" name="Kalksandstein"/>
+      </category>
+      <category id="1.3.02" name="Ziegel">
+         <categoryy id="1.3.02" name="Ziegel"/>
+      </category>
+      <category id="1.3.03" name="Porenbeton">
+         <categoryy id="1.3.03" name="Porenbeton"/>
+      </category>
+      <category id="1.3.04" name="Leichtbeton">
+         <categoryy id="1.3.04" name="Leichtbeton"/>
+      </category>
+      <category id="1.3.05" name="Betonfertigteile und Betonwaren">
+         <categoryy id="1.3.05" name="Betonfertigteile und Betonwaren"/>
+      </category>
+      <category id="1.3.06" name="Steinzeug">
+         <categoryy id="1.3.06" name="Steinzeug"/>
+      </category>
+      <category id="1.3.07" name="Fliesen und Platten">
+         <categoryy id="1.3.07" name="Fliesen und Platten"/>
+      </category>
+      <category id="1.3.08" name="Naturwerkstein">
+         <categoryy id="1.3.08" name="Naturwerkstein"/>
+      </category>
+      <category id="1.3.09" name="Schiefer">
+         <categoryy id="1.3.09" name="Schiefer"/>
+      </category>
+      <category id="1.3.10" name="Dachziegel">
+         <categoryy id="1.3.10" name="Dachziegel"/>
+      </category>
+      <category id="1.3.11" name="Dachsteine">
+         <categoryy id="1.3.11" name="Dachsteine"/>
+      </category>
+      <category id="1.3.12" name="Faserzement">
+         <categoryy id="1.3.12" name="Faserzement"/>
+      </category>
+      <category id="1.3.13" name="Gipsplatten">
+         <categoryy id="1.3.13" name="Gipsplatten"/>
+      </category>
+      <category id="1.3.14" name="Trockenestrich">
+         <categoryy id="1.3.14" name="Trockenestrich"/>
+      </category>
+      <category id="1.3.15" name="Deckenplatten">
+         <categoryy id="1.3.15" name="Deckenplatten"/>
+      </category>
+      <category id="1.3.16" name="Glasbausteine">
+         <categoryy id="1.3.16" name="Glasbausteine"/>
+      </category>
+      <category id="1.3.17" name="Lehmsteine">
+         <categoryy id="1.3.17" name="Lehmsteine"/>
+      </category>
+      <category id="1.3.18" name="Brandschutzplatten">
+         <categoryy id="1.3.18" name="Brandschutzplatten"/>
+      </category>
+      <category id="1.4" name="Mörtel und Beton">
+         <categoryy id="1.4" name="Mörtel und Beton"/>
+      </category>
+      <category id="1.4.01" name="Transportbeton">
+         <categoryy id="1.4.01" name="Transportbeton"/>
+      </category>
+      <category id="1.4.02" name="Mauermörtel">
+         <categoryy id="1.4.02" name="Mauermörtel"/>
+      </category>
+      <category id="1.4.03" name="Estrich trocken">
+         <categoryy id="1.4.03" name="Estrich trocken"/>
+      </category>
+      <category id="1.4.04" name="Putz und Putzmörtel">
+         <categoryy id="1.4.04" name="Putz und Putzmörtel"/>
+      </category>
+      <category id="1.4.05" name="Kleber und Klebemörtel">
+         <categoryy id="1.4.05" name="Kleber und Klebemörtel"/>
+      </category>
+      <category id="1.4.06" name="Betonzusatzmittel">
+         <categoryy id="1.4.06" name="Betonzusatzmittel"/>
+      </category>
+      <category id="1.5" name="Asphalt">
+         <categoryy id="1.5" name="Asphalt"/>
+      </category>
+      <category id="1.5.01" name="Splittmastixasphalt">
+         <categoryy id="1.5.01" name="Splittmastixasphalt"/>
+      </category>
+      <category id="1.5.02" name="Gussassphalt">
+         <categoryy id="1.5.02" name="Gussassphalt"/>
+      </category>
+      <category id="1.5.03" name="Asphaltbinder">
+         <categoryy id="1.5.03" name="Asphaltbinder"/>
+      </category>
+      <category id="1.5.04" name="Tragschichten">
+         <categoryy id="1.5.04" name="Tragschichten"/>
+      </category>
+      <category id="1.6" name="End of life - Prozesse">
+         <categoryy id="1.6" name="End of life - Prozesse"/>
+      </category>
+      <category id="1.6.01" name="End of life - Putz">
+         <categoryy id="1.6.01" name="End of life - Putz"/>
+      </category>
+      <category id="1.6.02" name="End of life - Armierungen">
+         <categoryy id="1.6.02" name="End of life - Armierungen"/>
+      </category>
+      <category id="2" name="Dämmstoffe">
+         <categoryy id="2" name="Dämmstoffe"/>
+      </category>
+      <category id="2.1" name="Mineralwolle">
+         <categoryy id="2.1" name="Mineralwolle"/>
+      </category>
+      <category id="2.1.01" name="Mineralwolle">
+         <categoryy id="2.1.01" name="Mineralwolle"/>
+      </category>
+      <category id="2.1.02" name="Glaswolle">
+         <categoryy id="2.1.02" name="Glaswolle"/>
+      </category>
+      <category id="2.1.03" name="Steinwolle">
+         <categoryy id="2.1.03" name="Steinwolle"/>
+      </category>
+      <category id="2.2" name="Expandiertes Polystyrol">
+         <categoryy id="2.2" name="Expandiertes Polystyrol"/>
+      </category>
+      <category id="2.2.01" name="EPS weiß">
+         <categoryy id="2.2.01" name="EPS weiß"/>
+      </category>
+      <category id="2.2.02" name="EPS grau">
+         <categoryy id="2.2.02" name="EPS grau"/>
+      </category>
+      <category id="2.2.03" name="EPS grau-weiß">
+         <categoryy id="2.2.03" name="EPS grau-weiß"/>
+      </category>
+      <category id="2.3" name="Extrudiertes Polystyrol">
+         <categoryy id="2.3" name="Extrudiertes Polystyrol"/>
+      </category>
+      <category id="2.3.01" name="XPS weiß">
+         <categoryy id="2.3.01" name="XPS weiß"/>
+      </category>
+      <category id="2.4" name="Polyurethan-Hartschaum (PUR)">
+         <categoryy id="2.4" name="Polyurethan-Hartschaum (PUR)"/>
+      </category>
+      <category id="2.4.01" name="PU mit Aluminium">
+         <categoryy id="2.4.01" name="PU mit Aluminium"/>
+      </category>
+      <category id="2.4.02" name="PU mit Mineralfasern">
+         <categoryy id="2.4.02" name="PU mit Mineralfasern"/>
+      </category>
+      <category id="2.4.03" name="PU Blockschaum">
+         <categoryy id="2.4.03" name="PU Blockschaum"/>
+      </category>
+      <category id="2.5" name="Phenolharz-Hartschaum (PF)">
+         <categoryy id="2.5" name="Phenolharz-Hartschaum (PF)"/>
+      </category>
+      <category id="2.6" name="Schaumglas">
+         <categoryy id="2.6" name="Schaumglas"/>
+      </category>
+      <category id="2.6.01" name="Foamglas">
+         <categoryy id="2.6.01" name="Foamglas"/>
+      </category>
+      <category id="2.7" name="Holzwolleplatten">
+         <categoryy id="2.7" name="Holzwolleplatten"/>
+      </category>
+      <category id="2.7.01" name="Holzwolleleichtbauplatten">
+         <categoryy id="2.7.01" name="Holzwolleleichtbauplatten"/>
+      </category>
+      <category id="2.8" name="Blähperlit">
+         <categoryy id="2.8" name="Blähperlit"/>
+      </category>
+      <category id="2.9" name="Expandierter Kork">
+         <categoryy id="2.9" name="Expandierter Kork"/>
+      </category>
+      <category id="2.9.01" name="Expandierter Kork">
+         <categoryy id="2.9.01" name="Expandierter Kork"/>
+      </category>
+      <category id="2.10" name="Holzfasern">
+         <categoryy id="2.10" name="Holzfasern"/>
+      </category>
+      <category id="2.10.01" name="Holzfaserdämmplatte">
+         <categoryy id="2.10.01" name="Holzfaserdämmplatte"/>
+      </category>
+      <category id="2.11" name="Zellulosefaser">
+         <categoryy id="2.11" name="Zellulosefaser"/>
+      </category>
+      <category id="2.11.01" name="Zellulose-Einblas-Dämmstoff">
+         <categoryy id="2.11.01" name="Zellulose-Einblas-Dämmstoff"/>
+      </category>
+      <category id="2.11.02" name="Zelluloseplatten">
+         <categoryy id="2.11.02" name="Zelluloseplatten"/>
+      </category>
+      <category id="2.12" name="Flachsfaser">
+         <categoryy id="2.12" name="Flachsfaser"/>
+      </category>
+      <category id="2.12.01" name="Vlies">
+         <categoryy id="2.12.01" name="Vlies"/>
+      </category>
+      <category id="2.13" name="Hanffaser">
+         <categoryy id="2.13" name="Hanffaser"/>
+      </category>
+      <category id="2.13.01" name="Vlies">
+         <categoryy id="2.13.01" name="Vlies"/>
+      </category>
+      <category id="2.14" name="Baumwolle">
+         <categoryy id="2.14" name="Baumwolle"/>
+      </category>
+      <category id="2.14.01" name="Baumwolle konventionell">
+         <categoryy id="2.14.01" name="Baumwolle konventionell"/>
+      </category>
+      <category id="2.14.02" name="Baumwolle ökologisch">
+         <categoryy id="2.14.02" name="Baumwolle ökologisch"/>
+      </category>
+      <category id="2.15" name="Schafswolle">
+         <categoryy id="2.15" name="Schafswolle"/>
+      </category>
+      <category id="2.16" name="Harnstoff-Formaldehydharz">
+         <categoryy id="2.16" name="Harnstoff-Formaldehydharz"/>
+      </category>
+      <category id="2.16.01" name="Ortschaum">
+         <categoryy id="2.16.01" name="Ortschaum"/>
+      </category>
+      <category id="2.17" name="Melaminharz">
+         <categoryy id="2.17" name="Melaminharz"/>
+      </category>
+      <category id="2.17.01" name="Schaum">
+         <categoryy id="2.17.01" name="Schaum"/>
+      </category>
+      <category id="2.18" name="Polyethylen">
+         <categoryy id="2.18" name="Polyethylen"/>
+      </category>
+      <category id="2.18.01" name="Schaum">
+         <categoryy id="2.18.01" name="Schaum"/>
+      </category>
+      <category id="2.19" name="Kautschuk">
+         <categoryy id="2.19" name="Kautschuk"/>
+      </category>
+      <category id="2.19.01" name="Schaum">
+         <categoryy id="2.19.01" name="Schaum"/>
+      </category>
+      <category id="2.20" name="Calciumsilikat / Calcium-Silikathydrat">
+         <categoryy id="2.20" name="Calciumsilikat / Calcium-Silikathydrat"/>
+      </category>
+      <category id="2.20.01" name="Porenbeton">
+         <categoryy id="2.20.01" name="Porenbeton"/>
+      </category>
+      <category id="2.20.02" name="Calciumsilikat">
+         <categoryy id="2.20.02" name="Calciumsilikat"/>
+      </category>
+      <category id="2.21" name="Wärmedämmverbundsystem">
+         <categoryy id="2.21" name="Wärmedämmverbundsystem"/>
+      </category>
+      <category id="2.21.01" name="Wärmedämmverbundsystem">
+         <categoryy id="2.21.01" name="Wärmedämmverbundsystem"/>
+      </category>
+      <category id="2.21.02" name="WDVS-Dübel">
+         <categoryy id="2.21.02" name="WDVS-Dübel"/>
+      </category>
+      <category id="2.21.03" name="WDVS komplett">
+         <categoryy id="2.21.03" name="WDVS komplett"/>
+      </category>
+      <category id="2.22" name="End-of-life-Prozesse">
+         <categoryy id="2.22" name="End-of-life-Prozesse"/>
+      </category>
+      <category id="2.22.01" name="EoL Holzfaserdämmplatten">
+         <categoryy id="2.22.01" name="EoL Holzfaserdämmplatten"/>
+      </category>
+      <category id="2.22.02" name="EoL Glaswolle">
+         <categoryy id="2.22.02" name="EoL Glaswolle"/>
+      </category>
+      <category id="2.22.03" name="EoL Mineralwolle">
+         <categoryy id="2.22.03" name="EoL Mineralwolle"/>
+      </category>
+      <category id="2.22.04" name="EoL WDVS-Dübel">
+         <categoryy id="2.22.04" name="EoL WDVS-Dübel"/>
+      </category>
+      <category id="2.22.05" name="EoL WDVS">
+         <categoryy id="2.22.05" name="EoL WDVS"/>
+      </category>
+      <category id="2.22.06" name="EoL EPS">
+         <categoryy id="2.22.06" name="EoL EPS"/>
+      </category>
+      <category id="2.22.07" name="EoL Holzwolle">
+         <categoryy id="2.22.07" name="EoL Holzwolle"/>
+      </category>
+      <category id="3" name="Holz">
+         <categoryy id="3" name="Holz"/>
+      </category>
+      <category id="3.1" name="Vollholz">
+         <categoryy id="3.1" name="Vollholz"/>
+      </category>
+      <category id="3.1.01" name="Bau-Schnittholz">
+         <categoryy id="3.1.01" name="Bau-Schnittholz"/>
+      </category>
+      <category id="3.1.02" name="Konstruktionsvollholz">
+         <categoryy id="3.1.02" name="Konstruktionsvollholz"/>
+      </category>
+      <category id="3.1.03" name="Balkenschichtholz (Duo-Triobalken)">
+         <categoryy id="3.1.03" name="Balkenschichtholz (Duo-Triobalken)"/>
+      </category>
+      <category id="3.1.04" name="Brettschichtholz (BSH)">
+         <categoryy id="3.1.04" name="Brettschichtholz (BSH)"/>
+      </category>
+      <category id="3.1.05" name="Brettschichtholzplatte">
+         <categoryy id="3.1.05" name="Brettschichtholzplatte"/>
+      </category>
+      <category id="3.2" name="Holzwerkstoffe">
+         <categoryy id="3.2" name="Holzwerkstoffe"/>
+      </category>
+      <category id="3.2.01" name="3- und 5-Schichtplatten">
+         <categoryy id="3.2.01" name="3- und 5-Schichtplatten"/>
+      </category>
+      <category id="3.2.02" name="Sperrholz">
+         <categoryy id="3.2.02" name="Sperrholz"/>
+      </category>
+      <category id="3.2.03" name="Funierschichtholz">
+         <categoryy id="3.2.03" name="Funierschichtholz"/>
+      </category>
+      <category id="3.2.04" name="OSB-Platte">
+         <categoryy id="3.2.04" name="OSB-Platte"/>
+      </category>
+      <category id="3.2.05" name="Laminated Veneer Lumber (LVL)">
+         <categoryy id="3.2.05" name="Laminated Veneer Lumber (LVL)"/>
+      </category>
+      <category id="3.2.06" name="Spanplatten">
+         <categoryy id="3.2.06" name="Spanplatten"/>
+      </category>
+      <category id="3.2.07" name="Holzfaserplatten">
+         <categoryy id="3.2.07" name="Holzfaserplatten"/>
+      </category>
+      <category id="3.2.08" name="Holzzementplatten">
+         <categoryy id="3.2.08" name="Holzzementplatten"/>
+      </category>
+      <category id="3.3" name="Holzböden">
+         <categoryy id="3.3" name="Holzböden"/>
+      </category>
+      <category id="3.3.01" name="Laminat">
+         <categoryy id="3.3.01" name="Laminat"/>
+      </category>
+      <category id="3.3.02" name="Parkett">
+         <categoryy id="3.3.02" name="Parkett"/>
+      </category>
+      <category id="3.3.03" name="Kork">
+         <categoryy id="3.3.03" name="Kork"/>
+      </category>
+      <category id="3.4" name="End-of-life-Prozesse">
+         <categoryy id="3.4" name="End-of-life-Prozesse"/>
+      </category>
+      <category id="3.4.01" name="EoL Spanplatte">
+         <categoryy id="3.4.01" name="EoL Spanplatte"/>
+      </category>
+      <category id="3.4.02" name="EoL OSB">
+         <categoryy id="3.4.02" name="EoL OSB"/>
+      </category>
+      <category id="3.4.03" name="EoL allgemein">
+         <categoryy id="3.4.03" name="EoL allgemein"/>
+      </category>
+      <category id="3.4.04" name="EoL Holzfaserplatte">
+         <categoryy id="3.4.04" name="EoL Holzfaserplatte"/>
+      </category>
+      <category id="3.4.05" name="EoL Laminat">
+         <categoryy id="3.4.05" name="EoL Laminat"/>
+      </category>
+      <category id="3.4.06" name="EoL Schichtplatten">
+         <categoryy id="3.4.06" name="EoL Schichtplatten"/>
+      </category>
+      <category id="4" name="Metalle">
+         <categoryy id="4" name="Metalle"/>
+      </category>
+      <category id="4.1" name="Stahl und Eisen">
+         <categoryy id="4.1" name="Stahl und Eisen"/>
+      </category>
+      <category id="4.1.01" name="Betonstabstahl">
+         <categoryy id="4.1.01" name="Betonstabstahl"/>
+      </category>
+      <category id="4.1.02" name="Betonstahlmatten">
+         <categoryy id="4.1.02" name="Betonstahlmatten"/>
+      </category>
+      <category id="4.1.03" name="Stahlprofile">
+         <categoryy id="4.1.03" name="Stahlprofile"/>
+      </category>
+      <category id="4.1.04" name="Stahlbleche">
+         <categoryy id="4.1.04" name="Stahlbleche"/>
+      </category>
+      <category id="4.1.05" name="Guss- und Schmiedeteile aus Stahl und Eisen">
+         <categoryy id="4.1.05" name="Guss- und Schmiedeteile aus Stahl und Eisen"/>
+      </category>
+      <category id="4.2" name="Edelstahl">
+         <categoryy id="4.2" name="Edelstahl"/>
+      </category>
+      <category id="4.2.01" name="Edelstahlbleche">
+         <categoryy id="4.2.01" name="Edelstahlbleche"/>
+      </category>
+      <category id="4.2.02" name="Edelstahlprofile">
+         <categoryy id="4.2.02" name="Edelstahlprofile"/>
+      </category>
+      <category id="4.2.03" name="Edelstahl-Trinkwasserrohre">
+         <categoryy id="4.2.03" name="Edelstahl-Trinkwasserrohre"/>
+      </category>
+      <category id="4.3" name="Aluminium">
+         <categoryy id="4.3" name="Aluminium"/>
+      </category>
+      <category id="4.3.01" name="Aluminiumbleche">
+         <categoryy id="4.3.01" name="Aluminiumbleche"/>
+      </category>
+      <category id="4.3.02" name="Aluminiumprofil">
+         <categoryy id="4.3.02" name="Aluminiumprofil"/>
+      </category>
+      <category id="4.3.03" name="Gussteile aus Aluminium">
+         <categoryy id="4.3.03" name="Gussteile aus Aluminium"/>
+      </category>
+      <category id="4.4" name="Kupfer">
+         <categoryy id="4.4" name="Kupfer"/>
+      </category>
+      <category id="4.4.01" name="Kupferbleche">
+         <categoryy id="4.4.01" name="Kupferbleche"/>
+      </category>
+      <category id="4.4.02" name="Kupferrohre">
+         <categoryy id="4.4.02" name="Kupferrohre"/>
+      </category>
+      <category id="4.4.03" name="Kupferprofile">
+         <categoryy id="4.4.03" name="Kupferprofile"/>
+      </category>
+      <category id="4.4.04" name="Schmiede- und Gussteile aus Kupfer und Messing">
+         <categoryy id="4.4.04" name="Schmiede- und Gussteile aus Kupfer und Messing"/>
+      </category>
+      <category id="4.5" name="Zink">
+         <categoryy id="4.5" name="Zink"/>
+      </category>
+      <category id="4.5.01" name="Zinkbleche">
+         <categoryy id="4.5.01" name="Zinkbleche"/>
+      </category>
+      <category id="4.6" name="Blei">
+         <categoryy id="4.6" name="Blei"/>
+      </category>
+      <category id="4.6.01" name="Bleibleche">
+         <categoryy id="4.6.01" name="Bleibleche"/>
+      </category>
+      <category id="4.7" name="Oberflächenbehandlung und Beschichtung von Metallen">
+         <categoryy id="4.7" name="Oberflächenbehandlung und Beschichtung von Metallen"/>
+      </category>
+      <category id="4.7.01" name="Anodisieren von Aluminium">
+         <categoryy id="4.7.01" name="Anodisieren von Aluminium"/>
+      </category>
+      <category id="4.7.02" name="(Nass-) Lackieren von Metallen">
+         <categoryy id="4.7.02" name="(Nass-) Lackieren von Metallen"/>
+      </category>
+      <category id="4.7.03" name="Pulverbeschichten">
+         <categoryy id="4.7.03" name="Pulverbeschichten"/>
+      </category>
+      <category id="4.7.04" name="Verzinken von Stahl">
+         <categoryy id="4.7.04" name="Verzinken von Stahl"/>
+      </category>
+      <category id="4.8" name="End-of-life-Prozesse von Metallen">
+         <categoryy id="4.8" name="End-of-life-Prozesse von Metallen"/>
+      </category>
+      <category id="4.8.01" name="EoL von Aluminium">
+         <categoryy id="4.8.01" name="EoL von Aluminium"/>
+      </category>
+      <category id="4.8.02" name="EoL von Edelstahl">
+         <categoryy id="4.8.02" name="EoL von Edelstahl"/>
+      </category>
+      <category id="4.8.03" name="EoL von Kupferblechen">
+         <categoryy id="4.8.03" name="EoL von Kupferblechen"/>
+      </category>
+      <category id="4.8.04" name="EoL von Kupferblech (Bronze legiert)">
+         <categoryy id="4.8.04" name="EoL von Kupferblech (Bronze legiert)"/>
+      </category>
+      <category id="4.8.05" name="EoL von Kupferblech (Gold legiert)">
+         <categoryy id="4.8.05" name="EoL von Kupferblech (Gold legiert)"/>
+      </category>
+      <category id="4.8.06" name="EoL von Kupferrohr">
+         <categoryy id="4.8.06" name="EoL von Kupferrohr"/>
+      </category>
+      <category id="4.8.07" name="EoL von Sandwichelemente">
+         <categoryy id="4.8.07" name="EoL von Sandwichelemente"/>
+      </category>
+      <category id="4.8.08" name="EoL von Stahlblechen">
+         <categoryy id="4.8.08" name="EoL von Stahlblechen"/>
+      </category>
+      <category id="4.8.09" name="EoL von Stahlprofilen">
+         <categoryy id="4.8.09" name="EoL von Stahlprofilen"/>
+      </category>
+      <category id="4.8.10" name="EoL von Zinkblechen">
+         <categoryy id="4.8.10" name="EoL von Zinkblechen"/>
+      </category>
+      <category id="5" name="Beschichtungen">
+         <categoryy id="5" name="Beschichtungen"/>
+      </category>
+      <category id="5.1" name="Grundierungen">
+         <categoryy id="5.1" name="Grundierungen"/>
+      </category>
+      <category id="5.1.01" name="Grundierungen Farben und Putze">
+         <categoryy id="5.1.01" name="Grundierungen Farben und Putze"/>
+      </category>
+      <category id="5.2" name="Bodenbeschichtungen">
+         <categoryy id="5.2" name="Bodenbeschichtungen"/>
+      </category>
+      <category id="5.3" name="Bituminöse Anstriche">
+         <categoryy id="5.3" name="Bituminöse Anstriche"/>
+      </category>
+      <category id="5.3.01" name="Bitumenbeschichtungen">
+         <categoryy id="5.3.01" name="Bitumenbeschichtungen"/>
+      </category>
+      <category id="5.4" name="Fassadenfarben">
+         <categoryy id="5.4" name="Fassadenfarben"/>
+      </category>
+      <category id="5.4.01" name="Dispersion">
+         <categoryy id="5.4.01" name="Dispersion"/>
+      </category>
+      <category id="5.4.02" name="Silikat-Dispersion">
+         <categoryy id="5.4.02" name="Silikat-Dispersion"/>
+      </category>
+      <category id="5.4.03" name="Silikonharz">
+         <categoryy id="5.4.03" name="Silikonharz"/>
+      </category>
+      <category id="5.5" name="Innenbeschichtungen">
+         <categoryy id="5.5" name="Innenbeschichtungen"/>
+      </category>
+      <category id="5.5.01" name="Wand- und Deckenbeläge">
+         <categoryy id="5.5.01" name="Wand- und Deckenbeläge"/>
+      </category>
+      <category id="5.5.02" name="Innenfarben">
+         <categoryy id="5.5.02" name="Innenfarben"/>
+      </category>
+      <category id="5.6" name="Lacke und Lasuren">
+         <categoryy id="5.6" name="Lacke und Lasuren"/>
+      </category>
+      <category id="5.6.01" name="Lacksysteme Holzfenster">
+         <categoryy id="5.6.01" name="Lacksysteme Holzfenster"/>
+      </category>
+      <category id="5.6.02" name="Lacksysteme Holzfassade">
+         <categoryy id="5.6.02" name="Lacksysteme Holzfassade"/>
+      </category>
+      <category id="5.6.03" name="Parkettlack">
+         <categoryy id="5.6.03" name="Parkettlack"/>
+      </category>
+      <category id="5.6.04" name="Lacksysteme Metall">
+         <categoryy id="5.6.04" name="Lacksysteme Metall"/>
+      </category>
+      <category id="5.7" name="End-of-life-Prozesse">
+         <categoryy id="5.7" name="End-of-life-Prozesse"/>
+      </category>
+      <category id="5.7.01" name="EoL Grundierung">
+         <categoryy id="5.7.01" name="EoL Grundierung"/>
+      </category>
+      <category id="5.8" name="Reaktionsharze">
+         <categoryy id="5.8" name="Reaktionsharze"/>
+      </category>
+      <category id="5.8.01" name="Reaktionsharze auf Epoxidharzbasis">
+         <categoryy id="5.8.01" name="Reaktionsharze auf Epoxidharzbasis"/>
+      </category>
+      <category id="5.8.02" name="Reaktionsharze auf PU-Basis">
+         <categoryy id="5.8.02" name="Reaktionsharze auf PU-Basis"/>
+      </category>
+      <category id="5.8.03" name="Reaktionsharze auf Methacrylatbasis">
+         <categoryy id="5.8.03" name="Reaktionsharze auf Methacrylatbasis"/>
+      </category>
+      <category id="6" name="Kunststoffe">
+         <categoryy id="6" name="Kunststoffe"/>
+      </category>
+      <category id="6.1" name="Rohre">
+         <categoryy id="6.1" name="Rohre"/>
+      </category>
+      <category id="6.1.01" name="Trinkwasserrohre">
+         <categoryy id="6.1.01" name="Trinkwasserrohre"/>
+      </category>
+      <category id="6.1.02" name="Abwasserrohre">
+         <categoryy id="6.1.02" name="Abwasserrohre"/>
+      </category>
+      <category id="6.1.03" name="Regen-/Grauwasserrohre">
+         <categoryy id="6.1.03" name="Regen-/Grauwasserrohre"/>
+      </category>
+      <category id="6.2" name="Bodenbeläge">
+         <categoryy id="6.2" name="Bodenbeläge"/>
+      </category>
+      <category id="6.2.01" name="PVC-Bodenbeläge">
+         <categoryy id="6.2.01" name="PVC-Bodenbeläge"/>
+      </category>
+      <category id="6.2.02" name="Gummi-/Kautschuk-Bodenbeläge">
+         <categoryy id="6.2.02" name="Gummi-/Kautschuk-Bodenbeläge"/>
+      </category>
+      <category id="6.2.03" name="Synth. Thermoplast / Polyolefin">
+         <categoryy id="6.2.03" name="Synth. Thermoplast / Polyolefin"/>
+      </category>
+      <category id="6.2.04" name="Linoleum-Bodenbeläge">
+         <categoryy id="6.2.04" name="Linoleum-Bodenbeläge"/>
+      </category>
+      <category id="6.2.05" name="Textile Bodenbeläge">
+         <categoryy id="6.2.05" name="Textile Bodenbeläge"/>
+      </category>
+      <category id="6.3" name="Dachbahnen">
+         <categoryy id="6.3" name="Dachbahnen"/>
+      </category>
+      <category id="6.3.01" name="Bitumen-Dachbahnen">
+         <categoryy id="6.3.01" name="Bitumen-Dachbahnen"/>
+      </category>
+      <category id="6.3.02" name="PVC-Dachbahnen">
+         <categoryy id="6.3.02" name="PVC-Dachbahnen"/>
+      </category>
+      <category id="6.3.03" name="Elastomer-Dachbahnen">
+         <categoryy id="6.3.03" name="Elastomer-Dachbahnen"/>
+      </category>
+      <category id="6.3.04" name="EVA-Dachbahnen (Etylen-Vinylacetat)">
+         <categoryy id="6.3.04" name="EVA-Dachbahnen (Etylen-Vinylacetat)"/>
+      </category>
+      <category id="6.3.05" name="TPO-Dachbahnen (FPO)">
+         <categoryy id="6.3.05" name="TPO-Dachbahnen (FPO)"/>
+      </category>
+      <category id="6.3.06" name="Solar-Kunststoffdachbahnen">
+         <categoryy id="6.3.06" name="Solar-Kunststoffdachbahnen"/>
+      </category>
+      <category id="6.3.07" name="Dübel für Bahnen">
+         <categoryy id="6.3.07" name="Dübel für Bahnen"/>
+      </category>
+      <category id="6.3.08" name="ECB-Dachbahnen (Ethylen-Copolymer-Bitumen)">
+         <categoryy id="6.3.08" name="ECB-Dachbahnen (Ethylen-Copolymer-Bitumen)"/>
+      </category>
+      <category id="6.3.09" name="PIB-Dachbahnen (Polyisobutylen)">
+         <categoryy id="6.3.09" name="PIB-Dachbahnen (Polyisobutylen)"/>
+      </category>
+      <category id="6.4" name="Profile">
+         <categoryy id="6.4" name="Profile"/>
+      </category>
+      <category id="6.4.01" name="Kunststoffprofile hart">
+         <categoryy id="6.4.01" name="Kunststoffprofile hart"/>
+      </category>
+      <category id="6.4.02" name="Kunststoffprofile elastisch">
+         <categoryy id="6.4.02" name="Kunststoffprofile elastisch"/>
+      </category>
+      <category id="6.5" name="Kunststoffprofile elastisch">
+         <categoryy id="6.5" name="Kunststoffprofile elastisch"/>
+      </category>
+      <category id="6.5.01" name="Harz-Komposit-Fassadenplatten">
+         <categoryy id="6.5.01" name="Harz-Komposit-Fassadenplatten"/>
+      </category>
+      <category id="6.5.02" name="Transparente Platten">
+         <categoryy id="6.5.02" name="Transparente Platten"/>
+      </category>
+      <category id="6.5.03" name="Dübelsysteme für Platten">
+         <categoryy id="6.5.03" name="Dübelsysteme für Platten"/>
+      </category>
+      <category id="6.6" name="Folien und Vliese">
+         <categoryy id="6.6" name="Folien und Vliese"/>
+      </category>
+      <category id="6.6.01" name="Unterspannbahn">
+         <categoryy id="6.6.01" name="Unterspannbahn"/>
+      </category>
+      <category id="6.6.02" name="Dampfbremse / Dampfsperre">
+         <categoryy id="6.6.02" name="Dampfbremse / Dampfsperre"/>
+      </category>
+      <category id="6.6.03" name="Folien zur Abdichtung">
+         <categoryy id="6.6.03" name="Folien zur Abdichtung"/>
+      </category>
+      <category id="6.6.04" name="Vliese">
+         <categoryy id="6.6.04" name="Vliese"/>
+      </category>
+      <category id="6.6.05" name="Baupappen">
+         <categoryy id="6.6.05" name="Baupappen"/>
+      </category>
+      <category id="6.6.06" name="Folienkissen">
+         <categoryy id="6.6.06" name="Folienkissen"/>
+      </category>
+      <category id="6.6.07" name="Technische Textilien">
+         <categoryy id="6.6.07" name="Technische Textilien"/>
+      </category>
+      <category id="6.7" name="Dichtmassen">
+         <categoryy id="6.7" name="Dichtmassen"/>
+      </category>
+      <category id="6.7.01" name="Kautschuk">
+         <categoryy id="6.7.01" name="Kautschuk"/>
+      </category>
+      <category id="6.7.02" name="Silikon">
+         <categoryy id="6.7.02" name="Silikon"/>
+      </category>
+      <category id="6.7.03" name="PUR">
+         <categoryy id="6.7.03" name="PUR"/>
+      </category>
+      <category id="6.7.04" name="Bitumen">
+         <categoryy id="6.7.04" name="Bitumen"/>
+      </category>
+      <category id="6.7.05" name="PVC">
+         <categoryy id="6.7.05" name="PVC"/>
+      </category>
+      <category id="6.7.06" name="Acrylat">
+         <categoryy id="6.7.06" name="Acrylat"/>
+      </category>
+      <category id="6.8" name="End-of-life-Prozesse Kunststoffe">
+         <categoryy id="6.8" name="End-of-life-Prozesse Kunststoffe"/>
+      </category>
+      <category id="6.8.01" name="EoL allgemein">
+         <categoryy id="6.8.01" name="EoL allgemein"/>
+      </category>
+      <category id="6.8.02" name="EoL Dübelsystem für Platten">
+         <categoryy id="6.8.02" name="EoL Dübelsystem für Platten"/>
+      </category>
+      <category id="6.8.03" name="EoL Dübelsystem für Planen">
+         <categoryy id="6.8.03" name="EoL Dübelsystem für Planen"/>
+      </category>
+      <category id="6.8.04" name="EoL Elastomer-Dachbahnen">
+         <categoryy id="6.8.04" name="EoL Elastomer-Dachbahnen"/>
+      </category>
+      <category id="6.8.05" name="EoL EVA-Dachbahnen">
+         <categoryy id="6.8.05" name="EoL EVA-Dachbahnen"/>
+      </category>
+      <category id="7" name="Komponenten von Fenstern und Vorhangfassaden">
+         <categoryy id="7" name="Komponenten von Fenstern und Vorhangfassaden"/>
+      </category>
+      <category id="7.1" name="Rahmen / Profile">
+         <categoryy id="7.1" name="Rahmen / Profile"/>
+      </category>
+      <category id="7.1.01" name="Holz">
+         <categoryy id="7.1.01" name="Holz"/>
+      </category>
+      <category id="7.1.02" name="Holz thermisch getrennt">
+         <categoryy id="7.1.02" name="Holz thermisch getrennt"/>
+      </category>
+      <category id="7.1.03" name="Holzwerkstoff">
+         <categoryy id="7.1.03" name="Holzwerkstoff"/>
+      </category>
+      <category id="7.1.04" name="Holz-Aluminium">
+         <categoryy id="7.1.04" name="Holz-Aluminium"/>
+      </category>
+      <category id="7.1.05" name="Aluminium">
+         <categoryy id="7.1.05" name="Aluminium"/>
+      </category>
+      <category id="7.1.06" name="Aluminium thermisch getrennt">
+         <categoryy id="7.1.06" name="Aluminium thermisch getrennt"/>
+      </category>
+      <category id="7.1.07" name="Stahl">
+         <categoryy id="7.1.07" name="Stahl"/>
+      </category>
+      <category id="7.1.08" name="Stahl verzinkt">
+         <categoryy id="7.1.08" name="Stahl verzinkt"/>
+      </category>
+      <category id="7.1.09" name="PVC">
+         <categoryy id="7.1.09" name="PVC"/>
+      </category>
+      <category id="7.1.10" name="harter PUR-Integralschaumstoff">
+         <categoryy id="7.1.10" name="harter PUR-Integralschaumstoff"/>
+      </category>
+      <category id="7.2" name="Füllungen">
+         <categoryy id="7.2" name="Füllungen"/>
+      </category>
+      <category id="7.2.01" name="Transparente Füllungen">
+         <categoryy id="7.2.01" name="Transparente Füllungen"/>
+      </category>
+      <category id="7.2.02" name="Opake Füllungen">
+         <categoryy id="7.2.02" name="Opake Füllungen"/>
+      </category>
+      <category id="7.3" name="Dichtungskomponenten / -materialien">
+         <categoryy id="7.3" name="Dichtungskomponenten / -materialien"/>
+      </category>
+      <category id="7.3.01" name="Dichtprofile">
+         <categoryy id="7.3.01" name="Dichtprofile"/>
+      </category>
+      <category id="7.3.02" name="Spritzbare Dichtstoffe">
+         <categoryy id="7.3.02" name="Spritzbare Dichtstoffe"/>
+      </category>
+      <category id="7.3.03" name="Imprägnierte Dichtungsbänder aus Schaumkunststoff">
+         <categoryy id="7.3.03" name="Imprägnierte Dichtungsbänder aus Schaumkunststoff"/>
+      </category>
+      <category id="7.3.04" name="Fugendichtungsbänder">
+         <categoryy id="7.3.04" name="Fugendichtungsbänder"/>
+      </category>
+      <category id="7.3.05" name="Elastomer-Fugenbänder">
+         <categoryy id="7.3.05" name="Elastomer-Fugenbänder"/>
+      </category>
+      <category id="7.3.06" name="Dichtfolien">
+         <categoryy id="7.3.06" name="Dichtfolien"/>
+      </category>
+      <category id="7.3.07" name="Anputzdichtleisten">
+         <categoryy id="7.3.07" name="Anputzdichtleisten"/>
+      </category>
+      <category id="7.4" name="Beschläge">
+         <categoryy id="7.4" name="Beschläge"/>
+      </category>
+      <category id="7.4.01" name="Stahlbeschläge">
+         <categoryy id="7.4.01" name="Stahlbeschläge"/>
+      </category>
+      <category id="7.4.02" name="Aluminiumbeschläge">
+         <categoryy id="7.4.02" name="Aluminiumbeschläge"/>
+      </category>
+      <category id="7.4.03" name="Bronzebeschläge">
+         <categoryy id="7.4.03" name="Bronzebeschläge"/>
+      </category>
+      <category id="7.4.04" name="Messingbeschläge">
+         <categoryy id="7.4.04" name="Messingbeschläge"/>
+      </category>
+      <category id="7.4.05" name="Edelstahlbeschläge">
+         <categoryy id="7.4.05" name="Edelstahlbeschläge"/>
+      </category>
+      <category id="7.4.06" name="Befestigungen">
+         <categoryy id="7.4.06" name="Befestigungen"/>
+      </category>
+      <category id="7.4.07" name="Fenstergriffe">
+         <categoryy id="7.4.07" name="Fenstergriffe"/>
+      </category>
+      <category id="7.4.08" name="Zinkbeschläge">
+         <categoryy id="7.4.08" name="Zinkbeschläge"/>
+      </category>
+      <category id="7.4.09" name="Kunststoffbeschläge">
+         <categoryy id="7.4.09" name="Kunststoffbeschläge"/>
+      </category>
+      <category id="7.5" name="End-of-life-Prozesse">
+         <categoryy id="7.5" name="End-of-life-Prozesse"/>
+      </category>
+      <category id="7.5.01" name="EoL Stahl">
+         <categoryy id="7.5.01" name="EoL Stahl"/>
+      </category>
+      <category id="7.5.02" name="EoL Aluminium">
+         <categoryy id="7.5.02" name="EoL Aluminium"/>
+      </category>
+      <category id="7.5.03" name="EoL Bronze">
+         <categoryy id="7.5.03" name="EoL Bronze"/>
+      </category>
+      <category id="7.5.04" name="EoL Messing">
+         <categoryy id="7.5.04" name="EoL Messing"/>
+      </category>
+      <category id="7.5.05" name="EoL Edelstahl">
+         <categoryy id="7.5.05" name="EoL Edelstahl"/>
+      </category>
+      <category id="7.5.06" name="EoL Zink">
+         <categoryy id="7.5.06" name="EoL Zink"/>
+      </category>
+      <category id="7.5.07" name="EoL Fenster">
+         <categoryy id="7.5.07" name="EoL Fenster"/>
+      </category>
+      <category id="7.6" name="Türen und Tore">
+         <categoryy id="7.6" name="Türen und Tore"/>
+      </category>
+      <category id="7.6.01" name="Stahl">
+         <categoryy id="7.6.01" name="Stahl"/>
+      </category>
+      <category id="7.6.02" name="Aluminium">
+         <categoryy id="7.6.02" name="Aluminium"/>
+      </category>
+      <category id="7.6.03" name="Holz">
+         <categoryy id="7.6.03" name="Holz"/>
+      </category>
+      <category id="7.6.04" name="Kunststoff">
+         <categoryy id="7.6.04" name="Kunststoff"/>
+      </category>
+      <category id="8" name="Gebäudetechnik">
+         <categoryy id="8" name="Gebäudetechnik"/>
+      </category>
+      <category id="8.1" name="Heizung">
+         <categoryy id="8.1" name="Heizung"/>
+      </category>
+      <category id="8.1.01" name="Wärmeerzeuger">
+         <categoryy id="8.1.01" name="Wärmeerzeuger"/>
+      </category>
+      <category id="8.1.02" name="Wärmeverteilung und Abgabe">
+         <categoryy id="8.1.02" name="Wärmeverteilung und Abgabe"/>
+      </category>
+      <category id="8.1.03" name="Speicher">
+         <categoryy id="8.1.03" name="Speicher"/>
+      </category>
+      <category id="8.2" name="Klimatisierung und Lüftung">
+         <categoryy id="8.2" name="Klimatisierung und Lüftung"/>
+      </category>
+      <category id="8.2.01" name="Lüftungsanlagen">
+         <categoryy id="8.2.01" name="Lüftungsanlagen"/>
+      </category>
+      <category id="8.2.02" name="Klimatisierung/Kältemaschinen">
+         <categoryy id="8.2.02" name="Klimatisierung/Kältemaschinen"/>
+      </category>
+      <category id="8.2.03" name="Zubehör">
+         <categoryy id="8.2.03" name="Zubehör"/>
+      </category>
+      <category id="8.3" name="Sanitär">
+         <categoryy id="8.3" name="Sanitär"/>
+      </category>
+      <category id="8.3.01" name="Sanitärkeramik">
+         <categoryy id="8.3.01" name="Sanitärkeramik"/>
+      </category>
+      <category id="8.3.02" name="Armaturen">
+         <categoryy id="8.3.02" name="Armaturen"/>
+      </category>
+      <category id="8.3.03" name="Dusch- und Badewannen">
+         <categoryy id="8.3.03" name="Dusch- und Badewannen"/>
+      </category>
+      <category id="8.4" name="Elektro">
+         <categoryy id="8.4" name="Elektro"/>
+      </category>
+      <category id="8.4.01" name="Kabel">
+         <categoryy id="8.4.01" name="Kabel"/>
+      </category>
+      <category id="8.4.02" name="Schalter und Steckdosen">
+         <categoryy id="8.4.02" name="Schalter und Steckdosen"/>
+      </category>
+      <category id="8.4.03" name="Sicherungs- und Schaltschränke">
+         <categoryy id="8.4.03" name="Sicherungs- und Schaltschränke"/>
+      </category>
+      <category id="8.4.04" name="Beleuchtung">
+         <categoryy id="8.4.04" name="Beleuchtung"/>
+      </category>
+      <category id="8.5" name="Beförderung">
+         <categoryy id="8.5" name="Beförderung"/>
+      </category>
+      <category id="8.5.01" name="Fahrstuhl">
+         <categoryy id="8.5.01" name="Fahrstuhl"/>
+      </category>
+      <category id="8.5.02" name="Fahrtreppe">
+         <categoryy id="8.5.02" name="Fahrtreppe"/>
+      </category>
+      <category id="8.6" name="Nutzung">
+         <categoryy id="8.6" name="Nutzung"/>
+      </category>
+      <category id="8.6.01" name="Nutzung Wärmeerzeuger">
+         <categoryy id="8.6.01" name="Nutzung Wärmeerzeuger"/>
+      </category>
+      <category id="8.6.02" name="Nutzung Lüftung und Klimatechnik">
+         <categoryy id="8.6.02" name="Nutzung Lüftung und Klimatechnik"/>
+      </category>
+      <category id="8.6.03" name="Nutzung Armaturen">
+         <categoryy id="8.6.03" name="Nutzung Armaturen"/>
+      </category>
+      <category id="8.6.04" name="Nutzung Beleuchtung">
+         <categoryy id="8.6.04" name="Nutzung Beleuchtung"/>
+      </category>
+      <category id="8.6.05" name="Nutzung Beförderungstechnik">
+         <categoryy id="8.6.05" name="Nutzung Beförderungstechnik"/>
+      </category>
+      <category id="8.7" name="End-of-life-Prozesse">
+         <categoryy id="8.7" name="End-of-life-Prozesse"/>
+      </category>
+      <category id="8.7.01" name="EoL Wärmeerzeuger">
+         <categoryy id="8.7.01" name="EoL Wärmeerzeuger"/>
+      </category>
+      <category id="8.7.02" name="EoL Lüftungen und Klimatechnik">
+         <categoryy id="8.7.02" name="EoL Lüftungen und Klimatechnik"/>
+      </category>
+      <category id="8.7.03" name="EoL Sanitär">
+         <categoryy id="8.7.03" name="EoL Sanitär"/>
+      </category>
+      <category id="8.7.04" name="EoL Elektro">
+         <categoryy id="8.7.04" name="EoL Elektro"/>
+      </category>
+      <category id="8.7.05" name="EoL Beförderungstechnik">
+         <categoryy id="8.7.05" name="EoL Beförderungstechnik"/>
+      </category>
+      <category id="9" name="Sonstige">
+         <categoryy id="9" name="Sonstige"/>
+      </category>
+      <category id="9.1" name="Baustellenprozesse">
+         <categoryy id="9.1" name="Baustellenprozesse"/>
+      </category>
+      <category id="9.1.01" name="Bagger/Aushub">
+         <categoryy id="9.1.01" name="Bagger/Aushub"/>
+      </category>
+      <category id="9.1.02" name="Betonieren">
+         <categoryy id="9.1.02" name="Betonieren"/>
+      </category>
+      <category id="9.1.03" name="Schalung">
+         <categoryy id="9.1.03" name="Schalung"/>
+      </category>
+      <category id="9.1.04" name="Schweißen">
+         <categoryy id="9.1.04" name="Schweißen"/>
+      </category>
+      <category id="9.2" name="Energieträger – Bereitstellung frei Verbraucher">
+         <categoryy id="9.2" name="Energieträger – Bereitstellung frei Verbraucher"/>
+      </category>
+      <category id="9.2.01" name="Erdgas">
+         <categoryy id="9.2.01" name="Erdgas"/>
+      </category>
+      <category id="9.2.02" name="Flüssiggas">
+         <categoryy id="9.2.02" name="Flüssiggas"/>
+      </category>
+      <category id="9.2.03" name="Heizöl">
+         <categoryy id="9.2.03" name="Heizöl"/>
+      </category>
+      <category id="9.3" name="Güter – Transporte[t km]">
+         <categoryy id="9.3" name="Güter – Transporte[t km]"/>
+      </category>
+      <category id="9.3.01" name="LKW">
+         <categoryy id="9.3.01" name="LKW"/>
+      </category>
+      <category id="9.3.02" name="Bahn">
+         <categoryy id="9.3.02" name="Bahn"/>
+      </category>
+      <category id="9.3.03" name="Binnenschiff">
+         <categoryy id="9.3.03" name="Binnenschiff"/>
+      </category>
+      <category id="9.3.04" name="Seeschiff">
+         <categoryy id="9.3.04" name="Seeschiff"/>
+      </category>
+      <category id="9.4" name="Personen – Transporte[Personen km]">
+         <categoryy id="9.4" name="Personen – Transporte[Personen km]"/>
+      </category>
+      <category id="9.4.01" name="PKW">
+         <categoryy id="9.4.01" name="PKW"/>
+      </category>
+      <category id="9.4.02" name="Bahn">
+         <categoryy id="9.4.02" name="Bahn"/>
+      </category>
+      <category id="9.4.03" name="Flugzeug">
+         <categoryy id="9.4.03" name="Flugzeug"/>
+      </category>
+      <category id="9.5" name="Abfallaufbereitung und -entsorgung (EoL)">
+         <categoryy id="9.5" name="Abfallaufbereitung und -entsorgung (EoL)"/>
+      </category>
+      <category id="9.5.01" name="Bauschuttaufbereitung">
+         <categoryy id="9.5.01" name="Bauschuttaufbereitung"/>
+      </category>
+      <category id="9.5.02" name="Bauschuttdeponierung">
+         <categoryy id="9.5.02" name="Bauschuttdeponierung"/>
+      </category>
+      <category id="9.5.03" name="Regeldeponie">
+         <categoryy id="9.5.03" name="Regeldeponie"/>
+      </category>
+      <category id="9.5.04" name="Müllverbrennung">
+         <categoryy id="9.5.04" name="Müllverbrennung"/>
+      </category>
+   </categories>
+</CategorySystem>

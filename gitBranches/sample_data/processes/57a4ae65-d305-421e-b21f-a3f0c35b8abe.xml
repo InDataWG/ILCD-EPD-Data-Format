@@ -1,0 +1,981 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<processDataSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://lca.jrc.it/ILCD/Process ../../schemas/EPD_DataSet.xsd" xmlns="http://lca.jrc.it/ILCD/Process"
+    xmlns:common="http://lca.jrc.it/ILCD/Common" xmlns:epd="http://www.iai.kit.edu/EPD/2013" xmlns:epd2="http://www.indata.network/EPD/2019" version="1.1" locations="../ILCDLocations.xml"
+    epd2:epd-version="1.2">
+    <processInformation>
+        <dataSetInformation>
+            <common:UUID>57a4ae65-d305-421e-b21f-a3f0c35b8abe</common:UUID>
+            <name>
+                <baseName xml:lang="en">Wood panel</baseName>
+                <baseName xml:lang="de">Holzpanel</baseName>
+            </name>
+            <classificationInformation>
+                <common:classification classes="../MyCategories.xml">
+                    <common:class level="0">Wood products</common:class>
+                    <common:class level="1">Wood panels</common:class>
+                </common:classification>
+            </classificationInformation>
+            <common:generalComment xml:lang="en">The general comment goes here</common:generalComment>
+            <referenceToExternalDocumentation type="source data set" refObjectId="37ace505-38f5-4430-847f-810822a20663" version="00.00.003">
+                <common:shortDescription xml:lang="en">Background report for Wood Panel EPD (optional)</common:shortDescription>
+            </referenceToExternalDocumentation>
+            <common:other>
+                <epd:scenarios>
+                    <epd:scenario epd:default="true" epd:group="Transport" epd:name="Transport to Gdansk">
+                        <epd:description>Transport of the product to the construction site in Gdansk, Poland</epd:description>
+                    </epd:scenario>
+                    <epd:scenario epd:group="Transport" epd:name="Transport to Berlin">
+                        <epd:description>Transport of the product to the construction site in Berlin, Germany</epd:description>
+                    </epd:scenario>
+                    <epd:scenario epd:default="true" epd:group="EoL" epd:name="100% recycling">
+                        <epd:description>100% of the product is recycled upon the product's EoL</epd:description>
+                    </epd:scenario>
+                    <epd:scenario epd:group="EoL" epd:name="100% incineration">
+                        <epd:description>100% of the product is incinerated upon the product's EoL</epd:description>
+                    </epd:scenario>
+                </epd:scenarios>
+                <epd:safetyMargins>
+                    <epd:margins>10.0</epd:margins>
+                    <epd:description xml:lang="en">Reasons for choice of uncertainty penalties</epd:description>
+                    <epd:description xml:lang="de">Begründung für Sicherheitszuschläge</epd:description>
+                </epd:safetyMargins>
+                <epd2:contentDeclaration>
+                    <epd2:material epd2:packaging="false" epd2:renewable="100.0">
+                        <epd2:name xml:lang="en">pine wood</epd2:name>
+                        <epd2:weightPerc epd2:value="98.0"/>
+                        <epd2:mass/>
+                    </epd2:material>
+                    <epd2:material epd2:packaging="false">
+                        <epd2:name xml:lang="en">veneer</epd2:name>
+                        <epd2:weightPerc epd2:value="1.0"/>
+                        <epd2:mass/>
+                    </epd2:material>
+                    <epd2:material epd2:packaging="false">
+                        <epd2:name xml:lang="en">glue</epd2:name>
+                        <epd2:weightPerc epd2:value="1.0"/>
+                        <epd2:mass/>
+                    </epd2:material>
+                    <epd2:material epd2:packaging="true" epd2:recyclable="100.0">
+                        <epd2:name xml:lang="en">PE foil</epd2:name>
+                        <epd2:weightPerc epd2:value="97.0"/>
+                        <epd2:mass/>
+                    </epd2:material>
+                    <epd2:material epd2:packaging="true" epd2:recyclable="100.0" epd2:recycled="100.0">
+                        <epd2:name xml:lang="en">cardboard</epd2:name>
+                        <epd2:weightPerc epd2:value="3.0"/>
+                        <epd2:mass/>
+                    </epd2:material>
+                </epd2:contentDeclaration>
+            </common:other>
+        </dataSetInformation>
+        <quantitativeReference type="Reference flow(s)">
+            <referenceToReferenceFlow>42</referenceToReferenceFlow>
+        </quantitativeReference>
+        <time>
+            <common:referenceYear>2020</common:referenceYear>
+            <common:dataSetValidUntil>2025</common:dataSetValidUntil>
+            <common:other>
+                <epd2:publicationDateOfEPD>2020-05-08</epd2:publicationDateOfEPD>
+            </common:other>
+        </time>
+        <geography>
+            <locationOfOperationSupplyOrProduction location="PL">
+                <descriptionOfRestrictions xml:lang="en">the production plant is located in the city of Katowice</descriptionOfRestrictions>
+            </locationOfOperationSupplyOrProduction>
+        </geography>
+        <technology>
+            <technologyDescriptionAndIncludedProcesses xml:lang="en">Description of the technological characteristics including operating conditions of the product
+            system or process. If relevant for the technological representativeness this comprises the relevant upstream and downstream processes ("background
+            system") included in the data set. Link to detailed description in EPD-document can be given, if available. Alternatively a link to 'Use advice for
+            data set' or 'technical purpose of product or process' can be given. Note: No general descriptions of the system boundaries according to EN
+            15804.</technologyDescriptionAndIncludedProcesses>
+            <technologicalApplicability xml:lang="en">Brief description of the intended / possible applications of the good, service, or process. E.g. for which
+            type of products the material, represented by this data set, is used. Examples: "This high purity chemical is used for analytical laboratories
+            only." or "This technical quality bulk chemical is used for large scale synthesis in chemical industry.". Or: "This truck is used only for
+            long-distance transport of liquid bulk chemicals".</technologicalApplicability>
+            <referenceToTechnologyFlowDiagrammOrPicture type="source data set" refObjectId="4566fcad-aeb2-4826-86ad-b0b7f76ca7f0" version="00.00.003">
+                <common:shortDescription xml:lang="en">wood panel production process flow diagram</common:shortDescription>
+            </referenceToTechnologyFlowDiagrammOrPicture>
+        </technology>
+    </processInformation>
+    <modellingAndValidation>
+        <LCIMethodAndAllocation>
+            <typeOfDataSet>EPD</typeOfDataSet>
+            <referenceToLCAMethodDetails type="source data set" refObjectId="33132dd2-269d-42d2-b4ef-6a6d4b1164ab" version="00.00.002">
+                <common:shortDescription xml:lang="en">Wood Products PCR</common:shortDescription>
+            </referenceToLCAMethodDetails>
+            <common:other>
+                <epd:subType>specific dataset</epd:subType>
+            </common:other>
+        </LCIMethodAndAllocation>
+        <dataSourcesTreatmentAndRepresentativeness>
+            <referenceToDataHandlingPrinciples type="source data set" refObjectId="d280aabf-b6e3-4157-bece-7abb34e83cb9">
+                <common:shortDescription xml:lang="en">Documentation of data quality management for Pro SC EPDs</common:shortDescription>
+            </referenceToDataHandlingPrinciples>
+            <referenceToDataSource type="source data set" refObjectId="28d74cc0-db8b-4d7e-bc44-5f6d56ce0c4a" version="00.03.002">
+                <common:shortDescription xml:lang="en">GaBi database (general)</common:shortDescription>
+            </referenceToDataSource>
+            <referenceToDataSource type="source data set" refObjectId="0115289e-52f0-4920-bc7e-57b1c96aec8d" version="00.00.002">
+                <common:shortDescription xml:lang="en">GaBi database SP40 2020</common:shortDescription>
+            </referenceToDataSource>
+            <useAdviceForDataSet xml:lang="en">Any use advice that needs to be given regarding this dataset, for example if it must be used together with a
+            specific EoL treatment etc.</useAdviceForDataSet>
+            <common:other>
+                <epd2:referenceToOriginalEPD refObjectId="f79a8947-b608-4eeb-9b3b-97a3ea8cfea5" type="source data set" version="00.00.002">
+                    <common:shortDescription xml:lang="en">Wood Panel EPD</common:shortDescription>
+                </epd2:referenceToOriginalEPD>
+            </common:other>
+        </dataSourcesTreatmentAndRepresentativeness>
+        <validation>
+            <review type="Independent external review">
+                <common:referenceToNameOfReviewerAndInstitution type="contact data set" refObjectId="7cde93bd-3dba-44ca-a5da-b510d0f780d3" version="00.00.002">
+                    <common:shortDescription xml:lang="en">Christian Kind</common:shortDescription>
+                </common:referenceToNameOfReviewerAndInstitution>
+                <common:referenceToCompleteReviewReport type="source data set" refObjectId="f1813e44-818e-4021-8cef-9db3dfb3692f" version="00.00.003">
+                    <common:shortDescription xml:lang="en">Wood Panel EPD review report</common:shortDescription>
+                </common:referenceToCompleteReviewReport>
+            </review>
+        </validation>
+        <complianceDeclarations>
+            <compliance>
+                <common:referenceToComplianceSystem type="source data set" refObjectId="c0016b33-8cf7-415c-ac6e-deba0d21440d" version="00.01.000">
+                    <common:shortDescription xml:lang="de">EN 15804+A2</common:shortDescription>
+                    <common:shortDescription xml:lang="en">EN 15804+A2</common:shortDescription>
+                </common:referenceToComplianceSystem>
+            </compliance>
+        </complianceDeclarations>
+    </modellingAndValidation>
+    <administrativeInformation>
+        <common:commissionerAndGoal>
+            <common:referenceToCommissioner type="contact data set" refObjectId="9c5cd1fd-7cfa-49ba-a6d3-1f04b55b9e3b" version="00.00.002">
+                <common:shortDescription xml:lang="en">Wood Products S.A.</common:shortDescription>
+            </common:referenceToCommissioner>
+            <common:project xml:lang="en">project goes here for project specific EPDs (optional)</common:project>
+            <common:intendedApplications xml:lang="en">information about intended applications (optional)</common:intendedApplications>
+        </common:commissionerAndGoal>
+        <dataGenerator>
+            <common:referenceToPersonOrEntityGeneratingTheDataSet type="contact data set" refObjectId="288e50ce-aac4-4720-8931-82dcbd2d4c9a" version="00.00.001">
+                <common:shortDescription xml:lang="en">Pro Sustainability Consultants GmbH</common:shortDescription>
+            </common:referenceToPersonOrEntityGeneratingTheDataSet>
+        </dataGenerator>
+        <dataEntryBy>
+            <common:timeStamp>2020-09-25T11:06:42.264+02:00</common:timeStamp>
+            <common:referenceToDataSetFormat type="source data set" refObjectId="a97a0155-0234-4b87-b4ce-a45da52f2a40" version="01.00.000"
+                uri="http://lca.jrc.ec.europa.eu/lcainfohub/sample_data/ilcd/sources/ILCD_Format_a97a0155-0234-4b87-b4ce-a45da52f2a40_01.00.000.xml">
+                <common:shortDescription xml:lang="en">ILCD format</common:shortDescription>
+            </common:referenceToDataSetFormat>
+            <common:referenceToDataSetFormat type="source data set" refObjectId="a29449fd-aa2f-4de8-b5d7-4b06b43c6fde" version="00.01.000">
+                <common:shortDescription xml:lang="en">EPD Data Format Extensions v1.2</common:shortDescription>
+                <common:shortDescription xml:lang="de">EPD-Datenformaterweiterungen v1.2</common:shortDescription>
+            </common:referenceToDataSetFormat>
+        </dataEntryBy>
+        <publicationAndOwnership>
+            <common:dataSetVersion>00.02.042</common:dataSetVersion>
+            <common:referenceToPrecedingDataSetVersion type="process data set" refObjectId="b669fa88-5c80-4cc2-9eae-9f23c816e343" version="00.01.000">
+                <common:shortDescription xml:lang="en">Wood panel EPD (valid until 2019) - the preceding EPD dataset</common:shortDescription>
+            </common:referenceToPrecedingDataSetVersion>
+            <common:dateOfLastRevision>2020-05-22T10:42:00+01:00</common:dateOfLastRevision>
+            <common:referenceToRegistrationAuthority type="contact data set" refObjectId="bee77d31-1837-404b-abdf-ef271c83e5a7" version="00.00.002">
+                <common:shortDescription xml:lang="en">The Swift® EPD Program</common:shortDescription>
+            </common:referenceToRegistrationAuthority>
+            <common:registrationNumber>EPD042812-01</common:registrationNumber>
+            <common:referenceToOwnershipOfDataSet type="contact data set" refObjectId="9c5cd1fd-7cfa-49ba-a6d3-1f04b55b9e3b" version="00.00.002">
+                <common:shortDescription xml:lang="en">Wood Products S.A.</common:shortDescription>
+            </common:referenceToOwnershipOfDataSet>
+            <common:copyright>true</common:copyright>
+            <common:licenseType>Free of charge for all users and uses</common:licenseType>
+            <common:accessRestrictions xml:lang="en">License conditions apply, full license text is available at https://swiftepd.com/license</common:accessRestrictions>
+            <common:other>
+                <epd2:referenceToPublisher refObjectId="bee77d31-1837-404b-abdf-ef271c83e5a7" version="00.00.002" type="contact data set">
+                    <common:shortDescription xml:lang="en">The Swift® EPD Program</common:shortDescription>
+                </epd2:referenceToPublisher>
+            </common:other>
+        </publicationAndOwnership>
+    </administrativeInformation>
+    <exchanges>
+        <exchange dataSetInternalID="42">
+            <referenceToFlowDataSet type="flow data set" refObjectId="a7432abd-0881-4977-a817-f8aaf627fb91" version="00.00.001">
+                <common:shortDescription xml:lang="en">wood panel</common:shortDescription>
+            </referenceToFlowDataSet>
+            <meanAmount>1.0</meanAmount>
+        </exchange>
+        <exchange dataSetInternalID="43">
+            <referenceToFlowDataSet type="flow data set" refObjectId="a2b32f97-3fc7-4af2-b209-525bc6426f33" uri="../flows/a2b32f97-3fc7-4af2-b209-525bc6426f33">
+                <common:shortDescription xml:lang="en">Components for re-use (CRU)</common:shortDescription>
+            </referenceToFlowDataSet>
+            <functionType>General reminder flow</functionType>
+            <exchangeDirection>Output</exchangeDirection>
+            <meanAmount>0.0</meanAmount>
+            <common:other>
+                <epd:amount epd:module="A1-A3">5.9841900871683285</epd:amount>
+                <epd:amount epd:module="D" epd:scenario="100% recycling">1.1174092237469284</epd:amount>
+                <epd:amount epd:module="A4" epd:scenario="Transport to Gdansk">41.93627009439569</epd:amount>
+                <epd:amount epd:module="C4" epd:scenario="100% recycling">7.246275461773392</epd:amount>
+                <epd:amount epd:module="C3" epd:scenario="100% recycling">10.479639969035517</epd:amount>
+                <epd:amount epd:module="D" epd:scenario="100% incineration">22.440376292568395</epd:amount>
+                <epd:amount epd:module="C3" epd:scenario="100% incineration">38.71053354461442</epd:amount>
+                <epd:amount epd:module="A4" epd:scenario="Transport to Berlin">21.271871121141473</epd:amount>
+                <epd:amount epd:module="C4" epd:scenario="100% incineration">41.0560588226469</epd:amount>
+                <epd:referenceToUnitGroupDataSet refObjectId="ad38d542-3fe9-439d-9b95-2f5f7752acaf" type="unit group data set" uri="../unitgroups/ad38d542-3fe9-439d-9b95-2f5f7752acaf">
+                    <common:shortDescription>kg</common:shortDescription>
+                </epd:referenceToUnitGroupDataSet>
+            </common:other>
+        </exchange>
+        <exchange dataSetInternalID="44">
+            <referenceToFlowDataSet type="flow data set" refObjectId="4da0c987-2b76-40d6-9e9e-82a017aaaf29" uri="../flows/4da0c987-2b76-40d6-9e9e-82a017aaaf29">
+                <common:shortDescription xml:lang="en">Exported electrical energy (EEE)</common:shortDescription>
+            </referenceToFlowDataSet>
+            <functionType>General reminder flow</functionType>
+            <exchangeDirection>Output</exchangeDirection>
+            <meanAmount>0.0</meanAmount>
+            <common:other>
+                <epd:amount epd:module="A1-A3">38.66794070868199</epd:amount>
+                <epd:amount epd:module="D" epd:scenario="100% recycling">36.78267452205826</epd:amount>
+                <epd:amount epd:module="A4" epd:scenario="Transport to Gdansk">3.489623314463577</epd:amount>
+                <epd:amount epd:module="C4" epd:scenario="100% recycling">22.953488528250947</epd:amount>
+                <epd:amount epd:module="C3" epd:scenario="100% recycling">2.3483397361397094</epd:amount>
+                <epd:amount epd:module="D" epd:scenario="100% incineration">14.420066168302746</epd:amount>
+                <epd:amount epd:module="C3" epd:scenario="100% incineration">13.782680699180144</epd:amount>
+                <epd:amount epd:module="A4" epd:scenario="Transport to Berlin">8.239519501552783</epd:amount>
+                <epd:amount epd:module="C4" epd:scenario="100% incineration">7.073148504177848</epd:amount>
+                <epd:referenceToUnitGroupDataSet refObjectId="93a60a57-a3c8-11da-a746-0800200c9a66" type="unit group data set" uri="../unitgroups/93a60a57-a3c8-11da-a746-0800200c9a66">
+                    <common:shortDescription>MJ</common:shortDescription>
+                </epd:referenceToUnitGroupDataSet>
+            </common:other>
+        </exchange>
+        <exchange dataSetInternalID="45">
+            <referenceToFlowDataSet type="flow data set" refObjectId="98daf38a-7a79-46d3-9a37-2b7bd0955810" uri="../flows/98daf38a-7a79-46d3-9a37-2b7bd0955810">
+                <common:shortDescription xml:lang="en">Exported thermal energy (EET)</common:shortDescription>
+            </referenceToFlowDataSet>
+            <functionType>General reminder flow</functionType>
+            <exchangeDirection>Output</exchangeDirection>
+            <meanAmount>0.0</meanAmount>
+            <common:other>
+                <epd:amount epd:module="A1-A3">4.849278754339445</epd:amount>
+                <epd:amount epd:module="D" epd:scenario="100% recycling">27.248195613049607</epd:amount>
+                <epd:amount epd:module="A4" epd:scenario="Transport to Gdansk">33.58770339934027</epd:amount>
+                <epd:amount epd:module="C4" epd:scenario="100% recycling">37.68531982738929</epd:amount>
+                <epd:amount epd:module="C3" epd:scenario="100% recycling">2.563990981730748</epd:amount>
+                <epd:amount epd:module="D" epd:scenario="100% incineration">23.880058239688307</epd:amount>
+                <epd:amount epd:module="C3" epd:scenario="100% incineration">38.229193549670434</epd:amount>
+                <epd:amount epd:module="A4" epd:scenario="Transport to Berlin">19.7862795801374</epd:amount>
+                <epd:amount epd:module="C4" epd:scenario="100% incineration">38.87578811598581</epd:amount>
+                <epd:referenceToUnitGroupDataSet refObjectId="93a60a57-a3c8-11da-a746-0800200c9a66" type="unit group data set" uri="../unitgroups/93a60a57-a3c8-11da-a746-0800200c9a66">
+                    <common:shortDescription>MJ</common:shortDescription>
+                </epd:referenceToUnitGroupDataSet>
+            </common:other>
+        </exchange>
+        <exchange dataSetInternalID="46">
+            <referenceToFlowDataSet type="flow data set" refObjectId="430f9e0f-59b2-46a0-8e0d-55e0e84948fc" uri="../flows/430f9e0f-59b2-46a0-8e0d-55e0e84948fc">
+                <common:shortDescription xml:lang="en">Hazardous waste disposed (HWD)</common:shortDescription>
+            </referenceToFlowDataSet>
+            <functionType>General reminder flow</functionType>
+            <exchangeDirection>Output</exchangeDirection>
+            <meanAmount>0.0</meanAmount>
+            <common:other>
+                <epd:amount epd:module="A1-A3">30.236177314172366</epd:amount>
+                <epd:amount epd:module="D" epd:scenario="100% recycling">12.172491561786916</epd:amount>
+                <epd:amount epd:module="A4" epd:scenario="Transport to Gdansk">8.689764056323416</epd:amount>
+                <epd:amount epd:module="C4" epd:scenario="100% recycling">6.77242967878841</epd:amount>
+                <epd:amount epd:module="C3" epd:scenario="100% recycling">8.638549561089519</epd:amount>
+                <epd:amount epd:module="D" epd:scenario="100% incineration">18.291044902247243</epd:amount>
+                <epd:amount epd:module="C3" epd:scenario="100% incineration">11.60719193375254</epd:amount>
+                <epd:amount epd:module="A4" epd:scenario="Transport to Berlin">1.3285117281565049</epd:amount>
+                <epd:amount epd:module="C4" epd:scenario="100% incineration">4.767050407352816</epd:amount>
+                <epd:referenceToUnitGroupDataSet refObjectId="ad38d542-3fe9-439d-9b95-2f5f7752acaf" type="unit group data set" uri="../unitgroups/ad38d542-3fe9-439d-9b95-2f5f7752acaf">
+                    <common:shortDescription>kg</common:shortDescription>
+                </epd:referenceToUnitGroupDataSet>
+            </common:other>
+        </exchange>
+        <exchange dataSetInternalID="47">
+            <referenceToFlowDataSet type="flow data set" refObjectId="59a9181c-3aaf-46ee-8b13-2b3723b6e447" uri="../flows/59a9181c-3aaf-46ee-8b13-2b3723b6e447">
+                <common:shortDescription xml:lang="en">Materials for energy recovery (MER)</common:shortDescription>
+            </referenceToFlowDataSet>
+            <functionType>General reminder flow</functionType>
+            <exchangeDirection>Output</exchangeDirection>
+            <meanAmount>0.0</meanAmount>
+            <common:other>
+                <epd:amount epd:module="A1-A3">1.7264110373498032</epd:amount>
+                <epd:amount epd:module="D" epd:scenario="100% recycling">41.01211131880095</epd:amount>
+                <epd:amount epd:module="A4" epd:scenario="Transport to Gdansk">17.692609894576727</epd:amount>
+                <epd:amount epd:module="C4" epd:scenario="100% recycling">39.897729790468404</epd:amount>
+                <epd:amount epd:module="C3" epd:scenario="100% recycling">2.1560502652152707</epd:amount>
+                <epd:amount epd:module="D" epd:scenario="100% incineration">8.50418831082278</epd:amount>
+                <epd:amount epd:module="C3" epd:scenario="100% incineration">26.540271173231353</epd:amount>
+                <epd:amount epd:module="A4" epd:scenario="Transport to Berlin">4.4563860716028705</epd:amount>
+                <epd:amount epd:module="C4" epd:scenario="100% incineration">1.3488544494885226</epd:amount>
+                <epd:referenceToUnitGroupDataSet refObjectId="ad38d542-3fe9-439d-9b95-2f5f7752acaf" type="unit group data set" uri="../unitgroups/ad38d542-3fe9-439d-9b95-2f5f7752acaf">
+                    <common:shortDescription>kg</common:shortDescription>
+                </epd:referenceToUnitGroupDataSet>
+            </common:other>
+        </exchange>
+        <exchange dataSetInternalID="48">
+            <referenceToFlowDataSet type="flow data set" refObjectId="d7fe48a5-4103-49c8-9aae-b0b5dfdbd6ae" uri="../flows/d7fe48a5-4103-49c8-9aae-b0b5dfdbd6ae">
+                <common:shortDescription xml:lang="en">Materials for recycling (MFR)</common:shortDescription>
+            </referenceToFlowDataSet>
+            <functionType>General reminder flow</functionType>
+            <exchangeDirection>Output</exchangeDirection>
+            <meanAmount>0.0</meanAmount>
+            <common:other>
+                <epd:amount epd:module="A1-A3">4.410651010381354</epd:amount>
+                <epd:amount epd:module="D" epd:scenario="100% recycling">31.278374172480838</epd:amount>
+                <epd:amount epd:module="A4" epd:scenario="Transport to Gdansk">14.735120106724057</epd:amount>
+                <epd:amount epd:module="C4" epd:scenario="100% recycling">6.639792101665549</epd:amount>
+                <epd:amount epd:module="C3" epd:scenario="100% recycling">31.15715945927831</epd:amount>
+                <epd:amount epd:module="D" epd:scenario="100% incineration">29.10861491053785</epd:amount>
+                <epd:amount epd:module="C3" epd:scenario="100% incineration">38.865450130529354</epd:amount>
+                <epd:amount epd:module="A4" epd:scenario="Transport to Berlin">2.125899703404477</epd:amount>
+                <epd:amount epd:module="C4" epd:scenario="100% incineration">32.862657638871134</epd:amount>
+                <epd:referenceToUnitGroupDataSet refObjectId="ad38d542-3fe9-439d-9b95-2f5f7752acaf" type="unit group data set" uri="../unitgroups/ad38d542-3fe9-439d-9b95-2f5f7752acaf">
+                    <common:shortDescription>kg</common:shortDescription>
+                </epd:referenceToUnitGroupDataSet>
+            </common:other>
+        </exchange>
+        <exchange dataSetInternalID="49">
+            <referenceToFlowDataSet type="flow data set" refObjectId="3cf952c8-f3a4-461d-8c96-96456ca62246" uri="../flows/3cf952c8-f3a4-461d-8c96-96456ca62246">
+                <common:shortDescription xml:lang="en">Use of net fresh water (FW)</common:shortDescription>
+            </referenceToFlowDataSet>
+            <functionType>General reminder flow</functionType>
+            <exchangeDirection>Input</exchangeDirection>
+            <meanAmount>0.0</meanAmount>
+            <common:other>
+                <epd:amount epd:module="A1-A3">39.73666632421776</epd:amount>
+                <epd:amount epd:module="D" epd:scenario="100% recycling">40.0827235664055</epd:amount>
+                <epd:amount epd:module="A4" epd:scenario="Transport to Gdansk">1.17528125740224</epd:amount>
+                <epd:amount epd:module="C4" epd:scenario="100% recycling">9.66673721254379</epd:amount>
+                <epd:amount epd:module="C3" epd:scenario="100% recycling">7.607728796901478</epd:amount>
+                <epd:amount epd:module="D" epd:scenario="100% incineration">12.428623132870841</epd:amount>
+                <epd:amount epd:module="C3" epd:scenario="100% incineration">25.927554393552562</epd:amount>
+                <epd:amount epd:module="A4" epd:scenario="Transport to Berlin">9.742340425934625</epd:amount>
+                <epd:amount epd:module="C4" epd:scenario="100% incineration">30.642204752426764</epd:amount>
+                <epd:referenceToUnitGroupDataSet refObjectId="cd950537-0a98-4044-9ba7-9f9a68d0a504" type="unit group data set" uri="../unitgroups/cd950537-0a98-4044-9ba7-9f9a68d0a504">
+                    <common:shortDescription>m3</common:shortDescription>
+                </epd:referenceToUnitGroupDataSet>
+            </common:other>
+        </exchange>
+        <exchange dataSetInternalID="50">
+            <referenceToFlowDataSet type="flow data set" refObjectId="b29ef66b-e286-4afa-949f-62f1a7b4d7fa" uri="../flows/b29ef66b-e286-4afa-949f-62f1a7b4d7fa">
+                <common:shortDescription xml:lang="en">Non-hazardous waste disposed (NHWD)</common:shortDescription>
+            </referenceToFlowDataSet>
+            <functionType>General reminder flow</functionType>
+            <exchangeDirection>Output</exchangeDirection>
+            <meanAmount>0.0</meanAmount>
+            <common:other>
+                <epd:amount epd:module="A1-A3">24.966366091642243</epd:amount>
+                <epd:amount epd:module="D" epd:scenario="100% recycling">13.111979554993786</epd:amount>
+                <epd:amount epd:module="A4" epd:scenario="Transport to Gdansk">36.70103590070788</epd:amount>
+                <epd:amount epd:module="C4" epd:scenario="100% recycling">41.278030275556375</epd:amount>
+                <epd:amount epd:module="C3" epd:scenario="100% recycling">31.063564240751816</epd:amount>
+                <epd:amount epd:module="D" epd:scenario="100% incineration">10.4162256228364</epd:amount>
+                <epd:amount epd:module="C3" epd:scenario="100% incineration">35.164139529128434</epd:amount>
+                <epd:amount epd:module="A4" epd:scenario="Transport to Berlin">3.1085133978779753</epd:amount>
+                <epd:amount epd:module="C4" epd:scenario="100% incineration">41.48102012756699</epd:amount>
+                <epd:referenceToUnitGroupDataSet refObjectId="ad38d542-3fe9-439d-9b95-2f5f7752acaf" type="unit group data set" uri="../unitgroups/ad38d542-3fe9-439d-9b95-2f5f7752acaf">
+                    <common:shortDescription>kg</common:shortDescription>
+                </epd:referenceToUnitGroupDataSet>
+            </common:other>
+        </exchange>
+        <exchange dataSetInternalID="51">
+            <referenceToFlowDataSet type="flow data set" refObjectId="ac857178-2b45-46ec-892a-a9a4332f0372" uri="../flows/ac857178-2b45-46ec-892a-a9a4332f0372">
+                <common:shortDescription xml:lang="en">Use of non renewable primary energy (PENRE)</common:shortDescription>
+            </referenceToFlowDataSet>
+            <functionType>General reminder flow</functionType>
+            <exchangeDirection>Input</exchangeDirection>
+            <meanAmount>0.0</meanAmount>
+            <common:other>
+                <epd:amount epd:module="A1-A3">40.05658860833043</epd:amount>
+                <epd:amount epd:module="D" epd:scenario="100% recycling">24.77725384355336</epd:amount>
+                <epd:amount epd:module="A4" epd:scenario="Transport to Gdansk">8.827259165856654</epd:amount>
+                <epd:amount epd:module="C4" epd:scenario="100% recycling">8.30354918605921</epd:amount>
+                <epd:amount epd:module="C3" epd:scenario="100% recycling">3.087414235784511</epd:amount>
+                <epd:amount epd:module="D" epd:scenario="100% incineration">21.470948232598456</epd:amount>
+                <epd:amount epd:module="C3" epd:scenario="100% incineration">23.0544055788299</epd:amount>
+                <epd:amount epd:module="A4" epd:scenario="Transport to Berlin">22.718384328319086</epd:amount>
+                <epd:amount epd:module="C4" epd:scenario="100% incineration">0.04077091346155437</epd:amount>
+                <epd:referenceToUnitGroupDataSet refObjectId="93a60a57-a3c8-11da-a746-0800200c9a66" type="unit group data set" uri="../unitgroups/93a60a57-a3c8-11da-a746-0800200c9a66">
+                    <common:shortDescription>MJ</common:shortDescription>
+                </epd:referenceToUnitGroupDataSet>
+            </common:other>
+        </exchange>
+        <exchange dataSetInternalID="52">
+            <referenceToFlowDataSet type="flow data set" refObjectId="1421caa0-679d-4bf4-b282-0eb850ccae27" uri="../flows/1421caa0-679d-4bf4-b282-0eb850ccae27">
+                <common:shortDescription xml:lang="en">Use of non renewable primary energy resources used as raw materials (PENRM)</common:shortDescription>
+            </referenceToFlowDataSet>
+            <functionType>General reminder flow</functionType>
+            <exchangeDirection>Input</exchangeDirection>
+            <meanAmount>0.0</meanAmount>
+            <common:other>
+                <epd:amount epd:module="A1-A3">3.8579455565285192</epd:amount>
+                <epd:amount epd:module="D" epd:scenario="100% recycling">37.431651693613716</epd:amount>
+                <epd:amount epd:module="A4" epd:scenario="Transport to Gdansk">31.389141788408445</epd:amount>
+                <epd:amount epd:module="C4" epd:scenario="100% recycling">24.13293489028486</epd:amount>
+                <epd:amount epd:module="C3" epd:scenario="100% recycling">14.76073279232263</epd:amount>
+                <epd:amount epd:module="D" epd:scenario="100% incineration">26.7544367319862</epd:amount>
+                <epd:amount epd:module="C3" epd:scenario="100% incineration">11.595657335327896</epd:amount>
+                <epd:amount epd:module="A4" epd:scenario="Transport to Berlin">38.09788023581518</epd:amount>
+                <epd:amount epd:module="C4" epd:scenario="100% incineration">26.409472807359656</epd:amount>
+                <epd:referenceToUnitGroupDataSet refObjectId="93a60a57-a3c8-11da-a746-0800200c9a66" type="unit group data set" uri="../unitgroups/93a60a57-a3c8-11da-a746-0800200c9a66">
+                    <common:shortDescription>MJ</common:shortDescription>
+                </epd:referenceToUnitGroupDataSet>
+            </common:other>
+        </exchange>
+        <exchange dataSetInternalID="53">
+            <referenceToFlowDataSet type="flow data set" refObjectId="89def144-d39a-4287-b86f-efde453ddcb2" uri="../flows/89def144-d39a-4287-b86f-efde453ddcb2">
+                <common:shortDescription xml:lang="en">Use of non renewable secondary fuels (NRSF)</common:shortDescription>
+            </referenceToFlowDataSet>
+            <functionType>General reminder flow</functionType>
+            <exchangeDirection>Input</exchangeDirection>
+            <meanAmount>0.0</meanAmount>
+            <common:other>
+                <epd:amount epd:module="A1-A3">25.05980621159554</epd:amount>
+                <epd:amount epd:module="D" epd:scenario="100% recycling">19.877632520681875</epd:amount>
+                <epd:amount epd:module="A4" epd:scenario="Transport to Gdansk">40.46234841461807</epd:amount>
+                <epd:amount epd:module="C4" epd:scenario="100% recycling">17.08434078826847</epd:amount>
+                <epd:amount epd:module="C3" epd:scenario="100% recycling">0.13984007129178733</epd:amount>
+                <epd:amount epd:module="D" epd:scenario="100% incineration">2.4612196568574705</epd:amount>
+                <epd:amount epd:module="C3" epd:scenario="100% incineration">8.174691539545321</epd:amount>
+                <epd:amount epd:module="A4" epd:scenario="Transport to Berlin">6.538208533229032</epd:amount>
+                <epd:amount epd:module="C4" epd:scenario="100% incineration">13.246886892705767</epd:amount>
+                <epd:referenceToUnitGroupDataSet refObjectId="93a60a57-a3c8-11da-a746-0800200c9a66" type="unit group data set" uri="../unitgroups/93a60a57-a3c8-11da-a746-0800200c9a66">
+                    <common:shortDescription>MJ</common:shortDescription>
+                </epd:referenceToUnitGroupDataSet>
+            </common:other>
+        </exchange>
+        <exchange dataSetInternalID="54">
+            <referenceToFlowDataSet type="flow data set" refObjectId="3449546e-52ad-4b39-b809-9fb77cea8ff6" uri="../flows/3449546e-52ad-4b39-b809-9fb77cea8ff6">
+                <common:shortDescription xml:lang="en">Radioactive waste disposed (RWD)</common:shortDescription>
+            </referenceToFlowDataSet>
+            <functionType>General reminder flow</functionType>
+            <exchangeDirection>Output</exchangeDirection>
+            <meanAmount>0.0</meanAmount>
+            <common:other>
+                <epd:amount epd:module="A1-A3">36.86334118691827</epd:amount>
+                <epd:amount epd:module="D" epd:scenario="100% recycling">29.13876558518136</epd:amount>
+                <epd:amount epd:module="A4" epd:scenario="Transport to Gdansk">8.937249014362095</epd:amount>
+                <epd:amount epd:module="C4" epd:scenario="100% recycling">19.745222123998715</epd:amount>
+                <epd:amount epd:module="C3" epd:scenario="100% recycling">23.598559832318497</epd:amount>
+                <epd:amount epd:module="D" epd:scenario="100% incineration">2.4153598574133612</epd:amount>
+                <epd:amount epd:module="C3" epd:scenario="100% incineration">13.825313908322324</epd:amount>
+                <epd:amount epd:module="A4" epd:scenario="Transport to Berlin">0.4909064283763065</epd:amount>
+                <epd:amount epd:module="C4" epd:scenario="100% incineration">40.627967193409155</epd:amount>
+                <epd:referenceToUnitGroupDataSet refObjectId="ad38d542-3fe9-439d-9b95-2f5f7752acaf" type="unit group data set" uri="../unitgroups/ad38d542-3fe9-439d-9b95-2f5f7752acaf">
+                    <common:shortDescription>kg</common:shortDescription>
+                </epd:referenceToUnitGroupDataSet>
+            </common:other>
+        </exchange>
+        <exchange dataSetInternalID="55">
+            <referenceToFlowDataSet type="flow data set" refObjectId="20f32be5-0398-4288-9b6d-accddd195317" uri="../flows/20f32be5-0398-4288-9b6d-accddd195317">
+                <common:shortDescription xml:lang="en">Use of renewable primary energy (PERE)</common:shortDescription>
+            </referenceToFlowDataSet>
+            <functionType>General reminder flow</functionType>
+            <exchangeDirection>Input</exchangeDirection>
+            <meanAmount>0.0</meanAmount>
+            <common:other>
+                <epd:amount epd:module="A1-A3">40.065309300477296</epd:amount>
+                <epd:amount epd:module="D" epd:scenario="100% recycling">22.58617462442254</epd:amount>
+                <epd:amount epd:module="A4" epd:scenario="Transport to Gdansk">26.418217779844845</epd:amount>
+                <epd:amount epd:module="C4" epd:scenario="100% recycling">12.164547711227605</epd:amount>
+                <epd:amount epd:module="C3" epd:scenario="100% recycling">15.939452340013322</epd:amount>
+                <epd:amount epd:module="D" epd:scenario="100% incineration">11.984412842255063</epd:amount>
+                <epd:amount epd:module="C3" epd:scenario="100% incineration">22.525066751618922</epd:amount>
+                <epd:amount epd:module="A4" epd:scenario="Transport to Berlin">29.941385206775923</epd:amount>
+                <epd:amount epd:module="C4" epd:scenario="100% incineration">18.33484143027246</epd:amount>
+                <epd:referenceToUnitGroupDataSet refObjectId="93a60a57-a3c8-11da-a746-0800200c9a66" type="unit group data set" uri="../unitgroups/93a60a57-a3c8-11da-a746-0800200c9a66">
+                    <common:shortDescription>MJ</common:shortDescription>
+                </epd:referenceToUnitGroupDataSet>
+            </common:other>
+        </exchange>
+        <exchange dataSetInternalID="56">
+            <referenceToFlowDataSet type="flow data set" refObjectId="fb3ec0de-548d-4508-aea5-00b73bf6f702" uri="../flows/fb3ec0de-548d-4508-aea5-00b73bf6f702">
+                <common:shortDescription xml:lang="en">Use of renewable primary energy resources used as raw materials (PERM)</common:shortDescription>
+            </referenceToFlowDataSet>
+            <functionType>General reminder flow</functionType>
+            <exchangeDirection>Input</exchangeDirection>
+            <meanAmount>0.0</meanAmount>
+            <common:other>
+                <epd:amount epd:module="A1-A3">37.55210557654974</epd:amount>
+                <epd:amount epd:module="D" epd:scenario="100% recycling">34.611250074663666</epd:amount>
+                <epd:amount epd:module="A4" epd:scenario="Transport to Gdansk">41.906162886760846</epd:amount>
+                <epd:amount epd:module="C4" epd:scenario="100% recycling">39.768583328225866</epd:amount>
+                <epd:amount epd:module="C3" epd:scenario="100% recycling">40.04090498222633</epd:amount>
+                <epd:amount epd:module="D" epd:scenario="100% incineration">15.11662037931723</epd:amount>
+                <epd:amount epd:module="C3" epd:scenario="100% incineration">17.210115043198822</epd:amount>
+                <epd:amount epd:module="A4" epd:scenario="Transport to Berlin">20.432702205314445</epd:amount>
+                <epd:amount epd:module="C4" epd:scenario="100% incineration">21.765791102961362</epd:amount>
+                <epd:referenceToUnitGroupDataSet refObjectId="93a60a57-a3c8-11da-a746-0800200c9a66" type="unit group data set" uri="../unitgroups/93a60a57-a3c8-11da-a746-0800200c9a66">
+                    <common:shortDescription>MJ</common:shortDescription>
+                </epd:referenceToUnitGroupDataSet>
+            </common:other>
+        </exchange>
+        <exchange dataSetInternalID="57">
+            <referenceToFlowDataSet type="flow data set" refObjectId="64333088-a55f-4aa2-9a31-c10b07816787" uri="../flows/64333088-a55f-4aa2-9a31-c10b07816787">
+                <common:shortDescription xml:lang="en">Use of renewable secondary fuels (RSF)</common:shortDescription>
+            </referenceToFlowDataSet>
+            <functionType>General reminder flow</functionType>
+            <exchangeDirection>Input</exchangeDirection>
+            <meanAmount>0.0</meanAmount>
+            <common:other>
+                <epd:amount epd:module="A1-A3">21.564789214383683</epd:amount>
+                <epd:amount epd:module="D" epd:scenario="100% recycling">25.585108205538816</epd:amount>
+                <epd:amount epd:module="A4" epd:scenario="Transport to Gdansk">6.852522089334585</epd:amount>
+                <epd:amount epd:module="C4" epd:scenario="100% recycling">2.941862087402675</epd:amount>
+                <epd:amount epd:module="C3" epd:scenario="100% recycling">41.94826807329634</epd:amount>
+                <epd:amount epd:module="D" epd:scenario="100% incineration">28.309596492745627</epd:amount>
+                <epd:amount epd:module="C3" epd:scenario="100% incineration">24.32874696290622</epd:amount>
+                <epd:amount epd:module="A4" epd:scenario="Transport to Berlin">30.96804807295293</epd:amount>
+                <epd:amount epd:module="C4" epd:scenario="100% incineration">18.905196012411302</epd:amount>
+                <epd:referenceToUnitGroupDataSet refObjectId="93a60a57-a3c8-11da-a746-0800200c9a66" type="unit group data set" uri="../unitgroups/93a60a57-a3c8-11da-a746-0800200c9a66">
+                    <common:shortDescription>MJ</common:shortDescription>
+                </epd:referenceToUnitGroupDataSet>
+            </common:other>
+        </exchange>
+        <exchange dataSetInternalID="58">
+            <referenceToFlowDataSet type="flow data set" refObjectId="c6a1f35f-2d09-4f54-8dfb-97e502e1ce92" uri="../flows/c6a1f35f-2d09-4f54-8dfb-97e502e1ce92">
+                <common:shortDescription xml:lang="en">Input of secondary material (SM)</common:shortDescription>
+            </referenceToFlowDataSet>
+            <functionType>General reminder flow</functionType>
+            <exchangeDirection>Input</exchangeDirection>
+            <meanAmount>0.0</meanAmount>
+            <common:other>
+                <epd:amount epd:module="A1-A3">18.330867815837596</epd:amount>
+                <epd:amount epd:module="D" epd:scenario="100% recycling">0.3651556358928991</epd:amount>
+                <epd:amount epd:module="A4" epd:scenario="Transport to Gdansk">11.904521113757175</epd:amount>
+                <epd:amount epd:module="C4" epd:scenario="100% recycling">18.046831141538444</epd:amount>
+                <epd:amount epd:module="C3" epd:scenario="100% recycling">8.638357538305353</epd:amount>
+                <epd:amount epd:module="D" epd:scenario="100% incineration">4.93950026040631</epd:amount>
+                <epd:amount epd:module="C3" epd:scenario="100% incineration">37.87850182955331</epd:amount>
+                <epd:amount epd:module="A4" epd:scenario="Transport to Berlin">30.575034063430206</epd:amount>
+                <epd:amount epd:module="C4" epd:scenario="100% incineration">27.14240753022896</epd:amount>
+                <epd:referenceToUnitGroupDataSet refObjectId="ad38d542-3fe9-439d-9b95-2f5f7752acaf" type="unit group data set" uri="../unitgroups/ad38d542-3fe9-439d-9b95-2f5f7752acaf">
+                    <common:shortDescription>kg</common:shortDescription>
+                </epd:referenceToUnitGroupDataSet>
+            </common:other>
+        </exchange>
+        <exchange dataSetInternalID="59">
+            <referenceToFlowDataSet type="flow data set" refObjectId="06159210-646b-4c8d-8583-da9b3b95a6c1" uri="../flows/06159210-646b-4c8d-8583-da9b3b95a6c1">
+                <common:shortDescription xml:lang="en">Total use of non-renewable primary energy resources (PENRT)</common:shortDescription>
+            </referenceToFlowDataSet>
+            <functionType>General reminder flow</functionType>
+            <exchangeDirection>Input</exchangeDirection>
+            <meanAmount>0.0</meanAmount>
+            <common:other>
+                <epd:amount epd:module="A1-A3">3.8444202688294355</epd:amount>
+                <epd:amount epd:module="D" epd:scenario="100% recycling">35.534381329711174</epd:amount>
+                <epd:amount epd:module="A4" epd:scenario="Transport to Gdansk">16.685126869471315</epd:amount>
+                <epd:amount epd:module="C4" epd:scenario="100% recycling">27.264329095077525</epd:amount>
+                <epd:amount epd:module="C3" epd:scenario="100% recycling">4.368017151248054</epd:amount>
+                <epd:amount epd:module="D" epd:scenario="100% incineration">1.1073997175336976</epd:amount>
+                <epd:amount epd:module="C3" epd:scenario="100% incineration">19.967634013297026</epd:amount>
+                <epd:amount epd:module="A4" epd:scenario="Transport to Berlin">24.440800787657736</epd:amount>
+                <epd:amount epd:module="C4" epd:scenario="100% incineration">35.68290705787155</epd:amount>
+                <epd:referenceToUnitGroupDataSet refObjectId="93a60a57-a3c8-11da-a746-0800200c9a66" type="unit group data set" uri="../unitgroups/93a60a57-a3c8-11da-a746-0800200c9a66">
+                    <common:shortDescription>MJ</common:shortDescription>
+                </epd:referenceToUnitGroupDataSet>
+            </common:other>
+        </exchange>
+        <exchange dataSetInternalID="60">
+            <referenceToFlowDataSet type="flow data set" refObjectId="53f97275-fa8a-4cdd-9024-65936002acd0" uri="../flows/53f97275-fa8a-4cdd-9024-65936002acd0">
+                <common:shortDescription xml:lang="en">Total use of renewable primary energy resources (PERT)</common:shortDescription>
+            </referenceToFlowDataSet>
+            <functionType>General reminder flow</functionType>
+            <exchangeDirection>Input</exchangeDirection>
+            <meanAmount>0.0</meanAmount>
+            <common:other>
+                <epd:amount epd:module="A1-A3">18.622878493822967</epd:amount>
+                <epd:amount epd:module="D" epd:scenario="100% recycling">29.680924086982845</epd:amount>
+                <epd:amount epd:module="A4" epd:scenario="Transport to Gdansk">5.917390689240343</epd:amount>
+                <epd:amount epd:module="C4" epd:scenario="100% recycling">34.099329247529106</epd:amount>
+                <epd:amount epd:module="C3" epd:scenario="100% recycling">37.69669324067915</epd:amount>
+                <epd:amount epd:module="D" epd:scenario="100% incineration">4.834956954916874</epd:amount>
+                <epd:amount epd:module="C3" epd:scenario="100% incineration">17.103920573790404</epd:amount>
+                <epd:amount epd:module="A4" epd:scenario="Transport to Berlin">0.6584678586363015</epd:amount>
+                <epd:amount epd:module="C4" epd:scenario="100% incineration">11.097203502821472</epd:amount>
+                <epd:referenceToUnitGroupDataSet refObjectId="93a60a57-a3c8-11da-a746-0800200c9a66" type="unit group data set" uri="../unitgroups/93a60a57-a3c8-11da-a746-0800200c9a66">
+                    <common:shortDescription>MJ</common:shortDescription>
+                </epd:referenceToUnitGroupDataSet>
+            </common:other>
+        </exchange>
+    </exchanges>
+    <LCIAResults>
+        <LCIAResult>
+            <referenceToLCIAMethodDataSet type="LCIA method data set" refObjectId="b2ad6494-c78d-11e6-9d9d-cec0c932ce01" uri="../lciamethods/b2ad6494-c78d-11e6-9d9d-cec0c932ce01">
+                <common:shortDescription xml:lang="en">Abiotic depletion potential - non-fossil resources (ADPE)</common:shortDescription>
+            </referenceToLCIAMethodDataSet>
+            <meanAmount>0.0</meanAmount>
+            <common:other>
+                <epd:amount epd:module="A1-A3">4.168822415416439</epd:amount>
+                <epd:amount epd:module="D" epd:scenario="100% recycling">7.6760495528962664</epd:amount>
+                <epd:amount epd:module="A4" epd:scenario="Transport to Gdansk">26.718990341000346</epd:amount>
+                <epd:amount epd:module="C4" epd:scenario="100% recycling">8.214629717305934</epd:amount>
+                <epd:amount epd:module="C3" epd:scenario="100% recycling">12.063098196448955</epd:amount>
+                <epd:amount epd:module="D" epd:scenario="100% incineration">27.881224150269983</epd:amount>
+                <epd:amount epd:module="C3" epd:scenario="100% incineration">31.72641329512294</epd:amount>
+                <epd:amount epd:module="A4" epd:scenario="Transport to Berlin">22.608498704185862</epd:amount>
+                <epd:amount epd:module="C4" epd:scenario="100% incineration">38.758118533413246</epd:amount>
+                <epd:referenceToUnitGroupDataSet refObjectId="54ccd2d9-a32a-4fc2-923d-f2c8c93e89d4" type="unit group data set" uri="../unitgroups/54ccd2d9-a32a-4fc2-923d-f2c8c93e89d4">
+                    <common:shortDescription>kg Sb-eqv.</common:shortDescription>
+                </epd:referenceToUnitGroupDataSet>
+            </common:other>
+        </LCIAResult>
+        <LCIAResult>
+            <referenceToLCIAMethodDataSet type="LCIA method data set" refObjectId="b2ad6110-c78d-11e6-9d9d-cec0c932ce01" uri="../lciamethods/b2ad6110-c78d-11e6-9d9d-cec0c932ce01">
+                <common:shortDescription xml:lang="en">Abiotic depletion potential - fossil resources (ADPF)</common:shortDescription>
+            </referenceToLCIAMethodDataSet>
+            <meanAmount>0.0</meanAmount>
+            <common:other>
+                <epd:amount epd:module="A1-A3">30.103773335812463</epd:amount>
+                <epd:amount epd:module="D" epd:scenario="100% recycling">26.90404827476247</epd:amount>
+                <epd:amount epd:module="A4" epd:scenario="Transport to Gdansk">8.870474062712297</epd:amount>
+                <epd:amount epd:module="C4" epd:scenario="100% recycling">10.758692324708253</epd:amount>
+                <epd:amount epd:module="C3" epd:scenario="100% recycling">7.677174531567509</epd:amount>
+                <epd:amount epd:module="D" epd:scenario="100% incineration">8.379980587809802</epd:amount>
+                <epd:amount epd:module="C3" epd:scenario="100% incineration">12.231934645176946</epd:amount>
+                <epd:amount epd:module="A4" epd:scenario="Transport to Berlin">18.94045450912454</epd:amount>
+                <epd:amount epd:module="C4" epd:scenario="100% incineration">26.67061076985585</epd:amount>
+                <epd:referenceToUnitGroupDataSet refObjectId="93a60a57-a3c8-11da-a746-0800200c9a66" type="unit group data set" uri="../unitgroups/93a60a57-a3c8-11da-a746-0800200c9a66">
+                    <common:shortDescription>MJ</common:shortDescription>
+                </epd:referenceToUnitGroupDataSet>
+            </common:other>
+        </LCIAResult>
+        <LCIAResult>
+            <referenceToLCIAMethodDataSet type="LCIA method data set" refObjectId="b5c611c6-def3-11e6-bf01-fe55135034f3" uri="../lciamethods/b5c611c6-def3-11e6-bf01-fe55135034f3">
+                <common:shortDescription xml:lang="en">Acidification potential, Accumulated Exceedance (AP)</common:shortDescription>
+            </referenceToLCIAMethodDataSet>
+            <meanAmount>0.0</meanAmount>
+            <common:other>
+                <epd:amount epd:module="A1-A3">24.04188712947595</epd:amount>
+                <epd:amount epd:module="D" epd:scenario="100% recycling">14.311643258091182</epd:amount>
+                <epd:amount epd:module="A4" epd:scenario="Transport to Gdansk">39.96545834690373</epd:amount>
+                <epd:amount epd:module="C4" epd:scenario="100% recycling">30.414247746253988</epd:amount>
+                <epd:amount epd:module="C3" epd:scenario="100% recycling">30.513206927458384</epd:amount>
+                <epd:amount epd:module="D" epd:scenario="100% incineration">12.360256436682143</epd:amount>
+                <epd:amount epd:module="C3" epd:scenario="100% incineration">27.480216960864112</epd:amount>
+                <epd:amount epd:module="A4" epd:scenario="Transport to Berlin">3.8665338488569065</epd:amount>
+                <epd:amount epd:module="C4" epd:scenario="100% incineration">25.50452847857145</epd:amount>
+                <epd:referenceToUnitGroupDataSet refObjectId="42e089ac-92bf-4bf2-8ca1-5fc40d18f2ed" type="unit group data set" uri="../unitgroups/42e089ac-92bf-4bf2-8ca1-5fc40d18f2ed">
+                    <common:shortDescription>mol H+ eqv.</common:shortDescription>
+                </epd:referenceToUnitGroupDataSet>
+            </common:other>
+        </LCIAResult>
+        <LCIAResult>
+            <referenceToLCIAMethodDataSet type="LCIA method data set" refObjectId="b53ec18f-7377-4ad3-86eb-cc3f4f276b2b" uri="../lciamethods/b53ec18f-7377-4ad3-86eb-cc3f4f276b2b">
+                <common:shortDescription xml:lang="en">Eutrophication potential - freshwater (EP-freshwater)</common:shortDescription>
+            </referenceToLCIAMethodDataSet>
+            <meanAmount>0.0</meanAmount>
+            <common:other>
+                <epd:amount epd:module="A1-A3">31.731069839874813</epd:amount>
+                <epd:amount epd:module="D" epd:scenario="100% recycling">31.647800686987054</epd:amount>
+                <epd:amount epd:module="A4" epd:scenario="Transport to Gdansk">11.574172955919709</epd:amount>
+                <epd:amount epd:module="C4" epd:scenario="100% recycling">40.8851350091483</epd:amount>
+                <epd:amount epd:module="C3" epd:scenario="100% recycling">23.795830808420913</epd:amount>
+                <epd:amount epd:module="D" epd:scenario="100% incineration">21.03490122240079</epd:amount>
+                <epd:amount epd:module="C3" epd:scenario="100% incineration">41.9879564582156</epd:amount>
+                <epd:amount epd:module="A4" epd:scenario="Transport to Berlin">1.2983424919222484</epd:amount>
+                <epd:amount epd:module="C4" epd:scenario="100% incineration">11.674208842169872</epd:amount>
+                <epd:referenceToUnitGroupDataSet refObjectId="0429039d-a61d-4590-ba67-aa4a20a810a1" type="unit group data set" uri="../unitgroups/0429039d-a61d-4590-ba67-aa4a20a810a1">
+                    <common:shortDescription>kg P eqv.</common:shortDescription>
+                </epd:referenceToUnitGroupDataSet>
+            </common:other>
+        </LCIAResult>
+        <LCIAResult>
+            <referenceToLCIAMethodDataSet type="LCIA method data set" refObjectId="b5c619fa-def3-11e6-bf01-fe55135034f3" uri="../lciamethods/b5c619fa-def3-11e6-bf01-fe55135034f3">
+                <common:shortDescription xml:lang="en">Eutrophication potential - marine (EP-marine)</common:shortDescription>
+            </referenceToLCIAMethodDataSet>
+            <meanAmount>0.0</meanAmount>
+            <common:other>
+                <epd:amount epd:module="A1-A3">35.2461232203781</epd:amount>
+                <epd:amount epd:module="D" epd:scenario="100% recycling">19.934459899304542</epd:amount>
+                <epd:amount epd:module="A4" epd:scenario="Transport to Gdansk">14.041602357759409</epd:amount>
+                <epd:amount epd:module="C4" epd:scenario="100% recycling">28.785970179185394</epd:amount>
+                <epd:amount epd:module="C3" epd:scenario="100% recycling">16.99639346679336</epd:amount>
+                <epd:amount epd:module="D" epd:scenario="100% incineration">28.234189519815548</epd:amount>
+                <epd:amount epd:module="C3" epd:scenario="100% incineration">35.172776737070826</epd:amount>
+                <epd:amount epd:module="A4" epd:scenario="Transport to Berlin">14.557865144508531</epd:amount>
+                <epd:amount epd:module="C4" epd:scenario="100% incineration">23.74794247992816</epd:amount>
+                <epd:referenceToUnitGroupDataSet refObjectId="d05bb823-ecdf-4686-8c40-bf1d9257859f" type="unit group data set" uri="../unitgroups/d05bb823-ecdf-4686-8c40-bf1d9257859f">
+                    <common:shortDescription>kg N eqv.</common:shortDescription>
+                </epd:referenceToUnitGroupDataSet>
+            </common:other>
+        </LCIAResult>
+        <LCIAResult>
+            <referenceToLCIAMethodDataSet type="LCIA method data set" refObjectId="b5c614d2-def3-11e6-bf01-fe55135034f3" uri="../lciamethods/b5c614d2-def3-11e6-bf01-fe55135034f3">
+                <common:shortDescription xml:lang="en">Eutrophication potential - terrestrial (EP-terrestrial)</common:shortDescription>
+            </referenceToLCIAMethodDataSet>
+            <meanAmount>0.0</meanAmount>
+            <common:other>
+                <epd:amount epd:module="A1-A3">5.244577578570547</epd:amount>
+                <epd:amount epd:module="D" epd:scenario="100% recycling">24.226140749080848</epd:amount>
+                <epd:amount epd:module="A4" epd:scenario="Transport to Gdansk">39.029392977050286</epd:amount>
+                <epd:amount epd:module="C4" epd:scenario="100% recycling">2.3527545557770315</epd:amount>
+                <epd:amount epd:module="C3" epd:scenario="100% recycling">6.332360887065105</epd:amount>
+                <epd:amount epd:module="D" epd:scenario="100% incineration">0.09757458041900313</epd:amount>
+                <epd:amount epd:module="C3" epd:scenario="100% incineration">1.8000567498438544</epd:amount>
+                <epd:amount epd:module="A4" epd:scenario="Transport to Berlin">35.03860380021641</epd:amount>
+                <epd:amount epd:module="C4" epd:scenario="100% incineration">15.14259761748296</epd:amount>
+                <epd:referenceToUnitGroupDataSet refObjectId="71b4d617-0ec9-4d3f-b65e-e438940c2401" type="unit group data set" uri="../unitgroups/71b4d617-0ec9-4d3f-b65e-e438940c2401">
+                    <common:shortDescription>mol N eqv.</common:shortDescription>
+                </epd:referenceToUnitGroupDataSet>
+            </common:other>
+        </LCIAResult>
+        <LCIAResult>
+            <referenceToLCIAMethodDataSet type="LCIA method data set" refObjectId="6a37f984-a4b3-458a-a20a-64418c145fa2" uri="../lciamethods/6a37f984-a4b3-458a-a20a-64418c145fa2">
+                <common:shortDescription xml:lang="en">Global Warming Potential - total (GWP-total)</common:shortDescription>
+            </referenceToLCIAMethodDataSet>
+            <meanAmount>0.0</meanAmount>
+            <common:other>
+                <epd:amount epd:module="A1-A3">15.559479677163699</epd:amount>
+                <epd:amount epd:module="D" epd:scenario="100% recycling">3.890472762252513</epd:amount>
+                <epd:amount epd:module="A4" epd:scenario="Transport to Gdansk">10.403452605105544</epd:amount>
+                <epd:amount epd:module="C4" epd:scenario="100% recycling">16.861343234824155</epd:amount>
+                <epd:amount epd:module="C3" epd:scenario="100% recycling">12.55722191320309</epd:amount>
+                <epd:amount epd:module="D" epd:scenario="100% incineration">21.473728298846915</epd:amount>
+                <epd:amount epd:module="C3" epd:scenario="100% incineration">29.83997231119644</epd:amount>
+                <epd:amount epd:module="A4" epd:scenario="Transport to Berlin">10.621689444677362</epd:amount>
+                <epd:amount epd:module="C4" epd:scenario="100% incineration">37.34889504407421</epd:amount>
+                <epd:referenceToUnitGroupDataSet refObjectId="1ebf3012-d0db-4de2-aefd-ef30cedb0be1" type="unit group data set" uri="../unitgroups/1ebf3012-d0db-4de2-aefd-ef30cedb0be1">
+                    <common:shortDescription>kg CO2 eqv.</common:shortDescription>
+                </epd:referenceToUnitGroupDataSet>
+            </common:other>
+        </LCIAResult>
+        <LCIAResult>
+            <referenceToLCIAMethodDataSet type="LCIA method data set" refObjectId="5f635281-343e-44fb-83df-1971b155e6b6" uri="../lciamethods/5f635281-343e-44fb-83df-1971b155e6b6">
+                <common:shortDescription xml:lang="en">Global Warming Potential - fossil fuels (GWP-fossil)</common:shortDescription>
+            </referenceToLCIAMethodDataSet>
+            <meanAmount>0.0</meanAmount>
+            <common:other>
+                <epd:amount epd:module="A1-A3">9.712484412875508</epd:amount>
+                <epd:amount epd:module="D" epd:scenario="100% recycling">6.549066185190086</epd:amount>
+                <epd:amount epd:module="A4" epd:scenario="Transport to Gdansk">18.55419196414956</epd:amount>
+                <epd:amount epd:module="C4" epd:scenario="100% recycling">32.326237366597866</epd:amount>
+                <epd:amount epd:module="C3" epd:scenario="100% recycling">41.24930220043967</epd:amount>
+                <epd:amount epd:module="D" epd:scenario="100% incineration">35.28821609250014</epd:amount>
+                <epd:amount epd:module="C3" epd:scenario="100% incineration">27.852749515238383</epd:amount>
+                <epd:amount epd:module="A4" epd:scenario="Transport to Berlin">0.5664356476983607</epd:amount>
+                <epd:amount epd:module="C4" epd:scenario="100% incineration">3.14295977101916</epd:amount>
+                <epd:referenceToUnitGroupDataSet refObjectId="1ebf3012-d0db-4de2-aefd-ef30cedb0be1" type="unit group data set" uri="../unitgroups/1ebf3012-d0db-4de2-aefd-ef30cedb0be1">
+                    <common:shortDescription>kg CO2 eqv.</common:shortDescription>
+                </epd:referenceToUnitGroupDataSet>
+            </common:other>
+        </LCIAResult>
+        <LCIAResult>
+            <referenceToLCIAMethodDataSet type="LCIA method data set" refObjectId="2356e1ab-0185-4db5-86e5-16de51c7485c" uri="../lciamethods/2356e1ab-0185-4db5-86e5-16de51c7485c">
+                <common:shortDescription xml:lang="en">Global Warming Potential - biogenic (GWP-biogenic)</common:shortDescription>
+            </referenceToLCIAMethodDataSet>
+            <meanAmount>0.0</meanAmount>
+            <common:other>
+                <epd:amount epd:module="A1-A3">24.117631886701794</epd:amount>
+                <epd:amount epd:module="D" epd:scenario="100% recycling">29.661313706946032</epd:amount>
+                <epd:amount epd:module="A4" epd:scenario="Transport to Gdansk">9.947633971713206</epd:amount>
+                <epd:amount epd:module="C4" epd:scenario="100% recycling">13.209030646920356</epd:amount>
+                <epd:amount epd:module="C3" epd:scenario="100% recycling">13.840675906123248</epd:amount>
+                <epd:amount epd:module="D" epd:scenario="100% incineration">0.8444280469247096</epd:amount>
+                <epd:amount epd:module="C3" epd:scenario="100% incineration">20.720265204710422</epd:amount>
+                <epd:amount epd:module="A4" epd:scenario="Transport to Berlin">39.586541208455465</epd:amount>
+                <epd:amount epd:module="C4" epd:scenario="100% incineration">27.98317296820013</epd:amount>
+                <epd:referenceToUnitGroupDataSet refObjectId="1ebf3012-d0db-4de2-aefd-ef30cedb0be1" type="unit group data set" uri="../unitgroups/1ebf3012-d0db-4de2-aefd-ef30cedb0be1">
+                    <common:shortDescription>kg CO2 eqv.</common:shortDescription>
+                </epd:referenceToUnitGroupDataSet>
+            </common:other>
+        </LCIAResult>
+        <LCIAResult>
+            <referenceToLCIAMethodDataSet type="LCIA method data set" refObjectId="4331bbdb-978a-490d-8707-eeb047f01a55" uri="../lciamethods/4331bbdb-978a-490d-8707-eeb047f01a55">
+                <common:shortDescription xml:lang="en">Global Warming Potential - land use and land use change (GWP-luluc)</common:shortDescription>
+            </referenceToLCIAMethodDataSet>
+            <meanAmount>0.0</meanAmount>
+            <common:other>
+                <epd:amount epd:module="A1-A3">40.60886993818344</epd:amount>
+                <epd:amount epd:module="D" epd:scenario="100% recycling">37.56357577863108</epd:amount>
+                <epd:amount epd:module="A4" epd:scenario="Transport to Gdansk">36.48065456438375</epd:amount>
+                <epd:amount epd:module="C4" epd:scenario="100% recycling">19.682247540488774</epd:amount>
+                <epd:amount epd:module="C3" epd:scenario="100% recycling">22.943526512952616</epd:amount>
+                <epd:amount epd:module="D" epd:scenario="100% incineration">40.86965981511007</epd:amount>
+                <epd:amount epd:module="C3" epd:scenario="100% incineration">26.67302511481704</epd:amount>
+                <epd:amount epd:module="A4" epd:scenario="Transport to Berlin">19.992956887410536</epd:amount>
+                <epd:amount epd:module="C4" epd:scenario="100% incineration">6.0908723131301965</epd:amount>
+                <epd:referenceToUnitGroupDataSet refObjectId="1ebf3012-d0db-4de2-aefd-ef30cedb0be1" type="unit group data set" uri="../unitgroups/1ebf3012-d0db-4de2-aefd-ef30cedb0be1">
+                    <common:shortDescription>kg CO2 eqv.</common:shortDescription>
+                </epd:referenceToUnitGroupDataSet>
+            </common:other>
+        </LCIAResult>
+        <LCIAResult>
+            <referenceToLCIAMethodDataSet type="LCIA method data set" refObjectId="b5c629d6-def3-11e6-bf01-fe55135034f3" uri="../lciamethods/b5c629d6-def3-11e6-bf01-fe55135034f3">
+                <common:shortDescription xml:lang="en">Depletion potential of the stratospheric ozone layer (ODP)</common:shortDescription>
+            </referenceToLCIAMethodDataSet>
+            <meanAmount>0.0</meanAmount>
+            <common:other>
+                <epd:amount epd:module="A1-A3">37.00599219534004</epd:amount>
+                <epd:amount epd:module="D" epd:scenario="100% recycling">8.507581957217768</epd:amount>
+                <epd:amount epd:module="A4" epd:scenario="Transport to Gdansk">8.165830406189102</epd:amount>
+                <epd:amount epd:module="C4" epd:scenario="100% recycling">12.776083759223265</epd:amount>
+                <epd:amount epd:module="C3" epd:scenario="100% recycling">37.75900132126474</epd:amount>
+                <epd:amount epd:module="D" epd:scenario="100% incineration">18.64664227191305</epd:amount>
+                <epd:amount epd:module="C3" epd:scenario="100% incineration">17.89780526633674</epd:amount>
+                <epd:amount epd:module="A4" epd:scenario="Transport to Berlin">11.397074260839842</epd:amount>
+                <epd:amount epd:module="C4" epd:scenario="100% incineration">32.46606600315701</epd:amount>
+                <epd:referenceToUnitGroupDataSet refObjectId="d9e957c9-7309-4474-bf3a-7777df6c4e5b" type="unit group data set" uri="../unitgroups/d9e957c9-7309-4474-bf3a-7777df6c4e5b">
+                    <common:shortDescription>kg CFC 11-Äquiv.</common:shortDescription>
+                </epd:referenceToUnitGroupDataSet>
+            </common:other>
+        </LCIAResult>
+        <LCIAResult>
+            <referenceToLCIAMethodDataSet type="LCIA method data set" refObjectId="b5c610fe-def3-11e6-bf01-fe55135034f3" uri="../lciamethods/b5c610fe-def3-11e6-bf01-fe55135034f3">
+                <common:shortDescription xml:lang="en">Photochemical Ozone Creation Potential (POCP)</common:shortDescription>
+            </referenceToLCIAMethodDataSet>
+            <meanAmount>0.0</meanAmount>
+            <common:other>
+                <epd:amount epd:module="A1-A3">30.021228996058493</epd:amount>
+                <epd:amount epd:module="D" epd:scenario="100% recycling">34.75654738416644</epd:amount>
+                <epd:amount epd:module="A4" epd:scenario="Transport to Gdansk">3.9700573470641833</epd:amount>
+                <epd:amount epd:module="C4" epd:scenario="100% recycling">34.23396841204725</epd:amount>
+                <epd:amount epd:module="C3" epd:scenario="100% recycling">16.217608278052833</epd:amount>
+                <epd:amount epd:module="D" epd:scenario="100% incineration">29.22237983407036</epd:amount>
+                <epd:amount epd:module="C3" epd:scenario="100% incineration">5.9175578287015576</epd:amount>
+                <epd:amount epd:module="A4" epd:scenario="Transport to Berlin">18.319177875168577</epd:amount>
+                <epd:amount epd:module="C4" epd:scenario="100% incineration">17.697283403425562</epd:amount>
+                <epd:referenceToUnitGroupDataSet refObjectId="d27c25f8-fbc1-44c6-b47b-4adbae4199c6" type="unit group data set" uri="../unitgroups/d27c25f8-fbc1-44c6-b47b-4adbae4199c6">
+                    <common:shortDescription>kg NMVOC eqv.</common:shortDescription>
+                </epd:referenceToUnitGroupDataSet>
+            </common:other>
+        </LCIAResult>
+        <LCIAResult>
+            <referenceToLCIAMethodDataSet type="LCIA method data set" refObjectId="b2ad66ce-c78d-11e6-9d9d-cec0c932ce01" uri="../lciamethods/b2ad66ce-c78d-11e6-9d9d-cec0c932ce01">
+                <common:shortDescription xml:lang="en">Water (user) deprivation potential (WDP)</common:shortDescription>
+            </referenceToLCIAMethodDataSet>
+            <meanAmount>0.0</meanAmount>
+            <common:other>
+                <epd:amount epd:module="A1-A3">2.7041708446938992</epd:amount>
+                <epd:amount epd:module="D" epd:scenario="100% recycling">25.62487220916851</epd:amount>
+                <epd:amount epd:module="A4" epd:scenario="Transport to Gdansk">36.568425310902526</epd:amount>
+                <epd:amount epd:module="C4" epd:scenario="100% recycling">37.420485635888575</epd:amount>
+                <epd:amount epd:module="C3" epd:scenario="100% recycling">39.45370350967165</epd:amount>
+                <epd:amount epd:module="D" epd:scenario="100% incineration">40.44784623987921</epd:amount>
+                <epd:amount epd:module="C3" epd:scenario="100% incineration">10.765340333520788</epd:amount>
+                <epd:amount epd:module="A4" epd:scenario="Transport to Berlin">24.25333768566834</epd:amount>
+                <epd:amount epd:module="C4" epd:scenario="100% incineration">13.678483686626539</epd:amount>
+                <epd:referenceToUnitGroupDataSet refObjectId="6ae2df01-888e-46c8-b17d-49fa3869b476" type="unit group data set" uri="../unitgroups/6ae2df01-888e-46c8-b17d-49fa3869b476">
+                    <common:shortDescription>m3 world eqv.</common:shortDescription>
+                </epd:referenceToUnitGroupDataSet>
+            </common:other>
+        </LCIAResult>
+        <LCIAResult>
+            <referenceToLCIAMethodDataSet type="LCIA method data set" refObjectId="b5c602c6-def3-11e6-bf01-fe55135034f3" uri="../lciamethods/b5c602c6-def3-11e6-bf01-fe55135034f3">
+                <common:shortDescription xml:lang="en">Potential incidence of disease due to PM emissions (PM)</common:shortDescription>
+            </referenceToLCIAMethodDataSet>
+            <meanAmount>0.0</meanAmount>
+            <common:other>
+                <epd:amount epd:module="A1-A3">22.330412103854577</epd:amount>
+                <epd:amount epd:module="D" epd:scenario="100% recycling">30.664403397390238</epd:amount>
+                <epd:amount epd:module="A4" epd:scenario="Transport to Gdansk">23.554371089033655</epd:amount>
+                <epd:amount epd:module="C4" epd:scenario="100% recycling">30.371806807642834</epd:amount>
+                <epd:amount epd:module="C3" epd:scenario="100% recycling">21.76490547031604</epd:amount>
+                <epd:amount epd:module="D" epd:scenario="100% incineration">10.122867941163115</epd:amount>
+                <epd:amount epd:module="C3" epd:scenario="100% incineration">34.43105629449893</epd:amount>
+                <epd:amount epd:module="A4" epd:scenario="Transport to Berlin">30.79412341188293</epd:amount>
+                <epd:amount epd:module="C4" epd:scenario="100% incineration">6.852036995009231</epd:amount>
+                <epd:referenceToUnitGroupDataSet refObjectId="3883559b-648f-4afc-8ba2-0bd24f3affa3" type="unit group data set" uri="../unitgroups/3883559b-648f-4afc-8ba2-0bd24f3affa3">
+                    <common:shortDescription>disease incidence</common:shortDescription>
+                </epd:referenceToUnitGroupDataSet>
+            </common:other>
+        </LCIAResult>
+        <LCIAResult>
+            <referenceToLCIAMethodDataSet type="LCIA method data set" refObjectId="b5c632be-def3-11e6-bf01-fe55135034f3" uri="../lciamethods/b5c632be-def3-11e6-bf01-fe55135034f3">
+                <common:shortDescription xml:lang="en">Potential Human exposure efficiency relative to U235 (IRP)</common:shortDescription>
+            </referenceToLCIAMethodDataSet>
+            <meanAmount>0.0</meanAmount>
+            <common:other>
+                <epd:amount epd:module="A1-A3">18.79067125377092</epd:amount>
+                <epd:amount epd:module="D" epd:scenario="100% recycling">12.717258497914187</epd:amount>
+                <epd:amount epd:module="A4" epd:scenario="Transport to Gdansk">40.52063647860042</epd:amount>
+                <epd:amount epd:module="C4" epd:scenario="100% recycling">41.44281696030981</epd:amount>
+                <epd:amount epd:module="C3" epd:scenario="100% recycling">28.879953824007558</epd:amount>
+                <epd:amount epd:module="D" epd:scenario="100% incineration">6.874816638384873</epd:amount>
+                <epd:amount epd:module="C3" epd:scenario="100% incineration">35.118633062773625</epd:amount>
+                <epd:amount epd:module="A4" epd:scenario="Transport to Berlin">26.736915444653743</epd:amount>
+                <epd:amount epd:module="C4" epd:scenario="100% incineration">28.90023515977299</epd:amount>
+                <epd:referenceToUnitGroupDataSet refObjectId="456b05bf-1415-44a9-9993-02452f554c09" type="unit group data set" uri="../unitgroups/456b05bf-1415-44a9-9993-02452f554c09">
+                    <common:shortDescription>kBq U235 eqv.</common:shortDescription>
+                </epd:referenceToUnitGroupDataSet>
+            </common:other>
+        </LCIAResult>
+        <LCIAResult>
+            <referenceToLCIAMethodDataSet type="LCIA method data set" refObjectId="ee1082d1-b0f7-43ca-a1f0-21e2a4a74511" uri="../lciamethods/ee1082d1-b0f7-43ca-a1f0-21e2a4a74511">
+                <common:shortDescription xml:lang="en">Potential Comparative Toxic Unit for ecosystems (ETP-fw)</common:shortDescription>
+            </referenceToLCIAMethodDataSet>
+            <meanAmount>0.0</meanAmount>
+            <common:other>
+                <epd:amount epd:module="A1-A3">37.3928880521574</epd:amount>
+                <epd:amount epd:module="D" epd:scenario="100% recycling">17.06568270074072</epd:amount>
+                <epd:amount epd:module="A4" epd:scenario="Transport to Gdansk">14.117675784601603</epd:amount>
+                <epd:amount epd:module="C4" epd:scenario="100% recycling">11.692312389115852</epd:amount>
+                <epd:amount epd:module="C3" epd:scenario="100% recycling">14.203590150036959</epd:amount>
+                <epd:amount epd:module="D" epd:scenario="100% incineration">32.83995923505787</epd:amount>
+                <epd:amount epd:module="C3" epd:scenario="100% incineration">28.61948031775311</epd:amount>
+                <epd:amount epd:module="A4" epd:scenario="Transport to Berlin">29.800112501743175</epd:amount>
+                <epd:amount epd:module="C4" epd:scenario="100% incineration">41.95870942620803</epd:amount>
+                <epd:referenceToUnitGroupDataSet refObjectId="aa959ded-f1eb-4efb-9c5c-2d60be36b3e6" type="unit group data set" uri="../unitgroups/aa959ded-f1eb-4efb-9c5c-2d60be36b3e6">
+                    <common:shortDescription>CTUe</common:shortDescription>
+                </epd:referenceToUnitGroupDataSet>
+            </common:other>
+        </LCIAResult>
+        <LCIAResult>
+            <referenceToLCIAMethodDataSet type="LCIA method data set" refObjectId="2299222a-bbd8-474f-9d4f-4dd1f18aea7c" uri="../lciamethods/2299222a-bbd8-474f-9d4f-4dd1f18aea7c">
+                <common:shortDescription xml:lang="en">Potential Comparative Toxic Unit for humans - cancer effects (HTP-c)</common:shortDescription>
+            </referenceToLCIAMethodDataSet>
+            <meanAmount>0.0</meanAmount>
+            <common:other>
+                <epd:amount epd:module="A1-A3">5.616940048022814</epd:amount>
+                <epd:amount epd:module="D" epd:scenario="100% recycling">38.831486374836764</epd:amount>
+                <epd:amount epd:module="A4" epd:scenario="Transport to Gdansk">7.844812415308858</epd:amount>
+                <epd:amount epd:module="C4" epd:scenario="100% recycling">6.632597758583635</epd:amount>
+                <epd:amount epd:module="C3" epd:scenario="100% recycling">28.50420181635872</epd:amount>
+                <epd:amount epd:module="D" epd:scenario="100% incineration">17.981176426387286</epd:amount>
+                <epd:amount epd:module="C3" epd:scenario="100% incineration">38.99804447350071</epd:amount>
+                <epd:amount epd:module="A4" epd:scenario="Transport to Berlin">33.312003181855026</epd:amount>
+                <epd:amount epd:module="C4" epd:scenario="100% incineration">12.476547877955557</epd:amount>
+                <epd:referenceToUnitGroupDataSet refObjectId="d4c9523e-2d7e-49fd-8469-998f547d3a70" type="unit group data set" uri="../unitgroups/d4c9523e-2d7e-49fd-8469-998f547d3a70">
+                    <common:shortDescription>CTUh</common:shortDescription>
+                </epd:referenceToUnitGroupDataSet>
+            </common:other>
+        </LCIAResult>
+        <LCIAResult>
+            <referenceToLCIAMethodDataSet type="LCIA method data set" refObjectId="3af763a5-b7a1-48c9-9cee-1f223481fcef" uri="../lciamethods/3af763a5-b7a1-48c9-9cee-1f223481fcef">
+                <common:shortDescription xml:lang="en">Potential Comparative Toxic Unit for humans - non-cancer effects (HTP-nc)</common:shortDescription>
+            </referenceToLCIAMethodDataSet>
+            <meanAmount>0.0</meanAmount>
+            <common:other>
+                <epd:amount epd:module="A1-A3">40.785108478721654</epd:amount>
+                <epd:amount epd:module="D" epd:scenario="100% recycling">5.9337203801892064</epd:amount>
+                <epd:amount epd:module="A4" epd:scenario="Transport to Gdansk">9.415508057457426</epd:amount>
+                <epd:amount epd:module="C4" epd:scenario="100% recycling">31.31738152148537</epd:amount>
+                <epd:amount epd:module="C3" epd:scenario="100% recycling">37.728640941517455</epd:amount>
+                <epd:amount epd:module="D" epd:scenario="100% incineration">32.65355551972729</epd:amount>
+                <epd:amount epd:module="C3" epd:scenario="100% incineration">40.228606623255644</epd:amount>
+                <epd:amount epd:module="A4" epd:scenario="Transport to Berlin">14.561255682760097</epd:amount>
+                <epd:amount epd:module="C4" epd:scenario="100% incineration">1.1041236389092444</epd:amount>
+                <epd:referenceToUnitGroupDataSet refObjectId="d4c9523e-2d7e-49fd-8469-998f547d3a70" type="unit group data set" uri="../unitgroups/d4c9523e-2d7e-49fd-8469-998f547d3a70">
+                    <common:shortDescription>CTUh</common:shortDescription>
+                </epd:referenceToUnitGroupDataSet>
+            </common:other>
+        </LCIAResult>
+        <LCIAResult>
+            <referenceToLCIAMethodDataSet type="LCIA method data set" refObjectId="b2ad6890-c78d-11e6-9d9d-cec0c932ce01" uri="../lciamethods/b2ad6890-c78d-11e6-9d9d-cec0c932ce01">
+                <common:shortDescription xml:lang="en">Potential Soil quality index (SQP)</common:shortDescription>
+            </referenceToLCIAMethodDataSet>
+            <meanAmount>0.0</meanAmount>
+            <common:other>
+                <epd:amount epd:module="A1-A3">21.370300919670306</epd:amount>
+                <epd:amount epd:module="D" epd:scenario="100% recycling">20.651724758041425</epd:amount>
+                <epd:amount epd:module="A4" epd:scenario="Transport to Gdansk">34.12571314860262</epd:amount>
+                <epd:amount epd:module="C4" epd:scenario="100% recycling">2.7825164930165247</epd:amount>
+                <epd:amount epd:module="C3" epd:scenario="100% recycling">32.08119913905041</epd:amount>
+                <epd:amount epd:module="D" epd:scenario="100% incineration">2.359840381633557</epd:amount>
+                <epd:amount epd:module="C3" epd:scenario="100% incineration">38.805224326617775</epd:amount>
+                <epd:amount epd:module="A4" epd:scenario="Transport to Berlin">14.651250369486231</epd:amount>
+                <epd:amount epd:module="C4" epd:scenario="100% incineration">15.785039464121683</epd:amount>
+                <epd:referenceToUnitGroupDataSet refObjectId="f130951c-e67f-4f7f-8dd4-665de3974e18" type="unit group data set" uri="../unitgroups/f130951c-e67f-4f7f-8dd4-665de3974e18">
+                    <common:shortDescription>dimensionless</common:shortDescription>
+                </epd:referenceToUnitGroupDataSet>
+            </common:other>
+        </LCIAResult>
+    </LCIAResults>
+</processDataSet>

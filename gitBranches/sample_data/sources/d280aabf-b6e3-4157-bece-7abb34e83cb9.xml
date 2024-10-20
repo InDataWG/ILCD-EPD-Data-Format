@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<s:sourceDataSet xmlns:m="http://lca.jrc.it/ILCD/LCIAMethod" xmlns:common="http://lca.jrc.it/ILCD/Common" xmlns:s="http://lca.jrc.it/ILCD/Source" xmlns:c="http://lca.jrc.it/ILCD/Contact" xmlns:f="http://lca.jrc.it/ILCD/Flow" xmlns="http://lca.jrc.it/ILCD/Process" xmlns:fp="http://lca.jrc.it/ILCD/FlowProperty" xmlns:u="http://lca.jrc.it/ILCD/UnitGroup" version="1.1">
+    <s:sourceInformation>
+        <s:dataSetInformation>
+            <common:UUID>d280aabf-b6e3-4157-bece-7abb34e83cb9</common:UUID>
+            <common:shortName xml:lang="en">Documentation of data quality management for Pro SC EPDs</common:shortName>
+            <s:classificationInformation>
+                <common:classification>
+                    <common:class level="0" classId="6">Other source types</common:class>
+                </common:classification>
+            </s:classificationInformation>
+            <s:sourceDescriptionOrComment xml:lang="en">Documentation of data quality management for EPDs by Pro Sustainability Consultants</s:sourceDescriptionOrComment>
+            <s:referenceToDigitalFile uri="../external_docs/Documentation_of_data_quality_management.pdf"/>
+            <s:referenceToContact type="contact data set" refObjectId="288e50ce-aac4-4720-8931-82dcbd2d4c9a" version="00.00.001">
+                <common:shortDescription xml:lang="en">Pro Sustainability Consultants GmbH</common:shortDescription>
+            </s:referenceToContact>
+        </s:dataSetInformation>
+    </s:sourceInformation>
+    <s:administrativeInformation>
+        <s:dataEntryBy>
+            <common:timeStamp>2020-09-25T11:19:54.944+02:00</common:timeStamp>
+        </s:dataEntryBy>
+        <s:publicationAndOwnership>
+            <common:dataSetVersion>00.00.004</common:dataSetVersion>
+        </s:publicationAndOwnership>
+    </s:administrativeInformation>
+</s:sourceDataSet>

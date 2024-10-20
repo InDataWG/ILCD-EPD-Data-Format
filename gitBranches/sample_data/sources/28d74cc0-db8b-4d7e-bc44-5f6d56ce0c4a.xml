@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ns2:sourceDataSet xmlns="http://lca.jrc.it/ILCD/Common" xmlns:ns2="http://lca.jrc.it/ILCD/Source" xmlns:ns3="http://lca.jrc.it/ILCD/Flow" xmlns:ns4="http://lca.jrc.it/ILCD/Contact" xmlns:ns5="http://lca.jrc.it/ILCD/FlowProperty" xmlns:ns6="http://lca.jrc.it/ILCD/Process" xmlns:ns7="http://lca.jrc.it/ILCD/UnitGroup" xmlns:ns8="http://lca.jrc.it/ILCD/Wrapper" version="1.1">
+    <ns2:sourceInformation>
+        <ns2:dataSetInformation>
+            <UUID>28d74cc0-db8b-4d7e-bc44-5f6d56ce0c4a</UUID>
+            <shortName xml:lang="en">GaBi database (all versions)</shortName>
+            <ns2:classificationInformation>
+                <classification>
+                    <class level="0" classId="ca877255-4278-4aae-960e-1f1951367f8d">Databases</class>
+                </classification>
+            </ns2:classificationInformation>
+            <ns2:sourceDescriptionOrComment xml:lang="en">This datasets represents all GaBi database versions regardless of their specific version number or release date in order to identify data originating from the GaBi domain.</ns2:sourceDescriptionOrComment>
+        </ns2:dataSetInformation>
+    </ns2:sourceInformation>
+    <ns2:administrativeInformation>
+        <ns2:dataEntryBy>
+            <timeStamp>2016-05-10T10:41:59.107+02:00</timeStamp>
+            <referenceToDataSetFormat type="source data set" refObjectId="a97a0155-0234-4b87-b4ce-a45da52f2a40" version="01.01.000" uri="../sources/a97a0155-0234-4b87-b4ce-a45da52f2a40_01.01.000.xml">
+                <shortDescription xml:lang="en">ILCD format</shortDescription>
+            </referenceToDataSetFormat>
+        </ns2:dataEntryBy>
+        <ns2:publicationAndOwnership>
+            <dataSetVersion>00.03.001</dataSetVersion>
+            <permanentDataSetURI>http://openlca.org/ilcd/resource/sources/28d74cc0-db8b-4d7e-bc44-5f6d56ce0c4a</permanentDataSetURI>
+        </ns2:publicationAndOwnership>
+    </ns2:administrativeInformation>
+</ns2:sourceDataSet>
