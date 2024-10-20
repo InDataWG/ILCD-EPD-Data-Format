@@ -17,13 +17,16 @@ jobs:
         uses: actions/checkout@v2
         with:
           ref: gitActions
+          fetch-depth: 0 
+      - name: Fetch mainTest branch
+        run: git fetch origin mainTest
 
       - name: Replace content of gitActions/mainBranch with mainTest content
         run: |
-          git checkout mainTest -- .  # Check out the latest content from mainTest
-          rm -rf gitActions/mainBranch/*  # Remove everything in the mainBranch folder
+          git checkout origin/mainTest -- .  
+          rm -rf gitActions/mainBranch/*  
           mkdir -p gitActions/mainBranch
-          cp -r * gitActions/mainBranch/  # Copy the new content into mainBranch
+          cp -r * gitActions/mainBranch/  
           git add gitActions/mainBranch
           git commit -m "Sync mainTest to gitActions/mainBranch" || echo "No changes to commit"
           git push origin gitActions
