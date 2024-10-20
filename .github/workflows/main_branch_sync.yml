@@ -25,7 +25,7 @@ jobs:
           path: gitActions
 
       - name: Clean mainBranch directory in gitActions
-        run: rm -rf gitActions/mainBranch
+        run: rm -rf gitActions/mainBranch/*
 
       - name: Copy content to mainBranch folder in gitActions branch
         run: |
