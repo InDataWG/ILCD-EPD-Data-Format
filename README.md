@@ -47,7 +47,7 @@ Further identifiers represent non-master data elements that contribute to the ov
 
 ## Schemas
 
-| Schema Name | Schema Source | HTML Documentation |
+| Schema Name | Schema Source in Repo | HTML Documentation in the Browser |
 |-------------|---------------|--------------------|
 | EPD DataSet | [Link](./schemas/EPD_DataSet.xsd) | [View Documentation](https://indatawg.github.io/ILCD-EPD-Data-Format/mainBranch/doc/schemadoc/EPD_DataSet.html) |
 | EPD FlowDataSet | [Link](./schemas/EPD_FlowDataSet.xsd) | [View Documentation](https://indatawg.github.io/ILCD-EPD-Data-Format/mainBranch/doc/schemadoc/EPD_FlowDataSet.html) |
