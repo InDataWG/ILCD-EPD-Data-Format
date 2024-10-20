@@ -1,4 +1,4 @@
-name: Sync Main Branch to GitActions
+name: deploy html documentation
 
 on:
   push:
@@ -28,8 +28,11 @@ jobs:
         run: |
           echo "Updating content from mainTest branch to gitActions/mainBranch."
 
+          # Ensure the mainBranch directory exists in gitActions
           mkdir -p gitActions/mainBranch
-          rsync -av --exclude='gitActions' ./ gitActions/mainBranch/
+
+          # Copy all content from mainTest to gitActions/mainBranch, excluding .git and gitActions itself
+          rsync -a --exclude='gitActions' --exclude='.git' ./ gitActions/mainBranch/
 
       - name: Commit and push changes to gitActions branch
         working-directory: gitActions
