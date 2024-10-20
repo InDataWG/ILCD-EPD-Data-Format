@@ -3,7 +3,7 @@ name: Sync Main Branch to GitActions
 on:
   push:
     branches:
-      - 'mainTest'
+      - 'main'
 
 permissions:
   contents: write
@@ -13,10 +13,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout mainTest branch
+      - name: Checkout main branch
         uses: actions/checkout@v2
         with:
-          ref: mainTest
+          ref: main
 
       - name: Checkout gitActions branch
         uses: actions/checkout@v2
@@ -27,9 +27,9 @@ jobs:
       - name: Clean mainBranch directory in gitActions
         run: rm -rf gitActions/mainBranch/*
 
-      - name: Copy content to mainBranch folder in gitActions branch
+      - name: Copy content to gitActions/mainBranch folder in gitActions branch
         run: |
-          echo "Updating content from mainTest branch to gitActions/mainBranch."
+          echo "Updating content from main branch to gitActions/mainBranch."
           mkdir -p gitActions/mainBranch
           rsync -avL --exclude='gitActions' ./ gitActions/mainBranch/
 
