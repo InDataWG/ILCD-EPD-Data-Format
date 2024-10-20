@@ -13,17 +13,17 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
+      - name: Checkout gitActions branch
         uses: actions/checkout@v2
+        with:
+          ref: gitActions
 
-      - name: Sync Main Branch to gitActions/mainBranch
+      - name: Replace content of gitActions/mainBranch with mainTest content
         run: |
-          git fetch origin gitActions
-          git checkout gitActions
-          rm -rf mainBranch  # Remove existing mainBranch content
-          mkdir -p mainBranch
-          git checkout mainTest -- .  # Copy all files from mainTest to current directory
-          mv * mainBranch/  # Move them into mainBranch directory
-          git add mainBranch
-          git commit -m "Sync main branch to gitActions" || echo "No changes to commit"
+          git checkout mainTest -- .  # Check out the latest content from mainTest
+          rm -rf gitActions/mainBranch/*  # Remove everything in the mainBranch folder
+          mkdir -p gitActions/mainBranch
+          cp -r * gitActions/mainBranch/  # Copy the new content into mainBranch
+          git add gitActions/mainBranch
+          git commit -m "Sync mainTest to gitActions/mainBranch" || echo "No changes to commit"
           git push origin gitActions
