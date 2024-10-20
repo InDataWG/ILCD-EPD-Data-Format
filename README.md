@@ -7,19 +7,15 @@ Welcome to the ILCD+EPD Data Format documentation. This README provides a compre
 
 ## Documentation
 
-- **[Change log/Release notes](./docs/changelog.md)**  
+- **[Change log/Release notes](doc/CHANGES.txt)**  
   Keep up-to-date with the latest changes, improvements, and fixes.
-  
-- **[Brief Introduction to the ILCD Format](./docs/introduction.md)**  
+
+- **[TODO Brief Introduction to the ILCD Format](./docs/introduction.md)**  
   Understand the fundamentals and structure of the ILCD data format.
-  
-- **Authoritative Identifiers (UUIDs)**  
-  Authoritative identifiers serve as master data within the ILCD framework. They ensure consistency across datasets. 
 
 
-
-## References
-
+## Authoritative Identifiers (UUIDs)
+Authoritative identifiers serve as master data within the ILCD framework. They ensure consistency across datasets.
 
 
 | Reference Type                         | Viewable Table                                 | Downloadable XLSX                           |
