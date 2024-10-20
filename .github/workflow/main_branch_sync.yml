@@ -1,33 +1,48 @@
-name: Sync Main Branch to GitActions
+name: deploy html documentation
 
 on:
   push:
     branches:
-      - mainTest
+      - 'mainTest'  # Trigger on pushes to mainTest branch
 
 permissions:
   contents: write
 
 jobs:
-  sync-main:
+  deploy:
     runs-on: ubuntu-latest
 
     steps:
+      # Step 1: Checkout the mainTest branch where the changes were made
+      - name: Checkout mainTest branch
+        uses: actions/checkout@v2
+        with:
+          ref: mainTest
+
+      # Step 2: Checkout the gitActions branch
       - name: Checkout gitActions branch
         uses: actions/checkout@v2
         with:
           ref: gitActions
-          fetch-depth: 0  # Ensure all branches are fetched
+          path: gitActions
 
-      - name: Fetch mainTest branch
-        run: git fetch origin mainTest
-
-      - name: Replace content of gitActions/mainBranch with mainTest content
+      # Step 3: Copy all content from mainTest branch to gitActions/mainBranch
+      - name: Copy content to gitActions branch
         run: |
-          git checkout origin/mainTest -- .  # Check out the latest content from mainTest
-          rm -rf gitActions/mainBranch/*  # Remove everything in the mainBranch folder
+          echo "Updating content from mainTest branch to gitActions/mainBranch."
+
+          # Ensure the mainBranch directory exists in gitActions
           mkdir -p gitActions/mainBranch
-          rsync -av --exclude='gitActions' --exclude='.git' ./ gitActions/mainBranch/  # Copy the new content into mainBranch
-          git add gitActions/mainBranch
-          git commit -m "Sync mainTest to gitActions/mainBranch" || echo "No changes to commit"
+
+          # Copy all content from mainTest to the gitActions mainBranch folder
+          cp -r ./* gitActions/mainBranch/
+
+      # Step 4: Commit and push changes to gitActions branch
+      - name: Commit and push changes to gitActions branch
+        working-directory: gitActions
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add mainBranch
+          git commit -m "Updated content for mainBranch"
           git push origin gitActions
