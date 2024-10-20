@@ -13,28 +13,17 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout mainTest branch
+      - name: Checkout repository
         uses: actions/checkout@v2
-        with:
-          ref: mainTest
-
-      - name: Checkout gitActions branch
-        uses: actions/checkout@v2
-        with:
-          ref: gitActions
-          path: gitActions
 
       - name: Sync Main Branch to gitActions/mainBranch
         run: |
-          echo "Syncing main branch to gitActions..."
-          mkdir -p gitActions/mainBranch
-          rsync -av --delete . gitActions/mainBranch/ --exclude .git
-
-      - name: Commit and push changes to gitActions branch
-        working-directory: gitActions
-        run: |
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git fetch origin gitActions
+          git checkout gitActions
+          rm -rf mainBranch  # Remove existing mainBranch content
+          mkdir -p mainBranch
+          git checkout mainTest -- .  # Copy all files from mainTest to current directory
+          mv * mainBranch/  # Move them into mainBranch directory
           git add mainBranch
           git commit -m "Sync main branch to gitActions" || echo "No changes to commit"
           git push origin gitActions
