@@ -13,40 +13,32 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # Step 1: Checkout mainTest branch
       - name: Checkout mainTest branch
         uses: actions/checkout@v2
         with:
           ref: mainTest
 
-      # Step 2: Checkout gitActions branch
       - name: Checkout gitActions branch
         uses: actions/checkout@v2
         with:
           ref: gitActions
           path: gitActions
 
-      # Step 3: Copy content to gitActions/mainBranch
-      - name: Copy content to gitActions branch
+      - name: Copy content to gitBranches folder in gitActions branch
         run: |
-          echo "Updating content from mainTest branch to gitActions/mainBranch."
+          echo "Updating content from mainTest branch to gitActions/gitBranches."
+          mkdir -p gitActions/gitBranches
+          rsync -av ./ gitActions/gitBranches/
 
-          # Ensure the mainBranch directory exists in gitActions
-          mkdir -p gitActions/mainBranch
+      - name: Verify copied files
+        run: ls -la gitActions/gitBranches
 
-          # Forcefully copy all content from mainTest to gitActions/mainBranch, excluding .git and gitActions itself
-          rsync -a --delete --exclude='gitActions' --exclude='.git' ./ gitActions/mainBranch/
-
-          # List the contents to verify the copy
-          ls -R gitActions/mainBranch
-
-      # Step 4: Commit and push changes to gitActions branch
       - name: Commit and push changes to gitActions branch
         working-directory: gitActions
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git add mainBranch
-          # Ensure there are changes to commit
-          git diff-index --quiet HEAD || git commit -m "Updated content for mainBranch"
-          git push origin gitActions
+          git checkout gitActions
+          git add gitBranches
+          git commit -m "Updated content for gitBranches"
+          git push origin gitActions --force
