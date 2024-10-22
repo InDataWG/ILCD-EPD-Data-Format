@@ -3,7 +3,7 @@ name: Sync Main Branch to GitActions
 on:
   push:
     branches:
-      - 'main'
+      - 'mainTest'
 
 permissions:
   contents: write
@@ -13,10 +13,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout main branch
+      - name: Checkout mainTest branch
         uses: actions/checkout@v2
         with:
-          ref: main
+          ref: mainTest
 
       - name: Checkout gitActions branch
         uses: actions/checkout@v2
@@ -24,24 +24,18 @@ jobs:
           ref: gitActions
           path: gitActions
 
-      - name: Clean mainBranch directory in gitActions
-        run: rm -rf gitActions/mainBranch/*
-
-      - name: Copy content to gitActions/mainBranch folder in gitActions branch
+      - name: Copy content to gitActions branch
         run: |
-          echo "Updating content from main branch to gitActions/mainBranch."
-          mkdir -p gitActions/mainBranch
-          rsync -avL --exclude='gitActions' ./ gitActions/mainBranch/
+          echo "Updating content from mainTest branch to gitActions/mainBranch."
 
-      - name: Verify copied files
-        run: ls -la gitActions/mainBranch
+          mkdir -p gitActions/mainBranch
+          rsync -av --exclude='gitActions' ./ gitActions/mainBranch/
 
       - name: Commit and push changes to gitActions branch
         working-directory: gitActions
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git checkout gitActions
           git add mainBranch
           git commit -m "Updated content for mainBranch"
-          git push origin gitActions --force
+          git push origin gitActions
