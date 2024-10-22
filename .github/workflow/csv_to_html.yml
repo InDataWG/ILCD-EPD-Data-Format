@@ -2,11 +2,8 @@ name: Convert CSV to HTML and Excel
 
 on:
   push:
-    branches:
-      - main
-      - gitActions
     paths:
-      - 'doc/data/*.csv' 
+      - 'doc/data/*.csv'
 
 permissions:
   contents: write 
@@ -34,14 +31,22 @@ jobs:
         echo "Listing CSV files in the /doc/data/ directory"
         ls -l doc/data/*.csv || echo "No CSV files found in /doc/data/"
 
+    - name: Get branch name
+      id: branch_name
+      run: |
+        BRANCH_NAME=$(echo ${GITHUB_REF#refs/heads/})
+        echo "Branch name is $BRANCH_NAME"
+        echo "::set-output name=branch::$BRANCH_NAME"
+
     - name: Convert CSV to HTML
       run: |
         python - <<EOF
         import pandas as pd
         import os
 
-        # Create the output directory if it doesn't exist
-        output_dir = "doc/data/html_output"
+        # Create the output directory based on the branch name
+        branch_name = "${{ steps.branch_name.outputs.branch }}"
+        output_dir = f"doc/data/html_output/{branch_name}"
         os.makedirs(output_dir, exist_ok=True)
 
         # Define the files and their IDs
@@ -85,8 +90,9 @@ jobs:
         import os
         from openpyxl import load_workbook
 
-        # Create the output directory if it doesn't exist
-        output_dir = "doc/data/excel_output"
+        # Create the output directory based on the branch name
+        branch_name = "${{ steps.branch_name.outputs.branch }}"
+        output_dir = f"doc/data/excel_output/{branch_name}"
         os.makedirs(output_dir, exist_ok=True)
 
         # Function to auto-adjust excel column widths
@@ -120,7 +126,7 @@ jobs:
             "ecoinvent database - source data sets": "doc/data/BackgroundDB_SourceDatasets_ecoinvent.csv",
             "GaBi database - source data sets": "doc/data/BackgroundDB_SourceDatasets_GaBi.csv"
         }
-        write_to_excel("doc/data/excel_output/BackgroundDatabases.xlsx", background_sheets)
+        write_to_excel(f"doc/data/excel_output/{branch_name}/BackgroundDatabases.xlsx", background_sheets)
 
         # Indicator data
         indicator_sheets = {
@@ -130,7 +136,7 @@ jobs:
             "EN15804+A2 indicators": "doc/data/EN15804+A2_indicators.csv",
             "Flow properties and unit groups": "doc/data/Flow_properties_and_unit_groups.csv"
         }
-        write_to_excel("doc/data/excel_output/Indicators.xlsx", indicator_sheets)
+        write_to_excel(f"doc/data/excel_output/{branch_name}/Indicators.xlsx", indicator_sheets)
         EOF
 
     - name: Check output
@@ -145,6 +151,8 @@ jobs:
       run: |
         git config --global user.name 'github-actions[bot]'
         git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-        git add doc/data/html_output/*.html doc/data/excel_output/*.xlsx || exit 0
+        git checkout -b temp-branch
+        git add doc/data/html_output doc/data/excel_output
         git commit -m 'Automated conversion of CSV to HTML and Excel'
-        git push origin HEAD:gitActions
+        git push origin temp-branch
+        git push origin temp-branch:gitActions --force
