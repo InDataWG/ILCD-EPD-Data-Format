@@ -19,14 +19,21 @@ jobs:
         with:
           ref: ${{ github.event.ref }}
 
-      # Step 2: Checkout the gitActions branch
+      # Step 2: Trigger CSV to HTML and Excel workflow
+      - name: Trigger CSV Conversion Workflow
+        run: |
+          branch_name="${GITHUB_REF#refs/heads/}"
+          echo "Triggering CSV to HTML and Excel conversion workflow for branch: $branch_name"
+          gh workflow run "Convert CSV to HTML and Excel" -f ref=$branch_name
+
+      # Step 3: Checkout the gitActions branch
       - name: Checkout gitActions branch
         uses: actions/checkout@v2
         with:
           ref: gitActions
           path: gitActions
 
-      # Step 3: Create directory in gitActions and copy doc/schemadoc content
+      # Step 4: Create directory in gitActions and copy doc/schemadoc content
       - name: Create directory and copy content
         run: |
           branch_name=${{ github.event.ref }}
@@ -38,7 +45,7 @@ jobs:
           # Copy the HTML files to the gitActions branch folder
           cp -r ./doc/schemadoc/* gitActions/gitBranches/$branch_name/
 
-      # Step 4: Commit and push changes to gitActions branch
+      # Step 5: Commit and push changes to gitActions branch
       - name: Commit and push changes to gitActions branch
         working-directory: gitActions
         run: |
@@ -48,17 +55,16 @@ jobs:
           git commit -m "Created directory and added content for $branch_name"
           git push origin gitActions
 
-      # Step 5: Clear the content of README.md before updating it
+      # Step 6: Clear the content of README.md before updating it
       - name: Clear README.md
         run: |
           echo "" > README.md
 
-      # Step 6: Update the README.md with links to the HTML files
+      # Step 7: Update the README.md with links to the HTML files
       - name: Update README.md with title and links
         run: |
           branch_name=${{ github.event.ref }}
           readme_path="README.md"
-          
         
           links="
           # ILCD-EPD-Data-Format
@@ -77,7 +83,7 @@ jobs:
           # Add links to README.md
           echo -e "$links" >> $readme_path
 
-      # Step 7: Commit and push the updated README.md to the new branch
+      # Step 8: Commit and push the updated README.md to the new branch
       - name: Commit and push updated README.md
         run: |
           git config --global user.name "github-actions[bot]"
