@@ -4,6 +4,8 @@ on:
   push:
     paths:
       - 'doc/data/*.csv'
+    branches:
+      - '**'  
 
 permissions:
   contents: write 
