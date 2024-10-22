@@ -1,0 +1,160 @@
+name: Convert CSV to HTML and Excel
+
+on:
+  push:
+    paths:
+      - 'doc/identifiers/*.csv'
+    branches:
+      - '**'  
+
+permissions:
+  contents: write 
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.x'
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install pandas openpyxl
+
+    - name: List CSV files
+      run: |
+        echo "Listing CSV files in the /doc/identifiers/ directory"
+        ls -l doc/identifiers/*.csv || echo "No CSV files found in /doc/identifiers/"
+
+    - name: Get branch name
+      id: branch_name
+      run: |
+        BRANCH_NAME=$(echo ${GITHUB_REF#refs/heads/})
+        echo "Branch name is $BRANCH_NAME"
+        echo "::set-output name=branch::$BRANCH_NAME"
+
+    - name: Convert CSV to HTML
+      run: |
+        python - <<EOF
+        import pandas as pd
+        import os
+
+        # Create the output directory based on the branch name
+        branch_name = "${{ steps.branch_name.outputs.branch }}"
+        output_dir = f"gitBranches/{branch_name}/identifiers/html_output"
+        os.makedirs(output_dir, exist_ok=True)
+
+        # Define the files and their IDs
+        files_with_ids = {
+            "ecoinvent database: source data sets": "doc/identifiers/BackgroundDB_SourceDatasets_ecoinvent.csv",
+            "GaBi database: source data sets": "doc/identifiers/BackgroundDB_SourceDatasets_GaBi.csv",
+            "Common references": "doc/identifiers/Common_references.csv",
+            "Country-specific indicators": "doc/identifiers/Country-specific_indicators.csv",
+            "EN15804+A1 indicators": "doc/identifiers/EN15804+A1_indicators.csv",
+            "EN15804+A2 indicators": "doc/identifiers/EN15804+A2_indicators.csv",
+            "Flow properties and unit groups": "doc/identifiers/Flow_properties_and_unit_groups.csv"
+        }
+
+        for file_id, file_path in files_with_ids.items():
+            if os.path.exists(file_path):
+                df = pd.read_csv(file_path)
+                html_table = df.to_html(index=False, classes='table table-striped', border=0, table_id=file_id)
+                html_filename = os.path.join(output_dir, os.path.basename(file_path).replace('.csv', '.html'))
+                with open(html_filename, 'w') as f:
+                    f.write(f"""
+                    <!DOCTYPE html>
+                    <html>
+                    <head>
+                        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+                        <title>{file_id}</title>
+                    </head>
+                    <body>
+                        <div class="container">
+                            <h1>{file_id}</h1>
+                            {html_table}
+                        </div>
+                    </body>
+                    </html>
+                    """)
+        EOF
+
+    - name: Convert CSV to Excel
+      run: |
+        python - <<EOF
+        import pandas as pd
+        import os
+        from openpyxl import load_workbook
+
+        # Create the output directory based on the branch name
+        branch_name = "${{ steps.branch_name.outputs.branch }}"
+        output_dir = f"gitBranches/{branch_name}/identifiers/excel_output"
+        os.makedirs(output_dir, exist_ok=True)
+
+        # Function to auto-adjust excel column widths
+        def auto_adjust_column_widths(workbook):
+            for sheet in workbook.worksheets:
+                for col in sheet.columns:
+                    max_length = 0
+                    column = col[0].column_letter 
+                    for cell in col:
+                        try:
+                            if len(str(cell.value)) > max_length:
+                                max_length = len(cell.value)
+                        except:
+                            pass
+                    adjusted_width = (max_length + 2)
+                    sheet.column_dimensions[column].width = adjusted_width
+
+        # Function to write multiple CSVs to a single Excel file
+        def write_to_excel(output_file, sheets):
+            with pd.ExcelWriter(output_file, engine='openpyxl') as writer:
+                for sheet_name, file_path in sheets.items():
+                    if os.path.exists(file_path):
+                        df = pd.read_csv(file_path)
+                        df.to_excel(writer, index=False, sheet_name=sheet_name)
+            workbook = load_workbook(output_file)
+            auto_adjust_column_widths(workbook)
+            workbook.save(output_file)
+
+        # Background data
+        background_sheets = {
+            "ecoinvent database - source data sets": "doc/identifiers/BackgroundDB_SourceDatasets_ecoinvent.csv",
+            "GaBi database - source data sets": "doc/identifiers/BackgroundDB_SourceDatasets_GaBi.csv"
+        }
+        write_to_excel(f"gitBranches/{branch_name}/identifiers/excel_output/BackgroundDatabases.xlsx", background_sheets)
+
+        # Indicator data
+        indicator_sheets = {
+            "Common references": "doc/identifiers/Common_references.csv",
+            "Country-specific indicators": "doc/identifiers/Country-specific_indicators.csv",
+            "EN15804+A1 indicators": "doc/identifiers/EN15804+A1_indicators.csv",
+            "EN15804+A2 indicators": "doc/identifiers/EN15804+A2_indicators.csv",
+            "Flow properties and unit groups": "doc/identifiers/Flow_properties_and_unit_groups.csv"
+        }
+        write_to_excel(f"gitBranches/{branch_name}/identifiers/excel_output/Indicators.xlsx", indicator_sheets)
+        EOF
+
+    - name: Check output
+      run: |
+        echo "Listing files in html_output directory"
+        ls -l gitBranches/${{ steps.branch_name.outputs.branch }}/identifiers/html_output || echo "gitBranches/${{ steps.branch_name.outputs.branch }}/identifiers/html_output directory not found or is empty"
+        echo "Listing files in excel_output directory"
+        ls -l gitBranches/${{ steps.branch_name.outputs.branch }}/identifiers/excel_output || echo "gitBranches/${{ steps.branch_name.outputs.branch }}/identifiers/excel_output directory not found or is empty"
+
+    - name: Checkout and update gitActions branch
+      run: |
+        git config --global user.name 'github-actions[bot]'
+        git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+        git fetch origin gitActions
+        git checkout gitActions
+        git pull origin gitActions
+        git add gitBranches/${{ steps.branch_name.outputs.branch }}/identifiers/html_output gitBranches/${{ steps.branch_name.outputs.branch }}/identifiers/excel_output
+        git commit -m 'Automated conversion of CSV to HTML and Excel'
+        git push origin gitActions
