@@ -3,7 +3,7 @@ name: Convert CSV to HTML and Excel
 on:
   push:
     paths:
-      - 'doc/data/*.csv'
+      - 'doc/identifiers/*.csv'
     branches:
       - '**'  
 
@@ -30,8 +30,8 @@ jobs:
 
     - name: List CSV files
       run: |
-        echo "Listing CSV files in the /doc/data/ directory"
-        ls -l doc/data/*.csv || echo "No CSV files found in /doc/data/"
+        echo "Listing CSV files in the /doc/identifiers/ directory"
+        ls -l doc/identifiers/*.csv || echo "No CSV files found in /doc/identifiers/"
 
     - name: Get branch name
       id: branch_name
@@ -48,18 +48,18 @@ jobs:
 
         # Create the output directory based on the branch name
         branch_name = "${{ steps.branch_name.outputs.branch }}"
-        output_dir = f"doc/data/html_output/{branch_name}"
+        output_dir = f"gitBranches/{branch_name}/html_output"
         os.makedirs(output_dir, exist_ok=True)
 
         # Define the files and their IDs
         files_with_ids = {
-            "ecoinvent database: source data sets": "doc/data/BackgroundDB_SourceDatasets_ecoinvent.csv",
-            "GaBi database: source data sets": "doc/data/BackgroundDB_SourceDatasets_GaBi.csv",
-            "Common references": "doc/data/Common_references.csv",
-            "Country-specific indicators": "doc/data/Country-specific_indicators.csv",
-            "EN15804+A1 indicators": "doc/data/EN15804+A1_indicators.csv",
-            "EN15804+A2 indicators": "doc/data/EN15804+A2_indicators.csv",
-            "Flow properties and unit groups": "doc/data/Flow_properties_and_unit_groups.csv"
+            "ecoinvent database: source data sets": "doc/identifiers/BackgroundDB_SourceDatasets_ecoinvent.csv",
+            "GaBi database: source data sets": "doc/identifiers/BackgroundDB_SourceDatasets_GaBi.csv",
+            "Common references": "doc/identifiers/Common_references.csv",
+            "Country-specific indicators": "doc/identifiers/Country-specific_indicators.csv",
+            "EN15804+A1 indicators": "doc/identifiers/EN15804+A1_indicators.csv",
+            "EN15804+A2 indicators": "doc/identifiers/EN15804+A2_indicators.csv",
+            "Flow properties and unit groups": "doc/identifiers/Flow_properties_and_unit_groups.csv"
         }
 
         for file_id, file_path in files_with_ids.items():
@@ -94,7 +94,7 @@ jobs:
 
         # Create the output directory based on the branch name
         branch_name = "${{ steps.branch_name.outputs.branch }}"
-        output_dir = f"doc/data/excel_output/{branch_name}"
+        output_dir = f"gitBranches/{branch_name}/excel_output"
         os.makedirs(output_dir, exist_ok=True)
 
         # Function to auto-adjust excel column widths
@@ -125,36 +125,35 @@ jobs:
 
         # Background data
         background_sheets = {
-            "ecoinvent database - source data sets": "doc/data/BackgroundDB_SourceDatasets_ecoinvent.csv",
-            "GaBi database - source data sets": "doc/data/BackgroundDB_SourceDatasets_GaBi.csv"
+            "ecoinvent database - source data sets": "doc/identifiers/BackgroundDB_SourceDatasets_ecoinvent.csv",
+            "GaBi database - source data sets": "doc/identifiers/BackgroundDB_SourceDatasets_GaBi.csv"
         }
-        write_to_excel(f"doc/data/excel_output/{branch_name}/BackgroundDatabases.xlsx", background_sheets)
+        write_to_excel(f"gitBranches/{branch_name}/excel_output/BackgroundDatabases.xlsx", background_sheets)
 
         # Indicator data
         indicator_sheets = {
-            "Common references": "doc/data/Common_references.csv",
-            "Country-specific indicators": "doc/data/Country-specific_indicators.csv",
-            "EN15804+A1 indicators": "doc/data/EN15804+A1_indicators.csv",
-            "EN15804+A2 indicators": "doc/data/EN15804+A2_indicators.csv",
-            "Flow properties and unit groups": "doc/data/Flow_properties_and_unit_groups.csv"
+            "Common references": "doc/identifiers/Common_references.csv",
+            "Country-specific indicators": "doc/identifiers/Country-specific_indicators.csv",
+            "EN15804+A1 indicators": "doc/identifiers/EN15804+A1_indicators.csv",
+            "EN15804+A2 indicators": "doc/identifiers/EN15804+A2_indicators.csv",
+            "Flow properties and unit groups": "doc/identifiers/Flow_properties_and_unit_groups.csv"
         }
-        write_to_excel(f"doc/data/excel_output/{branch_name}/Indicators.xlsx", indicator_sheets)
+        write_to_excel(f"gitBranches/{branch_name}/excel_output/Indicators.xlsx", indicator_sheets)
         EOF
 
     - name: Check output
       run: |
-        echo "Listing files in doc/data/html_output directory"
-        ls -l doc/data/html_output || echo "doc/data/html_output directory not found or is empty"
-        echo "Listing files in doc/data/excel_output directory"
-        ls -l doc/data/excel_output || echo "doc/data/excel_output directory not found or is empty"
-
+        echo "Listing files in html_output directory"
+            ls -l gitBranches/${{ steps.branch_name.outputs.branch }}/html_output || echo "gitBranches/${{ steps.branch_name.outputs.branch }}/html_output directory not found or is empty"
+            echo "Listing files in excel_output directory"
+            ls -l gitBranches/${{ steps.branch_name.outputs.branch }}/excel_output || echo "gitBranches/${{ steps.branch_name.outputs.branch }}/excel_output directory not found or is empty"
     - name: Commit and push HTML and Excel files
       if: success()
       run: |
         git config --global user.name 'github-actions[bot]'
         git config --global user.email 'github-actions[bot]@users.noreply.github.com'
         git checkout -b temp-branch
-        git add doc/data/html_output doc/data/excel_output
+        git add gitBranches/${{ steps.branch_name.outputs.branch }}/html_output gitBranches/${{ steps.branch_name.outputs.branch }}/excel_output
         git commit -m 'Automated conversion of CSV to HTML and Excel'
         git push origin temp-branch
         git push origin temp-branch:gitActions --force
