@@ -55,13 +55,13 @@ jobs:
 
           # Define files and IDs
           files_with_ids = {
-              "ecoinvent database: source data sets": "doc/data/BackgroundDB_SourceDatasets_ecoinvent.csv",
-              "GaBi database: source data sets": "doc/data/BackgroundDB_SourceDatasets_GaBi.csv",
-              "Common references": "doc/data/Common_references.csv",
-              "Country-specific indicators": "doc/data/Country-specific_indicators.csv",
-              "EN15804+A1 indicators": "doc/data/EN15804+A1_indicators.csv",
-              "EN15804+A2 indicators": "doc/data/EN15804+A2_indicators.csv",
-              "Flow properties and unit groups": "doc/data/Flow_properties_and_unit_groups.csv"
+              "ecoinvent database: source data sets": "doc/identifiers/BackgroundDB_SourceDatasets_ecoinvent.csv",
+              "GaBi database: source data sets": "doc/identifiers/BackgroundDB_SourceDatasets_GaBi.csv",
+              "Common references": "doc/identifiers/Common_references.csv",
+              "Country-specific indicators": "doc/identifiers/Country-specific_indicators.csv",
+              "EN15804+A1 indicators": "doc/identifiers/EN15804+A1_indicators.csv",
+              "EN15804+A2 indicators": "doc/identifiers/EN15804+A2_indicators.csv",
+              "Flow properties and unit groups": "doc/identifiers/Flow_properties_and_unit_groups.csv"
           }
 
           # Convert CSV to HTML
@@ -115,18 +115,18 @@ jobs:
 
           # Background data
           background_sheets = {
-              "ecoinvent database - source data sets": "doc/data/BackgroundDB_SourceDatasets_ecoinvent.csv",
-              "GaBi database - source data sets": "doc/data/BackgroundDB_SourceDatasets_GaBi.csv"
+              "ecoinvent database - source data sets": "doc/identifiers/BackgroundDB_SourceDatasets_ecoinvent.csv",
+              "GaBi database - source data sets": "doc/identifiers/BackgroundDB_SourceDatasets_GaBi.csv"
           }
           write_to_excel(f"{excel_output_dir}/BackgroundDatabases.xlsx", background_sheets)
 
           # Indicator data
           indicator_sheets = {
-              "Common references": "doc/data/Common_references.csv",
-              "Country-specific indicators": "doc/data/Country-specific_indicators.csv",
-              "EN15804+A1 indicators": "doc/data/EN15804+A1_indicators.csv",
-              "EN15804+A2 indicators": "doc/data/EN15804+A2_indicators.csv",
-              "Flow properties and unit groups": "doc/data/Flow_properties_and_unit_groups.csv"
+              "Common references": "doc/identifiers/Common_references.csv",
+              "Country-specific indicators": "doc/identifiers/Country-specific_indicators.csv",
+              "EN15804+A1 indicators": "doc/identifiers/EN15804+A1_indicators.csv",
+              "EN15804+A2 indicators": "doc/identifiers/EN15804+A2_indicators.csv",
+              "Flow properties and unit groups": "doc/identifiers/Flow_properties_and_unit_groups.csv"
           }
           write_to_excel(f"{excel_output_dir}/Indicators.xlsx", indicator_sheets)
           EOF
