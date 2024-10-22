@@ -144,16 +144,19 @@ jobs:
     - name: Check output
       run: |
         echo "Listing files in html_output directory"
-            ls -l gitBranches/${{ steps.branch_name.outputs.branch }}/html_output || echo "gitBranches/${{ steps.branch_name.outputs.branch }}/html_output directory not found or is empty"
-            echo "Listing files in excel_output directory"
-            ls -l gitBranches/${{ steps.branch_name.outputs.branch }}/excel_output || echo "gitBranches/${{ steps.branch_name.outputs.branch }}/excel_output directory not found or is empty"
+        ls -l gitBranches/${{ steps.branch_name.outputs.branch }}/html_output || echo "gitBranches/${{ steps.branch_name.outputs.branch }}/html_output directory not found or is empty"
+        echo "Listing files in excel_output directory"
+        ls -l gitBranches/${{ steps.branch_name.outputs.branch }}/excel_output || echo "gitBranches/${{ steps.branch_name.outputs.branch }}/excel_output directory not found or is empty"
+
     - name: Commit and push HTML and Excel files
       if: success()
       run: |
         git config --global user.name 'github-actions[bot]'
         git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-        git checkout -b temp-branch
-        git add gitBranches/${{ steps.branch_name.outputs.branch }}/html_output gitBranches/${{ steps.branch_name.outputs.branch }}/excel_output
+        git checkout gitActions
+        git pull origin gitActions
+
+        git add gitBranches/${{ steps.branch_name.outputs.branch }}/html_output
+        git add gitBranches/${{ steps.branch_name.outputs.branch }}/excel_output
         git commit -m 'Automated conversion of CSV to HTML and Excel'
-        git push origin temp-branch
-        git push origin temp-branch:gitActions --force
+        git push origin gitActions
