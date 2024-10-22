@@ -192,4 +192,8 @@ jobs:
       # Step 10: Commit and push the updated README.md to the new branch
       - name: Commit and push updated README.md
         run: |
-          git config --global user.name "github
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add README.md
+          git commit -m "Added links to HTML documentation for ${{ env.branch_name }}"
+          git push origin ${{ env.branch_name }}
