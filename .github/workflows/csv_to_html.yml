@@ -48,7 +48,7 @@ jobs:
 
         # Create the output directory based on the branch name
         branch_name = "${{ steps.branch_name.outputs.branch }}"
-        output_dir = f"gitBranches/{branch_name}/html_output"
+        output_dir = f"gitBranches/{branch_name}/identifiers/html_output"
         os.makedirs(output_dir, exist_ok=True)
 
         # Define the files and their IDs
@@ -94,7 +94,7 @@ jobs:
 
         # Create the output directory based on the branch name
         branch_name = "${{ steps.branch_name.outputs.branch }}"
-        output_dir = f"gitBranches/{branch_name}/excel_output"
+        output_dir = f"gitBranches/{branch_name}/identifiers/excel_output"
         os.makedirs(output_dir, exist_ok=True)
 
         # Function to auto-adjust excel column widths
@@ -128,7 +128,7 @@ jobs:
             "ecoinvent database - source data sets": "doc/identifiers/BackgroundDB_SourceDatasets_ecoinvent.csv",
             "GaBi database - source data sets": "doc/identifiers/BackgroundDB_SourceDatasets_GaBi.csv"
         }
-        write_to_excel(f"gitBranches/{branch_name}/excel_output/BackgroundDatabases.xlsx", background_sheets)
+        write_to_excel(f"gitBranches/{branch_name}/identifiers/excel_output/BackgroundDatabases.xlsx", background_sheets)
 
         # Indicator data
         indicator_sheets = {
@@ -138,22 +138,23 @@ jobs:
             "EN15804+A2 indicators": "doc/identifiers/EN15804+A2_indicators.csv",
             "Flow properties and unit groups": "doc/identifiers/Flow_properties_and_unit_groups.csv"
         }
-        write_to_excel(f"gitBranches/{branch_name}/excel_output/Indicators.xlsx", indicator_sheets)
+        write_to_excel(f"gitBranches/{branch_name}/identifiers/excel_output/Indicators.xlsx", indicator_sheets)
         EOF
 
     - name: Check output
       run: |
         echo "Listing files in html_output directory"
-            ls -l gitBranches/${{ steps.branch_name.outputs.branch }}/html_output || echo "gitBranches/${{ steps.branch_name.outputs.branch }}/html_output directory not found or is empty"
-            echo "Listing files in excel_output directory"
-            ls -l gitBranches/${{ steps.branch_name.outputs.branch }}/excel_output || echo "gitBranches/${{ steps.branch_name.outputs.branch }}/excel_output directory not found or is empty"
-    - name: Commit and push HTML and Excel files
-      if: success()
+        ls -l gitBranches/${{ steps.branch_name.outputs.branch }}/identifiers/html_output || echo "gitBranches/${{ steps.branch_name.outputs.branch }}/identifiers/html_output directory not found or is empty"
+        echo "Listing files in excel_output directory"
+        ls -l gitBranches/${{ steps.branch_name.outputs.branch }}/identifiers/excel_output || echo "gitBranches/${{ steps.branch_name.outputs.branch }}/identifiers/excel_output directory not found or is empty"
+
+    - name: Checkout and update gitActions branch
       run: |
         git config --global user.name 'github-actions[bot]'
         git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-        git checkout -b temp-branch
-        git add gitBranches/${{ steps.branch_name.outputs.branch }}/html_output gitBranches/${{ steps.branch_name.outputs.branch }}/excel_output
+        git fetch origin gitActions
+        git checkout gitActions
+        git pull origin gitActions
+        git add gitBranches/${{ steps.branch_name.outputs.branch }}/identifiers/html_output gitBranches/${{ steps.branch_name.outputs.branch }}/identifiers/excel_output
         git commit -m 'Automated conversion of CSV to HTML and Excel'
-        git push origin temp-branch
-        git push origin temp-branch:gitActions --force
+        git push origin gitActions
