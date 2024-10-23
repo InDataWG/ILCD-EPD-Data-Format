@@ -139,6 +139,10 @@ jobs:
         </html>
         EOF
 
+    - name: Pull latest changes from gitActions
+      run: |
+        git pull origin gitActions --rebase
+
     - name: Commit and push documentation and zip
       if: success()
       run: |
