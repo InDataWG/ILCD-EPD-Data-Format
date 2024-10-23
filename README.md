@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # ILCD+EPD Data Format
 
 ## Schema Documentation
@@ -57,4 +56,3 @@
 - [ILCD UnitGroupDataSet](https://indatawg.github.io/ILCD-EPD-Data-Format/gitBranches/testFromTestMain/schemadoc/ILCD_UnitGroupDataSet.html)
 
 
->>>>>>> 7f8acf3b7e157f33e2fff4bd8d8602f76f78377b
