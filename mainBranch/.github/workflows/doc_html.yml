@@ -4,8 +4,13 @@ on:
   push:
     paths:
       - 'doc/schemadoc/**' 
-    branches:
-      - '**'  
+  #  branches:
+  #    - '**'  
+  #  branches-ignore:
+  #    - 'main'
+      
+permissions:
+  contents: write
 
 jobs:
   deploy:
@@ -25,17 +30,17 @@ jobs:
           ref: gitActions
           path: gitActions
 
-      # Step 3: Copy HTML files from the current branch to gitActions/gitBranches/{branch_name}
+      # Step 3: Copy HTML files from the current branch to gitActions/gitBranches/{branch_name}/schemadoc
       - name: Copy HTML files to gitActions branch
         run: |
           branch_name=${{ github.ref_name }}
-          echo "Updating HTML files from $branch_name to gitBranches/$branch_name in gitActions branch."
+          echo "Updating HTML files from $branch_name to gitBranches/$branch_name/schemadoc in gitActions branch."
 
           # Ensure the directory exists in gitActions
-          mkdir -p gitActions/gitBranches/$branch_name
+          mkdir -p gitActions/gitBranches/$branch_name/schemadoc/
 
           # Copy the HTML files from the current branch to the gitActions branch folder
-          cp -r ./doc/schemadoc/* gitActions/gitBranches/$branch_name/
+          cp -r ./doc/schemadoc/* gitActions/gitBranches/$branch_name/schemadoc/
 
       # Step 4: Commit and push changes to gitActions branch
       - name: Commit and push changes to gitActions branch
@@ -43,6 +48,6 @@ jobs:
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git add gitBranches/$branch_name
+          git add gitBranches/$branch_name/schemadoc/
           git commit -m "Updated HTML files for $branch_name"
           git push origin gitActions

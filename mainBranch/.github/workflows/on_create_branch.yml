@@ -2,7 +2,7 @@ name: Create Branch Documentation
 
 on:
   create:
-   branches:    
+    branches:    
       - '**'
 
 permissions:
@@ -41,8 +41,8 @@ jobs:
       # Step 5: Convert CSV to HTML and Excel
       - name: Convert CSV to HTML and Excel
         run: |
-          html_output_dir="gitBranches/${{ env.branch_name }}/identifiers/html_output"
-          excel_output_dir="gitBranches/${{ env.branch_name }}/identifiers/excel_output"
+          html_output_dir="gitBranches/${{ env.branch_name }}/html_output"
+          excel_output_dir="gitBranches/${{ env.branch_name }}/excel_output"
           
           mkdir -p "$html_output_dir"
           mkdir -p "$excel_output_dir"
@@ -197,5 +197,3 @@ jobs:
           git add README.md
           git commit -m "Added links to HTML documentation for ${{ env.branch_name }}"
           git push origin ${{ env.branch_name }}
-
-          
