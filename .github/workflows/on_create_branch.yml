@@ -2,14 +2,15 @@ name: Create Branch Documentation
 
 on:
   create:
-    branches:    
-      - '**'
+    branches:
+      - '**'  
 
 permissions:
   contents: write
 
 jobs:
   convert_csv_and_update_readme:
+    if: startsWith(github.ref, 'refs/heads/')
     runs-on: ubuntu-latest
 
     steps:
