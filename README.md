@@ -56,3 +56,4 @@
 - [ILCD UnitGroupDataSet](https://indatawg.github.io/ILCD-EPD-Data-Format/gitBranches/testFromTestMain/schemadoc/ILCD_UnitGroupDataSet.html)
 
 
+- [v0.0.8](doc/releases/v0.0.8/index.html)
