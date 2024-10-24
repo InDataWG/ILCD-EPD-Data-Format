@@ -184,7 +184,19 @@ jobs:
           - [ILCD FlowPropertyDataSet](https://indatawg.github.io/ILCD-EPD-Data-Format/gitBranches/$branch_name/schemadoc/ILCD_FlowPropertyDataSet.html)\n
           - [ILCD LCIAMethodDataSet](https://indatawg.github.io/ILCD-EPD-Data-Format/gitBranches/$branch_name/schemadoc/ILCD_LCIAMethodDataSet.html)\n
           - [ILCD SourceDataSet](https://indatawg.github.io/ILCD-EPD-Data-Format/gitBranches/$branch_name/schemadoc/ILCD_SourceDataSet.html)\n
-          - [ILCD UnitGroupDataSet](https://indatawg.github.io/ILCD-EPD-Data-Format/gitBranches/$branch_name/schemadoc/ILCD_UnitGroupDataSet.html)\n
+          - [ILCD UnitGroupDataSet](https://indatawg.github.io/ILCD-EPD-Data-Format/gitBranches/$branch_name/schemadoc/ILCD_UnitGroupDataSet.html)\n\n
+
+          ## Identifier:\n\n
+          - [BackgroundDB SourceDatasets ecoinvent](https://indatawg.github.io/ILCD-EPD-Data-Format/gitBranches/$branch_name/identifiers/html_output/BackgroundDB_SourceDatasets_ecoinvent.html)\n
+          - [BackgroundDB SourceDatasets GaBi](https://indatawg.github.io/ILCD-EPD-Data-Format/gitBranches/$branch_name/identifiers/html_output/BackgroundDB_SourceDatasets_GaBi.html)\n
+          - [EN15804+A1 indicators](https://indatawg.github.io/ILCD-EPD-Data-Format/gitBranches/$branch_name/identifiers/html_output/EN15804+A1_indicators.html)\n
+          - [EN15804+A2 indicators](https://indatawg.github.io/ILCD-EPD-Data-Format/gitBranches/$branch_name/identifiers/html_output/EN15804+A2_indicators.html)\n
+          - [Common references](https://indatawg.github.io/ILCD-EPD-Data-Format/gitBranches/$branch_name/identifiers/html_output/Common_references.html)\n
+          - [Country specific indicators](https://indatawg.github.io/ILCD-EPD-Data-Format/gitBranches/$branch_name/identifiers/html_output/Country_specific_indicators.html)\n
+          - [Flow properties and unit groups](https://indatawg.github.io/ILCD-EPD-Data-Format/gitBranches/$branch_name/identifiers/html_output/Flow_properties_and_unit_groups.html)\n\n
+
+          - [Download list of background databases](https://indatawg.github.io/ILCD-EPD-Data-Format/gitBranches/$branch_name/identifiers/excel_output/BackgroundDatabases.xlsx)\n
+          - [Download list of indicators](https://indatawg.github.io/ILCD-EPD-Data-Format/gitBranches/$branch_name/identifiers/excel_output/Indicators.xlsx)\n
           "
 
           # Add links to README.md
