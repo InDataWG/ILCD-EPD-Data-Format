@@ -47,6 +47,7 @@ jobs:
       - name: Commit and push changes to gitActions branch
         working-directory: gitActions
         run: |
+          branch_name=${{ github.ref_name }}
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git add gitBranches/$branch_name/schemadoc/
