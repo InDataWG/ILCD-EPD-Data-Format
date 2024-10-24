@@ -57,3 +57,4 @@
 
 
 - [v0.0.8](doc/releases/v0.0.8/index.html)
+- [v0.0.9](doc/releases/v0.0.9/index.html)
