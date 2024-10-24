@@ -33,7 +33,7 @@ jobs:
         zip -r $ZIP_FILE . -x "doc/releases/*"
         echo "Created zip file: $ZIP_FILE"
         # Copy the contents of the doc folder to the DOC_DIR
-        rsync -av --exclude=${DOC_DIR} doc/ ${DOC_DIR}/
+        rsync -av --exclude=${DOC_DIR} doc/ ${DOC_DIR}/doc
         echo "Copied doc folder to: ${DOC_DIR}"
       shell: bash
 
