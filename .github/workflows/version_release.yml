@@ -49,22 +49,12 @@ jobs:
         git checkout gitActions
       shell: bash
 
-    - name: Copy files to gitActions branch
+    - name: Commit and push documentation and zip
+      if: success()
       run: |
         TAG_NAME=${GITHUB_REF##*/}
-        DOC_DIR="doc/releases/${TAG_NAME}"
-        # Preserve folder structure and copy to the correct location
-        cp -r ${DOC_DIR} doc/releases/
-        git add .
+        git config --global user.name 'github-actions[bot]'
+        git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+        git add doc/releases/${TAG_NAME}/${TAG_NAME}.zip doc/releases/${TAG_NAME}/doc
         git commit -m "Add versioned documentation and zip for ${TAG_NAME}"
-        git push origin gitActions
-      shell: bash
-
-    - name: Update Previous Versions in README
-      run: |
-        TAG_NAME=${GITHUB_REF##*/}
-        echo "- [${TAG_NAME}](doc/releases/${TAG_NAME}/index.html)" >> README.md
-        git add README.md
-        git commit -m "Add ${TAG_NAME} to Previous versions in README"
-        git push origin gitActions
-      shell: bash
+        git push origin HEAD:gitActions
