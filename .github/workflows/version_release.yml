@@ -54,7 +54,7 @@ jobs:
       run: |
         TAG_NAME=${GITHUB_REF##*/}
         git add doc/releases/${TAG_NAME}/${TAG_NAME}.zip
-        git doc/releases/${TAG_NAME}/doc
+        git add doc/releases/${TAG_NAME}/doc
         git commit -m "Add versioned documentation and zip for ${TAG_NAME}"
         git push origin HEAD:gitActions
       shell: bash
