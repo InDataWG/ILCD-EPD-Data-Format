@@ -4,8 +4,8 @@ on:
   push:
     paths:
       - 'doc/schemadoc/**' 
-    branches:
-      - '**'  
+  #  branches:
+  #    - '**'  
   #  branches-ignore:
   #    - 'main'
       
@@ -14,6 +14,7 @@ permissions:
 
 jobs:
   deploy:
+    if: startsWith(github.ref, 'refs/heads/')
     runs-on: ubuntu-latest
 
     steps:
