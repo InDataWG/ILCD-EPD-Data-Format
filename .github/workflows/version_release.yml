@@ -23,6 +23,12 @@ jobs:
       with:
         python-version: '3.x'
 
+    - name: Configure Git Identity
+      run: |
+        git config --global user.name 'github-actions[bot]'
+        git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+      shell: bash
+
     - name: Install Git LFS
       run: |
         git lfs install
@@ -43,12 +49,6 @@ jobs:
         # Copy the contents of the doc folder to the DOC_DIR
         rsync -av --exclude=${DOC_DIR} doc/ ${DOC_DIR}/
         echo "Copied doc folder to: ${DOC_DIR}"
-      shell: bash
-
-    - name: Configure Git
-      run: |
-        git config --global user.name 'github-actions[bot]'
-        git config --global user.email 'github-actions[bot]@users.noreply.github.com'
       shell: bash
 
     - name: Checkout gitActions branch
