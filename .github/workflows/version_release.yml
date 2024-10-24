@@ -41,28 +41,21 @@ jobs:
       run: |
         TAG_NAME=${GITHUB_REF##*/}
         DOC_DIR="doc/releases/${TAG_NAME}"
-        mkdir -p ${DOC_DIR}/doc
+        mkdir -p ${DOC_DIR}
         ZIP_FILE="${DOC_DIR}/${TAG_NAME}.zip"
         # Create the zip file, excluding the releases directory
         zip -r $ZIP_FILE . -x "doc/releases/*"
         echo "Created zip file: $ZIP_FILE"
         # Copy the contents of the doc folder to the DOC_DIR
-        rsync -av --exclude=${DOC_DIR} doc/ ${DOC_DIR}/
+        rsync -av --exclude=${DOC_DIR} doc/ ${DOC_DIR}/doc/
         echo "Copied doc folder to: ${DOC_DIR}"
-      shell: bash
-
-    - name: Checkout gitActions branch
-      run: |
-        git fetch origin gitActions
-        git checkout gitActions
-      shell: bash
-
+      
     - name: Commit and push documentation and zip
       if: success()
       run: |
         TAG_NAME=${GITHUB_REF##*/}
-        git add doc/releases/${TAG_NAME}/${TAG_NAME}.zip
-        git add doc/releases/${TAG_NAME}/doc
+        git config --global user.name 'github-actions[bot]'
+        git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+        git add doc/releases/${TAG_NAME}/${TAG_NAME}.zip doc/releases/${TAG_NAME}/doc
         git commit -m "Add versioned documentation and zip for ${TAG_NAME}"
-        git push --force origin HEAD:gitActions
-      shell: bash
+        git push origin HEAD:gitActions
