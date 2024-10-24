@@ -4,8 +4,8 @@ on:
   push:
     paths:
       - 'doc/schemadoc/**' 
-  #  branches:
-  #    - '**'  
+    branches:
+      - '**'  
   #  branches-ignore:
   #    - 'main'
       
