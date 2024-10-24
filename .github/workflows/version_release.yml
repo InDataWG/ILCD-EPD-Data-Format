@@ -53,7 +53,8 @@ jobs:
       run: |
         TAG_NAME=${GITHUB_REF##*/}
         DOC_DIR="doc/releases/${TAG_NAME}"
-        cp -r ${DOC_DIR}/* .
+        # Preserve folder structure and copy to the correct location
+        cp -r ${DOC_DIR} doc/releases/
         git add .
         git commit -m "Add versioned documentation and zip for ${TAG_NAME}"
         git push origin gitActions
