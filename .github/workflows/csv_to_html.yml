@@ -15,8 +15,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout repository
+    - name: Checkout current branch
       uses: actions/checkout@v2
+      with:
+        ref: ${{ github.ref_name }}
 
     - name: Set up Python
       uses: actions/setup-python@v2
@@ -141,20 +143,41 @@ jobs:
         write_to_excel(f"gitBranches/{branch_name}/identifiers/excel_output/Indicators.xlsx", indicator_sheets)
         EOF
 
-    - name: Check output
-      run: |
-        echo "Listing files in html_output directory"
-        ls -l gitBranches/${{ steps.branch_name.outputs.branch }}/identifiers/html_output || echo "gitBranches/${{ steps.branch_name.outputs.branch }}/identifiers/html_output directory not found or is empty"
-        echo "Listing files in excel_output directory"
-        ls -l gitBranches/${{ steps.branch_name.outputs.branch }}/identifiers/excel_output || echo "gitBranches/${{ steps.branch_name.outputs.branch }}/identifiers/excel_output directory not found or is empty"
+    - name: Checkout gitActions branch
+      uses: actions/checkout@v2
+      with:
+        ref: gitActions
+        path: gitActions
 
-    - name: Checkout and update gitActions branch
+    - name: Clean up old directories in gitActions
       run: |
-        git config --global user.name 'github-actions[bot]'
-        git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-        git fetch origin gitActions
-        git checkout gitActions
-        git pull origin gitActions
-        git add gitBranches/${{ steps.branch_name.outputs.branch }}/identifiers/html_output gitBranches/${{ steps.branch_name.outputs.branch }}/identifiers/excel_output
-        git commit -m 'Automated conversion of CSV to HTML and Excel'
+        branch_name=${{ steps.branch_name.outputs.branch }}
+        echo "Cleaning up old directories in gitBranches/$branch_name/identifiers in gitActions branch."
+
+        # Remove old HTML and Excel directories if they exist
+        rm -rf gitActions/gitBranches/$branch_name/identifiers/html_output
+        rm -rf gitActions/gitBranches/$branch_name/identifiers/excel_output
+
+    - name: Copy generated files to gitActions branch
+      run: |
+        branch_name=${{ steps.branch_name.outputs.branch }}
+        echo "Copying generated HTML and Excel files to gitBranches/$branch_name/identifiers in gitActions branch."
+
+        # Ensure the directories exist in gitActions
+        mkdir -p gitActions/gitBranches/$branch_name/identifiers/html_output
+        mkdir -p gitActions/gitBranches/$branch_name/identifiers/excel_output
+
+        # Copy the HTML and Excel files to the gitActions branch folder
+        cp -r ./gitBranches/$branch_name/identifiers/html_output/* gitActions/gitBranches/$branch_name/identifiers/html_output/
+        cp -r ./gitBranches/$branch_name/identifiers/excel_output/* gitActions/gitBranches/$branch_name/identifiers/excel_output/
+
+    - name: Commit and push changes to gitActions branch
+      working-directory: gitActions
+      run: |
+        branch_name=${{ steps.branch_name.outputs.branch }}
+        git config --global user.name "github-actions[bot]"
+        git config --global user.email "github-actions[bot]@users.noreply.github.com"
+        git add gitBranches/$branch_name/identifiers/html_output/
+        git add gitBranches/$branch_name/identifiers/excel_output/
+        git commit -m "Automated conversion of CSV to HTML and Excel for $branch_name"
         git push origin gitActions
