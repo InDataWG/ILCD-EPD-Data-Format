@@ -1,0 +1,1897 @@
+
+<!--ILCD Format 1.1 Documentation - LCIA Method data set - documentation stylesheet version 1.0.6-->
+<html xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <title>ILCD Format 1.1 Documentation - LCIA Method data set</title><style type="text/css">
+              table.top {
+              border: 1px solid #AB845D; 
+              background-color: #FFFBF3;
+              }
+              tr {
+              background-color:#FFFFFF;
+              }   
+              a {
+              color:#0A4755;
+              }
+              a:active, a:visited {
+              color:#894C0F;
+              }
+              
+              /* tooltip styles */
+              a.info {
+              position:relative; 
+              z-index:24;
+              color:#000000;
+              text-decoration:none
+              }
+              
+              a.info:hover {
+              z-index:25; 
+              background-color:#FFE8B7;
+              }
+              
+              a.info span {
+              display: none
+              }
+              
+              a.info:hover span {                                               
+              display:block;
+              position:absolute;
+              top:2em; left:2em; width:25em;
+              border:1px solid #7BCBDE;
+              background-color:#B9EDF7; 
+              color:#000000;
+              text-align: left
+              }
+              
+              /*   general styles  */                                               
+              .title 		{ 	
+              font-family: Helvetica,Arial,sans serif;
+              font-size: 14;
+              font-weight: bold;
+              vertical-align: top;
+              background-color: #fc9336 ;
+              color: #000000;
+              }
+              .toc 		{ 	
+              font-family: Helvetica,Arial,sans serif;
+              font-size: 12;
+              font-weight: normal;
+              vertical-align: top;
+              background-color: #FFD783 ;
+              color: #000000;
+              }
+              .section { 	
+              font-family: Helvetica,Arial,sans serif;
+              font-size: 14;
+              font-weight: bold;
+              vertical-align: top;   
+              background-color: #ffb951  ;
+              color: #000000;
+              }
+              .root { 	
+              font-family: Helvetica,Arial,sans serif;
+              font-size: 14;
+              font-weight: bold;
+              vertical-align: top;   
+              background-color: #ffb951  ;
+              color: #000000;
+              }
+              .subsection { 	
+              font-family: Helvetica,Arial,sans serif;
+              font-size: 12;
+              font-weight: bold;
+              vertical-align: top;   
+              background-color: #ffd783  ;
+              color: #000000;
+              }
+              .fieldname { 
+              font-family: Helvetica,Arial,sans serif;
+              font-size: 12;
+              font-weight: normal;
+              vertical-align: top;   
+              background-color: #FFF3D9;
+              color: #002277  ;
+              }
+              .data          { 
+              font-family: Helvetica,Arial,sans serif;
+              font-size: 12;
+              background-color: #FFFFFF;
+              color: #000000;
+              font-weight: normal;						
+              }
+              .data_neutral     { 
+              font-weight: normal;
+              }
+              .data_enum     { 
+              font-weight: normal;
+              font-style: italic;
+              }
+              .referencename   { 
+              font-family: Helvetica,Arial,sans serif;
+              font-size: 12;
+              font-weight: bold;
+              background-color: #FFFFFF ;
+              color: #002277  ;
+              }
+              .referencedata   { 
+              font-family: Helvetica,Arial,sans serif;
+              font-size: 12;
+              color: red;
+              background-color: #FFFFFF ;
+              color: #000000;
+              }
+              .table_header   { 
+              font-family: Helvetica,Arial,sans serif;
+              font-size: 11;
+              font-weight: normal;
+              background-color: #ffeece  ;
+              color: #002277  ;
+              }
+              .exchanges_section   { 
+              font-family: Helvetica,Arial,sans serif;
+              font-size: 9;
+              background-color: #ffeece ;
+              color: #000000;
+              }
+              .exchanges_data   { 
+              font-family: Helvetica,Arial,sans serif;
+              font-size: 9;
+              font-weight: bold;
+              background-color: #FFFFFF ;
+              color: #000000;
+              }
+              tr.highlight td.data {
+              border-width: 2px;
+              border-style: solid;
+              border-color: #A2D3DE;
+              }
+              .lang {
+              font-weight: normal;
+              color: grey;			
+              }
+              .warning {
+              font-weight: bold;
+              color: red;			
+              }
+            </style><script type="text/javascript">
+         <!--
+                    
+                    function toggleCol(strID, intCol, strDisplay) {
+                    
+                    var objTable = document.getElementById(strID);
+                    if (strDisplay == null) {
+                    strDisplay = (objTable.rows[0].cells[intCol].style.display == "none") ? "" : "none";
+                    }
+                    
+                    currentStatus = (objTable.rows[0].cells[intCol].style.display == "none") ? "hide" : "show";
+                    newStatus = (strDisplay == "none") ? "hide" : "show";
+                    
+                    if (currentStatus == "hide" && newStatus == "show") {
+                    action = "show";
+                    } else if (currentStatus == "show" && newStatus == "hide") {
+                    action = "hide";
+                    } else {
+                    action = "none";
+                    }
+                    
+                    for (var i = 0; i< objTable.rows.length; i++) {
+                    if (objTable.rows[i].cells.length > intCol && objTable.rows[i].cells[intCol].colSpan == 1) {
+                    objTable.rows[i].cells[intCol].style.display = strDisplay;
+                    }
+                    }
+                    
+                    var objCells = document.getElementsByTagName("td");
+                    
+                    for (var i = 0; i< objCells.length; i++) {
+                    
+                    if (objCells[i].colSpan > 1) {
+                    if (action == "hide") {
+                    objCells[i].colSpan = objCells[i].colSpan - 1;
+                    } else if (action == "show") {
+                    objCells[i].colSpan = objCells[i].colSpan + 1;
+                    }
+                    }
+                    }
+                    }
+                    
+                    
+                    function initializeColumns() {
+                    
+                    var objForm = document.getElementById("form");
+                    
+                    for (var i = 0; i< objForm.elements.length; i++) {
+                    if (objForm.elements[i].checked == true) {
+                    toggleCol('tableID', objForm.elements[i].value, "");
+                    } else {
+                    toggleCol('tableID', objForm.elements[i].value, "none");
+                    }
+                    }
+                    }
+                    
+                    //--></script></head>
+   <body onload="initializeColumns();">
+      <form action="#" id="form"> Show: <input type="checkbox" checked value="0" id="checkFieldName" onclick="toggleCol('tableID', 0, null);">Field name<input type="checkbox" checked value="1" id="checkID" onclick="toggleCol('tableID', 1, null);">Element/attribute name<input type="checkbox" checked value="2" id="checkRequirement" onclick="toggleCol('tableID', 2, null);">Requirement<input type="checkbox" checked value="3" id="checkOccurrences" onclick="toggleCol('tableID', 3, null);">Occurrences<input type="checkbox" checked value="4" id="checkDataType" onclick="toggleCol('tableID', 4, null);">Data type<input type="checkbox" checked value="5" id="checkDefinition" onclick="toggleCol('tableID', 5, null);">Definition<input type="checkbox" value="6" id="checkEDocId" onclick="toggleCol('tableID', 6, null);">eDoc ID</form>
+      <h1>ILCD Format 1.1 Documentation - LCIA Method data set</h1>
+      <table id="tableID" style="table-layout:fixed;">
+         <tr>
+            <th class="title" style="width:200px">Field name</th>
+            <th class="title" style="width:330px">Element/attribute name</th>
+            <th class="title" style="width:25px">Requ.</th>
+            <th class="title" style="width:35px">Occ.</th>
+            <th class="title" style="width:220px">Data type</th>
+            <th class="title">Definition</th>
+            <th class="title" style="width:80px">eDoc ID</th>
+         </tr>
+         <tr>
+            <td class="root" style="padding-left: 0px;font-style: italic;">LCIA Method data set</td>
+            <td class="root" style="padding-left: 0px;font-style: italic;">LCIAMethodDataSet</td>
+            <td class="root">m</td>
+            <td class="root">[1,1]</td>
+            <td class="root"></td>
+            <td class="root"></td>
+            <td class="root">3</td>
+         </tr>
+         <tr>
+            <td class="fieldname" style="padding-left: 10px;"></td>
+            <td class="fieldname" style="padding-left: 10px;">@version</td>
+            <td class="fieldname">m</td>
+            <td class="fieldname"></td>
+            <td class="fieldname"><a target="_blank" href="ILCD_Common_DataTypes.html#SchemaVersion">SchemaVersion</a></td>
+            <td class="fieldname"></td>
+            <td class="fieldname"></td>
+         </tr>
+         <tr>
+            <td class="fieldname" style="padding-left: 10px;"></td>
+            <td class="fieldname" style="padding-left: 10px;">@locations</td>
+            <td class="fieldname">o</td>
+            <td class="fieldname"></td>
+            <td class="fieldname"><a target="_blank" href="ILCD_Common_DataTypes.html#String">String</a></td>
+            <td class="fieldname"></td>
+            <td class="fieldname"></td>
+         </tr>
+         <tr>
+            <td class="fieldname" style="padding-left: 10px;"></td>
+            <td class="fieldname" style="padding-left: 10px;">@LCIAMethodologies</td>
+            <td class="fieldname">o</td>
+            <td class="fieldname"></td>
+            <td class="fieldname"><a target="_blank" href="ILCD_Common_DataTypes.html#String">String</a></td>
+            <td class="fieldname"></td>
+            <td class="fieldname"></td>
+         </tr>
+         <tr>
+            <td class="section" style="padding-left: 10px;font-style: italic;">LCIA method information</td>
+            <td class="section" style="padding-left: 10px;font-style: italic;">LCIAMethodInformation</td>
+            <td class="section">m</td>
+            <td class="section">[1,1]</td>
+            <td class="section"></td>
+            <td class="section"></td>
+            <td class="section">3-17</td>
+         </tr>
+         <tr>
+            <td class="subsection" style="padding-left: 20px;font-style: italic;">Data set information</td>
+            <td class="subsection" style="padding-left: 20px;font-style: italic;">dataSetInformation</td>
+            <td class="subsection">m</td>
+            <td class="subsection">[1,1]</td>
+            <td class="subsection"></td>
+            <td class="subsection"></td>
+            <td class="subsection">3-17-70</td>
+         </tr>
+         <tr>
+            <td class="fieldname" style="padding-left: 30px;">UUID of LCIA method data set</td>
+            <td class="fieldname" style="padding-left: 30px;">UUID</td>
+            <td class="fieldname">m</td>
+            <td class="fieldname">[1,1]</td>
+            <td class="fieldname"><a target="_blank" href="ILCD_Common_DataTypes.html#UUID">UUID</a></td>
+            <td class="fieldname">Automatically generated Universally Unique Identifier of this data set. Together with the "Data set version", the UUID uniquely
+               identifies each data
+               set.
+            </td>
+            <td class="fieldname">3-17-70-201</td>
+         </tr>
+         <tr>
+            <td class="fieldname" style="padding-left: 30px;">Name of LCIA method or methodology</td>
+            <td class="fieldname" style="padding-left: 30px;">name</td>
+            <td class="fieldname">r</td>
+            <td class="fieldname">[0,1]</td>
+            <td class="fieldname"><a target="_blank" href="ILCD_Common_DataTypes.html#StringMultiLang">StringMultiLang</a></td>
+            <td class="fieldname">Name of the data set. Composed as follows "LCIA methodology short name; Impact category/ies; midpoint/endpoint; Impact indicator;
+               Source short name". Not
+               applicable components are left out. Examples: "Impacts2007+; Climate change; midpoint; Global Warming Potential; IPCC 2001";
+               "ABC 2006; Acidification; endpoint; Species
+               diversity loss; John Doe 2006"; "My-indicator2009; combined; endpoint; Ecopoints; various"
+            </td>
+            <td class="fieldname">3-17-70-202</td>
+         </tr>
+         <tr>
+            <td class="fieldname" style="padding-left: 30px;">Belongs to: Name of LCIA methodology/ies</td>
+            <td class="fieldname" style="padding-left: 30px;">methodology</td>
+            <td class="fieldname">r</td>
+            <td class="fieldname">[0,n]</td>
+            <td class="fieldname"><a target="_blank" href="ILCD_Common_DataTypes.html#string">string</a></td>
+            <td class="fieldname">Name of the LCIA methodology/ies the data set belongs to, if any</td>
+            <td class="fieldname">3-17-70-208</td>
+         </tr>
+         <tr>
+            <td class="fieldname" style="padding-left: 30px;font-style: italic;">Classfication information</td>
+            <td class="fieldname" style="padding-left: 30px;font-style: italic;">classificationInformation</td>
+            <td class="fieldname"></td>
+            <td class="fieldname">[0,1]</td>
+            <td class="fieldname"></td>
+            <td class="fieldname"></td>
+            <td class="fieldname">3-17-70-204</td>
+         </tr>
+         <tr>
+            <td class="fieldname" style="padding-left: 40px;font-style: italic;">Classification</td>
+            <td class="fieldname" style="padding-left: 40px;font-style: italic;">classification</td>
+            <td class="fieldname">r</td>
+            <td class="fieldname">[0,n]</td>
+            <td class="fieldname"></td>
+            <td class="fieldname">Optional statistical or other classification of the data set. Typically also used for structuring LCA databases.</td>
+            <td class="fieldname">1-1-2-7-2</td>
+         </tr>
+         <tr>
+            <td class="fieldname" style="padding-left: 50px;">Classification system name</td>
+            <td class="fieldname" style="padding-left: 50px;">@name</td>
+            <td class="fieldname">r</td>
+            <td class="fieldname"></td>
+            <td class="fieldname"><a target="_blank" href="ILCD_Common_DataTypes.html#string">string</a></td>
+            <td class="fieldname">Name of the classification system.</td>
+            <td class="fieldname">1-1-2-7-2-a</td>
+         </tr>
+         <tr>
+            <td class="fieldname" style="padding-left: 50px;">Classes</td>
+            <td class="fieldname" style="padding-left: 50px;">@classes</td>
+            <td class="fieldname">r</td>
+            <td class="fieldname"></td>
+            <td class="fieldname"><a target="_blank" href="ILCD_Common_DataTypes.html#anyURI">anyURI</a></td>
+            <td class="fieldname">URL or file name of a file listing all classes of this classification system. [Notes: the referenced file has to be in form
+               of the
+               "ILCDClassification.xml" format. If a classification file is specified, the "class" entry should correspond to the classes
+               defined in the classification
+               file.]
+            </td>
+            <td class="fieldname">1-1-2-7-2-b</td>
+         </tr>
+         <tr>
+            <td class="fieldname" style="padding-left: 50px;font-style: italic;">Class name</td>
+            <td class="fieldname" style="padding-left: 50px;font-style: italic;">class</td>
+            <td class="fieldname">r</td>
+            <td class="fieldname">[1,n]</td>
+            <td class="fieldname"></td>
+            <td class="fieldname">Name of the class.</td>
+            <td class="fieldname">1-1-2-7-2-1</td>
+         </tr>
+         <tr>
+            <td class="fieldname" style="padding-left: 60px;">Hierarchy level</td>
+            <td class="fieldname" style="padding-left: 60px;">@level</td>
+            <td class="fieldname">r</td>
+            <td class="fieldname"></td>
+            <td class="fieldname"><a target="_blank" href="ILCD_Common_DataTypes.html#LevelType">LevelType</a></td>
+            <td class="fieldname">If more than one class is specified in a hierachical classification system, the hierarchy level (1,2,...) could be specified
+               with this attribute of
+               class.
+            </td>
+            <td class="fieldname">1-1-2-7-2-1-a</td>
+         </tr>
+         <tr>
+            <td class="fieldname" style="padding-left: 60px;">Unique class identifier</td>
+            <td class="fieldname" style="padding-left: 60px;">@classId</td>
+            <td class="fieldname">r</td>
+            <td class="fieldname"></td>
+            <td class="fieldname"><a target="_blank" href="ILCD_Common_DataTypes.html#string">string</a></td>
+            <td class="fieldname">Unique identifier for the class. [Notes: If such identifiers are also defined in the referenced category file, they should
+               be identical. Identifiers can
+               be UUID's, but also other forms are allowed.]
+            </td>
+            <td class="fieldname">1-1-2-7-2-1-b</td>
+         </tr>
+         <tr>
+            <td class="fieldname" style="padding-left: 50px;">Other content</td>
+            <td class="fieldname" style="padding-left: 50px;">other</td>
+            <td class="fieldname">o</td>
+            <td class="fieldname">[0,1]</td>
+            <td class="fieldname"></td>
+            <td class="fieldname">May contain arbitrary content.</td>
+            <td class="fieldname">0</td>
+         </tr>
+         <tr>
+            <td class="fieldname" style="padding-left: 30px;">Impact category/ies</td>
+            <td class="fieldname" style="padding-left: 30px;">impactCategory</td>
+            <td class="fieldname">r</td>
+            <td class="fieldname">[0,n]</td>
+            <td class="fieldname"><a target="_blank" href="ILCD_Common_EnumerationValues.html#LCIAImpactCategoryValues">LCIAImpactCategoryValues</a><br><span class="data_enum"><a class="info" href="javascript:void(0);"><span></span></a></span><br><span class="data_enum"><a class="info" href="javascript:void(0);">Climate change<span>Climate change / global warming</span></a></span><br><span class="data_enum"><a class="info" href="javascript:void(0);">Ozone depletion<span>Stratospheric ozone layer depletion</span></a></span><br><span class="data_enum"><a class="info" href="javascript:void(0);">Terrestrial Eutrophication<span></span></a></span><br><span class="data_enum"><a class="info" href="javascript:void(0);">Aquatic Eutrophication<span></span></a></span><br><span class="data_enum"><a class="info" href="javascript:void(0);">Acidification<span>Acidification of land and water bodies</span></a></span><br><span class="data_enum"><a class="info" href="javascript:void(0);">Photochemical ozone creation<span></span></a></span><br><span class="data_enum"><a class="info" href="javascript:void(0);">Land use<span>Land use (occupation and transformation)</span></a></span><br><span class="data_enum"><a class="info" href="javascript:void(0);">Abiotic resource depletion<span></span></a></span><br><span class="data_enum"><a class="info" href="javascript:void(0);">Biotic resource depletion<span></span></a></span><br><span class="data_enum"><a class="info" href="javascript:void(0);">Ionizing radiation<span></span></a></span><br><span class="data_enum"><a class="info" href="javascript:void(0);">Cancer human health effects<span></span></a></span><br><span class="data_enum"><a class="info" href="javascript:void(0);">Non-cancer human health effects<span></span></a></span><br><span class="data_enum"><a class="info" href="javascript:void(0);">Respiratory inorganics<span></span></a></span><br><span class="data_enum"><a class="info" href="javascript:void(0);">Aquatic eco-toxicity<span></span></a></span><br><span class="data_enum"><a class="info" href="javascript:void(0);">Terrestrial eco-toxicity<span></span></a></span><br><span class="data_enum"><a class="info" href="javascript:void(0);">other<span></span></a></span><br></td>
+            <td class="fieldname">Impact category/ies covered by the LCIA method or methodology.</td>
+            <td class="fieldname">3-17-70-209</td>
+         </tr>
+         <tr>
+            <td class="fieldname" style="padding-left: 30px;">Area(s) of Protection</td>
+            <td class="fieldname" style="padding-left: 30px;">areaOfProtection</td>
+            <td class="fieldname">r</td>
+            <td class="fieldname">[0,n]</td>
+            <td class="fieldname"><a target="_blank" href="ILCD_Common_EnumerationValues.html#AreaOfProtectionValues">AreaOfProtectionValues</a><br><span class="data_enum"><a class="info" href="javascript:void(0);">Natural resources<span></span></a></span><br><span class="data_enum"><a class="info" href="javascript:void(0);">Natural environment<span></span></a></span><br><span class="data_enum"><a class="info" href="javascript:void(0);">Human health<span></span></a></span><br><span class="data_enum"><a class="info" href="javascript:void(0);">Man-made environment<span></span></a></span><br><span class="data_enum"><a class="info" href="javascript:void(0);">Other<span>Another LCI method approach is used. This is named in "Deviations from LCI method approaches / explanations" where also additional
+                        information
+                        is given.</span></a></span><br></td>
+            <td class="fieldname">For damage (endpoint) and single-point indicators only: Area(s) of Protection the data set relates to.</td>
+            <td class="fieldname">3-17-70-210</td>
+         </tr>
+         <tr>
+            <td class="fieldname" style="padding-left: 30px;">Impact indicator</td>
+            <td class="fieldname" style="padding-left: 30px;">impactIndicator</td>
+            <td class="fieldname">r</td>
+            <td class="fieldname">[0,1]</td>
+            <td class="fieldname"><a target="_blank" href="ILCD_Common_DataTypes.html#String">String</a></td>
+            <td class="fieldname">Description of the meaning of the impact indicator of this data set (not applicable for LCIA methodologies data sets).</td>
+            <td class="fieldname">3-17-70-211</td>
+         </tr>
+         <tr>
+            <td class="fieldname" style="padding-left: 30px;">General comment</td>
+            <td class="fieldname" style="padding-left: 30px;">generalComment</td>
+            <td class="fieldname">o</td>
+            <td class="fieldname">[0,1]</td>
+            <td class="fieldname"><a target="_blank" href="ILCD_Common_DataTypes.html#FTMultiLang">FTMultiLang</a></td>
+            <td class="fieldname">General information about the data set, including e.g. general (internal, not reviewed) quality statements as well as information
+               sources used. (Note: Please also check the more specific fields e.g. on "Intended application", "Advice on data set use" and
+               the fields in the "Modelling and validation" section to avoid overlapping entries.)
+            </td>
+            <td class="fieldname">3-17-70-207</td>
+         </tr>
+         <tr>
+            <td class="fieldname" style="padding-left: 30px;">External documentation / files source</td>
+            <td class="fieldname" style="padding-left: 30px;">referenceToExternalDocumentation</td>
+            <td class="fieldname">r</td>
+            <td class="fieldname">[0,n]</td>
+            <td class="fieldname"><a target="_blank" href="ILCD_Common_DataTypes.html#GlobalReferenceType">GlobalReferenceType</a></td>
+            <td class="fieldname">"Source data set(s)" of external documents / files with further documentative information on the data set including on underlying
+               data sources (e.g. time,
+               geographical coverage, impact models, characterisation factors, substance property databases employed, etc.). (Note: can indirectly
+               reference to digital file.)
+               
+            </td>
+            <td class="fieldname">3-17-70-213</td>
+         </tr>
+         <tr>
+            <td class="fieldname" style="padding-left: 30px;">Other content</td>
+            <td class="fieldname" style="padding-left: 30px;">other</td>
+            <td class="fieldname">o</td>
+            <td class="fieldname">[0,1]</td>
+            <td class="fieldname"></td>
+            <td class="fieldname">May contain arbitrary content.</td>
+            <td class="fieldname">0</td>
+         </tr>
+         <tr>
+            <td class="subsection" style="padding-left: 20px;font-style: italic;">Quantitative reference</td>
+            <td class="subsection" style="padding-left: 20px;font-style: italic;">quantitativeReference</td>
+            <td class="subsection">o</td>
+            <td class="subsection">[0,1]</td>
+            <td class="subsection"></td>
+            <td class="subsection">This section allows to refer to the LCIA method(ology)'s quantitative reference, which is always the unit, in which the characterisation
+               factors of the
+               impact indicator are measured, e.g. "kg CO2-Equivalents".
+            </td>
+            <td class="subsection">3-17-72</td>
+         </tr>
+         <tr>
+            <td class="fieldname" style="padding-left: 30px;">Reference quantity</td>
+            <td class="fieldname" style="padding-left: 30px;">referenceQuantity</td>
+            <td class="fieldname">r</td>
+            <td class="fieldname">[1,1]</td>
+            <td class="fieldname"><a target="_blank" href="ILCD_Common_DataTypes.html#GlobalReferenceType">GlobalReferenceType</a></td>
+            <td class="fieldname">"Flow property data set" of the reference quantity (flow property), in which the impact indicator values are measured.</td>
+            <td class="fieldname">3-17-72-208</td>
+         </tr>
+         <tr>
+            <td class="fieldname" style="padding-left: 30px;">Other content</td>
+            <td class="fieldname" style="padding-left: 30px;">other</td>
+            <td class="fieldname">o</td>
+            <td class="fieldname">[0,1]</td>
+            <td class="fieldname"></td>
+            <td class="fieldname">May contain arbitrary content.</td>
+            <td class="fieldname">0</td>
+         </tr>
+         <tr>
+            <td class="subsection" style="padding-left: 20px;font-style: italic;">Time representativeness</td>
+            <td class="subsection" style="padding-left: 20px;font-style: italic;">time</td>
+            <td class="subsection">o</td>
+            <td class="subsection">[0,1]</td>
+            <td class="subsection"></td>
+            <td class="subsection"></td>
+            <td class="subsection">3-17-74</td>
+         </tr>
+         <tr>
+            <td class="fieldname" style="padding-left: 30px;">Reference year</td>
+            <td class="fieldname" style="padding-left: 30px;">referenceYear</td>
+            <td class="fieldname">r</td>
+            <td class="fieldname">[0,1]</td>
+            <td class="fieldname"><a target="_blank" href="ILCD_Common_DataTypes.html#StringMultiLang">StringMultiLang</a></td>
+            <td class="fieldname">Reference year when the emission is assumed to take place, i.e. the start year of the time period for which the impact is
+               modelled. For time-independent
+               models "time independent" should be stated.
+            </td>
+            <td class="fieldname">3-17-74-1</td>
+         </tr>
+         <tr>
+            <td class="fieldname" style="padding-left: 30px;">Duration of modelled impact</td>
+            <td class="fieldname" style="padding-left: 30px;">duration</td>
+            <td class="fieldname">r</td>
+            <td class="fieldname">[0,1]</td>
+            <td class="fieldname"><a target="_blank" href="ILCD_Common_DataTypes.html#StringMultiLang">StringMultiLang</a></td>
+            <td class="fieldname">Time period for which the impact is modelled.</td>
+            <td class="fieldname">3-17-74-2</td>
+         </tr>
+         <tr>
+            <td class="fieldname" style="padding-left: 30px;">Time representativeness description</td>
+            <td class="fieldname" style="padding-left: 30px;">timeRepresentativenessDescription</td>
+            <td class="fieldname">0</td>
+            <td class="fieldname">[0,1]</td>
+            <td class="fieldname"><a target="_blank" href="ILCD_Common_DataTypes.html#FTMultiLang">FTMultiLang</a></td>
+            <td class="fieldname">Description of the valid time span of the data set including information on limited usability within sub-time spans, if any.</td>
+            <td class="fieldname">3-17-74-3</td>
+         </tr>
+         <tr>
+            <td class="fieldname" style="padding-left: 30px;">Other content</td>
+            <td class="fieldname" style="padding-left: 30px;">other</td>
+            <td class="fieldname">o</td>
+            <td class="fieldname">[0,1]</td>
+            <td class="fieldname"></td>
+            <td class="fieldname">May contain arbitrary content.</td>
+            <td class="fieldname">0</td>
+         </tr>
+         <tr>
+            <td class="fieldname" style="padding-left: 30px;">Reference year</td>
+            <td class="fieldname" style="padding-left: 30px;">referenceYear</td>
+            <td class="fieldname">r</td>
+            <td class="fieldname">[0,1]</td>
+            <td class="fieldname"><a target="_blank" href="ILCD_Common_DataTypes.html#Year">Year</a></td>
+            <td class="fieldname">Start year of the time period for which the data set is valid (until year of "Data set valid until:"). For data sets that
+               combine data from different
+               years, the most representative year is given regarding the overall environmental impact. In that case, the reference year
+               is derived by expert
+               judgement.
+            </td>
+            <td class="fieldname">1-1-6-18</td>
+         </tr>
+         <tr>
+            <td class="fieldname" style="padding-left: 30px;">Data set valid until:</td>
+            <td class="fieldname" style="padding-left: 30px;">dataSetValidUntil</td>
+            <td class="fieldname">r</td>
+            <td class="fieldname">[0,1]</td>
+            <td class="fieldname"><a target="_blank" href="ILCD_Common_DataTypes.html#Year">Year</a></td>
+            <td class="fieldname">End year of the time period for which the data set is still valid / sufficiently representative. This date also determines
+               when a data set revision /
+               remodelling is required or recommended due to expected relevant changes in environmentally or technically relevant inventory
+               values, including in the background
+               system.
+            </td>
+            <td class="fieldname">1-1-6-19</td>
+         </tr>
+         <tr>
+            <td class="fieldname" style="padding-left: 30px;">Time representativeness description</td>
+            <td class="fieldname" style="padding-left: 30px;">timeRepresentativenessDescription</td>
+            <td class="fieldname">r</td>
+            <td class="fieldname">[0,1]</td>
+            <td class="fieldname"><a target="_blank" href="ILCD_Common_DataTypes.html#FTMultiLang">FTMultiLang</a></td>
+            <td class="fieldname">Description of the valid time span of the data set including information on limited usability within sub-time spans (e.g.
+               summer/winter).
+            </td>
+            <td class="fieldname">1-1-6-20</td>
+         </tr>
+         <tr>
+            <td class="fieldname" style="padding-left: 30px;">Other content</td>
+            <td class="fieldname" style="padding-left: 30px;">other</td>
+            <td class="fieldname">o</td>
+            <td class="fieldname">[0,1]</td>
+            <td class="fieldname"></td>
+            <td class="fieldname">May contain arbitrary content.</td>
+            <td class="fieldname">0</td>
+         </tr>
+         <tr>
+            <td class="subsection" style="padding-left: 20px;font-style: italic;">Geographical representativeness</td>
+            <td class="subsection" style="padding-left: 20px;font-style: italic;">geography</td>
+            <td class="subsection">m</td>
+            <td class="subsection">[1,1]</td>
+            <td class="subsection"></td>
+            <td class="subsection"></td>
+            <td class="subsection">3-17-76</td>
+         </tr>
+         <tr>
+            <td class="fieldname" style="padding-left: 30px;font-style: italic;">Intervention location</td>
+            <td class="fieldname" style="padding-left: 30px;font-style: italic;">interventionLocation</td>
+            <td class="fieldname">r</td>
+            <td class="fieldname">[0,1]</td>
+            <td class="fieldname"></td>
+            <td class="fieldname">Specific, country, or region of the elementary flows' / exchanges' occurence for which the LCIA method(ology) is valid / modelled.
+               [Note: Entry can be of
+               type "two-letter ISO 3166 country code" for countries, "seven-letter regional codes" for regions or continents, or "market
+               areas and market organisations", as
+               predefined for the ILCD. Also a name for e.g. a specific plant etc. can be given here (e.g. "FR, Lyon, XY Company, Z Site";
+               user defined). ]
+            </td>
+            <td class="fieldname">3-17-76-212</td>
+         </tr>
+         <tr>
+            <td class="fieldname" style="padding-left: 40px;">Latitude and Longitude</td>
+            <td class="fieldname" style="padding-left: 40px;">@latitudeAndLongitude</td>
+            <td class="fieldname">o</td>
+            <td class="fieldname"></td>
+            <td class="fieldname"><a target="_blank" href="ILCD_Common_DataTypes.html#GIS">GIS</a></td>
+            <td class="fieldname">Geographical latitude and longitude reference of "Location" / "Sub-location". For area-type locations (e.g. countries, continents)
+               the field is
+               empty.
+            </td>
+            <td class="fieldname">1-1-8-23</td>
+         </tr>
+         <tr>
+            <td class="fieldname" style="padding-left: 30px;font-style: italic;">Intervention sub-location(s)</td>
+            <td class="fieldname" style="padding-left: 30px;font-style: italic;">interventionSubLocation</td>
+            <td class="fieldname">o</td>
+            <td class="fieldname">[0,n]</td>
+            <td class="fieldname"></td>
+            <td class="fieldname">Geographical sub-unit(s) of "Intervention location(s)" that further specify the specifically modelled sub-locations. Such
+               sub-locations can be e.g. sites
+               of a company, specific catchments modleled, countries of a continent, or locations in a country. Information on limited representativeness
+               should be provided if
+               applicable. 
+            </td>
+            <td class="fieldname">3-17-76-213</td>
+         </tr>
+         <tr>
+            <td class="fieldname" style="padding-left: 40px;">Latitude and Longitude</td>
+            <td class="fieldname" style="padding-left: 40px;">@latitudeAndLongitude</td>
+            <td class="fieldname">o</td>
+            <td class="fieldname"></td>
+            <td class="fieldname"><a target="_blank" href="ILCD_Common_DataTypes.html#GIS">GIS</a></td>
+            <td class="fieldname">Geographical latitude and longitude reference of "Location" / "Sub-location". For area-type locations (e.g. countries, continents)
+               the field is
+               empty.
+            </td>
+            <td class="fieldname">1-1-8-23</td>
+         </tr>
+         <tr>
+            <td class="fieldname" style="padding-left: 30px;font-style: italic;">Impact location</td>
+            <td class="fieldname" style="padding-left: 30px;font-style: italic;">impactLocation</td>
+            <td class="fieldname">r</td>
+            <td class="fieldname">[0,1]</td>
+            <td class="fieldname"></td>
+            <td class="fieldname"> Location or region where the impact is modelled to take place. [Note: Entry can be of type "two-letter ISO 3166 country code"
+               for countries,
+               "seven-letter regional codes" for regions or continents, or "market areas and market organisations", as predefined for the
+               ILCD. Also a name for e.g. a specific
+               catchment etc. can be given here, user defined).] 
+            </td>
+            <td class="fieldname">3-17-76-214</td>
+         </tr>
+         <tr>
+            <td class="fieldname" style="padding-left: 40px;">Latitude and Longitude</td>
+            <td class="fieldname" style="padding-left: 40px;">@latitudeAndLongitude</td>
+            <td class="fieldname">o</td>
+            <td class="fieldname"></td>
+            <td class="fieldname"><a target="_blank" href="ILCD_Common_DataTypes.html#GIS">GIS</a></td>
+            <td class="fieldname">Geographical latitude and longitude reference of "Location" / "Sub-location". For area-type locations (e.g. countries, continents)
+               the field is
+               empty.
+            </td>
+            <td class="fieldname">1-1-8-23</td>
+         </tr>
+         <tr>
+            <td class="fieldname" style="padding-left: 30px;">Geographical representativeness description</td>
+            <td class="fieldname" style="padding-left: 30px;">geographicalRepresentativenessDescription</td>
+            <td class="fieldname">r</td>
+            <td class="fieldname">[0,1]</td>
+            <td class="fieldname"><a target="_blank" href="ILCD_Common_DataTypes.html#FTMultiLang">FTMultiLang</a></td>
+            <td class="fieldname">Further explanation on additional aspects of the location, both regarding the intervention and the impact: whether certain
+               areas are exempted from the
+               location, whether data is only valid for certain sub-locations within the location indicated, or whether impact indicator
+               values for certain elementary flows are
+               extrapolated from another geographical area than indicated. Information on the use of generic intervention and/or impact locations,
+               and other
+               restrictions.
+            </td>
+            <td class="fieldname">3-17-76-215</td>
+         </tr>
+         <tr>
+            <td class="fieldname" style="padding-left: 30px;">Other content</td>
+            <td class="fieldname" style="padding-left: 30px;">other</td>
+            <td class="fieldname">o</td>
+            <td class="fieldname">[0,1]</td>
+            <td class="fieldname"></td>
+            <td class="fieldname">May contain arbitrary content.</td>
+            <td class="fieldname">0</td>
+         </tr>
+         <tr>
+            <td class="subsection" style="padding-left: 20px;font-style: italic;">Impact model</td>
+            <td class="subsection" style="padding-left: 20px;font-style: italic;">impactModel</td>
+            <td class="subsection">o</td>
+            <td class="subsection">[0,1]</td>
+            <td class="subsection"></td>
+            <td class="subsection">Provides information about the general representativiness of the data set and about its composition of single LCIA-methods.</td>
+            <td class="subsection">3-17-78</td>
+         </tr>
+         <tr>
+            <td class="fieldname" style="padding-left: 30px;">LCIA characterisation model(s) name(s)</td>
+            <td class="fieldname" style="padding-left: 30px;">modelName</td>
+            <td class="fieldname">r</td>
+            <td class="fieldname">[0,1]</td>
+            <td class="fieldname"><a target="_blank" href="ILCD_Common_DataTypes.html#ST">ST</a></td>
+            <td class="fieldname">Name(s) of the model(s) used for calculating the LCIA impact indicator values (if any)</td>
+            <td class="fieldname">3-17-78-215</td>
+         </tr>
+         <tr>
+            <td class="fieldname" style="padding-left: 30px;">LCIA characterisation model description and included sub-models</td>
+            <td class="fieldname" style="padding-left: 30px;">modelDescription</td>
+            <td class="fieldname">r</td>
+            <td class="fieldname">[0,1]</td>
+            <td class="fieldname"><a target="_blank" href="ILCD_Common_DataTypes.html#FTMultiLang">FTMultiLang</a></td>
+            <td class="fieldname">Description of the model used for calculating the LCIA impact indicator values, including underlying substance property data
+               sources, background
+               concentrations, etc. If an LCIA methodology comprises several LCIA methods, these are explicitly included in the description.
+               Professional nomenclature is used for the
+               description. Note that eventually included Normalisation and Weighting factors are described in the dedicated separate fields.
+            </td>
+            <td class="fieldname">3-17-78-216</td>
+         </tr>
+         <tr>
+            <td class="fieldname" style="padding-left: 30px;">LCIA characterisation model source</td>
+            <td class="fieldname" style="padding-left: 30px;">referenceToModelSource</td>
+            <td class="fieldname">r</td>
+            <td class="fieldname">[0,n]</td>
+            <td class="fieldname"><a target="_blank" href="ILCD_Common_DataTypes.html#GlobalReferenceType">GlobalReferenceType</a></td>
+            <td class="fieldname">"Source data set(s)" of data sources concerning the characterisation model (guidelines, supporting documentation etc)</td>
+            <td class="fieldname">3-17-78-217</td>
+         </tr>
+         <tr>
+            <td class="fieldname" style="padding-left: 30px;">Included LCIA characterisation methods</td>
+            <td class="fieldname" style="padding-left: 30px;">referenceToIncludedMethods</td>
+            <td class="fieldname">r</td>
+            <td class="fieldname">[0,n]</td>
+            <td class="fieldname"><a target="_blank" href="ILCD_Common_DataTypes.html#GlobalReferenceType">GlobalReferenceType</a></td>
+            <td class="fieldname">"LCIA method data set(s)" of LCIA characterisation methods included in this data set or used to derive this LCIA methodology</td>
+            <td class="fieldname">3-17-78-218</td>
+         </tr>
+         <tr>
+            <td class="fieldname" style="padding-left: 30px;">Considered environmental or other mechanisms along the impact chain</td>
+            <td class="fieldname" style="padding-left: 30px;">consideredMechanisms</td>
+            <td class="fieldname">r</td>
+            <td class="fieldname">[0,1]</td>
+            <td class="fieldname"><a target="_blank" href="ILCD_Common_DataTypes.html#STMultiLang">STMultiLang</a></td>
+            <td class="fieldname">Description of the environmental or other mechanisms included in the explicitly considered part of the impact chain. Can relate
+               to (ilustrative): For
+               emissions e.g.: transport, conversion / degradation, exposure, effect(s), damage(s) on humans and the natural environment.
+               For material and energy resources: scarcity
+               or other impact concept. For land use: soil, area, biocoenosis related meachanisms, effect(s), damage(s).
+            </td>
+            <td class="fieldname">3-17-78-219</td>
+         </tr>
+         <tr>
+            <td class="fieldname" style="padding-left: 30px;">LCIA method(ology) flowchart</td>
+            <td class="fieldname" style="padding-left: 30px;">referenceToMethodologyFlowChart</td>
+            <td class="fieldname">r</td>
+            <td class="fieldname">[0,n]</td>
+            <td class="fieldname"><a target="_blank" href="ILCD_Common_DataTypes.html#GlobalReferenceType">GlobalReferenceType</a></td>
+            <td class="fieldname">"Source data set(s)" of flowchart(s) and/or pictures depicting the LCIA method(ology).</td>
+            <td class="fieldname">3-17-78-220</td>
+         </tr>
+         <tr>
+            <td class="fieldname" style="padding-left: 30px;">Other content</td>
+            <td class="fieldname" style="padding-left: 30px;">other</td>
+            <td class="fieldname">o</td>
+            <td class="fieldname">[0,1]</td>
+            <td class="fieldname"></td>
+            <td class="fieldname">May contain arbitrary content.</td>
+            <td class="fieldname">0</td>
+         </tr>
+         <tr>
+            <td class="fieldname" style="padding-left: 20px;">Other content</td>
+            <td class="fieldname" style="padding-left: 20px;">other</td>
+            <td class="fieldname">o</td>
+            <td class="fieldname">[0,1]</td>
+            <td class="fieldname"></td>
+            <td class="fieldname">May contain arbitrary content.</td>
+            <td class="fieldname">0</td>
+         </tr>
+         <tr>
+            <td class="section" style="padding-left: 10px;font-style: italic;">Modelling and validation</td>
+            <td class="section" style="padding-left: 10px;font-style: italic;">modellingAndValidation</td>
+            <td class="section">m</td>
+            <td class="section">[1,1]</td>
+            <td class="section"></td>
+            <td class="section">Covers the five sub-sections 1) LCIA method, normalisation, weighting 2) Data sources 3) Completeness, 4) Validation, and
+               5) Compliance
+               declarations.
+            </td>
+            <td class="section">3-19</td>
+         </tr>
+         <tr>
+            <td class="fieldname" style="padding-left: 20px;">Use advice for data set</td>
+            <td class="fieldname" style="padding-left: 20px;">useAdviceForDataSet</td>
+            <td class="fieldname">r</td>
+            <td class="fieldname">[0,1]</td>
+            <td class="fieldname"><a target="_blank" href="ILCD_Common_DataTypes.html#STMultiLang">STMultiLang</a></td>
+            <td class="fieldname">Methodological advice for the use and application of this data set, such as limits in applicability or representativeness
+               as well as recommendations to
+               use it together with others from the same LCIA methodology to ensure consistency.
+            </td>
+            <td class="fieldname">3-19-84-221</td>
+         </tr>
+         <tr>
+            <td class="subsection" style="padding-left: 20px;font-style: italic;">LCIA method, normalisation, weighting</td>
+            <td class="subsection" style="padding-left: 20px;font-style: italic;">LCIAMethodNormalisationAndWeighting</td>
+            <td class="subsection">r</td>
+            <td class="subsection">[0,1]</td>
+            <td class="subsection"></td>
+            <td class="subsection">LCIA methodological modelling aspects</td>
+            <td class="subsection">3-19-83</td>
+         </tr>
+         <tr>
+            <td class="fieldname" style="padding-left: 30px;">Type of data set</td>
+            <td class="fieldname" style="padding-left: 30px;">typeOfDataSet</td>
+            <td class="fieldname">r</td>
+            <td class="fieldname">[0,1]</td>
+            <td class="fieldname"><a target="_blank" href="ILCD_Common_EnumerationValues.html#TypeOfLCIAMethodValues">TypeOfLCIAMethodValues</a><br><span class="data_enum"><a class="info" href="javascript:void(0);">Inventory indicator<span>Method for an inventory indicator, i.e. without impact assessment method.</span></a></span><br><span class="data_enum"><a class="info" href="javascript:void(0);">Mid-point indicator<span>Method for a mid-point indicator at a point of the impact chain between the inventory and the damage.</span></a></span><br><span class="data_enum"><a class="info" href="javascript:void(0);">Damage indicator<span>Method for a damage indicator, representing the damage to a part of a Area of Protection or by specific mechanisms, only.</span></a></span><br><span class="data_enum"><a class="info" href="javascript:void(0);">Area of Protection damage indicator<span>Method for a damage indicator, representing the damage to one complete Area of Protection.</span></a></span><br><span class="data_enum"><a class="info" href="javascript:void(0);">Combined single-point indicator<span>Method for a damage indicator, representing the damage to one complete Area of Protection.</span></a></span><br><span class="data_enum"><a class="info" href="javascript:void(0);">LCIA methodology documentation<span>Dataset that refers to actual LCIA method datasets, providing common metainformation.</span></a></span><br></td>
+            <td class="fieldname">Type of data set regarding the extent of the impact chain that is covered.</td>
+            <td class="fieldname">3-19-83-10</td>
+         </tr>
+         <tr>
+            <td class="fieldname" style="padding-left: 30px;">LCIA method principle(s)</td>
+            <td class="fieldname" style="padding-left: 30px;">LCIAMethodPrinciple</td>
+            <td class="fieldname">r</td>
+            <td class="fieldname">[0,n]</td>
+            <td class="fieldname"><a target="_blank" href="ILCD_Common_EnumerationValues.html#LCIAMethodPrincipleValues">LCIAMethodPrincipleValues</a><br><span class="data_enum"><a class="info" href="javascript:void(0);">Distance-to-target<span></span></a></span><br><span class="data_enum"><a class="info" href="javascript:void(0);">Critical surface-time<span></span></a></span><br><span class="data_enum"><a class="info" href="javascript:void(0);">Effective volumes<span></span></a></span><br><span class="data_enum"><a class="info" href="javascript:void(0);">AoP-Damage model<span></span></a></span><br><span class="data_enum"><a class="info" href="javascript:void(0);">Carrying capacity<span></span></a></span><br><span class="data_enum"><a class="info" href="javascript:void(0);">Resource dissipation<span></span></a></span><br><span class="data_enum"><a class="info" href="javascript:void(0);">other<span></span></a></span><br></td>
+            <td class="fieldname">LCIA method principle(s) followed to derive the impact factors.</td>
+            <td class="fieldname">3-19-83-11</td>
+         </tr>
+         <tr>
+            <td class="fieldname" style="padding-left: 30px;">Deviation from LCIA method principle(s)</td>
+            <td class="fieldname" style="padding-left: 30px;">deviationsFromLCIAMethodPrinciple</td>
+            <td class="fieldname">r</td>
+            <td class="fieldname">[0,1]</td>
+            <td class="fieldname"><a target="_blank" href="ILCD_Common_DataTypes.html#FTMultiLang">FTMultiLang</a></td>
+            <td class="fieldname">Short description of possible data set specific deviations from "LCIA method principle(s)". Refers especially to explanations
+               on the combination of LCIA
+               methods with different principles in a single LCIA methodology.
+            </td>
+            <td class="fieldname">3-19-83-12</td>
+         </tr>
+         <tr>
+            <td class="fieldname" style="padding-left: 30px;">Normalisation included?</td>
+            <td class="fieldname" style="padding-left: 30px;">normalisation</td>
+            <td class="fieldname">r</td>
+            <td class="fieldname">[0,1]</td>
+            <td class="fieldname"><a target="_blank" href="ILCD_Common_DataTypes.html#boolean">boolean</a></td>
+            <td class="fieldname">Indication whether or not a normalisation step was included in the resulting impact factors. </td>
+            <td class="fieldname">3-19-83-13</td>
+         </tr>
+         <tr>
+            <td class="fieldname" style="padding-left: 30px;">Usable Normalisation data set(s), if not yet included</td>
+            <td class="fieldname" style="padding-left: 30px;">referenceToUsableNormalisationDataSets</td>
+            <td class="fieldname">r</td>
+            <td class="fieldname">[0,n]</td>
+            <td class="fieldname"><a target="_blank" href="ILCD_Common_DataTypes.html#GlobalReferenceType">GlobalReferenceType</a></td>
+            <td class="fieldname">"Normalisation data sets" that can be used together with the impact factors of this data set.</td>
+            <td class="fieldname">3-19-83-14</td>
+         </tr>
+         <tr>
+            <td class="fieldname" style="padding-left: 30px;">Description of the included normalisation</td>
+            <td class="fieldname" style="padding-left: 30px;">normalisationDescription</td>
+            <td class="fieldname">r</td>
+            <td class="fieldname">[0,1]</td>
+            <td class="fieldname"><a target="_blank" href="ILCD_Common_DataTypes.html#STMultiLang">STMultiLang</a></td>
+            <td class="fieldname">Short description of the included normalisation, if any.</td>
+            <td class="fieldname">3-19-83-15</td>
+         </tr>
+         <tr>
+            <td class="fieldname" style="padding-left: 30px;">"Normalisation data set(s)" that was/were used to calculate the normalised impact factors of this data set, if any.</td>
+            <td class="fieldname" style="padding-left: 30px;">referenceToIncludedNormalisationDataSets</td>
+            <td class="fieldname">r</td>
+            <td class="fieldname">[0,n]</td>
+            <td class="fieldname"><a target="_blank" href="ILCD_Common_DataTypes.html#GlobalReferenceType">GlobalReferenceType</a></td>
+            <td class="fieldname">"Normalisation data set(s)" that was/were used to calculate the normalised impact factors of this data set, if any.</td>
+            <td class="fieldname">3-19-83-16</td>
+         </tr>
+         <tr>
+            <td class="fieldname" style="padding-left: 30px;">Weighting included?</td>
+            <td class="fieldname" style="padding-left: 30px;">weighting</td>
+            <td class="fieldname">r</td>
+            <td class="fieldname">[0,1]</td>
+            <td class="fieldname"><a target="_blank" href="ILCD_Common_DataTypes.html#boolean">boolean</a></td>
+            <td class="fieldname">Indication whether or not a weighting-step was included in the resulting impact factors.</td>
+            <td class="fieldname">3-19-83-17</td>
+         </tr>
+         <tr>
+            <td class="fieldname" style="padding-left: 30px;">Usable Weighting data set(s), if not yet included</td>
+            <td class="fieldname" style="padding-left: 30px;">referenceToUsableWeightingDataSets</td>
+            <td class="fieldname">r</td>
+            <td class="fieldname">[0,n]</td>
+            <td class="fieldname"><a target="_blank" href="ILCD_Common_DataTypes.html#GlobalReferenceType">GlobalReferenceType</a></td>
+            <td class="fieldname">"Weighting data set(s)", that can be used together with the impact factors of this data set.</td>
+            <td class="fieldname">3-19-83-18</td>
+         </tr>
+         <tr>
+            <td class="fieldname" style="padding-left: 30px;">Description of the included weighting</td>
+            <td class="fieldname" style="padding-left: 30px;">weightingDescription</td>
+            <td class="fieldname">r</td>
+            <td class="fieldname">[0,1]</td>
+            <td class="fieldname"><a target="_blank" href="ILCD_Common_DataTypes.html#STMultiLang">STMultiLang</a></td>
+            <td class="fieldname">Short description of the included weighting, if any.</td>
+            <td class="fieldname">3-19-83-19</td>
+         </tr>
+         <tr>
+            <td class="fieldname" style="padding-left: 30px;">Included Weighting data set</td>
+            <td class="fieldname" style="padding-left: 30px;">referenceToIncludedWeightingDataSets</td>
+            <td class="fieldname">r</td>
+            <td class="fieldname">[0,n]</td>
+            <td class="fieldname"><a target="_blank" href="ILCD_Common_DataTypes.html#GlobalReferenceType">GlobalReferenceType</a></td>
+            <td class="fieldname">"Weighting data set" that was used to calculate the weighted impact factors of this data set, if any.</td>
+            <td class="fieldname">3-19-83-20</td>
+         </tr>
+         <tr>
+            <td class="subsection" style="padding-left: 20px;font-style: italic;">Data sources</td>
+            <td class="subsection" style="padding-left: 20px;font-style: italic;">dataSources</td>
+            <td class="subsection">o</td>
+            <td class="subsection">[0,1]</td>
+            <td class="subsection"></td>
+            <td class="subsection">Data sources used for the model and the underlying substance and other data.</td>
+            <td class="subsection">3-19-84</td>
+         </tr>
+         <tr>
+            <td class="fieldname" style="padding-left: 30px;">Data sources</td>
+            <td class="fieldname" style="padding-left: 30px;">referenceToDataSource</td>
+            <td class="fieldname">r</td>
+            <td class="fieldname">[0,n]</td>
+            <td class="fieldname"><a target="_blank" href="ILCD_Common_DataTypes.html#GlobalReferenceType">GlobalReferenceType</a></td>
+            <td class="fieldname">"Source data set(s)" of the data source(s) used for the data set e.g. paper, questionnaire, monography etc. The main data
+               sources e.g. for underlying
+               substance properties are named, too.
+            </td>
+            <td class="fieldname">3-19-84-219</td>
+         </tr>
+         <tr>
+            <td class="fieldname" style="padding-left: 30px;">Other content</td>
+            <td class="fieldname" style="padding-left: 30px;">other</td>
+            <td class="fieldname">o</td>
+            <td class="fieldname">[0,1]</td>
+            <td class="fieldname"></td>
+            <td class="fieldname">May contain arbitrary content.</td>
+            <td class="fieldname">0</td>
+         </tr>
+         <tr>
+            <td class="subsection" style="padding-left: 20px;font-style: italic;">Completeness</td>
+            <td class="subsection" style="padding-left: 20px;font-style: italic;">completeness</td>
+            <td class="subsection">r</td>
+            <td class="subsection">[0,1]</td>
+            <td class="subsection"></td>
+            <td class="subsection"></td>
+            <td class="subsection">3-19-85</td>
+         </tr>
+         <tr>
+            <td class="fieldname" style="padding-left: 30px;">Completeness of impact coverage</td>
+            <td class="fieldname" style="padding-left: 30px;">completenessImpactCoverage</td>
+            <td class="fieldname">r</td>
+            <td class="fieldname">[0,1]</td>
+            <td class="fieldname"><a target="_blank" href="ILCD_Common_DataTypes.html#Perc">Perc</a></td>
+            <td class="fieldname">Estimate of the completeness of coverage of impact(s), as identified in the fields "Impact category/ies" or - only for LCIA
+               methodologies with Damage
+               indicator or Combined single-point indicators - "Area(s) of Protection". Expressed by the quantitative extent of coverage
+               of the scientifically recognized, impact. Note
+               that this information is typically highly uncertain.
+            </td>
+            <td class="fieldname">3-19-85-10</td>
+         </tr>
+         <tr>
+            <td class="fieldname" style="padding-left: 30px;">Number of basic inventory items covered</td>
+            <td class="fieldname" style="padding-left: 30px;">inventoryItems</td>
+            <td class="fieldname">r</td>
+            <td class="fieldname">[0,1]</td>
+            <td class="fieldname"><a target="_blank" href="ILCD_Common_DataTypes.html#Int6">Int6</a></td>
+            <td class="fieldname">Number of chemical substances/substance groups, chemical elements, or types covered, without considering variants by environmental
+               emission or source
+               compartment, geographical location, time, or other.
+            </td>
+            <td class="fieldname">3-19-85-11</td>
+         </tr>
+         <tr>
+            <td class="subsection" style="padding-left: 20px;font-style: italic;">Validation</td>
+            <td class="subsection" style="padding-left: 20px;font-style: italic;">validation</td>
+            <td class="subsection">o</td>
+            <td class="subsection">[0,1]</td>
+            <td class="subsection"></td>
+            <td class="subsection">Review information on LCIA method.</td>
+            <td class="subsection">3-19-88</td>
+         </tr>
+         <tr>
+            <td class="fieldname" style="padding-left: 30px;font-style: italic;">Type of review</td>
+            <td class="fieldname" style="padding-left: 30px;font-style: italic;">review</td>
+            <td class="fieldname">m</td>
+            <td class="fieldname">[1,n]</td>
+            <td class="fieldname"></td>
+            <td class="fieldname">Type of review that has been performed regarding independency and type of review process.</td>
+            <td class="fieldname">3-19-88-1</td>
+         </tr>
+         <tr>
+            <td class="fieldname" style="padding-left: 40px;"></td>
+            <td class="fieldname" style="padding-left: 40px;">@type</td>
+            <td class="fieldname">m</td>
+            <td class="fieldname"></td>
+            <td class="fieldname"><a target="_blank" href="ILCD_Common_EnumerationValues.html#TypeOfReviewValues">TypeOfReviewValues</a><br><span class="data_enum"><a class="info" href="javascript:void(0);">Dependent internal review<span>Reviewer(s)/verifier(s) have been involved in collecting, modelling, or entering the data set information or inventory, have
+                        commissioned or
+                        financed the work, or represent the process or product system (or quantiatitively relevant parts of it).</span></a></span><br><span class="data_enum"><a class="info" href="javascript:void(0);">Independent internal review<span>Reviewer(s)/verifier(s) have NOT been involved in collecting, modelling, or entering the data set information or inventory,
+                        have not
+                        commissioned or financed the work, and do not represent the process or product system (or quantiatitively relevant parts of
+                        it). But the reviewer(s)
+                        belong(s) to the organisation(s) or legally linked organisation(s) that have been involved in the above.</span></a></span><br><span class="data_enum"><a class="info" href="javascript:void(0);">Independent external review<span>Reviewer(s)/verifier(s) do not belong to the organisations or legally linked organisations that have been involved in collecting,
+                        modelling,
+                        or entering the data set information or inventory, have not commissioned or financed the work, or represent the process or
+                        product system (or
+                        quantiatitively relevant parts of it).</span></a></span><br><span class="data_enum"><a class="info" href="javascript:void(0);">Accredited third party review<span>Reviewer(s)/verifier(s) do not belong to the organisations or legally linked organisations that have been involved in collecting,
+                        modelling,
+                        or entering the data set information or inventory, have not commissioned or financed the work, or represent the process or
+                        product system (or
+                        quantiatitively relevant parts of it). The reviewer(s)/verifier(s) are accredited by an accreditation body, that is independent
+                        of the
+                        reviewer(s)/verifier(s) and the scheme operator or standardisation party.</span></a></span><br><span class="data_enum"><a class="info" href="javascript:void(0);">Independent review panel<span>Panel of at least three independent internal or external reviewers/verfiers. Chairperson is independent external reviewer/verifier.
+                        Chairperson may invite interested parties affected by the conclusions drawn from the LCA, such as government agencies, non-governmental
+                        groups, competitors
+                        and affected industries. [Notes: "Independent": Reviewer(s)/verifier(s) have NOT been involved in collecting, modelling, or
+                        entering the data set
+                        information or inventory, have not commissioned or financed the work, and do not represent the process or product system (or
+                        quantiatitively relevant parts
+                        of it). "External": Reviewer(s)/verifier(s) do not belong to the organisations or legally linked organisations that have been
+                        involved in collecting,
+                        modelling, or entering the data set information or inventory, have not commissioned or financed the work, or represent the
+                        process or product system (or
+                        quantiatitively relevant parts of it).</span></a></span><br><span class="data_enum"><a class="info" href="javascript:void(0);">Not reviewed<span>The data set was not / not yet reviewed.</span></a></span><br></td>
+            <td class="fieldname"></td>
+            <td class="fieldname"></td>
+         </tr>
+         <tr>
+            <td class="fieldname" style="padding-left: 40px;">Scope of review</td>
+            <td class="fieldname" style="padding-left: 40px;">scope</td>
+            <td class="fieldname">r</td>
+            <td class="fieldname">[0,n]</td>
+            <td class="fieldname"></td>
+            <td class="fieldname">Scope of review regarding which aspects and components of the data set was reviewed or verified. In case of aggregated e.g.
+               LCI results also and on which
+               level of detail (e.g. LCI results only, included unit processes, ...) the review / verification was performed.
+            </td>
+            <td class="fieldname">1-3-20-82</td>
+         </tr>
+         <tr>
+            <td class="fieldname" style="padding-left: 50px;">Scope name</td>
+            <td class="fieldname" style="padding-left: 50px;">@name</td>
+            <td class="fieldname">r</td>
+            <td class="fieldname"></td>
+            <td class="fieldname"><a target="_blank" href="ILCD_Common_EnumerationValues.html#ScopeOfReviewValues">ScopeOfReviewValues</a><br><span class="data_enum"><a class="info" href="javascript:void(0);">Raw data<span>Review/verification is done on basis of the original "raw data", i.e. the data before it was scaled, converted, or treated
+                        in other ways to be used
+                        for modelling of a unit process.</span></a></span><br><span class="data_enum"><a class="info" href="javascript:void(0);">Unit process(es), single operation<span>The review is done on the level of the "Unit operation type unit process(es)" that can not be further subdivided. Covers multi-functional
+                        processes
+                        of unit operation type.</span></a></span><br><span class="data_enum"><a class="info" href="javascript:void(0);">Unit process(es), black box<span>The review is done on the level of process-chain(s) or plant level unit process(es). This covers horizontally averaged unit
+                        processes across
+                        different sites. Covers also those multi-functional unit processes, where the different co-products undergo different processing
+                        steps within the black
+                        box.</span></a></span><br><span class="data_enum"><a class="info" href="javascript:void(0);">LCI results or Partly terminated system<span>The LCI result or Partly terminated system is the level of review/verification.</span></a></span><br><span class="data_enum"><a class="info" href="javascript:void(0);">LCIA results<span>The LCIA results of the LCI result or Partly terminated system data set are reviewed/verified, i.e. on level of Climate Change
+                        potential, Primary
+                        energy consumption, Ecosystem damage etc. [Note: see also definition for entry "LCIA results calculation".]</span></a></span><br><span class="data_enum"><a class="info" href="javascript:void(0);">Documentation<span>Evidence collection by means of documentation (e.g. data set's meta data, background report)</span></a></span><br><span class="data_enum"><a class="info" href="javascript:void(0);">Life cycle inventory methods<span>The application of the LCI method(s) in accordance to the goal and scope have been reviewed. This covers data collection including
+                        dealing with
+                        missing data, data calculation/modelling principles (e.g. consequential or attributional or other/combination), and the application
+                        of the related modelling
+                        approaches such as allocation and system expansion etc. for the process / throughout the product system. </span></a></span><br><span class="data_enum"><a class="info" href="javascript:void(0);">LCIA results calculation<span>The selection and application of the LCIA method(s) that have been used for calculation of the LCIA results have been reviewed.
+                        This especially
+                        refers to a correspondance of the elementary flows in the Inputs and Outputs of the product system with the once referenced
+                        by the applied LCIA method(s)
+                        regarding e.g. correct assignment, coverage/gaps, doublecounting, etc. [Note: See also definition for entry "LCIA results".]</span></a></span><br><span class="data_enum"><a class="info" href="javascript:void(0);">Goal and scope definition<span>Review/verification is done regarding e.g. goal definition, subsequent scope definition and corresponding product system description,
+                        appropriate
+                        identification and definition of function and functional unit, system boundary and cut-off criteria setting, choice of appropriate
+                        LCI modelling principles and
+                        approaches for multi-functional processes.</span></a></span><br></td>
+            <td class="fieldname"></td>
+            <td class="fieldname">1-3-20-82-1</td>
+         </tr>
+         <tr>
+            <td class="fieldname" style="padding-left: 50px;">Method(s) of review</td>
+            <td class="fieldname" style="padding-left: 50px;">method</td>
+            <td class="fieldname">r</td>
+            <td class="fieldname">[0,n]</td>
+            <td class="fieldname"></td>
+            <td class="fieldname">Validation method(s) used in the respective "Scope of review".</td>
+            <td class="fieldname">1-3-20-83</td>
+         </tr>
+         <tr>
+            <td class="fieldname" style="padding-left: 60px;">Method name</td>
+            <td class="fieldname" style="padding-left: 60px;">@name</td>
+            <td class="fieldname">r</td>
+            <td class="fieldname"></td>
+            <td class="fieldname"><a target="_blank" href="ILCD_Common_EnumerationValues.html#MethodOfReviewValues">MethodOfReviewValues</a><br><span class="data_enum"><a class="info" href="javascript:void(0);">Validation of data sources<span>Analysis of all data sources declared, checking their context-specific correct use as well as their relevance and quality.</span></a></span><br><span class="data_enum"><a class="info" href="javascript:void(0);">Sample tests on calculations<span>Values in the inventory are re-calculated from the raw data, or other calculations are validated exemplarily, e.g. scaling,
+                        averaging, summing up,
+                        stochiometric calculations, formulas in the mathematical models, etc.</span></a></span><br><span class="data_enum"><a class="info" href="javascript:void(0);">Energy balance<span>The energy balance (e.g. gross or net calorific value or exergy) of the Inputs and Outputs is validated. [Note: For processes
+                        that have undergone
+                        allocation or consequential modeling the value of this review method is limited.]</span></a></span><br><span class="data_enum"><a class="info" href="javascript:void(0);">Element balance<span>The balance of the relevant chemical elements of the Inputs and Outputs is calculated and validated. The validated elements
+                        should be named in the
+                        review comments. [Note: For processes that have undergone allocation or consequential modeling the value of this review method
+                        is limited.]</span></a></span><br><span class="data_enum"><a class="info" href="javascript:void(0);">Cross-check with other source<span>Comparison with other, independent data and/or information sources (can be both database and literature).</span></a></span><br><span class="data_enum"><a class="info" href="javascript:void(0);">Cross-check with other data set<span>Comparison with similar process or product system from the same or from other sources (can be both database and literature).</span></a></span><br><span class="data_enum"><a class="info" href="javascript:void(0);">Expert judgement<span>Analysis by means of expert opinions. The expert(s) have methodological and detailed technical expertise on the item to be
+                        verified and the process
+                        or product system in question.</span></a></span><br><span class="data_enum"><a class="info" href="javascript:void(0);">Mass balance<span>The mass balance of the Inputs and Outputs is validated. [Note: For processes that have undergone allocation or consequential
+                        modeling the value of
+                        this review method is limited.]</span></a></span><br><span class="data_enum"><a class="info" href="javascript:void(0);">Compliance with legal limits<span>Regulated Inputs and Outputs e.g. emission data are validated for compliance with legal limits, typically after relating and
+                        scaling the data to
+                        the regulated processes/sites etc.</span></a></span><br><span class="data_enum"><a class="info" href="javascript:void(0);">Compliance with ISO 14040 to 14044<span>Methodological compliance with ISO 14040 to 14044 was checked by an LCA expert.</span></a></span><br><span class="data_enum"><a class="info" href="javascript:void(0);">Documentation<span>Evidence collection by means of documentation (e.g. data set's meta data, background report)</span></a></span><br><span class="data_enum"><a class="info" href="javascript:void(0);">Evidence collection by means of plant visits and/or interviews<span>Interviews and/or plant visits are performed to validate data and other informtion, tyically in case of inconsistencies, uncertainties,
+                        or doubts.
+                        People interviewed have detailed technical expertise on the analysed process(es).</span></a></span><br></td>
+            <td class="fieldname">Method name</td>
+            <td class="fieldname">1-3-20-83-1</td>
+         </tr>
+         <tr>
+            <td class="fieldname" style="padding-left: 40px;">Review details</td>
+            <td class="fieldname" style="padding-left: 40px;">reviewDetails</td>
+            <td class="fieldname">r</td>
+            <td class="fieldname">[0,1]</td>
+            <td class="fieldname"><a target="_blank" href="ILCD_Common_DataTypes.html#FTMultiLang">FTMultiLang</a></td>
+            <td class="fieldname">Summary of the review. All the following items should be explicitly addressed: completeness and appropriateness of the model,
+               geographical and temporal
+               coverage and differentiation, correctness and precision of substance data or other underlying data; appropriateness and coherence
+               of application of normalisation and/or
+               weighting schemes, if included; correctness, appropriateness, comprehensibility, and completeness of the data set documentation;
+               stakeholder aceptance of LCIA method.
+               Optional: Comment of the reviewer on characterisation factors for single elementary flows or groups of elementary flows. Relevant
+               restrictions to the review due to lack
+               of transparency or documentation should be named. An overall quality statement may be included here.
+            </td>
+            <td class="fieldname">3-19-88-10</td>
+         </tr>
+         <tr>
+            <td class="fieldname" style="padding-left: 40px;">Reviewer name and institution</td>
+            <td class="fieldname" style="padding-left: 40px;">referenceToNameOfReviewerAndInstitution</td>
+            <td class="fieldname">r</td>
+            <td class="fieldname">[0,n]</td>
+            <td class="fieldname"><a target="_blank" href="ILCD_Common_DataTypes.html#GlobalReferenceType">GlobalReferenceType</a></td>
+            <td class="fieldname">"Contact data set" of reviewer. The full name of reviewer(s) and institution(s) as well as a contact address and/or email
+               should be provided in that
+               contact data set.
+            </td>
+            <td class="fieldname">1-3-20-87</td>
+         </tr>
+         <tr>
+            <td class="fieldname" style="padding-left: 40px;">Subsequent review comments</td>
+            <td class="fieldname" style="padding-left: 40px;">otherReviewDetails</td>
+            <td class="fieldname">o</td>
+            <td class="fieldname">[0,1]</td>
+            <td class="fieldname"><a target="_blank" href="ILCD_Common_DataTypes.html#FTMultiLang">FTMultiLang</a></td>
+            <td class="fieldname">Further information from the review process, especially comments received from third parties once the data set has been published
+               or additional reviewer
+               comments from an additional external review.
+            </td>
+            <td class="fieldname">1-3-20-88</td>
+         </tr>
+         <tr>
+            <td class="fieldname" style="padding-left: 40px;">Complete review report</td>
+            <td class="fieldname" style="padding-left: 40px;">referenceToCompleteReviewReport</td>
+            <td class="fieldname">r</td>
+            <td class="fieldname">[0,1]</td>
+            <td class="fieldname"><a target="_blank" href="ILCD_Common_DataTypes.html#GlobalReferenceType">GlobalReferenceType</a></td>
+            <td class="fieldname">"Source data set" of the complete review report.</td>
+            <td class="fieldname">1-3-20-89</td>
+         </tr>
+         <tr>
+            <td class="fieldname" style="padding-left: 40px;">Other content</td>
+            <td class="fieldname" style="padding-left: 40px;">other</td>
+            <td class="fieldname">o</td>
+            <td class="fieldname">[0,1]</td>
+            <td class="fieldname"></td>
+            <td class="fieldname">May contain arbitrary content.</td>
+            <td class="fieldname">0</td>
+         </tr>
+         <tr>
+            <td class="fieldname" style="padding-left: 30px;">Other content</td>
+            <td class="fieldname" style="padding-left: 30px;">other</td>
+            <td class="fieldname">o</td>
+            <td class="fieldname">[0,1]</td>
+            <td class="fieldname"></td>
+            <td class="fieldname">May contain arbitrary content.</td>
+            <td class="fieldname">0</td>
+         </tr>
+         <tr>
+            <td class="subsection" style="padding-left: 20px;font-style: italic;">Compliance</td>
+            <td class="subsection" style="padding-left: 20px;font-style: italic;">complianceDeclarations</td>
+            <td class="subsection">o</td>
+            <td class="subsection">[0,1]</td>
+            <td class="subsection"></td>
+            <td class="subsection">Statements on compliance of several data set aspects with compliance requirements as defined by the referenced compliance
+               system (e.g. an EPD scheme, handbook of a national or international data network such as the ILCD, etc.).
+            </td>
+            <td class="subsection">3-19-90</td>
+         </tr>
+         <tr>
+            <td class="fieldname" style="padding-left: 30px;font-style: italic;"></td>
+            <td class="fieldname" style="padding-left: 30px;font-style: italic;">compliance</td>
+            <td class="fieldname">o</td>
+            <td class="fieldname">[1,n]</td>
+            <td class="fieldname"></td>
+            <td class="fieldname"></td>
+            <td class="fieldname"></td>
+         </tr>
+         <tr>
+            <td class="fieldname" style="padding-left: 40px;">Compliance system name</td>
+            <td class="fieldname" style="padding-left: 40px;">referenceToComplianceSystem</td>
+            <td class="fieldname">r</td>
+            <td class="fieldname">[1,1]</td>
+            <td class="fieldname"><a target="_blank" href="ILCD_Common_DataTypes.html#GlobalReferenceType">GlobalReferenceType</a></td>
+            <td class="fieldname">"Source data set" of the "Compliance system" that is declared to be met by the data set.</td>
+            <td class="fieldname">1-3-22-90</td>
+         </tr>
+         <tr>
+            <td class="fieldname" style="padding-left: 40px;">Approval of overall compliance</td>
+            <td class="fieldname" style="padding-left: 40px;">approvalOfOverallCompliance</td>
+            <td class="fieldname">o</td>
+            <td class="fieldname">[0,1]</td>
+            <td class="fieldname"><a target="_blank" href="ILCD_Common_EnumerationValues.html#ComplianceValues">ComplianceValues</a><br><span class="data_enum"><a class="info" href="javascript:void(0);">Fully compliant<span>Meets all requirements of this compliance aspect as defined in the respective "Compliance system".</span></a></span><br><span class="data_enum"><a class="info" href="javascript:void(0);">Not compliant<span>Does not meet all requirements of this compliance aspect, as defined for the respective "Compliance system".</span></a></span><br><span class="data_enum"><a class="info" href="javascript:void(0);">Not defined<span>For this compliance aspect the named "Compliance system" has not defined compliance requirements.</span></a></span><br></td>
+            <td class="fieldname">Official approval whether or not and in how far the data set meets all the requirements of the "Compliance system" refered
+               to. This approval should be
+               issued/confirmed by the owner of that compliance system, who is identified via the respective "Contact data set".
+            </td>
+            <td class="fieldname">1-3-22-95</td>
+         </tr>
+         <tr>
+            <td class="fieldname" style="padding-left: 40px;">Nomenclature compliance</td>
+            <td class="fieldname" style="padding-left: 40px;">nomenclatureCompliance</td>
+            <td class="fieldname">r</td>
+            <td class="fieldname">[0,1]</td>
+            <td class="fieldname"><a target="_blank" href="ILCD_Common_EnumerationValues.html#ComplianceValues">ComplianceValues</a><br><span class="data_enum"><a class="info" href="javascript:void(0);">Fully compliant<span>Meets all requirements of this compliance aspect as defined in the respective "Compliance system".</span></a></span><br><span class="data_enum"><a class="info" href="javascript:void(0);">Not compliant<span>Does not meet all requirements of this compliance aspect, as defined for the respective "Compliance system".</span></a></span><br><span class="data_enum"><a class="info" href="javascript:void(0);">Not defined<span>For this compliance aspect the named "Compliance system" has not defined compliance requirements.</span></a></span><br></td>
+            <td class="fieldname">Nomenclature compliance of this data set with the respective requirements set by the "compliance system" refered to.</td>
+            <td class="fieldname">1-3-22-92</td>
+         </tr>
+         <tr>
+            <td class="fieldname" style="padding-left: 40px;">Methodological compliance</td>
+            <td class="fieldname" style="padding-left: 40px;">methodologicalCompliance</td>
+            <td class="fieldname">r</td>
+            <td class="fieldname">[0,1]</td>
+            <td class="fieldname"><a target="_blank" href="ILCD_Common_EnumerationValues.html#ComplianceValues">ComplianceValues</a><br><span class="data_enum"><a class="info" href="javascript:void(0);">Fully compliant<span>Meets all requirements of this compliance aspect as defined in the respective "Compliance system".</span></a></span><br><span class="data_enum"><a class="info" href="javascript:void(0);">Not compliant<span>Does not meet all requirements of this compliance aspect, as defined for the respective "Compliance system".</span></a></span><br><span class="data_enum"><a class="info" href="javascript:void(0);">Not defined<span>For this compliance aspect the named "Compliance system" has not defined compliance requirements.</span></a></span><br></td>
+            <td class="fieldname">Methodological compliance of this data set with the respective requirements set by the "compliance system" refered to.</td>
+            <td class="fieldname">1-3-22-91</td>
+         </tr>
+         <tr>
+            <td class="fieldname" style="padding-left: 40px;">Review compliance</td>
+            <td class="fieldname" style="padding-left: 40px;">reviewCompliance</td>
+            <td class="fieldname">r</td>
+            <td class="fieldname">[0,1]</td>
+            <td class="fieldname"><a target="_blank" href="ILCD_Common_EnumerationValues.html#ComplianceValues">ComplianceValues</a><br><span class="data_enum"><a class="info" href="javascript:void(0);">Fully compliant<span>Meets all requirements of this compliance aspect as defined in the respective "Compliance system".</span></a></span><br><span class="data_enum"><a class="info" href="javascript:void(0);">Not compliant<span>Does not meet all requirements of this compliance aspect, as defined for the respective "Compliance system".</span></a></span><br><span class="data_enum"><a class="info" href="javascript:void(0);">Not defined<span>For this compliance aspect the named "Compliance system" has not defined compliance requirements.</span></a></span><br></td>
+            <td class="fieldname">Review/Verification compliance of this data set with the respective requirements set by the "compliance system" refered to.</td>
+            <td class="fieldname">1-3-22-93</td>
+         </tr>
+         <tr>
+            <td class="fieldname" style="padding-left: 40px;">Documentation compliance</td>
+            <td class="fieldname" style="padding-left: 40px;">documentationCompliance</td>
+            <td class="fieldname">r</td>
+            <td class="fieldname">[0,1]</td>
+            <td class="fieldname"><a target="_blank" href="ILCD_Common_EnumerationValues.html#ComplianceValues">ComplianceValues</a><br><span class="data_enum"><a class="info" href="javascript:void(0);">Fully compliant<span>Meets all requirements of this compliance aspect as defined in the respective "Compliance system".</span></a></span><br><span class="data_enum"><a class="info" href="javascript:void(0);">Not compliant<span>Does not meet all requirements of this compliance aspect, as defined for the respective "Compliance system".</span></a></span><br><span class="data_enum"><a class="info" href="javascript:void(0);">Not defined<span>For this compliance aspect the named "Compliance system" has not defined compliance requirements.</span></a></span><br></td>
+            <td class="fieldname">Documentation/Reporting compliance of this data set with the respective requirements set by the "compliance system" refered
+               to.
+            </td>
+            <td class="fieldname">1-3-22-94</td>
+         </tr>
+         <tr>
+            <td class="fieldname" style="padding-left: 40px;">Quality compliance</td>
+            <td class="fieldname" style="padding-left: 40px;">qualityCompliance</td>
+            <td class="fieldname">r</td>
+            <td class="fieldname">[0,1]</td>
+            <td class="fieldname"><a target="_blank" href="ILCD_Common_EnumerationValues.html#ComplianceValues">ComplianceValues</a><br><span class="data_enum"><a class="info" href="javascript:void(0);">Fully compliant<span>Meets all requirements of this compliance aspect as defined in the respective "Compliance system".</span></a></span><br><span class="data_enum"><a class="info" href="javascript:void(0);">Not compliant<span>Does not meet all requirements of this compliance aspect, as defined for the respective "Compliance system".</span></a></span><br><span class="data_enum"><a class="info" href="javascript:void(0);">Not defined<span>For this compliance aspect the named "Compliance system" has not defined compliance requirements.</span></a></span><br></td>
+            <td class="fieldname">Quality compliance of this data set with the respective requirements set by the "compliance system" refered to.</td>
+            <td class="fieldname">1-3-22-96</td>
+         </tr>
+         <tr>
+            <td class="fieldname" style="padding-left: 40px;">Other content</td>
+            <td class="fieldname" style="padding-left: 40px;">other</td>
+            <td class="fieldname">o</td>
+            <td class="fieldname">[0,1]</td>
+            <td class="fieldname"></td>
+            <td class="fieldname">May contain arbitrary content.</td>
+            <td class="fieldname">0</td>
+         </tr>
+         <tr>
+            <td class="fieldname" style="padding-left: 30px;">Other content</td>
+            <td class="fieldname" style="padding-left: 30px;">other</td>
+            <td class="fieldname">o</td>
+            <td class="fieldname">[0,1]</td>
+            <td class="fieldname"></td>
+            <td class="fieldname">May contain arbitrary content.</td>
+            <td class="fieldname">0</td>
+         </tr>
+         <tr>
+            <td class="fieldname" style="padding-left: 20px;">Other content</td>
+            <td class="fieldname" style="padding-left: 20px;">other</td>
+            <td class="fieldname">o</td>
+            <td class="fieldname">[0,1]</td>
+            <td class="fieldname"></td>
+            <td class="fieldname">May contain arbitrary content.</td>
+            <td class="fieldname">0</td>
+         </tr>
+         <tr>
+            <td class="section" style="padding-left: 10px;font-style: italic;">Administrative information</td>
+            <td class="section" style="padding-left: 10px;font-style: italic;">administrativeInformation</td>
+            <td class="section">r</td>
+            <td class="section">[0,1]</td>
+            <td class="section"></td>
+            <td class="section">Information required for data set management and administration.</td>
+            <td class="section">3-21</td>
+         </tr>
+         <tr>
+            <td class="subsection" style="padding-left: 20px;font-style: italic;">Commissioner and goal</td>
+            <td class="subsection" style="padding-left: 20px;font-style: italic;">commissionerAndGoal</td>
+            <td class="subsection">o</td>
+            <td class="subsection">[0,1]</td>
+            <td class="subsection"></td>
+            <td class="subsection">Extract of the information items linked to goal and scope of LCIA method modeling.</td>
+            <td class="subsection">3-21-92</td>
+         </tr>
+         <tr>
+            <td class="fieldname" style="padding-left: 30px;">Commissioner of data set</td>
+            <td class="fieldname" style="padding-left: 30px;">referenceToCommissioner</td>
+            <td class="fieldname">r</td>
+            <td class="fieldname">[0,n]</td>
+            <td class="fieldname"><a target="_blank" href="ILCD_Common_DataTypes.html#GlobalReferenceType">GlobalReferenceType</a></td>
+            <td class="fieldname">"Contact data set" of the commissioner / financing party of the data collection / compilation and of the data set modelling.
+               For groups of commissioners,
+               each single organisation should be named. For data set updates and for direct use of data from formerly commissioned studies,
+               also the original commissioner should be
+               named.
+            </td>
+            <td class="fieldname">1-5-24-96</td>
+         </tr>
+         <tr>
+            <td class="fieldname" style="padding-left: 30px;">Project</td>
+            <td class="fieldname" style="padding-left: 30px;">project</td>
+            <td class="fieldname">o</td>
+            <td class="fieldname">[0,1]</td>
+            <td class="fieldname"><a target="_blank" href="ILCD_Common_DataTypes.html#StringMultiLang">StringMultiLang</a></td>
+            <td class="fieldname">Project within which the data set was modelled in its present version. [Note: If the project was published e.g. as a report,
+               this can be referenced in the
+               "Publication of data set in:" field in the "Publication and ownership" sub-section.
+            </td>
+            <td class="fieldname">1-5-24-97</td>
+         </tr>
+         <tr>
+            <td class="fieldname" style="padding-left: 30px;">Intended applications</td>
+            <td class="fieldname" style="padding-left: 30px;">intendedApplications</td>
+            <td class="fieldname">r</td>
+            <td class="fieldname">[0,1]</td>
+            <td class="fieldname"><a target="_blank" href="ILCD_Common_DataTypes.html#FTMultiLang">FTMultiLang</a></td>
+            <td class="fieldname">Documentation of the intended application(s) of data collection and data set modelling. This indicates / includes information
+               on the level of detail, the
+               specifidity, and the quality ambition in the effort.
+            </td>
+            <td class="fieldname">1-5-24-98</td>
+         </tr>
+         <tr>
+            <td class="fieldname" style="padding-left: 30px;">Other content</td>
+            <td class="fieldname" style="padding-left: 30px;">other</td>
+            <td class="fieldname">o</td>
+            <td class="fieldname">[0,1]</td>
+            <td class="fieldname"></td>
+            <td class="fieldname">May contain arbitrary content.</td>
+            <td class="fieldname">0</td>
+         </tr>
+         <tr>
+            <td class="subsection" style="padding-left: 20px;font-style: italic;">Data generator</td>
+            <td class="subsection" style="padding-left: 20px;font-style: italic;">dataGenerator</td>
+            <td class="subsection">m</td>
+            <td class="subsection">[1,1]</td>
+            <td class="subsection"></td>
+            <td class="subsection">Expert(s), that compiled and modelled the data set as well as internal administrative information linked to the data generation
+               activity.
+            </td>
+            <td class="subsection">3-21-94</td>
+         </tr>
+         <tr>
+            <td class="fieldname" style="padding-left: 30px;">Data set generator / modeller</td>
+            <td class="fieldname" style="padding-left: 30px;">referenceToPersonOrEntityGeneratingTheDataSet</td>
+            <td class="fieldname">r</td>
+            <td class="fieldname">[1,n]</td>
+            <td class="fieldname"><a target="_blank" href="ILCD_Common_DataTypes.html#GlobalReferenceType">GlobalReferenceType</a></td>
+            <td class="fieldname">"Contact data set" of the person(s), working group(s), organisation(s) or database network, that generated the data set, i.e.
+               being responsible for its
+               correctness regarding methods, inventory, and documentation.
+            </td>
+            <td class="fieldname">3-21-94-15</td>
+         </tr>
+         <tr>
+            <td class="fieldname" style="padding-left: 30px;">Other content</td>
+            <td class="fieldname" style="padding-left: 30px;">other</td>
+            <td class="fieldname">o</td>
+            <td class="fieldname">[0,1]</td>
+            <td class="fieldname"></td>
+            <td class="fieldname">May contain arbitrary content.</td>
+            <td class="fieldname">0</td>
+         </tr>
+         <tr>
+            <td class="subsection" style="padding-left: 20px;font-style: italic;">Data entry by</td>
+            <td class="subsection" style="padding-left: 20px;font-style: italic;">dataEntryBy</td>
+            <td class="subsection">r</td>
+            <td class="subsection">[1,1]</td>
+            <td class="subsection"></td>
+            <td class="subsection">Staff or entity, that documented the generated data set, entering the information into the database; plus administrative information
+               linked to the data entry activity.
+            </td>
+            <td class="subsection">3-21-96</td>
+         </tr>
+         <tr>
+            <td class="fieldname" style="padding-left: 30px;">Time stamp (last saved)</td>
+            <td class="fieldname" style="padding-left: 30px;">timeStamp</td>
+            <td class="fieldname">r</td>
+            <td class="fieldname">[0,1]</td>
+            <td class="fieldname"><a target="_blank" href="ILCD_Common_DataTypes.html#dateTime">dateTime</a></td>
+            <td class="fieldname">Date and time stamp of data set generation, typically an automated entry ("last saved").</td>
+            <td class="fieldname">1-5-28-104</td>
+         </tr>
+         <tr>
+            <td class="fieldname" style="padding-left: 30px;">Data set format(s)</td>
+            <td class="fieldname" style="padding-left: 30px;">referenceToDataSetFormat</td>
+            <td class="fieldname">r</td>
+            <td class="fieldname">[0,n]</td>
+            <td class="fieldname"><a target="_blank" href="ILCD_Common_DataTypes.html#GlobalReferenceType">GlobalReferenceType</a></td>
+            <td class="fieldname">"Source data set" of the used version of the ILCD format. If additional data format fields have been integrated into the data
+               set file, using the
+               "namespace" option, the used format namespace(s) are to be given. This is the case if the data sets carries additional information
+               as specified by other, particular LCA
+               formats, e.g. of other database networks or LCA softwares.
+            </td>
+            <td class="fieldname">1-5-28-105</td>
+         </tr>
+         <tr>
+            <td class="fieldname" style="padding-left: 30px;">Reference to origin of data set</td>
+            <td class="fieldname" style="padding-left: 30px;">referenceToConvertedOriginalDataSetFrom</td>
+            <td class="fieldname">r</td>
+            <td class="fieldname">[0,1]</td>
+            <td class="fieldname"><a target="_blank" href="ILCD_Common_DataTypes.html#GlobalReferenceType">GlobalReferenceType</a></td>
+            <td class="fieldname">"Source data set" of the database or data set publication from which this data set has been obtained by conversion. This can
+               cover e.g. conversion to a
+               different format, applying a different nomenclature, mapping of flow names, conversion of units, etc. This may however not
+               have changed or re-modeled the
+               characterisation factors. This entry is required for converted data sets stemming originally from other LCA databases (e.g.
+               when re-publishing LCIA characterisation
+               factors from the database of the original impact method developer). [Note: Identically re-published data sets are identied
+               in the field "Unchanged re-publication of:"
+               in the section "Publication and Ownership".]
+            </td>
+            <td class="fieldname">3-21-96-249</td>
+         </tr>
+         <tr>
+            <td class="fieldname" style="padding-left: 30px;">Data entry by:</td>
+            <td class="fieldname" style="padding-left: 30px;">referenceToPersonOrEntityEnteringTheData</td>
+            <td class="fieldname">o</td>
+            <td class="fieldname">[0,1]</td>
+            <td class="fieldname"><a target="_blank" href="ILCD_Common_DataTypes.html#GlobalReferenceType">GlobalReferenceType</a></td>
+            <td class="fieldname">"Contact data set" of the responsible person or entity that has documented this data set, i.e. entered the data and the descriptive
+               information.
+            </td>
+            <td class="fieldname">1-5-28-103</td>
+         </tr>
+         <tr>
+            <td class="fieldname" style="padding-left: 30px;font-style: italic;">Official recommendation</td>
+            <td class="fieldname" style="padding-left: 30px;font-style: italic;">recommendationBy</td>
+            <td class="fieldname">r</td>
+            <td class="fieldname">[0,1]</td>
+            <td class="fieldname"></td>
+            <td class="fieldname"></td>
+            <td class="fieldname">3-21-96-250</td>
+         </tr>
+         <tr>
+            <td class="fieldname" style="padding-left: 40px;">Official recommendation of data set by governmental body:</td>
+            <td class="fieldname" style="padding-left: 40px;">referenceToEntity</td>
+            <td class="fieldname">r</td>
+            <td class="fieldname">[0,n]</td>
+            <td class="fieldname"><a target="_blank" href="ILCD_Common_DataTypes.html#GlobalReferenceType">GlobalReferenceType</a></td>
+            <td class="fieldname">"Contact data set(s)" of the governmental body/ies that has/ve officially recommended this LCIA method data set and its impact
+               factors for use within the
+               documented scope. Eventually deviating (downgraded) recommendations for individual exchanges are documented in the "Inputs
+               and Outputs" section of the data
+               set.
+            </td>
+            <td class="fieldname">3-21-96-251</td>
+         </tr>
+         <tr>
+            <td class="fieldname" style="padding-left: 40px;">Recommendation level of LCIA method data set</td>
+            <td class="fieldname" style="padding-left: 40px;">level</td>
+            <td class="fieldname">r</td>
+            <td class="fieldname">[0,1]</td>
+            <td class="fieldname"><a target="_blank" href="ILCD_Common_EnumerationValues.html#RecommendationLevelValues">RecommendationLevelValues</a><br><span class="data_enum"><a class="info" href="javascript:void(0);">Level I<span>Highest recommendation level. See also field "Specific meaning of the recommendation level".</span></a></span><br><span class="data_enum"><a class="info" href="javascript:void(0);">Level II<span>Second highest recommendation level. See also field "Specific meaning of the recommendation level".</span></a></span><br><span class="data_enum"><a class="info" href="javascript:void(0);">Level III<span>Third highest recommendation level. See also field "Specific meaning of the recommendation level".</span></a></span><br><span class="data_enum"><a class="info" href="javascript:void(0);">Interim<span>Level between the third highest recommendation level and "not recommended". See also field "Specific meaning of the recommendation
+                        level".</span></a></span><br><span class="data_enum"><a class="info" href="javascript:void(0);">Not recommended<span>Not recommended for use.</span></a></span><br></td>
+            <td class="fieldname">Level of recommendation given to this data set by the recommending governmental body. Note that the recommendation level of
+               individual elementary flows
+               can be different (lower) from the general level; this is documented as "Deviating recommendation" in the section "Characterisation
+               factors" directly for each affected
+               elementary flow.
+            </td>
+            <td class="fieldname">3-21-96-252</td>
+         </tr>
+         <tr>
+            <td class="fieldname" style="padding-left: 40px;">Specific meaning of the recommendation level</td>
+            <td class="fieldname" style="padding-left: 40px;">meaning</td>
+            <td class="fieldname">r</td>
+            <td class="fieldname">[0,1]</td>
+            <td class="fieldname"><a target="_blank" href="ILCD_Common_DataTypes.html#FTMultiLang">FTMultiLang</a></td>
+            <td class="fieldname">Specific meaning of the declared recommendation level of this LCIA method / methodology and the characterisation factors,
+               as defined in the guidance
+               document referenced in in the field "Compliance system"
+            </td>
+            <td class="fieldname">3-21-96-253</td>
+         </tr>
+         <tr>
+            <td class="fieldname" style="padding-left: 30px;">Other content</td>
+            <td class="fieldname" style="padding-left: 30px;">other</td>
+            <td class="fieldname">o</td>
+            <td class="fieldname">[0,1]</td>
+            <td class="fieldname"></td>
+            <td class="fieldname">May contain arbitrary content.</td>
+            <td class="fieldname">0</td>
+         </tr>
+         <tr>
+            <td class="subsection" style="padding-left: 20px;font-style: italic;">Publication and ownership</td>
+            <td class="subsection" style="padding-left: 20px;font-style: italic;">publicationAndOwnership</td>
+            <td class="subsection">m</td>
+            <td class="subsection">[1,1]</td>
+            <td class="subsection"></td>
+            <td class="subsection">Information related to publication and version management of the data set including copyright and access restrictions.</td>
+            <td class="subsection">3-21-98</td>
+         </tr>
+         <tr>
+            <td class="fieldname" style="padding-left: 30px;">Date of last revision</td>
+            <td class="fieldname" style="padding-left: 30px;">dateOfLastRevision</td>
+            <td class="fieldname">r</td>
+            <td class="fieldname">[0,1]</td>
+            <td class="fieldname"><a target="_blank" href="ILCD_Common_DataTypes.html#dateTime">dateTime</a></td>
+            <td class="fieldname">Date when the data set was revised for the last time, typically manually set.</td>
+            <td class="fieldname">1-5-30-113</td>
+         </tr>
+         <tr>
+            <td class="fieldname" style="padding-left: 30px;">Data set version</td>
+            <td class="fieldname" style="padding-left: 30px;">dataSetVersion</td>
+            <td class="fieldname">m</td>
+            <td class="fieldname">[1,1]</td>
+            <td class="fieldname"><a target="_blank" href="ILCD_Common_DataTypes.html#Version">Version</a></td>
+            <td class="fieldname">Version number of data set. First two digits refer to major updates, the second two digits to minor revisions and error corrections
+               etc. The third three
+               digits are intended for automatic and internal counting of versions during data set development. Together with the data set's
+               UUID, the "Data set version" uniquely
+               identifies each data set.
+            </td>
+            <td class="fieldname">1-5-30-111</td>
+         </tr>
+         <tr>
+            <td class="fieldname" style="padding-left: 30px;">Preceding data set version</td>
+            <td class="fieldname" style="padding-left: 30px;">referenceToPrecedingDataSetVersion</td>
+            <td class="fieldname">o</td>
+            <td class="fieldname">[0,n]</td>
+            <td class="fieldname"><a target="_blank" href="ILCD_Common_DataTypes.html#GlobalReferenceType">GlobalReferenceType</a></td>
+            <td class="fieldname">Last preceding data set, which was replaced by this version. Either a URI of that data set (i.e. an internet address) or its
+               UUID plus version number is
+               given (or both).
+            </td>
+            <td class="fieldname">1-5-30-112</td>
+         </tr>
+         <tr>
+            <td class="fieldname" style="padding-left: 30px;">Permanent data set URI</td>
+            <td class="fieldname" style="padding-left: 30px;">permanentDataSetURI</td>
+            <td class="fieldname">r</td>
+            <td class="fieldname">[0,1]</td>
+            <td class="fieldname"><a target="_blank" href="ILCD_Common_DataTypes.html#anyURI">anyURI</a></td>
+            <td class="fieldname">URI (i.e. an internet address) of the original of this data set. [Note: This equally globally unique identifier supports users
+               and software tools to
+               identify and retrieve the original version of a data set via the internet or to check for available updates. The URI must
+               not represent an existing WWW address, but it
+               should be unique and point to the data access point, e.g. by combining the data owner's www path with the data set's UUID,
+               e.g.
+               http://www.mycompany.com/lca/processes/50f12420-8855-12db-b606-0900210c9a66.]
+            </td>
+            <td class="fieldname">1-5-30-300</td>
+         </tr>
+         <tr>
+            <td class="fieldname" style="padding-left: 30px;">Workflow and publication status</td>
+            <td class="fieldname" style="padding-left: 30px;">workflowAndPublicationStatus</td>
+            <td class="fieldname">o</td>
+            <td class="fieldname">[0,1]</td>
+            <td class="fieldname"><a target="_blank" href="ILCD_Common_EnumerationValues.html#WorkflowAndPublicationStatusValues">WorkflowAndPublicationStatusValues</a><br><span class="data_enum"><a class="info" href="javascript:void(0);">Working draft<span>Data set is in preliminary status of on-going development.</span></a></span><br><span class="data_enum"><a class="info" href="javascript:void(0);">Final draft for internal review<span>Data set is finished and ready for internal review.</span></a></span><br><span class="data_enum"><a class="info" href="javascript:void(0);">Final draft for external review<span>Data set is ready for an external review (after a potential internal review and correction if required).</span></a></span><br><span class="data_enum"><a class="info" href="javascript:void(0);">Data set finalised; unpublished<span>Data set is finalised (with or without an internal and/or external review and correction if required), but it is not or not
+                        yet
+                        published.</span></a></span><br><span class="data_enum"><a class="info" href="javascript:void(0);">Under revision<span>Data set is under revision and the publication of the revised data set is foreseen.</span></a></span><br><span class="data_enum"><a class="info" href="javascript:void(0);">Withdrawn<span>Data set has been withdrawn and must not be used anymore. For details contact the "Data set owner".</span></a></span><br><span class="data_enum"><a class="info" href="javascript:void(0);">Data set finalised; subsystems published<span>Data set is finalised (with or without an internal and/or external review and correction if required), and sub-system(s) /
+                        included processes
+                        have been published.</span></a></span><br><span class="data_enum"><a class="info" href="javascript:void(0);">Data set finalised; entirely published<span>Data set is finalised (with or without an internal and/or external review and correction if required), and was entirely
+                        published.</span></a></span><br></td>
+            <td class="fieldname">Workflow or publication status of data set. Details e.g. of foreseen publication dates should be provided on request by the
+               "Data set
+               owner".
+            </td>
+            <td class="fieldname">1-5-30-110</td>
+         </tr>
+         <tr>
+            <td class="fieldname" style="padding-left: 30px;">Unchanged re-publication of:</td>
+            <td class="fieldname" style="padding-left: 30px;">referenceToUnchangedRepublication</td>
+            <td class="fieldname">o</td>
+            <td class="fieldname">[0,1]</td>
+            <td class="fieldname"><a target="_blank" href="ILCD_Common_DataTypes.html#GlobalReferenceType">GlobalReferenceType</a></td>
+            <td class="fieldname">"Source data set" of the publication, in which this data set was published for the first time. [Note: This refers to exactly
+               this data set as it is,
+               without any format conversion, adjustments, flow name mapping, etc. In case this data set was modified/converted, the original
+               source is documented in "Converted
+               original data set from:" in section "Data entry by".]
+            </td>
+            <td class="fieldname">1-5-30-114</td>
+         </tr>
+         <tr>
+            <td class="fieldname" style="padding-left: 30px;">Owner of data set</td>
+            <td class="fieldname" style="padding-left: 30px;">referenceToOwnershipOfDataSet</td>
+            <td class="fieldname">r</td>
+            <td class="fieldname">[0,1]</td>
+            <td class="fieldname"><a target="_blank" href="ILCD_Common_DataTypes.html#GlobalReferenceType">GlobalReferenceType</a></td>
+            <td class="fieldname">"Contact data set" of the person or entity who owns this data set. (Note: this is not necessarily the publisher of the data
+               set.)
+            </td>
+            <td class="fieldname">1-5-30-115</td>
+         </tr>
+         <tr>
+            <td class="fieldname" style="padding-left: 30px;">Copyright?</td>
+            <td class="fieldname" style="padding-left: 30px;">copyright</td>
+            <td class="fieldname">r</td>
+            <td class="fieldname">[0,1]</td>
+            <td class="fieldname"><a target="_blank" href="ILCD_Common_DataTypes.html#boolean">boolean</a></td>
+            <td class="fieldname">Indicates whether or not a copyright on the data set exists. Decided upon by the "Owner of data set". [Note: See also field
+               "Access and use
+               restrictions".]
+            </td>
+            <td class="fieldname">1-5-30-116</td>
+         </tr>
+         <tr>
+            <td class="fieldname" style="padding-left: 30px;">Access and use restrictions</td>
+            <td class="fieldname" style="padding-left: 30px;">accessRestrictions</td>
+            <td class="fieldname">r</td>
+            <td class="fieldname">[0,1]</td>
+            <td class="fieldname"><a target="_blank" href="ILCD_Common_DataTypes.html#FTMultiLang">FTMultiLang</a></td>
+            <td class="fieldname">Access restrictions / use conditions for this data set as free text or referring to e.g. license conditions. In case of no
+               restrictions "None" is
+               entered.
+            </td>
+            <td class="fieldname">1-5-30-118</td>
+         </tr>
+         <tr>
+            <td class="fieldname" style="padding-left: 30px;">Other content</td>
+            <td class="fieldname" style="padding-left: 30px;">other</td>
+            <td class="fieldname">o</td>
+            <td class="fieldname">[0,1]</td>
+            <td class="fieldname"></td>
+            <td class="fieldname">May contain arbitrary content.</td>
+            <td class="fieldname">0</td>
+         </tr>
+         <tr>
+            <td class="fieldname" style="padding-left: 20px;">Other content</td>
+            <td class="fieldname" style="padding-left: 20px;">other</td>
+            <td class="fieldname">o</td>
+            <td class="fieldname">[0,1]</td>
+            <td class="fieldname"></td>
+            <td class="fieldname">May contain arbitrary content.</td>
+            <td class="fieldname">0</td>
+         </tr>
+         <tr>
+            <td class="section" style="padding-left: 10px;font-style: italic;">Characterisation factors</td>
+            <td class="section" style="padding-left: 10px;font-style: italic;">characterisationFactors</td>
+            <td class="section">o</td>
+            <td class="section">[0,1]</td>
+            <td class="section"></td>
+            <td class="section">Flow / Exchanges list with corresponding impact factors according to the respective LCIA method.</td>
+            <td class="section">3-23</td>
+         </tr>
+         <tr>
+            <td class="subsection" style="padding-left: 20px;font-style: italic;">Characterisation factor</td>
+            <td class="subsection" style="padding-left: 20px;font-style: italic;">factor</td>
+            <td class="subsection">m</td>
+            <td class="subsection">[1,n]</td>
+            <td class="subsection"></td>
+            <td class="subsection"></td>
+            <td class="subsection">3-23-100</td>
+         </tr>
+         <tr>
+            <td class="fieldname" style="padding-left: 30px;">Reference to flow data set</td>
+            <td class="fieldname" style="padding-left: 30px;">referenceToFlowDataSet</td>
+            <td class="fieldname">m</td>
+            <td class="fieldname">[1,1]</td>
+            <td class="fieldname"><a target="_blank" href="ILCD_Common_DataTypes.html#GlobalReferenceType">GlobalReferenceType</a></td>
+            <td class="fieldname">Reference to "UUID of flow" of "Flow data set" to link the particular impact factor in the "LCIA data set" to the respective
+               "Flow data set". Please be
+               aware, that for location-specific LCIA methods, there may be multiple references to the same Flow data set.
+            </td>
+            <td class="fieldname">3-23-100-260</td>
+         </tr>
+         <tr>
+            <td class="fieldname" style="padding-left: 30px;">Location of exchange</td>
+            <td class="fieldname" style="padding-left: 30px;">location</td>
+            <td class="fieldname">o</td>
+            <td class="fieldname">[0,1]</td>
+            <td class="fieldname"><a target="_blank" href="ILCD_Common_DataTypes.html#String">String</a></td>
+            <td class="fieldname">Location where exchange of elementary flow occurs. Used only for those LCIA methods, that make use of such information. This
+               information refers to the
+               entry within the same field in the "Process data set".
+            </td>
+            <td class="fieldname">3-23-100-261</td>
+         </tr>
+         <tr>
+            <td class="fieldname" style="padding-left: 30px;">Exchange direction</td>
+            <td class="fieldname" style="padding-left: 30px;">exchangeDirection</td>
+            <td class="fieldname">m</td>
+            <td class="fieldname">[1,1]</td>
+            <td class="fieldname"><a target="_blank" href="ILCD_Common_EnumerationValues.html#ExchangeDirectionValues">ExchangeDirectionValues</a><br><span class="data_enum"><a class="info" href="javascript:void(0);">Input<span>Flow in input list of the process, e.g. resources from nature or energy carriers, or commodities and services entering from
+                        the technosphere.
+                        (In case the flow has an negative "resulting amount" value this is equivalent to belonging to the output list of the process.)</span></a></span><br><span class="data_enum"><a class="info" href="javascript:void(0);">Output<span>Flow in output list of the process, e.g. emissions to nature, or products and waste going to the technosphere into another
+                        process. (In case
+                        the flow has a negative "resulting amount" value this is equivalent to belonging to the input list of the process.)</span></a></span><br></td>
+            <td class="fieldname">Direction of exchange; this information refers to the entry within the same field in the "Process data set".</td>
+            <td class="fieldname">3-23-100-262</td>
+         </tr>
+         <tr>
+            <td class="fieldname" style="padding-left: 30px;">Mean value ( of LCIA characterisation factor)</td>
+            <td class="fieldname" style="padding-left: 30px;">meanValue</td>
+            <td class="fieldname">m</td>
+            <td class="fieldname">[1,1]</td>
+            <td class="fieldname"><a target="_blank" href="ILCD_Common_DataTypes.html#Real">Real</a></td>
+            <td class="fieldname">Mean value of the impact characterisation factor for the exchange identified by the fields "Reference to flow data set", "Exchange
+               direction" and
+               "Location of direction". It is recommended to report only significant digits of the amount. ! If for an elementary flow its
+               relevant contribution to this LCIA theme is
+               known by state-of-the-art scientific knowledge, but no impact factor is provided in the LCIA method, the flow should nevertheless
+               be referrenced and the mean value to
+               be entered is "0"!
+            </td>
+            <td class="fieldname">3-23-100-263</td>
+         </tr>
+         <tr>
+            <td class="fieldname" style="padding-left: 30px;">Minimum value</td>
+            <td class="fieldname" style="padding-left: 30px;">minimumValue</td>
+            <td class="fieldname">o</td>
+            <td class="fieldname">[0,1]</td>
+            <td class="fieldname"><a target="_blank" href="ILCD_Common_DataTypes.html#Real">Real</a></td>
+            <td class="fieldname">Minimum value of the characterisation factor for the exchange in case uncertainty distribution is uniform or triangular.</td>
+            <td class="fieldname">3-23-100-264</td>
+         </tr>
+         <tr>
+            <td class="fieldname" style="padding-left: 30px;">Maximum value</td>
+            <td class="fieldname" style="padding-left: 30px;">maximumValue</td>
+            <td class="fieldname">o</td>
+            <td class="fieldname">[0,1]</td>
+            <td class="fieldname"><a target="_blank" href="ILCD_Common_DataTypes.html#Real">Real</a></td>
+            <td class="fieldname">Maximum value of the characterisation factor for the exchange in case uncertainty distribution is uniform or triangular.</td>
+            <td class="fieldname">3-23-100-265</td>
+         </tr>
+         <tr>
+            <td class="fieldname" style="padding-left: 30px;">Uncertainty distribution type</td>
+            <td class="fieldname" style="padding-left: 30px;">uncertaintyDistributionType</td>
+            <td class="fieldname">o</td>
+            <td class="fieldname">[0,1]</td>
+            <td class="fieldname"><a target="_blank" href="ILCD_Common_EnumerationValues.html#UncertaintyDistributionTypeValues">UncertaintyDistributionTypeValues</a><br><span class="data_enum"><a class="info" href="javascript:void(0);">undefined<span>Probability distribution information not available.</span></a></span><br><span class="data_enum"><a class="info" href="javascript:void(0);">log-normal<span>Probability distribution of any random parameter whose logarithm is normally distributed.</span></a></span><br><span class="data_enum"><a class="info" href="javascript:void(0);">normal<span>Probability distribution of any random parameter whose value is normally distributed around the mean of zero.</span></a></span><br><span class="data_enum"><a class="info" href="javascript:void(0);">triangular<span>Probability distribution of any random parameter between minimum value and maximum value with the highest probability at the
+                        average value of
+                        minimum plus maximum value. Linear change of probability between minimum, maximum and average value.</span></a></span><br><span class="data_enum"><a class="info" href="javascript:void(0);">uniform<span>Continuous uniform probability distribution between minimum value and maximum value and "0" probability beyond these.</span></a></span><br></td>
+            <td class="fieldname">Defines the kind of uncertainty distribution that is valid for this particular object or parameter.</td>
+            <td class="fieldname">3-23-100-266</td>
+         </tr>
+         <tr>
+            <td class="fieldname" style="padding-left: 30px;">Relative StdDev in %</td>
+            <td class="fieldname" style="padding-left: 30px;">relativeStandardDeviation95In</td>
+            <td class="fieldname">o</td>
+            <td class="fieldname">[0,1]</td>
+            <td class="fieldname"><a target="_blank" href="ILCD_Common_DataTypes.html#Perc">Perc</a></td>
+            <td class="fieldname">The resulting overall uncertainty of the calculated variable value considering uncertainty of measurements, modelling, appropriateness
+               etc. [Notes: For log-normal distribution the square of the geometric standard deviation (SDg^2) is stated. Mean value times
+               SDg^2 equals the 97.5% value (= Maximum value), Mean value divided by SDg^2 equals the 2.5% value (= Minimum value). For normal
+               distribution the doubled standard deviation value (2*SD) is entered. Mean value plus 2*SD equals 97.5% value (= Maximum value),
+               Mean value minus 2*SD equals 2.5% value (= Minimum value). This data field remains empty when uniform or triangular uncertainty
+               distribution is applied.]
+            </td>
+            <td class="fieldname">3-23-100-267</td>
+         </tr>
+         <tr>
+            <td class="fieldname" style="padding-left: 30px;">Data derivation type / status</td>
+            <td class="fieldname" style="padding-left: 30px;">dataDerivationTypeStatus</td>
+            <td class="fieldname">o</td>
+            <td class="fieldname">[0,1]</td>
+            <td class="fieldname"><a target="_blank" href="ILCD_Common_EnumerationValues.html#DataDerivationTypeStatusValues">DataDerivationTypeStatusValues</a><br><span class="data_enum"><a class="info" href="javascript:void(0);">Measured<span>All data was measured for the purpose of LCA or is meeting the related requirements (e.g. being quantiatively and qualitatively
+                        related to
+                        unit process and its quantitative reference/products, etc.). This includes calculated data with models based on measured plant
+                        data (but not exclusively
+                        theoretical calculations) as used e.g. in parameterised unit processes.</span></a></span><br><span class="data_enum"><a class="info" href="javascript:void(0);">Calculated<span>Stochiometric or other theoretical relations were used to calculate the amount of this flow. [Note: Calculations that include
+                        quantiatively
+                        relevant expert judgement are of the type "Expert judgement".]</span></a></span><br><span class="data_enum"><a class="info" href="javascript:void(0);">Estimated<span>Expert judgement was used to derive the quantity of this flow. This includes the unmodified or corrected use of data from
+                        similar processes /
+                        technologies, times, or locations, as well as calculated values where the formulas/parameters include quantitatively relevant
+                        expert
+                        judgement.</span></a></span><br><span class="data_enum"><a class="info" href="javascript:void(0);">Unknown derivation<span>Data derivation type information fully or at least for quantiatively relevant parts unavailable.</span></a></span><br><span class="data_enum"><a class="info" href="javascript:void(0);">Missing important<span>Indicates missing amount information for environmentally directly (elementary flow) or indirectly (product or waste flow)
+                        important Input or
+                        Output. As the "Mean amount" the value "0" is entered.</span></a></span><br><span class="data_enum"><a class="info" href="javascript:void(0);">Missing unimportant<span>Indicates missing amount information for an however environmentally directly (elementary flow) or indirectly (product or waste
+                        flow) NOT
+                        relevant Input or Output. As the "Mean amount" the value "0" is entered.</span></a></span><br></td>
+            <td class="fieldname">Identifies the way by which the individual Input / Output amount was derived (e.g. measured, estimated etc.), respectively
+               the status and relevancy of missing data.
+            </td>
+            <td class="fieldname">3-23-100-269</td>
+         </tr>
+         <tr>
+            <td class="fieldname" style="padding-left: 30px;">Deviating recommendation</td>
+            <td class="fieldname" style="padding-left: 30px;">deviatingRecommendation</td>
+            <td class="fieldname">m</td>
+            <td class="fieldname">[0,1]</td>
+            <td class="fieldname"><a target="_blank" href="ILCD_Common_EnumerationValues.html#RecommendationLevelValues">RecommendationLevelValues</a><br><span class="data_enum"><a class="info" href="javascript:void(0);">Level I<span>Highest recommendation level. See also field "Specific meaning of the recommendation level".</span></a></span><br><span class="data_enum"><a class="info" href="javascript:void(0);">Level II<span>Second highest recommendation level. See also field "Specific meaning of the recommendation level".</span></a></span><br><span class="data_enum"><a class="info" href="javascript:void(0);">Level III<span>Third highest recommendation level. See also field "Specific meaning of the recommendation level".</span></a></span><br><span class="data_enum"><a class="info" href="javascript:void(0);">Interim<span>Level between the third highest recommendation level and "not recommended". See also field "Specific meaning of the recommendation
+                        level".</span></a></span><br><span class="data_enum"><a class="info" href="javascript:void(0);">Not recommended<span>Not recommended for use.</span></a></span><br></td>
+            <td class="fieldname">Deviating (downgraded) recommendation level for this exchange, in reference to the recommendation level of the LCIA method
+               data set as a whole (see field
+               "Official recommendation of data set by governmental body:").
+            </td>
+            <td class="fieldname">3-23-100-268</td>
+         </tr>
+         <tr>
+            <td class="fieldname" style="padding-left: 30px;font-style: italic;">Reference to data source(s)</td>
+            <td class="fieldname" style="padding-left: 30px;font-style: italic;">referencesToDataSource</td>
+            <td class="fieldname">o</td>
+            <td class="fieldname">[0,1]</td>
+            <td class="fieldname"></td>
+            <td class="fieldname">Reference to "UUID of source"(s) in the "Source data set" of data source(s) used for modelling the value of this single LCIA
+               factor e.g. a specific paper,
+               questionnaire, monography etc. If, as typical, more than one data source was used, more than one source can be referenced.
+            </td>
+            <td class="fieldname">3-23-100-270</td>
+         </tr>
+         <tr>
+            <td class="fieldname" style="padding-left: 40px;">Reference to data source(s)</td>
+            <td class="fieldname" style="padding-left: 40px;">referenceToDataSource</td>
+            <td class="fieldname">o</td>
+            <td class="fieldname">[0,1]</td>
+            <td class="fieldname"><a target="_blank" href="ILCD_Common_DataTypes.html#GlobalReferenceType">GlobalReferenceType</a></td>
+            <td class="fieldname">Reference to "UUID of source"(s) in the "Source data set" of data source(s) used for modelling the value of this single LCIA
+               factor e.g. a specific paper,
+               questionnaire, monography etc. If, as typical, more than one data source was used, more than one source can be referenced.
+            </td>
+            <td class="fieldname">3-23-100-270</td>
+         </tr>
+         <tr>
+            <td class="fieldname" style="padding-left: 40px;">Other content</td>
+            <td class="fieldname" style="padding-left: 40px;">other</td>
+            <td class="fieldname">o</td>
+            <td class="fieldname">[0,1]</td>
+            <td class="fieldname"></td>
+            <td class="fieldname">May contain arbitrary content.</td>
+            <td class="fieldname">0</td>
+         </tr>
+         <tr>
+            <td class="fieldname" style="padding-left: 30px;">General comment</td>
+            <td class="fieldname" style="padding-left: 30px;">generalComment</td>
+            <td class="fieldname">o</td>
+            <td class="fieldname">[0,1]</td>
+            <td class="fieldname"><a target="_blank" href="ILCD_Common_DataTypes.html#StringMultiLang">StringMultiLang</a></td>
+            <td class="fieldname">General information about the data set, including e.g. general (internal, not reviewed) quality statements as well as information
+               sources used. (Note: Please also check the more specific fields e.g. on "Intended application", "Advice on data set use" and
+               the fields in the "Modelling and validation" section to avoid overlapping entries.)
+            </td>
+            <td class="fieldname">3-23-100-272</td>
+         </tr>
+         <tr>
+            <td class="fieldname" style="padding-left: 30px;">Other content</td>
+            <td class="fieldname" style="padding-left: 30px;">other</td>
+            <td class="fieldname">o</td>
+            <td class="fieldname">[0,1]</td>
+            <td class="fieldname"></td>
+            <td class="fieldname">May contain arbitrary content.</td>
+            <td class="fieldname">0</td>
+         </tr>
+         <tr>
+            <td class="fieldname" style="padding-left: 20px;">Other content</td>
+            <td class="fieldname" style="padding-left: 20px;">other</td>
+            <td class="fieldname">o</td>
+            <td class="fieldname">[0,1]</td>
+            <td class="fieldname"></td>
+            <td class="fieldname">May contain arbitrary content.</td>
+            <td class="fieldname">0</td>
+         </tr>
+         <tr>
+            <td class="fieldname" style="padding-left: 10px;">Other content</td>
+            <td class="fieldname" style="padding-left: 10px;">other</td>
+            <td class="fieldname">o</td>
+            <td class="fieldname">[0,1]</td>
+            <td class="fieldname"></td>
+            <td class="fieldname">May contain arbitrary content.</td>
+            <td class="fieldname">0</td>
+         </tr>
+      </table>
+   </body>
+</html>
