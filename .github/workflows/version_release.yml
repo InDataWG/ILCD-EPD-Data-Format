@@ -64,5 +64,5 @@ jobs:
         git add doc/releases/${TAG_NAME}/${TAG_NAME}.zip
         git add doc/releases/${TAG_NAME}/doc
         git commit -m "Add versioned documentation and zip for ${TAG_NAME}"
-        git push origin HEAD:gitActions
+        git push --force origin HEAD:gitActions
       shell: bash
