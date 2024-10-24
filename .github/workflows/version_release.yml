@@ -139,6 +139,12 @@ jobs:
         </html>
         EOF
 
+    - name: Checkout gitActions branch
+      run: |
+        git fetch origin gitActions
+        git checkout gitActions
+      shell: bash
+
     - name: Commit and push documentation and zip
       if: success()
       run: |
