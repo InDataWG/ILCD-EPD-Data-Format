@@ -1,0 +1,1602 @@
+
+<!--ILCD Format 1.1 Documentation - Flow data set - documentation stylesheet version 1.0.6-->
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <title>ILCD Format 1.1 Documentation - Flow data set (with EPD extensions)</title>
+        <style type="text/css">
+            table.top{
+                border:1px solid #AB845D;
+                background-color:#FFFBF3;
+            }
+            tr{
+                background-color:#FFFFFF;
+            }
+            a{
+                color:#0A4755;
+            }
+            a:active,
+            a:visited{
+                color:#894C0F;
+            }
+            
+            /* tooltip styles */
+            a.info{
+                position:relative;
+                z-index:24;
+                color:#000000;
+                text-decoration:none
+            }
+            
+            a.info:hover{
+                z-index:25;
+                background-color:#FFE8B7;
+            }
+            
+            a.info span{
+                display:none
+            }
+            
+            a.info:hover span{
+                display:block;
+                position:absolute;
+                top:2em;
+                left:2em;
+                width:25em;
+                border:1px solid #7BCBDE;
+                background-color:#B9EDF7;
+                color:#000000;
+                text-align:left
+            }
+            
+            /*   general styles  */
+            .title{
+                font-family:Helvetica, Arial, sansserif;
+                font-size:14;
+                font-weight:bold;
+                vertical-align:top;
+                background-color:#fc9336;
+                color:#000000;
+            }
+            .toc{
+                font-family:Helvetica, Arial, sansserif;
+                font-size:12;
+                font-weight:normal;
+                vertical-align:top;
+                background-color:#FFD783;
+                color:#000000;
+            }
+            .section{
+                font-family:Helvetica, Arial, sansserif;
+                font-size:14;
+                font-weight:bold;
+                vertical-align:top;
+                background-color:#ffb951;
+                color:#000000;
+            }
+            .root{
+                font-family:Helvetica, Arial, sansserif;
+                font-size:14;
+                font-weight:bold;
+                vertical-align:top;
+                background-color:#ffb951;
+                color:#000000;
+            }
+            .subsection{
+                font-family:Helvetica, Arial, sansserif;
+                font-size:12;
+                font-weight:bold;
+                vertical-align:top;
+                background-color:#ffd783;
+                color:#000000;
+            }
+            .fieldname{
+                font-family:Helvetica, Arial, sansserif;
+                font-size:12;
+                font-weight:normal;
+                vertical-align:top;
+                background-color:#FFF3D9;
+                color:#002277;
+            }
+            .subsection_epd{
+                background-color:#08346b;
+            }
+            .fieldname_epd{
+                background-color:#DEE7F7;
+            }
+            .data{
+                font-family:Helvetica, Arial, sansserif;
+                font-size:12;
+                background-color:#FFFFFF;
+                color:#000000;
+                font-weight:normal;
+            }
+            .data_neutral{
+                font-weight:normal;
+            }
+            .data_enum{
+                font-weight:normal;
+                font-style:italic;
+            }
+            .referencename{
+                font-family:Helvetica, Arial, sansserif;
+                font-size:12;
+                font-weight:bold;
+                background-color:#FFFFFF;
+                color:#002277;
+            }
+            .referencedata{
+                font-family:Helvetica, Arial, sansserif;
+                font-size:12;
+                color:red;
+                background-color:#FFFFFF;
+                color:#000000;
+            }
+            .table_header{
+                font-family:Helvetica, Arial, sansserif;
+                font-size:11;
+                font-weight:normal;
+                background-color:#ffeece;
+                color:#002277;
+            }
+            .exchanges_section{
+                font-family:Helvetica, Arial, sansserif;
+                font-size:9;
+                background-color:#ffeece;
+                color:#000000;
+            }
+            .exchanges_data{
+                font-family:Helvetica, Arial, sansserif;
+                font-size:9;
+                font-weight:bold;
+                background-color:#FFFFFF;
+                color:#000000;
+            }
+            tr.highlight td.data{
+                border-width:2px;
+                border-style:solid;
+                border-color:#A2D3DE;
+            }
+            .lang{
+                font-weight:normal;
+                color:grey;
+            }
+            .warning{
+                font-weight:bold;
+                color:red;
+            }</style>
+        <script type="text/javascript">
+         <!--
+            function selectLang(strLang) {
+               var checkFieldNameEn = document.getElementById('checkFieldNameEn');
+               var checkFieldNameDe = document.getElementById('checkFieldNameDe');
+               var checkDefinitionEn = document.getElementById('checkDefinitionEn');
+               var checkDefinitionDe = document.getElementById('checkDefinitionDe');
+
+               if (strLang == 'en') {
+                  checkFieldNameEn.checked=true;
+                  checkFieldNameDe.checked=false;
+                  checkDefinitionEn.checked=true;
+                  checkDefinitionDe.checked=false;
+                  toggleCol('tableID', 0, 'none');
+                  toggleCol('tableID', 1, '');
+                  toggleCol('tableID', 6, 'none');               
+                  toggleCol('tableID', 7, '');
+               } else {
+                  checkFieldNameEn.checked=false;
+                  checkFieldNameDe.checked=true;
+                  checkDefinitionEn.checked=false;
+                  checkDefinitionDe.checked=true;
+                  toggleCol('tableID', 0, '');
+                  toggleCol('tableID', 1, 'none');
+                  toggleCol('tableID', 6, '');
+                  toggleCol('tableID', 7, 'none');               
+               }
+            }
+            
+            function toggleCol(strID, intCol, strDisplay) {
+               
+               var objTable = document.getElementById(strID);
+               if (strDisplay == null) {
+                  strDisplay = (objTable.rows[0].cells[intCol].style.display == "none") ? "": "none";
+               }               
+               
+               currentStatus = (objTable.rows[0].cells[intCol].style.display == "none") ? "hide": "show";
+               
+               newStatus = (strDisplay == "none") ? "hide": "show";
+               
+               if (currentStatus == "hide" && newStatus == "show") {
+                  action = "show";
+               } else if (currentStatus == "show" && newStatus == "hide") {
+                  action = "hide";
+               } else {
+                  action = "none";
+               }
+               
+               for (var i = 0; i < objTable.rows.length; i++) {
+                  if (objTable.rows[i].cells.length > intCol && objTable.rows[i].cells[intCol].colSpan == 1) {
+                     objTable.rows[i].cells[intCol].style.display = strDisplay;
+                  }
+               }
+               
+               var objCells = document.getElementsByTagName("td");
+               
+               for (var i = 0; i < objCells.length; i++) {
+                  
+                  if (objCells[i].colSpan > 1) {
+                     if (action == "hide") {
+                        objCells[i].colSpan = objCells[i].colSpan - 1;
+                     } else if (action == "show") {
+                        objCells[i].colSpan = objCells[i].colSpan + 1;
+                     }
+                  }
+               }
+            }
+            
+            
+            function initializeColumns() {
+               
+               var objForm = document.getElementById('formSelectFields');
+               
+               for (var i = 0; i < objForm.elements.length; i++) {
+                  if (objForm.elements[i].checked == true) {
+                     toggleCol('tableID', objForm.elements[i].value, '');
+                  } else {
+                     toggleCol('tableID', objForm.elements[i].value, 'none');
+                  }
+               }
+               selectLang('en');
+            }//--></script>
+    </head>
+    <body onload="initializeColumns();">
+       <form action="#" id="formSelectLang"> 
+          Language: 
+          <input type="radio" name="lang" checked onclick="selectLang('en')" value="en"/>en&nbsp;<input type="radio" name="lang"
+             onclick="selectLang('de')" value="de"/> de
+       </form>
+       <form action="#" id="formSelectFields"> 
+          Show: 
+          <input type="checkbox" checked value="0" id="checkFieldNameDe" onclick="toggleCol('tableID', 0, null);"/>Field Name (de)
+          <input type="checkbox" checked value="1" id="checkFieldNameEn" onclick="toggleCol('tableID', 1, null);"/>Field Name (en)
+          <input type="checkbox" checked value="2" id="checkID" onclick="toggleCol('tableID', 2, null);"/>Element/Attribute Name
+          <input type="checkbox" checked value="3" id="checkRequirement" onclick="toggleCol('tableID', 3, null);"/>Requirement
+          <input type="checkbox" checked value="4" id="checkOccurrences" onclick="toggleCol('tableID', 4, null);"/>Occurrences
+          <input type="checkbox" checked value="5" id="checkDataType" onclick="toggleCol('tableID', 5, null);"/>Datatype
+          <input type="checkbox" checked value="6" id="checkDefinitionDe" onclick="toggleCol('tableID', 6, null);"/>Definition (de)
+          <input type="checkbox" checked value="7" id="checkDefinitionEn" onclick="toggleCol('tableID', 7, null);"/>Definition (en)
+          <input type="checkbox" checked value="8" id="checkOrigDefinition" onclick="toggleCol('tableID', 8, null);"/>Original ILCD Format Definition (en)
+          <input type="checkbox" checked value="9" id="checkEDocId" onclick="toggleCol('tableID', 9, null);"/>eDoc ID
+       </form>
+       <h1>EPD - Flow data set is a test</h1>
+       <p>This document lists the ILCD format fields that are used to model EPD data and their respective meaning 
+          in the EPD context as well as the additional fields introduced by the format extensions in the EPD namespace. 
+          Where the meaning in the EPD context deviates from the original ILCD format definition, it is stated in the
+          <i>Definition (en)</i> column; otherwise a ~ mark indicates that there is no deviation from the original definition.
+          </p><table>
+             <tr>
+                <td>Information in the EPD namespace is displayed with</td>
+                <td class="fieldname_epd">blue background</td>
+                <td>.</td>
+             </tr>
+          </table>
+       
+        <table id="tableID" style="table-layout:fixed;">
+            <col  />
+            <col  />
+            <col  />
+            <col  />
+            <col />
+            <col  />
+            <col  />
+            <col  />
+            <col  />
+            
+            <tr>
+                <th class="title" style="width:194px">Field name (de)</th>
+                <th class="title" style="width:194px">Field name (en)</th>
+                <th class="title" style="width:300px">Element/Attribute Name</th>
+                <th class="title" style="width:45px">Requ.</th>
+                <th class="title" style="width:34px">Occ.</th>
+                <th class="title" style="width:200px">Datatype</th>
+                <th class="title" style="width:300px">Definition (de)</th>
+                <th class="title" style="width:300px">Definition (en)</th>
+                <th class="title" style="width:300px">Original ILCD Format Definition (en)</th>
+                <th class="title" style="width:42px">eDoc ID</th>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td class="root" style="padding-left: 0px;font-style: italic;"></td>    
+                <td class="root" style="padding-left: 0px;font-style: italic;">Flow data set</td>
+                <td class="root" style="padding-left: 0px;font-style: italic;">flowDataSet</td>
+                <td class="root">m</td>
+                <td class="root">[1,1]</td>
+                <td class="root"></td>
+                <td class="root"></td>    
+                <td class="root"></td>    
+                <td class="root"></td>    
+                <td class="root">2</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td class="fieldname" style="padding-left: 10px;"></td>    
+                <td class="fieldname" style="padding-left: 10px;"></td>
+                <td class="fieldname" style="padding-left: 10px;">@version</td>
+                <td class="fieldname">m</td>
+                <td class="fieldname"></td>
+                <td class="fieldname"><a target="_blank" href="ILCD_Common_DataTypes.html#SchemaVersion">SchemaVersion</a></td>
+                <td class="fieldname"></td>    
+                <td class="fieldname"></td>    
+                <td class="fieldname"></td>    
+                <td class="fieldname"></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td class="fieldname" style="padding-left: 10px;"></td>    
+                <td class="fieldname" style="padding-left: 10px;"></td>
+                <td class="fieldname" style="padding-left: 10px;">@locations</td>
+                <td class="fieldname">o</td>
+                <td class="fieldname"></td>
+                <td class="fieldname"><a target="_blank" href="ILCD_Common_DataTypes.html#String">String</a></td>
+                <td class="fieldname"></td>    
+                <td class="fieldname"></td>    
+                <td class="fieldname"></td>    
+                <td class="fieldname"></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td class="section" style="padding-left: 10px;font-style: italic;"></td>    
+                <td class="section" style="padding-left: 10px;font-style: italic;">Flow information</td>
+                <td class="section" style="padding-left: 10px;font-style: italic;">flowInformation</td>
+                <td class="section">m</td>
+                <td class="section">[1,1]</td>
+                <td class="section"></td>
+                <td class="section"></td>    
+                <td class="section"></td>    
+                <td class="section">Covers the INvariable flow information addressed in ISO/TS 14048's section "Inputs and outputs"</td>    
+                <td class="section">2-9</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td class="subsection" style="padding-left: 20px;font-style: italic;"></td>    
+                <td class="subsection" style="padding-left: 20px;font-style: italic;">Data set information</td>
+                <td class="subsection" style="padding-left: 20px;font-style: italic;">dataSetInformation</td>
+                <td class="subsection">m</td>
+                <td class="subsection">[1,1]</td>
+                <td class="subsection"></td>
+                <td class="subsection"></td>
+                <td class="subsection"></td>    
+                <td class="subsection">General data set information. Covers the ISO/TS 14048 fields 1.2.1, 1.2.3, 1.2.4, 1.2.5, (1.2.6), (1.2.7),1.2.10.1, 1.2.10.2, 1.2.10.3, and
+                    references to 1.2.11 (Flow property) and 1.2.11.2 (Unit). </td>    
+                <td class="subsection">2-9-36</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td class="fieldname" style="padding-left: 30px;"></td>    
+                <td class="fieldname" style="padding-left: 30px;">UUID of flow data set</td>
+                <td class="fieldname" style="padding-left: 30px;">UUID</td>
+                <td class="fieldname">m</td>
+                <td class="fieldname">[1,1]</td>
+                <td class="fieldname"><a target="_blank" href="ILCD_Common_DataTypes.html#UUID">UUID</a></td>
+                <td class="fieldname"></td>    
+                <td class="fieldname"></td>    
+                <td class="fieldname">Automatically generated Universally Unique Identifier of this data set. Together with the "Data set version", the UUID uniquely identifies
+                    each data set. </td>    
+                <td class="fieldname">2-9-36-137</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td class="fieldname" style="padding-left: 30px;font-style: italic;"></td>    
+                <td class="fieldname" style="padding-left: 30px;font-style: italic;">Name</td>
+                <td class="fieldname" style="padding-left: 30px;font-style: italic;">name</td>
+                <td class="fieldname">r</td>
+                <td class="fieldname">[0,1]</td>
+                <td class="fieldname"></td>
+                <td class="fieldname"></td>    
+                <td class="fieldname"></td>    
+                <td class="fieldname">General descriptive and specifying name of the flow.</td>    
+                <td class="fieldname">2-9-36-138-1</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td class="fieldname" style="padding-left: 40px;"></td>    
+                <td class="fieldname" style="padding-left: 40px;">Base name</td>
+                <td class="fieldname" style="padding-left: 40px;">baseName</td>
+                <td class="fieldname">r</td>
+                <td class="fieldname">[1,1]</td>
+                <td class="fieldname"><a target="_blank" href="ILCD_Common_DataTypes.html#StringMultiLang">StringMultiLang</a></td>
+                <td class="fieldname"></td>    
+                <td class="fieldname"></td>    
+                <td class="fieldname">General descriptive name of the elementary, waste or product flow, for the latter including it's level of processing.</td>    
+                <td class="fieldname">2-9-36-138</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td class="fieldname" style="padding-left: 40px;"></td>    
+                <td class="fieldname" style="padding-left: 40px;">Treatment, standards, routes</td>
+                <td class="fieldname" style="padding-left: 40px;">treatmentStandardsRoutes</td>
+                <td class="fieldname">o</td>
+                <td class="fieldname">[0,1]</td>
+                <td class="fieldname"><a target="_blank" href="ILCD_Common_DataTypes.html#StringMultiLang">StringMultiLang</a></td>
+                <td class="fieldname"></td>    
+                <td class="fieldname"></td>    
+                <td class="fieldname">Specifying information on the (product or waste) flow in technical term(s): treatment received, standard fulfilled, product quality, use
+                    information, production route name, educt name, primary / secondary etc. Separated by commata.. </td>    
+                <td class="fieldname">2-9-36-139</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td class="fieldname" style="padding-left: 40px;"></td>    
+                <td class="fieldname" style="padding-left: 40px;">Mix and location types</td>
+                <td class="fieldname" style="padding-left: 40px;">mixAndLocationTypes</td>
+                <td class="fieldname">o</td>
+                <td class="fieldname">[0,1]</td>
+                <td class="fieldname"><a target="_blank" href="ILCD_Common_DataTypes.html#StringMultiLang">StringMultiLang</a></td>
+                <td class="fieldname"></td>    
+                <td class="fieldname"></td>    
+                <td class="fieldname">Specifying information on the good, service, or process whether being a production mix or consumption mix, location type of availability (such
+                    as e.g. "to consumer" or "at plant"). Separated by commata. </td>    
+                <td class="fieldname">2-9-36-140</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td class="fieldname" style="padding-left: 40px;"></td>    
+                <td class="fieldname" style="padding-left: 40px;">Quantitative flow properties</td>
+                <td class="fieldname" style="padding-left: 40px;">flowProperties</td>
+                <td class="fieldname">o</td>
+                <td class="fieldname">[0,1]</td>
+                <td class="fieldname"><a target="_blank" href="ILCD_Common_DataTypes.html#StringMultiLang">StringMultiLang</a></td>
+                <td class="fieldname"></td>    
+                <td class="fieldname"></td>    
+                <td class="fieldname">Further, quantitative specifying information on the (product or waste) flow, in technical term(s): qualifying constituent(s)-content and / or
+                    energy-content per unit etc. as appropriate. Separated by commata. (Note: non-qualifying flow properties, CAS No, Synonyms, Chemical formulas etc. are
+                    documented exclusively in the respective fields.) </td>    
+                <td class="fieldname">2-9-36-141</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td class="fieldname" style="padding-left: 40px;"></td>    
+                <td class="fieldname" style="padding-left: 40px;">Other content</td>
+                <td class="fieldname" style="padding-left: 40px;">other</td>
+                <td class="fieldname">o</td>
+                <td class="fieldname">[0,1]</td>
+                <td class="fieldname"></td>
+                <td class="fieldname"></td>    
+	            <td class="fieldname"></td>    
+                <td class="fieldname">May contain arbitrary content.</td>    
+                <td class="fieldname">0</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td class="fieldname" style="padding-left: 30px;"></td>    
+                <td class="fieldname" style="padding-left: 30px;">Synonyms</td>
+                <td class="fieldname" style="padding-left: 30px;">synonyms</td>
+                <td class="fieldname">o</td>
+                <td class="fieldname">[0,1]</td>
+                <td class="fieldname"><a target="_blank" href="ILCD_Common_DataTypes.html#FTMultiLang">FTMultiLang</a></td>
+                <td class="fieldname"></td>    
+                <td class="fieldname"></td>    
+                <td class="fieldname">Synonyms / alternative names / brands of the good, service, or process. Separated by semicolon.</td>    
+                <td class="fieldname">2-9-36-142</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td class="fieldname" style="padding-left: 30px;font-style: italic;"></td>    
+                <td class="fieldname" style="padding-left: 30px;font-style: italic;">Category and classification information</td>
+                <td class="fieldname" style="padding-left: 30px;font-style: italic;">classificationInformation</td>
+                <td class="fieldname">r</td>
+                <td class="fieldname">[0,1]</td>
+                <td class="fieldname"></td>
+                <td class="fieldname"></td>    
+                <td class="fieldname"></td>    
+                <td class="fieldname">Hierachical classification of the Flow property foreseen to be used to structure the Flow property content of the database. (Note: This entry
+                    is NOT required for the identification of the Flow property data set. It should nevertheless be avoided to use identical names for Flow properties in the same
+                    class. </td>    
+                <td class="fieldname">2-9-36-143</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td class="fieldname" style="padding-left: 40px;font-style: italic;"></td>    
+                <td class="fieldname" style="padding-left: 40px;font-style: italic;">Elementary flow categorization</td>
+                <td class="fieldname" style="padding-left: 40px;font-style: italic;">elementaryFlowCategorization</td>
+                <td class="fieldname">r</td>
+                <td class="fieldname">[0,n]</td>
+                <td class="fieldname"></td>    
+                <td class="fieldname"></td>    
+                <td class="fieldname"></td>    
+                <td class="fieldname">Identifying category/compartment information exclusively used for elementary flows. E.g. "Emission to air", "Renewable resource", etc. </td>    
+                <td class="fieldname">2-9-36-144</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td class="fieldname" style="padding-left: 50px;"></td>    
+                <td class="fieldname" style="padding-left: 50px;">Name of categorization system</td>
+                <td class="fieldname" style="padding-left: 50px;">@name</td>
+                <td class="fieldname">r</td>
+                <td class="fieldname"></td>
+                <td class="fieldname"><a target="_blank" href="ILCD_Common_DataTypes.html#string">string</a></td>
+                <td class="fieldname"></td>    
+                <td class="fieldname"></td>    
+                <td class="fieldname">Name of the categorization system. E.g. "ILCD 1.1" or another elementary flow categorization/compartment scheme applied, as defined e.g. in
+                    other LCA database (systems). </td>    
+                <td class="fieldname">2-9-36-144-a</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td class="fieldname" style="padding-left: 50px;"></td>    
+                <td class="fieldname" style="padding-left: 50px;">Categories file</td>
+                <td class="fieldname" style="padding-left: 50px;">@categories</td>
+                <td class="fieldname">o</td>
+                <td class="fieldname"></td>
+                <td class="fieldname"><a target="_blank" href="ILCD_Common_DataTypes.html#anyURI">anyURI</a></td>
+                <td class="fieldname"></td>    
+                <td class="fieldname"></td>    
+                <td class="fieldname">URL or file name of a file containing all categories of this categorization system. [Note: The file is to be in form of the
+                    "ILCDCategories.xml" format. If a category file is specified, only categories of the referenced categories file should be used.] </td>    
+                <td class="fieldname">2-9-36-144-b</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td class="fieldname" style="padding-left: 50px;font-style: italic;"></td>    
+                <td class="fieldname" style="padding-left: 50px;font-style: italic;">Category name</td>
+                <td class="fieldname" style="padding-left: 50px;font-style: italic;">category</td>
+                <td class="fieldname">r</td>
+                <td class="fieldname">[1,n]</td>
+                <td class="fieldname"></td>
+                <td class="fieldname"></td>    
+                <td class="fieldname"></td>    
+                <td class="fieldname">Name of the category of this elementary flow.</td>    
+                <td class="fieldname">2-9-36-144-1</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td class="fieldname" style="padding-left: 60px;"></td>    
+                <td class="fieldname" style="padding-left: 60px;">Hierarchy level</td>
+                <td class="fieldname" style="padding-left: 60px;">@level</td>
+                <td class="fieldname">r</td>
+                <td class="fieldname"></td>
+                <td class="fieldname"><a target="_blank" href="ILCD_Common_DataTypes.html#LevelType">LevelType</a></td>
+                <td class="fieldname"></td>    
+                <td class="fieldname"></td>    
+                <td class="fieldname">Hierarchy level (1,2,...), if the categorization system is hierachical, otherwise emtpy or not used.</td>    
+                <td class="fieldname">2-9-36-144-1-a</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td class="fieldname" style="padding-left: 60px;"></td>    
+                <td class="fieldname" style="padding-left: 60px;">Unique category identifier</td>
+                <td class="fieldname" style="padding-left: 60px;">@catId</td>
+                <td class="fieldname">r</td>
+                <td class="fieldname"></td>
+                <td class="fieldname"><a target="_blank" href="ILCD_Common_DataTypes.html#string">string</a></td>
+                <td class="fieldname"></td>    
+                <td class="fieldname"></td>    
+                <td class="fieldname">Unique identifier of the category. [Note: May be used by LCA software for it's category system. If used the identifer should be identical to
+                    the on defined in the referenced category file. Identifiers can be UUIDs, but also other forms are possible.] </td>    
+                <td class="fieldname">2-9-36-144-1-b</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td class="fieldname" style="padding-left: 50px;"></td>    
+                <td class="fieldname" style="padding-left: 50px;">Other content</td>
+                <td class="fieldname" style="padding-left: 50px;">other</td>
+                <td class="fieldname">o</td>
+                <td class="fieldname">[0,1]</td>
+                <td class="fieldname"></td>
+                <td class="fieldname"></td>    
+                <td class="fieldname"></td>    
+                <td class="fieldname">May contain arbitrary content.</td>    
+                <td class="fieldname">0</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td class="fieldname" style="padding-left: 40px;font-style: italic;"></td>    
+                <td class="fieldname" style="padding-left: 40px;font-style: italic;">Classification</td>
+                <td class="fieldname" style="padding-left: 40px;font-style: italic;">classification</td>
+                <td class="fieldname">r</td>
+                <td class="fieldname">[0,n]</td>
+                <td class="fieldname"></td>
+                <td class="fieldname"></td>    
+                <td class="fieldname"></td>    
+                <td class="fieldname">Optional statistical or other classification of the data set. Typically also used for structuring LCA databases.</td>    
+                <td class="fieldname">2-9-36-145</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td class="fieldname" style="padding-left: 50px;"></td>    
+                <td class="fieldname" style="padding-left: 50px;">Classification system name</td>
+                <td class="fieldname" style="padding-left: 50px;">@name</td>
+                <td class="fieldname">r</td>
+                <td class="fieldname"></td>
+                <td class="fieldname"><a target="_blank" href="ILCD_Common_DataTypes.html#string">string</a></td>
+                <td class="fieldname"></td>    
+                <td class="fieldname"></td>    
+                <td class="fieldname">Name of the classification system.</td>    
+                <td class="fieldname">1-1-2-7-2-a</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td class="fieldname" style="padding-left: 50px;"></td>    
+                <td class="fieldname" style="padding-left: 50px;">Classes</td>
+                <td class="fieldname" style="padding-left: 50px;">@classes</td>
+                <td class="fieldname">r</td>
+                <td class="fieldname"></td>
+                <td class="fieldname"><a target="_blank" href="ILCD_Common_DataTypes.html#anyURI">anyURI</a></td>
+                <td class="fieldname"></td>    
+                <td class="fieldname"></td>    
+                <td class="fieldname">URL or file name of a file listing all classes of this classification system. [Notes: the referenced file has to be in form of the
+                    "ILCDClassification.xml" format. If a classification file is specified, the "class" entry should correspond to the classes defined in the classification file.] </td>    
+                <td class="fieldname">1-1-2-7-2-b</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td class="fieldname" style="padding-left: 50px;font-style: italic;"></td>    
+                <td class="fieldname" style="padding-left: 50px;font-style: italic;">Class name</td>
+                <td class="fieldname" style="padding-left: 50px;font-style: italic;">class</td>
+                <td class="fieldname">r</td>
+                <td class="fieldname">[1,n]</td>
+                <td class="fieldname"></td>
+                <td class="fieldname"></td>    
+                <td class="fieldname"></td>    
+                <td class="fieldname">Name of the class.</td>    
+                <td class="fieldname">1-1-2-7-2-1</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td class="fieldname" style="padding-left: 60px;"></td>    
+                <td class="fieldname" style="padding-left: 60px;">Hierarchy level</td>
+                <td class="fieldname" style="padding-left: 60px;">@level</td>
+                <td class="fieldname">r</td>
+                <td class="fieldname"></td>
+                <td class="fieldname"><a target="_blank" href="ILCD_Common_DataTypes.html#LevelType">LevelType</a></td>
+                <td class="fieldname"></td>    
+                <td class="fieldname"></td>    
+                <td class="fieldname">If more than one class is specified in a hierachical classification system, the hierarchy level (1,2,...) could be specified with this
+                    attribute of class. </td>    
+                <td class="fieldname">1-1-2-7-2-1-a</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td class="fieldname" style="padding-left: 60px;"></td>    
+                <td class="fieldname" style="padding-left: 60px;">Unique class identifier</td>
+                <td class="fieldname" style="padding-left: 60px;">@classId</td>
+                <td class="fieldname">r</td>
+                <td class="fieldname"></td>
+                <td class="fieldname"><a target="_blank" href="ILCD_Common_DataTypes.html#string">string</a></td>
+                <td class="fieldname"></td>    
+                <td class="fieldname"></td>    
+                <td class="fieldname">Unique identifier for the class. [Notes: If such identifiers are also defined in the referenced category file, they should be identical.
+                    Identifiers can be UUID's, but also other forms are allowed.] </td>    
+                <td class="fieldname">1-1-2-7-2-1-b</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td class="fieldname" style="padding-left: 50px;"></td>    
+                <td class="fieldname" style="padding-left: 50px;">Other content</td>
+                <td class="fieldname" style="padding-left: 50px;">other</td>
+                <td class="fieldname">o</td>
+                <td class="fieldname">[0,1]</td>
+                <td class="fieldname"></td>
+                <td class="fieldname"></td>    
+                <td class="fieldname"></td>    
+                <td class="fieldname">May contain arbitrary content.</td>    
+                <td class="fieldname">0</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td class="fieldname" style="padding-left: 30px;"></td>    
+                <td class="fieldname" style="padding-left: 30px;">CAS Number</td>
+                <td class="fieldname" style="padding-left: 30px;">CASNumber</td>
+                <td class="fieldname">o</td>
+                <td class="fieldname">[0,1]</td>
+                <td class="fieldname"><a target="_blank" href="ILCD_Common_DataTypes.html#CASNumber">CASNumber</a></td>
+                <td class="fieldname"></td>    
+                <td class="fieldname"></td>    
+                <td class="fieldname">Chemical Abstract Systems Number of the substance. [Note: Should only be given for (virtually) pure substances, but NOT also for the main
+                    constituent of a material or product etc.] </td>    
+                <td class="fieldname">2-9-36-146</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td class="fieldname" style="padding-left: 30px;"></td>    
+                <td class="fieldname" style="padding-left: 30px;">Sum formula</td>
+                <td class="fieldname" style="padding-left: 30px;">sumFormula</td>
+                <td class="fieldname">o</td>
+                <td class="fieldname">[0,1]</td>
+                <td class="fieldname"><a target="_blank" href="ILCD_Common_DataTypes.html#String">String</a></td>
+                <td class="fieldname"></td>    
+                <td class="fieldname"></td>    
+                <td class="fieldname">Chemical sum formula of the substance.</td>    
+                <td class="fieldname">2-9-36-147</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td class="fieldname" style="padding-left: 30px;"></td>    
+                <td class="fieldname" style="padding-left: 30px;">General comment on data set</td>
+                <td class="fieldname" style="padding-left: 30px;">generalComment</td>
+                <td class="fieldname">o</td>
+                <td class="fieldname">[0,1]</td>
+                <td class="fieldname"><a target="_blank" href="ILCD_Common_DataTypes.html#FTMultiLang">FTMultiLang</a></td>
+                <td class="fieldname"></td>    
+                <td class="fieldname"></td>    
+                <td class="fieldname">Free text for general information about the Flow data set. It may contain information about e.g. the use of the substance, good, service or
+                    process in a specific technology or industry-context, information sources used, data selection principles etc. </td>    
+                <td class="fieldname">2-9-36-150</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td class="fieldname" style="padding-left: 30px;"></td>    
+                <td class="fieldname" style="padding-left: 30px;">Other content</td>
+                <td class="fieldname" style="padding-left: 30px;">other</td>
+                <td class="fieldname">o</td>
+                <td class="fieldname">[0,1]</td>
+                <td class="fieldname"></td>
+                <td class="fieldname"></td>    
+                <td class="fieldname"></td>    
+                <td class="fieldname">May contain arbitrary content.</td>    
+                <td class="fieldname">0</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td class="fieldname fieldname_epd" style="padding-left: 40px;">ist ein</td>
+                <td class="fieldname fieldname_epd" style="padding-left: 40px;">is a</td>
+                <td class="fieldname fieldname_epd" style="padding-left: 40px;">epd:isA</td>
+                <td class="fieldname fieldname_epd">o</td>
+                <td class="fieldname fieldname_epd">[0,1]</td>
+                <td class="fieldname fieldname_epd"><a target="_blank" href="ILCD_Common_DataTypes.html#GlobalReferenceType">GlobalReferenceType</a></td>
+                <td class="fieldname fieldname_epd">Referenz auf ein zugehöriges generisches Produkt ("Flow"-Datensatz)</td>
+                <td class="fieldname fieldname_epd">Reference ("flow data set") to a corresponding generic product flow</td>
+                <td class="fieldname fieldname_epd"></td>
+                <td class="fieldname fieldname_epd"></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td class="fieldname fieldname_epd" style="padding-left: 40px;">Materialeigenschaften (eingebettetes MatML)</td>
+                <td class="fieldname fieldname_epd" style="padding-left: 40px;">Material properties (embedded MatML)</td>
+                <td class="fieldname fieldname_epd" style="padding-left: 40px;">matml:MatML_Doc</td>
+                <td class="fieldname fieldname_epd">o</td>
+                <td class="fieldname fieldname_epd">[0,1]</td>
+                <td class="fieldname fieldname_epd"></td>
+                <td class="fieldname fieldname_epd">Hier können mittels MatML-Markup beliebige physikalische oder chemische Produkteigenschaften wie Dichte etc. beschrieben werden</td>
+                <td class="fieldname fieldname_epd">MatML markup may be embedded here to describe arbitrary physical or chemical product properties such as density etc.</td>
+                <td class="fieldname fieldname_epd"></td>
+                <td class="fieldname fieldname_epd"></td>
+                <td>
+                    <p style="margin: 0.0px 0.0px 0.0px 0.0px"><code>conversion factor to 1 kg</code>0YXuyZa8bCZOBwkGwVTktB</p>
+                </td>
+                <td></td>
+            </tr>
+            <tr>
+                <td class="subsection" style="padding-left: 20px;font-style: italic;"></td>    
+                <td class="subsection" style="padding-left: 20px;font-style: italic;">Quantitative reference</td>
+                <td class="subsection" style="padding-left: 20px;font-style: italic;">quantitativeReference</td>
+                <td class="subsection">r</td>
+                <td class="subsection">[0,1]</td>
+                <td class="subsection"></td>
+                <td class="subsection"></td>    
+                <td class="subsection"></td>    
+                <td class="subsection">This section names the type of quantitative reference used for this Flow data set, which is always one of the Flow's Flow properties (see
+                    section "Flow properties"). </td>    
+                <td class="subsection">2-9-38</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td class="fieldname" style="padding-left: 30px;"></td>    
+                <td class="fieldname" style="padding-left: 30px;">Reference flow property</td>
+                <td class="fieldname" style="padding-left: 30px;">referenceToReferenceFlowProperty</td>
+                <td class="fieldname">r</td>
+                <td class="fieldname">[1,1]</td>
+                <td class="fieldname"><a target="_blank" href="ILCD_Common_DataTypes.html#Int5">Int5</a></td>
+                <td class="fieldname"></td>    
+                <td class="fieldname"></td>    
+                <td class="fieldname">One of the Flow's Flow properties, which is set as the default flow property in which the flow measured. (Data set internal reference to one
+                    of the flow properties in section "Quantitative flow properties".) </td>    
+                <td class="fieldname">2-9-38-151</td>
+                <td>
+                    <p>area 0_TJdgAuTB6wbrz7FSAZhR</p>
+                    <p>item 3M2UHyXRPDvf5JuuPTNYtJ</p>
+                    <p>length 3YZsCVKnnCnA1ZzkND3vmD</p>
+                    <p>mass 2v2Psp_3n7lQQ8g8W_20jF</p>
+                    <p>volume 3hPvKyBtD30h$90jJSI2yM</p>
+                </td>
+                <td></td>
+            </tr>
+            <tr>
+                <td class="fieldname" style="padding-left: 30px;"></td>    
+                <td class="fieldname" style="padding-left: 30px;">Other content</td>
+                <td class="fieldname" style="padding-left: 30px;">other</td>
+                <td class="fieldname">o</td>
+                <td class="fieldname">[0,1]</td>
+                <td class="fieldname"></td>
+                <td class="fieldname"></td>    
+                <td class="fieldname"></td>    
+                <td class="fieldname">May contain arbitrary content.</td>    
+                <td class="fieldname">0</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td class="subsection" style="padding-left: 20px;font-style: italic;"></td>    
+                <td class="subsection" style="padding-left: 20px;font-style: italic;">Geography</td>
+                <td class="subsection" style="padding-left: 20px;font-style: italic;">geography</td>
+                <td class="subsection">o</td>
+                <td class="subsection">[0,1]</td>
+                <td class="subsection"></td>
+                <td class="subsection"></td>
+                <td class="subsection"></td>    
+                <td class="subsection">Provides information about the geographical representativeness of the data set.</td>    
+                <td class="subsection">2-9-42</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td class="fieldname" style="padding-left: 30px;"></td>    
+                <td class="fieldname" style="padding-left: 30px;">Location of supply</td>
+                <td class="fieldname" style="padding-left: 30px;">locationOfSupply</td>
+                <td class="fieldname">o</td>
+                <td class="fieldname">[1,1]</td>
+                <td class="fieldname"><a target="_blank" href="ILCD_Common_DataTypes.html#StringMultiLang">StringMultiLang</a></td>
+                <td class="fieldname"></td>    
+                <td class="fieldname"></td>    
+                <td class="fieldname">Only used for product or waste flows and only required for matrix-type databases. Location or region of supply / consumption or production of
+                    the good or service, or operation of the process. [Note 1: Entry can be of type "two-letter ISO 3166 country code" for countries, "seven-letter regional codes"
+                    for regions or continents, or "market areas and market organisations", as predefined for the ILCD. Also a name for e.g. a specific plant etc. can be given here
+                    (e.g. "FR, Lyon, XY Company, Z Site"; user defined). Note 2: The fact whether the entry refers to production or to consumption / supply has to be stated in the
+                    name-field "Mix and location types" e.g. as "Production mix".] </td>    
+                <td class="fieldname">2-9-42-152</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td class="fieldname" style="padding-left: 30px;"></td>    
+                <td class="fieldname" style="padding-left: 30px;">Other content</td>
+                <td class="fieldname" style="padding-left: 30px;">other</td>
+                <td class="fieldname">o</td>
+                <td class="fieldname">[0,1]</td>
+                <td class="fieldname"></td>
+                <td class="fieldname"></td>    
+                <td class="fieldname"></td>    
+                <td class="fieldname">May contain arbitrary content.</td>    
+                <td class="fieldname">0</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td class="subsection" style="padding-left: 20px;font-style: italic;"></td>    
+                <td class="subsection" style="padding-left: 20px;font-style: italic;">Technological representativeness</td>
+                <td class="subsection" style="padding-left: 20px;font-style: italic;">technology</td>
+                <td class="subsection">o</td>
+                <td class="subsection">[0,1]</td>
+                <td class="subsection"></td>
+                <td class="subsection"></td>    
+                <td class="subsection"></td>    
+                <td class="subsection">Provides information about the technological representativeness of the flow in case it is a product or waste flow.</td>    
+                <td class="subsection">2-9-43</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td class="fieldname" style="padding-left: 30px;"></td>    
+                <td class="fieldname" style="padding-left: 30px;">Technical purpose of product or waste</td>
+                <td class="fieldname" style="padding-left: 30px;">technologicalApplicability</td>
+                <td class="fieldname">o</td>
+                <td class="fieldname">[0,1]</td>
+                <td class="fieldname"><a target="_blank" href="ILCD_Common_DataTypes.html#FTMultiLang">FTMultiLang</a></td>
+                <td class="fieldname"></td>    
+                <td class="fieldname"></td>    
+                <td class="fieldname">Description of the intended / possible applications of the good or service, or waste. E.g. for which type of products the material,
+                    represented by this data set, is used. Examples: "This high purity chemical is used for analytical laboratories only." or "This technical quality bulk chemical
+                    is used for large scale synthesis in chemical industry.". Or: "This type of biowaste is typically composted or biodigested as the water content is too high for
+                    efficient combustion". </td>    
+                <td class="fieldname">2-9-43-1</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td class="fieldname" style="padding-left: 30px;"></td>    
+                <td class="fieldname" style="padding-left: 30px;">Technical specification</td>
+                <td class="fieldname" style="padding-left: 30px;">referenceToTechnicalSpecification</td>
+                <td class="fieldname">o</td>
+                <td class="fieldname">[0,n]</td>
+                <td class="fieldname"><a target="_blank" href="ILCD_Common_DataTypes.html#GlobalReferenceType">GlobalReferenceType</a></td>
+                <td class="fieldname"></td>    
+                <td class="fieldname"></td>    
+                <td class="fieldname">"Source data set(s)" of the product's or waste's technical specification, waste data sheet, safety data sheet, etc.</td>    
+                <td class="fieldname">2-9-43-2</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td class="fieldname" style="padding-left: 30px;"></td>    
+                <td class="fieldname" style="padding-left: 30px;">Other content</td>
+                <td class="fieldname" style="padding-left: 30px;">other</td>
+                <td class="fieldname">o</td>
+                <td class="fieldname">[0,1]</td>
+                <td class="fieldname"></td>
+                <td class="fieldname"></td>    
+                <td class="fieldname"></td>    
+                <td class="fieldname">May contain arbitrary content.</td>    
+                <td class="fieldname">0</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td class="fieldname" style="padding-left: 20px;"></td>    
+                <td class="fieldname" style="padding-left: 20px;">Other content</td>
+                <td class="fieldname" style="padding-left: 20px;">other</td>
+                <td class="fieldname">o</td>
+                <td class="fieldname">[0,1]</td>
+                <td class="fieldname"></td>
+                <td class="fieldname"></td>    
+                <td class="fieldname"></td>    
+                <td class="fieldname">May contain arbitrary content.</td>    
+                <td class="fieldname">0</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td class="section" style="padding-left: 10px;font-style: italic;"></td>    
+                <td class="section" style="padding-left: 10px;font-style: italic;">Modelling and validation</td>
+                <td class="section" style="padding-left: 10px;font-style: italic;">modellingAndValidation</td>
+                <td class="section">r</td>
+                <td class="section">[0,1]</td>
+                <td class="section"></td>
+                <td class="section"></td>    
+                <td class="section"></td>    
+                <td class="section">Covers the five sub-sections 1) LCI method, 2) Data sources, treatment and representativeness (not used for flows), 3) Completeness (not used
+                    for flows), 4) Validation (not used for flows), and 5) Compliance. </td>    
+                <td class="section">2-11</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td class="subsection" style="padding-left: 20px;font-style: italic;"></td>    
+                <td class="subsection" style="padding-left: 20px;font-style: italic;">LCI method</td>
+                <td class="subsection" style="padding-left: 20px;font-style: italic;">LCIMethod</td>
+                <td class="subsection">r</td>
+                <td class="subsection">[0,1]</td>
+                <td class="subsection"></td>
+                <td class="subsection"></td>    
+                <td class="subsection"></td>    
+                <td class="subsection">LCI methodological modelling aspects.</td>    
+                <td class="subsection">2-11-48</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td class="fieldname" style="padding-left: 30px;"></td>    
+                <td class="fieldname" style="padding-left: 30px;">Type of flow</td>
+                <td class="fieldname" style="padding-left: 30px;">typeOfDataSet</td>
+                <td class="fieldname">r</td>
+                <td class="fieldname">[1,1]</td>
+                <td class="fieldname"><a target="_blank" href="ILCD_Common_EnumerationValues.html#FlowTypeValues">FlowTypeValues</a><br /><span class="data_enum"><a class="info"
+                            href="javascript:void(0);">Elementary flow<span>Exchange between nature (ecosphere) and technosphere, e.g. an emission,
+                        resource.</span></a></span><br /><span class="data_enum"><a class="info" href="javascript:void(0);">Product flow<span>Exchange of goods or services within
+                                technosphere, with a positive economic/market value.</span></a></span><br /><span class="data_enum"><a class="info" href="javascript:void(0);">Waste
+                                flow<span>Exchange of matters within the technosphere, with a economic/market value equal or below "0".</span></a></span><br /><span
+                        class="data_enum"><a class="info" href="javascript:void(0);">Other flow<span>Exchange of other type, e.g. dummy or modelling support
+                        flows.</span></a></span><br /></td>
+                <td class="fieldname"></td>    
+                <td class="fieldname"></td>    
+                <td class="fieldname">Names the basic type of the flow.</td>    
+                <td class="fieldname">2-11-48-153</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td class="fieldname" style="padding-left: 30px;"></td>    
+                <td class="fieldname" style="padding-left: 30px;">Other content</td>
+                <td class="fieldname" style="padding-left: 30px;">other</td>
+                <td class="fieldname">o</td>
+                <td class="fieldname">[0,1]</td>
+                <td class="fieldname"></td>
+                <td class="fieldname"></td>    
+                <td class="fieldname"></td>    
+                <td class="fieldname">May contain arbitrary content.</td>    
+                <td class="fieldname">0</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td class="fieldname fieldname_epd" style="padding-left: 40px;">herstellerspezifisches Produkt</td>
+                <td class="fieldname fieldname_epd" style="padding-left: 40px;">vendor specific product</td>
+                <td class="fieldname fieldname_epd" style="padding-left: 40px;">epd:vendorSpecificProduct</td>
+                <td class="fieldname fieldname_epd">o</td>
+                <td class="fieldname fieldname_epd">[0,1]</td>
+                <td class="fieldname fieldname_epd"><a target="_blank" href="ILCD_Common_DataTypes.html#boolean">boolean</a></td>
+                <td class="fieldname fieldname_epd">Gibt an ob es sich um ein spezifisches Produkt von einem konkreten Hersteller (true) oder um ein generisches (false) handelt. Wenn dieses Feld fehlt, gilt der Datensatz als generisches Produkt.</td>
+                <td class="fieldname fieldname_epd">Indicates whether the described product is manufactured by a specific vendor (true) or a generic product (false). Absence of this field always indicates a generic product.</td>
+                <td class="fieldname fieldname_epd"></td>
+                <td class="fieldname fieldname_epd"></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td class="fieldname fieldname_epd" style="padding-left: 40px;">Verweis auf Hersteller</td>
+                <td class="fieldname fieldname_epd" style="padding-left: 40px;">Reference to vendor</td>
+                <td class="fieldname fieldname_epd" style="padding-left: 40px;">epd:referenceToVendor</td>
+                <td class="fieldname fieldname_epd">o</td>
+                <td class="fieldname fieldname_epd">[0,1]</td>
+                <td class="fieldname fieldname_epd"><a target="_blank" href="ILCD_Common_DataTypes.html#GlobalReferenceType">GlobalReferenceType</a></td>
+                <td class="fieldname fieldname_epd">Referenz auf den Hersteller des Produkts ("Contact"-Datensatz)</td>
+                <td class="fieldname fieldname_epd">Reference ("contact data set") to the product vendor</td>
+                <td class="fieldname fieldname_epd"></td>
+                <td class="fieldname fieldname_epd"></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td class="fieldname fieldname_epd" style="padding-left: 40px;">Verweis auf Quelle</td>
+                <td class="fieldname fieldname_epd" style="padding-left: 40px;">Reference to source</td>
+                <td class="fieldname fieldname_epd" style="padding-left: 40px;">epd:referenceToSource</td>
+                <td class="fieldname fieldname_epd">o</td>
+                <td class="fieldname fieldname_epd">[0,1]</td>
+                <td class="fieldname fieldname_epd"><a target="_blank" href="ILCD_Common_DataTypes.html#GlobalReferenceType">GlobalReferenceType</a></td>
+                <td class="fieldname fieldname_epd">Referenz auf eine zugehörige Quelle (z.B. Produktdatenblatt oder -katalog, "Source"-Datensatz)</td>
+                <td class="fieldname fieldname_epd">Reference ("source data set") to a source further describing the product, e.g. a data sheet or product catalog</td>
+                <td class="fieldname fieldname_epd"></td>
+                <td class="fieldname fieldname_epd"></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td class="subsection" style="padding-left: 20px;font-style: italic;"></td>    
+                <td class="subsection" style="padding-left: 20px;font-style: italic;">Compliance declarations</td>
+                <td class="subsection" style="padding-left: 20px;font-style: italic;">complianceDeclarations</td>
+                <td class="subsection">o</td>
+                <td class="subsection">[0,1]</td>
+                <td class="subsection"></td>
+                <td class="subsection"></td>    
+                <td class="subsection"></td>    
+                <td class="subsection">Statements on compliance of several data set aspects with compliance requirements as defined by the referenced compliance system (e.g. an EPD
+                    scheme, handbook of a national or international data network such as the ILCD, etc.). </td>    
+                <td class="subsection">2-11-56</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td class="fieldname" style="padding-left: 30px;font-style: italic;"></td>    
+                <td class="fieldname" style="padding-left: 30px;font-style: italic;">Compliance</td>
+                <td class="fieldname" style="padding-left: 30px;font-style: italic;">compliance</td>
+                <td class="fieldname">r</td>
+                <td class="fieldname">[1,n]</td>
+                <td class="fieldname"></td>
+                <td class="fieldname"></td>
+                <td class="fieldname"></td>    
+                <td class="fieldname">one compliance declaration</td>    
+                <td class="fieldname">1-3-22-1</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td class="fieldname" style="padding-left: 40px;"></td>    
+                <td class="fieldname" style="padding-left: 40px;">Compliance system name</td>
+                <td class="fieldname" style="padding-left: 40px;">referenceToComplianceSystem</td>
+                <td class="fieldname">r</td>
+                <td class="fieldname">[1,1]</td>
+                <td class="fieldname"><a target="_blank" href="ILCD_Common_DataTypes.html#GlobalReferenceType">GlobalReferenceType</a></td>
+                <td class="fieldname"></td>    
+                <td class="fieldname"></td>    
+                <td class="fieldname">"Source data set" of the "Compliance system" that is declared to be met by the data set.</td>    
+                <td class="fieldname">1-3-22-90</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td class="fieldname" style="padding-left: 40px;"></td>    
+                <td class="fieldname" style="padding-left: 40px;">Approval of overall compliance</td>
+                <td class="fieldname" style="padding-left: 40px;">approvalOfOverallCompliance</td>
+                <td class="fieldname">o</td>
+                <td class="fieldname">[0,1]</td>
+                <td class="fieldname"><a target="_blank" href="ILCD_Common_EnumerationValues.html#ComplianceValues">ComplianceValues</a><br /><span class="data_enum"><a
+                            class="info" href="javascript:void(0);">Fully compliant<span>Meets all requirements of this compliance aspect as defined in the respective "Compliance
+                                system".</span></a></span><br /><span class="data_enum"><a class="info" href="javascript:void(0);">Not compliant<span>Does not meet all requirements
+                                of this compliance aspect, as defined for the respective "Compliance system".</span></a></span><br /><span class="data_enum"><a class="info"
+                            href="javascript:void(0);">Not defined<span>For this compliance aspect the named "Compliance system" has not defined compliance
+                        requirements.</span></a></span><br /></td>
+                <td class="fieldname"></td>    
+                <td class="fieldname"></td>    
+                <td class="fieldname">Official approval whether or not and in how far the data set meets all the requirements of the "Compliance system" refered to. This approval
+                    should be issued/confirmed by the owner of that compliance system, who is identified via the respective "Contact data set". </td>    
+                <td class="fieldname">1-3-22-95</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td class="fieldname" style="padding-left: 40px;"></td>    
+                <td class="fieldname" style="padding-left: 40px;">Other content</td>
+                <td class="fieldname" style="padding-left: 40px;">other</td>
+                <td class="fieldname">o</td>
+                <td class="fieldname">[0,1]</td>
+                <td class="fieldname"></td>
+                <td class="fieldname"></td>    
+                <td class="fieldname"></td>    
+                <td class="fieldname">May contain arbitrary content.</td>    
+                <td class="fieldname">0</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td class="fieldname" style="padding-left: 30px;"></td>    
+                <td class="fieldname" style="padding-left: 30px;">Other content</td>
+                <td class="fieldname" style="padding-left: 30px;">other</td>
+                <td class="fieldname">o</td>
+                <td class="fieldname">[0,1]</td>
+                <td class="fieldname"></td>    
+                <td class="fieldname"></td>
+                <td class="fieldname"></td>    
+                <td class="fieldname">May contain arbitrary content.</td>    
+                <td class="fieldname">0</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td class="fieldname" style="padding-left: 20px;"></td>    
+                <td class="fieldname" style="padding-left: 20px;">Other content</td>
+                <td class="fieldname" style="padding-left: 20px;">other</td>
+                <td class="fieldname">o</td>
+                <td class="fieldname">[0,1]</td>
+                <td class="fieldname"></td>
+                <td class="fieldname"></td>    
+                <td class="fieldname"></td>    
+                <td class="fieldname">May contain arbitrary content.</td>    
+                <td class="fieldname">0</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td class="section" style="padding-left: 10px;font-style: italic;"></td>    
+                <td class="section" style="padding-left: 10px;font-style: italic;">Administrative information</td>
+                <td class="section" style="padding-left: 10px;font-style: italic;">administrativeInformation</td>
+                <td class="section">r</td>
+                <td class="section">[0,1]</td>
+                <td class="section"></td>
+                <td class="section"></td>
+                <td class="section"></td>    
+                <td class="section">Information on data set management and administration.</td>    
+                <td class="section">2-13</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td class="subsection" style="padding-left: 20px;font-style: italic;"></td>    
+                <td class="subsection" style="padding-left: 20px;font-style: italic;">Data entry by</td>
+                <td class="subsection" style="padding-left: 20px;font-style: italic;">dataEntryBy</td>
+                <td class="subsection">r</td>
+                <td class="subsection">[0,1]</td>
+                <td class="subsection"></td>
+                <td class="subsection"></td>    
+                <td class="subsection"></td>    
+                <td class="subsection">Staff or entity, that documented the generated data set, entering the information into the database; plus administrative information linked
+                    to the data entry activity. </td>    
+                <td class="subsection">2-13-62</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td class="fieldname" style="padding-left: 30px;"></td>    
+                <td class="fieldname" style="padding-left: 30px;">Time stamp (last saved)</td>
+                <td class="fieldname" style="padding-left: 30px;">timeStamp</td>
+                <td class="fieldname">r</td>
+                <td class="fieldname">[0,1]</td>
+                <td class="fieldname"><a target="_blank" href="ILCD_Common_DataTypes.html#dateTime">dateTime</a></td>
+                <td class="fieldname"></td>    
+                <td class="fieldname"></td>    
+                <td class="fieldname">Date and time stamp of data set generation, typically an automated entry ("last saved").</td>    
+                <td class="fieldname">1-5-28-104</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td class="fieldname" style="padding-left: 30px;"></td>    
+                <td class="fieldname" style="padding-left: 30px;">Data set format(s)</td>
+                <td class="fieldname" style="padding-left: 30px;">referenceToDataSetFormat</td>
+                <td class="fieldname">r</td>
+                <td class="fieldname">[0,n]</td>
+                <td class="fieldname"><a target="_blank" href="ILCD_Common_DataTypes.html#GlobalReferenceType">GlobalReferenceType</a></td>
+                <td class="fieldname"></td>    
+                <td class="fieldname"></td>    
+                <td class="fieldname">"Source data set" of the used version of the ILCD format. If additional data format fields have been integrated into the data set file, using
+                    the "namespace" option, the used format namespace(s) are to be given. This is the case if the data sets carries additional information as specified by other,
+                    particular LCA formats, e.g. of other database networks or LCA softwares. </td>    
+                <td class="fieldname">1-5-28-105</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td class="fieldname" style="padding-left: 30px;"></td>    
+                <td class="fieldname" style="padding-left: 30px;">Data entry by:</td>
+                <td class="fieldname" style="padding-left: 30px;">referenceToPersonOrEntityEnteringTheData</td>
+                <td class="fieldname">o</td>
+                <td class="fieldname">[0,1]</td>
+                <td class="fieldname"><a target="_blank" href="ILCD_Common_DataTypes.html#GlobalReferenceType">GlobalReferenceType</a></td>
+                <td class="fieldname"></td>    
+                <td class="fieldname"></td>    
+                <td class="fieldname">"Contact data set" of the responsible person or entity that has documented this data set, i.e. entered the data and the descriptive
+                    information. </td>    
+                <td class="fieldname">1-5-28-103</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td class="fieldname" style="padding-left: 30px;"></td>    
+                <td class="fieldname" style="padding-left: 30px;">Other content</td>
+                <td class="fieldname" style="padding-left: 30px;">other</td>
+                <td class="fieldname">o</td>
+                <td class="fieldname">[0,1]</td>
+                <td class="fieldname"></td>
+                <td class="fieldname"></td>
+                <td class="fieldname"></td>    
+                <td class="fieldname">May contain arbitrary content.</td>    
+                <td class="fieldname">0</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td class="subsection" style="padding-left: 20px;font-style: italic;"></td>    
+                <td class="subsection" style="padding-left: 20px;font-style: italic;">Publication and ownership</td>
+                <td class="subsection" style="padding-left: 20px;font-style: italic;">publicationAndOwnership</td>
+                <td class="subsection">r</td>
+                <td class="subsection">[0,1]</td>
+                <td class="subsection"></td>
+                <td class="subsection"></td>
+                <td class="subsection"></td>    
+                <td class="subsection">Information related to publication and version management of the data set including copyright and access restrictions.</td>    
+                <td class="subsection">2-13-64</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td class="fieldname" style="padding-left: 30px;"></td>    
+                <td class="fieldname" style="padding-left: 30px;">Data set version</td>
+                <td class="fieldname" style="padding-left: 30px;">dataSetVersion</td>
+                <td class="fieldname">m</td>
+                <td class="fieldname">[1,1]</td>
+                <td class="fieldname"><a target="_blank" href="ILCD_Common_DataTypes.html#Version">Version</a></td>
+                <td class="fieldname"></td>    
+                <td class="fieldname"></td>    
+                <td class="fieldname">Version number of data set. First two digits refer to major updates, the second two digits to minor revisions and error corrections etc. The
+                    third three digits are intended for automatic and internal counting of versions during data set development. Together with the data set's UUID, the "Data set
+                    version" uniquely identifies each data set. </td>    
+                <td class="fieldname">1-5-30-111</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td class="fieldname" style="padding-left: 30px;"></td>    
+                <td class="fieldname" style="padding-left: 30px;">Preceding data set version</td>
+                <td class="fieldname" style="padding-left: 30px;">referenceToPrecedingDataSetVersion</td>
+                <td class="fieldname">o</td>
+                <td class="fieldname">[0,n]</td>
+                <td class="fieldname"><a target="_blank" href="ILCD_Common_DataTypes.html#GlobalReferenceType">GlobalReferenceType</a></td>
+                <td class="fieldname"></td>    
+                <td class="fieldname"></td>    
+                <td class="fieldname">Last preceding data set, which was replaced by this version. Either a URI of that data set (i.e. an internet address) or its UUID plus version
+                    number is given (or both). </td>    
+                <td class="fieldname">1-5-30-112</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td class="fieldname" style="padding-left: 30px;"></td>    
+                <td class="fieldname" style="padding-left: 30px;">Permanent data set URI</td>
+                <td class="fieldname" style="padding-left: 30px;">permanentDataSetURI</td>
+                <td class="fieldname">r</td>
+                <td class="fieldname">[0,1]</td>
+                <td class="fieldname"><a target="_blank" href="ILCD_Common_DataTypes.html#anyURI">anyURI</a></td>
+                <td class="fieldname"></td>    
+                <td class="fieldname"></td>    
+                <td class="fieldname">URI (i.e. an internet address) of the original of this data set. [Note: This equally globally unique identifier supports users and software
+                    tools to identify and retrieve the original version of a data set via the internet or to check for available updates. The URI must not represent an existing WWW
+                    address, but it should be unique and point to the data access point, e.g. by combining the data owner's www path with the data set's UUID, e.g.
+                    http://www.mycompany.com/lca/processes/50f12420-8855-12db-b606-0900210c9a66.] </td>    
+                <td class="fieldname">1-5-30-300</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td class="fieldname" style="padding-left: 30px;"></td>    
+                <td class="fieldname" style="padding-left: 30px;">Owner of data set</td>
+                <td class="fieldname" style="padding-left: 30px;">referenceToOwnershipOfDataSet</td>
+                <td class="fieldname">r</td>
+                <td class="fieldname">[0,1]</td>
+                <td class="fieldname"><a target="_blank" href="ILCD_Common_DataTypes.html#GlobalReferenceType">GlobalReferenceType</a></td>
+                <td class="fieldname"></td>    
+                <td class="fieldname"></td>    
+                <td class="fieldname">"Contact data set" of the person or entity who owns this data set. (Note: this is not necessarily the publisher of the data set.) </td>    
+                <td class="fieldname">1-5-30-115</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td class="fieldname" style="padding-left: 30px;"></td>    
+                <td class="fieldname" style="padding-left: 30px;">Other content</td>
+                <td class="fieldname" style="padding-left: 30px;">other</td>
+                <td class="fieldname">o</td>
+                <td class="fieldname">[0,1]</td>
+                <td class="fieldname"></td>
+                <td class="fieldname"></td>    
+                <td class="fieldname"></td>    
+                <td class="fieldname">May contain arbitrary content.</td>    
+                <td class="fieldname">0</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td class="fieldname" style="padding-left: 20px;"></td>    
+                <td class="fieldname" style="padding-left: 20px;">Other content</td>
+                <td class="fieldname" style="padding-left: 20px;">other</td>
+                <td class="fieldname">o</td>
+                <td class="fieldname">[0,1]</td>
+                <td class="fieldname"></td>
+                <td class="fieldname"></td>    
+                <td class="fieldname"></td>    
+                <td class="fieldname">May contain arbitrary content.</td>    
+                <td class="fieldname">0</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td class="section" style="padding-left: 10px;font-style: italic;"></td>    
+                <td class="section" style="padding-left: 10px;font-style: italic;">Flow properties</td>
+                <td class="section" style="padding-left: 10px;font-style: italic;">flowProperties</td>
+                <td class="section">r</td>
+                <td class="section">[0,1]</td>
+                <td class="section"></td>
+                <td class="section"></td>
+                <td class="section"></td>    
+                <td class="section">List of flow properties (with all variable information linked to that respective flow).</td>    
+                <td class="section">2-15-66</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td class="subsection" style="padding-left: 20px;font-style: italic;"></td>    
+                <td class="subsection" style="padding-left: 20px;font-style: italic;">Flow property</td>
+                <td class="subsection" style="padding-left: 20px;font-style: italic;">flowProperty</td>
+                <td class="subsection">r</td>
+                <td class="subsection">[1,n]</td>
+                <td class="subsection"></td>
+                <td class="subsection"></td>    
+                <td class="subsection"></td>    
+                <td class="subsection">One flow property</td>    
+                <td class="subsection">2-15-66-1</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td class="fieldname" style="padding-left: 30px;"></td>    
+                <td class="fieldname" style="padding-left: 30px;">Data set internal ID</td>
+                <td class="fieldname" style="padding-left: 30px;">@dataSetInternalID</td>
+                <td class="fieldname">r</td>
+                <td class="fieldname"></td>
+                <td class="fieldname"><a target="_blank" href="ILCD_Common_DataTypes.html#Int5">Int5</a></td>
+                <td class="fieldname"></td>    
+                <td class="fieldname"></td>    
+                <td class="fieldname">Automated entry: internal ID, used in the "Quantitative reference" section to identify the reference flow property.</td>    
+                <td class="fieldname">2-15-66-191</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td class="fieldname" style="padding-left: 30px;"></td>    
+                <td class="fieldname" style="padding-left: 30px;">Flow property</td>
+                <td class="fieldname" style="padding-left: 30px;">referenceToFlowPropertyDataSet</td>
+                <td class="fieldname">r</td>
+                <td class="fieldname">[1,1]</td>
+                <td class="fieldname"><a target="_blank" href="ILCD_Common_DataTypes.html#GlobalReferenceType">GlobalReferenceType</a></td>
+                <td class="fieldname"></td>    
+                <td class="fieldname"></td>    
+                <td class="fieldname">"Flow property data set".</td>    
+                <td class="fieldname">2-15-66-190</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td class="fieldname" style="padding-left: 30px;"></td>    
+                <td class="fieldname" style="padding-left: 30px;">Mean value (of flow property)</td>
+                <td class="fieldname" style="padding-left: 30px;">meanValue</td>
+                <td class="fieldname">r</td>
+                <td class="fieldname">[1,1]</td>
+                <td class="fieldname"><a target="_blank" href="ILCD_Common_DataTypes.html#Real">Real</a></td>
+                <td class="fieldname"></td>    
+                <td class="fieldname"></td>    
+                <td class="fieldname">Value for the flow expressed in this flow property in relationship to the the value of the flow expressed in its reference flow property (see
+                    field "Reference to reference flow property" in the "Quantitative reference" section). [Notes and examples: If the product flow "Diesel" is expressed by default
+                    in "Mass" (= reference flow property) and "kg" (= corresponding reference unit), the value that would be stated here for an additional flow property e.g. "Net
+                    calorific value" would be "42.5", as this flow property has the reference unit "MJ" and Diesel has a net calorific value of 42.5 MJ per 1 kg. It is recommended
+                    to report only significant digits of the value.] </td>    
+                <td class="fieldname">2-15-66-192</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td class="fieldname" style="padding-left: 30px;"></td>    
+                <td class="fieldname" style="padding-left: 30px;">Minimum value</td>
+                <td class="fieldname" style="padding-left: 30px;">minimumValue</td>
+                <td class="fieldname">r</td>
+                <td class="fieldname">[0,1]</td>
+                <td class="fieldname"><a target="_blank" href="ILCD_Common_DataTypes.html#Real">Real</a></td>
+                <td class="fieldname"></td>    
+                <td class="fieldname"></td>    
+                <td class="fieldname">Minimum value of this flow property in case uncertainty distribution is uniform or triangular.</td>    
+                <td class="fieldname">2-15-66-193</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td class="fieldname" style="padding-left: 30px;"></td>    
+                <td class="fieldname" style="padding-left: 30px;">Maximum value</td>
+                <td class="fieldname" style="padding-left: 30px;">maximumValue</td>
+                <td class="fieldname">r</td>
+                <td class="fieldname">[0,1]</td>
+                <td class="fieldname"><a target="_blank" href="ILCD_Common_DataTypes.html#Real">Real</a></td>
+                <td class="fieldname"></td>    
+                <td class="fieldname"></td>    
+                <td class="fieldname">Maximum value of this flow property in case uncertainty distribution is uniform or triangular.</td>    
+                <td class="fieldname">2-15-66-194</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td class="fieldname" style="padding-left: 30px;"></td>    
+                <td class="fieldname" style="padding-left: 30px;">Uncertainty distribution type</td>
+                <td class="fieldname" style="padding-left: 30px;">uncertaintyDistributionType</td>
+                <td class="fieldname">o</td>
+                <td class="fieldname">[0,1]</td>
+                <td class="fieldname"><a target="_blank" href="ILCD_Common_EnumerationValues.html#UncertaintyDistributionTypeValues"
+                        >UncertaintyDistributionTypeValues</a><br /><span class="data_enum"><a class="info" href="javascript:void(0);">undefined<span>Probability distribution
+                                information not available.</span></a></span><br /><span class="data_enum"><a class="info" href="javascript:void(0);">log-normal<span>Probability
+                                distribution of any random parameter whose logarithm is normally distributed.</span></a></span><br /><span class="data_enum"><a class="info"
+                            href="javascript:void(0);">normal<span>Probability distribution of any random parameter whose value is normally distributed around the mean of
+                                zero.</span></a></span><br /><span class="data_enum"><a class="info" href="javascript:void(0);">triangular<span>Probability distribution of any
+                                random parameter between minimum value and maximum value with the highest probability at the average value of minimum plus maximum value. Linear
+                                change of probability between minimum, maximum and average value.</span></a></span><br /><span class="data_enum"><a class="info"
+                            href="javascript:void(0);">uniform<span>Continuous uniform probability distribution between minimum value and maximum value and "0" probability beyond
+                                these.</span></a></span><br /></td>
+                <td class="fieldname"></td>    
+                <td class="fieldname"></td>    
+                <td class="fieldname">Defines the kind of uncertainty distribution that is valid for this particular object or parameter.</td>    
+                <td class="fieldname">2-15-66-195</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td class="fieldname" style="padding-left: 30px;"></td>    
+                <td class="fieldname" style="padding-left: 30px;">Relative StdDev in %</td>
+                <td class="fieldname" style="padding-left: 30px;">relativeStandardDeviation95In</td>
+                <td class="fieldname">r</td>
+                <td class="fieldname">[0,1]</td>
+                <td class="fieldname"><a target="_blank" href="ILCD_Common_DataTypes.html#Perc">Perc</a></td>
+                <td class="fieldname"></td>    
+                <td class="fieldname"></td>    
+                <td class="fieldname">The resulting overall uncertainty of the calculated variable value considering uncertainty of measurements, modelling, appropriateness etc.
+                    [Notes: For log-normal distribution the square of the geometric standard deviation (SDg^2) is stated. Mean value times SDg^2 equals the 97.5% value (= Maximum
+                    value), Mean value divided by SDg^2 equals the 2.5% value (= Minimum value). For normal distribution the doubled standard deviation value (2*SD) is entered.
+                    Mean value plus 2*SD equals 97.5% value (= Maximum value), Mean value minus 2*SD equals 2.5% value (= Minimum value). This data field remains empty when uniform
+                    or triangular uncertainty distribution is applied.] </td>    
+                <td class="fieldname">2-15-66-196</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td class="fieldname" style="padding-left: 30px;"></td>    
+                <td class="fieldname" style="padding-left: 30px;">Data derivation type / status</td>
+                <td class="fieldname" style="padding-left: 30px;">dataDerivationTypeStatus</td>
+                <td class="fieldname">r</td>
+                <td class="fieldname">[0,1]</td>
+                <td class="fieldname"><a target="_blank" href="ILCD_Common_EnumerationValues.html#FlowDataDerivationTypeStatusValues"
+                        >FlowDataDerivationTypeStatusValues</a><br /><span class="data_enum"><a class="info" href="javascript:void(0);">Measured<span>All data was measured for the
+                                purpose of LCA or is meeting the related requirements (e.g. being quantiatively and qualitatively related to unit process and its quantitative
+                                reference/products, etc.). This includes calculated data with models based on measured plant data (but not exclusively theoretical calculations) as
+                                used e.g. in parameterised unit processes.</span></a></span><br /><span class="data_enum"><a class="info" href="javascript:void(0);"
+                                >Calculated<span>Stochiometric or other theoretical relations were used to calculate the amount of this flow. [Note: Calculations that include
+                                quantiatively relevant expert judgement are of the type "Expert judgement".]</span></a></span><br /><span class="data_enum"><a class="info"
+                            href="javascript:void(0);">Estimated<span>Expert judgement was used to derive the quantity of this flow. This includes the unmodified or corrected use
+                                of data from similar processes / technologies, times, or locations, as well as calculated values where the formulas/parameters include
+                                quantitatively relevant expert judgement.</span></a></span><br /><span class="data_enum"><a class="info" href="javascript:void(0);">Unknown
+                                derivation<span>Data derivation type information fully or at least for quantiatively relevant parts unavailable.</span></a></span><br /></td>
+                <td class="fieldname"></td>    
+                <td class="fieldname"></td>    
+                <td class="fieldname">Identifies the way by which the Flow property value was derived (e.g. measured, estimated etc.), respectively the status and relevancy of
+                    missing data. </td>    
+                <td class="fieldname">2-15-66-198</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td class="fieldname" style="padding-left: 30px;"></td>    
+                <td class="fieldname" style="padding-left: 30px;">Comment</td>
+                <td class="fieldname" style="padding-left: 30px;">generalComment</td>
+                <td class="fieldname">o</td>
+                <td class="fieldname">[0,1]</td>
+                <td class="fieldname"><a target="_blank" href="ILCD_Common_DataTypes.html#StringMultiLang">StringMultiLang</a></td>
+                <td class="fieldname"></td>    
+                <td class="fieldname"></td>    
+                <td class="fieldname">General comment on each single flow property (if necessary) referring to specifc data sources used, or for workflow purposes about status of
+                    "finalisation" of an entry etc. </td>    
+                <td class="fieldname">2-15-66-199</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td class="fieldname" style="padding-left: 30px;"></td>    
+                <td class="fieldname" style="padding-left: 30px;">Other content</td>
+                <td class="fieldname" style="padding-left: 30px;">other</td>
+                <td class="fieldname">o</td>
+                <td class="fieldname">[0,1]</td>
+                <td class="fieldname"></td>
+                <td class="fieldname"></td>
+                <td class="fieldname"></td>    
+                <td class="fieldname">May contain arbitrary content.</td>    
+                <td class="fieldname">0</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td class="fieldname" style="padding-left: 20px;"></td>    
+                <td class="fieldname" style="padding-left: 20px;">Other content</td>
+                <td class="fieldname" style="padding-left: 20px;">other</td>
+                <td class="fieldname">o</td>
+                <td class="fieldname">[0,1]</td>
+                <td class="fieldname"></td>
+                <td class="fieldname"></td>
+                <td class="fieldname"></td>    
+                <td class="fieldname">May contain arbitrary content.</td>    
+                <td class="fieldname">0</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td class="fieldname" style="padding-left: 10px;"></td>    
+                <td class="fieldname" style="padding-left: 10px;">Other content</td>
+                <td class="fieldname" style="padding-left: 10px;">other</td>
+                <td class="fieldname">o</td>
+                <td class="fieldname">[0,1]</td>
+                <td class="fieldname"></td>
+                <td class="fieldname"></td>
+                <td class="fieldname"></td>    
+                <td class="fieldname">May contain arbitrary content.</td>    
+                <td class="fieldname">0</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <col />
+            <col />
+        </table>
+    </body>
+</html>
