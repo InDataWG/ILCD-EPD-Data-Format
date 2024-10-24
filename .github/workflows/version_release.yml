@@ -27,13 +27,13 @@ jobs:
       run: |
         TAG_NAME=${GITHUB_REF##*/}
         DOC_DIR="doc/releases/${TAG_NAME}"
-        mkdir -p ${DOC_DIR}
+        mkdir -p ${DOC_DIR}/doc
         ZIP_FILE="${DOC_DIR}/${TAG_NAME}.zip"
         # Create the zip file, excluding the releases directory
         zip -r $ZIP_FILE . -x "doc/releases/*"
         echo "Created zip file: $ZIP_FILE"
         # Copy the contents of the doc folder to the DOC_DIR
-        rsync -av --exclude=${DOC_DIR} doc/ ${DOC_DIR}/doc
+        rsync -av --exclude=${DOC_DIR} doc/ ${DOC_DIR}/
         echo "Copied doc folder to: ${DOC_DIR}"
       shell: bash
 
@@ -53,7 +53,8 @@ jobs:
       if: success()
       run: |
         TAG_NAME=${GITHUB_REF##*/}
-        git add doc/releases/${TAG_NAME}/${TAG_NAME}.zip doc/releases/${TAG_NAME}/doc
+        git add doc/releases/${TAG_NAME}/${TAG_NAME}.zip
+        git doc/releases/${TAG_NAME}/doc
         git commit -m "Add versioned documentation and zip for ${TAG_NAME}"
         git push origin HEAD:gitActions
       shell: bash
