@@ -46,8 +46,9 @@ jobs:
       - name: Commit and push changes to gitActions branch
         working-directory: gitActions
         run: |
+          branch_name=$(echo ${GITHUB_REF#refs/heads/}
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git add gitBranches/${{ github.ref_name }}/schemadoc/
-          git commit -m "Updated HTML files for ${{ github.ref_name }}"
+          git add gitBranches/$branch_name/schemadoc/
+          git commit -m "Updated HTML files for $branch_name"
           git push origin gitActions
