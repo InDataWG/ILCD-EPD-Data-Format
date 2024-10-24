@@ -192,7 +192,7 @@ jobs:
           - [EN15804+A1 indicators](https://indatawg.github.io/ILCD-EPD-Data-Format/gitBranches/$branch_name/identifiers/html_output/EN15804+A1_indicators.html)\n
           - [EN15804+A2 indicators](https://indatawg.github.io/ILCD-EPD-Data-Format/gitBranches/$branch_name/identifiers/html_output/EN15804+A2_indicators.html)\n
           - [Common references](https://indatawg.github.io/ILCD-EPD-Data-Format/gitBranches/$branch_name/identifiers/html_output/Common_references.html)\n
-          - [Country specific indicators](https://indatawg.github.io/ILCD-EPD-Data-Format/gitBranches/$branch_name/identifiers/html_output/Country_specific_indicators.html)\n
+          - [Country specific indicators](https://indatawg.github.io/ILCD-EPD-Data-Format/gitBranches/$branch_name/identifiers/html_output/Country-specific_indicators.html)\n
           - [Flow properties and unit groups](https://indatawg.github.io/ILCD-EPD-Data-Format/gitBranches/$branch_name/identifiers/html_output/Flow_properties_and_unit_groups.html)\n\n
 
           - [Download list of background databases](https://indatawg.github.io/ILCD-EPD-Data-Format/gitBranches/$branch_name/identifiers/excel_output/BackgroundDatabases.xlsx)\n
