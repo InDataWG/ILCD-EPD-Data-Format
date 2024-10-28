@@ -3,13 +3,15 @@
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ilcd="http://lca.jrc.it/ILCD"
            xmlns:common="http://lca.jrc.it/ILCD/Common"
            xmlns:contact="http://lca.jrc.it/ILCD/Contact"
-           xmlns:edoc="http://www.iai.fzk.de/lca/edoc"
            xmlns="http://lca.jrc.it/ILCD/Contact"
            targetNamespace="http://lca.jrc.it/ILCD/Contact"
            elementFormDefault="qualified"
            version="1.1">
    <xs:import namespace="http://lca.jrc.it/ILCD/Common"
               schemaLocation="ILCD_Common_Groups.xsd"/>
+   <xs:import namespace="http://www.indata.network/EntityIds/2024"
+              schemaLocation="Contact_Extensions_2024.xsd"/>
+
    <xs:complexType name="AdministrativeInformationType" mixed="false">
       <xs:sequence>
          <xs:element name="dataEntryBy" type="DataEntryByType" minOccurs="0" maxOccurs="1">
