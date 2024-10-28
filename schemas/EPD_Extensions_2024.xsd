@@ -7,6 +7,76 @@
    xmlns:common="http://lca.jrc.it/ILCD/Common" xmlns:process="http://lca.jrc.it/ILCD/Process" xmlns:ilcd="http://lca.jrc.it/ILCD"
    elementFormDefault="qualified" attributeFormDefault="qualified" version="1.1">
    <xs:import namespace="http://lca.jrc.it/ILCD/Common" schemaLocation="ILCD_Common_Groups.xsd"/>
+
+   <xs:element name="productIds">
+      <xs:complexType>
+         <xs:sequence>
+            <xs:element ref="productId" minOccurs="0" maxOccurs="unbounded"/>
+         </xs:sequence>
+      </xs:complexType>
+   </xs:element>
+   
+   <xs:element name="productId">
+      <xs:complexType>
+         <xs:simpleContent>
+            <xs:extension base="xs:string">
+               <xs:attribute name="type" type="xs:string"/>
+               <xs:anyAttribute/>
+            </xs:extension>         
+         </xs:simpleContent>
+      </xs:complexType>
+   </xs:element>
+   
+   <xs:element name="manufacturers">
+      <xs:complexType>
+         <xs:sequence>
+            <xs:element ref="manufacturer" minOccurs="0" maxOccurs="unbounded"/>
+         </xs:sequence>
+      </xs:complexType>
+   </xs:element>
+      
+   <xs:element name="manufacturer">
+      <xs:complexType>
+         <xs:sequence>
+            <xs:element name="contact" type="common:GlobalReferenceType" minOccurs="0" maxOccurs="1"/>
+            <xs:element ref="sites" minOccurs="0" maxOccurs="1"/>
+            <xs:any namespace="##other" minOccurs="0" maxOccurs="unbounded"/>
+         </xs:sequence>
+         <xs:attribute name="isProvidingData" type="xs:boolean" use="required"/>
+         <xs:anyAttribute/>
+      </xs:complexType>
+   </xs:element>
+   
+   <xs:element name="sites">
+      <xs:complexType>
+         <xs:sequence>
+            <xs:element ref="site" minOccurs="0" maxOccurs="unbounded"/>
+         </xs:sequence>
+      </xs:complexType>
+   </xs:element>
+   
+   <xs:element name="site">
+      <xs:complexType>
+         <xs:sequence>
+            <xs:element name="name" type="xs:string" minOccurs="1" maxOccurs="1"/>
+            <xs:element name="facilityIdentifier" type="xs:string" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="olc" type="OLC" minOccurs="1" maxOccurs="1"/>
+            <xs:element name="geoCode" type="xs:string" minOccurs="1" maxOccurs="1"/>
+            <xs:element name="streetAddress" type="xs:string" minOccurs="0" maxOccurs="1"/>
+            <xs:any namespace="##other" minOccurs="0" maxOccurs="unbounded"/>
+         </xs:sequence>
+         <xs:anyAttribute/>
+      </xs:complexType>
+   </xs:element>
+   
+   <xs:simpleType name="OLC">
+      <xs:annotation>
+         <xs:documentation>Open Location Code (https://maps.google.com/pluscodes/)</xs:documentation>
+      </xs:annotation>
+      <xs:restriction base="xs:string">
+         <xs:pattern value="[23456789C][23456789CFGHJMPQRV][23456789CFGHJMPQRVWX]{6}\+[23456789CFGHJMPQRVWX]{2,7}"/>
+      </xs:restriction>
+   </xs:simpleType>
    
    <xs:element name="serviceLife">
       <xs:complexType>

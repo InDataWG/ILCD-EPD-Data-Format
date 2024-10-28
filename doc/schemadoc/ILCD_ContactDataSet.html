@@ -1,9 +1,10 @@
 
 <!--ILCD Format 1.1 Documentation - Contact data set - documentation stylesheet version 1.0.6-->
-<html xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<html>
    <head>
       <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-      <title>ILCD Format 1.1 Documentation - Contact data set</title><style type="text/css">
+      <title>ILCD Format 1.1 Documentation - Contact data set (with EPD extensions v1.3)</title>
+      <style type="text/css">
               table.top {
               border: 1px solid #AB845D; 
               background-color: #FFFBF3;
@@ -93,6 +94,9 @@
               vertical-align: top;   
               background-color: #FFF3D9;
               color: #002277  ;
+              }
+              .fieldname_epd24{
+                 background-color: #d7f7bd;
               }
               .data          { 
               font-family: Helvetica,Arial,sans serif;
@@ -213,7 +217,15 @@
                     //--></script></head>
    <body onload="initializeColumns();">
       <form action="#" id="form"> Show: <input type="checkbox" checked value="0" id="checkFieldName" onclick="toggleCol('tableID', 0, null);">Field name<input type="checkbox" checked value="1" id="checkID" onclick="toggleCol('tableID', 1, null);">Element/attribute name<input type="checkbox" checked value="2" id="checkRequirement" onclick="toggleCol('tableID', 2, null);">Requirement<input type="checkbox" checked value="3" id="checkOccurrences" onclick="toggleCol('tableID', 3, null);">Occurrences<input type="checkbox" checked value="4" id="checkDataType" onclick="toggleCol('tableID', 4, null);">Data type<input type="checkbox" checked value="5" id="checkDefinition" onclick="toggleCol('tableID', 5, null);">Definition<input type="checkbox" value="6" id="checkEDocId" onclick="toggleCol('tableID', 6, null);">eDoc ID</form>
-      <h1>ILCD Format 1.1 Documentation - Contact data set</h1>
+      <h1>ILCD Format 1.1 Documentation - Contact data set (with EntityIds 2024 extensions)</h1>
+      <table>
+         <tr>
+            <td>Information in the EntityIds (2024) namespace is displayed with</td>
+            <td class="fieldname_epd24">green background</td>
+            <td>(Namespace URI: <i>"http://www.indata.network/EntityIds/2024"</i>, prefix used in this document: <i>"e"</i>)</td>
+         </tr>
+      </table>
+
       <table id="tableID" style="table-layout:fixed;">
          <tr>
             <th class="title" style="width:200px">Field name</th>
@@ -484,6 +496,33 @@
             <td class="fieldname"></td>
             <td class="fieldname">May contain arbitrary content.</td>
             <td class="fieldname">0</td>
+         </tr>
+         <tr>
+            <td class="fieldname fieldname_epd24" style="padding-left: 40px;">Entity identifiers</td>
+            <td class="fieldname fieldname_epd24" style="padding-left: 40px;">e:entityIds</td>
+            <td class="fieldname fieldname_epd24">o</td>
+            <td class="fieldname fieldname_epd24">[0,1]</td>
+            <td class="fieldname fieldname_epd24"></td>
+            <td class="fieldname fieldname_epd24">Identifiers which uniquely identify the entity (person or organization). Different identifiers commonly used, such as VAT ID or Tax Identification Number (TIN).</td>
+            <td class="fieldnam fieldname_epd24"></td>
+         </tr>
+         <tr>
+            <td class="fieldname fieldname_epd24" style="padding-left: 50px;">Entity identifier</td>
+            <td class="fieldname fieldname_epd24" style="padding-left: 50px;">e:entityId</td>
+            <td class="fieldname fieldname_epd24">o</td>
+            <td class="fieldname fieldname_epd24">[0,1]</td>
+            <td class="fieldname fieldname_epd24"></td>
+            <td class="fieldname fieldname_epd24">Identifier which uniquely identifies the entity (person or organization).</td>
+            <td class="fieldnam fieldname_epd24"></td>
+         </tr>
+         <tr>
+            <td class="fieldname fieldname_epd24" style="padding-left: 60px;">Identifier type</td>
+            <td class="fieldname fieldname_epd24" style="padding-left: 60px;">@e:type</td>
+            <td class="fieldname fieldname_epd24">o</td>
+            <td class="fieldname fieldname_epd24">[0,1]</td>
+            <td class="fieldname fieldname_epd24">xs:string</td>
+            <td class="fieldname fieldname_epd24">Type of identifier (e.g. 'VATID', 'TIN').</td>
+            <td class="fieldnam fieldname_epd24"></td>
          </tr>
          <tr>
             <td class="fieldname" style="padding-left: 20px;">Other content</td>

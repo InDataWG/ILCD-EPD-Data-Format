@@ -2,7 +2,7 @@
 <html xmlns:xs="http://www.w3.org/2001/XMLSchema">
    <head>
       <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-      <title>ILCD Format 1.1 Documentation - Process data set (with EPD extensions v1.2)</title>
+      <title>ILCD Format 1.1 Documentation - Process data set (with EPD extensions v1.3)</title>
       <style type="text/css">
          table.top{
             border: 1px solid #AB845D;
@@ -284,22 +284,22 @@
          <tr>
             <td>Information in the EPD namespace v1.1 is displayed with</td>
             <td class="fieldname_epd">blue background</td>
-            <td>(Namespace: <i>"http://www.iai.kit.edu/EPD/2013"</i>, prefix used in this document: <i>"epd"</i>)</td>
+            <td>(Namespace URI: <i>"http://www.iai.kit.edu/EPD/2013"</i>, prefix used in this document: <i>"epd"</i>)</td>
          </tr>
          <tr>
             <td>Information in the EPD namespace v1.2 is displayed with</td>
             <td class="fieldname_epd2">purple background</td>
-            <td>(Namespace: <i>"http://www.indata.network/EPD/2019"</i>, prefix used in this document: <i>"epd2"</i>)</td>
+            <td>(Namespace URI: <i>"http://www.indata.network/EPD/2019"</i>, prefix used in this document: <i>"epd2"</i>)</td>
          </tr>
          <tr>
             <td>Information in the EPD namespace v1.2 that is already part of the original ILCD namespace is displayed with</td>
             <td class="fieldname_epd2i">red background</td>
-            <td>(Namespace: <i>"http://lca.jrc.it/ILCD/Process"</i>, prefix used in this document: <i>""</i>)</td>
+            <td>(Namespace URI: <i>"http://lca.jrc.it/ILCD/Process"</i>, prefix used in this document: <i>""</i>)</td>
          </tr>
          <tr>
             <td>Information in the EPD namespace v1.3 is displayed with</td>
             <td class="fieldname_epd24">green background</td>
-            <td>(Namespace: <i>"http://www.indata.network/EPD/2024"</i>, prefix used in this document: <i>"epd24"</i>)</td>
+            <td>(Namespace URI: <i>"http://www.indata.network/EPD/2024"</i>, prefix used in this document: <i>"epd24"</i>)</td>
          </tr>
       </table>
       
@@ -314,16 +314,6 @@
          <col/>
          <col/>
 
-         <!--           <col  />
-            <col  />
-            <col  />
-            <col  />
-            <col />
-            <col  />
-            <col  />
-            <col  />
-            <col  />
--->
          <tr>
             <th class="title" style="width:194px">Field Name (de)</th>
             <th class="title" style="width:194px">Field Name (en)</th>
@@ -784,6 +774,48 @@
             <td class="fieldname fieldname_epd24"/>
             <td class="fieldname fieldname_epd24"/>
             <td class="fieldname fieldname_epd24"/>
+         </tr>
+         <tr>
+            <td class="fieldname fieldname_epd24" style="padding-left: 40px;">Produktkennungen</td>
+            <td class="fieldname fieldname_epd24" style="padding-left: 40px;">Product identifiers</td>
+            <td class="fieldname fieldname_epd24" style="padding-left: 40px;">epd24:productIds</td>
+            <td class="fieldname fieldname_epd24">r</td>
+            <td class="fieldname fieldname_epd24">[0,1]</td>
+            <td class="fieldname fieldname_epd24"/>
+            <td class="fieldname fieldname_epd24">Liste verschiedener Produktkennungen, bspw. entsprechende GTIN- / GMN-Kennungen, Handelsnamen, ...</td>
+            <td class="fieldname fieldname_epd24">List of different product identifiers, e.g. GTIN / GMN codes, trade names, ...</td>
+            <td class="fieldname fieldname_epd24"/>
+            <td class="fieldname fieldname_epd24"/>
+            <td/>
+            <td/>
+         </tr>
+         <tr>
+            <td class="fieldname fieldname_epd24" style="padding-left: 50px;">Produktkennung</td>
+            <td class="fieldname fieldname_epd24" style="padding-left: 50px;">Product identifier</td>
+            <td class="fieldname fieldname_epd24" style="padding-left: 50px;">epd24:productId</td>
+            <td class="fieldname fieldname_epd24">m</td>
+            <td class="fieldname fieldname_epd24">[1]</td>
+            <td class="fieldname fieldname_epd24"><a target="_blank" href="ILCD_Common_DataTypes.html#String">String</a></td>
+            <td class="fieldname fieldname_epd24">Produktkennung</td>
+            <td class="fieldname fieldname_epd24">Product identifier</td>
+            <td class="fieldname fieldname_epd24">TODO</td>
+            <td class="fieldname fieldname_epd24">TODO</td>
+            <td/>
+            <td/>
+         </tr>
+         <tr>
+            <td class="fieldname fieldname_epd24" style="padding-left: 60px;">Kennungstyp</td>
+            <td class="fieldname fieldname_epd24" style="padding-left: 60px;">Identifier type</td>
+            <td class="fieldname fieldname_epd24" style="padding-left: 60px;">@epd24:type</td>
+            <td class="fieldname fieldname_epd24">m</td>
+            <td class="fieldname fieldname_epd24">[1]</td>
+            <td class="fieldname fieldname_epd24"><a target="_blank" href="ILCD_Common_DataTypes.html#String">String</a></td>
+            <td class="fieldname fieldname_epd24">Art der Produktkennung, z.B. 'GTIN', 'GMN' etc.</td>
+            <td class="fieldname fieldname_epd24">Declares the type of product identifier, e.g. 'GTIN', 'GMN', etc.</td>
+            <td class="fieldname fieldname_epd24">TODO</td>
+            <td class="fieldname fieldname_epd24">TODO</td>
+            <td/>
+            <td/>
          </tr>
          <tr>
             <td class="fieldname fieldname_epd" style="padding-left: 40px;">Sicherheitszuschläge</td>
@@ -2049,6 +2081,146 @@ value lower than x (e.g. "&lt;42"), only specify the upper value as x.</td>
             <td class="fieldname"></td>
             <td class="fieldname"></td>
             <td class="fieldname"></td>
+         </tr>
+         <tr>
+            <td class="fieldname fieldname_epd24" style="padding-left: 40px;">Liste der Hersteller</td>
+            <td class="fieldname fieldname_epd24" style="padding-left: 40px;">List of manufacturers</td>
+            <td class="fieldname fieldname_epd24" style="padding-left: 40px;">epd24:manufacturers</td>
+            <td class="fieldname fieldname_epd24">r</td>
+            <td class="fieldname fieldname_epd24">[0,1]</td>
+            <td class="fieldname fieldname_epd24"/>
+            <td class="fieldname fieldname_epd24">Liste der Hersteller des/der beschriebenen Produkte(s).</td>
+            <td class="fieldname fieldname_epd24">List of manufacturers producing the modelled product(s).</td>
+            <td class="fieldname fieldname_epd24"/>
+            <td class="fieldname fieldname_epd24"/>
+            <td/>
+            <td/>
+         </tr>
+         <tr>
+            <td class="fieldname fieldname_epd24" style="padding-left: 50px;">Hersteller</td>
+            <td class="fieldname fieldname_epd24" style="padding-left: 50px;">manufacturer</td>
+            <td class="fieldname fieldname_epd24" style="padding-left: 50px;">epd24:manufacturer</td>
+            <td class="fieldname fieldname_epd24">r</td>
+            <td class="fieldname fieldname_epd24">[0,n]</td>
+            <td class="fieldname fieldname_epd24"/>
+            <td class="fieldname fieldname_epd24">Hersteller des/der beschriebenen Produkte(s)</td>
+            <td class="fieldname fieldname_epd24">Manufacturer of the described product(s)</td>
+            <td class="fieldname fieldname_epd24">TODO:1</td>
+            <td class="fieldname fieldname_epd24">TODO:2</td>
+            <td/>
+            <td/>
+         </tr>
+         <tr>
+            <td class="fieldname fieldname_epd24" style="padding-left: 60px;">Kontaktdatenreferenz des Herstellers</td>
+            <td class="fieldname fieldname_epd24" style="padding-left: 60px;">Contact data reference of the manufacturer</td>
+            <td class="fieldname fieldname_epd24" style="padding-left: 60px;">epd24:contact</td>
+            <td class="fieldname fieldname_epd24">r</td>
+            <td class="fieldname fieldname_epd24">[0,1]</td>
+            <td class="fieldname fieldname_epd24"><a target="_blank" href="ILCD_Common_DataTypes.html#GlobalReferenceType">GlobalReferenceType</a></td>
+            <td class="fieldname fieldname_epd24">Referenz auf den Kontaktdatensatz des Herstellers</td>
+            <td class="fieldname fieldname_epd24">Reference to the contact dataset of the manufacturer</td>
+            <td class="fieldname fieldname_epd24"/>
+            <td class="fieldname fieldname_epd24"/>
+            <td/>
+            <td/>
+         </tr>
+         <tr>
+            <td class="fieldname fieldname_epd24" style="padding-left: 60px;">Produktionsstätten</td>
+            <td class="fieldname fieldname_epd24" style="padding-left: 60px;">Manufacturing sites</td>
+            <td class="fieldname fieldname_epd24" style="padding-left: 60px;">epd24:sites</td>
+            <td class="fieldname fieldname_epd24">o</td>
+            <td class="fieldname fieldname_epd24">[0,1]</td>
+            <td class="fieldname fieldname_epd24"/>
+            <td class="fieldname fieldname_epd24">Liste der Produktionsstätten dieses Herstellers für das/die beschriebene(n) Produkt(e)</td>
+            <td class="fieldname fieldname_epd24">List of the manufacturing sites of this manufacturer for the described product(s)</td>
+            <td class="fieldname fieldname_epd24"/>
+            <td class="fieldname fieldname_epd24"/>
+            <td/>
+            <td/>
+         </tr>
+         <tr>
+            <td class="fieldname fieldname_epd24" style="padding-left: 70px;">Produktionsstätte</td>
+            <td class="fieldname fieldname_epd24" style="padding-left: 70px;">Manufacturing site</td>
+            <td class="fieldname fieldname_epd24" style="padding-left: 70px;">epd24:site</td>
+            <td class="fieldname fieldname_epd24">r</td>
+            <td class="fieldname fieldname_epd24">[0,n]</td>
+            <td class="fieldname fieldname_epd24"/>
+            <td class="fieldname fieldname_epd24">Produktionsstätte dieses Herstellers für das/die beschriebene(n) Produkt(e)</td>
+            <td class="fieldname fieldname_epd24">Manufacturing site of this manufacturer for the described product(s)</td>
+            <td class="fieldname fieldname_epd24">TODO:3</td>
+            <td class="fieldname fieldname_epd24">TODO:4</td>
+            <td/>
+            <td/>
+         </tr>
+         <tr>
+            <td class="fieldname fieldname_epd24" style="padding-left: 80px;">Name</td>
+            <td class="fieldname fieldname_epd24" style="padding-left: 80px;">Name</td>
+            <td class="fieldname fieldname_epd24" style="padding-left: 80px;">epd24:name</td>
+            <td class="fieldname fieldname_epd24">m</td>
+            <td class="fieldname fieldname_epd24">[1]</td>
+            <td class="fieldname fieldname_epd24">xs:string</td>
+            <td class="fieldname fieldname_epd24">Name der Produktionsstätte</td>
+            <td class="fieldname fieldname_epd24">Name of the manufacturing site</td>
+            <td class="fieldname fieldname_epd24"/>
+            <td class="fieldname fieldname_epd24"/>
+            <td/>
+            <td/>
+         </tr>
+         <tr>
+            <td class="fieldname fieldname_epd24" style="padding-left: 80px;">Kennung der Produktionsstätte</td>
+            <td class="fieldname fieldname_epd24" style="padding-left: 80px;">Facility identifier</td>
+            <td class="fieldname fieldname_epd24" style="padding-left: 80px;">epd24:name</td>
+            <td class="fieldname fieldname_epd24">o</td>
+            <td class="fieldname fieldname_epd24">[0,1]</td>
+            <td class="fieldname fieldname_epd24">xs:string</td>
+            <td class="fieldname fieldname_epd24">Kennung der Produktionsstätte</td>
+            <td class="fieldname fieldname_epd24">Facility identifier of the manufacturing site</td>
+            <td class="fieldname fieldname_epd24"/>
+            <td class="fieldname fieldname_epd24"/>
+            <td/>
+            <td/>
+         </tr>
+         <tr>
+            <td class="fieldname fieldname_epd24" style="padding-left: 80px;">OLC Standortkennung</td>
+            <td class="fieldname fieldname_epd24" style="padding-left: 80px;">OLC Location code</td>
+            <td class="fieldname fieldname_epd24" style="padding-left: 80px;">epd24:olc</td>
+            <td class="fieldname fieldname_epd24">m</td>
+            <td class="fieldname fieldname_epd24">[1]</td>
+            <td class="fieldname fieldname_epd24">xs:string (<a target="_blank" href="https://maps.google.com/pluscodes/">Open Location Code</a>)</td>
+            <td class="fieldname fieldname_epd24">Kennung, die den Standort der Produktionsstätte nach dem <a target="_blank" href="https://maps.google.com/pluscodes/">Pluscode/Open Location Code</a>-System ausweist.</td>
+            <td class="fieldname fieldname_epd24">Code to identify the manufacturing site's location w.r.t the <a target="_blank" href="https://maps.google.com/pluscodes/">pluscode/open location code</a> system.</td>
+            <td class="fieldname fieldname_epd24"/>
+            <td class="fieldname fieldname_epd24"/>
+            <td/>
+            <td/>
+         </tr>
+         <tr>
+            <td class="fieldname fieldname_epd24" style="padding-left: 80px;">Länderkennung</td>
+            <td class="fieldname fieldname_epd24" style="padding-left: 80px;">Countrycode</td>
+            <td class="fieldname fieldname_epd24" style="padding-left: 80px;">epd24:geoCode</td>
+            <td class="fieldname fieldname_epd24">r</td>
+            <td class="fieldname fieldname_epd24">[0,1]</td>
+            <td class="fieldname fieldname_epd24">xs:string</td>
+            <td class="fieldname fieldname_epd24">2-buchstabige Kennung, die das Land oder die Region der Produktionsstätte identifiziert (s. <a target="_blank" href="https://www.iso.org/iso-3166-country-codes.html">ISO 3166 alpha-2</a>)</td>
+            <td class="fieldname fieldname_epd24">2-letter code that identifies the country or region of the manufacturing site (cf. <a target="_blank" href="https://www.iso.org/iso-3166-country-codes.html">ISO 3166 alpha-2</a>)</td>
+            <td class="fieldname fieldname_epd24"/>
+            <td class="fieldname fieldname_epd24"/>
+            <td/>
+            <td/>
+         </tr>
+         <tr>
+            <td class="fieldname fieldname_epd24" style="padding-left: 80px;">Anschrift</td>
+            <td class="fieldname fieldname_epd24" style="padding-left: 80px;">Street address</td>
+            <td class="fieldname fieldname_epd24" style="padding-left: 80px;">epd24:streetAddress</td>
+            <td class="fieldname fieldname_epd24">r</td>
+            <td class="fieldname fieldname_epd24">[0,1]</td>
+            <td class="fieldname fieldname_epd24">xs:string</td>
+            <td class="fieldname fieldname_epd24">Postanschrift der Produktionsstätte</td>
+            <td class="fieldname fieldname_epd24">Street adress of the manufactoring site</td>
+            <td class="fieldname fieldname_epd24"/>
+            <td class="fieldname fieldname_epd24"/>
+            <td/>
+            <td/>
          </tr>
             <tr>
                 <td class="fieldname fieldname_epd2" style="padding-left: 40px;">Original-EPD</td>
