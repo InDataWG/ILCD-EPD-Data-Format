@@ -8,6 +8,25 @@
    elementFormDefault="qualified" attributeFormDefault="qualified" version="1.1">
    <xs:import namespace="http://lca.jrc.it/ILCD/Common" schemaLocation="ILCD_Common_Groups.xsd"/>
 
+   <xs:element name="productIds">
+      <xs:complexType>
+         <xs:sequence>
+            <xs:element ref="productId" minOccurs="0" maxOccurs="unbounded"/>
+         </xs:sequence>
+      </xs:complexType>
+   </xs:element>
+   
+   <xs:element name="productId">
+      <xs:complexType>
+         <xs:simpleContent>
+            <xs:extension base="xs:string">
+               <xs:attribute name="type" type="xs:string"/>
+               <xs:anyAttribute/>
+            </xs:extension>         
+         </xs:simpleContent>
+      </xs:complexType>
+   </xs:element>
+   
    <xs:element name="manufacturers">
       <xs:complexType>
          <xs:sequence>
