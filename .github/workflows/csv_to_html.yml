@@ -138,7 +138,9 @@ jobs:
             "Common references": "doc/identifiers/Common_references.csv",
             "Country-specific indicators": "doc/identifiers/Country-specific_indicators.csv",
             "EN15804+A1 indicators": "doc/identifiers/EN15804+A1_indicators.csv",
-            "EN15804+A2 indicators": "doc/identifiers/EN15804+A2_indicators.csv",
+            "EN15804+A2 (EF3.0) indicators": "doc/identifiers/EN15804+A2_EF3.0_indicators.csv",
+            "EN15804+A2 (EF3.1) indicators": "doc/identifiers/EN15804+A2_EF3.1_indicators.csv",
+            
             "Flow properties and unit groups": "doc/identifiers/Flow_properties_and_unit_groups.csv"
         }
         write_to_excel(f"gitBranches/{branch_name}/identifiers/excel_output/Indicators.xlsx", indicator_sheets)
