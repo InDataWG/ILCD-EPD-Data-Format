@@ -130,7 +130,8 @@ jobs:
               "Common references": "doc/identifiers/Common_references.csv",
               "Country-specific indicators": "doc/identifiers/Country-specific_indicators.csv",
               "EN15804+A1 indicators": "doc/identifiers/EN15804+A1_indicators.csv",
-              "EN15804+A2 indicators": "doc/identifiers/EN15804+A2_indicators.csv",
+              "EN15804+A2 (EF3.0) indicators": "doc/identifiers/EN15804+A2_EF3.0_indicators.csv",
+              "EN15804+A2 (EF3.1) indicators": "doc/identifiers/EN15804+A2_EF3.1_indicators.csv",
               "Flow properties and unit groups": "doc/identifiers/Flow_properties_and_unit_groups.csv"
           }
           write_to_excel(f"{excel_output_dir}/Indicators.xlsx", indicator_sheets)
@@ -191,7 +192,8 @@ jobs:
           - [BackgroundDB SourceDatasets ecoinvent](https://indatawg.github.io/ILCD-EPD-Data-Format/gitBranches/$branch_name/identifiers/html_output/BackgroundDB_SourceDatasets_ecoinvent.html)\n
           - [BackgroundDB SourceDatasets GaBi](https://indatawg.github.io/ILCD-EPD-Data-Format/gitBranches/$branch_name/identifiers/html_output/BackgroundDB_SourceDatasets_GaBi.html)\n
           - [EN15804+A1 indicators](https://indatawg.github.io/ILCD-EPD-Data-Format/gitBranches/$branch_name/identifiers/html_output/EN15804+A1_indicators.html)\n
-          - [EN15804+A2 indicators](https://indatawg.github.io/ILCD-EPD-Data-Format/gitBranches/$branch_name/identifiers/html_output/EN15804+A2_indicators.html)\n
+          - [EN15804+A2 (EF3.0) indicators](https://indatawg.github.io/ILCD-EPD-Data-Format/gitBranches/$branch_name/identifiers/html_output/EN15804+A2_EF3.0_indicators.html)\n
+          - [EN15804+A2 (EF3.1) indicators](https://indatawg.github.io/ILCD-EPD-Data-Format/gitBranches/$branch_name/identifiers/html_output/EN15804+A2_EF3.1_indicators.html)\n
           - [Common references](https://indatawg.github.io/ILCD-EPD-Data-Format/gitBranches/$branch_name/identifiers/html_output/Common_references.html)\n
           - [Country specific indicators](https://indatawg.github.io/ILCD-EPD-Data-Format/gitBranches/$branch_name/identifiers/html_output/Country-specific_indicators.html)\n
           - [Flow properties and unit groups](https://indatawg.github.io/ILCD-EPD-Data-Format/gitBranches/$branch_name/identifiers/html_output/Flow_properties_and_unit_groups.html)\n\n
