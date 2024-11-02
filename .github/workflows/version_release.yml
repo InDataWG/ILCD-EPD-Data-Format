@@ -1,0 +1,168 @@
+name: Create Version and Release
+
+on:
+  push:
+    tags:
+      - 'v*.*.*'
+
+permissions:
+  contents: write
+
+jobs:
+  create-release:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.x'
+
+    - name: Create release zip and copy doc folder
+      run: |
+        TAG_NAME=${GITHUB_REF##*/}
+        DOC_DIR="doc/releases/${TAG_NAME}"
+        mkdir -p ${DOC_DIR}
+        ZIP_FILE="${DOC_DIR}/${TAG_NAME}.zip"
+        # Create the zip file, excluding the releases directory
+        zip -r $ZIP_FILE . -x "doc/releases/*"
+        echo "Created zip file: $ZIP_FILE"
+        # Copy the contents of the doc folder to the DOC_DIR
+        rsync -av --exclude=${DOC_DIR} doc/ ${DOC_DIR}/doc/
+        echo "Copied doc folder to: ${DOC_DIR}"
+
+    - name: Configure Git
+      run: |
+        git config --global user.name 'github-actions[bot]'
+        git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+
+    - name: Create Versioned Documentation Page
+      run: |
+        TAG_NAME=${GITHUB_REF##*/}
+        DOC_DIR="doc/releases/${TAG_NAME}"
+        cat <<EOF > ${DOC_DIR}/index.html
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>${TAG_NAME} Documentation</title>
+            <style>
+                body {
+                    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+                    line-height: 1.5;
+                    margin: 0;
+                    padding: 0;
+                    background-color: #fff;
+                    color: #24292e;
+                }
+                .container {
+                    max-width: 1012px;
+                    margin: 32px auto;
+                    padding: 16px;
+                }
+                h1, h2, h3 {
+                    border-bottom: 1px solid #eaecef;
+                    padding-bottom: .3em;
+                }
+                h1 {
+                    font-size: 2em;
+                }
+                h2 {
+                    font-size: 1.5em;
+                }
+                h3 {
+                    font-size: 1.25em;
+                }
+                ul {
+                    list-style: disc;
+                    padding: 0 0 0 20px;
+                }
+                ul li {
+                    padding: 5px 0;
+                }
+                ul li::marker {
+                    color: #24292e;
+                }
+                ul li a {
+                    text-decoration: none;
+                    color: #0366d6;
+                }
+                ul li a:hover {
+                    text-decoration: underline;
+                }
+            </style>
+        </head>
+        <body>
+            <div class="container markdown-body">
+                <h1>ILCD-EPD-Data-Format</h1>
+                <h2>${TAG_NAME} Documentation</h2>
+                <h3>Schema Documentation</h3>
+                <ul>
+                    <li><a href="../../releases/${TAG_NAME}/doc/schemadoc/EPD_DataSet.html">EPD_DataSet</a></li>
+                    <li><a href="../../releases/${TAG_NAME}/doc/schemadoc/EPD_FlowDataSet.html">EPD_FlowDataSet</a></li>
+                    <li><a href="../../releases/${TAG_NAME}/doc/schemadoc/ILCD_Common_DataTypes.html">ILCD_Common_DataTypes</a></li>
+                    <li><a href="../../releases/${TAG_NAME}/doc/schemadoc/ILCD_Common_EnumerationValues.html">ILCD_Common_EnumerationValues</a></li>
+                    <li><a href="../../releases/${TAG_NAME}/doc/schemadoc/ILCD_ContactDataSet.html">ILCD_ContactDataSet</a></li>
+                    <li><a href="../../releases/${TAG_NAME}/doc/schemadoc/ILCD_FlowPropertyDataSet.html">ILCD_FlowPropertyDataSet</a></li>
+                    <li><a href="../../releases/${TAG_NAME}/doc/schemadoc/ILCD_LCIAMethodDataSet.html">ILCD_LCIAMethodDataSet</a></li>
+                    <li><a href="../../releases/${TAG_NAME}/doc/schemadoc/ILCD_SourceDataSet.html">ILCD_SourceDataSet</a></li>
+                    <li><a href="../../releases/${TAG_NAME}/doc/schemadoc/ILCD_UnitGroupDataSet.html">ILCD_UnitGroupDataSet</a></li>
+                </ul>
+                <h3>Background Database</h3>
+                <ul>
+                    <li><a href="../../releases/${TAG_NAME}/doc/data/html_output/BackgroundDB_SourceDatasets_ecoinvent.html">BackgroundDB_SourceDatasets_ecoinvent</a></li>
+                    <li><a href="../../releases/${TAG_NAME}/doc/data/html_output/BackgroundDB_SourceDatasets_GaBi.html">BackgroundDB_SourceDatasets_GaBi</a></li>
+                </ul>
+                <h3>Indicators</h3>
+                <ul>
+                    <li><a href="../../releases/${TAG_NAME}/doc/data/html_output/EN15804+A1_indicators.html">EN15804+A1 indicators</a></li>
+                    <li><a href="../../releases/${TAG_NAME}/doc/data/html_output/EN15804+A2_EF3.0_indicators.html">EN15804+A2 (EF3.0)indicators</a></li>
+                    <li><a href="../../releases/${TAG_NAME}/doc/data/html_output/EN15804+A2_EF3.1_indicators.html">EN15804+A2 (EF3.1) indicators</a></li>
+                    <li><a href="../../releases/${TAG_NAME}/doc/data/html_output/Common_references.html">Common references</a></li>
+                    <li><a href="../../releases/${TAG_NAME}/doc/data/html_output/Country_specific_indicators.html">Country specific indicators</a></li>
+                    <li><a href="../../releases/${TAG_NAME}/doc/data/html_output/Flow_properties_and_unit_groups.html">Flow properties and unit groups</a></li>
+                </ul>
+                <h3>Download Excel Files</h3>
+                <ul>
+                    <li><a href="../../releases/${TAG_NAME}/doc/data/excel_output/BackgroundData.xlsx">Download list of background databases</a></li>
+                    <li><a href="../../releases/${TAG_NAME}/doc/data/excel_output/Indicators.xlsx">Download list of indicators</a></li>
+                </ul>
+                <h3>Download Package</h3>
+                <ul>
+                    <li><a href="../../releases/${TAG_NAME}/${TAG_NAME}.zip">Download ${TAG_NAME} package</a></li>
+                </ul>
+            </div>
+        </body>
+        </html>
+        EOF
+
+    - name: Checkout gitActions branch
+      run: |
+        git fetch origin gitActions
+        git checkout gitActions
+      shell: bash
+
+    - name: Commit and push documentation and zip
+      if: success()
+      run: |
+        TAG_NAME=${GITHUB_REF##*/}
+        git config --global user.name 'github-actions[bot]'
+        git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+        git add doc/releases/${TAG_NAME}/index.html doc/releases/${TAG_NAME}/${TAG_NAME}.zip doc/releases/${TAG_NAME}/doc
+        git commit -m "Add versioned documentation and zip for ${TAG_NAME}"
+        git push origin HEAD:gitActions
+
+    - name: Update Previous Versions in README
+      if: success()
+      run: |
+        TAG_NAME=${GITHUB_REF##*/}
+        echo "- [${TAG_NAME}](doc/releases/${TAG_NAME}/index.html)" >> README.md
+        git config --global user.name 'github-actions[bot]'
+        git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+        git add README.md
+        git commit -m "Add ${TAG_NAME} to Previous versions in README"
+        git push origin HEAD:gitActions
