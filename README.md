@@ -16,14 +16,14 @@ Authoritative identifiers serve as master data within the ILCD framework. They e
 
 | Reference Type                         | Go to Source Code                              | Viewable Table                                 |
 |----------------------------------------|--------------------------------------------------|------------------------------------------------|
-| ecoinvent database: source data sets   | [Source Code](./doc/identifiers/lcia_methods_table.csv)    | [Viewable Table](https://indatawg.github.io/ILCD-EPD-Data-Format/gitBranches/testMain/identifiers/BackgroundDB_SourceDatasets_ecoinvent.html)  |
-| GaBi database: source data sets        | [Source Code](./doc/identifiers/background_lca_table.csv)  | [Viewable Table](https://indatawg.github.io/ILCD-EPD-Data-Format/gitBranches/testMain/identifiers/BackgroundDB_SourceDatasets_GaBi.html) |
-| Common references                      | [Source Code](./doc/identifiers/standards_table.csv)       | [Viewable Table](https://indatawg.github.io/ILCD-EPD-Data-Format/gitBranches/testMain/identifiers/Common_references.html)     |
-| Country-specific indicators            | [Source Code](./doc/identifiers/flow_properties_table.csv) | [Viewable Table](https://indatawg.github.io/ILCD-EPD-Data-Format/gitBranches/testMain/identifiers/Country-specific_indicators.html)  |
-| EN15804+A1 indicators                  | [Source Code](./doc/identifiers/program_operators_table.csv)| [Viewable Table](https://indatawg.github.io/ILCD-EPD-Data-Format/gitBranches/testMain/identifiers/EN15804+A1_indicators.csv) |
-| EN15804+A2 (EF3.0) indicators          | [Source Code](./doc/identifiers/program_operators_table.csv)| [Viewable Table](https://indatawg.github.io/ILCD-EPD-Data-Format/gitBranches/testMain/identifiers/EN15804+A2_EF3.0_indicators.html) |
-| EN15804+A2 (EF3.1) indicators          | [Source Code](./doc/identifiers/program_operators_table.csv)| [Viewable Table](https://indatawg.github.io/ILCD-EPD-Data-Format/gitBranches/testMain/identifiers/EN15804+A2_EF3.1_indicators.html) |
-| Flow properties and unit groups        | [Source Code](./doc/identifiers/program_operators_table.csv)| [Viewable Table](https://indatawg.github.io/ILCD-EPD-Data-Format/gitBranches/testMain/identifiers/Flow_properties_and_unit_groups.html) |
+| ecoinvent database: source data sets   | [Source Code](./doc/identifiers/BackgroundDB_SourceDatasets_ecoinvent.csv)    | [Viewable Table](https://indatawg.github.io/ILCD-EPD-Data-Format/gitBranches/testMain/identifiers/BackgroundDB_SourceDatasets_ecoinvent.html)  |
+| GaBi database: source data sets        | [Source Code](./doc/identifiers/BackgroundDB_SourceDatasets_GaBicsv)  | [Viewable Table](https://indatawg.github.io/ILCD-EPD-Data-Format/gitBranches/testMain/identifiers/BackgroundDB_SourceDatasets_GaBi.html) |
+| Common references                      | [Source Code](./doc/identifiers/Common_references.csv)       | [Viewable Table](https://indatawg.github.io/ILCD-EPD-Data-Format/gitBranches/testMain/identifiers/Common_references.html)     |
+| Country-specific indicators            | [Source Code](./doc/identifiers/Country-specific_indicators.csv) | [Viewable Table](https://indatawg.github.io/ILCD-EPD-Data-Format/gitBranches/testMain/identifiers/Country-specific_indicators.html)  |
+| EN15804+A1 indicators                  | [Source Code](./doc/identifiers/EN15804+A1_indicators.csv)| [Viewable Table](https://indatawg.github.io/ILCD-EPD-Data-Format/gitBranches/testMain/identifiers/EN15804+A1_indicators.csv) |
+| EN15804+A2 (EF3.0) indicators          | [Source Code](./doc/identifiers/EN15804+A2_EF3.0_indicators.csv)| [Viewable Table](https://indatawg.github.io/ILCD-EPD-Data-Format/gitBranches/testMain/identifiers/EN15804+A2_EF3.0_indicators.html) |
+| EN15804+A2 (EF3.1) indicators          | [Source Code](./doc/identifiers/EN15804+A2_EF3.1_indicators.csv)| [Viewable Table](https://indatawg.github.io/ILCD-EPD-Data-Format/gitBranches/testMain/identifiers/EN15804+A2_EF3.1_indicators.html) |
+| Flow properties and unit groups        | [Source Code](./doc/identifiers/Flow_properties_and_unit_groups.csv)| [Viewable Table](https://indatawg.github.io/ILCD-EPD-Data-Format/gitBranches/testMain/identifiers/Flow_properties_and_unit_groups.html) |
 
 
 ## ILCD+EPD Guides
