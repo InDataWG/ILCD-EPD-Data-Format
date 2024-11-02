@@ -1,0 +1,42 @@
+name: Cleanup gitBranches Directory
+
+on:
+  delete:
+    branches:
+      - '**' 
+
+permissions:
+  contents: write
+
+jobs:
+  cleanup:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout gitActions branch
+      uses: actions/checkout@v2
+      with:
+        ref: gitActions
+        path: gitActions
+
+    - name: Delete folder for deleted branch
+      run: |
+        branch_name="${{ github.event.ref }}"
+        echo "Deleting directory for branch $branch_name in gitActions/gitBranches/"
+
+        # Ensure the branch name exists in the directory structure
+        if [ -d "gitActions/gitBranches/$branch_name" ]; then
+          rm -rf gitActions/gitBranches/$branch_name
+          echo "Deleted gitActions/gitBranches/$branch_name."
+        else
+          echo "Directory gitActions/gitBranches/$branch_name does not exist. No action taken."
+        fi
+
+    - name: Commit and push changes
+      working-directory: gitActions
+      run: |
+        git config --global user.name "github-actions[bot]"
+        git config --global user.email "github-actions[bot]@users.noreply.github.com"
+        git add .
+        git commit -m "Deleted directory for branch $branch_name"
+        git push origin gitActions

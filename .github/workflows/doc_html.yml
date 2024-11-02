@@ -4,11 +4,7 @@ on:
   push:
     paths:
       - 'doc/schemadoc/**' 
-  #  branches:
-  #    - '**'  
-  #  branches-ignore:
-  #    - 'main'
-      
+
 permissions:
   contents: write
 
