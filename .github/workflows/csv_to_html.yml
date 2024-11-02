@@ -1,4 +1,4 @@
-name: Convert CSV to HTML and Excel
+name: Convert CSV to HTML
 
 on:
   push:
@@ -50,7 +50,7 @@ jobs:
 
         # Create the output directory based on the branch name
         branch_name = "${{ steps.branch_name.outputs.branch }}"
-        output_dir = f"gitBranches/{branch_name}/identifiers/html_output"
+        output_dir = f"gitBranches/{branch_name}/identifiers"
         os.makedirs(output_dir, exist_ok=True)
 
         # Define the files and their IDs
@@ -88,64 +88,6 @@ jobs:
                     """)
         EOF
 
-    - name: Convert CSV to Excel
-      run: |
-        python - <<EOF
-        import pandas as pd
-        import os
-        from openpyxl import load_workbook
-
-        # Create the output directory based on the branch name
-        branch_name = "${{ steps.branch_name.outputs.branch }}"
-        output_dir = f"gitBranches/{branch_name}/identifiers/excel_output"
-        os.makedirs(output_dir, exist_ok=True)
-
-        # Function to auto-adjust excel column widths
-        def auto_adjust_column_widths(workbook):
-            for sheet in workbook.worksheets:
-                for col in sheet.columns:
-                    max_length = 0
-                    column = col[0].column_letter 
-                    for cell in col:
-                        try:
-                            if len(str(cell.value)) > max_length:
-                                max_length = len(cell.value)
-                        except:
-                            pass
-                    adjusted_width = (max_length + 2)
-                    sheet.column_dimensions[column].width = adjusted_width
-
-        # Function to write multiple CSVs to a single Excel file
-        def write_to_excel(output_file, sheets):
-            with pd.ExcelWriter(output_file, engine='openpyxl') as writer:
-                for sheet_name, file_path in sheets.items():
-                    if os.path.exists(file_path):
-                        df = pd.read_csv(file_path)
-                        df.to_excel(writer, index=False, sheet_name=sheet_name)
-            workbook = load_workbook(output_file)
-            auto_adjust_column_widths(workbook)
-            workbook.save(output_file)
-
-        # Background data
-        background_sheets = {
-            "ecoinvent database - source data sets": "doc/identifiers/BackgroundDB_SourceDatasets_ecoinvent.csv",
-            "GaBi database - source data sets": "doc/identifiers/BackgroundDB_SourceDatasets_GaBi.csv"
-        }
-        write_to_excel(f"gitBranches/{branch_name}/identifiers/excel_output/BackgroundDatabases.xlsx", background_sheets)
-
-        # Indicator data
-        indicator_sheets = {
-            "Common references": "doc/identifiers/Common_references.csv",
-            "Country-specific indicators": "doc/identifiers/Country-specific_indicators.csv",
-            "EN15804+A1 indicators": "doc/identifiers/EN15804+A1_indicators.csv",
-            "EN15804+A2 (EF3.0) indicators": "doc/identifiers/EN15804+A2_EF3.0_indicators.csv",
-            "EN15804+A2 (EF3.1) indicators": "doc/identifiers/EN15804+A2_EF3.1_indicators.csv",
-            
-            "Flow properties and unit groups": "doc/identifiers/Flow_properties_and_unit_groups.csv"
-        }
-        write_to_excel(f"gitBranches/{branch_name}/identifiers/excel_output/Indicators.xlsx", indicator_sheets)
-        EOF
-
     - name: Checkout gitActions branch
       uses: actions/checkout@v2
       with:
@@ -157,22 +99,18 @@ jobs:
         branch_name=${{ steps.branch_name.outputs.branch }}
         echo "Cleaning up old directories in gitBranches/$branch_name/identifiers in gitActions branch."
 
-        # Remove old HTML and Excel directories if they exist
-        rm -rf gitActions/gitBranches/$branch_name/identifiers/html_output
-        rm -rf gitActions/gitBranches/$branch_name/identifiers/excel_output
+        rm -rf gitActions/gitBranches/$branch_name/identifiers
 
     - name: Copy generated files to gitActions branch
       run: |
         branch_name=${{ steps.branch_name.outputs.branch }}
-        echo "Copying generated HTML and Excel files to gitBranches/$branch_name/identifiers in gitActions branch."
+        echo "Copying generated HTML files to gitBranches/$branch_name/identifiers in gitActions branch."
 
         # Ensure the directories exist in gitActions
-        mkdir -p gitActions/gitBranches/$branch_name/identifiers/html_output
-        mkdir -p gitActions/gitBranches/$branch_name/identifiers/excel_output
+        mkdir -p gitActions/gitBranches/$branch_name/identifiers
 
-        # Copy the HTML and Excel files to the gitActions branch folder
-        cp -r ./gitBranches/$branch_name/identifiers/html_output/* gitActions/gitBranches/$branch_name/identifiers/html_output/
-        cp -r ./gitBranches/$branch_name/identifiers/excel_output/* gitActions/gitBranches/$branch_name/identifiers/excel_output/
+        # Copy the HTML files to the gitActions branch folder
+        cp -r ./gitBranches/$branch_name/identifiers/html_output/* gitActions/gitBranches/$branch_name/identifiers
 
     - name: Commit and push changes to gitActions branch
       working-directory: gitActions
@@ -180,7 +118,6 @@ jobs:
         branch_name=${{ steps.branch_name.outputs.branch }}
         git config --global user.name "github-actions[bot]"
         git config --global user.email "github-actions[bot]@users.noreply.github.com"
-        git add gitBranches/$branch_name/identifiers/html_output/
-        git add gitBranches/$branch_name/identifiers/excel_output/
-        git commit -m "Automated conversion of CSV to HTML and Excel for $branch_name"
+        git add gitBranches/$branch_name/identifiers/
+        git commit -m "Automated conversion of CSV to HTML for $branch_name"
         git push origin gitActions
