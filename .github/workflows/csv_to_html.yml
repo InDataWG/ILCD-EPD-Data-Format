@@ -110,7 +110,7 @@ jobs:
         mkdir -p gitActions/gitBranches/$branch_name/identifiers
 
         # Copy the HTML files to the gitActions branch folder
-        cp -r ./gitBranches/$branch_name/identifiers/html_output/* gitActions/gitBranches/$branch_name/identifiers
+        cp -r ./gitBranches/$branch_name/identifiers/* gitActions/gitBranches/$branch_name/identifiers
 
     - name: Commit and push changes to gitActions branch
       working-directory: gitActions
