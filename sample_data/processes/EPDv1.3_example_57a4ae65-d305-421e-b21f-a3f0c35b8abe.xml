@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <processDataSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://lca.jrc.it/ILCD/Process ../../schemas/EPD_DataSet.xsd" xmlns="http://lca.jrc.it/ILCD/Process"
-    xmlns:common="http://lca.jrc.it/ILCD/Common" xmlns:epd="http://www.iai.kit.edu/EPD/2013" xmlns:epd2="http://www.indata.network/EPD/2019" version="1.1" locations="../ILCDLocations.xml"
-    epd2:epd-version="1.2">
+    xmlns:common="http://lca.jrc.it/ILCD/Common" xmlns:epd="http://www.iai.kit.edu/EPD/2013" xmlns:epd2="http://www.indata.network/EPD/2019" xmlns:epd24="http://www.indata.network/EPD/2024"
+    version="1.1" locations="../ILCDLocations.xml" epd2:epd-version="1.3">
     <processInformation>
         <dataSetInformation>
             <common:UUID>57a4ae65-d305-421e-b21f-a3f0c35b8abe</common:UUID>
@@ -20,6 +20,32 @@
                 <common:shortDescription xml:lang="en">Background report for Wood Panel EPD (optional)</common:shortDescription>
             </referenceToExternalDocumentation>
             <common:other>
+                <epd24:productIds>
+                   <epd24:productId epd24:type="GTIN">3234567890126</epd24:productId>
+                   <epd24:productId epd24:type="GTIN">3234567890132</epd24:productId>
+                   <epd24:productId epd24:type="GTIN">3234567890288</epd24:productId>
+                   <epd24:productId epd24:type="GMN">445922</epd24:productId>
+                </epd24:productIds>
+                <epd24:serviceLife>
+                   <epd24:years>50</epd24:years>
+                   <epd24:useConditions epd24:factor="A - inherent quality" epd24:degree="1" />
+                   <epd24:useConditions epd24:factor="B - design level" epd24:degree="2"/>
+                   <epd24:useConditions epd24:factor="C - work execution" epd24:degree="1"/>
+                   <epd24:useConditions epd24:factor="D - indoor environment" epd24:degree="1"/>
+                   <epd24:useConditions epd24:factor="E - outdoor environment" epd24:degree="2"/>
+                   <epd24:useConditions epd24:factor="F - usage conditions" epd24:degree="3"/>
+                   <epd24:useConditions epd24:factor="G - maintenance level" epd24:degree="5"/>
+                   <epd24:referenceToStandard type="source data set" refObjectId="c0016b33-8cf7-415c-ac6e-deba0d21440d" version="00.01.000">
+                       <common:shortDescription xml:lang="en">EN15804+A2</common:shortDescription>
+                       <common:shortDescription xml:lang="de">EN15804+A2</common:shortDescription>
+                   </epd24:referenceToStandard>
+                   <epd24:referenceToUseConditionsDocumentation type="source data set" refObjectId="aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa" version="00.01.000">
+                       <common:shortDescription xml:lang="en">wood panel use conditions and service life</common:shortDescription>
+                       <common:shortDescription xml:lang="de">Einbaubedingungen und Lebensdauer von Holzplatten</common:shortDescription>
+                   </epd24:referenceToUseConditionsDocumentation>
+                   <epd24:comment xml:lang="en">The indicated service life requires installation and maintenance according to manufacturer instructions.</epd24:comment>
+                   <epd24:comment xml:lang="de">Die angegebene Lebensdauer setzt eine Installation und Wartung gemäß den Anweisungen des Herstellers voraus.</epd24:comment>
+                </epd24:serviceLife>
                 <epd:scenarios>
                     <epd:scenario epd:default="true" epd:group="Transport" epd:name="Transport to Gdansk">
                         <epd:description>Transport of the product to the construction site in Gdansk, Poland</epd:description>
@@ -106,6 +132,12 @@
             </referenceToLCAMethodDetails>
             <common:other>
                 <epd:subType>specific dataset</epd:subType>
+                <epd24:variability>
+                   <epd24:manufacturerVariability epd24:type="Single production site" epd24:variation="5"/>
+                   <epd24:productVariability epd24:type="Range of products where variability is described" epd24:variation="20"/>
+                   <epd24:variabilityDescription xml:lang="en">A sensitivity analysis is performed to assess the representativeness of the representative product. The environmental impact results for the individual products have maximum positive difference of 23% (product A) when compared with the representative product, in the Acidification Potential (AP) impact category.</epd24:variabilityDescription>
+                   <epd24:variabilityDescription xml:lang="de">A sensitivity analysis is performed to assess the representativeness of the representative product. The environmental impact results for the individual products have maximum positive difference of 23% (product A) when compared with the representative product, in the Acidification Potential (AP) impact category.</epd24:variabilityDescription>
+                </epd24:variability>
             </common:other>
         </LCIMethodAndAllocation>
         <dataSourcesTreatmentAndRepresentativeness>
@@ -121,6 +153,22 @@
             <useAdviceForDataSet xml:lang="en">Any use advice that needs to be given regarding this dataset, for example if it must be used together with a
             specific EoL treatment etc.</useAdviceForDataSet>
             <common:other>
+                <epd24:manufacturers>
+                   <epd24:manufacturer epd24:isProvidingData="true">
+                      <epd24:contact type="contact data set" refObjectId="12345678-1234-1234-1234-123456789012" version="00.00.000">
+                         <common:shortDescription xml:lang="en">ACME</common:shortDescription>
+                      </epd24:contact>
+                      <epd24:sites>
+                         <epd24:site>
+                            <epd24:name>ACME Base camp</epd24:name>
+                            <epd24:facilityIdentifier>KELLNERDOM</epd24:facilityIdentifier>
+                            <epd24:olc>9F28WXR4+FW2</epd24:olc>
+                            <epd24:geoCode>DE</epd24:geoCode>
+                            <epd24:streetAddress>Domkloster 4, 50667 Cologne, Germany</epd24:streetAddress>
+                         </epd24:site>
+                      </epd24:sites>
+                   </epd24:manufacturer>
+                </epd24:manufacturers>
                 <epd2:referenceToOriginalEPD refObjectId="f79a8947-b608-4eeb-9b3b-97a3ea8cfea5" type="source data set" version="00.00.002">
                     <common:shortDescription xml:lang="en">Wood Panel EPD</common:shortDescription>
                 </epd2:referenceToOriginalEPD>
