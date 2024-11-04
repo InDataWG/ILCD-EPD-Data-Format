@@ -83,7 +83,12 @@
                         <epd2:weightPerc epd2:value="0.3"/>
                         <epd2:mass epd2:value="1.1"/>
                     </epd2:material>
+                    <epd2:substance epd2:CASNumber="20109-59-5" epd2:ECNumber="243-518-4" epd2:hazardCode="SVHC;H360D;H372">
+                       <epd2:name>Sodium perfluoroheptanoate</epd2:name>
+                       <epd2:weightPerc epd2:value="0.042"/>
+                    </epd2:substance>
                 </epd2:contentDeclaration>
+                <epd24:SVHC epd24:present="true" />
             </common:other>
         </dataSetInformation>
         <!-- NEU: quantitativeReference muß wieder rein, um den Referenzfluß zu identifizieren -->
