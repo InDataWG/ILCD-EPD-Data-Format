@@ -78,4 +78,61 @@
       </xs:restriction>
    </xs:simpleType>
    
+   <xs:element name="serviceLife">
+      <xs:complexType>
+         <xs:sequence>
+            <xs:element name="years" type="xs:int" minOccurs="1" maxOccurs="1"/>
+            <xs:element ref="epd24:useConditions" minOccurs="1" maxOccurs="unbounded"/>
+            <xs:element name="referenceToStandard" type="common:GlobalReferenceType" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="referenceToUseConditionsDocumentation" type="common:GlobalReferenceType" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element name="comment" type="common:FTMultiLang" minOccurs="0" maxOccurs="unbounded">
+            </xs:element>
+         </xs:sequence>
+      </xs:complexType>
+      <xs:unique name="commentLangUniqueConstraint">
+         <xs:selector xpath="epd24:comment"/>
+         <xs:field xpath="@xml:lang"/>
+      </xs:unique>
+      <xs:unique name="referenceToStandardShortDescriptionLangUniqueConstraint">
+         <xs:selector xpath="epd24:referenceToStandard/common:shortDescription"/>
+         <xs:field xpath="@xml:lang"/>
+      </xs:unique>
+      <xs:unique name="referenceToUseConditionsDocumentationShortDescriptionLangUniqueConstraint">
+         <xs:selector xpath="epd24:referenceToUseConditionsDocumentation/common:shortDescription"/>
+         <xs:field xpath="@xml:lang"/>
+      </xs:unique>
+   </xs:element>
+
+   <xs:element name="useConditions">
+      <xs:complexType>
+         <xs:attribute name="factor" type="epd24:UseConditionFactors" use="required"/>
+         <xs:attribute name="degree" type="epd24:UseConditionDegrees" use="required"/>
+      </xs:complexType>
+   </xs:element>
+
+   <xs:simpleType name="UseConditionFactors">
+      <xs:restriction base="xs:string">
+         <xs:enumeration value="A - inherent quality"/>
+         <xs:enumeration value="B - design level"/>
+         <xs:enumeration value="C - work execution"/>
+         <xs:enumeration value="D - indoor environment"/>
+         <xs:enumeration value="E - outdoor environment"/>
+         <xs:enumeration value="F - usage conditions"/>
+         <xs:enumeration value="G - maintenance level"/>
+      </xs:restriction>
+   </xs:simpleType>
+
+   <xs:simpleType name="UseConditionDegrees">
+      <xs:restriction base="xs:string">
+         <xs:enumeration value="0"/>
+         <xs:enumeration value="1"/>
+         <xs:enumeration value="2"/>
+         <xs:enumeration value="3"/>
+         <xs:enumeration value="4"/>
+         <xs:enumeration value="5"/>
+         <xs:enumeration value="n/a"/>
+      </xs:restriction>
+   </xs:simpleType>
+
+
 </xs:schema>
