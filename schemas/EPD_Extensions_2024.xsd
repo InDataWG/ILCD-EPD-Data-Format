@@ -8,6 +8,12 @@
    elementFormDefault="qualified" attributeFormDefault="qualified" version="1.1">
    <xs:import namespace="http://lca.jrc.it/ILCD/Common" schemaLocation="ILCD_Common_Groups.xsd"/>
 
+   <xs:element name="SVHC">
+      <xs:complexType>
+         <xs:attribute name="present" type="xs:boolean" use="required"/>
+      </xs:complexType>
+   </xs:element>
+
    <xs:element name="productIds">
       <xs:complexType>
          <xs:sequence>
@@ -15,18 +21,18 @@
          </xs:sequence>
       </xs:complexType>
    </xs:element>
-   
+
    <xs:element name="productId">
       <xs:complexType>
          <xs:simpleContent>
             <xs:extension base="xs:string">
                <xs:attribute name="type" type="xs:string"/>
                <xs:anyAttribute/>
-            </xs:extension>         
+            </xs:extension>
          </xs:simpleContent>
       </xs:complexType>
    </xs:element>
-   
+
    <xs:element name="manufacturers">
       <xs:complexType>
          <xs:sequence>
@@ -34,7 +40,7 @@
          </xs:sequence>
       </xs:complexType>
    </xs:element>
-      
+
    <xs:element name="manufacturer">
       <xs:complexType>
          <xs:sequence>
@@ -46,7 +52,7 @@
          <xs:anyAttribute/>
       </xs:complexType>
    </xs:element>
-   
+
    <xs:element name="sites">
       <xs:complexType>
          <xs:sequence>
@@ -54,7 +60,7 @@
          </xs:sequence>
       </xs:complexType>
    </xs:element>
-   
+
    <xs:element name="site">
       <xs:complexType>
          <xs:sequence>
@@ -68,7 +74,7 @@
          <xs:anyAttribute/>
       </xs:complexType>
    </xs:element>
-   
+
    <xs:simpleType name="OLC">
       <xs:annotation>
          <xs:documentation>Open Location Code (https://maps.google.com/pluscodes/)</xs:documentation>
@@ -77,7 +83,7 @@
          <xs:pattern value="[23456789C][23456789CFGHJMPQRV][23456789CFGHJMPQRVWX]{6}\+[23456789CFGHJMPQRVWX]{2,7}"/>
       </xs:restriction>
    </xs:simpleType>
-   
+
    <xs:element name="serviceLife">
       <xs:complexType>
          <xs:sequence>
