@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <processDataSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://lca.jrc.it/ILCD/Process ../../schemas/EPD_DataSet.xsd" xmlns="http://lca.jrc.it/ILCD/Process"
-    xmlns:common="http://lca.jrc.it/ILCD/Common" xmlns:epd="http://www.iai.kit.edu/EPD/2013" xmlns:epd2="http://www.indata.network/EPD/2019" xmlns:epd24="http://www.indata.network/EPD/2024" 
+    xmlns:common="http://lca.jrc.it/ILCD/Common" xmlns:epd="http://www.iai.kit.edu/EPD/2013" xmlns:epd2="http://www.indata.network/EPD/2019" xmlns:epd24="http://www.indata.network/EPD/2024"
     version="1.1" locations="../ILCDLocations.xml" epd2:epd-version="1.3">
     <processInformation>
         <dataSetInformation>
@@ -26,6 +26,26 @@
                    <epd24:productId epd24:type="GTIN">3234567890288</epd24:productId>
                    <epd24:productId epd24:type="GMN">445922</epd24:productId>
                 </epd24:productIds>
+                <epd24:serviceLife>
+                   <epd24:years>50</epd24:years>
+                   <epd24:useConditions epd24:factor="A - inherent quality" epd24:degree="1" />
+                   <epd24:useConditions epd24:factor="B - design level" epd24:degree="2"/>
+                   <epd24:useConditions epd24:factor="C - work execution" epd24:degree="1"/>
+                   <epd24:useConditions epd24:factor="D - indoor environment" epd24:degree="1"/>
+                   <epd24:useConditions epd24:factor="E - outdoor environment" epd24:degree="2"/>
+                   <epd24:useConditions epd24:factor="F - usage conditions" epd24:degree="3"/>
+                   <epd24:useConditions epd24:factor="G - maintenance level" epd24:degree="5"/>
+                   <epd24:referenceToStandard type="source data set" refObjectId="c0016b33-8cf7-415c-ac6e-deba0d21440d" version="00.01.000">
+                       <common:shortDescription xml:lang="en">EN15804+A2</common:shortDescription>
+                       <common:shortDescription xml:lang="de">EN15804+A2</common:shortDescription>
+                   </epd24:referenceToStandard>
+                   <epd24:referenceToUseConditionsDocumentation type="source data set" refObjectId="aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa" version="00.01.000">
+                       <common:shortDescription xml:lang="en">wood panel use conditions and service life</common:shortDescription>
+                       <common:shortDescription xml:lang="de">Einbaubedingungen und Lebensdauer von Holzplatten</common:shortDescription>
+                   </epd24:referenceToUseConditionsDocumentation>
+                   <epd24:comment xml:lang="en">The indicated service life requires installation and maintenance according to manufacturer instructions.</epd24:comment>
+                   <epd24:comment xml:lang="de">Die angegebene Lebensdauer setzt eine Installation und Wartung gemäß den Anweisungen des Herstellers voraus.</epd24:comment>
+                </epd24:serviceLife>
                 <epd:scenarios>
                     <epd:scenario epd:default="true" epd:group="Transport" epd:name="Transport to Gdansk">
                         <epd:description>Transport of the product to the construction site in Gdansk, Poland</epd:description>
@@ -117,6 +137,12 @@
             </referenceToLCAMethodDetails>
             <common:other>
                 <epd:subType>specific dataset</epd:subType>
+                <epd24:variability>
+                   <epd24:manufacturerVariability epd24:type="Single production site" epd24:variation="5"/>
+                   <epd24:productVariability epd24:type="Range of products where variability is described" epd24:variation="20"/>
+                   <epd24:variabilityDescription xml:lang="en">A sensitivity analysis is performed to assess the representativeness of the representative product. The environmental impact results for the individual products have maximum positive difference of 23% (product A) when compared with the representative product, in the Acidification Potential (AP) impact category.</epd24:variabilityDescription>
+                   <epd24:variabilityDescription xml:lang="de">A sensitivity analysis is performed to assess the representativeness of the representative product. The environmental impact results for the individual products have maximum positive difference of 23% (product A) when compared with the representative product, in the Acidification Potential (AP) impact category.</epd24:variabilityDescription>
+                </epd24:variability>
             </common:other>
         </LCIMethodAndAllocation>
         <dataSourcesTreatmentAndRepresentativeness>

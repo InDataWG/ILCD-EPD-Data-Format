@@ -21,6 +21,15 @@
                 <common:shortDescription xml:lang="de">Hier kann z.B. der AUB Hintergrundbericht angehängt werden</common:shortDescription>
             </referenceToExternalDocumentation>
             <common:other>
+                <epd24:serviceLife>
+                   <epd24:years>50</epd24:years>
+                   <epd24:referenceToStandard type="source data set" refObjectId="c0016b33-8cf7-415c-ac6e-deba0d21440d" version="00.01.000">
+                      <common:shortDescription xml:lang="en">EN15804+A2</common:shortDescription>
+                      <common:shortDescription xml:lang="de">EN15804+A2</common:shortDescription>
+                   </epd24:referenceToStandard>
+                   <epd24:comment xml:lang="en">The indicated service life requires installation and maintenance according to manufacturer instructions.</epd24:comment>
+                   <epd24:comment xml:lang="de">The indicated service life requires installation and maintenance according to manufacturer instructions.</epd24:comment>
+                </epd24:serviceLife>
                 <!-- mehrere unabhängige Gruppen von Szenarien können definiert werden, dabei kann jeweils ein standarmäßiges angegeben werden -->
                 <epd:scenarios>
                     <epd:scenario epd:name="Sc1" epd:group="1" epd:default="true">
@@ -116,6 +125,12 @@
             <common:other>
                 <!-- NEU: subType, may be one of: generic dataset, representative dataset, average dataset, specific dataset, template dataset -->
                 <epd:subType>average dataset</epd:subType>
+                <epd24:variability>
+                   <epd24:manufacturerVariability epd24:type="Single production site" epd24:variation="5"/>
+                   <epd24:productVariability epd24:type="Range of products where variability is described" epd24:variation="20"/>
+                   <epd24:variabilityDescription xml:lang="en">A sensitivity analysis is performed to assess the representativeness of the representative product. The environmental impact results for the individual products have maximum positive difference of 23% (product A) when compared with the representative product, in the Acidification Potential (AP) impact category.</epd24:variabilityDescription>
+                   <epd24:variabilityDescription xml:lang="de">A sensitivity analysis is performed to assess the representativeness of the representative product. The environmental impact results for the individual products have maximum positive difference of 23% (product A) when compared with the representative product, in the Acidification Potential (AP) impact category.</epd24:variabilityDescription>
+                </epd24:variability>
             </common:other>
         </LCIMethodAndAllocation>
         <dataSourcesTreatmentAndRepresentativeness>
