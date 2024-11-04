@@ -135,4 +135,57 @@
    </xs:simpleType>
 
 
+   <xs:element name="variability">
+      <xs:complexType>
+         <xs:sequence>
+            <xs:element ref="manufacturerVariability" minOccurs="1" maxOccurs="1"/>
+            <xs:element ref="productVariability" minOccurs="1" maxOccurs="1"/>
+            <xs:element name="variabilityDescription" type="common:FTMultiLang" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:any namespace="##other" minOccurs="0" maxOccurs="unbounded"/>
+         </xs:sequence>
+      </xs:complexType>
+      <xs:unique name="descriptionLangUniqueConstraint">
+          <xs:selector xpath="epd24:variabilityDescription"/>
+          <xs:field xpath="@xml:lang"/>
+      </xs:unique>
+   </xs:element>
+
+   <xs:element name="manufacturerVariability">
+      <xs:complexType>
+         <xs:sequence>
+            <xs:any namespace="##other" minOccurs="0" maxOccurs="unbounded"/>
+         </xs:sequence>
+         <xs:attribute name="type" type="ManufacturerVariabilityValues" use="required"/>
+         <xs:anyAttribute/>
+      </xs:complexType>
+   </xs:element>
+
+   <xs:element name="productVariability">
+      <xs:complexType>
+         <xs:sequence>
+            <xs:any namespace="##other" minOccurs="0" maxOccurs="unbounded"/>
+         </xs:sequence>
+         <xs:attribute name="type" type="ProductVariabilityValues" use="required"/>
+         <xs:attribute ref="variation" use="optional"/>
+         <xs:anyAttribute/>
+      </xs:complexType>
+   </xs:element>
+
+   <xs:attribute name="variation" type="common:Perc"/>
+
+   <xs:simpleType name="ManufacturerVariabilityValues">
+      <xs:restriction base="xs:string">
+         <xs:enumeration value="Single production site"></xs:enumeration>
+         <xs:enumeration value="Single manufacturer with multiple production sites"></xs:enumeration>
+         <xs:enumeration value="Multiple manufacturers"></xs:enumeration>
+      </xs:restriction>
+   </xs:simpleType>
+
+   <xs:simpleType name="ProductVariabilityValues">
+      <xs:restriction base="xs:string">
+         <xs:enumeration value="Single product"></xs:enumeration>
+         <xs:enumeration value="Range of products where variability is described"></xs:enumeration>
+      </xs:restriction>
+   </xs:simpleType>
+
 </xs:schema>
