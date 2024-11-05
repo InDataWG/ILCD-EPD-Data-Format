@@ -1,0 +1,123 @@
+name: Convert CSV to HTML
+
+on:
+  push:
+    paths:
+      - 'doc/identifiers/*.csv'
+    branches:
+      - '**'  
+
+permissions:
+  contents: write 
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout current branch
+      uses: actions/checkout@v2
+      with:
+        ref: ${{ github.ref_name }}
+
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.x'
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install pandas openpyxl
+
+    - name: List CSV files
+      run: |
+        echo "Listing CSV files in the /doc/identifiers/ directory"
+        ls -l doc/identifiers/*.csv || echo "No CSV files found in /doc/identifiers/"
+
+    - name: Get branch name
+      id: branch_name
+      run: |
+        BRANCH_NAME=$(echo ${GITHUB_REF#refs/heads/})
+        echo "Branch name is $BRANCH_NAME"
+        echo "::set-output name=branch::$BRANCH_NAME"
+
+    - name: Convert CSV to HTML
+      run: |
+        python - <<EOF
+        import pandas as pd
+        import os
+
+        # Create the output directory based on the branch name
+        branch_name = "${{ steps.branch_name.outputs.branch }}"
+        output_dir = f"gitBranches/{branch_name}/identifiers"
+        os.makedirs(output_dir, exist_ok=True)
+
+        # Define the files and their IDs
+        files_with_ids = {
+            "ecoinvent database: source data sets": "doc/identifiers/BackgroundDB_SourceDatasets_ecoinvent.csv",
+            "GaBi database: source data sets": "doc/identifiers/BackgroundDB_SourceDatasets_GaBi.csv",
+            "Common references": "doc/identifiers/Common_references.csv",
+            "Country-specific indicators": "doc/identifiers/Country-specific_indicators.csv",
+            "EN15804+A1 indicators": "doc/identifiers/EN15804+A1_indicators.csv",
+            "EN15804+A2 (EF3.0) indicators": "doc/identifiers/EN15804+A2_EF3.0_indicators.csv",
+            "EN15804+A2 (EF3.1) indicators": "doc/identifiers/EN15804+A2_EF3.1_indicators.csv",
+            "Flow properties and unit groups": "doc/identifiers/Flow_properties_and_unit_groups.csv"
+        }
+
+        for file_id, file_path in files_with_ids.items():
+            if os.path.exists(file_path):
+                df = pd.read_csv(file_path)
+                html_table = df.to_html(index=False, classes='table table-striped', border=0, table_id=file_id)
+                html_filename = os.path.join(output_dir, os.path.basename(file_path).replace('.csv', '.html'))
+                with open(html_filename, 'w') as f:
+                    f.write(f"""
+                    <!DOCTYPE html>
+                    <html>
+                    <head>
+                        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+                        <title>{file_id}</title>
+                    </head>
+                    <body>
+                        <div class="container">
+                            <h1>{file_id}</h1>
+                            {html_table}
+                        </div>
+                    </body>
+                    </html>
+                    """)
+        EOF
+
+    - name: Checkout gitActions branch
+      uses: actions/checkout@v2
+      with:
+        ref: gitActions
+        path: gitActions
+
+    - name: Clean up old directories in gitActions
+      run: |
+        branch_name=${{ steps.branch_name.outputs.branch }}
+        echo "Cleaning up old directories in gitBranches/$branch_name/identifiers in gitActions branch."
+
+        rm -rf gitActions/gitBranches/$branch_name/identifiers
+
+    - name: Copy generated files to gitActions branch
+      run: |
+        branch_name=${{ steps.branch_name.outputs.branch }}
+        echo "Copying generated HTML files to gitBranches/$branch_name/identifiers in gitActions branch."
+
+        # Ensure the directories exist in gitActions
+        mkdir -p gitActions/gitBranches/$branch_name/identifiers
+
+        # Copy the HTML files to the gitActions branch folder
+        cp -r ./gitBranches/$branch_name/identifiers/* gitActions/gitBranches/$branch_name/identifiers
+
+    - name: Commit and push changes to gitActions branch
+      working-directory: gitActions
+      run: |
+        branch_name=${{ steps.branch_name.outputs.branch }}
+        git config --global user.name "github-actions[bot]"
+        git config --global user.email "github-actions[bot]@users.noreply.github.com"
+        git add gitBranches/$branch_name/identifiers/
+        git commit -m "Automated conversion of CSV to HTML for $branch_name"
+        git push origin gitActions
