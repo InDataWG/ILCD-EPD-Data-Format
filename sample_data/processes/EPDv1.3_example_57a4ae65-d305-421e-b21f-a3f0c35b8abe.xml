@@ -143,6 +143,8 @@
                    <epd24:variabilityDescription xml:lang="en">A sensitivity analysis is performed to assess the representativeness of the representative product. The environmental impact results for the individual products have maximum positive difference of 23% (product A) when compared with the representative product, in the Acidification Potential (AP) impact category.</epd24:variabilityDescription>
                    <epd24:variabilityDescription xml:lang="de">A sensitivity analysis is performed to assess the representativeness of the representative product. The environmental impact results for the individual products have maximum positive difference of 23% (product A) when compared with the representative product, in the Acidification Potential (AP) impact category.</epd24:variabilityDescription>
                 </epd24:variability>
+                <epd24:pcrCompliance epd24:allocation="true" epd24:cutOffRules="true"
+                  epd24:upstreamDataDeviatingFromAllocationPrinciples="false"/>
             </common:other>
         </LCIMethodAndAllocation>
         <dataSourcesTreatmentAndRepresentativeness>

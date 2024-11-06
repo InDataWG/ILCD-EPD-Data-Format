@@ -14,6 +14,14 @@
       </xs:complexType>
    </xs:element>
 
+   <xs:element name="pcrCompliance">
+      <xs:complexType>
+         <xs:attribute name="allocation" type="xs:boolean" use="required"/>
+         <xs:attribute name="cutOffRules" type="xs:boolean" use="required"/>
+         <xs:attribute name="upstreamDataDeviatingFromAllocationPrinciples" type="xs:boolean" use="required"/>
+      </xs:complexType>
+   </xs:element>
+
    <xs:element name="productIds">
       <xs:complexType>
          <xs:sequence>

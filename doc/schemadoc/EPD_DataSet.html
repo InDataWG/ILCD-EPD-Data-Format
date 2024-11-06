@@ -2090,6 +2090,98 @@
     <td class="fieldname"></td>
   </tr>
   <tr>
+    <td class="fieldname fieldname_epd" style="padding-left: 40px;">Subtyp</td>
+    <td class="fieldname fieldname_epd" style="padding-left: 40px;">Subtype</td>
+    <td class="fieldname fieldname_epd" style="padding-left: 40px;">epd:subType</td>
+    <td class="fieldname fieldname_epd">r</td>
+    <td class="fieldname fieldname_epd">[0,1]</td>
+    <td class="fieldname fieldname_epd"><span class="data_enum"><a class="info" href="javascript:void(0);">generic dataset<span>Generischer
+                        Datensatz</span></a></span><br/><span class="data_enum"><a class="info" href="javascript:void(0);">representative
+                        dataset<span>Repräsentativer Datensatz</span></a></span><br/><span class="data_enum"><a class="info" href="javascript:void(0);">average
+                        dataset<span>Durchschnittsdatensatz</span></a></span><br/><span class="data_enum"><a class="info" href="javascript:void(0);">specific
+                        dataset<span>(Hersteller-) Spezifischer Datensatz</span></a></span><br/><span class="data_enum"><a class="info" href="javascript:void(0);">template dataset<span>Musterdatensatz</span></a></span><br/>
+    </td>
+    <td class="fieldname fieldname_epd">Gibt den Datensatztypen hinsichtlich Repräsentativität an. Einer der folgenden vordefinierten Datensatztypen muss ausgewählt werden: -
+      <i>specific dataset</i> (spezifischer Datensatz) - hersteller-(unternehmens-) spezifischer Datensatz für ein konkretes Produkt eines Werkes -
+      <i>average dataset</i> (Durchschnittsdatensatz) - durchschnittliche Datensätze von Industrieverbänden, mehreren Firmen, mehreren Werken oder mehreren Produkten (d.h. auf Grundlage von Daten der Industrieproduktion von Unternehmen) -
+      <i>representative dataset</i> (repräsentativer Datensatz) - representative dataset – Daten, die repräsentativ für ein Land / eine Region sind (z.B. Durchschnitt DE) -
+      <i>template dataset</i> (Muster-EPD-Datensatz) - unspezifische Datensätze für spezifische Produkte, die auf Basis einer „Muster-EPD“ erstellt wurden -
+      <i>generic dataset</i> (generischer Datensatz) - generische Daten gemäß EN 15804 sowie andere, nicht auf Basis von Industriedaten modellierte Daten (z.B. auf der Basis von Literatur, Expertenwissen etc.)
+    </td>
+    <td class="fieldname fieldname_epd">Indicates the type of data set regarding its representativeness. One of the following predefined data types has to be chosen: -
+      <i>specific dataset</i> - vendor (company) specific data for a specific product from one production site -
+      <i>average dataset</i> - avarage datasets from industry associations, multiple manufacturers, multiple production sites or multiple products, i.e. modelled based on industry data from an manufacturer -
+      <i>representative dataset</i> - data that is representative for a country or region (e.g. average for Germany) -
+      <i>template dataset</i> - sample EPD, unspecific datasets for specific products, that were created based on a sample EPD -
+      <i>generic dataset</i> - generic data acc. to EN 15804 and data based on other non-industry data sources (e.g. literature, expert knowledge)
+    </td>
+    <td class="fieldname fieldname_epd"></td>
+    <td class="fieldname fieldname_epd"></td>
+    <td class="fieldname fieldname_epd"></td>
+    <td class="fieldname fieldname_epd"></td>
+    <td class="fieldname fieldname_epd"></td>
+  </tr>
+  <tr>
+    <td class="fieldname fieldname_epd24" style="padding-left: 40px;">PCR-Konformität</td>
+    <td class="fieldname fieldname_epd24" style="padding-left: 40px;">PCR Compliance</td>
+    <td class="fieldname fieldname_epd24" style="padding-left: 40px;">epd24:pcrCompliance</td>
+    <td class="fieldname fieldname_epd24">o</td>
+    <td class="fieldname fieldname_epd24">[0,1]</td>
+    <td class="fieldname fieldname_epd24"></td>
+    <td class="fieldname fieldname_epd24"></td>
+    <td class="fieldname fieldname_epd24"></td>
+    <td class="fieldname fieldname_epd24"></td>
+    <td class="fieldname fieldname_epd24"></td>
+    <td class="fieldname fieldname_epd24"></td>
+    <td class="fieldname fieldname_epd24"></td>
+    <td class="fieldname fieldname_epd24"></td>
+  </tr>
+  <tr>
+    <td class="fieldname fieldname_epd24" style="padding-left: 50px;">Allokation</td>
+    <td class="fieldname fieldname_epd24" style="padding-left: 50px;">Allocation</td>
+    <td class="fieldname fieldname_epd24" style="padding-left: 50px;">@epd24:allocation</td>
+    <td class="fieldname fieldname_epd24">o</td>
+    <td class="fieldname fieldname_epd24">[0,1]</td>
+    <td class="fieldname fieldname_epd24"><a target="_blank" href="ILCD_Common_DataTypes.html#boolean">boolean</a></td>
+    <td class="fieldname fieldname_epd24">Allokation entspricht der Standard-PCR</td>
+    <td class="fieldname fieldname_epd24">Allocation compliant with standard PCR</td>
+    <td class="fieldname fieldname_epd24"></td>
+    <td class="fieldname fieldname_epd24"></td>
+    <td class="fieldname fieldname_epd24"></td>
+    <td class="fieldname fieldname_epd24"></td>
+    <td class="fieldname fieldname_epd24"></td>
+  </tr>
+  <tr>
+    <td class="fieldname fieldname_epd24" style="padding-left: 50px;">Abschneidekriterien</td>
+    <td class="fieldname fieldname_epd24" style="padding-left: 50px;">Cut-off rules</td>
+    <td class="fieldname fieldname_epd24" style="padding-left: 50px;">@epd24:cutOffRules</td>
+    <td class="fieldname fieldname_epd24">o</td>
+    <td class="fieldname fieldname_epd24">[0,1]</td>
+    <td class="fieldname fieldname_epd24"><a target="_blank" href="ILCD_Common_DataTypes.html#boolean">boolean</a></td>
+    <td class="fieldname fieldname_epd24">Abschneidekriterien entsprechen der Standard-PCR</td>
+    <td class="fieldname fieldname_epd24">Cut-off rules compliant with standard PCR</td>
+    <td class="fieldname fieldname_epd24"></td>
+    <td class="fieldname fieldname_epd24"></td>
+    <td class="fieldname fieldname_epd24"></td>
+    <td class="fieldname fieldname_epd24"></td>
+    <td class="fieldname fieldname_epd24"></td>
+  </tr>
+  <tr>
+    <td class="fieldname fieldname_epd24" style="padding-left: 50px;">Vorgelagerte Daten abweichend</td>
+    <td class="fieldname fieldname_epd24" style="padding-left: 50px;">Upstream data deviating</td>
+    <td class="fieldname fieldname_epd24" style="padding-left: 50px;">@epd24:upstreamDataDeviatingFromAllocationPrinciples</td>
+    <td class="fieldname fieldname_epd24">o</td>
+    <td class="fieldname fieldname_epd24">[0,1]</td>
+    <td class="fieldname fieldname_epd24"><a target="_blank" href="ILCD_Common_DataTypes.html#boolean">boolean</a></td>
+    <td class="fieldname fieldname_epd24">Nutzung von vorgelagerten Daten, welche nicht den Allokationsregeln der Kern-PCR entsprechen</td>
+    <td class="fieldname fieldname_epd24">Use of upstream data which does not respect the allocation principles of the core PCR</td>
+    <td class="fieldname fieldname_epd24"></td>
+    <td class="fieldname fieldname_epd24"></td>
+    <td class="fieldname fieldname_epd24"></td>
+    <td class="fieldname fieldname_epd24"></td>
+    <td class="fieldname fieldname_epd24"></td>
+  </tr>
+  <tr>
     <td class="fieldname fieldname_epd24" style="padding-left: 40px;">Variabilität</td>
     <td class="fieldname fieldname_epd24" style="padding-left: 40px;">Variability</td>
     <td class="fieldname fieldname_epd24" style="padding-left: 40px;">epd24:variability</td>
@@ -2207,38 +2299,6 @@
     <td class="fieldname fieldname_epd24"></td>
     <td class="fieldname fieldname_epd24"></td>
     <td class="fieldname fieldname_epd24"></td>
-  </tr>
-  <tr>
-    <td class="fieldname fieldname_epd" style="padding-left: 40px;">Subtyp</td>
-    <td class="fieldname fieldname_epd" style="padding-left: 40px;">Subtype</td>
-    <td class="fieldname fieldname_epd" style="padding-left: 40px;">epd:subType</td>
-    <td class="fieldname fieldname_epd">r</td>
-    <td class="fieldname fieldname_epd">[0,1]</td>
-    <td class="fieldname fieldname_epd"><span class="data_enum"><a class="info" href="javascript:void(0);">generic dataset<span>Generischer
-                        Datensatz</span></a></span><br/><span class="data_enum"><a class="info" href="javascript:void(0);">representative
-                        dataset<span>Repräsentativer Datensatz</span></a></span><br/><span class="data_enum"><a class="info" href="javascript:void(0);">average
-                        dataset<span>Durchschnittsdatensatz</span></a></span><br/><span class="data_enum"><a class="info" href="javascript:void(0);">specific
-                        dataset<span>(Hersteller-) Spezifischer Datensatz</span></a></span><br/><span class="data_enum"><a class="info" href="javascript:void(0);">template dataset<span>Musterdatensatz</span></a></span><br/>
-    </td>
-    <td class="fieldname fieldname_epd">Gibt den Datensatztypen hinsichtlich Repräsentativität an. Einer der folgenden vordefinierten Datensatztypen muss ausgewählt werden: -
-      <i>specific dataset</i> (spezifischer Datensatz) - hersteller-(unternehmens-) spezifischer Datensatz für ein konkretes Produkt eines Werkes -
-      <i>average dataset</i> (Durchschnittsdatensatz) - durchschnittliche Datensätze von Industrieverbänden, mehreren Firmen, mehreren Werken oder mehreren Produkten (d.h. auf Grundlage von Daten der Industrieproduktion von Unternehmen) -
-      <i>representative dataset</i> (repräsentativer Datensatz) - representative dataset – Daten, die repräsentativ für ein Land / eine Region sind (z.B. Durchschnitt DE) -
-      <i>template dataset</i> (Muster-EPD-Datensatz) - unspezifische Datensätze für spezifische Produkte, die auf Basis einer „Muster-EPD“ erstellt wurden -
-      <i>generic dataset</i> (generischer Datensatz) - generische Daten gemäß EN 15804 sowie andere, nicht auf Basis von Industriedaten modellierte Daten (z.B. auf der Basis von Literatur, Expertenwissen etc.)
-    </td>
-    <td class="fieldname fieldname_epd">Indicates the type of data set regarding its representativeness. One of the following predefined data types has to be chosen: -
-      <i>specific dataset</i> - vendor (company) specific data for a specific product from one production site -
-      <i>average dataset</i> - avarage datasets from industry associations, multiple manufacturers, multiple production sites or multiple products, i.e. modelled based on industry data from an manufacturer -
-      <i>representative dataset</i> - data that is representative for a country or region (e.g. average for Germany) -
-      <i>template dataset</i> - sample EPD, unspecific datasets for specific products, that were created based on a sample EPD -
-      <i>generic dataset</i> - generic data acc. to EN 15804 and data based on other non-industry data sources (e.g. literature, expert knowledge)
-    </td>
-    <td class="fieldname fieldname_epd"></td>
-    <td class="fieldname fieldname_epd"></td>
-    <td class="fieldname fieldname_epd"></td>
-    <td class="fieldname fieldname_epd"></td>
-    <td class="fieldname fieldname_epd"></td>
   </tr>
   <tr>
     <td class="subsection" style="padding-left: 20px;font-style: italic;">Datenquellen und Repräsentativität</td>
