@@ -210,9 +210,10 @@
         checkFieldNameDe.checked = false;
         checkDefinitionEn.checked = true;
         checkDefinitionDe.checked = false;
-        toggleCol('tableID', 0, 'none');
+// TODO: revert when done authoring/improving doc
+//        toggleCol('tableID', 0, 'none');
         toggleCol('tableID', 1, '');
-        toggleCol('tableID', 6, 'none');
+//        toggleCol('tableID', 6, 'none');
         toggleCol('tableID', 7, '');
       } else {
         checkFieldNameEn.checked = false;
@@ -282,20 +283,20 @@
 <body onload="initializeColumns();">
 <form action="#" id="formSelectLang">
   Language:
-  <input type="radio" name="lang" checked onclick="selectLang('en')" value="en"/>en&nbsp;<input type="radio" name="lang" onclick="selectLang('de')" value="de"/> de
+  <input type="radio" name="lang" checked="true" onclick="selectLang('en')" value="en"/>en&nbsp;<input type="radio" name="lang" onclick="selectLang('de')" value="de"/> de
 </form>
 <form action="#" id="formSelectFields">
   Show:
-  <input type="checkbox" checked value="0" id="checkFieldNameDe" onclick="toggleCol('tableID', 0, null);"/>Field Name (de)
-  <input type="checkbox" checked value="1" id="checkFieldNameEn" onclick="toggleCol('tableID', 1, null);"/>Field Name (en)
-  <input type="checkbox" checked value="2" id="checkID" onclick="toggleCol('tableID', 2, null);"/>Element/Attribute Name
-  <input type="checkbox" checked value="3" id="checkRequirement" onclick="toggleCol('tableID', 3, null);"/>Requirement
-  <input type="checkbox" checked value="4" id="checkOccurrences" onclick="toggleCol('tableID', 4, null);"/>Occurrences
-  <input type="checkbox" checked value="5" id="checkDataType" onclick="toggleCol('tableID', 5, null);"/>Datatype
-  <input type="checkbox" checked value="6" id="checkDefinitionDe" onclick="toggleCol('tableID', 6, null);"/>Definition (de)
-  <input type="checkbox" checked value="7" id="checkDefinitionEn" onclick="toggleCol('tableID', 7, null);"/>Definition (en)
-  <input type="checkbox" checked value="8" id="checkOrigDefinition" onclick="toggleCol('tableID', 8, null);"/>Original ILCD Format Definition (en)
-  <input type="checkbox" checked value="9" id="checkEDocId" onclick="toggleCol('tableID', 9, null);"/>eDoc ID
+  <input type="checkbox" checked="true" value="0" id="checkFieldNameDe" onclick="toggleCol('tableID', 0, null);"/>Field Name (de)
+  <input type="checkbox" checked="true" value="1" id="checkFieldNameEn" onclick="toggleCol('tableID', 1, null);"/>Field Name (en)
+  <input type="checkbox" checked="true" value="2" id="checkID" onclick="toggleCol('tableID', 2, null);"/>Element/Attribute Name
+  <input type="checkbox" checked="true" value="3" id="checkRequirement" onclick="toggleCol('tableID', 3, null);"/>Requirement
+  <input type="checkbox" checked="true" value="4" id="checkOccurrences" onclick="toggleCol('tableID', 4, null);"/>Occurrences
+  <input type="checkbox" checked="true" value="5" id="checkDataType" onclick="toggleCol('tableID', 5, null);"/>Datatype
+  <input type="checkbox" checked="true" value="6" id="checkDefinitionDe" onclick="toggleCol('tableID', 6, null);"/>Definition (de)
+  <input type="checkbox" checked="true" value="7" id="checkDefinitionEn" onclick="toggleCol('tableID', 7, null);"/>Definition (en)
+  <input type="checkbox" checked="true" value="8" id="checkOrigDefinition" onclick="toggleCol('tableID', 8, null);"/>Original ILCD Format Definition (en)
+  <input type="checkbox" checked="true" value="9" id="checkEDocId" onclick="toggleCol('tableID', 9, null);"/>eDoc ID
 </form>
 <h1>EPD Data Set Documentation</h1>
 <p>This document lists the ILCD format fields that are used to model EPD data and their respective meaning in the EPD context as well as the additional fields introduced by the format extensions in the EPD namespace. Where the meaning in the EPD context deviates from the original ILCD format definition, it is stated in the
@@ -365,71 +366,71 @@
     <td class="root" style="padding-left: 0px;font-style: italic;">processDataSet</td>
     <td class="root">m</td>
     <td class="root">[1,1]</td>
-    <td class="root"></td>
+    <td class="root"/>
     <td class="root">Datensatz für die Dokumentation von EPD-Daten</td>
     <td class="root">Data set for the documentation of EPD data.</td>
     <td class="root">Data set for unit processes, partly terminated systems, and LCI results. May contain LCIA results as well.
     </td>
     <td class="root">1</td>
-    <td class="root"></td>
-    <td class="root"></td>
-    <td class="root"></td>
+    <td class="root"/>
+    <td class="root"/>
+    <td class="root"/>
   </tr>
   <tr>
     <td class="fieldname" style="padding-left: 10px;">Version</td>
     <td class="fieldname" style="padding-left: 10px;">version</td>
     <td class="fieldname" style="padding-left: 10px;">@version</td>
     <td class="fieldname">m</td>
-    <td class="fieldname"></td>
+    <td class="fieldname"/>
     <td class="fieldname">
       <a target="_blank" href="ILCD_Common_DataTypes.html#SchemaVersion">SchemaVersion</a></td>
     <td class="fieldname">ILCD-Formatversion</td>
     <td class="fieldname">~</td>
     <td class="fieldname">Indicates, which version of the ILCD format is used</td>
     <td class="fieldname">1-a</td>
-    <td class="fieldname"></td>
-    <td class="fieldname"></td>
-    <td class="fieldname"></td>
+    <td class="fieldname"/>
+    <td class="fieldname"/>
+    <td class="fieldname"/>
   </tr>
   <tr>
     <td class="fieldname fieldname_epd2" style="padding-left: 10px;">EPD-Format-Version</td>
     <td class="fieldname fieldname_epd2" style="padding-left: 10px;">EPD format version</td>
     <td class="fieldname fieldname_epd2" style="padding-left: 10px;">@epd2:epd-version</td>
     <td class="fieldname fieldname_epd2">m</td>
-    <td class="fieldname fieldname_epd2"></td>
+    <td class="fieldname fieldname_epd2"/>
     <td class="fieldname fieldname_epd2">
       <a target="_blank" href="ILCD_Common_DataTypes.html#SchemaVersion">SchemaVersion</a>
     </td>
     <td class="fieldname fieldname_epd2">Formatversion der EPD-Erweiterungen. "1.2" für ILCD+EPD 1.2.</td>
     <td class="fieldname fieldname_epd2">Format version of the EPD extensions. "1.2" for ILCD+EPD 1.2.</td>
-    <td class="fieldname fieldname_epd2"></td>
-    <td class="fieldname fieldname_epd2"></td>
-    <td class="fieldname fieldname_epd2"></td>
-    <td class="fieldname fieldname_epd2"></td>
-    <td class="fieldname fieldname_epd2"></td>
+    <td class="fieldname fieldname_epd2"/>
+    <td class="fieldname fieldname_epd2"/>
+    <td class="fieldname fieldname_epd2"/>
+    <td class="fieldname fieldname_epd2"/>
+    <td class="fieldname fieldname_epd2"/>
   </tr>
   <tr>
     <td class="fieldname" style="padding-left: 10px;">Orte</td>
     <td class="fieldname" style="padding-left: 10px;">location</td>
     <td class="fieldname" style="padding-left: 10px;">@locations</td>
     <td class="fieldname">m</td>
-    <td class="fieldname"></td>
+    <td class="fieldname"/>
     <td class="fieldname"><a target="_blank" href="ILCD_Common_DataTypes.html#String">String</a>
     </td>
     <td class="fieldname">Referenz auf Dokument mit Ortscodes</td>
     <td class="fieldname">~</td>
     <td class="fieldname">contains reference to used location table for this dataset</td>
     <td class="fieldname">1-b</td>
-    <td class="fieldname"></td>
-    <td class="fieldname"></td>
-    <td class="fieldname"></td>
+    <td class="fieldname"/>
+    <td class="fieldname"/>
+    <td class="fieldname"/>
   </tr>
   <tr>
     <td class="fieldname" style="padding-left: 10px;">Nur Metadaten</td>
     <td class="fieldname" style="padding-left: 10px;">Meta data only</td>
     <td class="fieldname" style="padding-left: 10px;">@metaDataOnly</td>
     <td class="fieldname">o</td>
-    <td class="fieldname"></td>
+    <td class="fieldname"/>
     <td class="fieldname"><a target="_blank" href="ILCD_Common_DataTypes.html#boolean">boolean</a>
     </td>
     <td class="fieldname">Gibt an, ob dieser Datensatz nur Metadaten enthält (kein Abschnitt Exchanges und keine LCIAResults)
@@ -437,9 +438,9 @@
     <td class="fieldname">~</td>
     <td class="fieldname">Indicates whether this data set contains only meta data (no exchanges section).</td>
     <td class="fieldname">1-c</td>
-    <td class="fieldname"></td>
-    <td class="fieldname"></td>
-    <td class="fieldname"></td>
+    <td class="fieldname"/>
+    <td class="fieldname"/>
+    <td class="fieldname"/>
   </tr>
   <tr>
     <td class="section" style="padding-left: 10px;font-style: italic;">Datensatzinformation</td>
@@ -447,15 +448,15 @@
     <td class="section" style="padding-left: 10px;font-style: italic;">processInformation</td>
     <td class="section">m</td>
     <td class="section">[1,1]</td>
-    <td class="section"></td>
+    <td class="section"/>
     <td class="section">Datensatzinformation</td>
-    <td class="section"></td>
+    <td class="section"/>
     <td class="section">Corresponds to the ISO/TS 14048 section "Process description". It comprises the following six sub-sections: 1) "Data set information" for data set identification and overarching information items, 2) "Quantitative reference", 3) "Time", 4) "Geography", 5) "Technology" and 6) "Mathematical relations".
     </td>
     <td class="section">1-1</td>
-    <td class="section"></td>
-    <td class="section"></td>
-    <td class="section"></td>
+    <td class="section"/>
+    <td class="section"/>
+    <td class="section"/>
   </tr>
   <tr>
     <td class="subsection" style="padding-left: 20px;font-style: italic;">Kerninformationen des Datensatzes</td>
@@ -463,15 +464,15 @@
     <td class="subsection" style="padding-left: 20px;font-style: italic;">dataSetInformation</td>
     <td class="subsection">m</td>
     <td class="subsection">[1,1]</td>
-    <td class="subsection"></td>
+    <td class="subsection"/>
     <td class="subsection">Allgemeine Informationen zum Datensatz</td>
-    <td class="subsection"></td>
+    <td class="subsection"/>
     <td class="subsection">General data set information. Section covers all single fields in the ISO/TS 14048 "Process description", which are not part of the other sub-sections. In ISO/TS 14048 no own sub-section is foreseen for these entries.
     </td>
     <td class="subsection">1-1-2</td>
-    <td class="subsection"></td>
-    <td class="subsection"></td>
-    <td class="subsection"></td>
+    <td class="subsection"/>
+    <td class="subsection"/>
+    <td class="subsection"/>
   </tr>
   <tr>
     <td class="fieldname" style="padding-left: 30px;">UUID des Datensatzes</td>
@@ -486,9 +487,9 @@
     <td class="fieldname">Automatically generated Universally Unique Identifier of this data set. Together with the "Data set version", the UUID uniquely identifies each data set.
     </td>
     <td class="fieldname">1-1-2-1</td>
-    <td class="fieldname"></td>
-    <td class="fieldname"></td>
-    <td class="fieldname"></td>
+    <td class="fieldname"/>
+    <td class="fieldname"/>
+    <td class="fieldname"/>
   </tr>
   <tr>
     <td class="fieldname" style="padding-left: 30px;font-style: italic;">Name</td>
@@ -496,14 +497,14 @@
     <td class="fieldname" style="padding-left: 30px;font-style: italic;">name</td>
     <td class="fieldname">r</td>
     <td class="fieldname">[0,1]</td>
-    <td class="fieldname"></td>
+    <td class="fieldname"/>
     <td class="fieldname">Beschreibender spezifischer Name des Produkts/Systems</td>
     <td class="fieldname">General descriptive and specifying name of the product or system.</td>
     <td class="fieldname">General descriptive and specifying name of the process.</td>
     <td class="fieldname">1-1-2-2</td>
-    <td class="fieldname"></td>
-    <td class="fieldname"></td>
-    <td class="fieldname"></td>
+    <td class="fieldname"/>
+    <td class="fieldname"/>
+    <td class="fieldname"/>
   </tr>
   <tr>
     <td class="fieldname" style="padding-left: 40px;">Name</td>
@@ -519,11 +520,11 @@
     <td class="fieldname">General descriptive name of the process and/or its main good(s) or service(s) and/or it's level of processing.
     </td>
     <td class="fieldname">1-1-2-2-1</td>
-    <td class="fieldname"></td>
+    <td class="fieldname"/>
     <td class="fieldname">
       2I2MqAa5X7w8hZC7cDyzAR
     </td>
-    <td class="fieldname"></td>
+    <td class="fieldname"/>
   </tr>
   <tr>
     <td class="fieldname" style="padding-left: 40px;">Quantitative Produkt-/ Prozeßeigenschaften</td>
@@ -539,9 +540,9 @@
     <td class="fieldname">Further, quantitative specifying information on the good, service or process in technical term(s): qualifying constituent(s)-content and / or energy-content per unit etc. as appropriate. Separated by commata. (Note: non-qualifying flow properties, CAS No, Synonyms, Chemical formulas etc. are documented exclusively in the "Flow data set".)
     </td>
     <td class="fieldname">1-1-2-5</td>
-    <td class="fieldname"></td>
-    <td class="fieldname"></td>
-    <td class="fieldname"></td>
+    <td class="fieldname"/>
+    <td class="fieldname"/>
+    <td class="fieldname"/>
   </tr>
   <tr>
     <td class="fieldname" style="padding-left: 40px;">Anderer Inhalt</td>
@@ -549,14 +550,14 @@
     <td class="fieldname" style="padding-left: 40px;">other</td>
     <td class="fieldname">o</td>
     <td class="fieldname">[0,1]</td>
-    <td class="fieldname"></td>
-    <td class="fieldname"></td>
-    <td class="fieldname"></td>
+    <td class="fieldname"/>
+    <td class="fieldname"/>
+    <td class="fieldname"/>
     <td class="fieldname">May contain arbitrary content.</td>
     <td class="fieldname">0</td>
-    <td class="fieldname"></td>
-    <td class="fieldname"></td>
-    <td class="fieldname"></td>
+    <td class="fieldname"/>
+    <td class="fieldname"/>
+    <td class="fieldname"/>
   </tr>
   <tr>
     <td class="fieldname" style="padding-left: 30px;">Synonyme</td>
@@ -571,9 +572,9 @@
     <td class="fieldname">Synonyms / alternative names / brands of the good, service, or process. Separated by semicolon.
     </td>
     <td class="fieldname">1-1-2-6</td>
-    <td class="fieldname"></td>
-    <td class="fieldname"></td>
-    <td class="fieldname"></td>
+    <td class="fieldname"/>
+    <td class="fieldname"/>
+    <td class="fieldname"/>
   </tr>
   <tr>
     <td class="fieldname" style="padding-left: 30px;font-style: italic;">Klassifizierungsinformation</td>
@@ -581,7 +582,7 @@
     <td class="fieldname" style="padding-left: 30px;font-style: italic;">classificationInformation</td>
     <td class="fieldname">r</td>
     <td class="fieldname">[0,1]</td>
-    <td class="fieldname"></td>
+    <td class="fieldname"/>
     <td class="fieldname">Zuordnung zu hierarchischen Produktkategorien. Zuordnungen können für beliebig viele Kategoriesysteme vorgenommen werden.
     </td>
     <td class="fieldname">Hierarchical classification of the product/system. Classification information can be given for an arbitrary number of classification systems.
@@ -589,9 +590,9 @@
     <td class="fieldname">Hierarchical classification of the good, service, or process. (Note: This entry is NOT required for the identification of a Process. It should nevertheless be avoided to use identical names for Processes in the same category.
     </td>
     <td class="fieldname">1-1-2-7</td>
-    <td class="fieldname"></td>
-    <td class="fieldname"></td>
-    <td class="fieldname"></td>
+    <td class="fieldname"/>
+    <td class="fieldname"/>
+    <td class="fieldname"/>
   </tr>
   <tr>
     <td class="fieldname" style="padding-left: 40px;font-style: italic;">Klassifizierung</td>
@@ -599,38 +600,38 @@
     <td class="fieldname" style="padding-left: 40px;font-style: italic;">classification</td>
     <td class="fieldname">r</td>
     <td class="fieldname">[0,n]</td>
-    <td class="fieldname"></td>
+    <td class="fieldname"/>
     <td class="fieldname">ein Gliederungssystem mit Gliederungsklassen</td>
     <td class="fieldname">~</td>
     <td class="fieldname">Optional statistical or other classification of the data set. Typically also used for structuring LCA databases.
     </td>
     <td class="fieldname">1-1-2-7-2</td>
-    <td class="fieldname"></td>
-    <td class="fieldname"></td>
-    <td class="fieldname"></td>
+    <td class="fieldname"/>
+    <td class="fieldname"/>
+    <td class="fieldname"/>
   </tr>
   <tr>
     <td class="fieldname" style="padding-left: 50px;">Gliederungssystem</td>
     <td class="fieldname" style="padding-left: 50px;">Classification system name</td>
     <td class="fieldname" style="padding-left: 50px;">@name</td>
     <td class="fieldname">r</td>
-    <td class="fieldname"></td>
+    <td class="fieldname"/>
     <td class="fieldname"><a target="_blank" href="ILCD_Common_DataTypes.html#string">string</a>
     </td>
     <td class="fieldname">Name des Gliederungssystems, z.B. "OEKOBAU.DAT"</td>
     <td class="fieldname">~</td>
     <td class="fieldname">Name of the classification system.</td>
     <td class="fieldname">1-1-2-7-2-a</td>
-    <td class="fieldname"></td>
-    <td class="fieldname"></td>
-    <td class="fieldname"></td>
+    <td class="fieldname"/>
+    <td class="fieldname"/>
+    <td class="fieldname"/>
   </tr>
   <tr>
     <td class="fieldname" style="padding-left: 50px;">Gliederungsklassen</td>
     <td class="fieldname" style="padding-left: 50px;">Classes</td>
     <td class="fieldname" style="padding-left: 50px;">@classes</td>
     <td class="fieldname">r</td>
-    <td class="fieldname"></td>
+    <td class="fieldname"/>
     <td class="fieldname"><a target="_blank" href="ILCD_Common_DataTypes.html#anyURI">anyURI</a>
     </td>
     <td class="fieldname">URL oder Dateiname der Datei, die alle Klassen dieses Gliederungssystems beschreibt.</td>
@@ -638,9 +639,9 @@
     <td class="fieldname">URL or file name of a file listing all classes of this classification system. [Notes: the referenced file has to be in form of the "ILCDClassification.xml" format. If a classification file is specified, the "class" entry should correspond to the classes defined in the classification file.]
     </td>
     <td class="fieldname">1-1-2-7-2-b</td>
-    <td class="fieldname"></td>
-    <td class="fieldname"></td>
-    <td class="fieldname"></td>
+    <td class="fieldname"/>
+    <td class="fieldname"/>
+    <td class="fieldname"/>
   </tr>
   <tr>
     <td class="fieldname" style="padding-left: 50px;font-style: italic;">Klassenname</td>
@@ -648,21 +649,21 @@
     <td class="fieldname" style="padding-left: 50px;font-style: italic;">class</td>
     <td class="fieldname">r</td>
     <td class="fieldname">[1,n]</td>
-    <td class="fieldname"></td>
+    <td class="fieldname"/>
     <td class="fieldname">Name der Gliederungsklasse</td>
     <td class="fieldname">~</td>
     <td class="fieldname">Name of the class.</td>
     <td class="fieldname">1-1-2-7-2-1</td>
-    <td class="fieldname"></td>
-    <td class="fieldname"></td>
-    <td class="fieldname"></td>
+    <td class="fieldname"/>
+    <td class="fieldname"/>
+    <td class="fieldname"/>
   </tr>
   <tr>
     <td class="fieldname" style="padding-left: 60px;">Hierarchieebene</td>
     <td class="fieldname" style="padding-left: 60px;">Hierarchy level</td>
     <td class="fieldname" style="padding-left: 60px;">@level</td>
     <td class="fieldname">r</td>
-    <td class="fieldname"></td>
+    <td class="fieldname"/>
     <td class="fieldname">
       <a target="_blank" href="ILCD_Common_DataTypes.html#LevelType">LevelType</a></td>
     <td class="fieldname">Wenn in einem hierarchischen Gliederungssystem mehr als eine Klasse angegeben ist, wird hiermit die Hierarchiestufe angegeben. Die oberste Hierarchiestufe ist 0.
@@ -671,16 +672,16 @@
     <td class="fieldname">If more than one class is specified in a hierachical classification system, the hierarchy level (1,2,...) could be specified with this attribute of class.
     </td>
     <td class="fieldname">1-1-2-7-2-1-a</td>
-    <td class="fieldname"></td>
-    <td class="fieldname"></td>
-    <td class="fieldname"></td>
+    <td class="fieldname"/>
+    <td class="fieldname"/>
+    <td class="fieldname"/>
   </tr>
   <tr>
     <td class="fieldname" style="padding-left: 60px;">Eindeutiger Klassenidentifizierer</td>
     <td class="fieldname" style="padding-left: 60px;">Unique class identifier</td>
     <td class="fieldname" style="padding-left: 60px;">@classId</td>
     <td class="fieldname">r</td>
-    <td class="fieldname"></td>
+    <td class="fieldname"/>
     <td class="fieldname"><a target="_blank" href="ILCD_Common_DataTypes.html#string">string</a>
     </td>
     <td class="fieldname">Eindeutiger Identifizierer für die Klasse. Dieser sollte mit der Angabe im Beschreibungsdokument übereinstimmen und kann eine UUID oder ein beliebiger anderer Bezeichner sein.
@@ -689,9 +690,9 @@
     <td class="fieldname">Unique identifier for the class. [Notes: If such identifiers are also defined in the referenced category file, they should be identical. Identifiers can be UUID's, but also other forms are allowed.]
     </td>
     <td class="fieldname">1-1-2-7-2-1-b</td>
-    <td class="fieldname"></td>
-    <td class="fieldname"></td>
-    <td class="fieldname"></td>
+    <td class="fieldname"/>
+    <td class="fieldname"/>
+    <td class="fieldname"/>
   </tr>
   <tr>
     <td class="fieldname" style="padding-left: 30px;">Allgemeine Anmerkungen zum Datensatz</td>
@@ -708,9 +709,9 @@
     <td class="fieldname">General information about the data set, including e.g. general (internal, not reviewed) quality statements as well as information sources used. (Note: Please also check the more specific fields e.g. on "Advice on data set use" to avoid overlapping entries.)
     </td>
     <td class="fieldname">1-1-2-12</td>
-    <td class="fieldname"></td>
-    <td class="fieldname"></td>
-    <td class="fieldname"></td>
+    <td class="fieldname"/>
+    <td class="fieldname"/>
+    <td class="fieldname"/>
   </tr>
   <tr>
     <td class="fieldname" style="padding-left: 30px;">Hintergrundbericht</td>
@@ -729,8 +730,8 @@
     </td>
     <td class="fieldname">1-1-2-13</td>
     <td class="fieldname">chapter 7.1, l), information on explanatory material</td>
-    <td class="fieldname"></td>
-    <td class="fieldname"></td>
+    <td class="fieldname"/>
+    <td class="fieldname"/>
   </tr>
   <tr>
     <td class="fieldname" style="padding-left: 30px;">Anderer Inhalt</td>
@@ -738,14 +739,14 @@
     <td class="fieldname" style="padding-left: 30px;">other</td>
     <td class="fieldname">o</td>
     <td class="fieldname">[0,1]</td>
-    <td class="fieldname"></td>
-    <td class="fieldname"></td>
-    <td class="fieldname"></td>
+    <td class="fieldname"/>
+    <td class="fieldname"/>
+    <td class="fieldname"/>
     <td class="fieldname">May contain arbitrary content.</td>
     <td class="fieldname">0</td>
-    <td class="fieldname"></td>
-    <td class="fieldname"></td>
-    <td class="fieldname"></td>
+    <td class="fieldname"/>
+    <td class="fieldname"/>
+    <td class="fieldname"/>
   </tr>
   <tr>
     <td class="fieldname fieldname_epd24" style="padding-left: 40px;">Nutzungsdauer in Jahren</td>
@@ -753,16 +754,16 @@
     <td class="fieldname fieldname_epd24" style="padding-left: 40px;">epd24:serviceLife</td>
     <td class="fieldname fieldname_epd24">o</td>
     <td class="fieldname fieldname_epd24">[0,1]</td>
-    <td class="fieldname fieldname_epd24"></td>
+    <td class="fieldname fieldname_epd24"/>
     <td class="fieldname fieldname_epd24">Beschreibt die erwartete Nutzungsdauer in Jahren, vgl. EN 15804+A2 7.3.3.2 'Reference Service Life (RSL)' und ISO 22057 'Estimated Service Life (ESL)'.
     </td>
     <td class="fieldname fieldname_epd24">Describes the estimated service life / reference service life in years, c.f. EN 15804+A2 7.3.3.2 'Reference Service Life (RSL)' und ISO 22057 'Estimated Service Life (ESL)'.
     </td>
-    <td class="fieldname fieldname_epd24"></td>
-    <td class="fieldname fieldname_epd24"></td>
-    <td class="fieldname fieldname_epd24"></td>
-    <td class="fieldname fieldname_epd24"></td>
-    <td class="fieldname fieldname_epd24"></td>
+    <td class="fieldname fieldname_epd24"/>
+    <td class="fieldname fieldname_epd24"/>
+    <td class="fieldname fieldname_epd24"/>
+    <td class="fieldname fieldname_epd24"/>
+    <td class="fieldname fieldname_epd24"/>
   </tr>
   <tr>
     <td class="fieldname fieldname_epd24" style="padding-left: 50px;">Jahre</td>
@@ -773,11 +774,11 @@
     <td class="fieldname fieldname_epd24">Integer</td>
     <td class="fieldname fieldname_epd24">Anzahl der Jahre</td>
     <td class="fieldname fieldname_epd24">Number of years</td>
-    <td class="fieldname fieldname_epd24"></td>
-    <td class="fieldname fieldname_epd24"></td>
-    <td class="fieldname fieldname_epd24"></td>
-    <td class="fieldname fieldname_epd24"></td>
-    <td class="fieldname fieldname_epd24"></td>
+    <td class="fieldname fieldname_epd24"/>
+    <td class="fieldname fieldname_epd24"/>
+    <td class="fieldname fieldname_epd24"/>
+    <td class="fieldname fieldname_epd24"/>
+    <td class="fieldname fieldname_epd24"/>
   </tr>
   <tr>
     <td class="fieldname fieldname_epd24" style="padding-left: 50px;">Referenz zum Standard</td>
@@ -791,11 +792,11 @@
     <td class="fieldname fieldname_epd24">"Source"-Datensatz mit dem der Schätzung/Berechnung zugrundeliegenden Standard
     </td>
     <td class="fieldname fieldname_epd24">"Source data set" of the standard used for service life estimation</td>
-    <td class="fieldname fieldname_epd24"></td>
-    <td class="fieldname fieldname_epd24"></td>
-    <td class="fieldname fieldname_epd24"></td>
-    <td class="fieldname fieldname_epd24"></td>
-    <td class="fieldname fieldname_epd24"></td>
+    <td class="fieldname fieldname_epd24"/>
+    <td class="fieldname fieldname_epd24"/>
+    <td class="fieldname fieldname_epd24"/>
+    <td class="fieldname fieldname_epd24"/>
+    <td class="fieldname fieldname_epd24"/>
   </tr>
   <tr>
     <td class="fieldname fieldname_epd24" style="padding-left: 50px;">Referenz zur Dokumentation der Einbaubedingungen
@@ -812,11 +813,11 @@
     </td>
     <td class="fieldname fieldname_epd24">"Source data set" of the documentation describing the use conditions used for service life estimation
     </td>
-    <td class="fieldname fieldname_epd24"></td>
-    <td class="fieldname fieldname_epd24"></td>
-    <td class="fieldname fieldname_epd24"></td>
-    <td class="fieldname fieldname_epd24"></td>
-    <td class="fieldname fieldname_epd24"></td>
+    <td class="fieldname fieldname_epd24"/>
+    <td class="fieldname fieldname_epd24"/>
+    <td class="fieldname fieldname_epd24"/>
+    <td class="fieldname fieldname_epd24"/>
+    <td class="fieldname fieldname_epd24"/>
   </tr>
   <tr>
     <td class="fieldname fieldname_epd24" style="padding-left: 50px;">Kommentar</td>
@@ -829,11 +830,11 @@
     </td>
     <td class="fieldname fieldname_epd24">Kommentarfeld</td>
     <td class="fieldname fieldname_epd24">Comment field</td>
-    <td class="fieldname fieldname_epd24"></td>
-    <td class="fieldname fieldname_epd24"></td>
-    <td class="fieldname fieldname_epd24"></td>
-    <td class="fieldname fieldname_epd24"></td>
-    <td class="fieldname fieldname_epd24"></td>
+    <td class="fieldname fieldname_epd24"/>
+    <td class="fieldname fieldname_epd24"/>
+    <td class="fieldname fieldname_epd24"/>
+    <td class="fieldname fieldname_epd24"/>
+    <td class="fieldname fieldname_epd24"/>
   </tr>
   <tr>
     <td class="fieldname fieldname_epd24" style="padding-left: 40px;">Produktkennungen</td>
@@ -841,16 +842,16 @@
     <td class="fieldname fieldname_epd24" style="padding-left: 40px;">epd24:productIds</td>
     <td class="fieldname fieldname_epd24">r</td>
     <td class="fieldname fieldname_epd24">[0,1]</td>
-    <td class="fieldname fieldname_epd24"></td>
+    <td class="fieldname fieldname_epd24"/>
     <td class="fieldname fieldname_epd24">Liste verschiedener Produktkennungen, bspw. entsprechende GTIN- / GMN-Kennungen, Handelsnamen, ...
     </td>
     <td class="fieldname fieldname_epd24">List of different product identifiers, e.g. GTIN / GMN codes, trade names, ...
     </td>
-    <td class="fieldname fieldname_epd24"></td>
-    <td class="fieldname fieldname_epd24"></td>
-    <td class="fieldname fieldname_epd24"></td>
-    <td class="fieldname fieldname_epd24"></td>
-    <td class="fieldname fieldname_epd24"></td>
+    <td class="fieldname fieldname_epd24"/>
+    <td class="fieldname fieldname_epd24"/>
+    <td class="fieldname fieldname_epd24"/>
+    <td class="fieldname fieldname_epd24"/>
+    <td class="fieldname fieldname_epd24"/>
   </tr>
   <tr>
     <td class="fieldname fieldname_epd24" style="padding-left: 50px;">Produktkennung</td>
@@ -863,11 +864,11 @@
     </td>
     <td class="fieldname fieldname_epd24">Produktkennung</td>
     <td class="fieldname fieldname_epd24">Product identifier</td>
-    <td class="fieldname fieldname_epd24"></td>
-    <td class="fieldname fieldname_epd24"></td>
-    <td class="fieldname fieldname_epd24"></td>
-    <td class="fieldname fieldname_epd24"></td>
-    <td class="fieldname fieldname_epd24"></td>
+    <td class="fieldname fieldname_epd24"/>
+    <td class="fieldname fieldname_epd24"/>
+    <td class="fieldname fieldname_epd24"/>
+    <td class="fieldname fieldname_epd24"/>
+    <td class="fieldname fieldname_epd24"/>
   </tr>
   <tr>
     <td class="fieldname fieldname_epd24" style="padding-left: 60px;">Kennungstyp</td>
@@ -880,11 +881,11 @@
     </td>
     <td class="fieldname fieldname_epd24">Art der Produktkennung, z.B. 'GTIN', 'GMN' etc.</td>
     <td class="fieldname fieldname_epd24">Declares the type of product identifier, e.g. 'GTIN', 'GMN', etc.</td>
-    <td class="fieldname fieldname_epd24"></td>
-    <td class="fieldname fieldname_epd24"></td>
-    <td class="fieldname fieldname_epd24"></td>
-    <td class="fieldname fieldname_epd24"></td>
-    <td class="fieldname fieldname_epd24"></td>
+    <td class="fieldname fieldname_epd24"/>
+    <td class="fieldname fieldname_epd24"/>
+    <td class="fieldname fieldname_epd24"/>
+    <td class="fieldname fieldname_epd24"/>
+    <td class="fieldname fieldname_epd24"/>
   </tr>
   <tr>
     <td class="fieldname fieldname_epd" style="padding-left: 40px;">Sicherheitszuschläge</td>
@@ -892,14 +893,14 @@
     <td class="fieldname fieldname_epd" style="padding-left: 40px;">epd:safetyMargins</td>
     <td class="fieldname fieldname_epd">o</td>
     <td class="fieldname fieldname_epd">[0,1]</td>
-    <td class="fieldname fieldname_epd"></td>
+    <td class="fieldname fieldname_epd"/>
     <td class="fieldname fieldname_epd">Ausweis enthaltener Sicherheitszuschläge</td>
     <td class="fieldname fieldname_epd">Documentation of uncertainty margins that have been included in the results</td>
-    <td class="fieldname fieldname_epd"></td>
-    <td class="fieldname fieldname_epd"></td>
-    <td class="fieldname fieldname_epd"></td>
-    <td class="fieldname fieldname_epd"></td>
-    <td class="fieldname fieldname_epd"></td>
+    <td class="fieldname fieldname_epd"/>
+    <td class="fieldname fieldname_epd"/>
+    <td class="fieldname fieldname_epd"/>
+    <td class="fieldname fieldname_epd"/>
+    <td class="fieldname fieldname_epd"/>
   </tr>
   <tr>
     <td class="fieldname fieldname_epd" style="padding-left: 50px;">Sicherheitszuschläge</td>
@@ -911,11 +912,11 @@
       <a target="_blank" href="ILCD_Common_DataTypes.html#Perc">Percentage</a></td>
     <td class="fieldname fieldname_epd">Die Höhe der enthaltenen Zuschläge in Prozent</td>
     <td class="fieldname fieldname_epd">The amount (in percent) of the included uncertainty margins</td>
-    <td class="fieldname fieldname_epd"></td>
-    <td class="fieldname fieldname_epd"></td>
-    <td class="fieldname fieldname_epd"></td>
-    <td class="fieldname fieldname_epd"></td>
-    <td class="fieldname fieldname_epd"></td>
+    <td class="fieldname fieldname_epd"/>
+    <td class="fieldname fieldname_epd"/>
+    <td class="fieldname fieldname_epd"/>
+    <td class="fieldname fieldname_epd"/>
+    <td class="fieldname fieldname_epd"/>
   </tr>
   <tr>
     <td class="fieldname fieldname_epd" style="padding-left: 50px;">Beschreibung</td>
@@ -927,11 +928,11 @@
       <a target="_blank" href="ILCD_Common_DataTypes.html#FTMultiLang">FTMultiLang</a></td>
     <td class="fieldname fieldname_epd">Begründung und Regeln für die Sicherheitszuschläge</td>
     <td class="fieldname fieldname_epd">Reasons and rules for choice of uncertainty penalties</td>
-    <td class="fieldname fieldname_epd"></td>
-    <td class="fieldname fieldname_epd"></td>
-    <td class="fieldname fieldname_epd"></td>
-    <td class="fieldname fieldname_epd"></td>
-    <td class="fieldname fieldname_epd"></td>
+    <td class="fieldname fieldname_epd"/>
+    <td class="fieldname fieldname_epd"/>
+    <td class="fieldname fieldname_epd"/>
+    <td class="fieldname fieldname_epd"/>
+    <td class="fieldname fieldname_epd"/>
   </tr>
   <tr>
     <td class="fieldname fieldname_epd" style="padding-left: 40px;">Szenarien</td>
@@ -939,16 +940,16 @@
     <td class="fieldname fieldname_epd" style="padding-left: 40px;">epd:scenarios</td>
     <td class="fieldname fieldname_epd">o</td>
     <td class="fieldname fieldname_epd">[0,1]</td>
-    <td class="fieldname fieldname_epd"></td>
+    <td class="fieldname fieldname_epd"/>
     <td class="fieldname fieldname_epd">Deklaration der einzelnen Szenarien. Es können mehrere voneinander unabhängige Gruppen von Szenarien deklariert werden, die durch den optionalen Gruppenbezeichner voneinander unterschieden werden können. Dabei kann jeweils ein Szenario als Standardszenario markiert werden.
     </td>
     <td class="fieldname fieldname_epd">Declaration of scenarios. Multiple independent groups of scenarios can be declared, using the optional group identifier for differentiation. Within each group, one scenario can be marked as the default one.
     </td>
-    <td class="fieldname fieldname_epd"></td>
-    <td class="fieldname fieldname_epd"></td>
-    <td class="fieldname fieldname_epd"></td>
-    <td class="fieldname fieldname_epd"></td>
-    <td class="fieldname fieldname_epd"></td>
+    <td class="fieldname fieldname_epd"/>
+    <td class="fieldname fieldname_epd"/>
+    <td class="fieldname fieldname_epd"/>
+    <td class="fieldname fieldname_epd"/>
+    <td class="fieldname fieldname_epd"/>
   </tr>
   <tr>
     <td class="fieldname fieldname_epd" style="padding-left: 50px;">Szenario</td>
@@ -956,14 +957,14 @@
     <td class="fieldname fieldname_epd" style="padding-left: 50px;">epd:scenario</td>
     <td class="fieldname fieldname_epd">o</td>
     <td class="fieldname fieldname_epd">[0,n]</td>
-    <td class="fieldname fieldname_epd"></td>
+    <td class="fieldname fieldname_epd"/>
     <td class="fieldname fieldname_epd">Ein Szenario</td>
     <td class="fieldname fieldname_epd">One scenario</td>
-    <td class="fieldname fieldname_epd"></td>
-    <td class="fieldname fieldname_epd"></td>
-    <td class="fieldname fieldname_epd"></td>
-    <td class="fieldname fieldname_epd"></td>
-    <td class="fieldname fieldname_epd"></td>
+    <td class="fieldname fieldname_epd"/>
+    <td class="fieldname fieldname_epd"/>
+    <td class="fieldname fieldname_epd"/>
+    <td class="fieldname fieldname_epd"/>
+    <td class="fieldname fieldname_epd"/>
   </tr>
 
   <tr>
@@ -971,49 +972,49 @@
     <td class="fieldname fieldname_epd" style="padding-left: 60px;">Name</td>
     <td class="fieldname fieldname_epd" style="padding-left: 60px;">@epd:name</td>
     <td class="fieldname fieldname_epd">m</td>
-    <td class="fieldname fieldname_epd"></td>
+    <td class="fieldname fieldname_epd"/>
     <td class="fieldname fieldname_epd">
       <a target="_blank" href="ILCD_Common_DataTypes.html#string">string</a></td>
     <td class="fieldname fieldname_epd">Name des Szenarios</td>
     <td class="fieldname fieldname_epd">Name of the scenario</td>
-    <td class="fieldname fieldname_epd"></td>
-    <td class="fieldname fieldname_epd"></td>
-    <td class="fieldname fieldname_epd"></td>
-    <td class="fieldname fieldname_epd"></td>
-    <td class="fieldname fieldname_epd"></td>
+    <td class="fieldname fieldname_epd"/>
+    <td class="fieldname fieldname_epd"/>
+    <td class="fieldname fieldname_epd"/>
+    <td class="fieldname fieldname_epd"/>
+    <td class="fieldname fieldname_epd"/>
   </tr>
   <tr>
     <td class="fieldname fieldname_epd" style="padding-left: 60px;">Standardszenario</td>
     <td class="fieldname fieldname_epd" style="padding-left: 60px;">Default</td>
     <td class="fieldname fieldname_epd" style="padding-left: 60px;">@epd:default</td>
     <td class="fieldname fieldname_epd">o</td>
-    <td class="fieldname fieldname_epd"></td>
+    <td class="fieldname fieldname_epd"/>
     <td class="fieldname fieldname_epd">
       <a target="_blank" href="ILCD_Common_DataTypes.html#boolean">boolean</a>
     </td>
     <td class="fieldname fieldname_epd">"true" wenn dieses das Standardszenario ist</td>
     <td class="fieldname fieldname_epd">"true" if this is the default scenario</td>
-    <td class="fieldname fieldname_epd"></td>
-    <td class="fieldname fieldname_epd"></td>
-    <td class="fieldname fieldname_epd"></td>
-    <td class="fieldname fieldname_epd"></td>
-    <td class="fieldname fieldname_epd"></td>
+    <td class="fieldname fieldname_epd"/>
+    <td class="fieldname fieldname_epd"/>
+    <td class="fieldname fieldname_epd"/>
+    <td class="fieldname fieldname_epd"/>
+    <td class="fieldname fieldname_epd"/>
   </tr>
   <tr>
     <td class="fieldname fieldname_epd" style="padding-left: 60px;">Gruppe</td>
     <td class="fieldname fieldname_epd" style="padding-left: 60px;">Group</td>
     <td class="fieldname fieldname_epd" style="padding-left: 60px;">@epd:group</td>
     <td class="fieldname fieldname_epd">o</td>
-    <td class="fieldname fieldname_epd"></td>
+    <td class="fieldname fieldname_epd"/>
     <td class="fieldname fieldname_epd">
       <a target="_blank" href="ILCD_Common_DataTypes.html#string">string</a></td>
     <td class="fieldname fieldname_epd">Bezeichner für eine Gruppe von Szenarien</td>
     <td class="fieldname fieldname_epd">Identifier for a group of scenarios</td>
-    <td class="fieldname fieldname_epd"></td>
-    <td class="fieldname fieldname_epd"></td>
-    <td class="fieldname fieldname_epd"></td>
-    <td class="fieldname fieldname_epd"></td>
-    <td class="fieldname fieldname_epd"></td>
+    <td class="fieldname fieldname_epd"/>
+    <td class="fieldname fieldname_epd"/>
+    <td class="fieldname fieldname_epd"/>
+    <td class="fieldname fieldname_epd"/>
+    <td class="fieldname fieldname_epd"/>
   </tr>
   <tr>
     <td class="fieldname fieldname_epd" style="padding-left: 60px;">Beschreibung</td>
@@ -1025,11 +1026,11 @@
       <a target="_blank" href="ILCD_Common_DataTypes.html#FTMultiLang">FTMultiLang</a></td>
     <td class="fieldname fieldname_epd">Beschreibung des Szenarios</td>
     <td class="fieldname fieldname_epd">Description of the scenario</td>
-    <td class="fieldname fieldname_epd"></td>
-    <td class="fieldname fieldname_epd"></td>
-    <td class="fieldname fieldname_epd"></td>
-    <td class="fieldname fieldname_epd"></td>
-    <td class="fieldname fieldname_epd"></td>
+    <td class="fieldname fieldname_epd"/>
+    <td class="fieldname fieldname_epd"/>
+    <td class="fieldname fieldname_epd"/>
+    <td class="fieldname fieldname_epd"/>
+    <td class="fieldname fieldname_epd"/>
   </tr>
   <tr>
     <td class="fieldname fieldname_epd" style="padding-left: 40px;">Module</td>
@@ -1037,16 +1038,16 @@
     <td class="fieldname fieldname_epd" style="padding-left: 40px;">epd:modules</td>
     <td class="fieldname fieldname_epd">o</td>
     <td class="fieldname fieldname_epd">[0,1]</td>
-    <td class="fieldname fieldname_epd"></td>
+    <td class="fieldname fieldname_epd"/>
     <td class="fieldname fieldname_epd">Optionale Deklaration der einzelnen Module, um diese auf der Seite der generierenden Anwendung mit Produktsystemen verknüpfen zu können. Dies ist nützlich, falls der Datensatz später mit dem Werkzeug, welches zur Generierung benutzt wurde, eingelesen und bearbeitet werden soll.
     </td>
     <td class="fieldname fieldname_epd">Optional declaration of modules for storing a reference (ID) to the underlying product model on the generating application side. This is useful if you want to open and edit the dataset later with the tool used to generate it.
     </td>
-    <td class="fieldname fieldname_epd"></td>
-    <td class="fieldname fieldname_epd"></td>
-    <td class="fieldname fieldname_epd"></td>
-    <td class="fieldname fieldname_epd"></td>
-    <td class="fieldname fieldname_epd"></td>
+    <td class="fieldname fieldname_epd"/>
+    <td class="fieldname fieldname_epd"/>
+    <td class="fieldname fieldname_epd"/>
+    <td class="fieldname fieldname_epd"/>
+    <td class="fieldname fieldname_epd"/>
   </tr>
   <tr>
     <td class="fieldname fieldname_epd" style="padding-left: 50px;">Modul</td>
@@ -1054,46 +1055,46 @@
     <td class="fieldname fieldname_epd" style="padding-left: 50px;">epd:module</td>
     <td class="fieldname fieldname_epd">o</td>
     <td class="fieldname fieldname_epd">[0,n]</td>
-    <td class="fieldname fieldname_epd"></td>
+    <td class="fieldname fieldname_epd"/>
     <td class="fieldname fieldname_epd">Ein Modul</td>
     <td class="fieldname fieldname_epd">One module</td>
-    <td class="fieldname fieldname_epd"></td>
-    <td class="fieldname fieldname_epd"></td>
-    <td class="fieldname fieldname_epd"></td>
-    <td class="fieldname fieldname_epd"></td>
-    <td class="fieldname fieldname_epd"></td>
+    <td class="fieldname fieldname_epd"/>
+    <td class="fieldname fieldname_epd"/>
+    <td class="fieldname fieldname_epd"/>
+    <td class="fieldname fieldname_epd"/>
+    <td class="fieldname fieldname_epd"/>
   </tr>
   <tr>
     <td class="fieldname fieldname_epd" style="padding-left: 60px;">Name</td>
     <td class="fieldname fieldname_epd" style="padding-left: 60px;">Name</td>
     <td class="fieldname fieldname_epd" style="padding-left: 60px;">@epd:name</td>
     <td class="fieldname fieldname_epd">m</td>
-    <td class="fieldname fieldname_epd"></td>
+    <td class="fieldname fieldname_epd"/>
     <td class="fieldname fieldname_epd">
       <a target="_blank" href="ILCD_Common_DataTypes.html#string">string</a></td>
     <td class="fieldname fieldname_epd">Name des Moduls</td>
     <td class="fieldname fieldname_epd">Name of the module</td>
-    <td class="fieldname fieldname_epd"></td>
-    <td class="fieldname fieldname_epd"></td>
-    <td class="fieldname fieldname_epd"></td>
-    <td class="fieldname fieldname_epd"></td>
-    <td class="fieldname fieldname_epd"></td>
+    <td class="fieldname fieldname_epd"/>
+    <td class="fieldname fieldname_epd"/>
+    <td class="fieldname fieldname_epd"/>
+    <td class="fieldname fieldname_epd"/>
+    <td class="fieldname fieldname_epd"/>
   </tr>
   <tr>
     <td class="fieldname fieldname_epd" style="padding-left: 60px;">Produktsystem-ID</td>
     <td class="fieldname fieldname_epd" style="padding-left: 60px;">Product system ID</td>
     <td class="fieldname fieldname_epd" style="padding-left: 60px;">@epd:productsystem-id</td>
     <td class="fieldname fieldname_epd">m</td>
-    <td class="fieldname fieldname_epd"></td>
+    <td class="fieldname fieldname_epd"/>
     <td class="fieldname fieldname_epd">
       <a target="_blank" href="ILCD_Common_DataTypes.html#string">string</a></td>
     <td class="fieldname fieldname_epd">ID des diesem Modul zugrundeliegenden Produktsystems</td>
     <td class="fieldname fieldname_epd">ID of the underlying product system for this module</td>
-    <td class="fieldname fieldname_epd"></td>
-    <td class="fieldname fieldname_epd"></td>
-    <td class="fieldname fieldname_epd"></td>
-    <td class="fieldname fieldname_epd"></td>
-    <td class="fieldname fieldname_epd"></td>
+    <td class="fieldname fieldname_epd"/>
+    <td class="fieldname fieldname_epd"/>
+    <td class="fieldname fieldname_epd"/>
+    <td class="fieldname fieldname_epd"/>
+    <td class="fieldname fieldname_epd"/>
   </tr>
 
   <tr>
@@ -1102,18 +1103,18 @@
     <td class="fieldname fieldname_epd2" style="padding-left: 40px;">epd2:contentDeclaration</td>
     <td class="fieldname fieldname_epd2">o</td>
     <td class="fieldname fieldname_epd2">[0,1]</td>
-    <td class="fieldname fieldname_epd2"></td>
+    <td class="fieldname fieldname_epd2"/>
     <td class="fieldname fieldname_epd2">Inhaltsangabe gemäss EN 15804/ISO 21930.</td>
     <td class="fieldname fieldname_epd2">Content declaration according to EN 15804/ISO 219301.
       <br/> The content declaration may contain component, material and/or substance elements, which may (but do not have to) be nested.
     </td>
-    <td class="fieldname fieldname_epd2"></td>
-    <td class="fieldname fieldname_epd2"></td>
-    <td class="fieldname fieldname_epd2"></td>
+    <td class="fieldname fieldname_epd2"/>
+    <td class="fieldname fieldname_epd2"/>
+    <td class="fieldname fieldname_epd2"/>
     <td class="fieldname fieldname_epd2">
       0w$1F7Vk17L8tW8yV$3Vu3
     </td>
-    <td class="fieldname fieldname_epd2"></td>
+    <td class="fieldname fieldname_epd2"/>
   </tr>
   <tr>
     <td class="fieldname fieldname_epd2" style="padding-left: 50px;">Komponente</td>
@@ -1121,14 +1122,14 @@
     <td class="fieldname fieldname_epd2" style="padding-left: 50px;">epd2:component</td>
     <td class="fieldname fieldname_epd2">o</td>
     <td class="fieldname fieldname_epd2">[0,n]</td>
-    <td class="fieldname fieldname_epd2"></td>
+    <td class="fieldname fieldname_epd2"/>
     <td class="fieldname fieldname_epd2">Beschreibt eine Komponente.</td>
     <td class="fieldname fieldname_epd2">Describes a component.</td>
-    <td class="fieldname fieldname_epd2"></td>
-    <td class="fieldname fieldname_epd2"></td>
-    <td class="fieldname fieldname_epd2"></td>
-    <td class="fieldname fieldname_epd2"></td>
-    <td class="fieldname fieldname_epd2"></td>
+    <td class="fieldname fieldname_epd2"/>
+    <td class="fieldname fieldname_epd2"/>
+    <td class="fieldname fieldname_epd2"/>
+    <td class="fieldname fieldname_epd2"/>
+    <td class="fieldname fieldname_epd2"/>
   </tr>
   <tr>
     <td class="fieldname fieldname_epd2" style="padding-left: 60px;">Name</td>
@@ -1141,11 +1142,11 @@
     </td>
     <td class="fieldname fieldname_epd2">Name der Komponente.</td>
     <td class="fieldname fieldname_epd2">Name of the component.</td>
-    <td class="fieldname fieldname_epd2"></td>
-    <td class="fieldname fieldname_epd2"></td>
-    <td class="fieldname fieldname_epd2"></td>
-    <td class="fieldname fieldname_epd2"></td>
-    <td class="fieldname fieldname_epd2"></td>
+    <td class="fieldname fieldname_epd2"/>
+    <td class="fieldname fieldname_epd2"/>
+    <td class="fieldname fieldname_epd2"/>
+    <td class="fieldname fieldname_epd2"/>
+    <td class="fieldname fieldname_epd2"/>
   </tr>
   <tr>
     <td class="fieldname fieldname_epd2" style="padding-left: 60px;">Massenanteil in %</td>
@@ -1153,65 +1154,65 @@
     <td class="fieldname fieldname_epd2" style="padding-left: 60px;">epd2:weightPerc</td>
     <td class="fieldname fieldname_epd2">m</td>
     <td class="fieldname fieldname_epd2">[1,1]</td>
-    <td class="fieldname fieldname_epd2"></td>
+    <td class="fieldname fieldname_epd2"/>
     <td class="fieldname fieldname_epd2">Massenanteil in % des Gesamtprodukts. Ein diskreter Wert oder ein Wertebereich muß angegeben werden.
     </td>
     <td class="fieldname fieldname_epd2">Percentage of the total mass of the product. Either a discrete value or a range of values has to be specified.. Either a discrete value or a range of values has to be specified.. Either a discrete value or a range of values has to be specified. Either a discrete value or a range of values has to be specified.Either a discrete value or a range of values has to be specified.
     </td>
-    <td class="fieldname fieldname_epd2"></td>
-    <td class="fieldname fieldname_epd2"></td>
-    <td class="fieldname fieldname_epd2"></td>
-    <td class="fieldname fieldname_epd2"></td>
-    <td class="fieldname fieldname_epd2"></td>
+    <td class="fieldname fieldname_epd2"/>
+    <td class="fieldname fieldname_epd2"/>
+    <td class="fieldname fieldname_epd2"/>
+    <td class="fieldname fieldname_epd2"/>
+    <td class="fieldname fieldname_epd2"/>
   </tr>
   <tr>
     <td class="fieldname fieldname_epd2" style="padding-left: 70px;">Diskreter Wert</td>
     <td class="fieldname fieldname_epd2" style="padding-left: 70px;">Discrete value</td>
     <td class="fieldname fieldname_epd2" style="padding-left: 70px;">@epd2:value</td>
     <td class="fieldname fieldname_epd2">o</td>
-    <td class="fieldname fieldname_epd2"></td>
+    <td class="fieldname fieldname_epd2"/>
     <td class="fieldname fieldname_epd2">
       <a target="_blank" href="ILCD_Common_DataTypes.html#Real">Real</a></td>
     <td class="fieldname fieldname_epd2">Zur Angabe eines diskreten Zahlenwerts: der Wert</td>
     <td class="fieldname fieldname_epd2">For specifying a discrete value: the value</td>
-    <td class="fieldname fieldname_epd2"></td>
-    <td class="fieldname fieldname_epd2"></td>
-    <td class="fieldname fieldname_epd2"></td>
-    <td class="fieldname fieldname_epd2"></td>
-    <td class="fieldname fieldname_epd2"></td>
+    <td class="fieldname fieldname_epd2"/>
+    <td class="fieldname fieldname_epd2"/>
+    <td class="fieldname fieldname_epd2"/>
+    <td class="fieldname fieldname_epd2"/>
+    <td class="fieldname fieldname_epd2"/>
   </tr>
   <tr>
     <td class="fieldname fieldname_epd2" style="padding-left: 70px;">Wertebereich: unterer Wert</td>
     <td class="fieldname fieldname_epd2" style="padding-left: 70px;">Range: lower value</td>
     <td class="fieldname fieldname_epd2" style="padding-left: 70px;">@epd2:lowerValue</td>
     <td class="fieldname fieldname_epd2">o</td>
-    <td class="fieldname fieldname_epd2"></td>
+    <td class="fieldname fieldname_epd2"/>
     <td class="fieldname fieldname_epd2">
       <a target="_blank" href="ILCD_Common_DataTypes.html#Real">Real</a></td>
     <td class="fieldname fieldname_epd2">Zur Angabe eines Wertebereich: unterer Wert des Wertebereichs</td>
     <td class="fieldname fieldname_epd2">For specifying a range of values: the lower value of the range</td>
-    <td class="fieldname fieldname_epd2"></td>
-    <td class="fieldname fieldname_epd2"></td>
-    <td class="fieldname fieldname_epd2"></td>
-    <td class="fieldname fieldname_epd2"></td>
-    <td class="fieldname fieldname_epd2"></td>
+    <td class="fieldname fieldname_epd2"/>
+    <td class="fieldname fieldname_epd2"/>
+    <td class="fieldname fieldname_epd2"/>
+    <td class="fieldname fieldname_epd2"/>
+    <td class="fieldname fieldname_epd2"/>
   </tr>
   <tr>
     <td class="fieldname fieldname_epd2" style="padding-left: 70px;">Wertebereich: oberer Wert</td>
     <td class="fieldname fieldname_epd2" style="padding-left: 70px;">Range: upper value</td>
     <td class="fieldname fieldname_epd2" style="padding-left: 70px;">@epd2:upperValue</td>
     <td class="fieldname fieldname_epd2">o</td>
-    <td class="fieldname fieldname_epd2"></td>
+    <td class="fieldname fieldname_epd2"/>
     <td class="fieldname fieldname_epd2">
       <a target="_blank" href="ILCD_Common_DataTypes.html#Real">Real</a></td>
     <td class="fieldname fieldname_epd2">Zur Angabe eines Wertebereich: oberer Wert des Wertebereichs</td>
     <td class="fieldname fieldname_epd2">For specifying a range of values: the upper value of the range. For specifying a value lower than x (e.g. "&lt;42"), only specify the upper value as x.
     </td>
-    <td class="fieldname fieldname_epd2"></td>
-    <td class="fieldname fieldname_epd2"></td>
-    <td class="fieldname fieldname_epd2"></td>
-    <td class="fieldname fieldname_epd2"></td>
-    <td class="fieldname fieldname_epd2"></td>
+    <td class="fieldname fieldname_epd2"/>
+    <td class="fieldname fieldname_epd2"/>
+    <td class="fieldname fieldname_epd2"/>
+    <td class="fieldname fieldname_epd2"/>
+    <td class="fieldname fieldname_epd2"/>
   </tr>
   <tr>
     <td class="fieldname fieldname_epd2" style="padding-left: 60px;">Masse in kg</td>
@@ -1219,65 +1220,65 @@
     <td class="fieldname fieldname_epd2" style="padding-left: 60px;">epd2:mass</td>
     <td class="fieldname fieldname_epd2">o</td>
     <td class="fieldname fieldname_epd2">[0,1]</td>
-    <td class="fieldname fieldname_epd2"></td>
+    <td class="fieldname fieldname_epd2"/>
     <td class="fieldname fieldname_epd2">Absolute Masse dieses Anteils in kg. Ein diskreter Wert oder ein Wertebereich muß angegeben werden.
     </td>
     <td class="fieldname fieldname_epd2">Absolute mass of the fraction in kg. Either a discrete value or a range of values has to be specified.
     </td>
-    <td class="fieldname fieldname_epd2"></td>
-    <td class="fieldname fieldname_epd2"></td>
-    <td class="fieldname fieldname_epd2"></td>
-    <td class="fieldname fieldname_epd2"></td>
-    <td class="fieldname fieldname_epd2"></td>
+    <td class="fieldname fieldname_epd2"/>
+    <td class="fieldname fieldname_epd2"/>
+    <td class="fieldname fieldname_epd2"/>
+    <td class="fieldname fieldname_epd2"/>
+    <td class="fieldname fieldname_epd2"/>
   </tr>
   <tr>
     <td class="fieldname fieldname_epd2" style="padding-left: 70px;">Diskreter Wert</td>
     <td class="fieldname fieldname_epd2" style="padding-left: 70px;">Discrete value</td>
     <td class="fieldname fieldname_epd2" style="padding-left: 70px;">@epd2:value</td>
     <td class="fieldname fieldname_epd2">o</td>
-    <td class="fieldname fieldname_epd2"></td>
+    <td class="fieldname fieldname_epd2"/>
     <td class="fieldname fieldname_epd2">
       <a target="_blank" href="ILCD_Common_DataTypes.html#Real">Real</a></td>
     <td class="fieldname fieldname_epd2">Zur Angabe eines diskreten Zahlenwerts: der Wert</td>
     <td class="fieldname fieldname_epd2">For specifying a discrete value: the value</td>
-    <td class="fieldname fieldname_epd2"></td>
-    <td class="fieldname fieldname_epd2"></td>
-    <td class="fieldname fieldname_epd2"></td>
-    <td class="fieldname fieldname_epd2"></td>
-    <td class="fieldname fieldname_epd2"></td>
+    <td class="fieldname fieldname_epd2"/>
+    <td class="fieldname fieldname_epd2"/>
+    <td class="fieldname fieldname_epd2"/>
+    <td class="fieldname fieldname_epd2"/>
+    <td class="fieldname fieldname_epd2"/>
   </tr>
   <tr>
     <td class="fieldname fieldname_epd2" style="padding-left: 70px;">Wertebereich: unterer Wert</td>
     <td class="fieldname fieldname_epd2" style="padding-left: 70px;">Range: lower value</td>
     <td class="fieldname fieldname_epd2" style="padding-left: 70px;">@epd2:lowerValue</td>
     <td class="fieldname fieldname_epd2">o</td>
-    <td class="fieldname fieldname_epd2"></td>
+    <td class="fieldname fieldname_epd2"/>
     <td class="fieldname fieldname_epd2">
       <a target="_blank" href="ILCD_Common_DataTypes.html#Real">Real</a></td>
     <td class="fieldname fieldname_epd2">Zur Angabe eines Wertebereich: unterer Wert des Wertebereichs</td>
     <td class="fieldname fieldname_epd2">For specifying a range of values: the lower value of the range</td>
-    <td class="fieldname fieldname_epd2"></td>
-    <td class="fieldname fieldname_epd2"></td>
-    <td class="fieldname fieldname_epd2"></td>
-    <td class="fieldname fieldname_epd2"></td>
-    <td class="fieldname fieldname_epd2"></td>
+    <td class="fieldname fieldname_epd2"/>
+    <td class="fieldname fieldname_epd2"/>
+    <td class="fieldname fieldname_epd2"/>
+    <td class="fieldname fieldname_epd2"/>
+    <td class="fieldname fieldname_epd2"/>
   </tr>
   <tr>
     <td class="fieldname fieldname_epd2" style="padding-left: 70px;">Wertebereich: oberer Wert</td>
     <td class="fieldname fieldname_epd2" style="padding-left: 70px;">Range: upper value</td>
     <td class="fieldname fieldname_epd2" style="padding-left: 70px;">@epd2:upperValue</td>
     <td class="fieldname fieldname_epd2">o</td>
-    <td class="fieldname fieldname_epd2"></td>
+    <td class="fieldname fieldname_epd2"/>
     <td class="fieldname fieldname_epd2">
       <a target="_blank" href="ILCD_Common_DataTypes.html#Real">Real</a></td>
     <td class="fieldname fieldname_epd2">Zur Angabe eines Wertebereich: oberer Wert des Wertebereichs</td>
     <td class="fieldname fieldname_epd2">For specifying a range of values: the upper value of the range. For specifying a value lower than x (e.g. "&lt;42"), only specify the upper value as x.
     </td>
-    <td class="fieldname fieldname_epd2"></td>
-    <td class="fieldname fieldname_epd2"></td>
-    <td class="fieldname fieldname_epd2"></td>
-    <td class="fieldname fieldname_epd2"></td>
-    <td class="fieldname fieldname_epd2"></td>
+    <td class="fieldname fieldname_epd2"/>
+    <td class="fieldname fieldname_epd2"/>
+    <td class="fieldname fieldname_epd2"/>
+    <td class="fieldname fieldname_epd2"/>
+    <td class="fieldname fieldname_epd2"/>
   </tr>
   <tr>
     <td class="fieldname fieldname_epd2" style="padding-left: 60px;">Bemerkungen</td>
@@ -1288,15 +1289,15 @@
     <td class="fieldname fieldname_epd2">
       <a target="_blank" href="ILCD_Common_DataTypes.html#FTMultiLang">FTMultiLang</a>
     </td>
-    <td class="fieldname fieldname_epd2"></td>
-    <td class="fieldname fieldname_epd2"></td>
-    <td class="fieldname fieldname_epd2"></td>
-    <td class="fieldname fieldname_epd2"></td>
-    <td class="fieldname fieldname_epd2"></td>
+    <td class="fieldname fieldname_epd2"/>
+    <td class="fieldname fieldname_epd2"/>
+    <td class="fieldname fieldname_epd2"/>
+    <td class="fieldname fieldname_epd2"/>
+    <td class="fieldname fieldname_epd2"/>
     <td class="fieldname fieldname_epd2">
       1WhfJiAl51kfx6zvSBVYib
     </td>
-    <td class="fieldname fieldname_epd2"></td>
+    <td class="fieldname fieldname_epd2"/>
   </tr>
   <tr>
     <td class="fieldname fieldname_epd2" style="padding-left: 60px;">Material | Substanz</td>
@@ -1304,16 +1305,16 @@
     <td class="fieldname fieldname_epd2" style="padding-left: 60px;">epd2:material | epd2:substance</td>
     <td class="fieldname fieldname_epd2">o</td>
     <td class="fieldname fieldname_epd2">[0,n]</td>
-    <td class="fieldname fieldname_epd2"></td>
+    <td class="fieldname fieldname_epd2"/>
     <td class="fieldname fieldname_epd2">Beschreibt ein Material oder eine Substanz. substance-Elemente können in material-Elementen geschachtelt sein.
     </td>
     <td class="fieldname fieldname_epd2">Describes a material or substance. Substance elements can be nested inside material elements.
     </td>
-    <td class="fieldname fieldname_epd2"></td>
-    <td class="fieldname fieldname_epd2"></td>
-    <td class="fieldname fieldname_epd2"></td>
-    <td class="fieldname fieldname_epd2"></td>
-    <td class="fieldname fieldname_epd2"></td>
+    <td class="fieldname fieldname_epd2"/>
+    <td class="fieldname fieldname_epd2"/>
+    <td class="fieldname fieldname_epd2"/>
+    <td class="fieldname fieldname_epd2"/>
+    <td class="fieldname fieldname_epd2"/>
   </tr>
   <tr>
     <td class="fieldname fieldname_epd2" style="padding-left: 60px;">Name</td>
@@ -1326,11 +1327,11 @@
     </td>
     <td class="fieldname fieldname_epd2">Name des Materials/der Substanz.</td>
     <td class="fieldname fieldname_epd2">Name of the material or substance.</td>
-    <td class="fieldname fieldname_epd2"></td>
-    <td class="fieldname fieldname_epd2"></td>
-    <td class="fieldname fieldname_epd2"></td>
-    <td class="fieldname fieldname_epd2"></td>
-    <td class="fieldname fieldname_epd2"></td>
+    <td class="fieldname fieldname_epd2"/>
+    <td class="fieldname fieldname_epd2"/>
+    <td class="fieldname fieldname_epd2"/>
+    <td class="fieldname fieldname_epd2"/>
+    <td class="fieldname fieldname_epd2"/>
   </tr>
   <tr>
     <td class="fieldname fieldname_epd2" style="padding-left: 70px;">Massenanteil in %</td>
@@ -1338,65 +1339,65 @@
     <td class="fieldname fieldname_epd2" style="padding-left: 70px;">epd2:weightPerc</td>
     <td class="fieldname fieldname_epd2">m</td>
     <td class="fieldname fieldname_epd2">[1,1]</td>
-    <td class="fieldname fieldname_epd2"></td>
+    <td class="fieldname fieldname_epd2"/>
     <td class="fieldname fieldname_epd2">Massenanteil in % des Gesamtprodukts. Ein diskreter Wert oder ein Wertebereich muß angegeben werden.
     </td>
     <td class="fieldname fieldname_epd2">Percentage of the total mass of the product. Either a discrete value or a range of values has to be specified.
     </td>
-    <td class="fieldname fieldname_epd2"></td>
-    <td class="fieldname fieldname_epd2"></td>
-    <td class="fieldname fieldname_epd2"></td>
-    <td class="fieldname fieldname_epd2"></td>
-    <td class="fieldname fieldname_epd2"></td>
+    <td class="fieldname fieldname_epd2"/>
+    <td class="fieldname fieldname_epd2"/>
+    <td class="fieldname fieldname_epd2"/>
+    <td class="fieldname fieldname_epd2"/>
+    <td class="fieldname fieldname_epd2"/>
   </tr>
   <tr>
     <td class="fieldname fieldname_epd2" style="padding-left: 80px;">Diskreter Wert</td>
     <td class="fieldname fieldname_epd2" style="padding-left: 80px;">Discrete value</td>
     <td class="fieldname fieldname_epd2" style="padding-left: 80px;">@epd2:value</td>
     <td class="fieldname fieldname_epd2">o</td>
-    <td class="fieldname fieldname_epd2"></td>
+    <td class="fieldname fieldname_epd2"/>
     <td class="fieldname fieldname_epd2">
       <a target="_blank" href="ILCD_Common_DataTypes.html#Real">Real</a></td>
     <td class="fieldname fieldname_epd2">Zur Angabe eines diskreten Zahlenwerts: der Wert</td>
     <td class="fieldname fieldname_epd2">For specifying a discrete value: the value</td>
-    <td class="fieldname fieldname_epd2"></td>
-    <td class="fieldname fieldname_epd2"></td>
-    <td class="fieldname fieldname_epd2"></td>
-    <td class="fieldname fieldname_epd2"></td>
-    <td class="fieldname fieldname_epd2"></td>
+    <td class="fieldname fieldname_epd2"/>
+    <td class="fieldname fieldname_epd2"/>
+    <td class="fieldname fieldname_epd2"/>
+    <td class="fieldname fieldname_epd2"/>
+    <td class="fieldname fieldname_epd2"/>
   </tr>
   <tr>
     <td class="fieldname fieldname_epd2" style="padding-left: 80px;">Wertebereich: unterer Wert</td>
     <td class="fieldname fieldname_epd2" style="padding-left: 80px;">Range: lower value</td>
     <td class="fieldname fieldname_epd2" style="padding-left: 80px;">@epd2:lowerValue</td>
     <td class="fieldname fieldname_epd2">o</td>
-    <td class="fieldname fieldname_epd2"></td>
+    <td class="fieldname fieldname_epd2"/>
     <td class="fieldname fieldname_epd2">
       <a target="_blank" href="ILCD_Common_DataTypes.html#Real">Real</a></td>
     <td class="fieldname fieldname_epd2">Zur Angabe eines Wertebereich: unterer Wert des Wertebereichs</td>
     <td class="fieldname fieldname_epd2">For specifying a range of values: the lower value of the range</td>
-    <td class="fieldname fieldname_epd2"></td>
-    <td class="fieldname fieldname_epd2"></td>
-    <td class="fieldname fieldname_epd2"></td>
-    <td class="fieldname fieldname_epd2"></td>
-    <td class="fieldname fieldname_epd2"></td>
+    <td class="fieldname fieldname_epd2"/>
+    <td class="fieldname fieldname_epd2"/>
+    <td class="fieldname fieldname_epd2"/>
+    <td class="fieldname fieldname_epd2"/>
+    <td class="fieldname fieldname_epd2"/>
   </tr>
   <tr>
     <td class="fieldname fieldname_epd2" style="padding-left: 80px;">Wertebereich: oberer Wert</td>
     <td class="fieldname fieldname_epd2" style="padding-left: 80px;">Range: upper value</td>
     <td class="fieldname fieldname_epd2" style="padding-left: 80px;">@epd2:upperValue</td>
     <td class="fieldname fieldname_epd2">o</td>
-    <td class="fieldname fieldname_epd2"></td>
+    <td class="fieldname fieldname_epd2"/>
     <td class="fieldname fieldname_epd2">
       <a target="_blank" href="ILCD_Common_DataTypes.html#Real">Real</a></td>
     <td class="fieldname fieldname_epd2">Zur Angabe eines Wertebereich: oberer Wert des Wertebereichs</td>
     <td class="fieldname fieldname_epd2">For specifying a range of values: the upper value of the range. For specifying a value lower than x (e.g. "&lt;42"), only specify the upper value as x.
     </td>
-    <td class="fieldname fieldname_epd2"></td>
-    <td class="fieldname fieldname_epd2"></td>
-    <td class="fieldname fieldname_epd2"></td>
-    <td class="fieldname fieldname_epd2"></td>
-    <td class="fieldname fieldname_epd2"></td>
+    <td class="fieldname fieldname_epd2"/>
+    <td class="fieldname fieldname_epd2"/>
+    <td class="fieldname fieldname_epd2"/>
+    <td class="fieldname fieldname_epd2"/>
+    <td class="fieldname fieldname_epd2"/>
   </tr>
   <tr>
     <td class="fieldname fieldname_epd2" style="padding-left: 70px;">Masse in kg</td>
@@ -1404,145 +1405,145 @@
     <td class="fieldname fieldname_epd2" style="padding-left: 70px;">epd2:mass</td>
     <td class="fieldname fieldname_epd2">o</td>
     <td class="fieldname fieldname_epd2">[0,1]</td>
-    <td class="fieldname fieldname_epd2"></td>
+    <td class="fieldname fieldname_epd2"/>
     <td class="fieldname fieldname_epd2">Absolute Masse dieses Anteils in kg. Ein diskreter Wert oder ein Wertebereich muß angegeben werden.
     </td>
     <td class="fieldname fieldname_epd2">Absolute mass of the fraction in kg. Either a discrete value or a range of values has to be specified.
     </td>
-    <td class="fieldname fieldname_epd2"></td>
-    <td class="fieldname fieldname_epd2"></td>
-    <td class="fieldname fieldname_epd2"></td>
-    <td class="fieldname fieldname_epd2"></td>
-    <td class="fieldname fieldname_epd2"></td>
+    <td class="fieldname fieldname_epd2"/>
+    <td class="fieldname fieldname_epd2"/>
+    <td class="fieldname fieldname_epd2"/>
+    <td class="fieldname fieldname_epd2"/>
+    <td class="fieldname fieldname_epd2"/>
   </tr>
   <tr>
     <td class="fieldname fieldname_epd2" style="padding-left: 80px;">Diskreter Wert</td>
     <td class="fieldname fieldname_epd2" style="padding-left: 80px;">Discrete value</td>
     <td class="fieldname fieldname_epd2" style="padding-left: 80px;">@epd2:value</td>
     <td class="fieldname fieldname_epd2">o</td>
-    <td class="fieldname fieldname_epd2"></td>
+    <td class="fieldname fieldname_epd2"/>
     <td class="fieldname fieldname_epd2">
       <a target="_blank" href="ILCD_Common_DataTypes.html#Real">Real</a></td>
     <td class="fieldname fieldname_epd2">Zur Angabe eines diskreten Zahlenwerts: der Wert</td>
     <td class="fieldname fieldname_epd2">For specifying a discrete value: the value</td>
-    <td class="fieldname fieldname_epd2"></td>
-    <td class="fieldname fieldname_epd2"></td>
-    <td class="fieldname fieldname_epd2"></td>
-    <td class="fieldname fieldname_epd2"></td>
-    <td class="fieldname fieldname_epd2"></td>
+    <td class="fieldname fieldname_epd2"/>
+    <td class="fieldname fieldname_epd2"/>
+    <td class="fieldname fieldname_epd2"/>
+    <td class="fieldname fieldname_epd2"/>
+    <td class="fieldname fieldname_epd2"/>
   </tr>
   <tr>
     <td class="fieldname fieldname_epd2" style="padding-left: 80px;">Wertebereich: unterer Wert</td>
     <td class="fieldname fieldname_epd2" style="padding-left: 80px;">Range: lower value</td>
     <td class="fieldname fieldname_epd2" style="padding-left: 80px;">@epd2:lowerValue</td>
     <td class="fieldname fieldname_epd2">o</td>
-    <td class="fieldname fieldname_epd2"></td>
+    <td class="fieldname fieldname_epd2"/>
     <td class="fieldname fieldname_epd2">
       <a target="_blank" href="ILCD_Common_DataTypes.html#Real">Real</a></td>
     <td class="fieldname fieldname_epd2">Zur Angabe eines Wertebereich: unterer Wert des Wertebereichs</td>
     <td class="fieldname fieldname_epd2">For specifying a range of values: the lower value of the range</td>
-    <td class="fieldname fieldname_epd2"></td>
-    <td class="fieldname fieldname_epd2"></td>
-    <td class="fieldname fieldname_epd2"></td>
-    <td class="fieldname fieldname_epd2"></td>
-    <td class="fieldname fieldname_epd2"></td>
+    <td class="fieldname fieldname_epd2"/>
+    <td class="fieldname fieldname_epd2"/>
+    <td class="fieldname fieldname_epd2"/>
+    <td class="fieldname fieldname_epd2"/>
+    <td class="fieldname fieldname_epd2"/>
   </tr>
   <tr>
     <td class="fieldname fieldname_epd2" style="padding-left: 80px;">Wertebereich: oberer Wert</td>
     <td class="fieldname fieldname_epd2" style="padding-left: 80px;">Range: upper value</td>
     <td class="fieldname fieldname_epd2" style="padding-left: 80px;">@epd2:upperValue</td>
     <td class="fieldname fieldname_epd2">o</td>
-    <td class="fieldname fieldname_epd2"></td>
+    <td class="fieldname fieldname_epd2"/>
     <td class="fieldname fieldname_epd2">
       <a target="_blank" href="ILCD_Common_DataTypes.html#Real">Real</a></td>
     <td class="fieldname fieldname_epd2">Zur Angabe eines Wertebereich: oberer Wert des Wertebereichs</td>
     <td class="fieldname fieldname_epd2">For specifying a range of values: the upper value of the range. For specifying a value lower than x (e.g. "&lt;42"), only specify the upper value as x.
     </td>
-    <td class="fieldname fieldname_epd2"></td>
-    <td class="fieldname fieldname_epd2"></td>
-    <td class="fieldname fieldname_epd2"></td>
-    <td class="fieldname fieldname_epd2"></td>
-    <td class="fieldname fieldname_epd2"></td>
+    <td class="fieldname fieldname_epd2"/>
+    <td class="fieldname fieldname_epd2"/>
+    <td class="fieldname fieldname_epd2"/>
+    <td class="fieldname fieldname_epd2"/>
+    <td class="fieldname fieldname_epd2"/>
   </tr>
   <tr>
     <td class="fieldname fieldname_epd2" style="padding-left: 70px;">CAS-Nummer</td>
     <td class="fieldname fieldname_epd2" style="padding-left: 70px;">CAS number</td>
     <td class="fieldname fieldname_epd2" style="padding-left: 70px;">@epd2:CASNumber</td>
     <td class="fieldname fieldname_epd2">o</td>
-    <td class="fieldname fieldname_epd2"></td>
+    <td class="fieldname fieldname_epd2"/>
     <td class="fieldname fieldname_epd2">
       <a target="_blank" href="ILCD_Common_DataTypes.html#CASNumber">CAS Number</a></td>
     <td class="fieldname fieldname_epd2">CAS-Nummer des Materials oder der Substanz</td>
     <td class="fieldname fieldname_epd2">CAS Number of the material or substance</td>
-    <td class="fieldname fieldname_epd2"></td>
-    <td class="fieldname fieldname_epd2"></td>
-    <td class="fieldname fieldname_epd2"></td>
-    <td class="fieldname fieldname_epd2"></td>
-    <td class="fieldname fieldname_epd2"></td>
+    <td class="fieldname fieldname_epd2"/>
+    <td class="fieldname fieldname_epd2"/>
+    <td class="fieldname fieldname_epd2"/>
+    <td class="fieldname fieldname_epd2"/>
+    <td class="fieldname fieldname_epd2"/>
   </tr>
   <tr>
     <td class="fieldname fieldname_epd2" style="padding-left: 70px;">EC-Nummer</td>
     <td class="fieldname fieldname_epd2" style="padding-left: 70px;">EC number</td>
     <td class="fieldname fieldname_epd2" style="padding-left: 70px;">@epd2:ECNumber</td>
     <td class="fieldname fieldname_epd2">o</td>
-    <td class="fieldname fieldname_epd2"></td>
+    <td class="fieldname fieldname_epd2"/>
     <td class="fieldname fieldname_epd2">String with pattern 000-000-0</td>
     <td class="fieldname fieldname_epd2">EC-Nummer des Materials oder der Substanz</td>
     <td class="fieldname fieldname_epd2">EC Number of the material or substance</td>
-    <td class="fieldname fieldname_epd2"></td>
-    <td class="fieldname fieldname_epd2"></td>
-    <td class="fieldname fieldname_epd2"></td>
-    <td class="fieldname fieldname_epd2"></td>
-    <td class="fieldname fieldname_epd2"></td>
+    <td class="fieldname fieldname_epd2"/>
+    <td class="fieldname fieldname_epd2"/>
+    <td class="fieldname fieldname_epd2"/>
+    <td class="fieldname fieldname_epd2"/>
+    <td class="fieldname fieldname_epd2"/>
   </tr>
   <tr>
     <td class="fieldname fieldname_epd2" style="padding-left: 70px;">Gefahrencode</td>
     <td class="fieldname fieldname_epd2" style="padding-left: 70px;">Hazard code</td>
     <td class="fieldname fieldname_epd2" style="padding-left: 70px;">@epd2:hazardCode</td>
     <td class="fieldname fieldname_epd2">o</td>
-    <td class="fieldname fieldname_epd2"></td>
+    <td class="fieldname fieldname_epd2"/>
     <td class="fieldname fieldname_epd2">String</td>
     <td class="fieldname fieldname_epd2">Gefahrencode des Materials oder der Substanz</td>
     <td class="fieldname fieldname_epd2">Hazard code of the material or substance</td>
-    <td class="fieldname fieldname_epd2"></td>
-    <td class="fieldname fieldname_epd2"></td>
-    <td class="fieldname fieldname_epd2"></td>
-    <td class="fieldname fieldname_epd2"></td>
-    <td class="fieldname fieldname_epd2"></td>
+    <td class="fieldname fieldname_epd2"/>
+    <td class="fieldname fieldname_epd2"/>
+    <td class="fieldname fieldname_epd2"/>
+    <td class="fieldname fieldname_epd2"/>
+    <td class="fieldname fieldname_epd2"/>
   </tr>
   <tr>
     <td class="fieldname fieldname_epd2" style="padding-left: 70px;">Anteil erneuerbarer Ressourcen</td>
     <td class="fieldname fieldname_epd2" style="padding-left: 70px;">Percentage of renewable resources</td>
     <td class="fieldname fieldname_epd2" style="padding-left: 70px;">@epd2:renewable</td>
     <td class="fieldname fieldname_epd2">o</td>
-    <td class="fieldname fieldname_epd2"></td>
+    <td class="fieldname fieldname_epd2"/>
     <td class="fieldname fieldname_epd2">
       <a target="_blank" href="ILCD_Common_DataTypes.html#Perc">Percentage</a>
     </td>
     <td class="fieldname fieldname_epd2">Der enthaltene Anteil erneuerbarer Ressourcen</td>
     <td class="fieldname fieldname_epd2">The percentage of renewable resources contained</td>
-    <td class="fieldname fieldname_epd2"></td>
-    <td class="fieldname fieldname_epd2"></td>
-    <td class="fieldname fieldname_epd2"></td>
-    <td class="fieldname fieldname_epd2"></td>
-    <td class="fieldname fieldname_epd2"></td>
+    <td class="fieldname fieldname_epd2"/>
+    <td class="fieldname fieldname_epd2"/>
+    <td class="fieldname fieldname_epd2"/>
+    <td class="fieldname fieldname_epd2"/>
+    <td class="fieldname fieldname_epd2"/>
   </tr>
   <tr>
     <td class="fieldname fieldname_epd2" style="padding-left: 70px;">Anteil recycelter Materialien</td>
     <td class="fieldname fieldname_epd2" style="padding-left: 70px;">Percentage of recycled materials</td>
     <td class="fieldname fieldname_epd2" style="padding-left: 70px;">@epd2:recycled</td>
     <td class="fieldname fieldname_epd2">o</td>
-    <td class="fieldname fieldname_epd2"></td>
+    <td class="fieldname fieldname_epd2"/>
     <td class="fieldname fieldname_epd2">
       <a target="_blank" href="ILCD_Common_DataTypes.html#Perc">Percentage</a>
     </td>
     <td class="fieldname fieldname_epd2">Der enthaltene Anteil recycelter Materialien</td>
     <td class="fieldname fieldname_epd2">The percentage of recycled materials contained</td>
-    <td class="fieldname fieldname_epd2"></td>
-    <td class="fieldname fieldname_epd2"></td>
-    <td class="fieldname fieldname_epd2"></td>
-    <td class="fieldname fieldname_epd2"></td>
-    <td class="fieldname fieldname_epd2"></td>
+    <td class="fieldname fieldname_epd2"/>
+    <td class="fieldname fieldname_epd2"/>
+    <td class="fieldname fieldname_epd2"/>
+    <td class="fieldname fieldname_epd2"/>
+    <td class="fieldname fieldname_epd2"/>
   </tr>
   <tr>
     <td class="fieldname fieldname_epd2" style="padding-left: 70px;">Anteil recycelbarer Materialien</td>
@@ -1550,17 +1551,17 @@
     </td>
     <td class="fieldname fieldname_epd2" style="padding-left: 70px;">@epd2:recyclable</td>
     <td class="fieldname fieldname_epd2">o</td>
-    <td class="fieldname fieldname_epd2"></td>
+    <td class="fieldname fieldname_epd2"/>
     <td class="fieldname fieldname_epd2">
       <a target="_blank" href="ILCD_Common_DataTypes.html#Perc">Percentage</a>
     </td>
     <td class="fieldname fieldname_epd2">Der enthaltene Anteil recycelbarer Materialien</td>
     <td class="fieldname fieldname_epd2">The percentage of recyclable materials contained</td>
-    <td class="fieldname fieldname_epd2"></td>
-    <td class="fieldname fieldname_epd2"></td>
-    <td class="fieldname fieldname_epd2"></td>
-    <td class="fieldname fieldname_epd2"></td>
-    <td class="fieldname fieldname_epd2"></td>
+    <td class="fieldname fieldname_epd2"/>
+    <td class="fieldname fieldname_epd2"/>
+    <td class="fieldname fieldname_epd2"/>
+    <td class="fieldname fieldname_epd2"/>
+    <td class="fieldname fieldname_epd2"/>
   </tr>
 
   <tr>
@@ -1568,17 +1569,17 @@
     <td class="fieldname fieldname_epd2" style="padding-left: 70px;">Packaging</td>
     <td class="fieldname fieldname_epd2" style="padding-left: 70px;">@epd2:packaging</td>
     <td class="fieldname fieldname_epd2">o</td>
-    <td class="fieldname fieldname_epd2"></td>
+    <td class="fieldname fieldname_epd2"/>
     <td class="fieldname fieldname_epd2">
       <a target="_blank" href="ILCD_Common_DataTypes.html#boolean">boolean</a>
     </td>
     <td class="fieldname fieldname_epd2">Diese(s) Material oder Substanz Ist Bestandteil der Produktverpackung</td>
     <td class="fieldname fieldname_epd2">This material or substance Is part of the packaging</td>
-    <td class="fieldname fieldname_epd2"></td>
-    <td class="fieldname fieldname_epd2"></td>
-    <td class="fieldname fieldname_epd2"></td>
-    <td class="fieldname fieldname_epd2"></td>
-    <td class="fieldname fieldname_epd2"></td>
+    <td class="fieldname fieldname_epd2"/>
+    <td class="fieldname fieldname_epd2"/>
+    <td class="fieldname fieldname_epd2"/>
+    <td class="fieldname fieldname_epd2"/>
+    <td class="fieldname fieldname_epd2"/>
   </tr>
   <tr>
     <td class="fieldname fieldname_epd2" style="padding-left: 70px;">Bemerkungen</td>
@@ -1589,70 +1590,205 @@
     <td class="fieldname fieldname_epd2">
       <a target="_blank" href="ILCD_Common_DataTypes.html#FTMultiLang">FTMultiLang</a>
     </td>
-    <td class="fieldname fieldname_epd2"></td>
-    <td class="fieldname fieldname_epd2"></td>
-    <td class="fieldname fieldname_epd2"></td>
-    <td class="fieldname fieldname_epd2"></td>
-    <td class="fieldname fieldname_epd2"></td>
-    <td class="fieldname fieldname_epd2"></td>
-    <td class="fieldname fieldname_epd2"></td>
+    <td class="fieldname fieldname_epd2"/>
+    <td class="fieldname fieldname_epd2"/>
+    <td class="fieldname fieldname_epd2"/>
+    <td class="fieldname fieldname_epd2"/>
+    <td class="fieldname fieldname_epd2"/>
+    <td class="fieldname fieldname_epd2"/>
+    <td class="fieldname fieldname_epd2"/>
   </tr>
   <tr>
     <td class="fieldname fieldname_epd24" style="padding-left: 40px;">SVHC Hinweis</td>
     <td class="fieldname fieldname_epd24" style="padding-left: 40px;">SVHC Indication</td>
     <td class="fieldname fieldname_epd24" style="padding-left: 40px;">epd24:SVHC</td>
     <td class="fieldname fieldname_epd24">m</td>
-    <td class="fieldname fieldname_epd24">[1]</td>
+    <td class="fieldname fieldname_epd24">[1,1]</td>
     <td class="fieldname fieldname_epd24">boolean</td>
     <td class="fieldname fieldname_epd24">Hinweis, falls sich SVHC-Substanzen unter den deklarierten Substanzen befinden (substances of very high concern).
     </td>
     <td class="fieldname fieldname_epd24">Indication whether there are substances of high concern (SVHC) among the declared substances.
     </td>
-    <td class="fieldname fieldname_epd24"></td>
-    <td class="fieldname fieldname_epd24"></td>
-    <td class="fieldname fieldname_epd24"></td>
-    <td class="fieldname fieldname_epd24"></td>
-    <td class="fieldname fieldname_epd24"></td>
+    <td class="fieldname fieldname_epd24"/>
+    <td class="fieldname fieldname_epd24"/>
+    <td class="fieldname fieldname_epd24"/>
+    <td class="fieldname fieldname_epd24"/>
+    <td class="fieldname fieldname_epd24"/>
   </tr>
   <tr>
     <td class="fieldname fieldname_epd24" style="padding-left: 40px;">Quantitative Angaben zu Szenarien</td>
     <td class="fieldname fieldname_epd24" style="padding-left: 40px;">Quantitative scenario data</td>
     <td class="fieldname fieldname_epd24" style="padding-left: 40px;">epd24:scenarioData</td>
     <td class="fieldname fieldname_epd24">o</td>
-    <td class="fieldname fieldname_epd24">[n]</td>
-    <td class="fieldname fieldname_epd24"></td>
+    <td class="fieldname fieldname_epd24">[0,n]</td>
+    <td class="fieldname fieldname_epd24"/>
     <td class="fieldname fieldname_epd24">Quantitative Angaben zu oben deklarierten Szenarien</td>
     <td class="fieldname fieldname_epd24">Quantitative information regarding scenarios declared above</td>
-    <td class="fieldname fieldname_epd24"></td>
-    <td class="fieldname fieldname_epd24"></td>
-    <td class="fieldname fieldname_epd24"></td>
-    <td class="fieldname fieldname_epd24"></td>
-    <td class="fieldname fieldname_epd24"></td>
+    <td class="fieldname fieldname_epd24"/>
+    <td class="fieldname fieldname_epd24"/>
+    <td class="fieldname fieldname_epd24"/>
+    <td class="fieldname fieldname_epd24"/>
+    <td class="fieldname fieldname_epd24"/>
   </tr>
   <tr>
     <td class="fieldname fieldname_epd24" style="padding-left: 50px;">Angaben zu EoL-Szenarien</td>
     <td class="fieldname fieldname_epd24" style="padding-left: 50px;">EoL scenario data</td>
     <td class="fieldname fieldname_epd24" style="padding-left: 50px;">epd24:eolScenarioData</td>
     <td class="fieldname fieldname_epd24">o</td>
-    <td class="fieldname fieldname_epd24">[n]</td>
-    <td class="fieldname fieldname_epd24"></td>
+    <td class="fieldname fieldname_epd24">[0,n]</td>
+    <td class="fieldname fieldname_epd24"/>
     <td class="fieldname fieldname_epd24">Angaben zu End-of-life-Szenarien</td>
     <td class="fieldname fieldname_epd24">End of Life scenario data</td>
-    <td class="fieldname fieldname_epd24"></td>
-    <td class="fieldname fieldname_epd24"></td>
-    <td class="fieldname fieldname_epd24"></td>
-    <td class="fieldname fieldname_epd24"></td>
-    <td class="fieldname fieldname_epd24"></td>
+    <td class="fieldname fieldname_epd24"/>
+    <td class="fieldname fieldname_epd24"/>
+    <td class="fieldname fieldname_epd24">section 7.3.4 End-of-life</td>
+    <td class="fieldname fieldname_epd24"/>
+    <td class="fieldname fieldname_epd24"/>
   </tr>
   <tr>
     <td class="fieldname fieldname_epd24" style="padding-left: 60px;">Szenario-Name</td>
     <td class="fieldname fieldname_epd24" style="padding-left: 60px;">scenario name</td>
     <td class="fieldname fieldname_epd24" style="padding-left: 60px;">@epd24:scenario</td>
     <td class="fieldname fieldname_epd24">o</td>
-    <td class="fieldname fieldname_epd24">[1]</td>
+    <td class="fieldname fieldname_epd24">[0,1]</td>
     <td class="fieldname fieldname_epd24"><a target="_blank" href="ILCD_Common_DataTypes.html#string">string</a></td>
-    <td class="fieldname fieldname_epd24">Name des Szenarios (siehe Deklaration oben unter <code>scenario/@name</code>).</td>
-    <td class="fieldname fieldname_epd24">Name of the scenario (must match one declared above under <code>scenario/@name</code></td>
+    <td class="fieldname fieldname_epd24">Name des Szenarios (siehe Deklaration oben unter <code>scenario/@name</code>). Wenn nur ein Szenario verwendet wird, kann die Deklaration entfallen.</td>
+    <td class="fieldname fieldname_epd24">Name of the scenario (must match one declared above under <code>scenario/@name</code>). If only one sceanrio is used, this can be omitted.</td>
+    <td class="fieldname fieldname_epd24"/>
+    <td class="fieldname fieldname_epd24"/>
+    <td class="fieldname fieldname_epd24"/>
+    <td class="fieldname fieldname_epd24"/>
+    <td class="fieldname fieldname_epd24"/>
+  </tr>
+  <tr>
+    <td class="fieldname fieldname_epd24" style="padding-left: 60px;">Sammlung</td>
+    <td class="fieldname fieldname_epd24" style="padding-left: 60px;">Collection</td>
+    <td class="fieldname fieldname_epd24" style="padding-left: 60px;">epd24:collection</td>
+    <td class="fieldname fieldname_epd24">o</td>
+    <td class="fieldname fieldname_epd24">[0,1]</td>
+    <td class="fieldname fieldname_epd24"/>
+    <td class="fieldname fieldname_epd24">Die Anteile der einzelnen gesammelten Fraktionen</td>
+    <td class="fieldname fieldname_epd24">The amounts of the different fractions that are collected</td>
+    <td class="fieldname fieldname_epd24"/>
+    <td class="fieldname fieldname_epd24"/>
+    <td class="fieldname fieldname_epd24"/>
+    <td class="fieldname fieldname_epd24"/>
+    <td class="fieldname fieldname_epd24"/>
+  </tr>
+  <tr>
+    <td class="fieldname fieldname_epd24" style="padding-left: 70px;">getrennt</td>
+    <td class="fieldname fieldname_epd24" style="padding-left: 70px;">separate</td>
+    <td class="fieldname fieldname_epd24" style="padding-left: 70px;">@epd24:separate</td>
+    <td class="fieldname fieldname_epd24">o</td>
+    <td class="fieldname fieldname_epd24">[0,1]</td>
+    <td class="fieldname fieldname_epd24">xs:double</td>
+    <td class="fieldname fieldname_epd24">Getrennt gesammelter Anteil, in kg</td>
+    <td class="fieldname fieldname_epd24">separately collected part, in kg</td>
+    <td class="fieldname fieldname_epd24"/>
+    <td class="fieldname fieldname_epd24"/>
+    <td class="fieldname fieldname_epd24"/>
+    <td class="fieldname fieldname_epd24"/>
+    <td class="fieldname fieldname_epd24"/>
+  </tr>
+  <tr>
+    <td class="fieldname fieldname_epd24" style="padding-left: 70px;">als gemischter Abfall</td>
+    <td class="fieldname fieldname_epd24" style="padding-left: 70px;">with mixed waste</td>
+    <td class="fieldname fieldname_epd24" style="padding-left: 70px;">@epd24:withMixedWaste</td>
+    <td class="fieldname fieldname_epd24">o</td>
+    <td class="fieldname fieldname_epd24">[0,1]</td>
+    <td class="fieldname fieldname_epd24">xs:double</td>
+    <td class="fieldname fieldname_epd24">als gemischter Abfall gesammelter Anteil, in kg</td>
+    <td class="fieldname fieldname_epd24">collected with mixed waste, in kg</td>
+    <td class="fieldname fieldname_epd24"/>
+    <td class="fieldname fieldname_epd24"/>
+    <td class="fieldname fieldname_epd24"/>
+    <td class="fieldname fieldname_epd24"/>
+    <td class="fieldname fieldname_epd24"/>
+  </tr>
+  <tr>
+    <td class="fieldname fieldname_epd24" style="padding-left: 60px;">Rückholung</td>
+    <td class="fieldname fieldname_epd24" style="padding-left: 60px;">Recovery</td>
+    <td class="fieldname fieldname_epd24" style="padding-left: 60px;">epd24:recovery</td>
+    <td class="fieldname fieldname_epd24">o</td>
+    <td class="fieldname fieldname_epd24">[0,1]</td>
+    <td class="fieldname fieldname_epd24"/>
+    <td class="fieldname fieldname_epd24">Die Anteile der einzelnen rückgewonnenen Fraktionen</td>
+    <td class="fieldname fieldname_epd24">The amounts of the different fractions that are recovered</td>
+    <td class="fieldname fieldname_epd24"/>
+    <td class="fieldname fieldname_epd24"/>
+    <td class="fieldname fieldname_epd24"/>
+    <td class="fieldname fieldname_epd24"/>
+    <td class="fieldname fieldname_epd24"/>
+  </tr>
+  <tr>
+    <td class="fieldname fieldname_epd24" style="padding-left: 70px;">zur Wiederverwendung</td>
+    <td class="fieldname fieldname_epd24" style="padding-left: 70px;">for re-use</td>
+    <td class="fieldname fieldname_epd24" style="padding-left: 70px;">@epd24:reuse</td>
+    <td class="fieldname fieldname_epd24">o</td>
+    <td class="fieldname fieldname_epd24">[0,1]</td>
+    <td class="fieldname fieldname_epd24">xs:double</td>
+    <td class="fieldname fieldname_epd24">kg zur Wiederverwendung</td>
+    <td class="fieldname fieldname_epd24">kg for re-use</td>
+    <td class="fieldname fieldname_epd24"/>
+    <td class="fieldname fieldname_epd24"/>
+    <td class="fieldname fieldname_epd24"/>
+    <td class="fieldname fieldname_epd24"/>
+    <td class="fieldname fieldname_epd24"/>
+  </tr>
+  <tr>
+    <td class="fieldname fieldname_epd24" style="padding-left: 70px;">zum Recycling</td>
+    <td class="fieldname fieldname_epd24" style="padding-left: 70px;">for recycling</td>
+    <td class="fieldname fieldname_epd24" style="padding-left: 70px;">@epd24:recycling</td>
+    <td class="fieldname fieldname_epd24">o</td>
+    <td class="fieldname fieldname_epd24">[0,1]</td>
+    <td class="fieldname fieldname_epd24">xs:double</td>
+    <td class="fieldname fieldname_epd24">kg zum Recycling</td>
+    <td class="fieldname fieldname_epd24">kg for recycling</td>
+    <td class="fieldname fieldname_epd24"/>
+    <td class="fieldname fieldname_epd24"/>
+    <td class="fieldname fieldname_epd24"/>
+    <td class="fieldname fieldname_epd24"/>
+    <td class="fieldname fieldname_epd24"/>
+  </tr>
+  <tr>
+    <td class="fieldname fieldname_epd24" style="padding-left: 70px;">zur Energierückgewinnung</td>
+    <td class="fieldname fieldname_epd24" style="padding-left: 70px;">for energy recovery</td>
+    <td class="fieldname fieldname_epd24" style="padding-left: 70px;">@epd24:energyRecovery</td>
+    <td class="fieldname fieldname_epd24">o</td>
+    <td class="fieldname fieldname_epd24">[0,1]</td>
+    <td class="fieldname fieldname_epd24">xs:double</td>
+    <td class="fieldname fieldname_epd24">kg zur Energierückgewinnung</td>
+    <td class="fieldname fieldname_epd24">kg for energy recovery</td>
+    <td class="fieldname fieldname_epd24"/>
+    <td class="fieldname fieldname_epd24"/>
+    <td class="fieldname fieldname_epd24"/>
+    <td class="fieldname fieldname_epd24"/>
+    <td class="fieldname fieldname_epd24"/>
+  </tr>
+  <tr>
+    <td class="fieldname fieldname_epd24" style="padding-left: 60px;">Beseitigung</td>
+    <td class="fieldname fieldname_epd24" style="padding-left: 60px;">Disposal</td>
+    <td class="fieldname fieldname_epd24" style="padding-left: 60px;">epd24:disposal</td>
+    <td class="fieldname fieldname_epd24">o</td>
+    <td class="fieldname fieldname_epd24">[0,1]</td>
+    <td class="fieldname fieldname_epd24"></td>
+    <td class="fieldname fieldname_epd24">Der Anteil zur Beseitigung</td>
+    <td class="fieldname fieldname_epd24">The fraction for disposal</td>
+    <td class="fieldname fieldname_epd24"></td>
+    <td class="fieldname fieldname_epd24"></td>
+    <td class="fieldname fieldname_epd24"></td>
+    <td class="fieldname fieldname_epd24"></td>
+    <td class="fieldname fieldname_epd24"></td>
+   </tr>
+   <tr>
+    <td class="fieldname fieldname_epd24" style="padding-left: 70px;">zur Deponierung</td>
+    <td class="fieldname fieldname_epd24" style="padding-left: 70px;">for final deposition</td>
+    <td class="fieldname fieldname_epd24" style="padding-left: 70px;">@epd24:finalDeposition</td>
+    <td class="fieldname fieldname_epd24">o</td>
+    <td class="fieldname fieldname_epd24">[0,1]</td>
+    <td class="fieldname fieldname_epd24">xs:double</td>
+    <td class="fieldname fieldname_epd24">kg Produkt oder Stoff zur Deponierung</td>
+    <td class="fieldname fieldname_epd24">kg product or material for final deposition</td>
     <td class="fieldname fieldname_epd24"></td>
     <td class="fieldname fieldname_epd24"></td>
     <td class="fieldname fieldname_epd24"></td>
@@ -1665,22 +1801,22 @@
     <td class="subsection" style="padding-left: 20px;font-style: italic;">quantitativeReference</td>
     <td class="subsection">r</td>
     <td class="subsection">[0,1]</td>
-    <td class="subsection"></td>
+    <td class="subsection"/>
     <td class="subsection">In diesem Abschnitt wird die quantitative Referenz für diesen Datensatz angegeben</td>
-    <td class="subsection"></td>
+    <td class="subsection"/>
     <td class="subsection">This section names the quantitative reference used for this data set, i.e. the reference to which the inputs and outputs quantiatively relate.
     </td>
     <td class="subsection">1-1-4</td>
-    <td class="subsection"></td>
-    <td class="subsection"></td>
-    <td class="subsection"></td>
+    <td class="subsection"/>
+    <td class="subsection"/>
+    <td class="subsection"/>
   </tr>
   <tr>
     <td class="fieldname" style="padding-left: 30px;">Art der quantitativen Referenz</td>
     <td class="fieldname" style="padding-left: 30px;">Type of quantitative reference</td>
     <td class="fieldname" style="padding-left: 30px;">@type</td>
     <td class="fieldname">r</td>
-    <td class="fieldname"></td>
+    <td class="fieldname"/>
     <td class="fieldname">
       <a target="_blank" href="ILCD_Common_EnumerationValues.html#TypeOfQuantitativeReferenceValues">TypeOfQuantitativeReferenceValues</a><br/><span class="data_enum"><a class="info" href="javascript:void(0);">Reference flow(s)<span> One or
                         more of the data set's inputs or outputs is identified as quantiative reference flow. This covers the 14048 types of quantitative
@@ -1695,12 +1831,12 @@
                         as 0.015 kg light fuel oil and 0,018 kg heavy fuel oil). </span></a></span><br/><span class="data_enum"><a class="info" href="javascript:void(0);">Production period<span> Time period of operation that a process represents, e.g. "January 2003 to including June
                         2003". </span></a></span><br/></td>
     <td class="fieldname">Art der quantitativen Referenz, in der Regel ist dies "Reference flow(s)"</td>
-    <td class="fieldname">~<p></p>usually this is "Reference flow(s)"</td>
+    <td class="fieldname">~<p/>usually this is "Reference flow(s)"</td>
     <td class="fieldname">Type of quantitative reference of this data set.</td>
     <td class="fieldname">1-1-4-15</td>
-    <td class="fieldname"></td>
-    <td class="fieldname"></td>
-    <td class="fieldname"></td>
+    <td class="fieldname"/>
+    <td class="fieldname"/>
+    <td class="fieldname"/>
   </tr>
   <tr>
     <td class="fieldname" style="padding-left: 30px;">Referenzfluß</td>
@@ -1715,9 +1851,9 @@
     <td class="fieldname">One or more of the Inputs or Outputs in case "Type of quantitative reference" is of type "Reference flow(s)". (Data set internal reference.)
     </td>
     <td class="fieldname">1-1-4-16</td>
-    <td class="fieldname"></td>
-    <td class="fieldname"></td>
-    <td class="fieldname"></td>
+    <td class="fieldname"/>
+    <td class="fieldname"/>
+    <td class="fieldname"/>
   </tr>
   <tr>
     <td class="fieldname" style="padding-left: 30px;">Funktionelle Einheit</td>
@@ -1736,9 +1872,9 @@
     <td class="fieldname">Quantity, name, property/quality, and measurement unit of the Functional unit, Production period, or Other parameter, in case "Type of quantitative reference" is of one of these types. [Note: One or more functional units can also be given in addition to a reference flow.]
     </td>
     <td class="fieldname">1-1-4-17</td>
-    <td class="fieldname"></td>
-    <td class="fieldname"></td>
-    <td class="fieldname"></td>
+    <td class="fieldname"/>
+    <td class="fieldname"/>
+    <td class="fieldname"/>
   </tr>
   <tr>
     <td class="fieldname" style="padding-left: 30px;">Anderer Inhalt</td>
@@ -1746,14 +1882,14 @@
     <td class="fieldname" style="padding-left: 30px;">other</td>
     <td class="fieldname">o</td>
     <td class="fieldname">[0,1]</td>
-    <td class="fieldname"></td>
-    <td class="fieldname"></td>
-    <td class="fieldname"></td>
+    <td class="fieldname"/>
+    <td class="fieldname"/>
+    <td class="fieldname"/>
     <td class="fieldname">May contain arbitrary content.</td>
     <td class="fieldname">0</td>
-    <td class="fieldname"></td>
-    <td class="fieldname"></td>
-    <td class="fieldname"></td>
+    <td class="fieldname"/>
+    <td class="fieldname"/>
+    <td class="fieldname"/>
   </tr>
   <tr>
     <td class="subsection" style="padding-left: 20px;font-style: italic;">Zeitliche Repräsentativität</td>
@@ -1761,14 +1897,14 @@
     <td class="subsection" style="padding-left: 20px;font-style: italic;">time</td>
     <td class="subsection">r</td>
     <td class="subsection">[0,1]</td>
-    <td class="subsection"></td>
+    <td class="subsection"/>
     <td class="subsection">Informationen zur zeitlichen Repräsentativität des Datensatzes</td>
-    <td class="subsection"></td>
+    <td class="subsection"/>
     <td class="subsection">Provides information about the time representativeness of the data set.</td>
     <td class="subsection">1-1-6</td>
-    <td class="subsection"></td>
-    <td class="subsection"></td>
-    <td class="subsection"></td>
+    <td class="subsection"/>
+    <td class="subsection"/>
+    <td class="subsection"/>
   </tr>
   <tr>
     <td class="fieldname" style="padding-left: 30px;">Referenzjahr</td>
@@ -1783,11 +1919,11 @@
     <td class="fieldname">Start year of the time period for which the data set is valid (until year of "Data set valid until:"). For data sets that combine data from different years, the most representative year is given regarding the overall environmental impact. In that case, the reference year is derived by expert judgement.
     </td>
     <td class="fieldname">1-1-6-18</td>
-    <td class="fieldname"></td>
+    <td class="fieldname"/>
     <td class="fieldname">
       3HRWYEBbbDzhUdMvoAK5Sx
     </td>
-    <td class="fieldname"></td>
+    <td class="fieldname"/>
   </tr>
   <tr>
     <td class="fieldname" style="padding-left: 30px;">Gültig bis</td>
@@ -1801,11 +1937,11 @@
     <td class="fieldname">End year of the time period for which the data set is still valid / sufficiently representative. This date also determines when a data set revision / remodelling is required or recommended due to expected relevant changes in environmentally or technically relevant inventory values, including in the background system.
     </td>
     <td class="fieldname">1-1-6-19</td>
-    <td class="fieldname"></td>
+    <td class="fieldname"/>
     <td class="fieldname">
       0pb8bLdMf3SB$4iV$cRvsI
     </td>
-    <td class="fieldname"></td>
+    <td class="fieldname"/>
   </tr>
   <tr>
     <td class="fieldname" style="padding-left: 30px;">Erläuterungen zur zeitlichen Repräsentativität</td>
@@ -1822,9 +1958,9 @@
     <td class="fieldname">Description of the valid time span of the data set including information on limited usability within sub-time spans (e.g. summer/winter).
     </td>
     <td class="fieldname">1-1-6-20</td>
-    <td class="fieldname"></td>
-    <td class="fieldname"></td>
-    <td class="fieldname"></td>
+    <td class="fieldname"/>
+    <td class="fieldname"/>
+    <td class="fieldname"/>
   </tr>
   <tr>
     <td class="fieldname" style="padding-left: 30px;">Anderer Inhalt</td>
@@ -1832,14 +1968,14 @@
     <td class="fieldname" style="padding-left: 30px;">other</td>
     <td class="fieldname">o</td>
     <td class="fieldname">[0,1]</td>
-    <td class="fieldname"></td>
-    <td class="fieldname"></td>
-    <td class="fieldname"></td>
+    <td class="fieldname"/>
+    <td class="fieldname"/>
+    <td class="fieldname"/>
     <td class="fieldname">May contain arbitrary content.</td>
     <td class="fieldname">0</td>
-    <td class="fieldname"></td>
-    <td class="fieldname"></td>
-    <td class="fieldname"></td>
+    <td class="fieldname"/>
+    <td class="fieldname"/>
+    <td class="fieldname"/>
   </tr>
   <tr>
     <td class="fieldname fieldname_epd2" style="padding-left: 40px;">Veröffentlichungsdatum der EPD</td>
@@ -1850,11 +1986,11 @@
     <td class="fieldname fieldname_epd2">xs:date</td>
     <td class="fieldname fieldname_epd2">Datum der Veröffentlichung der EPD in der Form "YYYY-MM-DD".</td>
     <td class="fieldname fieldname_epd2">Exact date of publication of the EPD in the form "YYYY-MM-DD".</td>
-    <td class="fieldname fieldname_epd2"></td>
-    <td class="fieldname fieldname_epd2"></td>
-    <td class="fieldname fieldname_epd2"></td>
-    <td class="fieldname fieldname_epd2"></td>
-    <td class="fieldname fieldname_epd2"></td>
+    <td class="fieldname fieldname_epd2"/>
+    <td class="fieldname fieldname_epd2"/>
+    <td class="fieldname fieldname_epd2"/>
+    <td class="fieldname fieldname_epd2"/>
+    <td class="fieldname fieldname_epd2"/>
   </tr>
   <tr>
     <td class="subsection" style="padding-left: 20px;font-style: italic;">Geographische Repräsentativität</td>
@@ -1862,14 +1998,14 @@
     <td class="subsection" style="padding-left: 20px;font-style: italic;">geography</td>
     <td class="subsection">r</td>
     <td class="subsection">[0,1]</td>
-    <td class="subsection"></td>
+    <td class="subsection"/>
     <td class="subsection">Informationen zur geographischen Repräsentativität des Datensatzes</td>
-    <td class="subsection"></td>
+    <td class="subsection"/>
     <td class="subsection">Provides information about the geographical representativeness of the data set.</td>
     <td class="subsection">1-1-8</td>
-    <td class="subsection"></td>
-    <td class="subsection"></td>
-    <td class="subsection"></td>
+    <td class="subsection"/>
+    <td class="subsection"/>
+    <td class="subsection"/>
   </tr>
   <tr>
     <td class="fieldname" style="padding-left: 30px;font-style: italic;">Ort</td>
@@ -1877,22 +2013,22 @@
     <td class="fieldname" style="padding-left: 30px;font-style: italic;">locationOfOperationSupplyOrProduction</td>
     <td class="fieldname">r</td>
     <td class="fieldname">[0,1]</td>
-    <td class="fieldname"></td>
-    <td class="fieldname"></td>
-    <td class="fieldname"></td>
+    <td class="fieldname"/>
+    <td class="fieldname"/>
+    <td class="fieldname"/>
     <td class="fieldname">Location, country or region the data set represents. [Note 1: This field does not refer to e.g. the country in which a specific site is located that is represented by this data set but to the actually represented country, region, or site. Note 2: Entry can be of type "two-letter ISO 3166 country code" for countries, "seven-letter regional codes" for regions or continents, or "market areas and market organisations", as predefined for the ILCD. Also a name for e.g. a specific plant etc. can be given here (e.g. "FR, Lyon, XY Company, Z Site"; user defined). Note 3: The fact whether the entry refers to production or to consumption / supply has to be stated in the name-field "Mix and location types" e.g. as "Production mix".]
     </td>
     <td class="fieldname">1-1-8-21</td>
-    <td class="fieldname"></td>
-    <td class="fieldname"></td>
-    <td class="fieldname"></td>
+    <td class="fieldname"/>
+    <td class="fieldname"/>
+    <td class="fieldname"/>
   </tr>
   <tr>
     <td class="fieldname" style="padding-left: 40px;">Ort</td>
     <td class="fieldname" style="padding-left: 40px;">Location</td>
     <td class="fieldname" style="padding-left: 40px;">@location</td>
     <td class="fieldname">r</td>
-    <td class="fieldname"></td>
+    <td class="fieldname"/>
     <td class="fieldname">
       <a target="_blank" href="ILCD_Common_DataTypes.html#NullableString">NullableString</a>
     </td>
@@ -1902,11 +2038,11 @@
     <td class="fieldname">Location, country or region the data set represents. [Note 1: This field does not refer to e.g. the country in which a specific site is located that is represented by this data set but to the actually represented country, region, or site. Note 2: Entry can be of type "two-letter ISO 3166 country code" for countries, "seven-letter regional codes" for regions or continents, or "market areas and market organisations", as predefined for the ILCD. Also a name for e.g. a specific plant etc. can be given here (e.g. "FR, Lyon, XY Company, Z Site"; user defined). Note 3: The fact whether the entry refers to production or to consumption / supply has to be stated in the name-field "Mix and location types" e.g. as "Production mix".]
     </td>
     <td class="fieldname">1-1-8-21</td>
-    <td class="fieldname"></td>
+    <td class="fieldname"/>
     <td class="fieldname">
       2hrADMu992yvf9m9RB5ukI
     </td>
-    <td class="fieldname"></td>
+    <td class="fieldname"/>
   </tr>
   <tr>
     <td class="fieldname" style="padding-left: 40px;">Erläuterungen zur geographischen Repräsentativität</td>
@@ -1921,11 +2057,11 @@
     <td class="fieldname">Further explanations about additional aspects of the location: e.g. a company and/or site description and address, whether for certain sub-areas within the "Location" the data set is not valid, whether data is only valid for certain regions within the location indicated, or whether certain elementary flows or intermediate product flows are extrapolated from another geographical area.
     </td>
     <td class="fieldname">1-1-8-24</td>
-    <td class="fieldname"></td>
+    <td class="fieldname"/>
     <td class="fieldname">
       1$A6fmHiDFvx_yaQsLwfZ3
     </td>
-    <td class="fieldname"></td>
+    <td class="fieldname"/>
   </tr>
   <tr>
     <td class="fieldname" style="padding-left: 40px;">Anderer Inhalt</td>
@@ -1933,14 +2069,14 @@
     <td class="fieldname" style="padding-left: 40px;">other</td>
     <td class="fieldname">o</td>
     <td class="fieldname">[0,1]</td>
-    <td class="fieldname"></td>
-    <td class="fieldname"></td>
-    <td class="fieldname"></td>
+    <td class="fieldname"/>
+    <td class="fieldname"/>
+    <td class="fieldname"/>
     <td class="fieldname">May contain arbitrary content.</td>
     <td class="fieldname">0</td>
-    <td class="fieldname"></td>
-    <td class="fieldname"></td>
-    <td class="fieldname"></td>
+    <td class="fieldname"/>
+    <td class="fieldname"/>
+    <td class="fieldname"/>
   </tr>
   <tr>
     <td class="subsection" style="padding-left: 20px;font-style: italic;">Technische Repräsentativität</td>
@@ -1948,14 +2084,14 @@
     <td class="subsection" style="padding-left: 20px;font-style: italic;">technology</td>
     <td class="subsection">r</td>
     <td class="subsection">[0,1]</td>
-    <td class="subsection"></td>
+    <td class="subsection"/>
     <td class="subsection">Informationen zur technischen Repräsentativität des Datensatzes</td>
-    <td class="subsection"></td>
+    <td class="subsection"/>
     <td class="subsection">Provides information about the technological representativeness of the data set.</td>
     <td class="subsection">1-1-10</td>
-    <td class="subsection"></td>
-    <td class="subsection"></td>
-    <td class="subsection"></td>
+    <td class="subsection"/>
+    <td class="subsection"/>
+    <td class="subsection"/>
   </tr>
   <tr>
     <td class="fieldname" style="padding-left: 30px;">Technische Beschreibung inklusive der Hintergrundsysteme</td>
@@ -1972,11 +2108,11 @@
     <td class="fieldname">Description of the technological characteristics including operating conditions of the process or product system. For the latter this includes the relevant upstream and downstream processes included in the data set. Professional terminology should be used.
     </td>
     <td class="fieldname">1-1-10-25</td>
-    <td class="fieldname"></td>
+    <td class="fieldname"/>
     <td class="fieldname">
       1TCAtFQ$r2LAk3oxaknGa3
     </td>
-    <td class="fieldname"></td>
+    <td class="fieldname"/>
   </tr>
   <tr>
     <td class="fieldname" style="padding-left: 30px;">Technisches Anwendungsgebiet</td>
@@ -1993,9 +2129,9 @@
     <td class="fieldname">Description of the intended / possible applications of the good, service, or process. E.g. for which type of products the material, represented by this data set, is used. Examples: "This high purity chemical is used for analytical laboratories only." or "This technical quality bulk chemical is used for large scale synthesis in chemical industry.". Or: "This truck is used only for long-distance transport of liquid bulk chemicals".
     </td>
     <td class="fieldname">1-1-10-27</td>
-    <td class="fieldname"></td>
+    <td class="fieldname"/>
     <td class="fieldname">3LtH3zTkTAtvN_Dc64HOcJ</td>
-    <td class="fieldname"></td>
+    <td class="fieldname"/>
   </tr>
 
   <tr>
@@ -2013,9 +2149,9 @@
     <td class="fieldname">"Source data set" of the pictogramme of the good, service, technogy, plant etc. represented by this data set. For use in graphical user interfaces of LCA software.
     </td>
     <td class="fieldname">1-1-10-28</td>
-    <td class="fieldname"></td>
-    <td class="fieldname"></td>
-    <td class="fieldname"></td>
+    <td class="fieldname"/>
+    <td class="fieldname"/>
+    <td class="fieldname"/>
   </tr>
   <tr>
     <td class="fieldname" style="padding-left: 30px;">Flußdiagramm(e) oder Abbildung(en)</td>
@@ -2032,9 +2168,9 @@
     <td class="fieldname">"Source data set" of the flow diagramm(s) and/or photo(s) of the good, service, technology, plant etc represented by this data set. For clearer illustration and documentation of data set.
     </td>
     <td class="fieldname">1-1-10-29</td>
-    <td class="fieldname"></td>
-    <td class="fieldname"></td>
-    <td class="fieldname"></td>
+    <td class="fieldname"/>
+    <td class="fieldname"/>
+    <td class="fieldname"/>
   </tr>
   <tr>
     <td class="fieldname" style="padding-left: 30px;">Anderer Inhalt</td>
@@ -2042,14 +2178,14 @@
     <td class="fieldname" style="padding-left: 30px;">other</td>
     <td class="fieldname">o</td>
     <td class="fieldname">[0,1]</td>
-    <td class="fieldname"></td>
-    <td class="fieldname"></td>
-    <td class="fieldname"></td>
+    <td class="fieldname"/>
+    <td class="fieldname"/>
+    <td class="fieldname"/>
     <td class="fieldname">May contain arbitrary content.</td>
     <td class="fieldname">0</td>
-    <td class="fieldname"></td>
-    <td class="fieldname"></td>
-    <td class="fieldname"></td>
+    <td class="fieldname"/>
+    <td class="fieldname"/>
+    <td class="fieldname"/>
   </tr>
   <tr>
     <td class="section" style="padding-left: 10px;font-style: italic;">Modellierung und Validierung</td>
@@ -2057,15 +2193,15 @@
     <td class="section" style="padding-left: 10px;font-style: italic;">modellingAndValidation</td>
     <td class="section">r</td>
     <td class="section">[0,1]</td>
-    <td class="section"></td>
+    <td class="section"/>
     <td class="section">Modellierung und Validierung</td>
-    <td class="section"></td>
+    <td class="section"/>
     <td class="section">Covers the five sub-sections 1) LCI method and allocation, 2) Data sources, treatment and representativeness, 3) Completeness, 4) Validation, and 5) Compliance. (Section refers to LCI modelling and data treatment aspects etc., NOT the modeling of e.g. the input/output-relationships of a parameterised data set.)
     </td>
     <td class="section">1-3</td>
-    <td class="section"></td>
-    <td class="section"></td>
-    <td class="section"></td>
+    <td class="section"/>
+    <td class="section"/>
+    <td class="section"/>
   </tr>
   <tr>
     <td class="subsection" style="padding-left: 20px;font-style: italic;">LCI-Methode und Allokation</td>
@@ -2073,15 +2209,15 @@
     <td class="subsection" style="padding-left: 20px;font-style: italic;">LCIMethodAndAllocation</td>
     <td class="subsection">r</td>
     <td class="subsection">[0,1]</td>
-    <td class="subsection"></td>
+    <td class="subsection"/>
     <td class="subsection">LCI-Methode und Allokation</td>
-    <td class="subsection"></td>
+    <td class="subsection"/>
     <td class="subsection">LCI methodological modelling aspects including allocation / substitution information.
     </td>
     <td class="subsection">1-3-14</td>
-    <td class="subsection"></td>
-    <td class="subsection"></td>
-    <td class="subsection"></td>
+    <td class="subsection"/>
+    <td class="subsection"/>
+    <td class="subsection"/>
   </tr>
   <tr>
     <td class="fieldname" style="padding-left: 30px;">Art des Datensatzes</td>
@@ -2096,9 +2232,9 @@
     <td class="fieldname">Type of the data set regarding systematic inclusion/exclusion of upstream or downstream processes, transparency and internal (hidden) multi-functionality, and the completeness of modelling.
     </td>
     <td class="fieldname">1-3-14-40</td>
-    <td class="fieldname"></td>
-    <td class="fieldname"></td>
-    <td class="fieldname"></td>
+    <td class="fieldname"/>
+    <td class="fieldname"/>
+    <td class="fieldname"/>
   </tr>
   <tr>
     <td class="fieldname" style="padding-left: 30px;">LCA-Methodenbericht</td>
@@ -2115,9 +2251,9 @@
     <td class="fieldname">"Source data set"(s) where the generally used LCA methods including the LCI method principles and specific approaches, the modelling constants details, as well as any other applied methodological conventions are described.
     </td>
     <td class="fieldname">1-3-14-47</td>
-    <td class="fieldname"></td>
-    <td class="fieldname"></td>
-    <td class="fieldname"></td>
+    <td class="fieldname"/>
+    <td class="fieldname"/>
+    <td class="fieldname"/>
   </tr>
   <tr>
     <td class="fieldname" style="padding-left: 30px;">Anderer Inhalt</td>
@@ -2125,14 +2261,14 @@
     <td class="fieldname" style="padding-left: 30px;">other</td>
     <td class="fieldname">o</td>
     <td class="fieldname">[0,1]</td>
-    <td class="fieldname"></td>
-    <td class="fieldname"></td>
-    <td class="fieldname"></td>
+    <td class="fieldname"/>
+    <td class="fieldname"/>
+    <td class="fieldname"/>
     <td class="fieldname">May contain arbitrary content.</td>
     <td class="fieldname">0</td>
-    <td class="fieldname"></td>
-    <td class="fieldname"></td>
-    <td class="fieldname"></td>
+    <td class="fieldname"/>
+    <td class="fieldname"/>
+    <td class="fieldname"/>
   </tr>
   <tr>
     <td class="fieldname fieldname_epd" style="padding-left: 40px;">Subtyp</td>
@@ -2160,11 +2296,11 @@
       <i>template dataset</i> - sample EPD, unspecific datasets for specific products, that were created based on a sample EPD -
       <i>generic dataset</i> - generic data acc. to EN 15804 and data based on other non-industry data sources (e.g. literature, expert knowledge)
     </td>
-    <td class="fieldname fieldname_epd"></td>
-    <td class="fieldname fieldname_epd"></td>
-    <td class="fieldname fieldname_epd"></td>
-    <td class="fieldname fieldname_epd"></td>
-    <td class="fieldname fieldname_epd"></td>
+    <td class="fieldname fieldname_epd"/>
+    <td class="fieldname fieldname_epd"/>
+    <td class="fieldname fieldname_epd"/>
+    <td class="fieldname fieldname_epd"/>
+    <td class="fieldname fieldname_epd"/>
   </tr>
   <tr>
     <td class="fieldname fieldname_epd24" style="padding-left: 40px;">PCR-Konformität</td>
@@ -2172,14 +2308,14 @@
     <td class="fieldname fieldname_epd24" style="padding-left: 40px;">epd24:pcrCompliance</td>
     <td class="fieldname fieldname_epd24">o</td>
     <td class="fieldname fieldname_epd24">[0,1]</td>
-    <td class="fieldname fieldname_epd24"></td>
-    <td class="fieldname fieldname_epd24"></td>
-    <td class="fieldname fieldname_epd24"></td>
-    <td class="fieldname fieldname_epd24"></td>
-    <td class="fieldname fieldname_epd24"></td>
-    <td class="fieldname fieldname_epd24"></td>
-    <td class="fieldname fieldname_epd24"></td>
-    <td class="fieldname fieldname_epd24"></td>
+    <td class="fieldname fieldname_epd24"/>
+    <td class="fieldname fieldname_epd24"/>
+    <td class="fieldname fieldname_epd24"/>
+    <td class="fieldname fieldname_epd24"/>
+    <td class="fieldname fieldname_epd24"/>
+    <td class="fieldname fieldname_epd24"/>
+    <td class="fieldname fieldname_epd24"/>
+    <td class="fieldname fieldname_epd24"/>
   </tr>
   <tr>
     <td class="fieldname fieldname_epd24" style="padding-left: 50px;">Allokation</td>
@@ -2190,11 +2326,11 @@
     <td class="fieldname fieldname_epd24"><a target="_blank" href="ILCD_Common_DataTypes.html#boolean">boolean</a></td>
     <td class="fieldname fieldname_epd24">Allokation entspricht der Standard-PCR</td>
     <td class="fieldname fieldname_epd24">Allocation compliant with standard PCR</td>
-    <td class="fieldname fieldname_epd24"></td>
-    <td class="fieldname fieldname_epd24"></td>
-    <td class="fieldname fieldname_epd24"></td>
-    <td class="fieldname fieldname_epd24"></td>
-    <td class="fieldname fieldname_epd24"></td>
+    <td class="fieldname fieldname_epd24"/>
+    <td class="fieldname fieldname_epd24"/>
+    <td class="fieldname fieldname_epd24"/>
+    <td class="fieldname fieldname_epd24"/>
+    <td class="fieldname fieldname_epd24"/>
   </tr>
   <tr>
     <td class="fieldname fieldname_epd24" style="padding-left: 50px;">Abschneidekriterien</td>
@@ -2205,11 +2341,11 @@
     <td class="fieldname fieldname_epd24"><a target="_blank" href="ILCD_Common_DataTypes.html#boolean">boolean</a></td>
     <td class="fieldname fieldname_epd24">Abschneidekriterien entsprechen der Standard-PCR</td>
     <td class="fieldname fieldname_epd24">Cut-off rules compliant with standard PCR</td>
-    <td class="fieldname fieldname_epd24"></td>
-    <td class="fieldname fieldname_epd24"></td>
-    <td class="fieldname fieldname_epd24"></td>
-    <td class="fieldname fieldname_epd24"></td>
-    <td class="fieldname fieldname_epd24"></td>
+    <td class="fieldname fieldname_epd24"/>
+    <td class="fieldname fieldname_epd24"/>
+    <td class="fieldname fieldname_epd24"/>
+    <td class="fieldname fieldname_epd24"/>
+    <td class="fieldname fieldname_epd24"/>
   </tr>
   <tr>
     <td class="fieldname fieldname_epd24" style="padding-left: 50px;">Vorgelagerte Daten abweichend</td>
@@ -2220,11 +2356,11 @@
     <td class="fieldname fieldname_epd24"><a target="_blank" href="ILCD_Common_DataTypes.html#boolean">boolean</a></td>
     <td class="fieldname fieldname_epd24">Nutzung von vorgelagerten Daten, welche nicht den Allokationsregeln der Kern-PCR entsprechen</td>
     <td class="fieldname fieldname_epd24">Use of upstream data which does not respect the allocation principles of the core PCR</td>
-    <td class="fieldname fieldname_epd24"></td>
-    <td class="fieldname fieldname_epd24"></td>
-    <td class="fieldname fieldname_epd24"></td>
-    <td class="fieldname fieldname_epd24"></td>
-    <td class="fieldname fieldname_epd24"></td>
+    <td class="fieldname fieldname_epd24"/>
+    <td class="fieldname fieldname_epd24"/>
+    <td class="fieldname fieldname_epd24"/>
+    <td class="fieldname fieldname_epd24"/>
+    <td class="fieldname fieldname_epd24"/>
   </tr>
   <tr>
     <td class="fieldname fieldname_epd24" style="padding-left: 40px;">Variabilität</td>
@@ -2232,16 +2368,16 @@
     <td class="fieldname fieldname_epd24" style="padding-left: 40px;">epd24:variability</td>
     <td class="fieldname fieldname_epd24">o</td>
     <td class="fieldname fieldname_epd24">[0,1]</td>
-    <td class="fieldname fieldname_epd24"></td>
+    <td class="fieldname fieldname_epd24"/>
     <td class="fieldname fieldname_epd24">Angaben zur Spanne/Variabilität der LCIA-Resultate, bspw. falls es sich bei den Resultate um Mittel über verschiedene Produkte oder Produktionsstätten handelt.
     </td>
     <td class="fieldname fieldname_epd24">Information on the range/variability of the LCIA results, e.g. if the results are averages across different products or production sites.
     </td>
-    <td class="fieldname fieldname_epd24"></td>
-    <td class="fieldname fieldname_epd24"></td>
-    <td class="fieldname fieldname_epd24"></td>
-    <td class="fieldname fieldname_epd24"></td>
-    <td class="fieldname fieldname_epd24"></td>
+    <td class="fieldname fieldname_epd24"/>
+    <td class="fieldname fieldname_epd24"/>
+    <td class="fieldname fieldname_epd24"/>
+    <td class="fieldname fieldname_epd24"/>
+    <td class="fieldname fieldname_epd24"/>
   </tr>
   <tr>
     <td class="fieldname fieldname_epd24" style="padding-left: 50px;">Herstellervariabilität</td>
@@ -2249,14 +2385,14 @@
     <td class="fieldname fieldname_epd24" style="padding-left: 50px;">epd24:manufacturerVariability</td>
     <td class="fieldname fieldname_epd24">m</td>
     <td class="fieldname fieldname_epd24">[1]</td>
-    <td class="fieldname fieldname_epd24"></td>
+    <td class="fieldname fieldname_epd24"/>
     <td class="fieldname fieldname_epd24">Variabilität bzgl. verschiedener Hersteller/Produktionssttätten</td>
     <td class="fieldname fieldname_epd24">The varibility across manufacturers/sites</td>
-    <td class="fieldname fieldname_epd24"></td>
-    <td class="fieldname fieldname_epd24"></td>
-    <td class="fieldname fieldname_epd24"></td>
-    <td class="fieldname fieldname_epd24"></td>
-    <td class="fieldname fieldname_epd24"></td>
+    <td class="fieldname fieldname_epd24"/>
+    <td class="fieldname fieldname_epd24"/>
+    <td class="fieldname fieldname_epd24"/>
+    <td class="fieldname fieldname_epd24"/>
+    <td class="fieldname fieldname_epd24"/>
   </tr>
   <tr>
     <td class="fieldname fieldname_epd24" style="padding-left: 60px;">Art der Variabilität</td>
@@ -2271,11 +2407,11 @@
     </td>
     <td class="fieldname fieldname_epd24">Angaben zur genauen Art der Variabilität</td>
     <td class="fieldname fieldname_epd24">Definition of the type of variability</td>
-    <td class="fieldname fieldname_epd24"></td>
-    <td class="fieldname fieldname_epd24"></td>
-    <td class="fieldname fieldname_epd24"></td>
-    <td class="fieldname fieldname_epd24"></td>
-    <td class="fieldname fieldname_epd24"></td>
+    <td class="fieldname fieldname_epd24"/>
+    <td class="fieldname fieldname_epd24"/>
+    <td class="fieldname fieldname_epd24"/>
+    <td class="fieldname fieldname_epd24"/>
+    <td class="fieldname fieldname_epd24"/>
   </tr>
   <tr>
     <td class="fieldname fieldname_epd24" style="padding-left: 50px;">Produktvariabilität</td>
@@ -2283,14 +2419,14 @@
     <td class="fieldname fieldname_epd24" style="padding-left: 50px;">epd24:productVariability</td>
     <td class="fieldname fieldname_epd24">m</td>
     <td class="fieldname fieldname_epd24">[1]</td>
-    <td class="fieldname fieldname_epd24"></td>
+    <td class="fieldname fieldname_epd24"/>
     <td class="fieldname fieldname_epd24">Variabilität bzgl. verschiedener Produkte/Produkttypen</td>
-    <td class="fieldname fieldname_epd24"></td>
-    <td class="fieldname fieldname_epd24"></td>
-    <td class="fieldname fieldname_epd24"></td>
-    <td class="fieldname fieldname_epd24"></td>
-    <td class="fieldname fieldname_epd24"></td>
-    <td class="fieldname fieldname_epd24"></td>
+    <td class="fieldname fieldname_epd24"/>
+    <td class="fieldname fieldname_epd24"/>
+    <td class="fieldname fieldname_epd24"/>
+    <td class="fieldname fieldname_epd24"/>
+    <td class="fieldname fieldname_epd24"/>
+    <td class="fieldname fieldname_epd24"/>
   </tr>
   <tr>
     <td class="fieldname fieldname_epd24" style="padding-left: 60px;">Art der Variabilität</td>
@@ -2303,11 +2439,11 @@
     </td>
     <td class="fieldname fieldname_epd24">Angabe zur Art der Variabilität</td>
     <td class="fieldname fieldname_epd24">Information on the type of variability</td>
-    <td class="fieldname fieldname_epd24"></td>
-    <td class="fieldname fieldname_epd24"></td>
-    <td class="fieldname fieldname_epd24"></td>
-    <td class="fieldname fieldname_epd24"></td>
-    <td class="fieldname fieldname_epd24"></td>
+    <td class="fieldname fieldname_epd24"/>
+    <td class="fieldname fieldname_epd24"/>
+    <td class="fieldname fieldname_epd24"/>
+    <td class="fieldname fieldname_epd24"/>
+    <td class="fieldname fieldname_epd24"/>
   </tr>
   <tr>
     <td class="fieldname fieldname_epd24" style="padding-left: 60px;">Variation</td>
@@ -2320,11 +2456,11 @@
     </td>
     <td class="fieldname fieldname_epd24">Die Variabilität angegeben in Prozent.</td>
     <td class="fieldname fieldname_epd24">The variability given in percent.</td>
-    <td class="fieldname fieldname_epd24"></td>
-    <td class="fieldname fieldname_epd24"></td>
-    <td class="fieldname fieldname_epd24"></td>
-    <td class="fieldname fieldname_epd24"></td>
-    <td class="fieldname fieldname_epd24"></td>
+    <td class="fieldname fieldname_epd24"/>
+    <td class="fieldname fieldname_epd24"/>
+    <td class="fieldname fieldname_epd24"/>
+    <td class="fieldname fieldname_epd24"/>
+    <td class="fieldname fieldname_epd24"/>
   </tr>
   <tr>
     <td class="fieldname fieldname_epd24" style="padding-left: 50px;">Variabilitätsbeschreibung</td>
@@ -2339,11 +2475,11 @@
     </td>
     <td class="fieldname fieldname_epd24">Additional descriptions, explanations and comments, e.g. on significance and methodology
     </td>
-    <td class="fieldname fieldname_epd24"></td>
-    <td class="fieldname fieldname_epd24"></td>
-    <td class="fieldname fieldname_epd24"></td>
-    <td class="fieldname fieldname_epd24"></td>
-    <td class="fieldname fieldname_epd24"></td>
+    <td class="fieldname fieldname_epd24"/>
+    <td class="fieldname fieldname_epd24"/>
+    <td class="fieldname fieldname_epd24"/>
+    <td class="fieldname fieldname_epd24"/>
+    <td class="fieldname fieldname_epd24"/>
   </tr>
   <tr>
     <td class="subsection" style="padding-left: 20px;font-style: italic;">Datenquellen und Repräsentativität</td>
@@ -2354,15 +2490,15 @@
     </td>
     <td class="subsection">r</td>
     <td class="subsection">[0,1]</td>
-    <td class="subsection"></td>
-    <td class="subsection"></td>
-    <td class="subsection"></td>
+    <td class="subsection"/>
+    <td class="subsection"/>
+    <td class="subsection"/>
     <td class="subsection">Data selection, completeness, and treatment principles and procedures, data sources and market coverage information.
     </td>
     <td class="subsection">1-3-16</td>
-    <td class="subsection"></td>
-    <td class="subsection"></td>
-    <td class="subsection"></td>
+    <td class="subsection"/>
+    <td class="subsection"/>
+    <td class="subsection"/>
   </tr>
   <tr>
     <td class="fieldname fieldname_epd2i" style="padding-left: 30px;">Dokumentation des Datenqualitätsmanagements
@@ -2379,9 +2515,9 @@
     <td class="fieldname fieldname_epd2i">"Source data set"(s) of the source(s) in which the data completeness, selection, combination, treatment, and extrapolations principles' details are described
     </td>
     <td class="fieldname fieldname_epd2i">1-3-16-54</td>
-    <td class="fieldname fieldname_epd2i"></td>
-    <td class="fieldname fieldname_epd2i"></td>
-    <td class="fieldname fieldname_epd2i"></td>
+    <td class="fieldname fieldname_epd2i"/>
+    <td class="fieldname fieldname_epd2i"/>
+    <td class="fieldname fieldname_epd2i"/>
   </tr>
   <tr>
     <td class="fieldname" style="padding-left: 30px;">Datenquellen</td>
@@ -2399,11 +2535,11 @@
     <td class="fieldname">"Source data set"(s) of the source(s) used for deriving/compiling the inventory of this data set e.g. questionnaires, monographies, plant operation protocols, etc. For LCI results and Partly terminated systems the sources for relevant background system data are to be given, too. For parameterised data sets the sources used for the parameterisation / mathematical relations in the section "Mathematical model" are referenced here as well. [Note: If the data set stems from another database or data set publication and is only re-published: identify the origin of a converted data set in "Converted original data set from:" field in section "Data entry by" and its unchanged re-publication in "Unchanged re-publication of:" in the section "Publication and ownership". The data sources used to model a converted or re-published data set are nevertheless to be given here in this field, for transparency reasons.]
     </td>
     <td class="fieldname">1-3-16-55</td>
-    <td class="fieldname"></td>
+    <td class="fieldname"/>
     <td class="fieldname">
       0VfG_WGD1F0P4HN2kIu3nk
     </td>
-    <td class="fieldname"></td>
+    <td class="fieldname"/>
   </tr>
   <tr>
     <td class="fieldname" style="padding-left: 30px;">Anwendungshinweis für Datensatz</td>
@@ -2420,9 +2556,9 @@
     <td class="fieldname">Specific methodological advice for data set users that requires attention. E.g. on inclusion/exclusion of recycling e.g. in material data sets, specific use phase behavior to be modelled, and other methodological advices. See also field "Technological applicability".
     </td>
     <td class="fieldname">1-3-16-62</td>
-    <td class="fieldname"></td>
-    <td class="fieldname"></td>
-    <td class="fieldname"></td>
+    <td class="fieldname"/>
+    <td class="fieldname"/>
+    <td class="fieldname"/>
   </tr>
   <tr>
     <td class="fieldname" style="padding-left: 30px;">Anderer Inhalt</td>
@@ -2430,14 +2566,14 @@
     <td class="fieldname" style="padding-left: 30px;">other</td>
     <td class="fieldname">o</td>
     <td class="fieldname">[0,1]</td>
-    <td class="fieldname"></td>
-    <td class="fieldname"></td>
-    <td class="fieldname"></td>
+    <td class="fieldname"/>
+    <td class="fieldname"/>
+    <td class="fieldname"/>
     <td class="fieldname">May contain arbitrary content.</td>
     <td class="fieldname">0</td>
-    <td class="fieldname"></td>
-    <td class="fieldname"></td>
-    <td class="fieldname"></td>
+    <td class="fieldname"/>
+    <td class="fieldname"/>
+    <td class="fieldname"/>
   </tr>
   <tr>
     <td class="fieldname fieldname_epd24" style="padding-left: 40px;">Liste der Hersteller</td>
@@ -2445,14 +2581,14 @@
     <td class="fieldname fieldname_epd24" style="padding-left: 40px;">epd24:manufacturers</td>
     <td class="fieldname fieldname_epd24">r</td>
     <td class="fieldname fieldname_epd24">[0,1]</td>
-    <td class="fieldname fieldname_epd24"></td>
+    <td class="fieldname fieldname_epd24"/>
     <td class="fieldname fieldname_epd24">Liste der Hersteller des/der beschriebenen Produkte(s).</td>
     <td class="fieldname fieldname_epd24">List of manufacturers producing the modelled product(s).</td>
-    <td class="fieldname fieldname_epd24"></td>
-    <td class="fieldname fieldname_epd24"></td>
-    <td class="fieldname fieldname_epd24"></td>
-    <td class="fieldname fieldname_epd24"></td>
-    <td class="fieldname fieldname_epd24"></td>
+    <td class="fieldname fieldname_epd24"/>
+    <td class="fieldname fieldname_epd24"/>
+    <td class="fieldname fieldname_epd24"/>
+    <td class="fieldname fieldname_epd24"/>
+    <td class="fieldname fieldname_epd24"/>
   </tr>
   <tr>
     <td class="fieldname fieldname_epd24" style="padding-left: 50px;">Hersteller</td>
@@ -2460,14 +2596,14 @@
     <td class="fieldname fieldname_epd24" style="padding-left: 50px;">epd24:manufacturer</td>
     <td class="fieldname fieldname_epd24">r</td>
     <td class="fieldname fieldname_epd24">[0,n]</td>
-    <td class="fieldname fieldname_epd24"></td>
+    <td class="fieldname fieldname_epd24"/>
     <td class="fieldname fieldname_epd24">Hersteller des/der beschriebenen Produkte(s)</td>
     <td class="fieldname fieldname_epd24">Manufacturer of the described product(s)</td>
-    <td class="fieldname fieldname_epd24"></td>
-    <td class="fieldname fieldname_epd24"></td>
-    <td class="fieldname fieldname_epd24"></td>
-    <td class="fieldname fieldname_epd24"></td>
-    <td class="fieldname fieldname_epd24"></td>
+    <td class="fieldname fieldname_epd24"/>
+    <td class="fieldname fieldname_epd24"/>
+    <td class="fieldname fieldname_epd24"/>
+    <td class="fieldname fieldname_epd24"/>
+    <td class="fieldname fieldname_epd24"/>
   </tr>
   <tr>
     <td class="fieldname fieldname_epd24" style="padding-left: 60px;">Kontaktdatenreferenz des Herstellers</td>
@@ -2481,11 +2617,11 @@
     </td>
     <td class="fieldname fieldname_epd24">Referenz auf den Kontaktdatensatz des Herstellers</td>
     <td class="fieldname fieldname_epd24">Reference to the contact dataset of the manufacturer</td>
-    <td class="fieldname fieldname_epd24"></td>
-    <td class="fieldname fieldname_epd24"></td>
-    <td class="fieldname fieldname_epd24"></td>
-    <td class="fieldname fieldname_epd24"></td>
-    <td class="fieldname fieldname_epd24"></td>
+    <td class="fieldname fieldname_epd24"/>
+    <td class="fieldname fieldname_epd24"/>
+    <td class="fieldname fieldname_epd24"/>
+    <td class="fieldname fieldname_epd24"/>
+    <td class="fieldname fieldname_epd24"/>
   </tr>
   <tr>
     <td class="fieldname fieldname_epd24" style="padding-left: 60px;">Produktionsstätten</td>
@@ -2493,16 +2629,16 @@
     <td class="fieldname fieldname_epd24" style="padding-left: 60px;">epd24:sites</td>
     <td class="fieldname fieldname_epd24">o</td>
     <td class="fieldname fieldname_epd24">[0,1]</td>
-    <td class="fieldname fieldname_epd24"></td>
+    <td class="fieldname fieldname_epd24"/>
     <td class="fieldname fieldname_epd24">Liste der Produktionsstätten dieses Herstellers für das/die beschriebene(n) Produkt(e)
     </td>
     <td class="fieldname fieldname_epd24">List of the manufacturing sites of this manufacturer for the described product(s)
     </td>
-    <td class="fieldname fieldname_epd24"></td>
-    <td class="fieldname fieldname_epd24"></td>
-    <td class="fieldname fieldname_epd24"></td>
-    <td class="fieldname fieldname_epd24"></td>
-    <td class="fieldname fieldname_epd24"></td>
+    <td class="fieldname fieldname_epd24"/>
+    <td class="fieldname fieldname_epd24"/>
+    <td class="fieldname fieldname_epd24"/>
+    <td class="fieldname fieldname_epd24"/>
+    <td class="fieldname fieldname_epd24"/>
   </tr>
   <tr>
     <td class="fieldname fieldname_epd24" style="padding-left: 70px;">Produktionsstätte</td>
@@ -2510,15 +2646,15 @@
     <td class="fieldname fieldname_epd24" style="padding-left: 70px;">epd24:site</td>
     <td class="fieldname fieldname_epd24">r</td>
     <td class="fieldname fieldname_epd24">[0,n]</td>
-    <td class="fieldname fieldname_epd24"></td>
+    <td class="fieldname fieldname_epd24"/>
     <td class="fieldname fieldname_epd24">Produktionsstätte dieses Herstellers für das/die beschriebene(n) Produkt(e)
     </td>
     <td class="fieldname fieldname_epd24">Manufacturing site of this manufacturer for the described product(s)</td>
-    <td class="fieldname fieldname_epd24"></td>
-    <td class="fieldname fieldname_epd24"></td>
-    <td class="fieldname fieldname_epd24"></td>
-    <td class="fieldname fieldname_epd24"></td>
-    <td class="fieldname fieldname_epd24"></td>
+    <td class="fieldname fieldname_epd24"/>
+    <td class="fieldname fieldname_epd24"/>
+    <td class="fieldname fieldname_epd24"/>
+    <td class="fieldname fieldname_epd24"/>
+    <td class="fieldname fieldname_epd24"/>
   </tr>
   <tr>
     <td class="fieldname fieldname_epd24" style="padding-left: 80px;">Name</td>
@@ -2529,11 +2665,11 @@
     <td class="fieldname fieldname_epd24">xs:string</td>
     <td class="fieldname fieldname_epd24">Name der Produktionsstätte</td>
     <td class="fieldname fieldname_epd24">Name of the manufacturing site</td>
-    <td class="fieldname fieldname_epd24"></td>
-    <td class="fieldname fieldname_epd24"></td>
-    <td class="fieldname fieldname_epd24"></td>
-    <td class="fieldname fieldname_epd24"></td>
-    <td class="fieldname fieldname_epd24"></td>
+    <td class="fieldname fieldname_epd24"/>
+    <td class="fieldname fieldname_epd24"/>
+    <td class="fieldname fieldname_epd24"/>
+    <td class="fieldname fieldname_epd24"/>
+    <td class="fieldname fieldname_epd24"/>
   </tr>
   <tr>
     <td class="fieldname fieldname_epd24" style="padding-left: 80px;">Kennung der Produktionsstätte</td>
@@ -2544,11 +2680,11 @@
     <td class="fieldname fieldname_epd24">xs:string</td>
     <td class="fieldname fieldname_epd24">Kennung der Produktionsstätte</td>
     <td class="fieldname fieldname_epd24">Facility identifier of the manufacturing site</td>
-    <td class="fieldname fieldname_epd24"></td>
-    <td class="fieldname fieldname_epd24"></td>
-    <td class="fieldname fieldname_epd24"></td>
-    <td class="fieldname fieldname_epd24"></td>
-    <td class="fieldname fieldname_epd24"></td>
+    <td class="fieldname fieldname_epd24"/>
+    <td class="fieldname fieldname_epd24"/>
+    <td class="fieldname fieldname_epd24"/>
+    <td class="fieldname fieldname_epd24"/>
+    <td class="fieldname fieldname_epd24"/>
   </tr>
   <tr>
     <td class="fieldname fieldname_epd24" style="padding-left: 80px;">OLC Standortkennung</td>
@@ -2564,11 +2700,11 @@
     <td class="fieldname fieldname_epd24">Code to identify the manufacturing site's location w.r.t the
       <a target="_blank" href="https://maps.google.com/pluscodes/">pluscode/open location code</a> system.
     </td>
-    <td class="fieldname fieldname_epd24"></td>
-    <td class="fieldname fieldname_epd24"></td>
-    <td class="fieldname fieldname_epd24"></td>
-    <td class="fieldname fieldname_epd24"></td>
-    <td class="fieldname fieldname_epd24"></td>
+    <td class="fieldname fieldname_epd24"/>
+    <td class="fieldname fieldname_epd24"/>
+    <td class="fieldname fieldname_epd24"/>
+    <td class="fieldname fieldname_epd24"/>
+    <td class="fieldname fieldname_epd24"/>
   </tr>
   <tr>
     <td class="fieldname fieldname_epd24" style="padding-left: 80px;">Länderkennung</td>
@@ -2583,11 +2719,11 @@
     <td class="fieldname fieldname_epd24">2-letter code that identifies the country or region of the manufacturing site (cf.
       <a target="_blank" href="https://www.iso.org/iso-3166-country-codes.html">ISO 3166 alpha-2</a>)
     </td>
-    <td class="fieldname fieldname_epd24"></td>
-    <td class="fieldname fieldname_epd24"></td>
-    <td class="fieldname fieldname_epd24"></td>
-    <td class="fieldname fieldname_epd24"></td>
-    <td class="fieldname fieldname_epd24"></td>
+    <td class="fieldname fieldname_epd24"/>
+    <td class="fieldname fieldname_epd24"/>
+    <td class="fieldname fieldname_epd24"/>
+    <td class="fieldname fieldname_epd24"/>
+    <td class="fieldname fieldname_epd24"/>
   </tr>
   <tr>
     <td class="fieldname fieldname_epd24" style="padding-left: 80px;">Anschrift</td>
@@ -2598,11 +2734,11 @@
     <td class="fieldname fieldname_epd24">xs:string</td>
     <td class="fieldname fieldname_epd24">Postanschrift der Produktionsstätte</td>
     <td class="fieldname fieldname_epd24">Street adress of the manufactoring site</td>
-    <td class="fieldname fieldname_epd24"></td>
-    <td class="fieldname fieldname_epd24"></td>
-    <td class="fieldname fieldname_epd24"></td>
-    <td class="fieldname fieldname_epd24"></td>
-    <td class="fieldname fieldname_epd24"></td>
+    <td class="fieldname fieldname_epd24"/>
+    <td class="fieldname fieldname_epd24"/>
+    <td class="fieldname fieldname_epd24"/>
+    <td class="fieldname fieldname_epd24"/>
+    <td class="fieldname fieldname_epd24"/>
   </tr>
   <tr>
     <td class="fieldname fieldname_epd2" style="padding-left: 40px;">Original-EPD</td>
@@ -2617,13 +2753,13 @@
     </td>
     <td class="fieldname fieldname_epd2">Here, one or mutliple "Source" data sets representing the EPD document can be attached.
     </td>
-    <td class="fieldname fieldname_epd2"></td>
-    <td class="fieldname fieldname_epd2"></td>
-    <td class="fieldname fieldname_epd2"></td>
+    <td class="fieldname fieldname_epd2"/>
+    <td class="fieldname fieldname_epd2"/>
+    <td class="fieldname fieldname_epd2"/>
     <td class="fieldname fieldname_epd2">
       3n5P8a1SLD18_Oiz0PDiiu
     </td>
-    <td class="fieldname fieldname_epd2"></td>
+    <td class="fieldname fieldname_epd2"/>
   </tr>
   <tr>
     <td class="subsection" style="padding-left: 20px;font-style: italic;">Validierung</td>
@@ -2631,14 +2767,14 @@
     <td class="subsection" style="padding-left: 20px;font-style: italic;">validation</td>
     <td class="subsection">r</td>
     <td class="subsection">[0,1]</td>
-    <td class="subsection"></td>
+    <td class="subsection"/>
     <td class="subsection">Validierungsinformationen</td>
-    <td class="subsection"></td>
+    <td class="subsection"/>
     <td class="subsection">Review / validation information on data set.</td>
     <td class="subsection">1-3-20</td>
-    <td class="subsection"></td>
-    <td class="subsection"></td>
-    <td class="subsection"></td>
+    <td class="subsection"/>
+    <td class="subsection"/>
+    <td class="subsection"/>
   </tr>
   <tr>
     <td class="fieldname" style="padding-left: 30px;font-style: italic;">Review</td>
@@ -2646,21 +2782,21 @@
     <td class="fieldname" style="padding-left: 30px;font-style: italic;">review</td>
     <td class="fieldname">r</td>
     <td class="fieldname">[0,n]</td>
-    <td class="fieldname"></td>
+    <td class="fieldname"/>
     <td class="fieldname">Reviewinformationen</td>
-    <td class="fieldname"></td>
+    <td class="fieldname"/>
     <td class="fieldname">Review information on data set.</td>
     <td class="fieldname">1-3-21</td>
-    <td class="fieldname"></td>
-    <td class="fieldname"></td>
-    <td class="fieldname"></td>
+    <td class="fieldname"/>
+    <td class="fieldname"/>
+    <td class="fieldname"/>
   </tr>
   <tr>
     <td class="fieldname" style="padding-left: 40px;">Art der Prüfung</td>
     <td class="fieldname" style="padding-left: 40px;">Type of review</td>
     <td class="fieldname" style="padding-left: 40px;">@type</td>
     <td class="fieldname">r</td>
-    <td class="fieldname"></td>
+    <td class="fieldname"/>
     <td class="fieldname">
       <a target="_blank" href="ILCD_Common_EnumerationValues.html#TypeOfReviewValues">TypeOfReviewValues</a><br/><span class="data_enum"><a class="info" href="javascript:void(0);">Dependent internal review<span>Reviewer(s)/verifier(s) have been involved in
                         collecting, modelling, or entering the data set information or inventory, have commissioned or financed the work, or represent the
@@ -2688,11 +2824,11 @@
     <td class="fieldname">Type of review that has been performed regarding independency and type of review process.
     </td>
     <td class="fieldname">1-3-20-81</td>
-    <td class="fieldname"></td>
+    <td class="fieldname"/>
     <td class="fieldname">
       1xYmWRQzX2P9KClp9DAa1E
     </td>
-    <td class="fieldname"></td>
+    <td class="fieldname"/>
   </tr>
   <tr>
     <td class="fieldname" style="padding-left: 40px;">Prüfungsdetails</td>
@@ -2709,9 +2845,9 @@
     <td class="fieldname">Summary of the review. All the following items should be explicitly addressed: Representativeness, completeness, and precision of Inputs and Outputs for the process in its documented location, technology and time i.e. both completeness of technical model (product, waste, and elementary flows) and completeness of coverage of the relevant problem fields (environmental, human health, resource use) for this specific good, service, or process. Plausibility of data. Correctness and appropriateness of the data set documentation. Appropriateness of system boundaries, cut-off rules, LCI modelling choices such as e.g. allocation, consistency of included processes and of LCI methodology. If the data set comprises pre-calculated LCIA results, the correspondence of the Input and Output elementary flows (including their geographical validity) with the applied LCIA method(s) should be addressed by the reviewer. An overall quality statement on the data set may be included here.
     </td>
     <td class="fieldname">1-3-20-84</td>
-    <td class="fieldname"></td>
-    <td class="fieldname"></td>
-    <td class="fieldname"></td>
+    <td class="fieldname"/>
+    <td class="fieldname"/>
+    <td class="fieldname"/>
   </tr>
   <tr>
     <td class="fieldname" style="padding-left: 40px;">Name von Prüfer und Prüfinstitution</td>
@@ -2727,7 +2863,7 @@
     <td class="fieldname">"Contact data set" of reviewer. The full name of reviewer(s) and institution(s) as well as a contact address and/or email should be provided in that contact data set.
     </td>
     <td class="fieldname">1-3-20-87</td>
-    <td class="fieldname"></td>
+    <td class="fieldname"/>
     <td class="fieldname">
       1VuTNpq795DfPt7dqfztsB (verifier) 3GsHjd29n0RANH_H9Y6vct (verifier's organisation)
     </td>
@@ -2748,9 +2884,9 @@
     <td class="fieldname">"Source data set" of the complete review report if of general interest.</td>
     <td class="fieldname">"Source data set" of the complete review report.</td>
     <td class="fieldname">1-3-20-89</td>
-    <td class="fieldname"></td>
-    <td class="fieldname"></td>
-    <td class="fieldname"></td>
+    <td class="fieldname"/>
+    <td class="fieldname"/>
+    <td class="fieldname"/>
   </tr>
   <tr>
     <td class="fieldname" style="padding-left: 30px;">Anderer Inhalt</td>
@@ -2758,14 +2894,14 @@
     <td class="fieldname" style="padding-left: 30px;">other</td>
     <td class="fieldname">o</td>
     <td class="fieldname">[0,1]</td>
-    <td class="fieldname"></td>
-    <td class="fieldname"></td>
-    <td class="fieldname"></td>
+    <td class="fieldname"/>
+    <td class="fieldname"/>
+    <td class="fieldname"/>
     <td class="fieldname">May contain arbitrary content.</td>
     <td class="fieldname">0</td>
-    <td class="fieldname"></td>
-    <td class="fieldname"></td>
-    <td class="fieldname"></td>
+    <td class="fieldname"/>
+    <td class="fieldname"/>
+    <td class="fieldname"/>
   </tr>
   <tr>
     <td class="subsection" style="padding-left: 20px;font-style: italic;">Konformitätsdeklarationen</td>
@@ -2773,7 +2909,7 @@
     <td class="subsection" style="padding-left: 20px;font-style: italic;">complianceDeclarations</td>
     <td class="subsection">r</td>
     <td class="subsection">[0,1]</td>
-    <td class="subsection"></td>
+    <td class="subsection"/>
     <td class="subsection">Hier können Normen und/oder Compliance-Systeme angeführt werden, mit denen der Datensatz konform ist. In der Regel wird für EN 15804-konforme EPDs hier ein Verweis auf einen "Source"-Datensatz der EN 15804 angehängt werden
     </td>
     <td class="subsection">Standard(s) and/or compliance that are declared to be met by the data set. For EN 15804 compliant datasets, usually a reference to the "Source" dataset of the EN 15804 will be given
@@ -2781,9 +2917,9 @@
     <td class="subsection">Statements on compliance of several data set aspects with compliance requirements as defined by the referenced compliance system (e.g. an EPD scheme, handbook of a national or international data network such as the ILCD, etc.).
     </td>
     <td class="subsection">1-3-22</td>
-    <td class="subsection"></td>
-    <td class="subsection"></td>
-    <td class="subsection"></td>
+    <td class="subsection"/>
+    <td class="subsection"/>
+    <td class="subsection"/>
   </tr>
   <tr>
     <td class="fieldname" style="padding-left: 30px;font-style: italic;">Konformität</td>
@@ -2791,14 +2927,14 @@
     <td class="fieldname" style="padding-left: 30px;font-style: italic;">compliance</td>
     <td class="fieldname">r</td>
     <td class="fieldname">[1,n]</td>
-    <td class="fieldname"></td>
+    <td class="fieldname"/>
     <td class="fieldname">eine Konformitätsdeklaration</td>
     <td class="fieldname">~</td>
     <td class="fieldname">one compliance declaration</td>
     <td class="fieldname">1-3-22-1</td>
-    <td class="fieldname"></td>
-    <td class="fieldname"></td>
-    <td class="fieldname"></td>
+    <td class="fieldname"/>
+    <td class="fieldname"/>
+    <td class="fieldname"/>
   </tr>
   <tr>
     <td class="fieldname" style="padding-left: 40px;">Name des Konformitätssystems</td>
@@ -2814,9 +2950,9 @@
     <td class="fieldname">"Source data set" of the "Compliance system" that is declared to be met by the data set.
     </td>
     <td class="fieldname">1-3-22-90</td>
-    <td class="fieldname"></td>
-    <td class="fieldname"></td>
-    <td class="fieldname"></td>
+    <td class="fieldname"/>
+    <td class="fieldname"/>
+    <td class="fieldname"/>
   </tr>
   <tr>
     <td class="fieldname" style="padding-left: 20px;">Anderer Inhalt</td>
@@ -2824,14 +2960,14 @@
     <td class="fieldname" style="padding-left: 20px;">other</td>
     <td class="fieldname">o</td>
     <td class="fieldname">[0,1]</td>
-    <td class="fieldname"></td>
-    <td class="fieldname"></td>
-    <td class="fieldname"></td>
+    <td class="fieldname"/>
+    <td class="fieldname"/>
+    <td class="fieldname"/>
     <td class="fieldname">May contain arbitrary content.</td>
     <td class="fieldname">0</td>
-    <td class="fieldname"></td>
-    <td class="fieldname"></td>
-    <td class="fieldname"></td>
+    <td class="fieldname"/>
+    <td class="fieldname"/>
+    <td class="fieldname"/>
   </tr>
   <tr>
     <td class="section" style="padding-left: 10px;font-style: italic;">Administrative Informationen</td>
@@ -2839,14 +2975,14 @@
     <td class="section" style="padding-left: 10px;font-style: italic;">administrativeInformation</td>
     <td class="section">r</td>
     <td class="section">[0,1]</td>
-    <td class="section"></td>
+    <td class="section"/>
     <td class="section">Informationen zu Datensatzmanagement und -administration</td>
     <td class="section">~</td>
     <td class="section">Information on data set management and administration.</td>
     <td class="section">1-5</td>
-    <td class="section"></td>
-    <td class="section"></td>
-    <td class="section"></td>
+    <td class="section"/>
+    <td class="section"/>
+    <td class="section"/>
   </tr>
   <tr>
     <td class="subsection fieldname_epd2i" style="padding-left: 20px;font-style: italic;">Auftraggeber und Ziel</td>
@@ -2854,14 +2990,14 @@
     <td class="subsection fieldname_epd2i" style="padding-left: 20px;font-style: italic;">commissionerAndGoal</td>
     <td class="subsection fieldname_epd2i">r</td>
     <td class="subsection fieldname_epd2i">[0,1]</td>
-    <td class="subsection fieldname_epd2i"></td>
-    <td class="subsection fieldname_epd2i"></td>
-    <td class="subsection fieldname_epd2i"></td>
+    <td class="subsection fieldname_epd2i"/>
+    <td class="subsection fieldname_epd2i"/>
+    <td class="subsection fieldname_epd2i"/>
     <td class="subsection fieldname_epd2i">Basic information about goal and scope of the data set.</td>
     <td class="subsection fieldname_epd2i">1-5-24</td>
-    <td class="subsection fieldname_epd2i"></td>
-    <td class="subsection fieldname_epd2i"></td>
-    <td class="subsection fieldname_epd2i"></td>
+    <td class="subsection fieldname_epd2i"/>
+    <td class="subsection fieldname_epd2i"/>
+    <td class="subsection fieldname_epd2i"/>
   </tr>
   <tr>
     <td class="fieldname fieldname_epd2i" style="padding-left: 30px;">Auftraggeber</td>
@@ -2877,9 +3013,9 @@
     <td class="fieldname fieldname_epd2i">"Contact data set" of the commissioner / financing party of the data collection / compilation and of the data set modelling. For groups of commissioners, each single organisation should be named. For data set updates and for direct use of data from formerly commissioned studies, also the original commissioner should be named.
     </td>
     <td class="fieldname fieldname_epd2i">1-5-24-96</td>
-    <td class="fieldname fieldname_epd2i"></td>
-    <td class="fieldname fieldname_epd2i"></td>
-    <td class="fieldname fieldname_epd2i"></td>
+    <td class="fieldname fieldname_epd2i"/>
+    <td class="fieldname fieldname_epd2i"/>
+    <td class="fieldname fieldname_epd2i"/>
   </tr>
   <tr>
     <td class="fieldname fieldname_epd2i" style="padding-left: 30px;">Projekt</td>
@@ -2895,11 +3031,11 @@
     <td class="fieldname fieldname_epd2i">Project within which the data set was modelled in its present version. [Note: If the project was published e.g. as a report, this can be referenced in the "Publication of data set in:" field in the "Publication and ownership" sub-section.
     </td>
     <td class="fieldname fieldname_epd2i">1-5-24-97</td>
-    <td class="fieldname fieldname_epd2i"></td>
+    <td class="fieldname fieldname_epd2i"/>
     <td class="fieldname fieldname_epd2i">
       0HDajCo4z5ceHjuLiivf0A
     </td>
-    <td class="fieldname fieldname_epd2i"></td>
+    <td class="fieldname fieldname_epd2i"/>
   </tr>
   <tr>
     <td class="fieldname fieldname_epd2i" style="padding-left: 30px;">Anwendungen</td>
@@ -2915,9 +3051,9 @@
     <td class="fieldname fieldname_epd2i">Documentation of the intended application(s) of data collection and data set modelling. This indicates / includes information on the level of detail, the specifidity, and the quality ambition in the effort.
     </td>
     <td class="fieldname fieldname_epd2i">1-5-24-98</td>
-    <td class="fieldname fieldname_epd2i"></td>
-    <td class="fieldname fieldname_epd2i"></td>
-    <td class="fieldname fieldname_epd2i"></td>
+    <td class="fieldname fieldname_epd2i"/>
+    <td class="fieldname fieldname_epd2i"/>
+    <td class="fieldname fieldname_epd2i"/>
   </tr>
   <tr>
     <td class="fieldname fieldname_epd2i" style="padding-left: 30px;">Anderer Inhalt</td>
@@ -2925,14 +3061,14 @@
     <td class="fieldname fieldname_epd2i" style="padding-left: 30px;">other</td>
     <td class="fieldname fieldname_epd2i">o</td>
     <td class="fieldname fieldname_epd2i">[0,1]</td>
-    <td class="fieldname fieldname_epd2i"></td>
-    <td class="fieldname fieldname_epd2i"></td>
-    <td class="fieldname fieldname_epd2i"></td>
+    <td class="fieldname fieldname_epd2i"/>
+    <td class="fieldname fieldname_epd2i"/>
+    <td class="fieldname fieldname_epd2i"/>
     <td class="fieldname fieldname_epd2i">May contain arbitrary content.</td>
     <td class="fieldname fieldname_epd2i">0</td>
-    <td class="fieldname fieldname_epd2i"></td>
-    <td class="fieldname fieldname_epd2i"></td>
-    <td class="fieldname fieldname_epd2i"></td>
+    <td class="fieldname fieldname_epd2i"/>
+    <td class="fieldname fieldname_epd2i"/>
+    <td class="fieldname fieldname_epd2i"/>
   </tr>
   <tr>
     <td class="subsection fieldname_epd2i" style="padding-left: 20px;font-style: italic;">Generierer/Modellierer des Datensatzes
@@ -2942,15 +3078,15 @@
     <td class="subsection fieldname_epd2i" style="padding-left: 20px;font-style: italic;">dataGenerator</td>
     <td class="subsection fieldname_epd2i">r</td>
     <td class="subsection fieldname_epd2i">[0,1]</td>
-    <td class="subsection fieldname_epd2i"></td>
-    <td class="subsection fieldname_epd2i"></td>
-    <td class="subsection fieldname_epd2i"></td>
+    <td class="subsection fieldname_epd2i"/>
+    <td class="subsection fieldname_epd2i"/>
+    <td class="subsection fieldname_epd2i"/>
     <td class="subsection fieldname_epd2i">Expert(s), that compiled and modelled the data set as well as internal administrative information linked to the data generation activity.
     </td>
     <td class="subsection fieldname_epd2i">1-5-26</td>
-    <td class="fieldname fieldname_epd2i"></td>
-    <td class="fieldname fieldname_epd2i"></td>
-    <td class="fieldname fieldname_epd2i"></td>
+    <td class="fieldname fieldname_epd2i"/>
+    <td class="fieldname fieldname_epd2i"/>
+    <td class="fieldname fieldname_epd2i"/>
   </tr>
   <tr>
     <td class="fieldname fieldname_epd2i" style="padding-left: 30px;">Generierer/Modellierer des Datensatzes</td>
@@ -2968,9 +3104,9 @@
     <td class="fieldname fieldname_epd2i">"Contact data set" of the person(s), working group(s), organisation(s) or database network, that generated the data set, i.e. being responsible for its correctness regarding methods, inventory, and documentative information.
     </td>
     <td class="fieldname fieldname_epd2i">1-5-26-99</td>
-    <td class="fieldname fieldname_epd2i"></td>
-    <td class="fieldname fieldname_epd2i"></td>
-    <td class="fieldname fieldname_epd2i"></td>
+    <td class="fieldname fieldname_epd2i"/>
+    <td class="fieldname fieldname_epd2i"/>
+    <td class="fieldname fieldname_epd2i"/>
   </tr>
   <tr>
     <td class="fieldname fieldname_epd2i" style="padding-left: 30px;">Anderer Inhalt</td>
@@ -2978,14 +3114,14 @@
     <td class="fieldname fieldname_epd2i" style="padding-left: 30px;">other</td>
     <td class="fieldname fieldname_epd2i">o</td>
     <td class="fieldname fieldname_epd2i">[0,1]</td>
-    <td class="fieldname fieldname_epd2i"></td>
-    <td class="fieldname fieldname_epd2i"></td>
-    <td class="fieldname fieldname_epd2i"></td>
+    <td class="fieldname fieldname_epd2i"/>
+    <td class="fieldname fieldname_epd2i"/>
+    <td class="fieldname fieldname_epd2i"/>
     <td class="fieldname fieldname_epd2i">May contain arbitrary content.</td>
     <td class="fieldname fieldname_epd2i">0</td>
-    <td class="fieldname fieldname_epd2i"></td>
-    <td class="fieldname fieldname_epd2i"></td>
-    <td class="fieldname fieldname_epd2i"></td>
+    <td class="fieldname fieldname_epd2i"/>
+    <td class="fieldname fieldname_epd2i"/>
+    <td class="fieldname fieldname_epd2i"/>
   </tr>
   <tr>
     <td class="subsection" style="padding-left: 20px;font-style: italic;">Dateneingabe</td>
@@ -2993,15 +3129,15 @@
     <td class="subsection" style="padding-left: 20px;font-style: italic;">dataEntryBy</td>
     <td class="subsection">r</td>
     <td class="subsection">[0,1]</td>
-    <td class="subsection"></td>
+    <td class="subsection"/>
     <td class="subsection">Informationen zur Dateneingabe</td>
-    <td class="subsection"></td>
+    <td class="subsection"/>
     <td class="subsection">Staff or entity, that documented the generated data set, entering the information into the database; plus administrative information linked to the data entry activity.
     </td>
     <td class="subsection">1-5-28</td>
-    <td class="subsection"></td>
-    <td class="subsection"></td>
-    <td class="subsection"></td>
+    <td class="subsection"/>
+    <td class="subsection"/>
+    <td class="subsection"/>
   </tr>
   <tr>
     <td class="fieldname" style="padding-left: 30px;">Zeitstempel (zuletzt gespeichert)</td>
@@ -3016,9 +3152,9 @@
     <td class="fieldname">Date and time stamp of data set generation, typically an automated entry ("last saved").
     </td>
     <td class="fieldname">1-5-28-104</td>
-    <td class="fieldname"></td>
-    <td class="fieldname"></td>
-    <td class="fieldname"></td>
+    <td class="fieldname"/>
+    <td class="fieldname"/>
+    <td class="fieldname"/>
   </tr>
   <tr>
     <td class="fieldname" style="padding-left: 30px;">Datenformat</td>
@@ -3030,17 +3166,17 @@
       <a target="_blank" href="ILCD_Common_DataTypes.html#GlobalReferenceType">GlobalReferenceType</a>
     </td>
     <td class="fieldname">"Source"-Datensatz der verwendeten ILCD-Formatversion
-      <p></p>EPD-Datensätze müssen hier zusätzlich auf den "Source"-Datensatz der EPD-Formaterweiterungen verweisen
+      <p/>EPD-Datensätze müssen hier zusätzlich auf den "Source"-Datensatz der EPD-Formaterweiterungen verweisen
     </td>
     <td class="fieldname">~
-      <p></p>EPD datasets must reference the "Source" dataset of the EPD format extensions.
+      <p/>EPD datasets must reference the "Source" dataset of the EPD format extensions.
     </td>
     <td class="fieldname">"Source data set" of the used version of the ILCD format. If additional data format fields have been integrated into the data set file, using the "namespace" option, the used format namespace(s) are to be given. This is the case if the data sets carries additional information as specified by other, particular LCA formats, e.g. of other database networks or LCA softwares.
     </td>
     <td class="fieldname">1-5-28-105</td>
-    <td class="fieldname"></td>
-    <td class="fieldname"></td>
-    <td class="fieldname"></td>
+    <td class="fieldname"/>
+    <td class="fieldname"/>
+    <td class="fieldname"/>
   </tr>
   <tr>
     <td class="fieldname" style="padding-left: 30px;">Anderer Inhalt</td>
@@ -3048,14 +3184,14 @@
     <td class="fieldname" style="padding-left: 30px;">other</td>
     <td class="fieldname">o</td>
     <td class="fieldname">[0,1]</td>
-    <td class="fieldname"></td>
-    <td class="fieldname"></td>
-    <td class="fieldname"></td>
+    <td class="fieldname"/>
+    <td class="fieldname"/>
+    <td class="fieldname"/>
     <td class="fieldname">May contain arbitrary content.</td>
     <td class="fieldname">0</td>
-    <td class="fieldname"></td>
-    <td class="fieldname"></td>
-    <td class="fieldname"></td>
+    <td class="fieldname"/>
+    <td class="fieldname"/>
+    <td class="fieldname"/>
   </tr>
   <tr>
     <td class="subsection" style="padding-left: 20px;font-style: italic;">Veröffentlichung und Eigentümer</td>
@@ -3063,15 +3199,15 @@
     <td class="subsection" style="padding-left: 20px;font-style: italic;">publicationAndOwnership</td>
     <td class="subsection">r</td>
     <td class="subsection">[0,1]</td>
-    <td class="subsection"></td>
+    <td class="subsection"/>
     <td class="subsection">Informationen zur Veröffentlichung und Version des Datensatzes</td>
-    <td class="subsection"></td>
+    <td class="subsection"/>
     <td class="subsection">Information related to publication and version management of the data set including copyright and access restrictions.
     </td>
     <td class="subsection">1-5-30</td>
-    <td class="subsection"></td>
-    <td class="subsection"></td>
-    <td class="subsection"></td>
+    <td class="subsection"/>
+    <td class="subsection"/>
+    <td class="subsection"/>
   </tr>
   <tr>
     <td class="fieldname" style="padding-left: 30px;">Datensatzversion</td>
@@ -3086,9 +3222,9 @@
     <td class="fieldname">Version number of data set. First two digits refer to major updates, the second two digits to minor revisions and error corrections etc. The third three digits are intended for automatic and internal counting of versions during data set development. Together with the data set's UUID, the "Data set version" uniquely identifies each data set.
     </td>
     <td class="fieldname">1-5-30-111</td>
-    <td class="fieldname"></td>
-    <td class="fieldname"></td>
-    <td class="fieldname"></td>
+    <td class="fieldname"/>
+    <td class="fieldname"/>
+    <td class="fieldname"/>
   </tr>
   <tr>
     <td class="fieldname fieldname_epd2i" style="padding-left: 30px;">Vorhergehende Datensatzversion</td>
@@ -3099,14 +3235,14 @@
     <td class="fieldname fieldname_epd2i">
       <a target="_blank" href="ILCD_Common_DataTypes.html#GlobalReferenceType">GlobalReferenceType</a>
     </td>
-    <td class="fieldname fieldname_epd2i"></td>
-    <td class="fieldname fieldname_epd2i"></td>
+    <td class="fieldname fieldname_epd2i"/>
+    <td class="fieldname fieldname_epd2i"/>
     <td class="fieldname fieldname_epd2i">Last preceding data set, which was replaced by this version. Either a URI of that data set (i.e. an internet address) or its UUID plus version number is given (or both).
     </td>
     <td class="fieldname fieldname_epd2i">1-5-30-112</td>
-    <td class="fieldname fieldname_epd2i"></td>
-    <td class="fieldname fieldname_epd2i"></td>
-    <td class="fieldname fieldname_epd2i"></td>
+    <td class="fieldname fieldname_epd2i"/>
+    <td class="fieldname fieldname_epd2i"/>
+    <td class="fieldname fieldname_epd2i"/>
   </tr>
   <tr>
     <td class="fieldname" style="padding-left: 30px;">Permanente Datensatz-URI</td>
@@ -3121,9 +3257,9 @@
     <td class="fieldname">URI (i.e. an internet address) of the original of this data set. [Note: This equally globally unique identifier supports users and software tools to identify and retrieve the original version of a data set via the internet or to check for available updates. The URI must not represent an existing WWW address, but it should be unique and point to the data access point, e.g. by combining the data owner's www path with the data set's UUID, e.g. http://www.mycompany.com/lca/processes/50f12420-8855-12db-b606-0900210c9a66.]
     </td>
     <td class="fieldname">1-5-30-300</td>
-    <td class="fieldname fieldname_epd2i"></td>
-    <td class="fieldname fieldname_epd2i"></td>
-    <td class="fieldname fieldname_epd2i"></td>
+    <td class="fieldname fieldname_epd2i"/>
+    <td class="fieldname fieldname_epd2i"/>
+    <td class="fieldname fieldname_epd2i"/>
   </tr>
   <tr>
     <td class="fieldname" style="padding-left: 30px;">Zeitpunkt der letzten Änderung</td>
@@ -3137,9 +3273,9 @@
     <td class="fieldname">~</td>
     <td class="fieldname">Date when the data set was revised for the last time, typically manually set.</td>
     <td class="fieldname">1-5-30-113</td>
-    <td class="fieldname"></td>
-    <td class="fieldname"></td>
-    <td class="fieldname"></td>
+    <td class="fieldname"/>
+    <td class="fieldname"/>
+    <td class="fieldname"/>
   </tr>
   <tr>
     <td class="fieldname fieldname_epd2i" style="padding-left: 30px;">Herausgeber</td>
@@ -3156,11 +3292,11 @@
     <td class="fieldname fieldname_epd2i">"Contact data set" of the authority that has registered this data set.
     </td>
     <td class="fieldname fieldname_epd2i">1-5-30-200</td>
-    <td class="fieldname fieldname_epd2i"></td>
+    <td class="fieldname fieldname_epd2i"/>
     <td class="fieldname fieldname_epd2i">
       04JOWJlvj49ebQ1ftBh3$_
     </td>
-    <td class="fieldname fieldname_epd2i"></td>
+    <td class="fieldname fieldname_epd2i"/>
   </tr>
   <tr>
     <td class="fieldname fieldname_epd2i" style="padding-left: 30px;">Registrierungsnummer</td>
@@ -3176,11 +3312,11 @@
     <td class="fieldname fieldname_epd2i">A unique identifying number for this data set issued by the registration authority.
     </td>
     <td class="fieldname fieldname_epd2i">1-5-30-201</td>
-    <td class="fieldname fieldname_epd2i"></td>
+    <td class="fieldname fieldname_epd2i"/>
     <td class="fieldname fieldname_epd2i">
       2txQS3gq114gZSFxVagfsC (EPD) 0HDajCo4z5ceHjuLiivf0A (project ID)
     </td>
-    <td class="fieldname fieldname_epd2i"></td>
+    <td class="fieldname fieldname_epd2i"/>
   </tr>
   <tr>
     <td class="fieldname" style="padding-left: 30px;">Eigner des Datensatzes</td>
@@ -3196,11 +3332,11 @@
     <td class="fieldname">"Contact data set" of the person or entity who owns this data set. (Note: this is not necessarily the publisher of the data set.)
     </td>
     <td class="fieldname">1-5-30-115</td>
-    <td class="fieldname"></td>
+    <td class="fieldname"/>
     <td class="fieldname">
       02xb3mjHD7VPQu6muPWLF5
     </td>
-    <td class="fieldname"></td>
+    <td class="fieldname"/>
   </tr>
   <tr>
     <td class="fieldname" style="padding-left: 30px;">Copyright?</td>
@@ -3215,9 +3351,9 @@
     <td class="fieldname">Indicates whether or not a copyright on the data set exists. Decided upon by the "Owner of data set". [Note: See also field "Access and use restrictions".]
     </td>
     <td class="fieldname">1-5-30-116</td>
-    <td class="fieldname"></td>
-    <td class="fieldname"></td>
-    <td class="fieldname"></td>
+    <td class="fieldname"/>
+    <td class="fieldname"/>
+    <td class="fieldname"/>
   </tr>
   <tr>
     <td class="fieldname fieldname_epd2i" style="padding-left: 30px;">Lizenztyp</td>
@@ -3244,9 +3380,9 @@
     <td class="fieldname fieldname_epd2i">~</td>
     <td class="fieldname fieldname_epd2i">Type of license that applies to the access and use of this data set.</td>
     <td class="fieldname fieldname_epd2i">1-5-30-119</td>
-    <td class="fieldname fieldname_epd2i"></td>
-    <td class="fieldname fieldname_epd2i"></td>
-    <td class="fieldname fieldname_epd2i"></td>
+    <td class="fieldname fieldname_epd2i"/>
+    <td class="fieldname fieldname_epd2i"/>
+    <td class="fieldname fieldname_epd2i"/>
   </tr>
   <tr>
     <td class="fieldname fieldname_epd2i" style="padding-left: 30px;">Zugriffs- und Nutzungsbeschränkungen</td>
@@ -3262,9 +3398,9 @@
     <td class="fieldname fieldname_epd2i">Access restrictions / use conditions for this data set as free text or referring to e.g. license conditions. In case of no restrictions "None" is entered.
     </td>
     <td class="fieldname fieldname_epd2i">1-5-30-118</td>
-    <td class="fieldname fieldname_epd2i"></td>
-    <td class="fieldname fieldname_epd2i"></td>
-    <td class="fieldname fieldname_epd2i"></td>
+    <td class="fieldname fieldname_epd2i"/>
+    <td class="fieldname fieldname_epd2i"/>
+    <td class="fieldname fieldname_epd2i"/>
   </tr>
 
   <tr>
@@ -3273,14 +3409,14 @@
     <td class="fieldname" style="padding-left: 20px;">other</td>
     <td class="fieldname">o</td>
     <td class="fieldname">[0,1]</td>
-    <td class="fieldname"></td>
-    <td class="fieldname"></td>
-    <td class="fieldname"></td>
+    <td class="fieldname"/>
+    <td class="fieldname"/>
+    <td class="fieldname"/>
     <td class="fieldname">May contain arbitrary content.</td>
     <td class="fieldname">0</td>
-    <td class="fieldname"></td>
-    <td class="fieldname"></td>
-    <td class="fieldname"></td>
+    <td class="fieldname"/>
+    <td class="fieldname"/>
+    <td class="fieldname"/>
   </tr>
   <tr>
     <td class="fieldname fieldname_epd2" style="padding-left: 40px;">Datensatz veröffentlicht bei</td>
@@ -3293,11 +3429,11 @@
     </td>
     <td class="fieldname fieldname_epd2">Organisation, welche den EPD-Datensatz publiziert.</td>
     <td class="fieldname fieldname_epd2">Organisation which publishes the EPD data set.</td>
-    <td class="fieldname fieldname_epd2"></td>
-    <td class="fieldname fieldname_epd2"></td>
-    <td class="fieldname fieldname_epd2"></td>
-    <td class="fieldname fieldname_epd2"></td>
-    <td class="fieldname fieldname_epd2"></td>
+    <td class="fieldname fieldname_epd2"/>
+    <td class="fieldname fieldname_epd2"/>
+    <td class="fieldname fieldname_epd2"/>
+    <td class="fieldname fieldname_epd2"/>
+    <td class="fieldname fieldname_epd2"/>
   </tr>
   <tr>
     <td class="section" style="padding-left: 10px;font-style: italic;">Inputs und Outputs</td>
@@ -3305,15 +3441,15 @@
     <td class="section" style="padding-left: 10px;font-style: italic;">exchanges</td>
     <td class="section">r</td>
     <td class="section">[0,1]</td>
-    <td class="section"></td>
+    <td class="section"/>
     <td class="section">Liste der Exchanges (Inputs und Outputs)</td>
     <td class="section">List of exchanges (inputs and outputs)</td>
     <td class="section">Input/Output list of exchanges with the quantitative inventory data, as well as pre-calculated LCIA results.
     </td>
     <td class="section">1-7</td>
-    <td class="section"></td>
-    <td class="section"></td>
-    <td class="section"></td>
+    <td class="section"/>
+    <td class="section"/>
+    <td class="section"/>
   </tr>
   <tr>
     <td class="subsection" style="padding-left: 20px;font-style: italic;">Inputs und Outputs</td>
@@ -3321,22 +3457,22 @@
     <td class="subsection" style="padding-left: 20px;font-style: italic;">exchange</td>
     <td class="subsection">r</td>
     <td class="subsection">[0,n]</td>
-    <td class="subsection"></td>
+    <td class="subsection"/>
     <td class="subsection">Einzelner Exchange (Input oder Output)</td>
     <td class="subsection">single exchange (input or output)</td>
     <td class="subsection">Input/Output list of exchanges with the quantitative inventory data as well as pre-calculated LCIA results.
     </td>
     <td class="subsection">1-7-32</td>
-    <td class="subsection"></td>
-    <td class="subsection"></td>
-    <td class="subsection"></td>
+    <td class="subsection"/>
+    <td class="subsection"/>
+    <td class="subsection"/>
   </tr>
   <tr>
     <td class="fieldname" style="padding-left: 30px;">datensatzinterne ID</td>
     <td class="fieldname" style="padding-left: 30px;">Data set internal ID</td>
     <td class="fieldname" style="padding-left: 30px;">@dataSetInternalID</td>
     <td class="fieldname">r</td>
-    <td class="fieldname"></td>
+    <td class="fieldname"/>
     <td class="fieldname"><a target="_blank" href="ILCD_Common_DataTypes.html#Int6">Int6</a></td>
     <td class="fieldname">Automatisch vergebener interner Identifizierer, wird von "Quantitative Referenz" verwendet, um den Referenzfluß anzugeben
     </td>
@@ -3344,9 +3480,9 @@
     <td class="fieldname">Automated entry: internal ID, used in the "Quantitative reference" section to identify the "Reference flow(s)" in case the quantitative reference of this Process data set is of this type.
     </td>
     <td class="fieldname">1-7-32-120</td>
-    <td class="fieldname"></td>
-    <td class="fieldname"></td>
-    <td class="fieldname"></td>
+    <td class="fieldname"/>
+    <td class="fieldname"/>
+    <td class="fieldname"/>
   </tr>
   <tr>
     <td class="fieldname" style="padding-left: 30px;">Referenz zum Flußdatensatz</td>
@@ -3361,9 +3497,9 @@
     <td class="fieldname">~</td>
     <td class="fieldname">"Flow data set" of this Input or Output.</td>
     <td class="fieldname">1-7-32-119</td>
-    <td class="fieldname"></td>
-    <td class="fieldname"></td>
-    <td class="fieldname"></td>
+    <td class="fieldname"/>
+    <td class="fieldname"/>
+    <td class="fieldname"/>
   </tr>
   <tr>
     <td class="fieldname" style="padding-left: 30px;">Funktionstyp</td>
@@ -3384,11 +3520,11 @@
     </td>
     <td class="fieldname">Function type of the exchange. "General reminder flow" is mandatory for all exchanges that represent an LCI indicator (i.e. all except for the reference flow).
     </td>
-    <td class="fieldname"></td>
-    <td class="fieldname"></td>
-    <td class="fieldname"></td>
-    <td class="fieldname"></td>
-    <td class="fieldname"></td>
+    <td class="fieldname"/>
+    <td class="fieldname"/>
+    <td class="fieldname"/>
+    <td class="fieldname"/>
+    <td class="fieldname"/>
   </tr>
   <tr>
     <td class="fieldname" style="padding-left: 30px;">Richtung</td>
@@ -3406,9 +3542,9 @@
     <td class="fieldname">~</td>
     <td class="fieldname">Direction of Input or Output flow.</td>
     <td class="fieldname">1-7-32-123</td>
-    <td class="fieldname"></td>
-    <td class="fieldname"></td>
-    <td class="fieldname"></td>
+    <td class="fieldname"/>
+    <td class="fieldname"/>
+    <td class="fieldname"/>
   </tr>
   <tr>
     <td class="fieldname" style="padding-left: 30px;">Mittelwert</td>
@@ -3422,9 +3558,9 @@
     <td class="fieldname">Mean amount of the Input or Output. Only significant digits of the amount should be stated.
     </td>
     <td class="fieldname">1-7-32-125</td>
-    <td class="fieldname"></td>
-    <td class="fieldname"></td>
-    <td class="fieldname"></td>
+    <td class="fieldname"/>
+    <td class="fieldname"/>
+    <td class="fieldname"/>
   </tr>
   <tr>
     <td class="fieldname" style="padding-left: 30px;">Allgemeine Erläuterungen</td>
@@ -3440,9 +3576,9 @@
     <td class="fieldname">General comment on this specific Input or Output, e.g. commenting on the data sources used and their specific representatuveness etc., on the status of "finalisation" of an entry as workflow information, etc.
     </td>
     <td class="fieldname">1-7-32-136</td>
-    <td class="fieldname"></td>
-    <td class="fieldname"></td>
-    <td class="fieldname"></td>
+    <td class="fieldname"/>
+    <td class="fieldname"/>
+    <td class="fieldname"/>
   </tr>
   <tr>
     <td class="fieldname" style="padding-left: 30px;">Anderer Inhalt</td>
@@ -3450,18 +3586,18 @@
     <td class="fieldname" style="padding-left: 30px;">other</td>
     <td class="fieldname">o</td>
     <td class="fieldname">[0,1]</td>
-    <td class="fieldname"></td>
-    <td class="fieldname"></td>
-    <td class="fieldname"></td>
+    <td class="fieldname"/>
+    <td class="fieldname"/>
+    <td class="fieldname"/>
     <td class="fieldname">May contain arbitrary content.</td>
     <td class="fieldname">0</td>
-    <td class="fieldname"></td>
-    <td class="fieldname"></td>
-    <td class="fieldname"></td>
+    <td class="fieldname"/>
+    <td class="fieldname"/>
+    <td class="fieldname"/>
   </tr>
   <tr>
     <td class="fieldname fieldname_epd" style="padding-left: 40px;">Wert</td>
-    <td class="fieldname fieldname_epd" style="padding-left: 40px;"></td>
+    <td class="fieldname fieldname_epd" style="padding-left: 40px;"/>
     <td class="fieldname fieldname_epd" style="padding-left: 40px;">epd:amount</td>
     <td class="fieldname fieldname_epd">m</td>
     <td class="fieldname fieldname_epd">[0,n]</td>
@@ -3469,46 +3605,46 @@
       <a target="_blank" href="ILCD_Common_DataTypes.html#Real">Real</a></td>
     <td class="fieldname fieldname_epd">Zahlenmäßiger Wert für diesen Parameter</td>
     <td class="fieldname fieldname_epd">Amount for this parameter</td>
-    <td class="fieldname fieldname_epd"></td>
-    <td class="fieldname fieldname_epd"></td>
-    <td class="fieldname fieldname_epd"></td>
-    <td class="fieldname fieldname_epd"></td>
-    <td class="fieldname fieldname_epd"></td>
+    <td class="fieldname fieldname_epd"/>
+    <td class="fieldname fieldname_epd"/>
+    <td class="fieldname fieldname_epd"/>
+    <td class="fieldname fieldname_epd"/>
+    <td class="fieldname fieldname_epd"/>
   </tr>
   <tr>
     <td class="fieldname fieldname_epd" style="padding-left: 50px;">Modul/Phase</td>
     <td class="fieldname fieldname_epd" style="padding-left: 50px;">Module/Phase</td>
     <td class="fieldname fieldname_epd" style="padding-left: 50px;">@epd:module</td>
     <td class="fieldname fieldname_epd">m</td>
-    <td class="fieldname fieldname_epd"></td>
+    <td class="fieldname fieldname_epd"/>
     <td class="fieldname fieldname_epd">
       <a target="_blank" href="ILCD_Common_DataTypes.html#StringMultiLang">String</a></td>
     <td class="fieldname fieldname_epd">Modul oder Phase (z.B. "A1-A3")</td>
     <td class="fieldname fieldname_epd">Module or phase (e.g. "A1-A3")</td>
-    <td class="fieldname fieldname_epd"></td>
-    <td class="fieldname fieldname_epd"></td>
-    <td class="fieldname fieldname_epd"></td>
+    <td class="fieldname fieldname_epd"/>
+    <td class="fieldname fieldname_epd"/>
+    <td class="fieldname fieldname_epd"/>
     <td class="fieldname fieldname_epd">
       0iG86Nq4v6v9psJFRlyam9
     </td>
-    <td class="fieldname fieldname_epd"></td>
+    <td class="fieldname fieldname_epd"/>
   </tr>
   <tr>
     <td class="fieldname fieldname_epd" style="padding-left: 50px;">Szenario</td>
     <td class="fieldname fieldname_epd" style="padding-left: 50px;">Scenario</td>
     <td class="fieldname fieldname_epd" style="padding-left: 50px;">@epd:scenario</td>
     <td class="fieldname fieldname_epd">o</td>
-    <td class="fieldname fieldname_epd"></td>
+    <td class="fieldname fieldname_epd"/>
     <td class="fieldname fieldname_epd">
       <a target="_blank" href="ILCD_Common_DataTypes.html#StringMultiLang">String</a></td>
     <td class="fieldname fieldname_epd">Verweis auf die oben definierte ID eines Szenarios (falls definiert), für das dieser Wert gilt.
     </td>
     <td class="fieldname fieldname_epd">References ID of a scenario defined above</td>
-    <td class="fieldname fieldname_epd"></td>
-    <td class="fieldname fieldname_epd"></td>
-    <td class="fieldname fieldname_epd"></td>
-    <td class="fieldname fieldname_epd"></td>
-    <td class="fieldname fieldname_epd"></td>
+    <td class="fieldname fieldname_epd"/>
+    <td class="fieldname fieldname_epd"/>
+    <td class="fieldname fieldname_epd"/>
+    <td class="fieldname fieldname_epd"/>
+    <td class="fieldname fieldname_epd"/>
   </tr>
   <tr>
     <td class="fieldname fieldname_epd" style="padding-left: 40px;">Einheitengruppe</td>
@@ -3521,11 +3657,11 @@
     </td>
     <td class="fieldname fieldname_epd">Verweis auf den Einheitengruppen-Datensatz</td>
     <td class="fieldname fieldname_epd">"unit group data set" with the units used to measure the LCIA results.</td>
-    <td class="fieldname fieldname_epd"></td>
-    <td class="fieldname fieldname_epd"></td>
-    <td class="fieldname fieldname_epd"></td>
-    <td class="fieldname fieldname_epd"></td>
-    <td class="fieldname fieldname_epd"></td>
+    <td class="fieldname fieldname_epd"/>
+    <td class="fieldname fieldname_epd"/>
+    <td class="fieldname fieldname_epd"/>
+    <td class="fieldname fieldname_epd"/>
+    <td class="fieldname fieldname_epd"/>
   </tr>
   <tr>
     <td class="section" style="padding-left: 10px;font-style: italic;">Wirkbilanz-Ergebnisse</td>
@@ -3533,15 +3669,15 @@
     <td class="section" style="padding-left: 10px;font-style: italic;">LCIAResults</td>
     <td class="section">o</td>
     <td class="section">[0,1]</td>
-    <td class="section"></td>
+    <td class="section"/>
     <td class="section">Liste der Wirkbilanz-Ergebnisse</td>
     <td class="section">List of LCIA results</td>
     <td class="section">List with the pre-calculated LCIA results of the Input/Output list of this data set. May contain also inventory-type results such as primary energy consumption etc.
     </td>
     <td class="section">1-8</td>
-    <td class="section"></td>
-    <td class="section"></td>
-    <td class="section"></td>
+    <td class="section"/>
+    <td class="section"/>
+    <td class="section"/>
   </tr>
   <tr>
     <td class="subsection" style="padding-left: 20px;font-style: italic;">Wirkbilanz-Ergebnis</td>
@@ -3549,14 +3685,14 @@
     <td class="subsection" style="padding-left: 20px;font-style: italic;">LCIAResult</td>
     <td class="subsection">o</td>
     <td class="subsection">[0,n]</td>
-    <td class="subsection"></td>
+    <td class="subsection"/>
     <td class="subsection">Einzelnes Wirkbilanz-Ergebnis</td>
     <td class="subsection">~</td>
     <td class="subsection">Single LCIA result</td>
     <td class="subsection">1-8-1</td>
-    <td class="subsection"></td>
-    <td class="subsection"></td>
-    <td class="subsection"></td>
+    <td class="subsection"/>
+    <td class="subsection"/>
+    <td class="subsection"/>
   </tr>
   <tr>
     <td class="fieldname" style="padding-left: 30px;">LCIA-Methode</td>
@@ -3571,9 +3707,9 @@
     <td class="fieldname">~</td>
     <td class="fieldname">"LCIA method data set" applied to calculate the LCIA results.</td>
     <td class="fieldname">1-8-1-100</td>
-    <td class="fieldname"></td>
-    <td class="fieldname"></td>
-    <td class="fieldname"></td>
+    <td class="fieldname"/>
+    <td class="fieldname"/>
+    <td class="fieldname"/>
   </tr>
   <tr>
     <td class="fieldname" style="padding-left: 30px;">Erläuterungen</td>
@@ -3589,9 +3725,9 @@
     <td class="fieldname">General comment on this specific LCIA result, e.g. commenting on the correspondence of the inputs and outputs with the applied LCIA method etc.
     </td>
     <td class="fieldname">1-8-1-104</td>
-    <td class="fieldname"></td>
-    <td class="fieldname"></td>
-    <td class="fieldname"></td>
+    <td class="fieldname"/>
+    <td class="fieldname"/>
+    <td class="fieldname"/>
   </tr>
   <tr>
     <td class="fieldname" style="padding-left: 30px;">Anderer Inhalt</td>
@@ -3599,18 +3735,18 @@
     <td class="fieldname" style="padding-left: 30px;">other</td>
     <td class="fieldname">o</td>
     <td class="fieldname">[0,1]</td>
-    <td class="fieldname"></td>
-    <td class="fieldname"></td>
-    <td class="fieldname"></td>
+    <td class="fieldname"/>
+    <td class="fieldname"/>
+    <td class="fieldname"/>
     <td class="fieldname">May contain arbitrary content.</td>
     <td class="fieldname">0</td>
-    <td class="fieldname"></td>
-    <td class="fieldname"></td>
-    <td class="fieldname"></td>
+    <td class="fieldname"/>
+    <td class="fieldname"/>
+    <td class="fieldname"/>
   </tr>
   <tr>
     <td class="fieldname fieldname_epd" style="padding-left: 40px;">Wert</td>
-    <td class="fieldname fieldname_epd" style="padding-left: 40px;"></td>
+    <td class="fieldname fieldname_epd" style="padding-left: 40px;"/>
     <td class="fieldname fieldname_epd" style="padding-left: 40px;">epd:amount</td>
     <td class="fieldname fieldname_epd">m</td>
     <td class="fieldname fieldname_epd">[0,n]</td>
@@ -3618,46 +3754,46 @@
       <a target="_blank" href="ILCD_Common_DataTypes.html#Real">Real</a></td>
     <td class="fieldname fieldname_epd">Zahlenmäßiger Wert für diesen Parameter</td>
     <td class="fieldname fieldname_epd">Amount for this parameter</td>
-    <td class="fieldname fieldname_epd"></td>
-    <td class="fieldname fieldname_epd"></td>
-    <td class="fieldname fieldname_epd"></td>
-    <td class="fieldname fieldname_epd"></td>
-    <td class="fieldname fieldname_epd"></td>
+    <td class="fieldname fieldname_epd"/>
+    <td class="fieldname fieldname_epd"/>
+    <td class="fieldname fieldname_epd"/>
+    <td class="fieldname fieldname_epd"/>
+    <td class="fieldname fieldname_epd"/>
   </tr>
   <tr>
     <td class="fieldname fieldname_epd" style="padding-left: 50px;">Modul/Phase</td>
     <td class="fieldname fieldname_epd" style="padding-left: 50px;">Module/Phase</td>
     <td class="fieldname fieldname_epd" style="padding-left: 50px;">@epd:module</td>
     <td class="fieldname fieldname_epd">m</td>
-    <td class="fieldname fieldname_epd"></td>
+    <td class="fieldname fieldname_epd"/>
     <td class="fieldname fieldname_epd">
       <a target="_blank" href="ILCD_Common_DataTypes.html#StringMultiLang">String</a></td>
     <td class="fieldname fieldname_epd">Modul oder Phase (z.B. "A1-A3")</td>
     <td class="fieldname fieldname_epd">Module or phase (e.g. "A1-A3")</td>
-    <td class="fieldname fieldname_epd"></td>
-    <td class="fieldname fieldname_epd"></td>
-    <td class="fieldname fieldname_epd"></td>
+    <td class="fieldname fieldname_epd"/>
+    <td class="fieldname fieldname_epd"/>
+    <td class="fieldname fieldname_epd"/>
     <td class="fieldname fieldname_epd">
       0iG86Nq4v6v9psJFRlyam9
     </td>
-    <td class="fieldname fieldname_epd"></td>
+    <td class="fieldname fieldname_epd"/>
   </tr>
   <tr>
     <td class="fieldname fieldname_epd" style="padding-left: 50px;">Szenario</td>
     <td class="fieldname fieldname_epd" style="padding-left: 50px;">Scenario</td>
     <td class="fieldname fieldname_epd" style="padding-left: 50px;">@epd:scenario</td>
     <td class="fieldname fieldname_epd">o</td>
-    <td class="fieldname fieldname_epd"></td>
+    <td class="fieldname fieldname_epd"/>
     <td class="fieldname fieldname_epd">
       <a target="_blank" href="ILCD_Common_DataTypes.html#StringMultiLang">String</a></td>
     <td class="fieldname fieldname_epd">Verweis auf die oben definierte ID eines Szenarios (falls definiert), für das dieser Wert gilt.
     </td>
     <td class="fieldname fieldname_epd">References ID of a scenario defined above</td>
-    <td class="fieldname fieldname_epd"></td>
-    <td class="fieldname fieldname_epd"></td>
-    <td class="fieldname fieldname_epd"></td>
-    <td class="fieldname fieldname_epd"></td>
-    <td class="fieldname fieldname_epd"></td>
+    <td class="fieldname fieldname_epd"/>
+    <td class="fieldname fieldname_epd"/>
+    <td class="fieldname fieldname_epd"/>
+    <td class="fieldname fieldname_epd"/>
+    <td class="fieldname fieldname_epd"/>
   </tr>
   <tr>
     <td class="fieldname fieldname_epd" style="padding-left: 40px;">Einheitengruppe</td>
@@ -3670,11 +3806,11 @@
     </td>
     <td class="fieldname fieldname_epd">Verweis auf den Einheitengruppen-Datensatz</td>
     <td class="fieldname fieldname_epd">"unit group data set" with the units used to measure the LCIA results.</td>
-    <td class="fieldname fieldname_epd"></td>
-    <td class="fieldname fieldname_epd"></td>
-    <td class="fieldname fieldname_epd"></td>
-    <td class="fieldname fieldname_epd"></td>
-    <td class="fieldname fieldname_epd"></td>
+    <td class="fieldname fieldname_epd"/>
+    <td class="fieldname fieldname_epd"/>
+    <td class="fieldname fieldname_epd"/>
+    <td class="fieldname fieldname_epd"/>
+    <td class="fieldname fieldname_epd"/>
   </tr>
   <col/>
   <col/>
