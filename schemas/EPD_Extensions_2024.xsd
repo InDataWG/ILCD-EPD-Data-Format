@@ -187,6 +187,54 @@
 
    <xs:attribute name="variation" type="common:Perc"/>
 
+   <xs:element name="scenarioData">
+      <xs:complexType>
+         <xs:sequence>
+            <xs:any minOccurs="0" maxOccurs="unbounded"/>
+         </xs:sequence>
+         <xs:anyAttribute/>
+      </xs:complexType>
+   </xs:element>
+   
+   <xs:element name="eolScenarioData">
+      <xs:complexType>
+         <xs:sequence>
+            <xs:element ref="epd24:collection" minOccurs="0" maxOccurs="1"/>
+            <xs:element ref="epd24:recovery" minOccurs="0" maxOccurs="1"/>
+            <xs:element ref="epd24:disposal" minOccurs="0" maxOccurs="1"/>
+            <xs:any namespace="##other" minOccurs="0" maxOccurs="unbounded"/>
+         </xs:sequence>
+         <xs:attribute ref="scenario" use="optional"/>
+         <xs:anyAttribute/>
+      </xs:complexType>
+   </xs:element>
+   
+   <xs:element name="collection">
+      <xs:complexType>
+         <xs:attribute name="separate" type="xs:double"/>
+         <xs:attribute name="withMixedWaste" type="xs:double"/>
+         <xs:anyAttribute/>
+      </xs:complexType>
+   </xs:element>
+   
+   <xs:element name="recovery">
+      <xs:complexType>
+         <xs:attribute name="reuse" type="xs:double"/>
+         <xs:attribute name="recycling" type="xs:double"/>
+         <xs:attribute name="energyRecovery" type="xs:double"/>
+         <xs:anyAttribute/>
+      </xs:complexType>
+   </xs:element>
+
+   <xs:element name="disposal">
+      <xs:complexType>
+         <xs:attribute name="finalDeposition" type="xs:double"/>
+         <xs:anyAttribute/>
+      </xs:complexType>
+   </xs:element>
+   
+   <xs:attribute name="scenario" type="xs:string"/>
+   
    <xs:simpleType name="ManufacturerVariabilityValues">
       <xs:restriction base="xs:string">
          <xs:enumeration value="Single production site"></xs:enumeration>

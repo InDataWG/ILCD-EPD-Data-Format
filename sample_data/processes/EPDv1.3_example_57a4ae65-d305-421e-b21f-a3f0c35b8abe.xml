@@ -60,6 +60,18 @@
                         <epd:description>100% of the product is incinerated upon the product's EoL</epd:description>
                     </epd:scenario>
                 </epd:scenarios>
+                <epd24:scenarioData>
+                   <epd24:eolScenarioData epd24:scenario="100% recycling">
+                      <epd24:collection epd24:separate="0.9" epd24:withMixedWaste="0.1"/>
+                      <epd24:recovery epd24:reuse="0" epd24:recycling="0.9" epd24:energyRecovery="0"/>
+                      <epd24:disposal epd24:finalDeposition="0.1"/>
+                   </epd24:eolScenarioData>
+                   <epd24:eolScenarioData epd24:scenario="100% incineration">
+                      <epd24:collection epd24:separate="0.9" epd24:withMixedWaste="0.1"/>
+                      <epd24:recovery epd24:reuse="0" epd24:recycling="0" epd24:energyRecovery="0.9"/>
+                      <epd24:disposal epd24:finalDeposition="0.1"/>                      
+                   </epd24:eolScenarioData>
+                </epd24:scenarioData>
                 <epd:safetyMargins>
                     <epd:margins>10.0</epd:margins>
                     <epd:description xml:lang="en">Reasons for choice of uncertainty penalties</epd:description>
