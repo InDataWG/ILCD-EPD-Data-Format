@@ -7,7 +7,7 @@ Welcome to the ILCD+EPD Data Format documentation. This README provides a compre
 - **[Change log/Release notes](doc/CHANGES.txt)**  
   Keep up-to-date with the latest changes, improvements, and fixes.
 
-- **[TODO Brief Introduction to the ILCD Format](./docs/introduction.md)**  
+- **[ TODO Brief Introduction to the ILCD Format](./docs/introduction.md)**  
   Understand the fundamentals and structure of the ILCD data format.
 
 ## Authoritative Identifiers (UUIDs)
@@ -47,13 +47,13 @@ Authoritative identifiers serve as master data within the ILCD framework. They e
 | ILCD ContactDataSet | [Souce Code](./doc/schemadoc/ILCD_ContactDataSet.html) | [View Documentation](https://indatawg.github.io/ILCD-EPD-Data-Format/gitBranches/testMain/schemadoc/ILCD_ContactDataSet.html) |
 | ILCD SourceDataSet | [Souce Code](./doc/schemadoc/ILCD_SourceDataSet.html) | [View Documentation](https://indatawg.github.io/ILCD-EPD-Data-Format/gitBranches/testMain/schemadoc/ILCD_SourceDataSet.html) |
 
-## Examples
+## TODO Examples
 
 Here are some example datasets to help you understand the implementation of ILCD+EPD format:
 - **[Example 1: Dataset A](./examples/dataset_a.xml)**
 - **[Example 2: Dataset B](./examples/dataset_b.xml)**
 
-## Validation Profiles
+## TODO Validation Profiles
 
 Download the latest validation profiles to ensure your data is compliant with ILCD+EPD standards:
 - [Download Validation Profile v1.0](./validation/validation_profile_v1.0.xml)
