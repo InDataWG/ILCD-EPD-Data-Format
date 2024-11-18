@@ -26,26 +26,51 @@
                    <epd24:productId epd24:type="GTIN">3234567890288</epd24:productId>
                    <epd24:productId epd24:type="GMN">445922</epd24:productId>
                 </epd24:productIds>
-                <epd24:serviceLife>
-                   <epd24:years>50</epd24:years>
-                   <epd24:useConditions epd24:factor="A - inherent quality" epd24:degree="1" />
-                   <epd24:useConditions epd24:factor="B - design level" epd24:degree="2"/>
-                   <epd24:useConditions epd24:factor="C - work execution" epd24:degree="1"/>
-                   <epd24:useConditions epd24:factor="D - indoor environment" epd24:degree="1"/>
-                   <epd24:useConditions epd24:factor="E - outdoor environment" epd24:degree="2"/>
-                   <epd24:useConditions epd24:factor="F - usage conditions" epd24:degree="3"/>
-                   <epd24:useConditions epd24:factor="G - maintenance level" epd24:degree="5"/>
-                   <epd24:referenceToStandard type="source data set" refObjectId="c0016b33-8cf7-415c-ac6e-deba0d21440d" version="00.01.000">
-                       <common:shortDescription xml:lang="en">EN15804+A2</common:shortDescription>
-                       <common:shortDescription xml:lang="de">EN15804+A2</common:shortDescription>
-                   </epd24:referenceToStandard>
-                   <epd24:referenceToUseConditionsDocumentation type="source data set" refObjectId="aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa" version="00.01.000">
-                       <common:shortDescription xml:lang="en">wood panel use conditions and service life</common:shortDescription>
-                       <common:shortDescription xml:lang="de">Einbaubedingungen und Lebensdauer von Holzplatten</common:shortDescription>
-                   </epd24:referenceToUseConditionsDocumentation>
-                   <epd24:comment xml:lang="en">The indicated service life requires installation and maintenance according to manufacturer instructions.</epd24:comment>
-                   <epd24:comment xml:lang="de">Die angegebene Lebensdauer setzt eine Installation und Wartung gemäß den Anweisungen des Herstellers voraus.</epd24:comment>
-                </epd24:serviceLife>
+                <epd24:referenceServiceLife epd24:years="100">
+                    <epd24:useConditionFactor epd24:factorCategory="A - inherent quality" epd24:objectSpecificGrade="1" epd24:referenceGrade="1" epd24:factor="1"/>
+                    <epd24:useConditionFactor epd24:factorCategory="B - design level" epd24:objectSpecificGrade="1" epd24:referenceGrade="1" epd24:factor="1"/>
+                    <epd24:useConditionFactor epd24:factorCategory="C - work execution" epd24:objectSpecificGrade="1" epd24:referenceGrade="1" epd24:factor="1"/>
+                    <epd24:useConditionFactor epd24:factorCategory="D - indoor environment" epd24:objectSpecificGrade="1" epd24:referenceGrade="1" epd24:factor="1"/>
+                    <epd24:useConditionFactor epd24:factorCategory="E - outdoor environment" epd24:objectSpecificGrade="2" epd24:referenceGrade="1" epd24:factor="0.9">
+                        <epd24:comment xml:lang="en">Lots of rain but no wind</epd24:comment>
+                        <epd24:comment xml:lang="de">Viel Regen, kein Wind</epd24:comment>
+                    </epd24:useConditionFactor>
+                    <epd24:useConditionFactor epd24:factorCategory="F - usage conditions" epd24:objectSpecificGrade="1" epd24:referenceGrade="1" epd24:factor="1"/>
+                    <epd24:useConditionFactor epd24:factorCategory="G - maintenance level" epd24:objectSpecificGrade="1" epd24:referenceGrade="1" epd24:factor="1"/>
+                    <epd24:referenceToStandard type="source data set" refObjectId="c0016b33-8cf7-415c-ac6e-deba0d21440d" version="00.01.000">
+                        <common:shortDescription xml:lang="en">EN15804+A2</common:shortDescription>
+                        <common:shortDescription xml:lang="de">EN15804+A2</common:shortDescription>
+                    </epd24:referenceToStandard>
+                    <epd24:referenceToUseConditionsDocumentation type="source data set" refObjectId="aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa" version="00.01.000">
+                        <common:shortDescription xml:lang="en">wood panel use conditions and service life</common:shortDescription>
+                        <common:shortDescription xml:lang="de">Einbaubedingungen und Lebensdauer von Holzplatten</common:shortDescription>
+                    </epd24:referenceToUseConditionsDocumentation>
+                    <epd24:comment xml:lang="en">The indicated service life requires installation and maintenance according to manufacturer instructions.</epd24:comment>
+                    <epd24:comment xml:lang="de">Die angegebene Lebensdauer setzt eine Installation und Wartung gemäß den Anweisungen des Herstellers voraus.</epd24:comment>
+                </epd24:referenceServiceLife>
+
+                <epd24:estimatedServiceLife epd24:years="8">
+                     <epd24:useConditionFactor epd24:factorCategory="A - inherent quality" epd24:objectSpecificGrade="5" epd24:referenceGrade="1" epd24:factor="0.7"/>
+                     <epd24:useConditionFactor epd24:factorCategory="B - design level" epd24:objectSpecificGrade="5" epd24:referenceGrade="1" epd24:factor="0.7"/>
+                     <epd24:useConditionFactor epd24:factorCategory="C - work execution" epd24:objectSpecificGrade="5" epd24:referenceGrade="1" epd24:factor="0.7"/>
+                     <epd24:useConditionFactor epd24:factorCategory="D - indoor environment" epd24:objectSpecificGrade="5" epd24:referenceGrade="1" epd24:factor="0.7"/>
+                     <epd24:useConditionFactor epd24:factorCategory="E - outdoor environment" epd24:objectSpecificGrade="5" epd24:referenceGrade="1" epd24:factor="0.9">
+                         <epd24:comment xml:lang="en">Lots of rain, lots of wind</epd24:comment>
+                         <epd24:comment xml:lang="de">Viel Regen, viel Wind</epd24:comment>
+                     </epd24:useConditionFactor>
+                     <epd24:useConditionFactor epd24:factorCategory="F - usage conditions" epd24:objectSpecificGrade="5" epd24:referenceGrade="1" epd24:factor="0.7"/>
+                     <epd24:useConditionFactor epd24:factorCategory="G - maintenance level" epd24:objectSpecificGrade="5" epd24:referenceGrade="1" epd24:factor="0.7"/>
+                     <epd24:referenceToStandard type="source data set" refObjectId="c0016b33-8cf7-415c-ac6e-deba0d21440d" version="00.01.000">
+                         <common:shortDescription xml:lang="en">ISO22057</common:shortDescription>
+                         <common:shortDescription xml:lang="de">ISO22057</common:shortDescription>
+                     </epd24:referenceToStandard>
+                     <epd24:referenceToUseConditionsDocumentation type="source data set" refObjectId="aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa" version="00.01.000">
+                         <common:shortDescription xml:lang="en">wood panel use conditions and service life</common:shortDescription>
+                         <common:shortDescription xml:lang="de">Einbaubedingungen und Lebensdauer von Holzplatten</common:shortDescription>
+                     </epd24:referenceToUseConditionsDocumentation>
+                     <epd24:comment xml:lang="en">The indicated service life requires installation and maintenance according to manufacturer instructions.</epd24:comment>
+                     <epd24:comment xml:lang="de">Die angegebene Lebensdauer setzt eine Installation und Wartung gemäß den Anweisungen des Herstellers voraus.</epd24:comment>
+                </epd24:estimatedServiceLife>
                 <epd:scenarios>
                     <epd:scenario epd:default="true" epd:group="Transport" epd:name="Transport to Gdansk">
                         <epd:description>Transport of the product to the construction site in Gdansk, Poland</epd:description>
