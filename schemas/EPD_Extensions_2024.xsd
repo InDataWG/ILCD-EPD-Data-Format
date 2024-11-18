@@ -92,20 +92,27 @@
       </xs:restriction>
    </xs:simpleType>
 
-   <xs:element name="serviceLife">
-      <xs:complexType>
-         <xs:sequence>
-            <xs:element name="years" type="xs:int" minOccurs="1" maxOccurs="1"/>
-            <xs:element ref="epd24:useConditions" minOccurs="1" maxOccurs="unbounded"/>
-            <xs:element name="referenceToStandard" type="common:GlobalReferenceType" minOccurs="0" maxOccurs="1"/>
-            <xs:element name="referenceToUseConditionsDocumentation" type="common:GlobalReferenceType" minOccurs="0" maxOccurs="unbounded"/>
-            <xs:element name="comment" type="common:FTMultiLang" minOccurs="0" maxOccurs="unbounded">
-            </xs:element>
-         </xs:sequence>
-      </xs:complexType>
+   <xs:element name="referenceServiceLife" type="epd24:ServiceLife">
+   </xs:element>
+
+   <xs:element name="estimatedServiceLife" type="epd24:ServiceLife">
+   </xs:element>
+
+   <xs:complexType name="ServiceLife">
+      <xs:attribute name="years" type="xs:double" use="required"/>
+      <xs:sequence>
+         <xs:element ref="epd24:useConditionFactor" minOccurs="0" maxOccurs="unbounded"/>
+         <xs:element name="referenceToStandard" type="common:GlobalReferenceType" minOccurs="0" maxOccurs="unbounded"/>
+         <xs:element name="referenceToUseConditionsDocumentation" type="common:GlobalReferenceType" minOccurs="0" maxOccurs="unbounded"/>
+         <xs:element name="comment" type="common:FTMultiLang" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
       <xs:unique name="commentLangUniqueConstraint">
          <xs:selector xpath="epd24:comment"/>
          <xs:field xpath="@xml:lang"/>
+      </xs:unique>
+      <xs:unique name="useConditionFactorCategoryUniqueness">
+         <xs:selector xpath="epd24:useCondition"/>
+         <xs:field xpath="@epd24:factorCategory"/>
       </xs:unique>
       <xs:unique name="referenceToStandardShortDescriptionLangUniqueConstraint">
          <xs:selector xpath="epd24:referenceToStandard/common:shortDescription"/>
@@ -115,12 +122,19 @@
          <xs:selector xpath="epd24:referenceToUseConditionsDocumentation/common:shortDescription"/>
          <xs:field xpath="@xml:lang"/>
       </xs:unique>
-   </xs:element>
+   </xs:complexType>
 
-   <xs:element name="useConditions">
+   <xs:element name="useConditionFactor">
       <xs:complexType>
-         <xs:attribute name="factor" type="epd24:UseConditionFactors" use="required"/>
-         <xs:attribute name="degree" type="epd24:UseConditionDegrees" use="required"/>
+         <xs:attribute name="factorCategory" type="epd24:UseConditionFactors" use="required"/>
+         <xs:attribute name="objectSpecificGrade" type="epd24:UseConditionDegrees"/>
+         <xs:attribute name="referenceGrade" type="epd24:UseConditionDegrees"/>
+         <xs:attribute name="factor" type="xs:double" use="required"/>
+         <xs:element name="comment" type="common:FTMultiLang" minOccurs="0" maxOccurs="unbounded"/>
+         <xs:unique name="commentLangUniqueConstraint">
+            <xs:selector xpath="epd24:comment"/>
+            <xs:field xpath="@xml:lang"/>
+         </xs:unique>
       </xs:complexType>
    </xs:element>
 
@@ -137,14 +151,13 @@
    </xs:simpleType>
 
    <xs:simpleType name="UseConditionDegrees">
-      <xs:restriction base="xs:string">
+      <xs:restriction base="xs:int">
          <xs:enumeration value="0"/>
          <xs:enumeration value="1"/>
          <xs:enumeration value="2"/>
          <xs:enumeration value="3"/>
          <xs:enumeration value="4"/>
          <xs:enumeration value="5"/>
-         <xs:enumeration value="n/a"/>
       </xs:restriction>
    </xs:simpleType>
 
