@@ -754,15 +754,15 @@
     <td class="fieldname fieldname_epd24">o</td>
     <td class="fieldname fieldname_epd24">[0,1]</td>
     <td class="fieldname fieldname_epd24"></td>
-    <td class="fieldname fieldname_epd24">Beschreibt die erwartete Referenz-Nutzungsdauer in Jahren, vgl. EN 15804+A2 7.3.3.2 'Reference Service Life (RSL)' und ISO 22057 'Estimated Service Life (ESL)'.
+    <td class="fieldname fieldname_epd24">Beschreibt die Referenz-Nutzungsdauer in Jahren, inklusive der eingegangenen Nutzungsbedingungen, vgl. ISO 15686-8, EN 15804+A2, ISO 22057.
     </td>
-    <td class="fieldname fieldname_epd24">Describes the estimated service life / reference service life in years, c.f. EN 15804+A2 7.3.3.2 'Reference Service Life (RSL)' und ISO 22057 'Estimated Service Life (ESL)'.
+    <td class="fieldname fieldname_epd24">Describes th reference service life in years, including the assumed use conditions, cf. ISO 15686-8, EN 15804+A2, ISO 22057.
     </td>
     <td class="fieldname fieldname_epd24"></td>
     <td class="fieldname fieldname_epd24"></td>
+    <td class="fieldname fieldname_epd24">7.3.3.2 'Reference Service Life (RSL)'</td>
     <td class="fieldname fieldname_epd24"></td>
-    <td class="fieldname fieldname_epd24"></td>
-    <td class="fieldname fieldname_epd24"></td>
+    <td class="fieldname fieldname_epd24">8.3.3</td>
   </tr>
   <tr>
     <td class="fieldname fieldname_epd24" style="padding-left: 50px;">Jahre</td>
@@ -770,7 +770,7 @@
     <td class="fieldname fieldname_epd24" style="padding-left: 50px;">@epd24:years</td>
     <td class="fieldname fieldname_epd24">m</td>
     <td class="fieldname fieldname_epd24">[1]</td>
-    <td class="fieldname fieldname_epd24">Integer</td>
+    <td class="fieldname fieldname_epd24">xs:double</td>
     <td class="fieldname fieldname_epd24">Anzahl der Jahre</td>
     <td class="fieldname fieldname_epd24">Number of years</td>
     <td class="fieldname fieldname_epd24"></td>
@@ -797,7 +797,7 @@
   <tr>
     <td class="fieldname fieldname_epd24" style="padding-left: 60px;">Faktor-Kategorie/td>
     <td class="fieldname fieldname_epd24" style="padding-left: 60px;">Factor category</td>
-    <td class="fieldname fieldname_epd24" style="padding-left: 60px;">epd24:factorCategory</td>
+    <td class="fieldname fieldname_epd24" style="padding-left: 60px;">@epd24:factorCategory</td>
     <td class="fieldname fieldname_epd24">m</td>
     <td class="fieldname fieldname_epd24">[1,1]</td>
     <td class="fieldname fieldname_epd24">Restricted <code>xs:string</code>:
@@ -822,7 +822,7 @@
   <tr>
     <td class="fieldname fieldname_epd24" style="padding-left: 60px;">Objekt-spezifischer Nutzungsgrad</td>
     <td class="fieldname fieldname_epd24" style="padding-left: 60px;">Object specific use condition grade</td>
-    <td class="fieldname fieldname_epd24" style="padding-left: 60px;">epd24:objectSpecificGrade</td>
+    <td class="fieldname fieldname_epd24" style="padding-left: 60px;">@epd24:objectSpecificGrade</td>
     <td class="fieldname fieldname_epd24">o</td>
     <td class="fieldname fieldname_epd24">[0,1]</td>
     <td class="fieldname fieldname_epd24">Restricted <code>xs:int</code>:
@@ -956,21 +956,21 @@
     <td class="fieldname fieldname_epd24"></td>
   </tr>
   <tr>
-    <td class="fieldname fieldname_epd24" style="padding-left: 40px;">Referenz-Nutzungsdauer in Jahren</td>
-    <td class="fieldname fieldname_epd24" style="padding-left: 40px;">Reference Service Life in years</td>
-    <td class="fieldname fieldname_epd24" style="padding-left: 40px;">epd24:referenceServiceLife</td>
+    <td class="fieldname fieldname_epd24" style="padding-left: 40px;">Angenommene Nutzungsdauer in Jahren</td>
+    <td class="fieldname fieldname_epd24" style="padding-left: 40px;">Estimated Service Life in years</td>
+    <td class="fieldname fieldname_epd24" style="padding-left: 40px;">epd24:estimatedServiceLife</td>
     <td class="fieldname fieldname_epd24">o</td>
     <td class="fieldname fieldname_epd24">[0,1]</td>
     <td class="fieldname fieldname_epd24"></td>
-    <td class="fieldname fieldname_epd24">Beschreibt die erwartete Referenz-Nutzungsdauer in Jahren, vgl. EN 15804+A2 7.3.3.2 'Reference Service Life (RSL)' und ISO 22057 'Estimated Service Life (ESL)'.
+    <td class="fieldname fieldname_epd24">Beschreibt die erwartete Nutzungsdauer in Jahren, vgl. ISO 22057 'Estimated Service Life (ESL)' und ISO 15686-8.
     </td>
-    <td class="fieldname fieldname_epd24">Describes the estimated service life / reference service life in years, c.f. EN 15804+A2 7.3.3.2 'Reference Service Life (RSL)' und ISO 22057 'Estimated Service Life (ESL)'.
+    <td class="fieldname fieldname_epd24">Describes the estimated service life in years, c.f.  ISO 22057 'Estimated Service Life (ESL)' and ISO 15686-8.
     </td>
     <td class="fieldname fieldname_epd24"></td>
     <td class="fieldname fieldname_epd24"></td>
     <td class="fieldname fieldname_epd24"></td>
     <td class="fieldname fieldname_epd24"></td>
-    <td class="fieldname fieldname_epd24"></td>
+    <td class="fieldname fieldname_epd24">'Estimated Service Life (ESL)'</td>
   </tr>
   <tr>
     <td class="fieldname fieldname_epd24" style="padding-left: 50px;">Jahre</td>
@@ -978,7 +978,7 @@
     <td class="fieldname fieldname_epd24" style="padding-left: 50px;">@epd24:years</td>
     <td class="fieldname fieldname_epd24">m</td>
     <td class="fieldname fieldname_epd24">[1]</td>
-    <td class="fieldname fieldname_epd24">Integer</td>
+    <td class="fieldname fieldname_epd24">xs:double</td>
     <td class="fieldname fieldname_epd24">Anzahl der Jahre</td>
     <td class="fieldname fieldname_epd24">Number of years</td>
     <td class="fieldname fieldname_epd24"></td>
@@ -1005,7 +1005,7 @@
   <tr>
     <td class="fieldname fieldname_epd24" style="padding-left: 60px;">Faktor-Kategorie/td>
     <td class="fieldname fieldname_epd24" style="padding-left: 60px;">Factor category</td>
-    <td class="fieldname fieldname_epd24" style="padding-left: 60px;">epd24:factorCategory</td>
+    <td class="fieldname fieldname_epd24" style="padding-left: 60px;">@epd24:factorCategory</td>
     <td class="fieldname fieldname_epd24">m</td>
     <td class="fieldname fieldname_epd24">[1,1]</td>
     <td class="fieldname fieldname_epd24">Restricted <code>xs:string</code>:
@@ -1030,7 +1030,7 @@
   <tr>
     <td class="fieldname fieldname_epd24" style="padding-left: 60px;">Objekt-spezifischer Nutzungsgrad</td>
     <td class="fieldname fieldname_epd24" style="padding-left: 60px;">Object specific use condition grade</td>
-    <td class="fieldname fieldname_epd24" style="padding-left: 60px;">epd24:objectSpecificGrade</td>
+    <td class="fieldname fieldname_epd24" style="padding-left: 60px;">@epd24:objectSpecificGrade</td>
     <td class="fieldname fieldname_epd24">o</td>
     <td class="fieldname fieldname_epd24">[0,1]</td>
     <td class="fieldname fieldname_epd24">Restricted <code>xs:int</code>:
