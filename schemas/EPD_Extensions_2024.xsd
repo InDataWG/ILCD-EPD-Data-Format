@@ -165,8 +165,8 @@
    <xs:element name="variability">
       <xs:complexType>
          <xs:sequence>
-            <xs:element ref="manufacturerVariability" minOccurs="1" maxOccurs="1"/>
-            <xs:element ref="productVariability" minOccurs="1" maxOccurs="1"/>
+            <xs:element ref="manufacturerVariability" minOccurs="0" maxOccurs="1"/>
+            <xs:element ref="productVariability" minOccurs="0" maxOccurs="1"/>
             <xs:element name="variabilityDescription" type="common:FTMultiLang" minOccurs="0" maxOccurs="unbounded"/>
             <xs:any namespace="##other" minOccurs="0" maxOccurs="unbounded"/>
          </xs:sequence>
@@ -183,6 +183,8 @@
             <xs:any namespace="##other" minOccurs="0" maxOccurs="unbounded"/>
          </xs:sequence>
          <xs:attribute name="type" type="ManufacturerVariabilityValues" use="required"/>
+         <xs:attribute ref="epd24:variation" use="optional"/>
+         <xs:attribute ref="epd24:variationRange" use="optional"/>
          <xs:anyAttribute/>
       </xs:complexType>
    </xs:element>
@@ -193,12 +195,14 @@
             <xs:any namespace="##other" minOccurs="0" maxOccurs="unbounded"/>
          </xs:sequence>
          <xs:attribute name="type" type="ProductVariabilityValues" use="required"/>
-         <xs:attribute ref="variation" use="optional"/>
+         <xs:attribute ref="epd24:variation" use="optional"/>
+         <xs:attribute ref="epd24:variationRange" use="optional"/>
          <xs:anyAttribute/>
       </xs:complexType>
    </xs:element>
 
    <xs:attribute name="variation" type="common:Perc"/>
+   <xs:attribute name="variationRange" type="epd24:VariationRange"/>
 
    <xs:element name="scenarioData">
       <xs:complexType>
@@ -250,16 +254,27 @@
    
    <xs:simpleType name="ManufacturerVariabilityValues">
       <xs:restriction base="xs:string">
-         <xs:enumeration value="Single production site"></xs:enumeration>
-         <xs:enumeration value="Single manufacturer with multiple production sites"></xs:enumeration>
-         <xs:enumeration value="Multiple manufacturers"></xs:enumeration>
+         <xs:enumeration value="Single production site"/>
+         <xs:enumeration value="Single manufacturer with multiple production sites"/>
+         <xs:enumeration value="Multiple manufacturers"/>
       </xs:restriction>
    </xs:simpleType>
 
    <xs:simpleType name="ProductVariabilityValues">
       <xs:restriction base="xs:string">
-         <xs:enumeration value="Single product"></xs:enumeration>
-         <xs:enumeration value="Range of products where variability is described"></xs:enumeration>
+         <xs:enumeration value="Single product"/>
+         <xs:enumeration value="Range of products where variability is described"/>
+      </xs:restriction>
+   </xs:simpleType>
+
+   <xs:simpleType name="VariationRange">
+      <xs:restriction base="xs:string">
+<!--         modelled after ISO 14044 Annex B-->
+         <xs:enumeration value="A - less than 2,5%"/>
+         <xs:enumeration value="B - between 2,5% and 10%"/>
+         <xs:enumeration value="C - between 10% and 25%"/>
+         <xs:enumeration value="D - between 25% and 50%"/>
+         <xs:enumeration value="E - more than 50%"/>
       </xs:restriction>
    </xs:simpleType>
 
