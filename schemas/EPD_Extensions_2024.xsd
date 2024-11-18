@@ -165,8 +165,8 @@
    <xs:element name="variability">
       <xs:complexType>
          <xs:sequence>
-            <xs:element ref="manufacturerVariability" minOccurs="1" maxOccurs="1"/>
-            <xs:element ref="productVariability" minOccurs="1" maxOccurs="1"/>
+            <xs:element ref="manufacturerVariability" minOccurs="0" maxOccurs="1"/>
+            <xs:element ref="productVariability" minOccurs="0" maxOccurs="1"/>
             <xs:element name="variabilityDescription" type="common:FTMultiLang" minOccurs="0" maxOccurs="unbounded"/>
             <xs:any namespace="##other" minOccurs="0" maxOccurs="unbounded"/>
          </xs:sequence>
