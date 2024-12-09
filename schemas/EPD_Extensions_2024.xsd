@@ -161,7 +161,6 @@
       </xs:restriction>
    </xs:simpleType>
 
-
    <xs:element name="variability">
       <xs:complexType>
          <xs:sequence>
@@ -207,10 +206,37 @@
    <xs:element name="scenarioData">
       <xs:complexType>
          <xs:sequence>
+            <xs:element ref="epd24:useStageScenarioData" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element ref="epd24:eolScenarioData" minOccurs="0" maxOccurs="unbounded"/>
             <xs:any minOccurs="0" maxOccurs="unbounded"/>
          </xs:sequence>
          <xs:anyAttribute/>
       </xs:complexType>
+   </xs:element>
+
+   <xs:element name="useStageScenarioData">
+      <xs:complexType>
+         <xs:sequence>
+            <xs:element ref="epd24:SoilAndWaterImpact" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:any namespace="##other" minOccurs="0" maxOccurs="unbounded"/>
+         </xs:sequence>
+         <xs:attribute ref="scenario" use="optional"/>
+         <xs:anyAttribute/>
+      </xs:complexType>
+   </xs:element>
+
+   <xs:element name="SoilAndWaterImpact" minOccurs="0" maxOccurs="unbounded">
+      <xs:complexType>
+         <xs:sequence>
+            <xs:element name="SoilAndWaterImpactDescription" type="common:FTMultiLang" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:any namespace="##other" minOccurs="0" maxOccurs="unbounded"/>
+         </xs:sequence>
+         <xs:anyAttribute/>
+      </xs:complexType>
+      <xs:unique name="descriptionLangUniqueConstraint">
+         <xs:selector xpath="epd24:SoilAndWaterImpactDescription"/>
+         <xs:field xpath="@xml:lang"/>
+      </xs:unique>
    </xs:element>
    
    <xs:element name="eolScenarioData">
