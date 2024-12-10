@@ -150,6 +150,7 @@
             <common:dataSetValidUntil>2025</common:dataSetValidUntil>
             <common:other>
                 <epd2:publicationDateOfEPD>2020-05-08</epd2:publicationDateOfEPD>
+                <epd24:expirationDateOfEPD>2024-05-08</epd24:expirationDateOfEPD>
             </common:other>
         </time>
         <geography>
