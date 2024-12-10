@@ -106,7 +106,7 @@
          <xs:element name="referenceToUseConditionsDocumentation" type="common:GlobalReferenceType" minOccurs="0" maxOccurs="unbounded"/>
          <xs:element name="comment" type="common:FTMultiLang" minOccurs="0" maxOccurs="unbounded"/>
       </xs:sequence>
-      <xs:unique name="commentLangUniqueConstraint">
+      <xs:unique name="ServiceLifeCommentLangUniqueConstraint">
          <xs:selector xpath="epd24:comment"/>
          <xs:field xpath="@xml:lang"/>
       </xs:unique>
@@ -114,11 +114,11 @@
          <xs:selector xpath="epd24:useCondition"/>
          <xs:field xpath="@epd24:factorCategory"/>
       </xs:unique>
-      <xs:unique name="referenceToStandardShortDescriptionLangUniqueConstraint">
+      <xs:unique name="ServiceLifeReferenceToStandardShortDescriptionLangUniqueConstraint">
          <xs:selector xpath="epd24:referenceToStandard/common:shortDescription"/>
          <xs:field xpath="@xml:lang"/>
       </xs:unique>
-      <xs:unique name="referenceToUseConditionsDocumentationShortDescriptionLangUniqueConstraint">
+      <xs:unique name="ServiceLifeReferenceToUseConditionsDocumentationShortDescriptionLangUniqueConstraint">
          <xs:selector xpath="epd24:referenceToUseConditionsDocumentation/common:shortDescription"/>
          <xs:field xpath="@xml:lang"/>
       </xs:unique>
@@ -130,8 +130,10 @@
          <xs:attribute name="objectSpecificGrade" type="epd24:UseConditionDegrees"/>
          <xs:attribute name="referenceGrade" type="epd24:UseConditionDegrees"/>
          <xs:attribute name="factor" type="xs:double" use="required"/>
-         <xs:element name="comment" type="common:FTMultiLang" minOccurs="0" maxOccurs="unbounded"/>
-         <xs:unique name="commentLangUniqueConstraint">
+         <xs:sequence>
+            <xs:element name="comment" type="common:FTMultiLang" minOccurs="0" maxOccurs="unbounded"/>
+         </xs:sequence>
+         <xs:unique name="useConditionFactorCommentLangUniqueConstraint">
             <xs:selector xpath="epd24:comment"/>
             <xs:field xpath="@xml:lang"/>
          </xs:unique>
@@ -170,7 +172,7 @@
             <xs:any namespace="##other" minOccurs="0" maxOccurs="unbounded"/>
          </xs:sequence>
       </xs:complexType>
-      <xs:unique name="descriptionLangUniqueConstraint">
+      <xs:unique name="variabilityDescriptionLangUniqueConstraint">
           <xs:selector xpath="epd24:variabilityDescription"/>
           <xs:field xpath="@xml:lang"/>
       </xs:unique>
