@@ -304,4 +304,6 @@
       </xs:restriction>
    </xs:simpleType>
 
+   <xs:element name="expirationDateOfEPD" type="xs:date"/>
+
 </xs:schema>
