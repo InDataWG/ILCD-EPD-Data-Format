@@ -87,10 +87,10 @@
                 </epd:scenarios>
                 <epd24:scenarioData>
                     <epd24:useStageScenarioData>
-                        <epd24:SoilAndWaterImpacts>
-                            <epd24:SoilAndWaterImpactsDescription xml:lang="en">Potential release of adhesives, cleaning agents, or their breakdown products into water systems.</epd24:SoilAndWaterImpactsDescription>
-                            <epd24:SoilAndWaterImpactsDescription xml:lang="de">Mögliche Freisetzung von Klebstoffen, Reinigungsmitteln oder deren Abbauprodukten in Gewässersysteme.</epd24:SoilAndWaterImpactsDescription>
-                        </epd24:SoilAndWaterImpacts>
+                        <epd24:soilAndWaterImpacts>
+                            <epd24:soilAndWaterImpactsDescription xml:lang="en">Potential release of adhesives, cleaning agents, or their breakdown products into water systems.</epd24:soilAndWaterImpactsDescription>
+                            <epd24:soilAndWaterImpactsDescription xml:lang="de">Mögliche Freisetzung von Klebstoffen, Reinigungsmitteln oder deren Abbauprodukten in Gewässersysteme.</epd24:soilAndWaterImpactsDescription>
+                        </epd24:soilAndWaterImpacts>
                     </epd24:useStageScenarioData>
                    <epd24:eolScenarioData epd24:scenario="100% recycling">
                       <epd24:collection epd24:separate="0.9" epd24:withMixedWaste="0.1"/>
