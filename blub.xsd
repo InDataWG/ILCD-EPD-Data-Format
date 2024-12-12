@@ -1,0 +1,41 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+  targetNamespace="http://www.example.org/blub"
+  xmlns="http://www.example.org/blub"
+  xmlns:blub="http://www.example.org/blub"
+  elementFormDefault="qualified"
+  attributeFormDefault="qualified"
+  version="1.1">
+
+  <xs:import namespace="http://www.w3.org/XML/1998/namespace"
+    schemaLocation="http://www.w3.org/2001/xml.xsd"/>
+
+  <!-- Define reusable PersonType -->
+  <xs:complexType name="PersonType">
+    <xs:sequence>
+      <xs:element name="name" type="xs:string"/>
+      <xs:element name="motto" maxOccurs="unbounded" type="FreeText"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <!-- Student and Professor elements -->
+  <xs:element name="student" type="PersonType">
+    <xs:unique name="x">
+      <xs:selector xpath="blub:motto"/>
+      <xs:field xpath="@xml:lang"/>
+    </xs:unique>
+
+  </xs:element>
+  <xs:element name="professor" type="PersonType">
+    <xs:unique name="y" ref="blub:x">
+    </xs:unique>
+  </xs:element>
+
+  <!-- FreeText complex type -->
+  <xs:complexType name="FreeText">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute ref="xml:lang" use="required"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+</xs:schema>
