@@ -3,10 +3,12 @@
 <!-- This product includes portions of the ILCD Format and/or the ILCD Editor, created by the European Commmission's JRC-IES, European 
   Platform on Life Cycle Assessment together with the FZK GmbH, IAI. Copyright (C) 2009, European Commission. All Rights Reserved. -->
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
-  xmlns:epd24="http://www.indata.network/EPD/2024" xmlns="http://www.indata.network/EPD/2024"
+  xmlns:epd24="http://www.indata.network/EPD/2024"
+  xmlns="http://www.indata.network/EPD/2024"
   targetNamespace="http://www.indata.network/EPD/2024"
   xmlns:common="http://lca.jrc.it/ILCD/Common"
   elementFormDefault="qualified" attributeFormDefault="qualified" version="1.1">
+
   <xs:import namespace="http://lca.jrc.it/ILCD/Common" schemaLocation="ILCD_Common_Groups.xsd"/>
 
   <xs:element name="SVHC">
@@ -96,13 +98,46 @@
   </xs:simpleType>
 
   <xs:element name="referenceServiceLife" type="epd24:ServiceLife">
+    <xs:unique name="unique_4CEB56AD-1BEC-4AE7-9E3B-91852FB03624">
+      <xs:selector xpath="epd24:comment"/>
+      <xs:field xpath="@xml:lang"/>
+    </xs:unique>
+    <xs:unique name="unique_BC7E21FE-8BB3-4743-81D2-59BD0970BEEA">
+      <xs:selector xpath="epd24:useConditionFactor"/>
+      <xs:field xpath="@epd24:factorCategory"/>
+    </xs:unique>
+    <xs:unique name="unique_AFEE71A1-E73F-48D4-8D75-C7DDE62C26D5">
+      <xs:selector xpath="epd24:referenceToStandard/common:shortDescription"/>
+      <xs:field xpath="@xml:lang"/>
+    </xs:unique>
+    <xs:unique
+      name="unique_817A73B4-B235-4C31-830B-D219EC8CFC36">
+      <xs:selector xpath="epd24:referenceToUseConditionsDocumentation/common:shortDescription"/>
+      <xs:field xpath="@xml:lang"/>
+    </xs:unique>
   </xs:element>
 
   <xs:element name="estimatedServiceLife" type="epd24:ServiceLife">
+    <xs:unique name="unique_8D3C390C-BC04-44A6-8F9A-D9D039ED5B82">
+      <xs:selector xpath="epd24:comment"/>
+      <xs:field xpath="@xml:lang"/>
+    </xs:unique>
+    <xs:unique name="unique_824CA652-DFC0-4D96-886C-7649E7BF5E5D">
+      <xs:selector xpath="epd24:useConditionFactor"/>
+      <xs:field xpath="@epd24:factorCategory"/>
+    </xs:unique>
+    <xs:unique name="unique_70732204-AED4-409E-8BF3-A6B3D9F23C02">
+      <xs:selector xpath="epd24:referenceToStandard/common:shortDescription"/>
+      <xs:field xpath="@xml:lang"/>
+    </xs:unique>
+    <xs:unique
+      name="unique_D9CDB417-4C89-4C2C-83D6-0F10AD8E655D">
+      <xs:selector xpath="epd24:referenceToUseConditionsDocumentation/common:shortDescription"/>
+      <xs:field xpath="@xml:lang"/>
+    </xs:unique>
   </xs:element>
 
   <xs:complexType name="ServiceLife">
-    <xs:attribute name="years" type="xs:double" use="required"/>
     <xs:sequence>
       <xs:element ref="epd24:useConditionFactor" minOccurs="0" maxOccurs="unbounded"/>
       <xs:element name="referenceToStandard" type="common:GlobalReferenceType" minOccurs="0"
@@ -111,39 +146,23 @@
         minOccurs="0" maxOccurs="unbounded"/>
       <xs:element name="comment" type="common:FTMultiLang" minOccurs="0" maxOccurs="unbounded"/>
     </xs:sequence>
-    <xs:unique name="ServiceLifeCommentLangUniqueConstraint">
-      <xs:selector xpath="epd24:comment"/>
-      <xs:field xpath="@xml:lang"/>
-    </xs:unique>
-    <xs:unique name="useConditionFactorCategoryUniqueness">
-      <xs:selector xpath="epd24:useCondition"/>
-      <xs:field xpath="@epd24:factorCategory"/>
-    </xs:unique>
-    <xs:unique name="ServiceLifeReferenceToStandardShortDescriptionLangUniqueConstraint">
-      <xs:selector xpath="epd24:referenceToStandard/common:shortDescription"/>
-      <xs:field xpath="@xml:lang"/>
-    </xs:unique>
-    <xs:unique
-      name="ServiceLifeReferenceToUseConditionsDocumentationShortDescriptionLangUniqueConstraint">
-      <xs:selector xpath="epd24:referenceToUseConditionsDocumentation/common:shortDescription"/>
-      <xs:field xpath="@xml:lang"/>
-    </xs:unique>
+    <xs:attribute name="years" type="xs:double" use="required"/>
   </xs:complexType>
 
   <xs:element name="useConditionFactor">
     <xs:complexType>
+      <xs:sequence>
+        <xs:element name="comment" type="common:FTMultiLang" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
       <xs:attribute name="factorCategory" type="epd24:UseConditionFactors" use="required"/>
       <xs:attribute name="objectSpecificGrade" type="epd24:UseConditionDegrees"/>
       <xs:attribute name="referenceGrade" type="epd24:UseConditionDegrees"/>
       <xs:attribute name="factor" type="xs:double" use="required"/>
-      <xs:sequence>
-        <xs:element name="comment" type="common:FTMultiLang" minOccurs="0" maxOccurs="unbounded"/>
-      </xs:sequence>
-      <xs:unique name="useConditionFactorCommentLangUniqueConstraint">
-        <xs:selector xpath="epd24:comment"/>
-        <xs:field xpath="@xml:lang"/>
-      </xs:unique>
     </xs:complexType>
+    <xs:unique name="unique_65D3FD77-5772-4ECF-9028-F0E2F7E95B96">
+      <xs:selector xpath="epd24:comment"/>
+      <xs:field xpath="@xml:lang"/>
+    </xs:unique>
   </xs:element>
 
   <xs:simpleType name="UseConditionFactors">
@@ -179,7 +198,7 @@
         <xs:any namespace="##other" minOccurs="0" maxOccurs="unbounded"/>
       </xs:sequence>
     </xs:complexType>
-    <xs:unique name="variabilityDescriptionLangUniqueConstraint">
+    <xs:unique name="unique_B6253508-8305-4D44-82B1-5108AB0DCACE">
       <xs:selector xpath="epd24:variabilityDescription"/>
       <xs:field xpath="@xml:lang"/>
     </xs:unique>
@@ -243,7 +262,7 @@
       </xs:sequence>
       <xs:anyAttribute/>
     </xs:complexType>
-    <xs:unique name="soilAndWaterImpactsDescriptionLangUniqueConstraint">
+    <xs:unique name="unique_BD4374CD-2ED7-4FC2-B5AF-4976BCF6F01F">
       <xs:selector xpath="epd24:soilAndWaterImpactsDescription"/>
       <xs:field xpath="@xml:lang"/>
     </xs:unique>
