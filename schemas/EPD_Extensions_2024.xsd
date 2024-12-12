@@ -210,7 +210,7 @@
          <xs:sequence>
             <xs:element ref="epd24:useStageScenarioData" minOccurs="0" maxOccurs="unbounded"/>
             <xs:element ref="epd24:eolScenarioData" minOccurs="0" maxOccurs="unbounded"/>
-            <xs:any minOccurs="0" maxOccurs="unbounded"/>
+            <xs:any namespace="##other" minOccurs="0" maxOccurs="unbounded"/>
          </xs:sequence>
          <xs:anyAttribute/>
       </xs:complexType>
