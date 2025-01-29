@@ -4,14 +4,14 @@ Welcome to the ILCD+EPD Data Format documentation. This README provides a compre
 
 ## ILCD+EPD Guides
 
-- **[Developer Quick Start Guide](/doc/guides/EPD%20Data%20Format%20–%20Developer%20Quick%20Start%20Guide.md)** 
+**[Developer Quick Start Guide](/doc/guides/EPD%20Data%20Format%20–%20Developer%20Quick%20Start%20Guide.md)**<br/>
 This document serves as a starting point for software developers who want to integrate support for the ÖKOBAUDAT’s EPD data format and/or data exchange to or from the ÖKOBAUDAT into their software applications. [(Download)](/doc/guides/EPD%20Data%20Format%20–%20Developer%20Quick%20Start%20Guide.docx)
  
 
-- **[Migration Guide from v1.1 to v1.2](/doc/guides/EPD%20Data%20Format%20–%20Migration%20Guide%20from%201.1%20to%201.2.md)**  
+**[Migration Guide from v1.1 to v1.2](/doc/guides/EPD%20Data%20Format%20–%20Migration%20Guide%20from%201.1%20to%201.2.md)**<br/>
 This document is a migration guide outlining the changes from ILCD+EPD format version 1.1 to 1.2.
 
-- **[Technical Details](/doc/guides/EPD%20Data%20Format%20–%20Technical%20Details.md)**  
+**[Technical Details](/doc/guides/EPD%20Data%20Format%20–%20Technical%20Details.md)**<br/>
 This document provides additional information for software developers who want to integrate support for the ILCD+EPD data format into their software applications. [(Download)](/doc/guides/EPD%20Data%20Format%20–%20Technical%20Details.docx)
 
 ## Authoritative Identifiers (UUIDs)
@@ -33,7 +33,7 @@ Authoritative identifiers serve as master data within the ILCD framework. They e
 
 ## Schemas
 
-| Schema Name | Go to Source Code | HTML Documentation in the Browser |
+| Schema Name | Go to Source Code | View Documentation |
 |-------------|-----------------------|-----------------------------------|
 | EPD DataSet | [Souce Code](./doc/schemadoc/EPD_DataSet.html) | [View Documentation](https://indatawg.github.io/ILCD-EPD-Data-Format/gitBranches/main/schemadoc/EPD_DataSet.html) |
 | EPD FlowDataSet | [Souce Code](./doc/schemadoc/EPD_FlowDataSet.html) | [View Documentation](https://indatawg.github.io/ILCD-EPD-Data-Format/gitBranches/main/schemadoc/EPD_FlowDataSet.html) |
