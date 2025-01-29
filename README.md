@@ -44,14 +44,3 @@ Authoritative identifiers serve as master data within the ILCD framework. They e
 | ILCD ContactDataSet | [Souce Code](./doc/schemadoc/ILCD_ContactDataSet.html) | [View Documentation](https://indatawg.github.io/ILCD-EPD-Data-Format/gitBranches/main/schemadoc/ILCD_ContactDataSet.html) |
 | ILCD SourceDataSet | [Souce Code](./doc/schemadoc/ILCD_SourceDataSet.html) | [View Documentation](https://indatawg.github.io/ILCD-EPD-Data-Format/gitBranches/main/schemadoc/ILCD_SourceDataSet.html) |
 
-## TODO Examples
-
-Here are some example datasets to help you understand the implementation of ILCD+EPD format:
-- **[Example 1: Dataset A](./examples/dataset_a.xml)**
-- **[Example 2: Dataset B](./examples/dataset_b.xml)**
-
-## TODO Validation Profiles
-
-Download the latest validation profiles to ensure your data is compliant with ILCD+EPD standards:
-- [Download Validation Profile v1.0](./validation/validation_profile_v1.0.xml)
-- [Download Validation Profile v2.0](./validation/validation_profile_v2.0.xml)
