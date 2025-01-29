@@ -41,7 +41,7 @@ Authoritative identifiers serve as master data within the ILCD framework. They e
 | ILCD Common Enumeration Values | [Source Code](./doc/schemadoc/ILCD_Common_EnumerationValues.html) | [View Documentation](https://indatawg.github.io/ILCD-EPD-Data-Format/gitBranches/main/schemadoc/ILCD_Common_EnumerationValues.html) |
 | ILCD Contact Dataset | [Source Code](./doc/schemadoc/ILCD_ContactDataSet.html) | [View Documentation](https://indatawg.github.io/ILCD-EPD-Data-Format/gitBranches/main/schemadoc/ILCD_ContactDataSet.html) |
 | ILCD Flow Property Dataset | [Source Code](./doc/schemadoc/ILCD_FlowPropertyDataSet.html) | [View Documentation](https://indatawg.github.io/ILCD-EPD-Data-Format/gitBranches/main/schemadoc/ILCD_FlowPropertyDataSet.html) |
-| ILCD LCIA Method Dataset | [Source Code](./doc/schemadoc/ILCD_LCIA_MethodDataSet.html) | [View Documentation](https://indatawg.github.io/ILCD-EPD-Data-Format/gitBranches/main/schemadoc/ILCD_LCIA_MethodDataSet.html) |
+| ILCD LCIA Method Dataset | [Source Code](./doc/schemadoc/ILCD_LCIAMethodDataSet.html) | [View Documentation](https://indatawg.github.io/ILCD-EPD-Data-Format/gitBranches/main/schemadoc/ILCD_LCIAMethodDataSet.html) |
 | ILCD Source Dataset | [Source Code](./doc/schemadoc/ILCD_SourceDataSet.html) | [View Documentation](https://indatawg.github.io/ILCD-EPD-Data-Format/gitBranches/main/schemadoc/ILCD_SourceDataSet.html) |
 | ILCD Unit Group Dataset | [Source Code](./doc/schemadoc/ILCD_UnitGroupDataSet.html) | [View Documentation](https://indatawg.github.io/ILCD-EPD-Data-Format/gitBranches/main/schemadoc/ILCD_UnitGroupDataSet.html) |
 
