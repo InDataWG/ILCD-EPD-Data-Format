@@ -18,4 +18,4 @@ The inclusion/import relationships between the schemas are given in this figure:
 
 
 
-![Schema_relationships](Developer_Documentation_Schemas.assets/Schema_relationships.png)
+![Schema_relationships](Schema_relationships.png)
