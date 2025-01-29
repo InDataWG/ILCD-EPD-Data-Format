@@ -33,14 +33,15 @@ Authoritative identifiers serve as master data within the ILCD framework. They e
 
 ## Schemas
 
-| Schema Name | Go to Source Code | View Documentation |
-|-------------|-----------------------|-----------------------------------|
-| EPD DataSet | [Souce Code](./doc/schemadoc/EPD_DataSet.html) | [View Documentation](https://indatawg.github.io/ILCD-EPD-Data-Format/gitBranches/main/schemadoc/EPD_DataSet.html) |
-| EPD FlowDataSet | [Souce Code](./doc/schemadoc/EPD_FlowDataSet.html) | [View Documentation](https://indatawg.github.io/ILCD-EPD-Data-Format/gitBranches/main/schemadoc/EPD_FlowDataSet.html) |
-| ILCD Common DataTypes | [Souce Code](./doc/schemadoc/ILCD_Common_DataTypes.html) | [View Documentation](https://indatawg.github.io/ILCD-EPD-Data-Format/gitBranches/main/schemadoc/ILCD_Common_DataTypes.html) |
-| ILCD UnitGroupDataSet | [Souce Code](./doc/schemadoc/ILCD_UnitGroupDataSet.html) | [View Documentation](https://indatawg.github.io/ILCD-EPD-Data-Format/gitBranches/main/schemadoc/ILCD_UnitGroupDataSet.html) |
-| ILCD FlowPropertyDataSet | [Souce Code](./doc/schemadoc/ILCD_FlowPropertyDataSet.html) | [View Documentation](https://indatawg.github.io/ILCD-EPD-Data-Format/gitBranches/main/schemadoc/ILCD_FlowPropertyDataSet.html) |
-| ILCD LCIA MethodDataSet | [Souce Code](./doc/schemadoc/ILCD_LCIA_MethodDataSet.html) | [View Documentation](https://indatawg.github.io/ILCD-EPD-Data-Format/gitBranches/main/schemadoc/ILCD_LCIA_MethodDataSet.html) |
-| ILCD ContactDataSet | [Souce Code](./doc/schemadoc/ILCD_ContactDataSet.html) | [View Documentation](https://indatawg.github.io/ILCD-EPD-Data-Format/gitBranches/main/schemadoc/ILCD_ContactDataSet.html) |
-| ILCD SourceDataSet | [Souce Code](./doc/schemadoc/ILCD_SourceDataSet.html) | [View Documentation](https://indatawg.github.io/ILCD-EPD-Data-Format/gitBranches/main/schemadoc/ILCD_SourceDataSet.html) |
+| Schema Name | Go to Source Code | HTML Documentation in the Browser |
+|-------------|-------------------|-----------------------------------|
+| EPD Dataset | [Source Code](./doc/schemadoc/EPD_DataSet.html) | [View Documentation](https://indatawg.github.io/ILCD-EPD-Data-Format/gitBranches/main/schemadoc/EPD_DataSet.html) |
+| EPD Flow Dataset | [Source Code](./doc/schemadoc/EPD_FlowDataSet.html) | [View Documentation](https://indatawg.github.io/ILCD-EPD-Data-Format/gitBranches/main/schemadoc/EPD_FlowDataSet.html) |
+| ILCD Common Data Types | [Source Code](./doc/schemadoc/ILCD_Common_DataTypes.html) | [View Documentation](https://indatawg.github.io/ILCD-EPD-Data-Format/gitBranches/main/schemadoc/ILCD_Common_DataTypes.html) |
+| ILCD Common Enumeration Values | [Source Code](./doc/schemadoc/ILCD_Common_EnumerationValues.html) | [View Documentation](https://indatawg.github.io/ILCD-EPD-Data-Format/gitBranches/main/schemadoc/ILCD_Common_EnumerationValues.html) |
+| ILCD Contact Dataset | [Source Code](./doc/schemadoc/ILCD_ContactDataSet.html) | [View Documentation](https://indatawg.github.io/ILCD-EPD-Data-Format/gitBranches/main/schemadoc/ILCD_ContactDataSet.html) |
+| ILCD Flow Property Dataset | [Source Code](./doc/schemadoc/ILCD_FlowPropertyDataSet.html) | [View Documentation](https://indatawg.github.io/ILCD-EPD-Data-Format/gitBranches/main/schemadoc/ILCD_FlowPropertyDataSet.html) |
+| ILCD LCIA Method Dataset | [Source Code](./doc/schemadoc/ILCD_LCIA_MethodDataSet.html) | [View Documentation](https://indatawg.github.io/ILCD-EPD-Data-Format/gitBranches/main/schemadoc/ILCD_LCIA_MethodDataSet.html) |
+| ILCD Source Dataset | [Source Code](./doc/schemadoc/ILCD_SourceDataSet.html) | [View Documentation](https://indatawg.github.io/ILCD-EPD-Data-Format/gitBranches/main/schemadoc/ILCD_SourceDataSet.html) |
+| ILCD Unit Group Dataset | [Source Code](./doc/schemadoc/ILCD_UnitGroupDataSet.html) | [View Documentation](https://indatawg.github.io/ILCD-EPD-Data-Format/gitBranches/main/schemadoc/ILCD_UnitGroupDataSet.html) |
 
