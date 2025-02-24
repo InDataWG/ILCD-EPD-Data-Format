@@ -1,0 +1,15 @@
+UUID,Name (en),Unit (en),UnitGroup UUID,Country/-ies
+fb774615-0575-45de-9a89-1ded92f19770,"Global warming potential except emissions and uptake of biogenic carbon (GWP-IOBC/GHG, EF 3.0)",kg CO2 eqv.,1ebf3012-d0db-4de2-aefd-ef30cedb0be1,"Finland, Norway, Sweden"
+e03c018f-8526-44bc-b5e4-bc03c3ab32f3,"Global warming potential except emissions and uptake of biogenic carbon (GWP-IOBC/GHG, EF 3.1)",kg CO2 eqv.,1ebf3012-d0db-4de2-aefd-ef30cedb0be1,"Finland, Norway, Sweden"
+1cf37565-0154-4f01-94e4-b4dcbf63b519,RMI fossile,kg,93a60a57-a4c8-11da-a746-0800200c9a66,Germany
+755a42f4-bce4-4aaf-af9b-f6ffad4dabb8,RMI metals,kg,93a60a57-a4c8-11da-a746-0800200c9a66,Germany
+eb2ad53a-874a-4c97-8017-fa2c06803b9f,RMI minerals,kg,93a60a57-a4c8-11da-a746-0800200c9a66,Germany
+03ee44a1-0e8a-471e-a30d-6e779361dddf,RMI forestry,kg,93a60a57-a4c8-11da-a746-0800200c9a66,Germany
+505188c3-77bb-4bcd-bb49-2f5f328aa372,RMI agriculture,kg,93a60a57-a4c8-11da-a746-0800200c9a66,Germany
+f88e175e-0cf6-49dc-9219-539d023a03d3,RMI fisheries,kg,93a60a57-a4c8-11da-a746-0800200c9a66,Germany
+32200a68-5488-49d7-9e81-0e93c0f19cc1,TMR fossile,kg,93a60a57-a4c8-11da-a746-0800200c9a66,Germany
+4be326ff-416b-400f-b835-472f33b4cf16,TMR metals,kg,93a60a57-a4c8-11da-a746-0800200c9a66,Germany
+a9b02237-8034-49ee-850d-876dbe6e148d,TMR minerals,kg,93a60a57-a4c8-11da-a746-0800200c9a66,Germany
+89c8b6c5-c525-4541-8dbd-211b8db1d3f0,TMR forestry,kg,93a60a57-a4c8-11da-a746-0800200c9a66,Germany
+25359720-f52a-4597-980d-3ff571bc2164,TMR agriculture,kg,93a60a57-a4c8-11da-a746-0800200c9a66,Germany
+5b6a0c3a-d0d3-49ff-811e-9816aa8c71f5,TMR fisheries,kg,93a60a57-a4c8-11da-a746-0800200c9a66,Germany
