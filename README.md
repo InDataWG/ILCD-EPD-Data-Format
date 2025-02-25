@@ -34,7 +34,7 @@ XML schemas are used to formally describe the XML syntax and data types. They ar
 ## Authoritative Identifiers (UUIDs)
 
 The ILCD data format is an object-oriented format (see [ILCD+EPD Data Format Introduction](link)). Some objects are very often reused and have a authoritative character (master data), e.g. for units, LCIA methods, background databases/versions etc. They ensure consistency across datasets.
-Each object has their individual UUID. The most important UUIDs are listed here for reference.
+Each object has their individual UUID. The most important UUIDs are listed here for reference. You can view or download these lists in CSV format.
 All master data can be found in a dedicated [repository](https://github.com/InDataWG/ILCD-EPD-Master-Data) 
 
 | Reference Type                         | Go to Source Code                              | Viewable Table                                 |
