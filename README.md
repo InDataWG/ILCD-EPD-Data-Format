@@ -32,6 +32,7 @@ Authoritative identifiers serve as master data within the ILCD framework. They e
 
 
 ## Schemas
+XML schemas are used to formally describe the XML syntax and data types. They are also used to validate instance documents (i.e. ILCD+EPD datasets). They can also be used as a basis for generating classes for software applications that read and/or write ILCD+EPD data.
 
 | Schema Name | Go to Source Code | HTML Documentation in the Browser |
 |-------------|-------------------|-----------------------------------|
