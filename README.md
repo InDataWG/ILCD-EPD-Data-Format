@@ -14,22 +14,6 @@ This document is a migration guide outlining the changes from ILCD+EPD format ve
 **[Technical Details](/doc/guides/EPD%20Data%20Format%20–%20Technical%20Details.md)**<br/>
 This document provides additional information for software developers who want to integrate support for the ILCD+EPD data format into their software applications. [(Download)](/doc/guides/EPD%20Data%20Format%20–%20Technical%20Details.docx)
 
-## Authoritative Identifiers (UUIDs)
-
-Authoritative identifiers serve as master data within the ILCD framework. They ensure consistency across datasets.
-
-| Reference Type                         | Go to Source Code                              | Viewable Table                                 |
-|----------------------------------------|--------------------------------------------------|------------------------------------------------|
-| ecoinvent database: source data sets   | [Source Code](./doc/identifiers/BackgroundDB_SourceDatasets_ecoinvent.csv)    | [Viewable Table](https://indatawg.github.io/ILCD-EPD-Data-Format/gitBranches/feature/v1.3-alpha_en-15804/identifiers/BackgroundDB_SourceDatasets_ecoinvent.html)  |
-| GaBi database: source data sets        | [Source Code](./doc/identifiers/BackgroundDB_SourceDatasets_GaBi.csv)  | [Viewable Table](https://indatawg.github.io/ILCD-EPD-Data-Format/gitBranches/feature/v1.3-alpha_en-15804/identifiers/BackgroundDB_SourceDatasets_GaBi.html) |
-| Common references                      | [Source Code](./doc/identifiers/Common_references.csv)       | [Viewable Table](https://indatawg.github.io/ILCD-EPD-Data-Format/gitBranches/feature/v1.3-alpha_en-15804/identifiers/Common_references.html)     |
-| Country-specific indicators            | [Source Code](./doc/identifiers/Country-specific_indicators.csv) | [Viewable Table](https://indatawg.github.io/ILCD-EPD-Data-Format/gitBranches/feature/v1.3-alpha_en-15804/identifiers/Country-specific_indicators.html)  |
-| EN15804+A1 indicators                  | [Source Code](./doc/identifiers/EN15804+A1_indicators.csv)| [Viewable Table](https://indatawg.github.io/ILCD-EPD-Data-Format/gitBranches/feature/v1.3-alpha_en-15804/identifiers/EN15804+A1_indicators.html) |
-| EN15804+A2 (EF3.0) indicators          | [Source Code](./doc/identifiers/EN15804+A2_EF3.0_indicators.csv)| [Viewable Table](https://indatawg.github.io/ILCD-EPD-Data-Format/gitBranches/feature/v1.3-alpha_en-15804/identifiers/EN15804+A2_EF3.0_indicators.html) |
-| EN15804+A2 (EF3.1) indicators          | [Source Code](./doc/identifiers/EN15804+A2_EF3.1_indicators.csv)| [Viewable Table](https://indatawg.github.io/ILCD-EPD-Data-Format/gitBranches/feature/v1.3-alpha_en-15804/identifiers/EN15804+A2_EF3.1_indicators.html) |
-| Flow properties and unit groups        | [Source Code](./doc/identifiers/Flow_properties_and_unit_groups.csv)| [Viewable Table](https://indatawg.github.io/ILCD-EPD-Data-Format/gitBranches/feature/v1.3-alpha_en-15804/identifiers/Flow_properties_and_unit_groups.html) |
-
-
 
 ## Schemas
 XML schemas are used to formally describe the XML syntax and data types. They are also used to validate instance documents (i.e. ILCD+EPD datasets). They can also be used as a basis for generating classes for software applications that read and/or write ILCD+EPD data.
@@ -45,4 +29,23 @@ XML schemas are used to formally describe the XML syntax and data types. They ar
 | ILCD LCIA Method Dataset | [Source Code](./doc/schemadoc/ILCD_LCIAMethodDataSet.html) | [View Documentation](https://indatawg.github.io/ILCD-EPD-Data-Format/gitBranches/feature/v1.3-alpha_en-15804/schemadoc/ILCD_LCIAMethodDataSet.html) |
 | ILCD Source Dataset | [Source Code](./doc/schemadoc/ILCD_SourceDataSet.html) | [View Documentation](https://indatawg.github.io/ILCD-EPD-Data-Format/gitBranches/feature/v1.3-alpha_en-15804/schemadoc/ILCD_SourceDataSet.html) |
 | ILCD Unit Group Dataset | [Source Code](./doc/schemadoc/ILCD_UnitGroupDataSet.html) | [View Documentation](https://indatawg.github.io/ILCD-EPD-Data-Format/gitBranches/feature/v1.3-alpha_en-15804/schemadoc/ILCD_UnitGroupDataSet.html) |
+
+
+## Authoritative Identifiers (UUIDs)
+
+The ILCD data format is an object-oriented format (see [ILCD+EPD Data Format Introduction](link)). Some objects are very often reused and have a authoritative character (master data), e.g. for units, LCIA methods, background databases/versions etc. They ensure consistency across datasets.
+Each object has their individual UUID. The most important UUIDs are listed here for reference.
+All master data can be found in a dedicated [repository](https://github.com/InDataWG/ILCD-EPD-Master-Data) 
+
+| Reference Type                         | Go to Source Code                              | Viewable Table                                 |
+|----------------------------------------|--------------------------------------------------|------------------------------------------------|
+| Common references                      | [Source Code](./doc/identifiers/Common_references.csv)       | [Viewable Table](https://indatawg.github.io/ILCD-EPD-Data-Format/gitBranches/feature/v1.3-alpha_en-15804/identifiers/Common_references.html)     |
+| Flow properties and unit groups        | [Source Code](./doc/identifiers/Flow_properties_and_unit_groups.csv)| [Viewable Table](https://indatawg.github.io/ILCD-EPD-Data-Format/gitBranches/feature/v1.3-alpha_en-15804/identifiers/Flow_properties_and_unit_groups.html) |
+| EN15804+A1 indicators                  | [Source Code](./doc/identifiers/EN15804+A1_indicators.csv)| [Viewable Table](https://indatawg.github.io/ILCD-EPD-Data-Format/gitBranches/feature/v1.3-alpha_en-15804/identifiers/EN15804+A1_indicators.html) |
+| EN15804+A2 (EF3.0) indicators          | [Source Code](./doc/identifiers/EN15804+A2_EF3.0_indicators.csv)| [Viewable Table](https://indatawg.github.io/ILCD-EPD-Data-Format/gitBranches/feature/v1.3-alpha_en-15804/identifiers/EN15804+A2_EF3.0_indicators.html) |
+| EN15804+A2 (EF3.1) indicators          | [Source Code](./doc/identifiers/EN15804+A2_EF3.1_indicators.csv)| [Viewable Table](https://indatawg.github.io/ILCD-EPD-Data-Format/gitBranches/feature/v1.3-alpha_en-15804/identifiers/EN15804+A2_EF3.1_indicators.html) |
+| Country-specific indicators            | [Source Code](./doc/identifiers/Country-specific_indicators.csv) | [Viewable Table](https://indatawg.github.io/ILCD-EPD-Data-Format/gitBranches/feature/v1.3-alpha_en-15804/identifiers/Country-specific_indicators.html)  |
+| ecoinvent database: source data sets   | [Source Code](./doc/identifiers/BackgroundDB_SourceDatasets_ecoinvent.csv)    | [Viewable Table](https://indatawg.github.io/ILCD-EPD-Data-Format/gitBranches/feature/v1.3-alpha_en-15804/identifiers/BackgroundDB_SourceDatasets_ecoinvent.html)  |
+| GaBi database: source data sets        | [Source Code](./doc/identifiers/BackgroundDB_SourceDatasets_GaBi.csv)  | [Viewable Table](https://indatawg.github.io/ILCD-EPD-Data-Format/gitBranches/feature/v1.3-alpha_en-15804/identifiers/BackgroundDB_SourceDatasets_GaBi.html) |
+
 
