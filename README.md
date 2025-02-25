@@ -58,7 +58,7 @@ A simple [example ILCD+EPD process dataset](./sample_data/processes/EPDv1.3_exam
 
 ### ILCD Validation Tool
 
-In order to make sure that a given ILCD+EPD dataset is compliant with both the XML Schemas and the ILCD+EPD master data, it can be validated using the free and Open Source [ILCD Validation Tool](https://bitbucket.org/okusche/ilcdvalidationtool/wiki/Home). You will need to use a validation profile specific for ILCD+EPD (see next subsection).
+In order to make sure that a given ILCD+EPD dataset is compliant with both the XML Schemas and the ILCD+EPD master data, it can be validated using the [ILCD Validation Tool](https://bitbucket.org/okusche/ilcdvalidationtool/wiki/Home), a free and Open Source desktop tool available for all major operating systems. You will need to use a validation profile specific for ILCD+EPD (see next subsection).
 
 For developers, the underlying logic for validating ILCD+EPD data against a given validation profile is also available as an Open Source Java library: [ILCD Validation Library](https://bitbucket.org/okusche/ilcdvalidation/)
 
