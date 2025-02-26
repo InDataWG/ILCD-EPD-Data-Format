@@ -30,7 +30,7 @@ XML schemas are used to formally describe the XML syntax and data types. They ar
 | ILCD_FlowPropertyDataSet.xsd | [Source Code](./schemas/ILCD_FlowPropertyDataSet.xsd) | [View Documentation](https://indatawg.github.io/ILCD-EPD-Data-Format/gitBranches/feature/v1.3-alpha_en-15804/schemadoc/ILCD_FlowPropertyDataSet.html) |
 | ILCD_LCIAMethodDataSet.xsd | [Source Code](./schemas/ILCD_LCIAMethodDataSet.xsd) | [View Documentation](https://indatawg.github.io/ILCD-EPD-Data-Format/gitBranches/feature/v1.3-alpha_en-15804/schemadoc/ILCD_LCIAMethodDataSet.html) |
 | ILCD_LCIAMethodDataSet.xsd | [Source Code](./schemas/ILCD_LCIAMethodDataSet.xsd) | [View Documentation](https://indatawg.github.io/ILCD-EPD-Data-Format/gitBranches/feature/v1.3-alpha_en-15804/schemadoc/ILCD_SourceDataSet.html) |
-| ILCD_UnitGroupDataSet.xsd | [Source Code](./schemas/ILCD_UnitGroupDataSet.html) | [View Documentation](https://indatawg.github.io/ILCD-EPD-Data-Format/gitBranches/feature/v1.3-alpha_en-15804/schemadoc/ILCD_UnitGroupDataSet.html) |
+| ILCD_UnitGroupDataSet.xsd | [Source Code](./schemas/ILCD_UnitGroupDataSet.xsd) | [View Documentation](https://indatawg.github.io/ILCD-EPD-Data-Format/gitBranches/feature/v1.3-alpha_en-15804/schemadoc/ILCD_UnitGroupDataSet.html) |
 
 
 ## Authoritative Identifiers (UUIDs)
