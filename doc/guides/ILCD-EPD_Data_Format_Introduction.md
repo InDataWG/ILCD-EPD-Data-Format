@@ -113,13 +113,13 @@ The numeric part of the declared unit is the product of the `meanAmount` on the 
 
 
 
-![image-20210429201022557](ILCD-EPD_Data_Format_Introduction.assets/image-20210429201022557.png)
+![image-20210429201022557](img/ILCD-EPD_Data_Format_Introduction.assets/image-20210429201022557.png)
 
 
 
 If using the **extended view** in **JSON** format, this operation is not necessary, as there will be a dedicated `resultingFlowAmount` property which holds the correct resulting value. In the example below, the declared unit is 1000 kg (=1 metric ton).
 
-![CleanShot 2022-06-02 at 11.37.42@2x](ILCD-EPD_Data_Format_Introduction.assets/CleanShot 2022-06-02 at 11.37.42@2x.png)
+![CleanShot 2022-06-02 at 11.37.42@2x](img/ILCD-EPD_Data_Format_Introduction.assets/CleanShot%202022-06-02%20at%2011.37.42@2x.png)
 
 
 
