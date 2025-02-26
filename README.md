@@ -1,47 +1,77 @@
+# ILCD-EPD Data Format Documentation
+
+Welcome to the ILCD+EPD Data Format documentation. This README provides a comprehensive overview of the format, along with essential links, references, and resources.
+
+## ILCD+EPD Guides
+
+**[ILCD+EPD Data Format Introduction](/doc/guides/ILCD-EPD_Data_Format_Introduction.md)**<br/>
+This document provides an overview of the ILCD+EPD data format, its object-oriented structure, dataset types, and referencing system. It explains how Environmental Product Declarations (EPDs) are modeled and linked, along with API usage for accessing and querying datasets.
+
+**[Developer Quick Start Guide](/doc/guides/EPD%20Data%20Format%20–%20Developer%20Quick%20Start%20Guide.md)**<br/>
+This document serves as a starting point for software developers who want to integrate support for the ÖKOBAUDAT’s EPD data format and/or data exchange to or from the ÖKOBAUDAT into their software applications.
+ 
+**[Migration Guide from v1.1 to v1.2](/doc/guides/EPD%20Data%20Format%20–%20Migration%20Guide%20from%201.1%20to%201.2.md)**<br/>
+This document is a migration guide outlining the changes from ILCD+EPD format version 1.1 to 1.2.
+
+**[Technical Details](/doc/guides/EPD%20Data%20Format%20–%20Technical%20Details.md)**<br/>
+This document provides additional information for software developers who want to integrate support for the ILCD+EPD data format into their software applications.
 
 
-# ILCD-EPD-Data-Format
-## Schemadocs:
+## Schemas
+XML schemas are used to formally describe the XML syntax and data types. They are also used to validate instance documents (i.e. ILCD+EPD datasets). They can also be used as a basis for generating classes for software applications that read and/or write ILCD+EPD data.
+
+| Schema Name | Go to Source Code (XSD) | View HTML Documentation in the Browser |
+|-------------|-------------------|-----------------------------------|
+| EPD Dataset | [Source Code](./doc/schemadoc/EPD_DataSet.html) | [View Documentation](https://indatawg.github.io/ILCD-EPD-Data-Format/gitBranches/feature/v1.3-alpha_en-15804/schemadoc/EPD_DataSet.html) |
+| EPD Flow Dataset | [Source Code](./doc/schemadoc/EPD_FlowDataSet.html) | [View Documentation](https://indatawg.github.io/ILCD-EPD-Data-Format/gitBranches/feature/v1.3-alpha_en-15804/schemadoc/EPD_FlowDataSet.html) |
+| ILCD Common Data Types | [Source Code](./doc/schemadoc/ILCD_Common_DataTypes.html) | [View Documentation](https://indatawg.github.io/ILCD-EPD-Data-Format/gitBranches/feature/v1.3-alpha_en-15804/schemadoc/ILCD_Common_DataTypes.html) |
+| ILCD Common Enumeration Values | [Source Code](./doc/schemadoc/ILCD_Common_EnumerationValues.html) | [View Documentation](https://indatawg.github.io/ILCD-EPD-Data-Format/gitBranches/feature/v1.3-alpha_en-15804/schemadoc/ILCD_Common_EnumerationValues.html) |
+| ILCD Contact Dataset | [Source Code](./doc/schemadoc/ILCD_ContactDataSet.html) | [View Documentation](https://indatawg.github.io/ILCD-EPD-Data-Format/gitBranches/feature/v1.3-alpha_en-15804/schemadoc/ILCD_ContactDataSet.html) |
+| ILCD Flow Property Dataset | [Source Code](./doc/schemadoc/ILCD_FlowPropertyDataSet.html) | [View Documentation](https://indatawg.github.io/ILCD-EPD-Data-Format/gitBranches/feature/v1.3-alpha_en-15804/schemadoc/ILCD_FlowPropertyDataSet.html) |
+| ILCD LCIA Method Dataset | [Source Code](./doc/schemadoc/ILCD_LCIAMethodDataSet.html) | [View Documentation](https://indatawg.github.io/ILCD-EPD-Data-Format/gitBranches/feature/v1.3-alpha_en-15804/schemadoc/ILCD_LCIAMethodDataSet.html) |
+| ILCD Source Dataset | [Source Code](./doc/schemadoc/ILCD_SourceDataSet.html) | [View Documentation](https://indatawg.github.io/ILCD-EPD-Data-Format/gitBranches/feature/v1.3-alpha_en-15804/schemadoc/ILCD_SourceDataSet.html) |
+| ILCD Unit Group Dataset | [Source Code](./doc/schemadoc/ILCD_UnitGroupDataSet.html) | [View Documentation](https://indatawg.github.io/ILCD-EPD-Data-Format/gitBranches/feature/v1.3-alpha_en-15804/schemadoc/ILCD_UnitGroupDataSet.html) |
 
 
-- [EPD DataSet](https://indatawg.github.io/ILCD-EPD-Data-Format/gitBranches/release/v1.2/schemadoc/EPD_DataSet.html)
+## Authoritative Identifiers (UUIDs)
 
-- [EPD FlowDataSet](https://indatawg.github.io/ILCD-EPD-Data-Format/gitBranches/release/v1.2/schemadoc/EPD_FlowDataSet.html)
+The ILCD data format is an object-oriented format (see [ILCD+EPD Data Format Introduction](/doc/guides/ILCD-EPD_Data_Format_Introduction.md)). Some objects are very often reused and have a authoritative character (master data), e.g. for units, LCIA methods, background databases/versions etc. They ensure consistency across datasets.
+Each object has their individual UUID. The most important UUIDs are listed here for reference. You can view or download these lists in CSV format.
+All master data can be found in a dedicated [repository](https://github.com/InDataWG/ILCD-EPD-Master-Data) 
 
-- [ILCD Common DataTypes](https://indatawg.github.io/ILCD-EPD-Data-Format/gitBranches/release/v1.2/schemadoc/ILCD_Common_DataTypes.html)
-
-- [ILCD Common EnumerationValues](https://indatawg.github.io/ILCD-EPD-Data-Format/gitBranches/release/v1.2/schemadoc/ILCD_Common_EnumerationValues.html)
-
-- [ILCD ContactDataSet](https://indatawg.github.io/ILCD-EPD-Data-Format/gitBranches/release/v1.2/schemadoc/ILCD_ContactDataSet.html)
-
-- [ILCD FlowPropertyDataSet](https://indatawg.github.io/ILCD-EPD-Data-Format/gitBranches/release/v1.2/schemadoc/ILCD_FlowPropertyDataSet.html)
-
-- [ILCD LCIAMethodDataSet](https://indatawg.github.io/ILCD-EPD-Data-Format/gitBranches/release/v1.2/schemadoc/ILCD_LCIAMethodDataSet.html)
-
-- [ILCD SourceDataSet](https://indatawg.github.io/ILCD-EPD-Data-Format/gitBranches/release/v1.2/schemadoc/ILCD_SourceDataSet.html)
-
-- [ILCD UnitGroupDataSet](https://indatawg.github.io/ILCD-EPD-Data-Format/gitBranches/release/v1.2/schemadoc/ILCD_UnitGroupDataSet.html)
-
+| Reference Type                         | Viewable as HTML in the Browser                         | View CSV Source                              |
+|----------------------------------------|--------------------------------------------------|------------------------------------------------|
+| Common references                      | [Viewable Table](https://indatawg.github.io/ILCD-EPD-Data-Format/gitBranches/feature/v1.3-alpha_en-15804/identifiers/Common_references.html)     | [Download CSV](https://raw.githubusercontent.com/indatawg/ILCD-EPD-Data-Format/main/doc/identifiers/Common_references.csv)       |
+| Flow properties and unit groups        | [Viewable Table](https://indatawg.github.io/ILCD-EPD-Data-Format/gitBranches/feature/v1.3-alpha_en-15804/identifiers/Flow_properties_and_unit_groups.html) | [Download CSV](https://raw.githubusercontent.com/indatawg/ILCD-EPD-Data-Format/main/doc/identifiers/Flow_properties_and_unit_groups.csv)|
+| EN15804+A1 indicators                  | [Viewable Table](https://indatawg.github.io/ILCD-EPD-Data-Format/gitBranches/feature/v1.3-alpha_en-15804/identifiers/EN15804+A1_indicators.html) | [Download CSV](https://raw.githubusercontent.com/indatawg/ILCD-EPD-Data-Format/main/doc/identifiers/EN15804+A1_indicators.csv)|
+| EN15804+A2 (EF3.0) indicators          | [Viewable Table](https://indatawg.github.io/ILCD-EPD-Data-Format/gitBranches/feature/v1.3-alpha_en-15804/identifiers/EN15804+A2_EF3.0_indicators.html) | [Download CSV](https://raw.githubusercontent.com/indatawg/ILCD-EPD-Data-Format/main/doc/identifiers/EN15804+A2_EF3.0_indicators.csv)|
+| EN15804+A2 (EF3.1) indicators          | [Viewable Table](https://indatawg.github.io/ILCD-EPD-Data-Format/gitBranches/feature/v1.3-alpha_en-15804/identifiers/EN15804+A2_EF3.1_indicators.html) | [Download CSV](https://raw.githubusercontent.com/indatawg/ILCD-EPD-Data-Format/main/doc/identifiers/EN15804+A2_EF3.1_indicators.csv)|
+| Country-specific indicators            | [Viewable Table](https://indatawg.github.io/ILCD-EPD-Data-Format/gitBranches/feature/v1.3-alpha_en-15804/identifiers/Country-specific_indicators.html)  | [Download CSV](https://raw.githubusercontent.com/indatawg/ILCD-EPD-Data-Format/main/doc/identifiers/Country-specific_indicators.csv) |
+| ecoinvent database: source data sets   | [Viewable Table](https://indatawg.github.io/ILCD-EPD-Data-Format/gitBranches/feature/v1.3-alpha_en-15804/identifiers/BackgroundDB_SourceDatasets_ecoinvent.html)  | [Download CSV](https://raw.githubusercontent.com/indatawg/ILCD-EPD-Data-Format/main/doc/identifiers/BackgroundDB_SourceDatasets_ecoinvent.csv)    |
+| GaBi database: source data sets        | [Viewable Table](https://indatawg.github.io/ILCD-EPD-Data-Format/gitBranches/feature/v1.3-alpha_en-15804/identifiers/BackgroundDB_SourceDatasets_GaBi.html) | [Download CSV](https://raw.githubusercontent.com/indatawg/ILCD-EPD-Data-Format/main/doc/identifiers/BackgroundDB_SourceDatasets_GaBi.csv)  |
 
 
-## Identifier:
+
+## Example dataset
+
+A simple [example ILCD+EPD process dataset](./sample_data/processes/EPDv1.3_example_57a4ae65-d305-421e-b21f-a3f0c35b8abe.xml) can be found in the [sample_data](./sample_data) folder of this repository. 
 
 
-- [BackgroundDB SourceDatasets ecoinvent](https://indatawg.github.io/ILCD-EPD-Data-Format/gitBranches/release/v1.2/identifiers/BackgroundDB_SourceDatasets_ecoinvent.html)
+## Validation
 
-- [BackgroundDB SourceDatasets GaBi](https://indatawg.github.io/ILCD-EPD-Data-Format/gitBranches/release/v1.2/identifiers/BackgroundDB_SourceDatasets_GaBi.html)
+### ILCD Validation Tool
 
-- [EN15804+A1 indicators](https://indatawg.github.io/ILCD-EPD-Data-Format/gitBranches/release/v1.2/identifiers/EN15804+A1_indicators.html)
+In order to make sure that a given ILCD+EPD dataset is compliant with both the XML Schemas and the ILCD+EPD master data, it can be validated using the [ILCD Validation Tool](https://bitbucket.org/okusche/ilcdvalidationtool/wiki/Home), a free and Open Source desktop tool available for all major operating systems. You will need to use a validation profile specific for ILCD+EPD (see next subsection).
 
-- [EN15804+A2 (EF3.0) indicators](https://indatawg.github.io/ILCD-EPD-Data-Format/gitBranches/release/v1.2/identifiers/EN15804+A2_EF3.0_indicators.html)
+For developers, the underlying logic for validating ILCD+EPD data against a given validation profile is also available as an Open Source Java library: [ILCD Validation Library](https://bitbucket.org/okusche/ilcdvalidation/)
 
-- [EN15804+A2 (EF3.1) indicators](https://indatawg.github.io/ILCD-EPD-Data-Format/gitBranches/release/v1.2/identifiers/EN15804+A2_EF3.1_indicators.html)
+### Validation profiles
 
-- [Common references](https://indatawg.github.io/ILCD-EPD-Data-Format/gitBranches/release/v1.2/identifiers/Common_references.html)
+The generic profile for ILCD+EPD v1.2 for EN 15804+A1 and +A2 (EF3.0 and EF3.1) compliant data is available [here](https://repo1.maven.org/maven2/com/okworx/ilcd/validation/profiles/EPD-1.2-Generic-EN15804/2.2.0/EPD-1.2-Generic-EN15804-2.2.0.jar).
 
-- [Country specific indicators](https://indatawg.github.io/ILCD-EPD-Data-Format/gitBranches/release/v1.2/identifiers/Country-specific_indicators.html)
+The profile with additionl specific rules for the [ÖKOBAUDAT](https://www.oekobaudat.de/) database is available [here](https://repo1.maven.org/maven2/com/okworx/ilcd/validation/profiles/EPD-1.2-OEKOBAUDAT/3.5.0/EPD-1.2-OEKOBAUDAT-3.5.0.jar).
 
-- [Flow properties and unit groups](https://indatawg.github.io/ILCD-EPD-Data-Format/gitBranches/release/v1.2/identifiers/Flow_properties_and_unit_groups.html)
+
 
 
 
