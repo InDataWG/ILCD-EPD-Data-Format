@@ -24,9 +24,9 @@ What is usually referred to as ILCD+EPD data format is more precisely the ILCD d
 
 For the new v1.2 revision, yet some more information items are being added in a new namespace. ***Please note that at the same time, some of the items from the original ILCD format, which were not used previously, have now been added to the ILCD+EPD v1.2 specification.***
 
-![image-20200925171320703](EPD Data Format – Migration Guide from 1.1 to 1.2.assets/image-20200925171320703.png)
+![Namespaces](img/Namespaces.png)
 
-####Namespace URIs
+### Namespace URIs
 
 The namespace URIs for the original ILCD format are
 
