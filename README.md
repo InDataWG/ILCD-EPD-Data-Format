@@ -53,7 +53,7 @@ All master data can be found in a dedicated [repository](https://github.com/InDa
 
 ## Example dataset
 
-A simple [example ILCD+EPD process dataset](./sample_data/processes/EPDv1.3_example_57a4ae65-d305-421e-b21f-a3f0c35b8abe.xml) can be found in the [sample_data](./sample_data) folder of this repository. 
+A simple [example ILCD+EPD process dataset](./sample_data/processes/57a4ae65-d305-421e-b21f-a3f0c35b8abe.xml) can be found in the [sample_data](./sample_data) folder of this repository. 
 
 
 ## Validation
