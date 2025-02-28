@@ -18,7 +18,7 @@ This document provides additional information for software developers who want t
 
 
 ## Schemas
-XML schemas are used to formally describe the XML syntax and data types. They are also used to validate instance documents (i.e. ILCD+EPD datasets). They can also be used as a basis for generating classes for software applications that read and/or write ILCD+EPD data.
+XML schemas are used to formally describe the XML syntax and data types. They are used to validate instance documents (i.e. ILCD+EPD datasets) and serve as a foundation for generating classes for software applications that read and/or write ILCD+EPD data.
 
 | Schema Name | Go to Source Code (XSD) | View HTML Documentation in the Browser |
 |-------------|-------------------|-----------------------------------|
