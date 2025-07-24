@@ -42,3 +42,19 @@ Figure 4 - "is a"-references
 If the free and open source soda4LCA (http://www.iai.kit.edu/soda4LCA/) software is used as technical platform to distribute data, datasets can be retrieved from or submitted to the database directly from other applications via the software’s RESTful service interface. The API documentation is provided in the folder *doc* in HTML and PDF format.
 
 For reading data from the database, no authentication is required. Authentication credentials required for sumbission of datasets can be obtained from the operator of the respective node.
+
+
+## ILCD ZIP Archives
+
+To efficiently transfer multiple ILCD datasets that belong together, these can be stored inside a ZIP archive that follows a defined internal folder structure, where datasets of each type are stored in a dedicated folder:
+
+`ILCD/processes` - process datasets
+`ILCD/flows` - flow datasets
+`ILCD/contacts` - contact datasets
+`ILCD/sources` - source datasets
+`ILCD/flowproperties` - flow property datasets
+`ILCD/unitgroups` - unit group datasets
+`ILCD/lciamethods` - LCIA method datasets
+`ILCD/external_docs` - external binary documents like images or PDFs that are referenced from source datasets
+
+![internal structure of an ILCD ZIP archive](img/ILCD_format_ZIP_internal_structure.png)
