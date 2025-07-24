@@ -213,6 +213,20 @@ The results for the various LCI indicators are given in the `exchanges` section,
 The results for the LCIA indicators are given on `LCIAResult` elements in the `LCIAResults` section. The UUIDs for the indicators are likewise listed in the format documentation. 
 
 
+### ILCD ZIP Archives
+
+To efficiently transfer multiple ILCD datasets that belong together, these can be stored inside a ZIP archive that follows a defined internal folder structure, where datasets of each type are stored in a dedicated folder:
+
+`ILCD/processes` - process datasets
+`ILCD/flows` - flow datasets
+`ILCD/contacts` - contact datasets
+`ILCD/sources` - source datasets
+`ILCD/flowproperties` - flow property datasets
+`ILCD/unitgroups` - unit group datasets
+`ILCD/lciamethods` - LCIA method datasets
+`ILCD/external_docs` - external binary documents like images or PDFs that are referenced from source datasets
+
+![internal structure of an ILCD ZIP archive](img/ILCD_format_ZIP_internal_structure.png)
 
 
 
