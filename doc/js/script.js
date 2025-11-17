@@ -66,7 +66,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const sanitizedFilename = attributePath.replace(/[^a-zA-Z0-9._-]/g, '_') + '.html';
         // Construct a relative path that works both locally and on GitHub Pages.
         const relativePath = `attribute_pages/${sanitizedFilename}`;
-        window.location.href = relativePath;
+        window.open(relativePath, '_blank');
     };
 
     searchBar.addEventListener('keyup', () => {
@@ -116,8 +116,8 @@ document.addEventListener('DOMContentLoaded', function() {
     // Download functionality
     document.getElementById('download-csv-btn').addEventListener('click', function() {
         const link = document.createElement('a');
-        link.href = '../data/epd_documentation.csv'; // Adjusted path
-        link.download = 'epd_documentation.csv';
+        link.href = 'ilcd-epd-v1.3.csv';
+        link.download = 'ilcd-epd-v1.3.csv';
         document.body.appendChild(link);
         link.click();
         document.body.removeChild(link);
@@ -125,8 +125,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
     document.getElementById('download-adoc-btn').addEventListener('click', function() {
         const link = document.createElement('a');
-        link.href = '../data/epd_documentation_from_xlsx_combined.adoc'; // Adjusted path
-        link.download = 'epd_documentation_from_xlsx_combined.adoc';
+        link.href = 'asciidoc/ilcd-epd-v1.3.adoc';
+        link.download = 'ilcd-epd-v1.3.adoc';
         document.body.appendChild(link);
         link.click();
         document.body.removeChild(link);
