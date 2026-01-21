@@ -1,0 +1,2259 @@
+
+<!--ILCD Format 1.1 Documentation - Enumerated Lists - documentation stylesheet version 1.0.6-->
+<html xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <title>ILCD Format 1.1 Documentation - Enumerated Lists</title><style type="text/css">
+              table.top {
+              border: 1px solid #AB845D; 
+              background-color: #FFFBF3;
+              }
+              tr {
+              background-color:#FFFFFF;
+              }   
+              a {
+              color:#0A4755;
+              }
+              a:active, a:visited {
+              color:#894C0F;
+              }
+              
+              /* tooltip styles */
+              a.info {
+              position:relative; 
+              z-index:24;
+              color:#000000;
+              text-decoration:none
+              }
+              
+              a.info:hover {
+              z-index:25; 
+              background-color:#FFE8B7;
+              }
+              
+              a.info span {
+              display: none
+              }
+              
+              a.info:hover span {                                               
+              display:block;
+              position:absolute;
+              top:2em; left:2em; width:25em;
+              border:1px solid #7BCBDE;
+              background-color:#B9EDF7; 
+              color:#000000;
+              text-align: left
+              }
+              
+              /*   general styles  */                                               
+              .title 		{ 	
+              font-family: Helvetica,Arial,sans serif;
+              font-size: 14;
+              font-weight: bold;
+              vertical-align: top;
+              background-color: #fc9336 ;
+              color: #000000;
+              }
+              .toc 		{ 	
+              font-family: Helvetica,Arial,sans serif;
+              font-size: 12;
+              font-weight: normal;
+              vertical-align: top;
+              background-color: #FFD783 ;
+              color: #000000;
+              }
+              .section { 	
+              font-family: Helvetica,Arial,sans serif;
+              font-size: 14;
+              font-weight: bold;
+              vertical-align: top;   
+              background-color: #ffb951  ;
+              color: #000000;
+              }
+              .root { 	
+              font-family: Helvetica,Arial,sans serif;
+              font-size: 14;
+              font-weight: bold;
+              vertical-align: top;   
+              background-color: #ffb951  ;
+              color: #000000;
+              }
+              .subsection { 	
+              font-family: Helvetica,Arial,sans serif;
+              font-size: 12;
+              font-weight: bold;
+              vertical-align: top;   
+              background-color: #ffd783  ;
+              color: #000000;
+              }
+              .fieldname { 
+              font-family: Helvetica,Arial,sans serif;
+              font-size: 12;
+              font-weight: normal;
+              vertical-align: top;   
+              background-color: #FFF3D9;
+              color: #002277  ;
+              }
+              .data          { 
+              font-family: Helvetica,Arial,sans serif;
+              font-size: 12;
+              background-color: #FFFFFF;
+              color: #000000;
+              font-weight: normal;						
+              }
+              .data_neutral     { 
+              font-weight: normal;
+              }
+              .data_enum     { 
+              font-weight: normal;
+              font-style: italic;
+              }
+              .referencename   { 
+              font-family: Helvetica,Arial,sans serif;
+              font-size: 12;
+              font-weight: bold;
+              background-color: #FFFFFF ;
+              color: #002277  ;
+              }
+              .referencedata   { 
+              font-family: Helvetica,Arial,sans serif;
+              font-size: 12;
+              color: red;
+              background-color: #FFFFFF ;
+              color: #000000;
+              }
+              .table_header   { 
+              font-family: Helvetica,Arial,sans serif;
+              font-size: 11;
+              font-weight: normal;
+              background-color: #ffeece  ;
+              color: #002277  ;
+              }
+              .exchanges_section   { 
+              font-family: Helvetica,Arial,sans serif;
+              font-size: 9;
+              background-color: #ffeece ;
+              color: #000000;
+              }
+              .exchanges_data   { 
+              font-family: Helvetica,Arial,sans serif;
+              font-size: 9;
+              font-weight: bold;
+              background-color: #FFFFFF ;
+              color: #000000;
+              }
+              tr.highlight td.data {
+              border-width: 2px;
+              border-style: solid;
+              border-color: #A2D3DE;
+              }
+              .lang {
+              font-weight: normal;
+              color: grey;			
+              }
+              .warning {
+              font-weight: bold;
+              color: red;			
+              }
+            </style></head>
+   <body>
+      <h1>ILCD Format 1.1 Documentation - Enumerated Lists</h1>
+      <div class="data" style="font-weight:normal;"><a href="#AreaOfProtectionValues">AreaOfProtectionValues</a><br><a href="#CompletenessAvailabilityValues">CompletenessAvailabilityValues</a><br><a href="#CompletenessTypeValues">CompletenessTypeValues</a><br><a href="#CompletenessValues">CompletenessValues</a><br><a href="#ComplianceValues">ComplianceValues</a><br><a href="#DataDerivationTypeStatusValues">DataDerivationTypeStatusValues</a><br><a href="#DataQualityIndicatorValues">DataQualityIndicatorValues</a><br><a href="#DataSourceTypeValues">DataSourceTypeValues</a><br><a href="#ExchangeDirectionValues">ExchangeDirectionValues</a><br><a href="#ExchangeFunctionTypeValues">ExchangeFunctionTypeValues</a><br><a href="#FlowDataDerivationTypeStatusValues">FlowDataDerivationTypeStatusValues</a><br><a href="#FlowTypeValues">FlowTypeValues</a><br><a href="#GlobalReferenceTypeValues">GlobalReferenceTypeValues</a><br><a href="#LCIAImpactCategoryValues">LCIAImpactCategoryValues</a><br><a href="#LCIAMethodPrincipleValues">LCIAMethodPrincipleValues</a><br><a href="#LCIMethodApproachesValues">LCIMethodApproachesValues</a><br><a href="#LCIMethodPrincipleValues">LCIMethodPrincipleValues</a><br><a href="#Languages">Languages</a><br><a href="#LicenseTypeValues">LicenseTypeValues</a><br><a href="#MethodOfReviewValues">MethodOfReviewValues</a><br><a href="#PublicationTypeValues">PublicationTypeValues</a><br><a href="#QualityValues">QualityValues</a><br><a href="#RecommendationLevelValues">RecommendationLevelValues</a><br><a href="#ScopeOfReviewValues">ScopeOfReviewValues</a><br><a href="#StandardMethodTypeValues">StandardMethodTypeValues</a><br><a href="#TypeOfLCIAMethodValues">TypeOfLCIAMethodValues</a><br><a href="#TypeOfOrganisationValues">TypeOfOrganisationValues</a><br><a href="#TypeOfProcessValues">TypeOfProcessValues</a><br><a href="#TypeOfQuantitativeReferenceValues">TypeOfQuantitativeReferenceValues</a><br><a href="#TypeOfReviewValues">TypeOfReviewValues</a><br><a href="#UncertaintyDistributionTypeValues">UncertaintyDistributionTypeValues</a><br><a href="#WorkflowAndPublicationStatusValues">WorkflowAndPublicationStatusValues</a><br></div><br><table id="tableID" style="table-layout:fixed;">
+         <tr>
+            <th class="title" style="width:20%">List name</th>
+            <th class="title" style="width:20%">Value</th>
+            <th class="title">Definition</th>
+         </tr>
+         <tr>
+            <td class="subsection" valign="top" rowspan="5"><a name="AreaOfProtectionValues">AreaOfProtectionValues</a></td>
+            <td class="fieldname">Natural resources</td>
+            <td class="data"></td>
+         </tr>
+         <tr>
+            <td class="fieldname">Natural environment</td>
+            <td class="data"></td>
+         </tr>
+         <tr>
+            <td class="fieldname">Human health</td>
+            <td class="data"></td>
+         </tr>
+         <tr>
+            <td class="fieldname">Man-made environment</td>
+            <td class="data"></td>
+         </tr>
+         <tr>
+            <td class="fieldname">Other</td>
+            <td class="data"></td>
+         </tr>
+         <tr>
+            <td class="subsection" valign="top" rowspan="5"><a name="CompletenessAvailabilityValues">CompletenessAvailabilityValues</a></td>
+            <td class="fieldname">Fully available</td>
+            <td class="data">For all referenced LCIA methods an impact factor is provided for this flow, in case this flow contributes to the respective
+               mid-point problem
+               field in an relevant way. The impact factor for the specific flow has to cover all effect chains and impacts addressed by
+               the specific LCIA
+               method.
+            </td>
+         </tr>
+         <tr>
+            <td class="fieldname">Partly available</td>
+            <td class="data">In one or more of the referenced impact methods, no impact factors are provided for this flow, while the flow's relevant contribution
+               to that
+               mid-point aspect is scientifically acknowledged by state-of-the-art. Or for that specific flow not all effect chains and impacts
+               that are addressed by on or
+               more of the respective LCIA methods are covered also for this flow.
+            </td>
+         </tr>
+         <tr>
+            <td class="fieldname">Not available</td>
+            <td class="data">For none of the referenced impact methods impact factors are provided for this flow, while by scientific state-of-the-art
+               knowledge this flow
+               contributes to a relevant degree to the named mid-point problem field.
+            </td>
+         </tr>
+         <tr>
+            <td class="fieldname">Topic not relevant</td>
+            <td class="data">Flow is not relevant for the specific mid-point problem field. E.g. it is an elementary flow such as "Carbon dioxide emissions
+               to air" which
+               does not contribute to "Human toxicity" or it is a product flow.
+            </td>
+         </tr>
+         <tr>
+            <td class="fieldname">No statement</td>
+            <td class="data">Unclear, not stated.</td>
+         </tr>
+         <tr>
+            <td class="subsection" valign="top" rowspan="18"><a name="CompletenessTypeValues">CompletenessTypeValues</a></td>
+            <td class="fieldname">Climate change</td>
+            <td class="data">Climate change / global warming</td>
+         </tr>
+         <tr>
+            <td class="fieldname">Ozone depletion</td>
+            <td class="data">Stratospheric ozone layer depletion</td>
+         </tr>
+         <tr>
+            <td class="fieldname">Summer smog</td>
+            <td class="data">Photochemical oxidant creation / summer smog / tropospheric ozone formation</td>
+         </tr>
+         <tr>
+            <td class="fieldname">Eutrophication</td>
+            <td class="data">Eutrophication of land and water bodies</td>
+         </tr>
+         <tr>
+            <td class="fieldname">Acidification</td>
+            <td class="data">Acidification of land and water bodies</td>
+         </tr>
+         <tr>
+            <td class="fieldname">Human toxicity</td>
+            <td class="data">Human toxicity (EXcluding ionising radiation and respiratory inorganics)</td>
+         </tr>
+         <tr>
+            <td class="fieldname">Freshwater ecotoxicity</td>
+            <td class="data">Freshwater eco-toxicity (EXcluding ionising radiation)</td>
+         </tr>
+         <tr>
+            <td class="fieldname">Seawater eco-toxicity</td>
+            <td class="data">Seawater eco-toxicity (EXcluding ionising radiation)</td>
+         </tr>
+         <tr>
+            <td class="fieldname">Terrestric eco-toxicity</td>
+            <td class="data">Terrestric eco-toxicity (EXcluding ionising radiation)</td>
+         </tr>
+         <tr>
+            <td class="fieldname">Radioactivity</td>
+            <td class="data">Radioactivity / ionising radiation</td>
+         </tr>
+         <tr>
+            <td class="fieldname">Land use</td>
+            <td class="data">Land use (occupation and transformation)</td>
+         </tr>
+         <tr>
+            <td class="fieldname">Non-renewable material resource depletion</td>
+            <td class="data">Non-renewable material resource depletion</td>
+         </tr>
+         <tr>
+            <td class="fieldname">Renewable material resource consumption</td>
+            <td class="data">Renewable material resource consumption</td>
+         </tr>
+         <tr>
+            <td class="fieldname">Non-renewable primary energy depletion</td>
+            <td class="data">Non-renewable primary energy depletion</td>
+         </tr>
+         <tr>
+            <td class="fieldname">Renewable primary energy consumption</td>
+            <td class="data">Renewable primary energy consumption</td>
+         </tr>
+         <tr>
+            <td class="fieldname">Particulate matter/respiratory inorganics</td>
+            <td class="data">Particulate matter/respiratory inorganics</td>
+         </tr>
+         <tr>
+            <td class="fieldname">Species depletion</td>
+            <td class="data">Depletion of gentic resources by consumption of specific animal and plant species</td>
+         </tr>
+         <tr>
+            <td class="fieldname">Noise</td>
+            <td class="data">Noise</td>
+         </tr>
+         <tr>
+            <td class="subsection" valign="top" rowspan="4"><a name="CompletenessValues">CompletenessValues</a></td>
+            <td class="fieldname">All relevant flows quantified</td>
+            <td class="data">All relevant flows are recorded. [Note: This does not consider yet the quality or representativeness of the data.]</td>
+         </tr>
+         <tr>
+            <td class="fieldname">Relevant flows missing</td>
+            <td class="data">One or more relevant flows are not recorded respectively not quantified. [Note: These flows should be found in the Inputs
+               and Outputs with
+               mean amount "0" and marked as "Missing relevant" in the field "Data derivation type/status".]
+            </td>
+         </tr>
+         <tr>
+            <td class="fieldname">Topic not relevant</td>
+            <td class="data">Process is not relevant for the environmental impact. E.g. it is a dummy process or a generic mixer process, or is not contributing
+               to a
+               specified environmental problem.
+            </td>
+         </tr>
+         <tr>
+            <td class="fieldname">No statement</td>
+            <td class="data">Unclear, not stated.</td>
+         </tr>
+         <tr>
+            <td class="subsection" valign="top" rowspan="3"><a name="ComplianceValues">ComplianceValues</a></td>
+            <td class="fieldname">Fully compliant</td>
+            <td class="data">Meets all requirements of this compliance aspect as defined in the respective "Compliance system".</td>
+         </tr>
+         <tr>
+            <td class="fieldname">Not compliant</td>
+            <td class="data">Does not meet all requirements of this compliance aspect, as defined for the respective "Compliance system".</td>
+         </tr>
+         <tr>
+            <td class="fieldname">Not defined</td>
+            <td class="data">For this compliance aspect the named "Compliance system" has not defined compliance requirements.</td>
+         </tr>
+         <tr>
+            <td class="subsection" valign="top" rowspan="6"><a name="DataDerivationTypeStatusValues">DataDerivationTypeStatusValues</a></td>
+            <td class="fieldname">Measured</td>
+            <td class="data">All data was measured for the purpose of LCA or is meeting the related requirements (e.g. being quantiatively and qualitatively
+               related to
+               unit process and its quantitative reference/products, etc.). This includes calculated data with models based on measured plant
+               data (but not exclusively
+               theoretical calculations) as used e.g. in parameterised unit processes.
+            </td>
+         </tr>
+         <tr>
+            <td class="fieldname">Calculated</td>
+            <td class="data">Stochiometric or other theoretical relations were used to calculate the amount of this flow. [Note: Calculations that include
+               quantiatively
+               relevant expert judgement are of the type "Expert judgement".]
+            </td>
+         </tr>
+         <tr>
+            <td class="fieldname">Estimated</td>
+            <td class="data">Expert judgement was used to derive the quantity of this flow. This includes the unmodified or corrected use of data from
+               similar processes /
+               technologies, times, or locations, as well as calculated values where the formulas/parameters include quantitatively relevant
+               expert
+               judgement.
+            </td>
+         </tr>
+         <tr>
+            <td class="fieldname">Unknown derivation</td>
+            <td class="data">Data derivation type information fully or at least for quantiatively relevant parts unavailable.</td>
+         </tr>
+         <tr>
+            <td class="fieldname">Missing important</td>
+            <td class="data">Indicates missing amount information for environmentally directly (elementary flow) or indirectly (product or waste flow)
+               important Input or
+               Output. As the "Mean amount" the value "0" is entered.
+            </td>
+         </tr>
+         <tr>
+            <td class="fieldname">Missing unimportant</td>
+            <td class="data">Indicates missing amount information for an however environmentally directly (elementary flow) or indirectly (product or waste
+               flow) NOT
+               relevant Input or Output. As the "Mean amount" the value "0" is entered.
+            </td>
+         </tr>
+         <tr>
+            <td class="subsection" valign="top" rowspan="7"><a name="DataQualityIndicatorValues">DataQualityIndicatorValues</a></td>
+            <td class="fieldname">Technological representativeness</td>
+            <td class="data">Degree to which the data set reflects the true population of interest regarding technology, including for included background
+               data sets, if
+               any.
+            </td>
+         </tr>
+         <tr>
+            <td class="fieldname">Time representativeness</td>
+            <td class="data">Degree to which the data set reflects the true population of interest regarding time / age of the data, including for included
+               background data
+               sets, if any.
+            </td>
+         </tr>
+         <tr>
+            <td class="fieldname">Geographical representativeness</td>
+            <td class="data">Degree to which the data set reflects the true population of interest regarding geography such as e.g. country or site, including
+               for included
+               background data sets, if any.
+            </td>
+         </tr>
+         <tr>
+            <td class="fieldname">Completeness</td>
+            <td class="data">Share of (elementary) flows that are quantitatively included in the inventory. Note that also the completeness of interim
+               product and waste
+               flows in the product model contributes to the overall completeness of the inventory.
+            </td>
+         </tr>
+         <tr>
+            <td class="fieldname">Precision</td>
+            <td class="data">Measure of the variability of the data values for each data expressed (e.g. low variance = high precision).</td>
+         </tr>
+         <tr>
+            <td class="fieldname">Methodological appropriateness and consistency</td>
+            <td class="data">The applied LCI methods and methodological choices (e.g. allocation, substitution, etc.) are in line with the goal and scope
+               of the data set,
+               especially its intended applications and decision support context (e.g. monitoring, product-specific decision support, strategic
+               long-term decision
+               support). The methods also have been consistently applied across all data including for included processes, if any.
+            </td>
+         </tr>
+         <tr>
+            <td class="fieldname">Overall quality</td>
+            <td class="data">The degree to which the data set’s overall representativeness, completeness, precision as well as methodological appropriateness
+               and
+               consistency reflects the reality the data set is representing.
+            </td>
+         </tr>
+         <tr>
+            <td class="subsection" valign="top" rowspan="4"><a name="DataSourceTypeValues">DataSourceTypeValues</a></td>
+            <td class="fieldname">Primary</td>
+            <td class="data">Data stems exclusively from primary data source(s), i.e. was collected from owner or operator of the process (independently
+               how the data was
+               derived).
+            </td>
+         </tr>
+         <tr>
+            <td class="fieldname">&gt; 90% primary</td>
+            <td class="data">Data was averaged from mixed primary and secondary sources, either before entering the data into a unit process or when calculating
+               the LCI
+               results. Over 90% of the averaged amount stems from primary data sources.
+            </td>
+         </tr>
+         <tr>
+            <td class="fieldname">Mixed primary / secondary</td>
+            <td class="data">Data was averaged from mixed primary and secondary sources with above 10% secondary data, either before entering the data
+               into a unit process
+               or when calculating the LCI results.
+            </td>
+         </tr>
+         <tr>
+            <td class="fieldname">Secondary</td>
+            <td class="data">Data stems exclusively from secondary data source(s), i.e. from any type of publication, that is not co-authored by the owner
+               or operator of
+               the process (independently how the data was derived).
+            </td>
+         </tr>
+         <tr>
+            <td class="subsection" valign="top" rowspan="2"><a name="ExchangeDirectionValues">ExchangeDirectionValues</a></td>
+            <td class="fieldname">Input</td>
+            <td class="data">Flow in input list of the process, e.g. resources from nature or energy carriers, or commodities and services entering from
+               the technosphere.
+               (In case the flow has an negative "resulting amount" value this is equivalent to belonging to the output list of the process.)
+            </td>
+         </tr>
+         <tr>
+            <td class="fieldname">Output</td>
+            <td class="data">Flow in output list of the process, e.g. emissions to nature, or products and waste going to the technosphere into another
+               process. (In case
+               the flow has a negative "resulting amount" value this is equivalent to belonging to the input list of the process.)
+            </td>
+         </tr>
+         <tr>
+            <td class="subsection" valign="top" rowspan="3"><a name="ExchangeFunctionTypeValues">ExchangeFunctionTypeValues</a></td>
+            <td class="fieldname">General reminder flow</td>
+            <td class="data">Reminder flow on the amount of (selected) product and waste flows of included processes. Purely informative flow for additional
+               reporting that
+               has already been fully considered in the inventory of the data set. Serves to document e.g. the total amount of hazardous
+               waste generated over the life
+               cycle of a product system.
+            </td>
+         </tr>
+         <tr>
+            <td class="fieldname">Allocation reminder flow</td>
+            <td class="data">Reminder flow on allocated co-products that have been excluded during allocation when calculating the LCI results. Purely
+               informative flow for
+               additional reporting that has already been fully considered in the inventory of the data set.
+            </td>
+         </tr>
+         <tr>
+            <td class="fieldname">System expansion reminder flow</td>
+            <td class="data">Reminder flow on excluded co-products that have been excluded in consequential modelling e.g. by system expansion / substitution
+               when
+               calculating the LCI results.
+            </td>
+         </tr>
+         <tr>
+            <td class="subsection" valign="top" rowspan="4"><a name="FlowDataDerivationTypeStatusValues">FlowDataDerivationTypeStatusValues</a></td>
+            <td class="fieldname">Measured</td>
+            <td class="data">Data was measured for the flow; includes data from publications with measured data.</td>
+         </tr>
+         <tr>
+            <td class="fieldname">Calculated</td>
+            <td class="data">Stochiometric, enthalpic or other theoretical methods were used to systematically calculate the value of this property from
+               another
+               characteristic.
+            </td>
+         </tr>
+         <tr>
+            <td class="fieldname">Estimated</td>
+            <td class="data">Expert judgement including the direct or modified use of data from similar flows, or from other locations and times (e.g.
+               for market prices of
+               product flows).
+            </td>
+         </tr>
+         <tr>
+            <td class="fieldname">Unknown derivation</td>
+            <td class="data">Data derivation type information fully or at least for quantiatively relevant parts unavailable.</td>
+         </tr>
+         <tr>
+            <td class="subsection" valign="top" rowspan="4"><a name="FlowTypeValues">FlowTypeValues</a></td>
+            <td class="fieldname">Elementary flow</td>
+            <td class="data">Exchange between nature (ecosphere) and technosphere, e.g. an emission, resource.</td>
+         </tr>
+         <tr>
+            <td class="fieldname">Product flow</td>
+            <td class="data">Exchange of goods or services within technosphere, with a positive economic/market value.</td>
+         </tr>
+         <tr>
+            <td class="fieldname">Waste flow</td>
+            <td class="data">Exchange of matters within the technosphere, with a economic/market value equal or below "0".</td>
+         </tr>
+         <tr>
+            <td class="fieldname">Other flow</td>
+            <td class="data">Exchange of other type, e.g. dummy or modelling support flows.</td>
+         </tr>
+         <tr>
+            <td class="subsection" valign="top" rowspan="8"><a name="GlobalReferenceTypeValues">GlobalReferenceTypeValues</a></td>
+            <td class="fieldname">source data set</td>
+            <td class="data"></td>
+         </tr>
+         <tr>
+            <td class="fieldname">process data set</td>
+            <td class="data"></td>
+         </tr>
+         <tr>
+            <td class="fieldname">flow data set</td>
+            <td class="data"></td>
+         </tr>
+         <tr>
+            <td class="fieldname">flow property data set</td>
+            <td class="data"></td>
+         </tr>
+         <tr>
+            <td class="fieldname">unit group data set</td>
+            <td class="data"></td>
+         </tr>
+         <tr>
+            <td class="fieldname">contact data set</td>
+            <td class="data"></td>
+         </tr>
+         <tr>
+            <td class="fieldname">LCIA method data set</td>
+            <td class="data"></td>
+         </tr>
+         <tr>
+            <td class="fieldname">other external file</td>
+            <td class="data"></td>
+         </tr>
+         <tr>
+            <td class="subsection" valign="top" rowspan="17"><a name="LCIAImpactCategoryValues">LCIAImpactCategoryValues</a></td>
+            <td class="fieldname"></td>
+            <td class="data"></td>
+         </tr>
+         <tr>
+            <td class="fieldname">Climate change</td>
+            <td class="data"></td>
+         </tr>
+         <tr>
+            <td class="fieldname">Ozone depletion</td>
+            <td class="data"></td>
+         </tr>
+         <tr>
+            <td class="fieldname">Terrestrial Eutrophication</td>
+            <td class="data"></td>
+         </tr>
+         <tr>
+            <td class="fieldname">Aquatic Eutrophication</td>
+            <td class="data"></td>
+         </tr>
+         <tr>
+            <td class="fieldname">Acidification</td>
+            <td class="data"></td>
+         </tr>
+         <tr>
+            <td class="fieldname">Photochemical ozone creation</td>
+            <td class="data"></td>
+         </tr>
+         <tr>
+            <td class="fieldname">Land use</td>
+            <td class="data"></td>
+         </tr>
+         <tr>
+            <td class="fieldname">Abiotic resource depletion</td>
+            <td class="data"></td>
+         </tr>
+         <tr>
+            <td class="fieldname">Biotic resource depletion</td>
+            <td class="data"></td>
+         </tr>
+         <tr>
+            <td class="fieldname">Ionizing radiation</td>
+            <td class="data"></td>
+         </tr>
+         <tr>
+            <td class="fieldname">Cancer human health effects</td>
+            <td class="data"></td>
+         </tr>
+         <tr>
+            <td class="fieldname">Non-cancer human health effects</td>
+            <td class="data"></td>
+         </tr>
+         <tr>
+            <td class="fieldname">Respiratory inorganics</td>
+            <td class="data"></td>
+         </tr>
+         <tr>
+            <td class="fieldname">Aquatic eco-toxicity</td>
+            <td class="data"></td>
+         </tr>
+         <tr>
+            <td class="fieldname">Terrestrial eco-toxicity</td>
+            <td class="data"></td>
+         </tr>
+         <tr>
+            <td class="fieldname">other</td>
+            <td class="data"></td>
+         </tr>
+         <tr>
+            <td class="subsection" valign="top" rowspan="7"><a name="LCIAMethodPrincipleValues">LCIAMethodPrincipleValues</a></td>
+            <td class="fieldname">Distance-to-target</td>
+            <td class="data"></td>
+         </tr>
+         <tr>
+            <td class="fieldname">Critical surface-time</td>
+            <td class="data"></td>
+         </tr>
+         <tr>
+            <td class="fieldname">Effective volumes</td>
+            <td class="data"></td>
+         </tr>
+         <tr>
+            <td class="fieldname">AoP-Damage model</td>
+            <td class="data"></td>
+         </tr>
+         <tr>
+            <td class="fieldname">Carrying capacity</td>
+            <td class="data"></td>
+         </tr>
+         <tr>
+            <td class="fieldname">Resource dissipation</td>
+            <td class="data"></td>
+         </tr>
+         <tr>
+            <td class="fieldname">other</td>
+            <td class="data"></td>
+         </tr>
+         <tr>
+            <td class="subsection" valign="top" rowspan="23"><a name="LCIMethodApproachesValues">LCIMethodApproachesValues</a></td>
+            <td class="fieldname">Allocation - market value</td>
+            <td class="data">Market-value based partitioning of the input and output flows of multi-functional processes to the function (i.e. good or
+               service) of the
+               product system under study.
+            </td>
+         </tr>
+         <tr>
+            <td class="fieldname">Allocation - gross calorific value</td>
+            <td class="data">Gross calorific value based partitioning of the input and output flows of multi-functional processes to the good of the product
+               system under
+               study.
+            </td>
+         </tr>
+         <tr>
+            <td class="fieldname">Allocation - net calorific value</td>
+            <td class="data">Net (lower) calorific value based partitioning of the input and output flows of multi-functional processes to the good of
+               the product system
+               under study.
+            </td>
+         </tr>
+         <tr>
+            <td class="fieldname">Allocation - exergetic content</td>
+            <td class="data">Exergetic content based partitioning of the input and output flows of multi-functional processes to the good of the product
+               system under
+               study.
+            </td>
+         </tr>
+         <tr>
+            <td class="fieldname">Allocation - element content</td>
+            <td class="data">Chemical element content based partitioning of the input and output flows of multi-functional processes to the good of the
+               product system
+               under study. One specific chemical element is chosen for allocation. Additional information is given in "Deviations from LCI
+               method approaches /
+               explanations".
+            </td>
+         </tr>
+         <tr>
+            <td class="fieldname">Allocation - mass</td>
+            <td class="data">Mass based partitioning of the input and output flows of multi-functional processes to the good of the product system under
+               study.
+            </td>
+         </tr>
+         <tr>
+            <td class="fieldname">Allocation - volume</td>
+            <td class="data">Volume based partitioning of the input and output flows of multi-functional processes to the good of the product system under
+               study.
+            </td>
+         </tr>
+         <tr>
+            <td class="fieldname">Allocation - ability to bear</td>
+            <td class="data">Partitioning of the input and output flows of multi-functional processes to the function (i.e. good or service) of the product
+               system under
+               study, according to the assumed ability of that product to bear the environmental burden under market competitiveness conditions.
+               Additional information is
+               given in "Deviations from LCI method approaches / explanations". [Note: Also here the sum of burdens of all co-functions together
+               is to be 100% of the total
+               burden.]
+            </td>
+         </tr>
+         <tr>
+            <td class="fieldname">Allocation - marginal causality</td>
+            <td class="data">Partitioning of all INDIVIDUAL input or output flows of multi-functional processes to the function of the product system under
+               study,
+               according to the marginal causality that small changes of the relative amounts of the co-functions have on the amount of the
+               respective individual input or
+               output flow. Additional information/details are given in "Deviations from LCI method approaches / explanations". E.g. (illustrative,
+               virtual example):
+               Dioxin emissions of a mixed waste incineration process are allocated proportionally to the carbon and chlorine content of
+               the different wastes, according to
+               the marginal changes in Dioxin emissions that result from a marginal/small change in the carbon and chlorine composition of
+               the incinerated mixed
+               waste.
+            </td>
+         </tr>
+         <tr>
+            <td class="fieldname">Allocation - physical causality</td>
+            <td class="data">Partitioning of all INDIVIDUAL input or output flows of multi-functional processes to the function of the product system under
+               study,
+               according to the physical causality that the co-functions have on the amount of the respective individual input or output
+               flow. Additional
+               information/details are given in "Deviations from LCI method approaches / explanations". E.g. (illustrative, virtual example):
+               all energy carrier input is
+               allocated 100% to the only energy-containing co-product, while the non-energy containing, second Chromium-containing co-product
+               receives 100% of the
+               Chromium emissions and Chromium resource elementary flows.
+            </td>
+         </tr>
+         <tr>
+            <td class="fieldname">Allocation - 100% to main function</td>
+            <td class="data">One user-defined and justified main function of the multi-functional processes is allocated 100% of all other input and output
+               flows. Other
+               co-functions are hence free of burden.
+            </td>
+         </tr>
+         <tr>
+            <td class="fieldname">Allocation - other explicit assignment</td>
+            <td class="data">The individual input or output flows of multi-functional processes are assigned to the co-functions based on other criteria
+               than those listed
+               under the other "Allocation - ..." criteria. Additional information is given in "Deviations from LCI method approaches / explanations".
+            </td>
+         </tr>
+         <tr>
+            <td class="fieldname">Allocation - equal distribution</td>
+            <td class="data">All functions of a multi-functional process carry the same share of the other input or output flows. Independent of mass or
+               other properties
+               of products or educts, only the number of functions is considered (e.g. service output 1 receives 50% of the burdens, service
+               2 receives 50% of the
+               burdens).
+            </td>
+         </tr>
+         <tr>
+            <td class="fieldname">Substitution - BAT</td>
+            <td class="data">Those function(s) of multi-functional processes that are not part of the product system under study are substituted by "Avoided
+               product
+               system(s)", i.e. by the inverted or negative LCI result of the respective function(s). The "Avoided product system" is modelled
+               as "Best available
+               technology" (BAT). Additional information on the used BAT technologies used is given in "Deviations from LCI method approaches
+               /
+               explanations".
+            </td>
+         </tr>
+         <tr>
+            <td class="fieldname">Substitution - average, market price correction</td>
+            <td class="data">Those function(s) of multi-functional processes that are not part of the product system under study are substituted by "Avoided
+               product
+               system(s)", i.e. by the inverted or negative LCI result of the respective function(s). The "Avoided product system" is modelled
+               as average market mix of
+               production, with a market price correction for different market values of the substituted product system. Additional information
+               is given in "Deviations
+               from LCI method approaches / explanations".
+            </td>
+         </tr>
+         <tr>
+            <td class="fieldname">Substitution - average, technical properties correction</td>
+            <td class="data">Those function(s) of multi-functional processes that are not part of the product system under study are substituted by "Avoided
+               product
+               system(s)", i.e. by the inverted or negative LCI result of the respective function(s). The "Avoided product system" is modelled
+               as average market mix of
+               production, with correction for different technical properties (e.g. fibre length, tensile stength, etc.) of the substituted
+               product system. Additional
+               information is given in "Deviations from LCI method approaches / explanations".
+            </td>
+         </tr>
+         <tr>
+            <td class="fieldname">Allocation - recycled content</td>
+            <td class="data">End-of-life products and wastes are cut-off in so far as recyclable materials and energy contents are handed over free of
+               burden to subsequent
+               uses/product systems, which however carry the burden of the recycling and related activities, transport etc. The amount of
+               secondary materials and energy
+               input into the first product system is modelled as is the content amount of these secondary resources in the product. Additional
+               information is given in
+               "Deviations from LCI method approaches / explanations".
+            </td>
+         </tr>
+         <tr>
+            <td class="fieldname">Substitution - recycling potential</td>
+            <td class="data">End-of-life products and wastes are modelled to the secondary materials and recovered energy, which replace the respective
+               primary production.
+               The burden of the recycling and related activities, transport etc. are carried by the first product system. The substitution
+               of primary production according
+               to the first products recycling potential is typically corrected by the (lower) market price or technical quality of the secondary
+               materials/energy
+               carriers, if applicable. Additional information is given in "Deviations from LCI method approaches / explanations".
+            </td>
+         </tr>
+         <tr>
+            <td class="fieldname">Substitution - average, no correction</td>
+            <td class="data">Those function(s) of multi-functional processes that are not part of the product system under study are substituted by "Avoided
+               product
+               system(s)", i.e. by the inverted or negative LCI result of the respective function(s). The "Avoided product system" is modelled
+               as average market mix of
+               production, without any correction factor of the substituted product system. Additional information is given in "Deviations
+               from LCI method approaches /
+               explanations".
+            </td>
+         </tr>
+         <tr>
+            <td class="fieldname">Substitution - specific</td>
+            <td class="data">Those function(s) of multi-functional processes that are not part of the product system under study are substituted by "Avoided
+               product
+               system(s)", i.e. by the inverted or negative LCI result of the respective function(s). The "Avoided product system" is modelled
+               as a specific product or
+               process, that is found to be replaced. Additional information is given in "Deviations from LCI method approaches / explanations".
+            </td>
+         </tr>
+         <tr>
+            <td class="fieldname">Consequential effects - other</td>
+            <td class="data">The Product system is modelled considering other or additional consequences in the economy, such as e.g. consumption or behavioral
+               changes, or
+               other effects even on other product systems that are not part of the one under study. Additional information is given in "Deviations
+               from LCI method
+               approaches / explanations".
+            </td>
+         </tr>
+         <tr>
+            <td class="fieldname">Not applicable</td>
+            <td class="data">Process without multi-functionality or product system without any multi-functional process included.</td>
+         </tr>
+         <tr>
+            <td class="fieldname">Other</td>
+            <td class="data">Another LCI method approach is used. This is named in "Deviations from LCI method approaches / explanations" where also additional
+               information
+               is given.
+            </td>
+         </tr>
+         <tr>
+            <td class="subsection" valign="top" rowspan="5"><a name="LCIMethodPrincipleValues">LCIMethodPrincipleValues</a></td>
+            <td class="fieldname">Attributional</td>
+            <td class="data">The process or product system is modeled in a strictly descriptive way using the employed specific or average technologies,
+               market mixes, and
+               time as occurring. This excludes the substitution of e.g. the burdens of co-products or of electricity produced from waste
+               incineration and the modelling of
+               consequences in the market. Data not related to or suitable for decision making but monitoring only. (Synonyms: descriptive,
+               average, non-marginal,
+               book-keeping.)
+            </td>
+         </tr>
+         <tr>
+            <td class="fieldname">Consequential</td>
+            <td class="data">The process or product system is modeled considering the consequences it's production causes, assuming this additional demand
+               results in
+               additional production of the required materials, energy carriers, components etc. Typically the expected/assumed marginal
+               change in the production of the
+               named product, technology, market and time including for the background system. Depending on the specific consequential approach
+               also other consequences in
+               the economy's or global production system are considered. Substitution of co-products is one component often used in consequential
+               modeling. Details are
+               given in "Deviation from LCI method principle / explanations". Example: if a new product variant B requires more electricity
+               in its use phase than the
+               actual product A, it is assumed, that this additional electricity comes exclusively from natural gas combined-heat-and-power
+               plants, as these are argued to
+               be the actual marginal (i.e. additional) technology for electricity production installed to satisfy additional demand. Note
+               that allocation is (generally)
+               not appropriate under consequential modeling.
+            </td>
+         </tr>
+         <tr>
+            <td class="fieldname">Consequential with attributional components</td>
+            <td class="data">The process or product system is in principal modeled considering the consequences it's production causes. However, in most
+               cases e.g. due to
+               rebound effects and the elasticity of the economy, the system is de-facto largely modelled as an attributional system, i.e.
+               using allocation instead of
+               system expansion for multifunctional processes. Details given in "Deviations from LCI method principle /explanations". [Note:
+               Components that are often
+               modeled in a consequential way are the recycling of materials and energy recovery. Also compare with the definitions of "Consequential"
+               and "Attributional"
+               modelling.]
+            </td>
+         </tr>
+         <tr>
+            <td class="fieldname">Not applicable</td>
+            <td class="data">Not applicable e.g. as modelled with an attributional approach but process without multifunctionality.</td>
+         </tr>
+         <tr>
+            <td class="fieldname">Other</td>
+            <td class="data">Another LCI method principle was applied. To be detailed in "Deviation from LCI method principle / explanations".</td>
+         </tr>
+         <tr>
+            <td class="subsection" valign="top" rowspan="185"><a name="Languages">Languages</a></td>
+            <td class="fieldname">aa</td>
+            <td class="data">Afar</td>
+         </tr>
+         <tr>
+            <td class="fieldname">ab</td>
+            <td class="data">Abkhazian</td>
+         </tr>
+         <tr>
+            <td class="fieldname">ae</td>
+            <td class="data">Avestan</td>
+         </tr>
+         <tr>
+            <td class="fieldname">af</td>
+            <td class="data">Afrikaans</td>
+         </tr>
+         <tr>
+            <td class="fieldname">ak</td>
+            <td class="data">Akan</td>
+         </tr>
+         <tr>
+            <td class="fieldname">am</td>
+            <td class="data">Amharic</td>
+         </tr>
+         <tr>
+            <td class="fieldname">an</td>
+            <td class="data">Aragonese</td>
+         </tr>
+         <tr>
+            <td class="fieldname">ar</td>
+            <td class="data">Arabic</td>
+         </tr>
+         <tr>
+            <td class="fieldname">as</td>
+            <td class="data">Assamese</td>
+         </tr>
+         <tr>
+            <td class="fieldname">av</td>
+            <td class="data">Avaric</td>
+         </tr>
+         <tr>
+            <td class="fieldname">ay</td>
+            <td class="data">Aymara</td>
+         </tr>
+         <tr>
+            <td class="fieldname">az</td>
+            <td class="data">Azerbaijani</td>
+         </tr>
+         <tr>
+            <td class="fieldname">ba</td>
+            <td class="data">Bashkir</td>
+         </tr>
+         <tr>
+            <td class="fieldname">be</td>
+            <td class="data">Belarusian</td>
+         </tr>
+         <tr>
+            <td class="fieldname">bg</td>
+            <td class="data">Bulgarian</td>
+         </tr>
+         <tr>
+            <td class="fieldname">bh</td>
+            <td class="data">Bihari</td>
+         </tr>
+         <tr>
+            <td class="fieldname">bi</td>
+            <td class="data">Bislama</td>
+         </tr>
+         <tr>
+            <td class="fieldname">bm</td>
+            <td class="data">Bambara</td>
+         </tr>
+         <tr>
+            <td class="fieldname">bn</td>
+            <td class="data">Bengali</td>
+         </tr>
+         <tr>
+            <td class="fieldname">bo</td>
+            <td class="data">Tibetan</td>
+         </tr>
+         <tr>
+            <td class="fieldname">br</td>
+            <td class="data">Breton</td>
+         </tr>
+         <tr>
+            <td class="fieldname">bs</td>
+            <td class="data">Bosnian</td>
+         </tr>
+         <tr>
+            <td class="fieldname">ca</td>
+            <td class="data">Catalan; Valencian</td>
+         </tr>
+         <tr>
+            <td class="fieldname">ce</td>
+            <td class="data">Chechen</td>
+         </tr>
+         <tr>
+            <td class="fieldname">ch</td>
+            <td class="data">Chamorro</td>
+         </tr>
+         <tr>
+            <td class="fieldname">co</td>
+            <td class="data">Corsican</td>
+         </tr>
+         <tr>
+            <td class="fieldname">cr</td>
+            <td class="data">Cree</td>
+         </tr>
+         <tr>
+            <td class="fieldname">cs</td>
+            <td class="data">Czech</td>
+         </tr>
+         <tr>
+            <td class="fieldname">cu</td>
+            <td class="data">Church Slavic; Slavonic; Church Slavonic; Old Bulgarian; Old Church Slavonic</td>
+         </tr>
+         <tr>
+            <td class="fieldname">cv</td>
+            <td class="data">Chuvash</td>
+         </tr>
+         <tr>
+            <td class="fieldname">cy</td>
+            <td class="data">Welsh</td>
+         </tr>
+         <tr>
+            <td class="fieldname">da</td>
+            <td class="data">Danish</td>
+         </tr>
+         <tr>
+            <td class="fieldname">de</td>
+            <td class="data">German</td>
+         </tr>
+         <tr>
+            <td class="fieldname">dv</td>
+            <td class="data">Divehi</td>
+         </tr>
+         <tr>
+            <td class="fieldname">dz</td>
+            <td class="data">Dzongkha</td>
+         </tr>
+         <tr>
+            <td class="fieldname">ee</td>
+            <td class="data">Ewe</td>
+         </tr>
+         <tr>
+            <td class="fieldname">el</td>
+            <td class="data">Greek, Modern (1453-)</td>
+         </tr>
+         <tr>
+            <td class="fieldname">en</td>
+            <td class="data">English</td>
+         </tr>
+         <tr>
+            <td class="fieldname">eo</td>
+            <td class="data">Esperanto</td>
+         </tr>
+         <tr>
+            <td class="fieldname">es</td>
+            <td class="data">Castilian; Spanish</td>
+         </tr>
+         <tr>
+            <td class="fieldname">et</td>
+            <td class="data">Estonian</td>
+         </tr>
+         <tr>
+            <td class="fieldname">eu</td>
+            <td class="data">Basque</td>
+         </tr>
+         <tr>
+            <td class="fieldname">fa</td>
+            <td class="data">Persian</td>
+         </tr>
+         <tr>
+            <td class="fieldname">ff</td>
+            <td class="data">Fulah</td>
+         </tr>
+         <tr>
+            <td class="fieldname">fi</td>
+            <td class="data">Finnish</td>
+         </tr>
+         <tr>
+            <td class="fieldname">fj</td>
+            <td class="data">Fijian</td>
+         </tr>
+         <tr>
+            <td class="fieldname">fo</td>
+            <td class="data">Faroese</td>
+         </tr>
+         <tr>
+            <td class="fieldname">fr</td>
+            <td class="data">French</td>
+         </tr>
+         <tr>
+            <td class="fieldname">fy</td>
+            <td class="data">Frisian</td>
+         </tr>
+         <tr>
+            <td class="fieldname">ga</td>
+            <td class="data">Irish</td>
+         </tr>
+         <tr>
+            <td class="fieldname">gd</td>
+            <td class="data">Gaelic; Scottish Gaelic</td>
+         </tr>
+         <tr>
+            <td class="fieldname">gl</td>
+            <td class="data">Galician</td>
+         </tr>
+         <tr>
+            <td class="fieldname">gn</td>
+            <td class="data">Guarani</td>
+         </tr>
+         <tr>
+            <td class="fieldname">gu</td>
+            <td class="data">Gujarati</td>
+         </tr>
+         <tr>
+            <td class="fieldname">gv</td>
+            <td class="data">Manx</td>
+         </tr>
+         <tr>
+            <td class="fieldname">ha</td>
+            <td class="data">Hausa</td>
+         </tr>
+         <tr>
+            <td class="fieldname">he</td>
+            <td class="data">Hebrew</td>
+         </tr>
+         <tr>
+            <td class="fieldname">hi</td>
+            <td class="data">Hindi</td>
+         </tr>
+         <tr>
+            <td class="fieldname">ho</td>
+            <td class="data">Hiri Motu</td>
+         </tr>
+         <tr>
+            <td class="fieldname">hr</td>
+            <td class="data">Croatian</td>
+         </tr>
+         <tr>
+            <td class="fieldname">ht</td>
+            <td class="data">Haitian; Haitian Creole</td>
+         </tr>
+         <tr>
+            <td class="fieldname">hu</td>
+            <td class="data">Hungarian</td>
+         </tr>
+         <tr>
+            <td class="fieldname">hy</td>
+            <td class="data">Armenian</td>
+         </tr>
+         <tr>
+            <td class="fieldname">hz</td>
+            <td class="data">Herero</td>
+         </tr>
+         <tr>
+            <td class="fieldname">ia</td>
+            <td class="data">Interlingua (International</td>
+         </tr>
+         <tr>
+            <td class="fieldname">id</td>
+            <td class="data">Indonesian</td>
+         </tr>
+         <tr>
+            <td class="fieldname">ie</td>
+            <td class="data">Interlingue</td>
+         </tr>
+         <tr>
+            <td class="fieldname">ig</td>
+            <td class="data">Igbo</td>
+         </tr>
+         <tr>
+            <td class="fieldname">ii</td>
+            <td class="data">Sichuan Yi</td>
+         </tr>
+         <tr>
+            <td class="fieldname">ik</td>
+            <td class="data">Inupiaq</td>
+         </tr>
+         <tr>
+            <td class="fieldname">io</td>
+            <td class="data">Ido</td>
+         </tr>
+         <tr>
+            <td class="fieldname">is</td>
+            <td class="data">Icelandic</td>
+         </tr>
+         <tr>
+            <td class="fieldname">it</td>
+            <td class="data">Italian</td>
+         </tr>
+         <tr>
+            <td class="fieldname">iu</td>
+            <td class="data">Inuktitut</td>
+         </tr>
+         <tr>
+            <td class="fieldname">ja</td>
+            <td class="data">Japanese</td>
+         </tr>
+         <tr>
+            <td class="fieldname">jv</td>
+            <td class="data">Javanese</td>
+         </tr>
+         <tr>
+            <td class="fieldname">ka</td>
+            <td class="data">Georgian</td>
+         </tr>
+         <tr>
+            <td class="fieldname">kg</td>
+            <td class="data">Kongo</td>
+         </tr>
+         <tr>
+            <td class="fieldname">ki</td>
+            <td class="data">Kikuyu; Gikuyu</td>
+         </tr>
+         <tr>
+            <td class="fieldname">kj</td>
+            <td class="data">Kuanyama; Kwanyama</td>
+         </tr>
+         <tr>
+            <td class="fieldname">kk</td>
+            <td class="data">Kazakh</td>
+         </tr>
+         <tr>
+            <td class="fieldname">kl</td>
+            <td class="data">Greenlandic; Kalaallisut</td>
+         </tr>
+         <tr>
+            <td class="fieldname">km</td>
+            <td class="data">Khmer</td>
+         </tr>
+         <tr>
+            <td class="fieldname">kn</td>
+            <td class="data">Kannada</td>
+         </tr>
+         <tr>
+            <td class="fieldname">ko</td>
+            <td class="data">Korean</td>
+         </tr>
+         <tr>
+            <td class="fieldname">kr</td>
+            <td class="data">Kanuri</td>
+         </tr>
+         <tr>
+            <td class="fieldname">ks</td>
+            <td class="data">Kashmiri</td>
+         </tr>
+         <tr>
+            <td class="fieldname">ku</td>
+            <td class="data">Kurdish</td>
+         </tr>
+         <tr>
+            <td class="fieldname">kv</td>
+            <td class="data">Komi</td>
+         </tr>
+         <tr>
+            <td class="fieldname">kw</td>
+            <td class="data">Cornish</td>
+         </tr>
+         <tr>
+            <td class="fieldname">ky</td>
+            <td class="data">Kirghiz</td>
+         </tr>
+         <tr>
+            <td class="fieldname">la</td>
+            <td class="data">Latin</td>
+         </tr>
+         <tr>
+            <td class="fieldname">lb</td>
+            <td class="data">Luxembourgish; Letzeburgesch</td>
+         </tr>
+         <tr>
+            <td class="fieldname">lg</td>
+            <td class="data">Ganda</td>
+         </tr>
+         <tr>
+            <td class="fieldname">li</td>
+            <td class="data">Limburgan; Limburger; Limburgish</td>
+         </tr>
+         <tr>
+            <td class="fieldname">ln</td>
+            <td class="data">Lingala</td>
+         </tr>
+         <tr>
+            <td class="fieldname">lo</td>
+            <td class="data">Lao</td>
+         </tr>
+         <tr>
+            <td class="fieldname">lt</td>
+            <td class="data">Lithuanian</td>
+         </tr>
+         <tr>
+            <td class="fieldname">lu</td>
+            <td class="data">Luba-Katanga</td>
+         </tr>
+         <tr>
+            <td class="fieldname">lv</td>
+            <td class="data">Latvian</td>
+         </tr>
+         <tr>
+            <td class="fieldname">mg</td>
+            <td class="data">Malagasy</td>
+         </tr>
+         <tr>
+            <td class="fieldname">mh</td>
+            <td class="data">Marshallese</td>
+         </tr>
+         <tr>
+            <td class="fieldname">mi</td>
+            <td class="data">Maori</td>
+         </tr>
+         <tr>
+            <td class="fieldname">mk</td>
+            <td class="data">Macedonian</td>
+         </tr>
+         <tr>
+            <td class="fieldname">ml</td>
+            <td class="data">Malayalam</td>
+         </tr>
+         <tr>
+            <td class="fieldname">mn</td>
+            <td class="data">Mongolian</td>
+         </tr>
+         <tr>
+            <td class="fieldname">mo</td>
+            <td class="data">Moldavian</td>
+         </tr>
+         <tr>
+            <td class="fieldname">mr</td>
+            <td class="data">Marathi</td>
+         </tr>
+         <tr>
+            <td class="fieldname">ms</td>
+            <td class="data">Malay</td>
+         </tr>
+         <tr>
+            <td class="fieldname">mt</td>
+            <td class="data">Maltese</td>
+         </tr>
+         <tr>
+            <td class="fieldname">my</td>
+            <td class="data">Burmese</td>
+         </tr>
+         <tr>
+            <td class="fieldname">na</td>
+            <td class="data">Nauru</td>
+         </tr>
+         <tr>
+            <td class="fieldname">nb</td>
+            <td class="data">Norwegian Bokmål; Bokmål, Norwegian</td>
+         </tr>
+         <tr>
+            <td class="fieldname">nd</td>
+            <td class="data">Ndebele, North</td>
+         </tr>
+         <tr>
+            <td class="fieldname">ne</td>
+            <td class="data">Nepali</td>
+         </tr>
+         <tr>
+            <td class="fieldname">ng</td>
+            <td class="data">Ndonga</td>
+         </tr>
+         <tr>
+            <td class="fieldname">nl</td>
+            <td class="data">Dutch; Flemish</td>
+         </tr>
+         <tr>
+            <td class="fieldname">nn</td>
+            <td class="data">Norwegian Nynorsk; Nynorsk, Norwegian</td>
+         </tr>
+         <tr>
+            <td class="fieldname">no</td>
+            <td class="data">Norwegian</td>
+         </tr>
+         <tr>
+            <td class="fieldname">nr</td>
+            <td class="data">Ndebele, South</td>
+         </tr>
+         <tr>
+            <td class="fieldname">nv</td>
+            <td class="data">Navajo; Navaho</td>
+         </tr>
+         <tr>
+            <td class="fieldname">ny</td>
+            <td class="data">Nyanja; Chichewa; Chewa</td>
+         </tr>
+         <tr>
+            <td class="fieldname">oc</td>
+            <td class="data">Provençal; Occitan (post 1500) </td>
+         </tr>
+         <tr>
+            <td class="fieldname">oj</td>
+            <td class="data">Ojibwa</td>
+         </tr>
+         <tr>
+            <td class="fieldname">om</td>
+            <td class="data">Oromo</td>
+         </tr>
+         <tr>
+            <td class="fieldname">or</td>
+            <td class="data">Oriya</td>
+         </tr>
+         <tr>
+            <td class="fieldname">os</td>
+            <td class="data">Ossetian; Ossetic</td>
+         </tr>
+         <tr>
+            <td class="fieldname">pa</td>
+            <td class="data">Punjabi; Panjabi</td>
+         </tr>
+         <tr>
+            <td class="fieldname">pi</td>
+            <td class="data">Pali</td>
+         </tr>
+         <tr>
+            <td class="fieldname">pl</td>
+            <td class="data">Polish</td>
+         </tr>
+         <tr>
+            <td class="fieldname">ps</td>
+            <td class="data">Pushto</td>
+         </tr>
+         <tr>
+            <td class="fieldname">pt</td>
+            <td class="data">Portuguese</td>
+         </tr>
+         <tr>
+            <td class="fieldname">qu</td>
+            <td class="data">Quechua</td>
+         </tr>
+         <tr>
+            <td class="fieldname">rm</td>
+            <td class="data">Raeto-Romance</td>
+         </tr>
+         <tr>
+            <td class="fieldname">rn</td>
+            <td class="data">Rundi</td>
+         </tr>
+         <tr>
+            <td class="fieldname">ro</td>
+            <td class="data">Romanian</td>
+         </tr>
+         <tr>
+            <td class="fieldname">ru</td>
+            <td class="data">Russian</td>
+         </tr>
+         <tr>
+            <td class="fieldname">rw</td>
+            <td class="data">Kinyarwanda</td>
+         </tr>
+         <tr>
+            <td class="fieldname">sa</td>
+            <td class="data">Sanskrit</td>
+         </tr>
+         <tr>
+            <td class="fieldname">sc</td>
+            <td class="data">Sardinian</td>
+         </tr>
+         <tr>
+            <td class="fieldname">sd</td>
+            <td class="data">Sindhi</td>
+         </tr>
+         <tr>
+            <td class="fieldname">se</td>
+            <td class="data">Northern Sami</td>
+         </tr>
+         <tr>
+            <td class="fieldname">sg</td>
+            <td class="data">Sango</td>
+         </tr>
+         <tr>
+            <td class="fieldname">si</td>
+            <td class="data">Sinhala; Sinhalese</td>
+         </tr>
+         <tr>
+            <td class="fieldname">sk</td>
+            <td class="data">Slovak</td>
+         </tr>
+         <tr>
+            <td class="fieldname">sl</td>
+            <td class="data">Slovenian</td>
+         </tr>
+         <tr>
+            <td class="fieldname">sm</td>
+            <td class="data">Samoan</td>
+         </tr>
+         <tr>
+            <td class="fieldname">sn</td>
+            <td class="data">Shona</td>
+         </tr>
+         <tr>
+            <td class="fieldname">so</td>
+            <td class="data">Somali</td>
+         </tr>
+         <tr>
+            <td class="fieldname">sq</td>
+            <td class="data">Albanian</td>
+         </tr>
+         <tr>
+            <td class="fieldname">sr</td>
+            <td class="data">Serbian</td>
+         </tr>
+         <tr>
+            <td class="fieldname">ss</td>
+            <td class="data">Swati</td>
+         </tr>
+         <tr>
+            <td class="fieldname">st</td>
+            <td class="data">Sotho, Southern</td>
+         </tr>
+         <tr>
+            <td class="fieldname">su</td>
+            <td class="data">Sundanese</td>
+         </tr>
+         <tr>
+            <td class="fieldname">sv</td>
+            <td class="data">Swedish</td>
+         </tr>
+         <tr>
+            <td class="fieldname">sw</td>
+            <td class="data">Swahili</td>
+         </tr>
+         <tr>
+            <td class="fieldname">ta</td>
+            <td class="data">Tamil</td>
+         </tr>
+         <tr>
+            <td class="fieldname">te</td>
+            <td class="data">Telugu</td>
+         </tr>
+         <tr>
+            <td class="fieldname">tg</td>
+            <td class="data">Tajik</td>
+         </tr>
+         <tr>
+            <td class="fieldname">th</td>
+            <td class="data">Thai</td>
+         </tr>
+         <tr>
+            <td class="fieldname">ti</td>
+            <td class="data">Tigrinya</td>
+         </tr>
+         <tr>
+            <td class="fieldname">tk</td>
+            <td class="data">Turkmen</td>
+         </tr>
+         <tr>
+            <td class="fieldname">tl</td>
+            <td class="data">Tagalog</td>
+         </tr>
+         <tr>
+            <td class="fieldname">tn</td>
+            <td class="data">Tswana</td>
+         </tr>
+         <tr>
+            <td class="fieldname">to</td>
+            <td class="data">Tonga (Tonga Islands)</td>
+         </tr>
+         <tr>
+            <td class="fieldname">tr</td>
+            <td class="data">Turkish</td>
+         </tr>
+         <tr>
+            <td class="fieldname">ts</td>
+            <td class="data">Tsonga</td>
+         </tr>
+         <tr>
+            <td class="fieldname">tt</td>
+            <td class="data">Tatar</td>
+         </tr>
+         <tr>
+            <td class="fieldname">tw</td>
+            <td class="data">Twi</td>
+         </tr>
+         <tr>
+            <td class="fieldname">ty</td>
+            <td class="data">Tahitian</td>
+         </tr>
+         <tr>
+            <td class="fieldname">ug</td>
+            <td class="data">Uighur; Uyghur</td>
+         </tr>
+         <tr>
+            <td class="fieldname">uk</td>
+            <td class="data">Ukrainian</td>
+         </tr>
+         <tr>
+            <td class="fieldname">ur</td>
+            <td class="data">Urdu</td>
+         </tr>
+         <tr>
+            <td class="fieldname">uz</td>
+            <td class="data">Uzbek</td>
+         </tr>
+         <tr>
+            <td class="fieldname">ve</td>
+            <td class="data">Venda</td>
+         </tr>
+         <tr>
+            <td class="fieldname">vi</td>
+            <td class="data">Vietnamese</td>
+         </tr>
+         <tr>
+            <td class="fieldname">vo</td>
+            <td class="data">Volapük</td>
+         </tr>
+         <tr>
+            <td class="fieldname">wa</td>
+            <td class="data">Walloon</td>
+         </tr>
+         <tr>
+            <td class="fieldname">wo</td>
+            <td class="data">Wolof</td>
+         </tr>
+         <tr>
+            <td class="fieldname">xh</td>
+            <td class="data">Xhosa</td>
+         </tr>
+         <tr>
+            <td class="fieldname">yi</td>
+            <td class="data">Yiddish</td>
+         </tr>
+         <tr>
+            <td class="fieldname">yo</td>
+            <td class="data">Yoruba</td>
+         </tr>
+         <tr>
+            <td class="fieldname">za</td>
+            <td class="data">Chuang; Zhuang</td>
+         </tr>
+         <tr>
+            <td class="fieldname">zh</td>
+            <td class="data">Chinese</td>
+         </tr>
+         <tr>
+            <td class="fieldname">zu</td>
+            <td class="data">Zulu</td>
+         </tr>
+         <tr>
+            <td class="subsection" valign="top" rowspan="5"><a name="LicenseTypeValues">LicenseTypeValues</a></td>
+            <td class="fieldname">Free of charge for all users and uses</td>
+            <td class="data">This data set can be freely accessed and used by all user types and for all uses, including for commercial purposes</td>
+         </tr>
+         <tr>
+            <td class="fieldname">Free of charge for some user types or use types</td>
+            <td class="data">This data set can be accessed free of charge for certain user types, such as academic institutions, students, public
+               administration/government, etc., or for certain types of uses, e.g. not-for-profit. Details and license conditions are to
+               be obtained from the "Data set
+               owner" or electronically via the "Permanent URI", if implemented by data owner. Also see "Access and use restrictions".
+            </td>
+         </tr>
+         <tr>
+            <td class="fieldname">Free of charge for members only</td>
+            <td class="data">Data set is accessible free of charge only for members. Membership itself must be for free, while not all user types may be
+               able to become
+               member. Membership conditions are to be obtained from the "Data set owner" or electronically via the "Permanent URI", if implemented
+               by data owner. Also see
+               "Access and use restrictions".
+            </td>
+         </tr>
+         <tr>
+            <td class="fieldname">License fee</td>
+            <td class="data">Data set is accessible for a license fee. This can be a fee per data set, for a group of data sets, a whole database, or for
+               obtaining a
+               membership to get access to the data. Details and license conditions are to be obtained from the "Data set owner" or electronically
+               via the "Permanent URI",
+               if implemented by data owner. Also see "Access and use restrictions".
+            </td>
+         </tr>
+         <tr>
+            <td class="fieldname">Other</td>
+            <td class="data">Another license type applies. Details are given in "Access and use restrictions".</td>
+         </tr>
+         <tr>
+            <td class="subsection" valign="top" rowspan="10"><a name="PublicationTypeValues">PublicationTypeValues</a></td>
+            <td class="fieldname">Undefined</td>
+            <td class="data">Mixed, unclear or not defined publication type.</td>
+         </tr>
+         <tr>
+            <td class="fieldname">Article in periodical</td>
+            <td class="data">Printed article in periodical e.g. a journal paper</td>
+         </tr>
+         <tr>
+            <td class="fieldname">Chapter in anthology</td>
+            <td class="data">Chapter with distinct author in monograph with own editor.</td>
+         </tr>
+         <tr>
+            <td class="fieldname">Monograph</td>
+            <td class="data">Non-serial publication complete in one volume or a finite number of volumes. Including patents.</td>
+         </tr>
+         <tr>
+            <td class="fieldname">Direct measurement</td>
+            <td class="data">Measured directly from the process to be represented.</td>
+         </tr>
+         <tr>
+            <td class="fieldname">Oral communication</td>
+            <td class="data">Direct or remote/phone oral information.</td>
+         </tr>
+         <tr>
+            <td class="fieldname">Personal written communication</td>
+            <td class="data">By individual to individual via letter, fax, email etc.</td>
+         </tr>
+         <tr>
+            <td class="fieldname">Questionnaire</td>
+            <td class="data">Data received by a questionnaire targeting to data input for LCA use. Including existing data previously measured on site
+               by process owner or
+               operator and provided officially in written form for LCA purposes. Excludes data transferred from elsewhere published data.
+            </td>
+         </tr>
+         <tr>
+            <td class="fieldname">Software or database</td>
+            <td class="data">Software tools or databases, based on mixed sources, e.g. LCA databases.</td>
+         </tr>
+         <tr>
+            <td class="fieldname">Other unpublished and grey literature</td>
+            <td class="data">Including internal reports for other purposes than LCA, confidential LCA studies, master theses, etc. Includes also
+               websites.
+            </td>
+         </tr>
+         <tr>
+            <td class="subsection" valign="top" rowspan="7"><a name="QualityValues">QualityValues</a></td>
+            <td class="fieldname">Very good</td>
+            <td class="data">Meets the criterium to a very high degree, having or no relevant need for improvement. This is to be judged in view of the
+               criterium's
+               contribution to the data set's potential overall environmental impact and in comparison to an ideal situation.
+            </td>
+         </tr>
+         <tr>
+            <td class="fieldname">Good</td>
+            <td class="data">Meets the criterium to a high degree, having little yet significant need for improvement. This is to be judged in view of
+               the criterium's
+               contribution to the data set's potential overall environmental impact and in comparison to an ideal situation.
+            </td>
+         </tr>
+         <tr>
+            <td class="fieldname">Fair</td>
+            <td class="data">Meets the criterium to a still sufficient degree, while having the need for improvement. This is to be judged in view of the
+               criterium's
+               contribution to the data set's potential overall environmental impact and in comparison to an ideal situation.
+            </td>
+         </tr>
+         <tr>
+            <td class="fieldname">Poor</td>
+            <td class="data">Does not meet the criterium to a sufficient degree, having the need for relevant improvement. This is to be judged in view
+               of the criterium's
+               contribution to the data set's potential overall environmental impact and in comparison to an ideal situation.
+            </td>
+         </tr>
+         <tr>
+            <td class="fieldname">Very poor</td>
+            <td class="data">Does not at all meet the criterium, having the need for very substantial improvement. This is to be judged in view of the
+               criterium's
+               contribution to the data set's potential overall environmental impact and in comparison to an ideal situation.
+            </td>
+         </tr>
+         <tr>
+            <td class="fieldname">Not evaluated / unknown</td>
+            <td class="data">This criterium was not reviewed or its quality could not be verified.</td>
+         </tr>
+         <tr>
+            <td class="fieldname">Not applicable</td>
+            <td class="data">This criterium is not applicable to this data set, e.g. its geographical representative can not be evaluated as it is a location-unspecific
+               technology unit process.
+            </td>
+         </tr>
+         <tr>
+            <td class="subsection" valign="top" rowspan="5"><a name="RecommendationLevelValues">RecommendationLevelValues</a></td>
+            <td class="fieldname">Level I</td>
+            <td class="data">Highest recommendation level. See also field "Specific meaning of the recommendation level".</td>
+         </tr>
+         <tr>
+            <td class="fieldname">Level II</td>
+            <td class="data">Second highest recommendation level. See also field "Specific meaning of the recommendation level".</td>
+         </tr>
+         <tr>
+            <td class="fieldname">Level III</td>
+            <td class="data">Third highest recommendation level. See also field "Specific meaning of the recommendation level".</td>
+         </tr>
+         <tr>
+            <td class="fieldname">Interim</td>
+            <td class="data">Level between the third highest recommendation level and "not recommended". See also field "Specific meaning of the recommendation
+               level".
+            </td>
+         </tr>
+         <tr>
+            <td class="fieldname">Not recommended</td>
+            <td class="data">Not recommended for use.</td>
+         </tr>
+         <tr>
+            <td class="subsection" valign="top" rowspan="14"><a name="StandardMethodTypeValues">StandardMethodTypeValues</a></td>
+            <td class="fieldname">CML 2002</td>
+            <td class="data"></td>
+         </tr>
+         <tr>
+            <td class="fieldname">Eco-indicator 99</td>
+            <td class="data"></td>
+         </tr>
+         <tr>
+            <td class="fieldname">LIME 2004</td>
+            <td class="data"></td>
+         </tr>
+         <tr>
+            <td class="fieldname">EDIP 97</td>
+            <td class="data"></td>
+         </tr>
+         <tr>
+            <td class="fieldname">EDIP 2003</td>
+            <td class="data"></td>
+         </tr>
+         <tr>
+            <td class="fieldname">EPS 2000</td>
+            <td class="data"></td>
+         </tr>
+         <tr>
+            <td class="fieldname">LUCAS 2005 </td>
+            <td class="data"></td>
+         </tr>
+         <tr>
+            <td class="fieldname">TRACI 2000</td>
+            <td class="data"></td>
+         </tr>
+         <tr>
+            <td class="fieldname">TRACI 2008</td>
+            <td class="data"></td>
+         </tr>
+         <tr>
+            <td class="fieldname">ReCiPe 2007</td>
+            <td class="data"></td>
+         </tr>
+         <tr>
+            <td class="fieldname">IMPACT 2002+</td>
+            <td class="data"></td>
+         </tr>
+         <tr>
+            <td class="fieldname">MeEuP 2005</td>
+            <td class="data"></td>
+         </tr>
+         <tr>
+            <td class="fieldname">Ecoscarcity 2006</td>
+            <td class="data"></td>
+         </tr>
+         <tr>
+            <td class="fieldname">Other</td>
+            <td class="data"></td>
+         </tr>
+         <tr>
+            <td class="subsection" valign="top" rowspan="6"><a name="TypeOfLCIAMethodValues">TypeOfLCIAMethodValues</a></td>
+            <td class="fieldname">Inventory indicator</td>
+            <td class="data">Method for an inventory indicator, i.e. without impact assessment method.</td>
+         </tr>
+         <tr>
+            <td class="fieldname">Mid-point indicator</td>
+            <td class="data">Method for a mid-point indicator at a point of the impact chain between the inventory and the damage.</td>
+         </tr>
+         <tr>
+            <td class="fieldname">Damage indicator</td>
+            <td class="data">Method for a damage indicator, representing the damage to a part of a Area of Protection or by specific mechanisms, only.</td>
+         </tr>
+         <tr>
+            <td class="fieldname">Area of Protection damage indicator</td>
+            <td class="data">Method for a damage indicator, representing the damage to one complete Area of Protection.</td>
+         </tr>
+         <tr>
+            <td class="fieldname">Combined single-point indicator</td>
+            <td class="data">Method for a damage indicator, representing the damage to one complete Area of Protection.</td>
+         </tr>
+         <tr>
+            <td class="fieldname">LCIA methodology documentation</td>
+            <td class="data">Dataset that refers to actual LCIA method datasets, providing common metainformation.</td>
+         </tr>
+         <tr>
+            <td class="subsection" valign="top" rowspan="4"><a name="TypeOfOrganisationValues">TypeOfOrganisationValues</a></td>
+            <td class="fieldname">Private company</td>
+            <td class="data">Private company</td>
+         </tr>
+         <tr>
+            <td class="fieldname">Governmental</td>
+            <td class="data">Governmental organisation</td>
+         </tr>
+         <tr>
+            <td class="fieldname">Non-governmental org.</td>
+            <td class="data">Non-governmental organisation</td>
+         </tr>
+         <tr>
+            <td class="fieldname">Other</td>
+            <td class="data">Other, e.g. a project consortium or network</td>
+         </tr>
+         <tr>
+            <td class="subsection" valign="top" rowspan="5"><a name="TypeOfProcessValues">TypeOfProcessValues</a></td>
+            <td class="fieldname">Unit process, single operation</td>
+            <td class="data">Unit operation type unit process that can not be further subdivided. Covers multi-functional processes of unit operation
+               type.
+            </td>
+         </tr>
+         <tr>
+            <td class="fieldname">Unit process, black box</td>
+            <td class="data">Process-chain or plant level unit process. This covers horizontally averaged unit processes across different sites. Covers
+               also those
+               multi-functional unit processes, where the different co-products undergo different processing steps within the black box,
+               hence causing allocation-problems
+               for this data set.
+            </td>
+         </tr>
+         <tr>
+            <td class="fieldname">LCI result</td>
+            <td class="data">Aggregated data set of the complete or partial life cycle of a product system that next to the elementary flows (and possibly
+               not relevant
+               amounts of waste flows and radioactive wastes) lists in the input/output list exclusively the product(s) of the process as
+               reference flow(s), but no other
+               goods or services. E.g. cradle-to-gate and cradle-to-grave data sets. Check also the definition of "Partly terminated system".
+            </td>
+         </tr>
+         <tr>
+            <td class="fieldname">Partly terminated system</td>
+            <td class="data">Aggregated data set with however at least one product flow in the input/output list that needs further modelling, in addition
+               to the reference
+               flow(s). E.g. a process of an injection moulding machine with one open "Electricity" input product flow that requires the
+               LCA practitioner to saturate with
+               an Electricity production LCI data set (e.g. of the country where the machine is operated). Note that also aggregated process
+               data sets that include
+               relevant amounts of waste flows for which the waste management has not been modelled yet are "partly terminated system" data
+               sets.
+            </td>
+         </tr>
+         <tr>
+            <td class="fieldname">Avoided product system</td>
+            <td class="data">Data set with all flows set to negative values OR all inputs be made to outputs and vice versa; i.e. a negative/inverted inventory
+               (can be
+               unit process, LCI result, or other type). Used in system expansion/substitution for consequential modelling.
+            </td>
+         </tr>
+         <tr>
+            <td class="subsection" valign="top" rowspan="4"><a name="TypeOfQuantitativeReferenceValues">TypeOfQuantitativeReferenceValues</a></td>
+            <td class="fieldname">Reference flow(s)</td>
+            <td class="data"> One or more of the data set's inputs or outputs is identified as quantiative reference flow. This covers the 14048 types
+               of quantitative
+               references "Reference flow of process", "Outgoing product flow", "Incoming product flow", "Other flow". E.g. ['Electricity;
+               220V; to consumer; AC' - '1
+               MJ']. E.g. for multi-functional processes e.g. ['Wheat grains; at farm; 16% H2O' - '1 kg'] and also ['Wheat straw; at farm;
+               14% H2O' - '0.9 kg'].
+               
+            </td>
+         </tr>
+         <tr>
+            <td class="fieldname">Functional unit</td>
+            <td class="data"> The functional unit of the process may relate to the process' performance expressed without referring to a flow. E.g. "Protective
+               coating of
+               1 m2 of car surface acc. to XY specifications for 15 years". One or more functional unit entries can be given in addition
+               to a reference flow.
+               
+            </td>
+         </tr>
+         <tr>
+            <td class="fieldname">Other parameter</td>
+            <td class="data"> Other information items quantify the process' reference. E.g. "Input of 1 MJ fuel oils" into an energy conversion process,
+               which might be
+               represented by two different fuels in the inputs/outputs, but which are inventoried individually and in kg (e.g. as 0.015
+               kg light fuel oil and 0,018 kg
+               heavy fuel oil). 
+            </td>
+         </tr>
+         <tr>
+            <td class="fieldname">Production period</td>
+            <td class="data"> Time period of operation that a process represents, e.g. "January 2003 to including June 2003". </td>
+         </tr>
+         <tr>
+            <td class="subsection" valign="top" rowspan="6"><a name="TypeOfReviewValues">TypeOfReviewValues</a></td>
+            <td class="fieldname">Dependent internal review</td>
+            <td class="data">Reviewer(s)/verifier(s) have been involved in collecting, modelling, or entering the data set information or inventory, have
+               commissioned or
+               financed the work, or represent the process or product system (or quantiatitively relevant parts of it).
+            </td>
+         </tr>
+         <tr>
+            <td class="fieldname">Independent internal review</td>
+            <td class="data">Reviewer(s)/verifier(s) have NOT been involved in collecting, modelling, or entering the data set information or inventory,
+               have not
+               commissioned or financed the work, and do not represent the process or product system (or quantiatitively relevant parts of
+               it). But the reviewer(s)
+               belong(s) to the organisation(s) or legally linked organisation(s) that have been involved in the above.
+            </td>
+         </tr>
+         <tr>
+            <td class="fieldname">Independent external review</td>
+            <td class="data">Reviewer(s)/verifier(s) do not belong to the organisations or legally linked organisations that have been involved in collecting,
+               modelling,
+               or entering the data set information or inventory, have not commissioned or financed the work, or represent the process or
+               product system (or
+               quantiatitively relevant parts of it).
+            </td>
+         </tr>
+         <tr>
+            <td class="fieldname">Accredited third party review</td>
+            <td class="data">Reviewer(s)/verifier(s) do not belong to the organisations or legally linked organisations that have been involved in collecting,
+               modelling,
+               or entering the data set information or inventory, have not commissioned or financed the work, or represent the process or
+               product system (or
+               quantiatitively relevant parts of it). The reviewer(s)/verifier(s) are accredited by an accreditation body, that is independent
+               of the
+               reviewer(s)/verifier(s) and the scheme operator or standardisation party.
+            </td>
+         </tr>
+         <tr>
+            <td class="fieldname">Independent review panel</td>
+            <td class="data">Panel of at least three independent internal or external reviewers/verfiers. Chairperson is independent external reviewer/verifier.
+               Chairperson may invite interested parties affected by the conclusions drawn from the LCA, such as government agencies, non-governmental
+               groups, competitors
+               and affected industries. [Notes: "Independent": Reviewer(s)/verifier(s) have NOT been involved in collecting, modelling, or
+               entering the data set
+               information or inventory, have not commissioned or financed the work, and do not represent the process or product system (or
+               quantiatitively relevant parts
+               of it). "External": Reviewer(s)/verifier(s) do not belong to the organisations or legally linked organisations that have been
+               involved in collecting,
+               modelling, or entering the data set information or inventory, have not commissioned or financed the work, or represent the
+               process or product system (or
+               quantiatitively relevant parts of it).
+            </td>
+         </tr>
+         <tr>
+            <td class="fieldname">Not reviewed</td>
+            <td class="data">The data set was not / not yet reviewed.</td>
+         </tr>
+         <tr>
+            <td class="subsection" valign="top" rowspan="5"><a name="UncertaintyDistributionTypeValues">UncertaintyDistributionTypeValues</a></td>
+            <td class="fieldname">undefined</td>
+            <td class="data">Probability distribution information not available.</td>
+         </tr>
+         <tr>
+            <td class="fieldname">log-normal</td>
+            <td class="data">Probability distribution of any random parameter whose logarithm is normally distributed.</td>
+         </tr>
+         <tr>
+            <td class="fieldname">normal</td>
+            <td class="data">Probability distribution of any random parameter whose value is normally distributed around the mean of zero.</td>
+         </tr>
+         <tr>
+            <td class="fieldname">triangular</td>
+            <td class="data">Probability distribution of any random parameter between minimum value and maximum value with the highest probability at the
+               average value of
+               minimum plus maximum value. Linear change of probability between minimum, maximum and average value.
+            </td>
+         </tr>
+         <tr>
+            <td class="fieldname">uniform</td>
+            <td class="data">Continuous uniform probability distribution between minimum value and maximum value and "0" probability beyond these.</td>
+         </tr>
+         <tr>
+            <td class="subsection" valign="top" rowspan="8"><a name="WorkflowAndPublicationStatusValues">WorkflowAndPublicationStatusValues</a></td>
+            <td class="fieldname">Working draft</td>
+            <td class="data">Data set is in preliminary status of on-going development.</td>
+         </tr>
+         <tr>
+            <td class="fieldname">Final draft for internal review</td>
+            <td class="data">Data set is finished and ready for internal review.</td>
+         </tr>
+         <tr>
+            <td class="fieldname">Final draft for external review</td>
+            <td class="data">Data set is ready for an external review (after a potential internal review and correction if required).</td>
+         </tr>
+         <tr>
+            <td class="fieldname">Data set finalised; unpublished</td>
+            <td class="data">Data set is finalised (with or without an internal and/or external review and correction if required), but it is not or not
+               yet
+               published.
+            </td>
+         </tr>
+         <tr>
+            <td class="fieldname">Under revision</td>
+            <td class="data">Data set is under revision and the publication of the revised data set is foreseen.</td>
+         </tr>
+         <tr>
+            <td class="fieldname">Withdrawn</td>
+            <td class="data">Data set has been withdrawn and must not be used anymore. For details contact the "Data set owner".</td>
+         </tr>
+         <tr>
+            <td class="fieldname">Data set finalised; subsystems published</td>
+            <td class="data">Data set is finalised (with or without an internal and/or external review and correction if required), and sub-system(s) /
+               included processes
+               have been published.
+            </td>
+         </tr>
+         <tr>
+            <td class="fieldname">Data set finalised; entirely published</td>
+            <td class="data">Data set is finalised (with or without an internal and/or external review and correction if required), and was entirely
+               published.
+            </td>
+         </tr>
+         <tr>
+            <td class="subsection" valign="top" rowspan="12"><a name="MethodOfReviewValues">MethodOfReviewValues</a></td>
+            <td class="fieldname">Validation of data sources</td>
+            <td class="data">Analysis of all data sources declared, checking their context-specific correct use as well as their relevance and quality.</td>
+         </tr>
+         <tr>
+            <td class="fieldname">Sample tests on calculations</td>
+            <td class="data">Values in the inventory are re-calculated from the raw data, or other calculations are validated exemplarily, e.g. scaling,
+               averaging, summing up,
+               stochiometric calculations, formulas in the mathematical models, etc.
+            </td>
+         </tr>
+         <tr>
+            <td class="fieldname">Energy balance</td>
+            <td class="data">The energy balance (e.g. gross or net calorific value or exergy) of the Inputs and Outputs is validated. [Note: For processes
+               that have undergone
+               allocation or consequential modeling the value of this review method is limited.]
+            </td>
+         </tr>
+         <tr>
+            <td class="fieldname">Element balance</td>
+            <td class="data">The balance of the relevant chemical elements of the Inputs and Outputs is calculated and validated. The validated elements
+               should be named in the
+               review comments. [Note: For processes that have undergone allocation or consequential modeling the value of this review method
+               is limited.]
+            </td>
+         </tr>
+         <tr>
+            <td class="fieldname">Cross-check with other source</td>
+            <td class="data">Comparison with other, independent data and/or information sources (can be both database and literature).</td>
+         </tr>
+         <tr>
+            <td class="fieldname">Cross-check with other data set</td>
+            <td class="data">Comparison with similar process or product system from the same or from other sources (can be both database and literature).</td>
+         </tr>
+         <tr>
+            <td class="fieldname">Expert judgement</td>
+            <td class="data">Analysis by means of expert opinions. The expert(s) have methodological and detailed technical expertise on the item to be
+               verified and the process
+               or product system in question.
+            </td>
+         </tr>
+         <tr>
+            <td class="fieldname">Mass balance</td>
+            <td class="data">The mass balance of the Inputs and Outputs is validated. [Note: For processes that have undergone allocation or consequential
+               modeling the value of
+               this review method is limited.]
+            </td>
+         </tr>
+         <tr>
+            <td class="fieldname">Compliance with legal limits</td>
+            <td class="data">Regulated Inputs and Outputs e.g. emission data are validated for compliance with legal limits, typically after relating and
+               scaling the data to
+               the regulated processes/sites etc.
+            </td>
+         </tr>
+         <tr>
+            <td class="fieldname">Compliance with ISO 14040 to 14044</td>
+            <td class="data">Methodological compliance with ISO 14040 to 14044 was checked by an LCA expert.</td>
+         </tr>
+         <tr>
+            <td class="fieldname">Documentation</td>
+            <td class="data">Evidence collection by means of documentation (e.g. data set's meta data, background report)</td>
+         </tr>
+         <tr>
+            <td class="fieldname">Evidence collection by means of plant visits and/or interviews</td>
+            <td class="data">Interviews and/or plant visits are performed to validate data and other informtion, tyically in case of inconsistencies, uncertainties,
+               or doubts.
+               People interviewed have detailed technical expertise on the analysed process(es).
+            </td>
+         </tr>
+         <tr>
+            <td class="subsection" valign="top" rowspan="9"><a name="ScopeOfReviewValues">ScopeOfReviewValues</a></td>
+            <td class="fieldname">Raw data</td>
+            <td class="data">Review/verification is done on basis of the original "raw data", i.e. the data before it was scaled, converted, or treated
+               in other ways to be used
+               for modelling of a unit process.
+            </td>
+         </tr>
+         <tr>
+            <td class="fieldname">Unit process(es), single operation</td>
+            <td class="data">The review is done on the level of the "Unit operation type unit process(es)" that can not be further subdivided. Covers multi-functional
+               processes
+               of unit operation type.
+            </td>
+         </tr>
+         <tr>
+            <td class="fieldname">Unit process(es), black box</td>
+            <td class="data">The review is done on the level of process-chain(s) or plant level unit process(es). This covers horizontally averaged unit
+               processes across
+               different sites. Covers also those multi-functional unit processes, where the different co-products undergo different processing
+               steps within the black
+               box.
+            </td>
+         </tr>
+         <tr>
+            <td class="fieldname">LCI results or Partly terminated system</td>
+            <td class="data">The LCI result or Partly terminated system is the level of review/verification.</td>
+         </tr>
+         <tr>
+            <td class="fieldname">LCIA results</td>
+            <td class="data">The LCIA results of the LCI result or Partly terminated system data set are reviewed/verified, i.e. on level of Climate Change
+               potential, Primary
+               energy consumption, Ecosystem damage etc. [Note: see also definition for entry "LCIA results calculation".]
+            </td>
+         </tr>
+         <tr>
+            <td class="fieldname">Documentation</td>
+            <td class="data">The reporting/documentation of the process or product system, i.e. the data set's sections "Process description", Modelling
+               and validation" and
+               "Administrative information" have been reviewed, while this does not include the "Inputs/Outputs". This can include a review
+               of detailed background
+               reports.
+            </td>
+         </tr>
+         <tr>
+            <td class="fieldname">Life cycle inventory methods</td>
+            <td class="data">The application of the LCI method(s) in accordance to the goal and scope have been reviewed. This covers data collection including
+               dealing with
+               missing data, data calculation/modelling principles (e.g. consequential or attributional or other/combination), and the application
+               of the related modelling
+               approaches such as allocation and system expansion etc. for the process / throughout the product system. 
+            </td>
+         </tr>
+         <tr>
+            <td class="fieldname">LCIA results calculation</td>
+            <td class="data">The selection and application of the LCIA method(s) that have been used for calculation of the LCIA results have been reviewed.
+               This especially
+               refers to a correspondance of the elementary flows in the Inputs and Outputs of the product system with the once referenced
+               by the applied LCIA method(s)
+               regarding e.g. correct assignment, coverage/gaps, doublecounting, etc. [Note: See also definition for entry "LCIA results".]
+            </td>
+         </tr>
+         <tr>
+            <td class="fieldname">Goal and scope definition</td>
+            <td class="data">Review/verification is done regarding e.g. goal definition, subsequent scope definition and corresponding product system description,
+               appropriate
+               identification and definition of function and functional unit, system boundary and cut-off criteria setting, choice of appropriate
+               LCI modelling principles and
+               approaches for multi-functional processes.
+            </td>
+         </tr>
+      </table>
+   </body>
+</html>
