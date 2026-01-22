@@ -1,0 +1,1508 @@
+= LCIA Method data set Documentation
+:doctype: book
+:stylesheet: ilcd.css
+:source-highlighter: highlightjs
+
+This document is generated from the schemadoc HTML file.
+
+.Namespace legend
+[cols="1,1,3", frame="all", grid="rows"]
+|===
+| Information in the EntityIds (2024) namespace is displayed with
+| [role="fieldname_epd24"]#green background#
+| (Namespace URI: "http://www.indata.network/EntityIds/2024", prefix "e")
+|===
+
+.LCIA Method data set Data Structure
+[cols="1,1,1,1,1,1,1,1,1", options="header"]
+|===
+| [role="title"]##Field Name##
+| [role="title"]##Element/Attribute Name##
+| [role="title"]##Requ.##
+| [role="title"]##Occ.##
+| [role="title"]##Datatype##
+| [role="title"]##Definition##
+| [role="title"]##eDoc ID##
+| [role="title"]##Indent##
+| [role="title"]##Path##
+
+| ##LCIA Method data set##
+| ##LCIAMethodDataSet##
+| ##m##
+| ##[1,1]##
+| ##{nbsp}##
+| ##{nbsp}##
+| ##3##
+| ##0##
+| ##LCIAMethodDataSet##
+
+| ##{nbsp}##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}@version##
+| ##m##
+| ##{nbsp}##
+| ##link:ILCD_Common_DataTypes.html#SchemaVersion[SchemaVersion]##
+| ##{nbsp}##
+| ##{nbsp}##
+| ##1##
+| ##LCIAMethodDataSet/version##
+
+| ##{nbsp}##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}@locations##
+| ##o##
+| ##{nbsp}##
+| ##link:ILCD_Common_DataTypes.html#String[String]##
+| ##{nbsp}##
+| ##{nbsp}##
+| ##1##
+| ##LCIAMethodDataSet/locations##
+
+| ##{nbsp}##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}@LCIAMethodologies##
+| ##o##
+| ##{nbsp}##
+| ##link:ILCD_Common_DataTypes.html#String[String]##
+| ##{nbsp}##
+| ##{nbsp}##
+| ##1##
+| ##LCIAMethodDataSet/LCIAMethodologies##
+
+| ##LCIA method information##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}LCIAMethodInformation##
+| ##m##
+| ##[1,1]##
+| ##{nbsp}##
+| ##{nbsp}##
+| ##3-17##
+| ##1##
+| ##LCIAMethodDataSet/LCIAMethodInformation##
+
+| ##Data set information##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}dataSetInformation##
+| ##m##
+| ##[1,1]##
+| ##{nbsp}##
+| ##{nbsp}##
+| ##3-17-70##
+| ##2##
+| ##LCIAMethodDataSet/LCIAMethodInformation/dataSetInformation##
+
+| ##UUID of LCIA method data set##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}UUID##
+| ##m##
+| ##[1,1]##
+| ##link:ILCD_Common_DataTypes.html#UUID[UUID]##
+| ##Automatically generated Universally Unique Identifier of this data set. Together with the "Data set version", the UUID uniquely identifies each data set.##
+| ##3-17-70-201##
+| ##3##
+| ##LCIAMethodDataSet/LCIAMethodInformation/dataSetInformation/UUID##
+
+| ##Name of LCIA method or methodology##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}name##
+| ##r##
+| ##[0,1]##
+| ##link:ILCD_Common_DataTypes.html#StringMultiLang[StringMultiLang]##
+| ##Name of the data set. Composed as follows "LCIA methodology short name; Impact category/ies; midpoint/endpoint; Impact indicator; Source short name". Not applicable components are left out. Examples: "Impacts2007+; Climate change; midpoint; Global Warming Potential; IPCC 2001"; "ABC 2006; Acidification; endpoint; Species diversity loss; John Doe 2006"; "My-indicator2009; combined; endpoint; Ecopoints; various"##
+| ##3-17-70-202##
+| ##3##
+| ##LCIAMethodDataSet/LCIAMethodInformation/dataSetInformation/name##
+
+| ##Belongs to: Name of LCIA methodology/ies##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}methodology##
+| ##r##
+| ##[0,n]##
+| ##link:ILCD_Common_DataTypes.html#string[string]##
+| ##Name of the LCIA methodology/ies the data set belongs to, if any##
+| ##3-17-70-208##
+| ##3##
+| ##LCIAMethodDataSet/LCIAMethodInformation/dataSetInformation/methodology##
+
+| ##Classfication information##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}classificationInformation##
+| ##{nbsp}##
+| ##[0,1]##
+| ##{nbsp}##
+| ##{nbsp}##
+| ##3-17-70-204##
+| ##3##
+| ##LCIAMethodDataSet/LCIAMethodInformation/dataSetInformation/classificationInformation##
+
+| ##Classification##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}classification##
+| ##r##
+| ##[0,n]##
+| ##{nbsp}##
+| ##Optional statistical or other classification of the data set. Typically also used for structuring LCA databases.##
+| ##1-1-2-7-2##
+| ##4##
+| ##LCIAMethodDataSet/LCIAMethodInformation/dataSetInformation/classificationInformation/classification##
+
+| ##Classification system name##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}@name##
+| ##r##
+| ##{nbsp}##
+| ##link:ILCD_Common_DataTypes.html#string[string]##
+| ##Name of the classification system.##
+| ##1-1-2-7-2-a##
+| ##5##
+| ##LCIAMethodDataSet/LCIAMethodInformation/dataSetInformation/classificationInformation/classification/name##
+
+| ##Classes##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}@classes##
+| ##r##
+| ##{nbsp}##
+| ##link:ILCD_Common_DataTypes.html#anyURI[anyURI]##
+| ##URL or file name of a file listing all classes of this classification system. [Notes: the referenced file has to be in form of the "ILCDClassification.xml" format. If a classification file is specified, the "class" entry should correspond to the classes defined in the classification file.]##
+| ##1-1-2-7-2-b##
+| ##5##
+| ##LCIAMethodDataSet/LCIAMethodInformation/dataSetInformation/classificationInformation/classification/classes##
+
+| ##Class name##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}class##
+| ##r##
+| ##[1,n]##
+| ##{nbsp}##
+| ##Name of the class.##
+| ##1-1-2-7-2-1##
+| ##5##
+| ##LCIAMethodDataSet/LCIAMethodInformation/dataSetInformation/classificationInformation/classification/class##
+
+| ##Hierarchy level##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}@level##
+| ##r##
+| ##{nbsp}##
+| ##link:ILCD_Common_DataTypes.html#LevelType[LevelType]##
+| ##If more than one class is specified in a hierachical classification system, the hierarchy level (1,2,...) could be specified with this attribute of class.##
+| ##1-1-2-7-2-1-a##
+| ##6##
+| ##LCIAMethodDataSet/LCIAMethodInformation/dataSetInformation/classificationInformation/classification/class/level##
+
+| ##Unique class identifier##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}@classId##
+| ##r##
+| ##{nbsp}##
+| ##link:ILCD_Common_DataTypes.html#string[string]##
+| ##Unique identifier for the class. [Notes: If such identifiers are also defined in the referenced category file, they should be identical. Identifiers can be UUID's, but also other forms are allowed.]##
+| ##1-1-2-7-2-1-b##
+| ##6##
+| ##LCIAMethodDataSet/LCIAMethodInformation/dataSetInformation/classificationInformation/classification/class/classId##
+
+| ##Other content##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}other##
+| ##o##
+| ##[0,1]##
+| ##{nbsp}##
+| ##May contain arbitrary content.##
+| ##0##
+| ##5##
+| ##LCIAMethodDataSet/LCIAMethodInformation/dataSetInformation/classificationInformation/classification/other##
+
+| ##Impact category/ies##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}impactCategory##
+| ##r##
+| ##[0,n]##
+| ##link:ILCD_Common_EnumerationValues.html#LCIAImpactCategoryValues[LCIAImpactCategoryValues]##
+| ##Impact category/ies covered by the LCIA method or methodology.##
+| ##3-17-70-209##
+| ##3##
+| ##LCIAMethodDataSet/LCIAMethodInformation/dataSetInformation/impactCategory##
+
+| ##Area(s) of Protection##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}areaOfProtection##
+| ##r##
+| ##[0,n]##
+| ##link:ILCD_Common_EnumerationValues.html#AreaOfProtectionValues[AreaOfProtectionValues]##
+| ##For damage (endpoint) and single-point indicators only: Area(s) of Protection the data set relates to.##
+| ##3-17-70-210##
+| ##3##
+| ##LCIAMethodDataSet/LCIAMethodInformation/dataSetInformation/areaOfProtection##
+
+| ##Impact indicator##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}impactIndicator##
+| ##r##
+| ##[0,1]##
+| ##link:ILCD_Common_DataTypes.html#String[String]##
+| ##Description of the meaning of the impact indicator of this data set (not applicable for LCIA methodologies data sets).##
+| ##3-17-70-211##
+| ##3##
+| ##LCIAMethodDataSet/LCIAMethodInformation/dataSetInformation/impactIndicator##
+
+| ##General comment##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}generalComment##
+| ##o##
+| ##[0,1]##
+| ##link:ILCD_Common_DataTypes.html#FTMultiLang[FTMultiLang]##
+| ##General information about the data set, including e.g. general (internal, not reviewed) quality statements as well as information sources used. (Note: Please also check the more specific fields e.g. on "Intended application", "Advice on data set use" and the fields in the "Modelling and validation" section to avoid overlapping entries.)##
+| ##3-17-70-207##
+| ##3##
+| ##LCIAMethodDataSet/LCIAMethodInformation/dataSetInformation/generalComment##
+
+| ##External documentation / files source##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}referenceToExternalDocumentation##
+| ##r##
+| ##[0,n]##
+| ##link:ILCD_Common_DataTypes.html#GlobalReferenceType[GlobalReferenceType]##
+| ##"Source data set(s)" of external documents / files with further documentative information on the data set including on underlying data sources (e.g. time, geographical coverage, impact models, characterisation factors, substance property databases employed, etc.). (Note: can indirectly reference to digital file.)##
+| ##3-17-70-213##
+| ##3##
+| ##LCIAMethodDataSet/LCIAMethodInformation/dataSetInformation/referenceToExternalDocumentation##
+
+| ##Other content##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}other##
+| ##o##
+| ##[0,1]##
+| ##{nbsp}##
+| ##May contain arbitrary content.##
+| ##0##
+| ##3##
+| ##LCIAMethodDataSet/LCIAMethodInformation/dataSetInformation/other##
+
+| ##Quantitative reference##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}quantitativeReference##
+| ##o##
+| ##[0,1]##
+| ##{nbsp}##
+| ##This section allows to refer to the LCIA method(ology)'s quantitative reference, which is always the unit, in which the characterisation factors of the impact indicator are measured, e.g. "kg CO2-Equivalents".##
+| ##3-17-72##
+| ##2##
+| ##LCIAMethodDataSet/LCIAMethodInformation/quantitativeReference##
+
+| ##Reference quantity##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}referenceQuantity##
+| ##r##
+| ##[1,1]##
+| ##link:ILCD_Common_DataTypes.html#GlobalReferenceType[GlobalReferenceType]##
+| ##"Flow property data set" of the reference quantity (flow property), in which the impact indicator values are measured.##
+| ##3-17-72-208##
+| ##3##
+| ##LCIAMethodDataSet/LCIAMethodInformation/quantitativeReference/referenceQuantity##
+
+| ##Other content##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}other##
+| ##o##
+| ##[0,1]##
+| ##{nbsp}##
+| ##May contain arbitrary content.##
+| ##0##
+| ##3##
+| ##LCIAMethodDataSet/LCIAMethodInformation/quantitativeReference/other##
+
+| ##Time representativeness##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}time##
+| ##o##
+| ##[0,1]##
+| ##{nbsp}##
+| ##{nbsp}##
+| ##3-17-74##
+| ##2##
+| ##LCIAMethodDataSet/LCIAMethodInformation/time##
+
+| ##Reference year##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}referenceYear##
+| ##r##
+| ##[0,1]##
+| ##link:ILCD_Common_DataTypes.html#StringMultiLang[StringMultiLang]##
+| ##Reference year when the emission is assumed to take place, i.e. the start year of the time period for which the impact is modelled. For time-independent models "time independent" should be stated.##
+| ##3-17-74-1##
+| ##3##
+| ##LCIAMethodDataSet/LCIAMethodInformation/time/referenceYear##
+
+| ##Duration of modelled impact##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}duration##
+| ##r##
+| ##[0,1]##
+| ##link:ILCD_Common_DataTypes.html#StringMultiLang[StringMultiLang]##
+| ##Time period for which the impact is modelled.##
+| ##3-17-74-2##
+| ##3##
+| ##LCIAMethodDataSet/LCIAMethodInformation/time/duration##
+
+| ##Time representativeness description##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}timeRepresentativenessDescription##
+| ##0##
+| ##[0,1]##
+| ##link:ILCD_Common_DataTypes.html#FTMultiLang[FTMultiLang]##
+| ##Description of the valid time span of the data set including information on limited usability within sub-time spans, if any.##
+| ##3-17-74-3##
+| ##3##
+| ##LCIAMethodDataSet/LCIAMethodInformation/time/timeRepresentativenessDescription##
+
+| ##Other content##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}other##
+| ##o##
+| ##[0,1]##
+| ##{nbsp}##
+| ##May contain arbitrary content.##
+| ##0##
+| ##3##
+| ##LCIAMethodDataSet/LCIAMethodInformation/time/other##
+
+| ##Reference year##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}referenceYear##
+| ##r##
+| ##[0,1]##
+| ##link:ILCD_Common_DataTypes.html#Year[Year]##
+| ##Start year of the time period for which the data set is valid (until year of "Data set valid until:"). For data sets that combine data from different years, the most representative year is given regarding the overall environmental impact. In that case, the reference year is derived by expert judgement.##
+| ##1-1-6-18##
+| ##3##
+| ##LCIAMethodDataSet/LCIAMethodInformation/time/referenceYear##
+
+| ##Data set valid until:##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}dataSetValidUntil##
+| ##r##
+| ##[0,1]##
+| ##link:ILCD_Common_DataTypes.html#Year[Year]##
+| ##End year of the time period for which the data set is still valid / sufficiently representative. This date also determines when a data set revision / remodelling is required or recommended due to expected relevant changes in environmentally or technically relevant inventory values, including in the background system.##
+| ##1-1-6-19##
+| ##3##
+| ##LCIAMethodDataSet/LCIAMethodInformation/time/dataSetValidUntil##
+
+| ##Time representativeness description##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}timeRepresentativenessDescription##
+| ##r##
+| ##[0,1]##
+| ##link:ILCD_Common_DataTypes.html#FTMultiLang[FTMultiLang]##
+| ##Description of the valid time span of the data set including information on limited usability within sub-time spans (e.g. summer/winter).##
+| ##1-1-6-20##
+| ##3##
+| ##LCIAMethodDataSet/LCIAMethodInformation/time/timeRepresentativenessDescription##
+
+| ##Other content##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}other##
+| ##o##
+| ##[0,1]##
+| ##{nbsp}##
+| ##May contain arbitrary content.##
+| ##0##
+| ##3##
+| ##LCIAMethodDataSet/LCIAMethodInformation/time/other##
+
+| ##Geographical representativeness##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}geography##
+| ##m##
+| ##[1,1]##
+| ##{nbsp}##
+| ##{nbsp}##
+| ##3-17-76##
+| ##2##
+| ##LCIAMethodDataSet/LCIAMethodInformation/geography##
+
+| ##Intervention location##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}interventionLocation##
+| ##r##
+| ##[0,1]##
+| ##{nbsp}##
+| ##Specific, country, or region of the elementary flows' / exchanges' occurence for which the LCIA method(ology) is valid / modelled. [Note: Entry can be of type "two-letter ISO 3166 country code" for countries, "seven-letter regional codes" for regions or continents, or "market areas and market organisations", as predefined for the ILCD. Also a name for e.g. a specific plant etc. can be given here (e.g. "FR, Lyon, XY Company, Z Site"; user defined). ]##
+| ##3-17-76-212##
+| ##3##
+| ##LCIAMethodDataSet/LCIAMethodInformation/geography/interventionLocation##
+
+| ##Latitude and Longitude##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}@latitudeAndLongitude##
+| ##o##
+| ##{nbsp}##
+| ##link:ILCD_Common_DataTypes.html#GIS[GIS]##
+| ##Geographical latitude and longitude reference of "Location" / "Sub-location". For area-type locations (e.g. countries, continents) the field is empty.##
+| ##1-1-8-23##
+| ##4##
+| ##LCIAMethodDataSet/LCIAMethodInformation/geography/interventionLocation/latitudeAndLongitude##
+
+| ##Intervention sub-location(s)##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}interventionSubLocation##
+| ##o##
+| ##[0,n]##
+| ##{nbsp}##
+| ##Geographical sub-unit(s) of "Intervention location(s)" that further specify the specifically modelled sub-locations. Such sub-locations can be e.g. sites of a company, specific catchments modleled, countries of a continent, or locations in a country. Information on limited representativeness should be provided if applicable.##
+| ##3-17-76-213##
+| ##3##
+| ##LCIAMethodDataSet/LCIAMethodInformation/geography/interventionSubLocation##
+
+| ##Latitude and Longitude##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}@latitudeAndLongitude##
+| ##o##
+| ##{nbsp}##
+| ##link:ILCD_Common_DataTypes.html#GIS[GIS]##
+| ##Geographical latitude and longitude reference of "Location" / "Sub-location". For area-type locations (e.g. countries, continents) the field is empty.##
+| ##1-1-8-23##
+| ##4##
+| ##LCIAMethodDataSet/LCIAMethodInformation/geography/interventionSubLocation/latitudeAndLongitude##
+
+| ##Impact location##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}impactLocation##
+| ##r##
+| ##[0,1]##
+| ##{nbsp}##
+| ##Location or region where the impact is modelled to take place. [Note: Entry can be of type "two-letter ISO 3166 country code" for countries, "seven-letter regional codes" for regions or continents, or "market areas and market organisations", as predefined for the ILCD. Also a name for e.g. a specific catchment etc. can be given here, user defined).]##
+| ##3-17-76-214##
+| ##3##
+| ##LCIAMethodDataSet/LCIAMethodInformation/geography/impactLocation##
+
+| ##Latitude and Longitude##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}@latitudeAndLongitude##
+| ##o##
+| ##{nbsp}##
+| ##link:ILCD_Common_DataTypes.html#GIS[GIS]##
+| ##Geographical latitude and longitude reference of "Location" / "Sub-location". For area-type locations (e.g. countries, continents) the field is empty.##
+| ##1-1-8-23##
+| ##4##
+| ##LCIAMethodDataSet/LCIAMethodInformation/geography/impactLocation/latitudeAndLongitude##
+
+| ##Geographical representativeness description##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}geographicalRepresentativenessDescription##
+| ##r##
+| ##[0,1]##
+| ##link:ILCD_Common_DataTypes.html#FTMultiLang[FTMultiLang]##
+| ##Further explanation on additional aspects of the location, both regarding the intervention and the impact: whether certain areas are exempted from the location, whether data is only valid for certain sub-locations within the location indicated, or whether impact indicator values for certain elementary flows are extrapolated from another geographical area than indicated. Information on the use of generic intervention and/or impact locations, and other restrictions.##
+| ##3-17-76-215##
+| ##3##
+| ##LCIAMethodDataSet/LCIAMethodInformation/geography/geographicalRepresentativenessDescription##
+
+| ##Other content##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}other##
+| ##o##
+| ##[0,1]##
+| ##{nbsp}##
+| ##May contain arbitrary content.##
+| ##0##
+| ##3##
+| ##LCIAMethodDataSet/LCIAMethodInformation/geography/other##
+
+| ##Impact model##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}impactModel##
+| ##o##
+| ##[0,1]##
+| ##{nbsp}##
+| ##Provides information about the general representativiness of the data set and about its composition of single LCIA-methods.##
+| ##3-17-78##
+| ##2##
+| ##LCIAMethodDataSet/LCIAMethodInformation/impactModel##
+
+| ##LCIA characterisation model(s) name(s)##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}modelName##
+| ##r##
+| ##[0,1]##
+| ##link:ILCD_Common_DataTypes.html#ST[ST]##
+| ##Name(s) of the model(s) used for calculating the LCIA impact indicator values (if any)##
+| ##3-17-78-215##
+| ##3##
+| ##LCIAMethodDataSet/LCIAMethodInformation/impactModel/modelName##
+
+| ##LCIA characterisation model description and included sub-models##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}modelDescription##
+| ##r##
+| ##[0,1]##
+| ##link:ILCD_Common_DataTypes.html#FTMultiLang[FTMultiLang]##
+| ##Description of the model used for calculating the LCIA impact indicator values, including underlying substance property data sources, background concentrations, etc. If an LCIA methodology comprises several LCIA methods, these are explicitly included in the description. Professional nomenclature is used for the description. Note that eventually included Normalisation and Weighting factors are described in the dedicated separate fields.##
+| ##3-17-78-216##
+| ##3##
+| ##LCIAMethodDataSet/LCIAMethodInformation/impactModel/modelDescription##
+
+| ##LCIA characterisation model source##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}referenceToModelSource##
+| ##r##
+| ##[0,n]##
+| ##link:ILCD_Common_DataTypes.html#GlobalReferenceType[GlobalReferenceType]##
+| ##"Source data set(s)" of data sources concerning the characterisation model (guidelines, supporting documentation etc)##
+| ##3-17-78-217##
+| ##3##
+| ##LCIAMethodDataSet/LCIAMethodInformation/impactModel/referenceToModelSource##
+
+| ##Included LCIA characterisation methods##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}referenceToIncludedMethods##
+| ##r##
+| ##[0,n]##
+| ##link:ILCD_Common_DataTypes.html#GlobalReferenceType[GlobalReferenceType]##
+| ##"LCIA method data set(s)" of LCIA characterisation methods included in this data set or used to derive this LCIA methodology##
+| ##3-17-78-218##
+| ##3##
+| ##LCIAMethodDataSet/LCIAMethodInformation/impactModel/referenceToIncludedMethods##
+
+| ##Considered environmental or other mechanisms along the impact chain##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}consideredMechanisms##
+| ##r##
+| ##[0,1]##
+| ##link:ILCD_Common_DataTypes.html#STMultiLang[STMultiLang]##
+| ##Description of the environmental or other mechanisms included in the explicitly considered part of the impact chain. Can relate to (ilustrative): For emissions e.g.: transport, conversion / degradation, exposure, effect(s), damage(s) on humans and the natural environment. For material and energy resources: scarcity or other impact concept. For land use: soil, area, biocoenosis related meachanisms, effect(s), damage(s).##
+| ##3-17-78-219##
+| ##3##
+| ##LCIAMethodDataSet/LCIAMethodInformation/impactModel/consideredMechanisms##
+
+| ##LCIA method(ology) flowchart##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}referenceToMethodologyFlowChart##
+| ##r##
+| ##[0,n]##
+| ##link:ILCD_Common_DataTypes.html#GlobalReferenceType[GlobalReferenceType]##
+| ##"Source data set(s)" of flowchart(s) and/or pictures depicting the LCIA method(ology).##
+| ##3-17-78-220##
+| ##3##
+| ##LCIAMethodDataSet/LCIAMethodInformation/impactModel/referenceToMethodologyFlowChart##
+
+| ##Other content##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}other##
+| ##o##
+| ##[0,1]##
+| ##{nbsp}##
+| ##May contain arbitrary content.##
+| ##0##
+| ##3##
+| ##LCIAMethodDataSet/LCIAMethodInformation/impactModel/other##
+
+| ##Other content##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}other##
+| ##o##
+| ##[0,1]##
+| ##{nbsp}##
+| ##May contain arbitrary content.##
+| ##0##
+| ##2##
+| ##LCIAMethodDataSet/LCIAMethodInformation/other##
+
+| ##Modelling and validation##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}modellingAndValidation##
+| ##m##
+| ##[1,1]##
+| ##{nbsp}##
+| ##Covers the five sub-sections 1) LCIA method, normalisation, weighting 2) Data sources 3) Completeness, 4) Validation, and 5) Compliance declarations.##
+| ##3-19##
+| ##1##
+| ##LCIAMethodDataSet/modellingAndValidation##
+
+| ##Use advice for data set##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}useAdviceForDataSet##
+| ##r##
+| ##[0,1]##
+| ##link:ILCD_Common_DataTypes.html#STMultiLang[STMultiLang]##
+| ##Methodological advice for the use and application of this data set, such as limits in applicability or representativeness as well as recommendations to use it together with others from the same LCIA methodology to ensure consistency.##
+| ##3-19-84-221##
+| ##2##
+| ##LCIAMethodDataSet/modellingAndValidation/useAdviceForDataSet##
+
+| ##LCIA method, normalisation, weighting##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}LCIAMethodNormalisationAndWeighting##
+| ##r##
+| ##[0,1]##
+| ##{nbsp}##
+| ##LCIA methodological modelling aspects##
+| ##3-19-83##
+| ##2##
+| ##LCIAMethodDataSet/modellingAndValidation/LCIAMethodNormalisationAndWeighting##
+
+| ##Type of data set##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}typeOfDataSet##
+| ##r##
+| ##[0,1]##
+| ##link:ILCD_Common_EnumerationValues.html#TypeOfLCIAMethodValues[TypeOfLCIAMethodValues]##
+| ##Type of data set regarding the extent of the impact chain that is covered.##
+| ##3-19-83-10##
+| ##3##
+| ##LCIAMethodDataSet/modellingAndValidation/LCIAMethodNormalisationAndWeighting/typeOfDataSet##
+
+| ##LCIA method principle(s)##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}LCIAMethodPrinciple##
+| ##r##
+| ##[0,n]##
+| ##link:ILCD_Common_EnumerationValues.html#LCIAMethodPrincipleValues[LCIAMethodPrincipleValues]##
+| ##LCIA method principle(s) followed to derive the impact factors.##
+| ##3-19-83-11##
+| ##3##
+| ##LCIAMethodDataSet/modellingAndValidation/LCIAMethodNormalisationAndWeighting/LCIAMethodPrinciple##
+
+| ##Deviation from LCIA method principle(s)##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}deviationsFromLCIAMethodPrinciple##
+| ##r##
+| ##[0,1]##
+| ##link:ILCD_Common_DataTypes.html#FTMultiLang[FTMultiLang]##
+| ##Short description of possible data set specific deviations from "LCIA method principle(s)". Refers especially to explanations on the combination of LCIA methods with different principles in a single LCIA methodology.##
+| ##3-19-83-12##
+| ##3##
+| ##LCIAMethodDataSet/modellingAndValidation/LCIAMethodNormalisationAndWeighting/deviationsFromLCIAMethodPrinciple##
+
+| ##Normalisation included?##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}normalisation##
+| ##r##
+| ##[0,1]##
+| ##link:ILCD_Common_DataTypes.html#boolean[boolean]##
+| ##Indication whether or not a normalisation step was included in the resulting impact factors.##
+| ##3-19-83-13##
+| ##3##
+| ##LCIAMethodDataSet/modellingAndValidation/LCIAMethodNormalisationAndWeighting/normalisation##
+
+| ##Usable Normalisation data set(s), if not yet included##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}referenceToUsableNormalisationDataSets##
+| ##r##
+| ##[0,n]##
+| ##link:ILCD_Common_DataTypes.html#GlobalReferenceType[GlobalReferenceType]##
+| ##"Normalisation data sets" that can be used together with the impact factors of this data set.##
+| ##3-19-83-14##
+| ##3##
+| ##LCIAMethodDataSet/modellingAndValidation/LCIAMethodNormalisationAndWeighting/referenceToUsableNormalisationDataSets##
+
+| ##Description of the included normalisation##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}normalisationDescription##
+| ##r##
+| ##[0,1]##
+| ##link:ILCD_Common_DataTypes.html#STMultiLang[STMultiLang]##
+| ##Short description of the included normalisation, if any.##
+| ##3-19-83-15##
+| ##3##
+| ##LCIAMethodDataSet/modellingAndValidation/LCIAMethodNormalisationAndWeighting/normalisationDescription##
+
+| ##"Normalisation data set(s)" that was/were used to calculate the normalised impact factors of this data set, if any.##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}referenceToIncludedNormalisationDataSets##
+| ##r##
+| ##[0,n]##
+| ##link:ILCD_Common_DataTypes.html#GlobalReferenceType[GlobalReferenceType]##
+| ##"Normalisation data set(s)" that was/were used to calculate the normalised impact factors of this data set, if any.##
+| ##3-19-83-16##
+| ##3##
+| ##LCIAMethodDataSet/modellingAndValidation/LCIAMethodNormalisationAndWeighting/referenceToIncludedNormalisationDataSets##
+
+| ##Weighting included?##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}weighting##
+| ##r##
+| ##[0,1]##
+| ##link:ILCD_Common_DataTypes.html#boolean[boolean]##
+| ##Indication whether or not a weighting-step was included in the resulting impact factors.##
+| ##3-19-83-17##
+| ##3##
+| ##LCIAMethodDataSet/modellingAndValidation/LCIAMethodNormalisationAndWeighting/weighting##
+
+| ##Usable Weighting data set(s), if not yet included##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}referenceToUsableWeightingDataSets##
+| ##r##
+| ##[0,n]##
+| ##link:ILCD_Common_DataTypes.html#GlobalReferenceType[GlobalReferenceType]##
+| ##"Weighting data set(s)", that can be used together with the impact factors of this data set.##
+| ##3-19-83-18##
+| ##3##
+| ##LCIAMethodDataSet/modellingAndValidation/LCIAMethodNormalisationAndWeighting/referenceToUsableWeightingDataSets##
+
+| ##Description of the included weighting##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}weightingDescription##
+| ##r##
+| ##[0,1]##
+| ##link:ILCD_Common_DataTypes.html#STMultiLang[STMultiLang]##
+| ##Short description of the included weighting, if any.##
+| ##3-19-83-19##
+| ##3##
+| ##LCIAMethodDataSet/modellingAndValidation/LCIAMethodNormalisationAndWeighting/weightingDescription##
+
+| ##Included Weighting data set##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}referenceToIncludedWeightingDataSets##
+| ##r##
+| ##[0,n]##
+| ##link:ILCD_Common_DataTypes.html#GlobalReferenceType[GlobalReferenceType]##
+| ##"Weighting data set" that was used to calculate the weighted impact factors of this data set, if any.##
+| ##3-19-83-20##
+| ##3##
+| ##LCIAMethodDataSet/modellingAndValidation/LCIAMethodNormalisationAndWeighting/referenceToIncludedWeightingDataSets##
+
+| ##Data sources##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}dataSources##
+| ##o##
+| ##[0,1]##
+| ##{nbsp}##
+| ##Data sources used for the model and the underlying substance and other data.##
+| ##3-19-84##
+| ##2##
+| ##LCIAMethodDataSet/modellingAndValidation/dataSources##
+
+| ##Data sources##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}referenceToDataSource##
+| ##r##
+| ##[0,n]##
+| ##link:ILCD_Common_DataTypes.html#GlobalReferenceType[GlobalReferenceType]##
+| ##"Source data set(s)" of the data source(s) used for the data set e.g. paper, questionnaire, monography etc. The main data sources e.g. for underlying substance properties are named, too.##
+| ##3-19-84-219##
+| ##3##
+| ##LCIAMethodDataSet/modellingAndValidation/dataSources/referenceToDataSource##
+
+| ##Other content##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}other##
+| ##o##
+| ##[0,1]##
+| ##{nbsp}##
+| ##May contain arbitrary content.##
+| ##0##
+| ##3##
+| ##LCIAMethodDataSet/modellingAndValidation/dataSources/other##
+
+| ##Completeness##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}completeness##
+| ##r##
+| ##[0,1]##
+| ##{nbsp}##
+| ##{nbsp}##
+| ##3-19-85##
+| ##2##
+| ##LCIAMethodDataSet/modellingAndValidation/completeness##
+
+| ##Completeness of impact coverage##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}completenessImpactCoverage##
+| ##r##
+| ##[0,1]##
+| ##link:ILCD_Common_DataTypes.html#Perc[Perc]##
+| ##Estimate of the completeness of coverage of impact(s), as identified in the fields "Impact category/ies" or - only for LCIA methodologies with Damage indicator or Combined single-point indicators - "Area(s) of Protection". Expressed by the quantitative extent of coverage of the scientifically recognized, impact. Note that this information is typically highly uncertain.##
+| ##3-19-85-10##
+| ##3##
+| ##LCIAMethodDataSet/modellingAndValidation/completeness/completenessImpactCoverage##
+
+| ##Number of basic inventory items covered##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}inventoryItems##
+| ##r##
+| ##[0,1]##
+| ##link:ILCD_Common_DataTypes.html#Int6[Int6]##
+| ##Number of chemical substances/substance groups, chemical elements, or types covered, without considering variants by environmental emission or source compartment, geographical location, time, or other.##
+| ##3-19-85-11##
+| ##3##
+| ##LCIAMethodDataSet/modellingAndValidation/completeness/inventoryItems##
+
+| ##Validation##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}validation##
+| ##o##
+| ##[0,1]##
+| ##{nbsp}##
+| ##Review information on LCIA method.##
+| ##3-19-88##
+| ##2##
+| ##LCIAMethodDataSet/modellingAndValidation/validation##
+
+| ##Type of review##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}review##
+| ##m##
+| ##[1,n]##
+| ##{nbsp}##
+| ##Type of review that has been performed regarding independency and type of review process.##
+| ##3-19-88-1##
+| ##3##
+| ##LCIAMethodDataSet/modellingAndValidation/validation/review##
+
+| ##{nbsp}##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}@type##
+| ##m##
+| ##{nbsp}##
+| ##link:ILCD_Common_EnumerationValues.html#TypeOfReviewValues[TypeOfReviewValues]##
+| ##{nbsp}##
+| ##{nbsp}##
+| ##4##
+| ##LCIAMethodDataSet/modellingAndValidation/validation/review/type##
+
+| ##Scope of review##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}scope##
+| ##r##
+| ##[0,n]##
+| ##{nbsp}##
+| ##Scope of review regarding which aspects and components of the data set was reviewed or verified. In case of aggregated e.g. LCI results also and on which level of detail (e.g. LCI results only, included unit processes, ...) the review / verification was performed.##
+| ##1-3-20-82##
+| ##4##
+| ##LCIAMethodDataSet/modellingAndValidation/validation/review/scope##
+
+| ##Scope name##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}@name##
+| ##r##
+| ##{nbsp}##
+| ##link:ILCD_Common_EnumerationValues.html#ScopeOfReviewValues[ScopeOfReviewValues]##
+| ##{nbsp}##
+| ##1-3-20-82-1##
+| ##5##
+| ##LCIAMethodDataSet/modellingAndValidation/validation/review/scope/name##
+
+| ##Method(s) of review##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}method##
+| ##r##
+| ##[0,n]##
+| ##{nbsp}##
+| ##Validation method(s) used in the respective "Scope of review".##
+| ##1-3-20-83##
+| ##5##
+| ##LCIAMethodDataSet/modellingAndValidation/validation/review/scope/method##
+
+| ##Method name##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}@name##
+| ##r##
+| ##{nbsp}##
+| ##link:ILCD_Common_EnumerationValues.html#MethodOfReviewValues[MethodOfReviewValues]##
+| ##Method name##
+| ##1-3-20-83-1##
+| ##6##
+| ##LCIAMethodDataSet/modellingAndValidation/validation/review/scope/method/name##
+
+| ##Review details##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}reviewDetails##
+| ##r##
+| ##[0,1]##
+| ##link:ILCD_Common_DataTypes.html#FTMultiLang[FTMultiLang]##
+| ##Summary of the review. All the following items should be explicitly addressed: completeness and appropriateness of the model, geographical and temporal coverage and differentiation, correctness and precision of substance data or other underlying data; appropriateness and coherence of application of normalisation and/or weighting schemes, if included; correctness, appropriateness, comprehensibility, and completeness of the data set documentation; stakeholder aceptance of LCIA method. Optional: Comment of the reviewer on characterisation factors for single elementary flows or groups of elementary flows. Relevant restrictions to the review due to lack of transparency or documentation should be named. An overall quality statement may be included here.##
+| ##3-19-88-10##
+| ##4##
+| ##LCIAMethodDataSet/modellingAndValidation/validation/review/reviewDetails##
+
+| ##Reviewer name and institution##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}referenceToNameOfReviewerAndInstitution##
+| ##r##
+| ##[0,n]##
+| ##link:ILCD_Common_DataTypes.html#GlobalReferenceType[GlobalReferenceType]##
+| ##"Contact data set" of reviewer. The full name of reviewer(s) and institution(s) as well as a contact address and/or email should be provided in that contact data set.##
+| ##1-3-20-87##
+| ##4##
+| ##LCIAMethodDataSet/modellingAndValidation/validation/review/referenceToNameOfReviewerAndInstitution##
+
+| ##Subsequent review comments##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}otherReviewDetails##
+| ##o##
+| ##[0,1]##
+| ##link:ILCD_Common_DataTypes.html#FTMultiLang[FTMultiLang]##
+| ##Further information from the review process, especially comments received from third parties once the data set has been published or additional reviewer comments from an additional external review.##
+| ##1-3-20-88##
+| ##4##
+| ##LCIAMethodDataSet/modellingAndValidation/validation/review/otherReviewDetails##
+
+| ##Complete review report##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}referenceToCompleteReviewReport##
+| ##r##
+| ##[0,1]##
+| ##link:ILCD_Common_DataTypes.html#GlobalReferenceType[GlobalReferenceType]##
+| ##"Source data set" of the complete review report.##
+| ##1-3-20-89##
+| ##4##
+| ##LCIAMethodDataSet/modellingAndValidation/validation/review/referenceToCompleteReviewReport##
+
+| ##Other content##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}other##
+| ##o##
+| ##[0,1]##
+| ##{nbsp}##
+| ##May contain arbitrary content.##
+| ##0##
+| ##4##
+| ##LCIAMethodDataSet/modellingAndValidation/validation/review/other##
+
+| ##Other content##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}other##
+| ##o##
+| ##[0,1]##
+| ##{nbsp}##
+| ##May contain arbitrary content.##
+| ##0##
+| ##3##
+| ##LCIAMethodDataSet/modellingAndValidation/validation/other##
+
+| ##Compliance##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}complianceDeclarations##
+| ##o##
+| ##[0,1]##
+| ##{nbsp}##
+| ##Statements on compliance of several data set aspects with compliance requirements as defined by the referenced compliance system (e.g. an EPD scheme, handbook of a national or international data network such as the ILCD, etc.).##
+| ##3-19-90##
+| ##2##
+| ##LCIAMethodDataSet/modellingAndValidation/complianceDeclarations##
+
+| ##{nbsp}##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}compliance##
+| ##o##
+| ##[1,n]##
+| ##{nbsp}##
+| ##{nbsp}##
+| ##{nbsp}##
+| ##3##
+| ##LCIAMethodDataSet/modellingAndValidation/complianceDeclarations/compliance##
+
+| ##Compliance system name##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}referenceToComplianceSystem##
+| ##r##
+| ##[1,1]##
+| ##link:ILCD_Common_DataTypes.html#GlobalReferenceType[GlobalReferenceType]##
+| ##"Source data set" of the "Compliance system" that is declared to be met by the data set.##
+| ##1-3-22-90##
+| ##4##
+| ##LCIAMethodDataSet/modellingAndValidation/complianceDeclarations/compliance/referenceToComplianceSystem##
+
+| ##Approval of overall compliance##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}approvalOfOverallCompliance##
+| ##o##
+| ##[0,1]##
+| ##link:ILCD_Common_EnumerationValues.html#ComplianceValues[ComplianceValues]##
+| ##Official approval whether or not and in how far the data set meets all the requirements of the "Compliance system" refered to. This approval should be issued/confirmed by the owner of that compliance system, who is identified via the respective "Contact data set".##
+| ##1-3-22-95##
+| ##4##
+| ##LCIAMethodDataSet/modellingAndValidation/complianceDeclarations/compliance/approvalOfOverallCompliance##
+
+| ##Nomenclature compliance##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}nomenclatureCompliance##
+| ##r##
+| ##[0,1]##
+| ##link:ILCD_Common_EnumerationValues.html#ComplianceValues[ComplianceValues]##
+| ##Nomenclature compliance of this data set with the respective requirements set by the "compliance system" refered to.##
+| ##1-3-22-92##
+| ##4##
+| ##LCIAMethodDataSet/modellingAndValidation/complianceDeclarations/compliance/nomenclatureCompliance##
+
+| ##Methodological compliance##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}methodologicalCompliance##
+| ##r##
+| ##[0,1]##
+| ##link:ILCD_Common_EnumerationValues.html#ComplianceValues[ComplianceValues]##
+| ##Methodological compliance of this data set with the respective requirements set by the "compliance system" refered to.##
+| ##1-3-22-91##
+| ##4##
+| ##LCIAMethodDataSet/modellingAndValidation/complianceDeclarations/compliance/methodologicalCompliance##
+
+| ##Review compliance##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}reviewCompliance##
+| ##r##
+| ##[0,1]##
+| ##link:ILCD_Common_EnumerationValues.html#ComplianceValues[ComplianceValues]##
+| ##Review/Verification compliance of this data set with the respective requirements set by the "compliance system" refered to.##
+| ##1-3-22-93##
+| ##4##
+| ##LCIAMethodDataSet/modellingAndValidation/complianceDeclarations/compliance/reviewCompliance##
+
+| ##Documentation compliance##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}documentationCompliance##
+| ##r##
+| ##[0,1]##
+| ##link:ILCD_Common_EnumerationValues.html#ComplianceValues[ComplianceValues]##
+| ##Documentation/Reporting compliance of this data set with the respective requirements set by the "compliance system" refered to.##
+| ##1-3-22-94##
+| ##4##
+| ##LCIAMethodDataSet/modellingAndValidation/complianceDeclarations/compliance/documentationCompliance##
+
+| ##Quality compliance##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}qualityCompliance##
+| ##r##
+| ##[0,1]##
+| ##link:ILCD_Common_EnumerationValues.html#ComplianceValues[ComplianceValues]##
+| ##Quality compliance of this data set with the respective requirements set by the "compliance system" refered to.##
+| ##1-3-22-96##
+| ##4##
+| ##LCIAMethodDataSet/modellingAndValidation/complianceDeclarations/compliance/qualityCompliance##
+
+| ##Other content##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}other##
+| ##o##
+| ##[0,1]##
+| ##{nbsp}##
+| ##May contain arbitrary content.##
+| ##0##
+| ##4##
+| ##LCIAMethodDataSet/modellingAndValidation/complianceDeclarations/compliance/other##
+
+| ##Other content##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}other##
+| ##o##
+| ##[0,1]##
+| ##{nbsp}##
+| ##May contain arbitrary content.##
+| ##0##
+| ##3##
+| ##LCIAMethodDataSet/modellingAndValidation/complianceDeclarations/other##
+
+| ##Other content##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}other##
+| ##o##
+| ##[0,1]##
+| ##{nbsp}##
+| ##May contain arbitrary content.##
+| ##0##
+| ##2##
+| ##LCIAMethodDataSet/modellingAndValidation/other##
+
+| ##Administrative information##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}administrativeInformation##
+| ##r##
+| ##[0,1]##
+| ##{nbsp}##
+| ##Information required for data set management and administration.##
+| ##3-21##
+| ##1##
+| ##LCIAMethodDataSet/administrativeInformation##
+
+| ##Commissioner and goal##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}commissionerAndGoal##
+| ##o##
+| ##[0,1]##
+| ##{nbsp}##
+| ##Extract of the information items linked to goal and scope of LCIA method modeling.##
+| ##3-21-92##
+| ##2##
+| ##LCIAMethodDataSet/administrativeInformation/commissionerAndGoal##
+
+| ##Commissioner of data set##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}referenceToCommissioner##
+| ##r##
+| ##[0,n]##
+| ##link:ILCD_Common_DataTypes.html#GlobalReferenceType[GlobalReferenceType]##
+| ##"Contact data set" of the commissioner / financing party of the data collection / compilation and of the data set modelling. For groups of commissioners, each single organisation should be named. For data set updates and for direct use of data from formerly commissioned studies, also the original commissioner should be named.##
+| ##1-5-24-96##
+| ##3##
+| ##LCIAMethodDataSet/administrativeInformation/commissionerAndGoal/referenceToCommissioner##
+
+| ##Project##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}project##
+| ##o##
+| ##[0,1]##
+| ##link:ILCD_Common_DataTypes.html#StringMultiLang[StringMultiLang]##
+| ##Project within which the data set was modelled in its present version. [Note: If the project was published e.g. as a report, this can be referenced in the "Publication of data set in:" field in the "Publication and ownership" sub-section.##
+| ##1-5-24-97##
+| ##3##
+| ##LCIAMethodDataSet/administrativeInformation/commissionerAndGoal/project##
+
+| ##Intended applications##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}intendedApplications##
+| ##r##
+| ##[0,1]##
+| ##link:ILCD_Common_DataTypes.html#FTMultiLang[FTMultiLang]##
+| ##Documentation of the intended application(s) of data collection and data set modelling. This indicates / includes information on the level of detail, the specifidity, and the quality ambition in the effort.##
+| ##1-5-24-98##
+| ##3##
+| ##LCIAMethodDataSet/administrativeInformation/commissionerAndGoal/intendedApplications##
+
+| ##Other content##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}other##
+| ##o##
+| ##[0,1]##
+| ##{nbsp}##
+| ##May contain arbitrary content.##
+| ##0##
+| ##3##
+| ##LCIAMethodDataSet/administrativeInformation/commissionerAndGoal/other##
+
+| ##Data generator##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}dataGenerator##
+| ##m##
+| ##[1,1]##
+| ##{nbsp}##
+| ##Expert(s), that compiled and modelled the data set as well as internal administrative information linked to the data generation activity.##
+| ##3-21-94##
+| ##2##
+| ##LCIAMethodDataSet/administrativeInformation/dataGenerator##
+
+| ##Data set generator / modeller##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}referenceToPersonOrEntityGeneratingTheDataSet##
+| ##r##
+| ##[1,n]##
+| ##link:ILCD_Common_DataTypes.html#GlobalReferenceType[GlobalReferenceType]##
+| ##"Contact data set" of the person(s), working group(s), organisation(s) or database network, that generated the data set, i.e. being responsible for its correctness regarding methods, inventory, and documentation.##
+| ##3-21-94-15##
+| ##3##
+| ##LCIAMethodDataSet/administrativeInformation/dataGenerator/referenceToPersonOrEntityGeneratingTheDataSet##
+
+| ##Other content##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}other##
+| ##o##
+| ##[0,1]##
+| ##{nbsp}##
+| ##May contain arbitrary content.##
+| ##0##
+| ##3##
+| ##LCIAMethodDataSet/administrativeInformation/dataGenerator/other##
+
+| ##Data entry by##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}dataEntryBy##
+| ##r##
+| ##[1,1]##
+| ##{nbsp}##
+| ##Staff or entity, that documented the generated data set, entering the information into the database; plus administrative information linked to the data entry activity.##
+| ##3-21-96##
+| ##2##
+| ##LCIAMethodDataSet/administrativeInformation/dataEntryBy##
+
+| ##Time stamp (last saved)##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}timeStamp##
+| ##r##
+| ##[0,1]##
+| ##link:ILCD_Common_DataTypes.html#dateTime[dateTime]##
+| ##Date and time stamp of data set generation, typically an automated entry ("last saved").##
+| ##1-5-28-104##
+| ##3##
+| ##LCIAMethodDataSet/administrativeInformation/dataEntryBy/timeStamp##
+
+| ##Data set format(s)##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}referenceToDataSetFormat##
+| ##r##
+| ##[0,n]##
+| ##link:ILCD_Common_DataTypes.html#GlobalReferenceType[GlobalReferenceType]##
+| ##"Source data set" of the used version of the ILCD format. If additional data format fields have been integrated into the data set file, using the "namespace" option, the used format namespace(s) are to be given. This is the case if the data sets carries additional information as specified by other, particular LCA formats, e.g. of other database networks or LCA softwares.##
+| ##1-5-28-105##
+| ##3##
+| ##LCIAMethodDataSet/administrativeInformation/dataEntryBy/referenceToDataSetFormat##
+
+| ##Reference to origin of data set##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}referenceToConvertedOriginalDataSetFrom##
+| ##r##
+| ##[0,1]##
+| ##link:ILCD_Common_DataTypes.html#GlobalReferenceType[GlobalReferenceType]##
+| ##"Source data set" of the database or data set publication from which this data set has been obtained by conversion. This can cover e.g. conversion to a different format, applying a different nomenclature, mapping of flow names, conversion of units, etc. This may however not have changed or re-modeled the characterisation factors. This entry is required for converted data sets stemming originally from other LCA databases (e.g. when re-publishing LCIA characterisation factors from the database of the original impact method developer). [Note: Identically re-published data sets are identied in the field "Unchanged re-publication of:" in the section "Publication and Ownership".]##
+| ##3-21-96-249##
+| ##3##
+| ##LCIAMethodDataSet/administrativeInformation/dataEntryBy/referenceToConvertedOriginalDataSetFrom##
+
+| ##Data entry by:##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}referenceToPersonOrEntityEnteringTheData##
+| ##o##
+| ##[0,1]##
+| ##link:ILCD_Common_DataTypes.html#GlobalReferenceType[GlobalReferenceType]##
+| ##"Contact data set" of the responsible person or entity that has documented this data set, i.e. entered the data and the descriptive information.##
+| ##1-5-28-103##
+| ##3##
+| ##LCIAMethodDataSet/administrativeInformation/dataEntryBy/referenceToPersonOrEntityEnteringTheData##
+
+| ##Official recommendation##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}recommendationBy##
+| ##r##
+| ##[0,1]##
+| ##{nbsp}##
+| ##{nbsp}##
+| ##3-21-96-250##
+| ##3##
+| ##LCIAMethodDataSet/administrativeInformation/dataEntryBy/recommendationBy##
+
+| ##Official recommendation of data set by governmental body:##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}referenceToEntity##
+| ##r##
+| ##[0,n]##
+| ##link:ILCD_Common_DataTypes.html#GlobalReferenceType[GlobalReferenceType]##
+| ##"Contact data set(s)" of the governmental body/ies that has/ve officially recommended this LCIA method data set and its impact factors for use within the documented scope. Eventually deviating (downgraded) recommendations for individual exchanges are documented in the "Inputs and Outputs" section of the data set.##
+| ##3-21-96-251##
+| ##4##
+| ##LCIAMethodDataSet/administrativeInformation/dataEntryBy/recommendationBy/referenceToEntity##
+
+| ##Recommendation level of LCIA method data set##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}level##
+| ##r##
+| ##[0,1]##
+| ##link:ILCD_Common_EnumerationValues.html#RecommendationLevelValues[RecommendationLevelValues]##
+| ##Level of recommendation given to this data set by the recommending governmental body. Note that the recommendation level of individual elementary flows can be different (lower) from the general level; this is documented as "Deviating recommendation" in the section "Characterisation factors" directly for each affected elementary flow.##
+| ##3-21-96-252##
+| ##4##
+| ##LCIAMethodDataSet/administrativeInformation/dataEntryBy/recommendationBy/level##
+
+| ##Specific meaning of the recommendation level##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}meaning##
+| ##r##
+| ##[0,1]##
+| ##link:ILCD_Common_DataTypes.html#FTMultiLang[FTMultiLang]##
+| ##Specific meaning of the declared recommendation level of this LCIA method / methodology and the characterisation factors, as defined in the guidance document referenced in in the field "Compliance system"##
+| ##3-21-96-253##
+| ##4##
+| ##LCIAMethodDataSet/administrativeInformation/dataEntryBy/recommendationBy/meaning##
+
+| ##Other content##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}other##
+| ##o##
+| ##[0,1]##
+| ##{nbsp}##
+| ##May contain arbitrary content.##
+| ##0##
+| ##3##
+| ##LCIAMethodDataSet/administrativeInformation/dataEntryBy/other##
+
+| ##Publication and ownership##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}publicationAndOwnership##
+| ##m##
+| ##[1,1]##
+| ##{nbsp}##
+| ##Information related to publication and version management of the data set including copyright and access restrictions.##
+| ##3-21-98##
+| ##2##
+| ##LCIAMethodDataSet/administrativeInformation/publicationAndOwnership##
+
+| ##Date of last revision##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}dateOfLastRevision##
+| ##r##
+| ##[0,1]##
+| ##link:ILCD_Common_DataTypes.html#dateTime[dateTime]##
+| ##Date when the data set was revised for the last time, typically manually set.##
+| ##1-5-30-113##
+| ##3##
+| ##LCIAMethodDataSet/administrativeInformation/publicationAndOwnership/dateOfLastRevision##
+
+| ##Data set version##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}dataSetVersion##
+| ##m##
+| ##[1,1]##
+| ##link:ILCD_Common_DataTypes.html#Version[Version]##
+| ##Version number of data set. First two digits refer to major updates, the second two digits to minor revisions and error corrections etc. The third three digits are intended for automatic and internal counting of versions during data set development. Together with the data set's UUID, the "Data set version" uniquely identifies each data set.##
+| ##1-5-30-111##
+| ##3##
+| ##LCIAMethodDataSet/administrativeInformation/publicationAndOwnership/dataSetVersion##
+
+| ##Preceding data set version##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}referenceToPrecedingDataSetVersion##
+| ##o##
+| ##[0,n]##
+| ##link:ILCD_Common_DataTypes.html#GlobalReferenceType[GlobalReferenceType]##
+| ##Last preceding data set, which was replaced by this version. Either a URI of that data set (i.e. an internet address) or its UUID plus version number is given (or both).##
+| ##1-5-30-112##
+| ##3##
+| ##LCIAMethodDataSet/administrativeInformation/publicationAndOwnership/referenceToPrecedingDataSetVersion##
+
+| ##Permanent data set URI##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}permanentDataSetURI##
+| ##r##
+| ##[0,1]##
+| ##link:ILCD_Common_DataTypes.html#anyURI[anyURI]##
+| ##URI (i.e. an internet address) of the original of this data set. [Note: This equally globally unique identifier supports users and software tools to identify and retrieve the original version of a data set via the internet or to check for available updates. The URI must not represent an existing WWW address, but it should be unique and point to the data access point, e.g. by combining the data owner's www path with the data set's UUID, e.g. http://www.mycompany.com/lca/processes/50f12420-8855-12db-b606-0900210c9a66.]##
+| ##1-5-30-300##
+| ##3##
+| ##LCIAMethodDataSet/administrativeInformation/publicationAndOwnership/permanentDataSetURI##
+
+| ##Workflow and publication status##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}workflowAndPublicationStatus##
+| ##o##
+| ##[0,1]##
+| ##link:ILCD_Common_EnumerationValues.html#WorkflowAndPublicationStatusValues[WorkflowAndPublicationStatusValues]##
+| ##Workflow or publication status of data set. Details e.g. of foreseen publication dates should be provided on request by the "Data set owner".##
+| ##1-5-30-110##
+| ##3##
+| ##LCIAMethodDataSet/administrativeInformation/publicationAndOwnership/workflowAndPublicationStatus##
+
+| ##Unchanged re-publication of:##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}referenceToUnchangedRepublication##
+| ##o##
+| ##[0,1]##
+| ##link:ILCD_Common_DataTypes.html#GlobalReferenceType[GlobalReferenceType]##
+| ##"Source data set" of the publication, in which this data set was published for the first time. [Note: This refers to exactly this data set as it is, without any format conversion, adjustments, flow name mapping, etc. In case this data set was modified/converted, the original source is documented in "Converted original data set from:" in section "Data entry by".]##
+| ##1-5-30-114##
+| ##3##
+| ##LCIAMethodDataSet/administrativeInformation/publicationAndOwnership/referenceToUnchangedRepublication##
+
+| ##Owner of data set##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}referenceToOwnershipOfDataSet##
+| ##r##
+| ##[0,1]##
+| ##link:ILCD_Common_DataTypes.html#GlobalReferenceType[GlobalReferenceType]##
+| ##"Contact data set" of the person or entity who owns this data set. (Note: this is not necessarily the publisher of the data set.)##
+| ##1-5-30-115##
+| ##3##
+| ##LCIAMethodDataSet/administrativeInformation/publicationAndOwnership/referenceToOwnershipOfDataSet##
+
+| ##Copyright?##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}copyright##
+| ##r##
+| ##[0,1]##
+| ##link:ILCD_Common_DataTypes.html#boolean[boolean]##
+| ##Indicates whether or not a copyright on the data set exists. Decided upon by the "Owner of data set". [Note: See also field "Access and use restrictions".]##
+| ##1-5-30-116##
+| ##3##
+| ##LCIAMethodDataSet/administrativeInformation/publicationAndOwnership/copyright##
+
+| ##Access and use restrictions##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}accessRestrictions##
+| ##r##
+| ##[0,1]##
+| ##link:ILCD_Common_DataTypes.html#FTMultiLang[FTMultiLang]##
+| ##Access restrictions / use conditions for this data set as free text or referring to e.g. license conditions. In case of no restrictions "None" is entered.##
+| ##1-5-30-118##
+| ##3##
+| ##LCIAMethodDataSet/administrativeInformation/publicationAndOwnership/accessRestrictions##
+
+| ##Other content##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}other##
+| ##o##
+| ##[0,1]##
+| ##{nbsp}##
+| ##May contain arbitrary content.##
+| ##0##
+| ##3##
+| ##LCIAMethodDataSet/administrativeInformation/publicationAndOwnership/other##
+
+| ##Other content##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}other##
+| ##o##
+| ##[0,1]##
+| ##{nbsp}##
+| ##May contain arbitrary content.##
+| ##0##
+| ##2##
+| ##LCIAMethodDataSet/administrativeInformation/other##
+
+| ##Characterisation factors##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}characterisationFactors##
+| ##o##
+| ##[0,1]##
+| ##{nbsp}##
+| ##Flow / Exchanges list with corresponding impact factors according to the respective LCIA method.##
+| ##3-23##
+| ##1##
+| ##LCIAMethodDataSet/characterisationFactors##
+
+| ##Characterisation factor##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}factor##
+| ##m##
+| ##[1,n]##
+| ##{nbsp}##
+| ##{nbsp}##
+| ##3-23-100##
+| ##2##
+| ##LCIAMethodDataSet/characterisationFactors/factor##
+
+| ##Reference to flow data set##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}referenceToFlowDataSet##
+| ##m##
+| ##[1,1]##
+| ##link:ILCD_Common_DataTypes.html#GlobalReferenceType[GlobalReferenceType]##
+| ##Reference to "UUID of flow" of "Flow data set" to link the particular impact factor in the "LCIA data set" to the respective "Flow data set". Please be aware, that for location-specific LCIA methods, there may be multiple references to the same Flow data set.##
+| ##3-23-100-260##
+| ##3##
+| ##LCIAMethodDataSet/characterisationFactors/factor/referenceToFlowDataSet##
+
+| ##Location of exchange##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}location##
+| ##o##
+| ##[0,1]##
+| ##link:ILCD_Common_DataTypes.html#String[String]##
+| ##Location where exchange of elementary flow occurs. Used only for those LCIA methods, that make use of such information. This information refers to the entry within the same field in the "Process data set".##
+| ##3-23-100-261##
+| ##3##
+| ##LCIAMethodDataSet/characterisationFactors/factor/location##
+
+| ##Exchange direction##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}exchangeDirection##
+| ##m##
+| ##[1,1]##
+| ##link:ILCD_Common_EnumerationValues.html#ExchangeDirectionValues[ExchangeDirectionValues]##
+| ##Direction of exchange; this information refers to the entry within the same field in the "Process data set".##
+| ##3-23-100-262##
+| ##3##
+| ##LCIAMethodDataSet/characterisationFactors/factor/exchangeDirection##
+
+| ##Mean value ( of LCIA characterisation factor)##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}meanValue##
+| ##m##
+| ##[1,1]##
+| ##link:ILCD_Common_DataTypes.html#Real[Real]##
+| ##Mean value of the impact characterisation factor for the exchange identified by the fields "Reference to flow data set", "Exchange direction" and "Location of direction". It is recommended to report only significant digits of the amount. ! If for an elementary flow its relevant contribution to this LCIA theme is known by state-of-the-art scientific knowledge, but no impact factor is provided in the LCIA method, the flow should nevertheless be referrenced and the mean value to be entered is "0"!##
+| ##3-23-100-263##
+| ##3##
+| ##LCIAMethodDataSet/characterisationFactors/factor/meanValue##
+
+| ##Minimum value##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}minimumValue##
+| ##o##
+| ##[0,1]##
+| ##link:ILCD_Common_DataTypes.html#Real[Real]##
+| ##Minimum value of the characterisation factor for the exchange in case uncertainty distribution is uniform or triangular.##
+| ##3-23-100-264##
+| ##3##
+| ##LCIAMethodDataSet/characterisationFactors/factor/minimumValue##
+
+| ##Maximum value##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}maximumValue##
+| ##o##
+| ##[0,1]##
+| ##link:ILCD_Common_DataTypes.html#Real[Real]##
+| ##Maximum value of the characterisation factor for the exchange in case uncertainty distribution is uniform or triangular.##
+| ##3-23-100-265##
+| ##3##
+| ##LCIAMethodDataSet/characterisationFactors/factor/maximumValue##
+
+| ##Uncertainty distribution type##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}uncertaintyDistributionType##
+| ##o##
+| ##[0,1]##
+| ##link:ILCD_Common_EnumerationValues.html#UncertaintyDistributionTypeValues[UncertaintyDistributionTypeValues]##
+| ##Defines the kind of uncertainty distribution that is valid for this particular object or parameter.##
+| ##3-23-100-266##
+| ##3##
+| ##LCIAMethodDataSet/characterisationFactors/factor/uncertaintyDistributionType##
+
+| ##Relative StdDev in %##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}relativeStandardDeviation95In##
+| ##o##
+| ##[0,1]##
+| ##link:ILCD_Common_DataTypes.html#Perc[Perc]##
+| ##The resulting overall uncertainty of the calculated variable value considering uncertainty of measurements, modelling, appropriateness etc. [Notes: For log-normal distribution the square of the geometric standard deviation (SDg^2) is stated. Mean value times SDg^2 equals the 97.5% value (= Maximum value), Mean value divided by SDg^2 equals the 2.5% value (= Minimum value). For normal distribution the doubled standard deviation value (2*SD) is entered. Mean value plus 2*SD equals 97.5% value (= Maximum value), Mean value minus 2*SD equals 2.5% value (= Minimum value). This data field remains empty when uniform or triangular uncertainty distribution is applied.]##
+| ##3-23-100-267##
+| ##3##
+| ##LCIAMethodDataSet/characterisationFactors/factor/relativeStandardDeviation95In##
+
+| ##Data derivation type / status##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}dataDerivationTypeStatus##
+| ##o##
+| ##[0,1]##
+| ##link:ILCD_Common_EnumerationValues.html#DataDerivationTypeStatusValues[DataDerivationTypeStatusValues]##
+| ##Identifies the way by which the individual Input / Output amount was derived (e.g. measured, estimated etc.), respectively the status and relevancy of missing data.##
+| ##3-23-100-269##
+| ##3##
+| ##LCIAMethodDataSet/characterisationFactors/factor/dataDerivationTypeStatus##
+
+| ##Deviating recommendation##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}deviatingRecommendation##
+| ##m##
+| ##[0,1]##
+| ##link:ILCD_Common_EnumerationValues.html#RecommendationLevelValues[RecommendationLevelValues]##
+| ##Deviating (downgraded) recommendation level for this exchange, in reference to the recommendation level of the LCIA method data set as a whole (see field "Official recommendation of data set by governmental body:").##
+| ##3-23-100-268##
+| ##3##
+| ##LCIAMethodDataSet/characterisationFactors/factor/deviatingRecommendation##
+
+| ##Reference to data source(s)##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}referencesToDataSource##
+| ##o##
+| ##[0,1]##
+| ##{nbsp}##
+| ##Reference to "UUID of source"(s) in the "Source data set" of data source(s) used for modelling the value of this single LCIA factor e.g. a specific paper, questionnaire, monography etc. If, as typical, more than one data source was used, more than one source can be referenced.##
+| ##3-23-100-270##
+| ##3##
+| ##LCIAMethodDataSet/characterisationFactors/factor/referencesToDataSource##
+
+| ##Reference to data source(s)##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}referenceToDataSource##
+| ##o##
+| ##[0,1]##
+| ##link:ILCD_Common_DataTypes.html#GlobalReferenceType[GlobalReferenceType]##
+| ##Reference to "UUID of source"(s) in the "Source data set" of data source(s) used for modelling the value of this single LCIA factor e.g. a specific paper, questionnaire, monography etc. If, as typical, more than one data source was used, more than one source can be referenced.##
+| ##3-23-100-270##
+| ##4##
+| ##LCIAMethodDataSet/characterisationFactors/factor/referencesToDataSource/referenceToDataSource##
+
+| ##Other content##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}other##
+| ##o##
+| ##[0,1]##
+| ##{nbsp}##
+| ##May contain arbitrary content.##
+| ##0##
+| ##4##
+| ##LCIAMethodDataSet/characterisationFactors/factor/referencesToDataSource/other##
+
+| ##General comment##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}generalComment##
+| ##o##
+| ##[0,1]##
+| ##link:ILCD_Common_DataTypes.html#StringMultiLang[StringMultiLang]##
+| ##General information about the data set, including e.g. general (internal, not reviewed) quality statements as well as information sources used. (Note: Please also check the more specific fields e.g. on "Intended application", "Advice on data set use" and the fields in the "Modelling and validation" section to avoid overlapping entries.)##
+| ##3-23-100-272##
+| ##3##
+| ##LCIAMethodDataSet/characterisationFactors/factor/generalComment##
+
+| ##Other content##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}other##
+| ##o##
+| ##[0,1]##
+| ##{nbsp}##
+| ##May contain arbitrary content.##
+| ##0##
+| ##3##
+| ##LCIAMethodDataSet/characterisationFactors/factor/other##
+
+| ##Other content##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}other##
+| ##o##
+| ##[0,1]##
+| ##{nbsp}##
+| ##May contain arbitrary content.##
+| ##0##
+| ##2##
+| ##LCIAMethodDataSet/characterisationFactors/other##
+
+| ##Other content##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}other##
+| ##o##
+| ##[0,1]##
+| ##{nbsp}##
+| ##May contain arbitrary content.##
+| ##0##
+| ##1##
+| ##LCIAMethodDataSet/other##
+|===
