@@ -1,0 +1,93 @@
+CHANGES
+
+xx.xx.2023 1.2 MR6
+
+- source dataset for EN15804+A1 (b00f9ec0-7874-11e3-981f-0800200c9a66) has been updated with the name "EN 15804+A1" to clearly reflect that this refers to that version of the standard.
+- new GaBi version 2023.01 (now Sphera MLC) added
+
+
+15.12.2022 1.2 MR5
+
+- add additional ecoinvent database versions
+- update validation profiles with updated reference data
+
+
+18.06.2022 1.2 MR4
+
+- add additional GaBi database versions
+- update validation profiles with updated reference data
+
+
+20.12.2021 1.2 MR3
+
+- correct English name for LCIA method dataset POCP (b5c610fe-def3-11e6-bf01-fe55135034f3)
+
+
+11.12.2021 1.2 MR2
+
+- add ecoinvent 3.8 database
+- add GWP indicator used in Nordic countries "Global warming potential except emissions and uptake of biogenic carbon (GWP-IOBC/GHG)"
+
+
+16.07.2021 1.2 MR1
+
+- Correct maxOccurs for common:reviewDetails in ProcessDataSet.xsd, was "1" and should be "100" as it can be present in multiple languages.
+- Update validation profiles and include profile for EN15804+A1.
+- Remove .DS_Store folders from ILCD.zip with reference data.
+
+
+11.05.2021 1.2 GA
+
+- add common flow properties to indicators spreadsheet 
+- add generic validation profiles
+
+
+20.04.2021 1.2 RC4
+
+- correct unit of EP-freshwater (kg P eqv., 0429039d-a61d-4590-ba67-aa4a20a810a1) in sample, indicators spreadsheet
+- correct UUID for unit of AP (mol H+ eqv., 42e089ac-92bf-4bf2-8ca1-5fc40d18f2ed) in sample, indicators spreadsheet
+
+
+04.11.2020 1.2 RC3
+
+- correct schemaLocation in import statement of ILCD_FlowDataSet.xsd to correctly point to the schema "EPD_Extensions_2013.xsd"
+
+
+20.10.2020 1.2 RC2
+
+- rename source datasets "GaBi database (all versions)" and "ecoinvent database (all versions)" to "GaBi database (general)" and "ecoinvent database (general)"
+
+
+11.10.2020 1.2 RC1a
+
+- add new unit group "dimensionless" (used for "Land use" indicator) in sample dataset, reference data and documentation
+- adjust names of LCIA methods to match the indicator names given in the standard
+
+
+26.09.2020 1.2 RC1
+
+Add reference data
+
+
+10.07.2020 1.2 preview
+
+Schemas, Docs: added new fields for ILCD+EPD1.2
+Examples: replace example dataset with comprehensive example EPD dataset
+Docs: add migration guide from 1.1 to 1.2
+
+
+18.10.2017 
+
+Schemas - Process dataset: uncommented declaration of elements referenceToRegistrationAuthority and registrationNumber (in publicationAndOwnership) to match the documentation 
+
+
+12.10.2017
+
+Docs - Process dataset: added description for "subType" values 
+Docs - Process dataset: renamed "Uncertainty margins" to "Generic data uncertainty margins"
+
+
+07.09.2017
+
+Schemas - Process dataset: added element "reviewDetails" that had been missing in the ILCD_ProcessDataSet.xsd schema
+
