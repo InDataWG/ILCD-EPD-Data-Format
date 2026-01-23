@@ -1,11 +1,16 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Source data set</title>
+    
     <link rel="stylesheet" href="css/style.css">
+
 </head>
-<body>
+<body class="">
+    
     <h1>Source data set</h1>
     <div class="controls">
         <input type="text" id="search-bar" placeholder="Search by Name, Path, or Definition...">
@@ -16,10 +21,486 @@
         <div class="view-options">
             <button id="toggle-stripes-btn">Toggle Stripes</button>
         </div>
-        <div class="col-toggles"><label for="toggle-Field-Name"><input type="checkbox" id="toggle-Field-Name" data-col="Field Name" checked>Field Name</label><label for="toggle-Element/Attribute-Name"><input type="checkbox" id="toggle-Element/Attribute-Name" data-col="Element/Attribute Name" checked>Element/Attribute Name</label><label for="toggle-Requ"><input type="checkbox" id="toggle-Requ" data-col="Requ." checked>Requ.</label><label for="toggle-Occ"><input type="checkbox" id="toggle-Occ" data-col="Occ." checked>Occ.</label><label for="toggle-Datatype"><input type="checkbox" id="toggle-Datatype" data-col="Datatype" checked>Datatype</label><label for="toggle-Definition"><input type="checkbox" id="toggle-Definition" data-col="Definition" checked>Definition</label><label for="toggle-eDoc-ID"><input type="checkbox" id="toggle-eDoc-ID" data-col="eDoc ID" checked>eDoc ID</label>
+        <div class="col-toggles">
+            <label for="toggle-Field-Name"><input type="checkbox" id="toggle-Field-Name" data-col="Field Name" checked>Field Name</label>
+            <label for="toggle-Element/Attribute-Name"><input type="checkbox" id="toggle-Element/Attribute-Name" data-col="Element/Attribute Name" checked>Element/Attribute Name</label>
+            <label for="toggle-Requ"><input type="checkbox" id="toggle-Requ" data-col="Requ." checked>Requ.</label>
+            <label for="toggle-Occ"><input type="checkbox" id="toggle-Occ" data-col="Occ." checked>Occ.</label>
+            <label for="toggle-Datatype"><input type="checkbox" id="toggle-Datatype" data-col="Datatype" checked>Datatype</label>
+            <label for="toggle-Definition"><input type="checkbox" id="toggle-Definition" data-col="Definition" checked>Definition</label>
+            <label for="toggle-eDoc-ID"><input type="checkbox" id="toggle-eDoc-ID" data-col="eDoc ID" checked>eDoc ID</label>
+        </div>
     </div>
-    </div>
-    <table id="report-table"><thead><tr><th data-col="View Attribute">View Attribute</th><th class="" data-col="Field Name">Field Name</th><th class="" data-col="Element/Attribute Name">Element/Attribute Name</th><th class="" data-col="Requ.">Requ.</th><th class="" data-col="Occ.">Occ.</th><th class="" data-col="Datatype">Datatype</th><th class="" data-col="Definition">Definition</th><th class="" data-col="eDoc ID">eDoc ID</th></tr></thead><tbody><tr data-tooltip="sourceDataSet"><td data-col="View Attribute"><button class="view-attr-btn" onclick="openAttributePage('sourceDataSet')" title="View detailed information">View Attribute</button></td><td class="" data-col="Field Name">Source data set</td><td class="" data-col="Element/Attribute Name">sourceDataSet</td><td class="" data-col="Requ.">m</td><td class="" data-col="Occ.">[1,1]</td><td class="" data-col="Datatype"></td><td class="" data-col="Definition">Data set for bibliographical references to sources used, but also for reference to data set formats, databases, conformity systems etc.</td><td class="" data-col="eDoc ID">7</td></tr><tr data-tooltip="sourceDataSet/version"><td data-col="View Attribute"><button class="view-attr-btn" onclick="openAttributePage('sourceDataSet_version')" title="View detailed information">View Attribute</button></td><td class="" data-col="Field Name">version</td><td class="" data-col="Element/Attribute Name">&nbsp;&nbsp;&nbsp;&nbsp;@version</td><td class="" data-col="Requ.">m</td><td class="" data-col="Occ."></td><td class="" data-col="Datatype"><a href="ILCD_Common_DataTypes.html#SchemaVersion" target="_blank">SchemaVersion</a></td><td class="" data-col="Definition">Indicates, which version of the ILCD format is used</td><td class="" data-col="eDoc ID">1-a</td></tr><tr data-tooltip="sourceDataSet/sourceInformation"><td data-col="View Attribute"><button class="view-attr-btn" onclick="openAttributePage('sourceDataSet_sourceInformation')" title="View detailed information">View Attribute</button></td><td class="" data-col="Field Name">Source information</td><td class="" data-col="Element/Attribute Name">&nbsp;&nbsp;&nbsp;&nbsp;sourceInformation</td><td class="" data-col="Requ.">m</td><td class="" data-col="Occ.">[1,1]</td><td class="" data-col="Datatype"></td><td class="" data-col="Definition"></td><td class="" data-col="eDoc ID">7-43</td></tr><tr data-tooltip="sourceDataSet/sourceInformation/dataSetInformation"><td data-col="View Attribute"><button class="view-attr-btn" onclick="openAttributePage('sourceDataSet_sourceInformation_dataSetInformation')" title="View detailed information">View Attribute</button></td><td class="" data-col="Field Name">Data set information</td><td class="" data-col="Element/Attribute Name">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dataSetInformation</td><td class="" data-col="Requ.">m</td><td class="" data-col="Occ.">[1,1]</td><td class="" data-col="Datatype"></td><td class="" data-col="Definition"></td><td class="" data-col="eDoc ID">7-43-174</td></tr><tr data-tooltip="sourceDataSet/sourceInformation/dataSetInformation/UUID"><td data-col="View Attribute"><button class="view-attr-btn" onclick="openAttributePage('sourceDataSet_sourceInformation_dataSetInformation_UUID')" title="View detailed information">View Attribute</button></td><td class="" data-col="Field Name">UUID of source data set</td><td class="" data-col="Element/Attribute Name">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;UUID</td><td class="" data-col="Requ.">m</td><td class="" data-col="Occ.">[1,1]</td><td class="" data-col="Datatype"><a href="ILCD_Common_DataTypes.html#UUID" target="_blank">UUID</a></td><td class="" data-col="Definition">Automatically generated Universally Unique Identifier of this data set. Together with the &quot;Data set version&quot;, the UUID uniquely identifies each data set.</td><td class="" data-col="eDoc ID">7-43-174-354</td></tr><tr data-tooltip="sourceDataSet/sourceInformation/dataSetInformation/shortName"><td data-col="View Attribute"><button class="view-attr-btn" onclick="openAttributePage('sourceDataSet_sourceInformation_dataSetInformation_shortName')" title="View detailed information">View Attribute</button></td><td class="" data-col="Field Name">Short name of source</td><td class="" data-col="Element/Attribute Name">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;shortName</td><td class="" data-col="Requ.">r</td><td class="" data-col="Occ.">[0,1]</td><td class="" data-col="Datatype"><a href="ILCD_Common_DataTypes.html#StringMultiLang" target="_blank">StringMultiLang</a></td><td class="" data-col="Definition">Short name for the &quot;Source citation&quot;, i.e. for the bibliographical reference or reference to internal data sources used.</td><td class="" data-col="eDoc ID">7-43-174-355</td></tr><tr data-tooltip="sourceDataSet/sourceInformation/dataSetInformation/classificationInformation"><td data-col="View Attribute"><button class="view-attr-btn" onclick="openAttributePage('sourceDataSet_sourceInformation_dataSetInformation_classificationInformation')" title="View detailed information">View Attribute</button></td><td class="" data-col="Field Name">Classification information</td><td class="" data-col="Element/Attribute Name">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;classificationInformation</td><td class="" data-col="Requ.">r</td><td class="" data-col="Occ.">[0,1]</td><td class="" data-col="Datatype"></td><td class="" data-col="Definition">Hierachical classification of the Source foreseen to be used to structure the Source content of the database. (Note: This entry is NOT required for the identification of a Source. It should nevertheless be avoided to use identical names for Source in the same class.</td><td class="" data-col="eDoc ID">7-43-174-357</td></tr><tr data-tooltip="sourceDataSet/sourceInformation/dataSetInformation/classificationInformation/classification"><td data-col="View Attribute"><button class="view-attr-btn" onclick="openAttributePage('sourceDataSet_sourceInformation_dataSetInformation_classificationInformation_classification')" title="View detailed information">View Attribute</button></td><td class="" data-col="Field Name">Classification</td><td class="" data-col="Element/Attribute Name">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;classification</td><td class="" data-col="Requ.">r</td><td class="" data-col="Occ.">[0,n]</td><td class="" data-col="Datatype"></td><td class="" data-col="Definition">Optional statistical or other classification of the data set. Typically also used for structuring LCA databases.</td><td class="" data-col="eDoc ID">1-1-2-7-2</td></tr><tr data-tooltip="sourceDataSet/sourceInformation/dataSetInformation/classificationInformation/classification/name"><td data-col="View Attribute"><button class="view-attr-btn" onclick="openAttributePage('sourceDataSet_sourceInformation_dataSetInformation_classificationInformation_classification_name')" title="View detailed information">View Attribute</button></td><td class="" data-col="Field Name">Classification system name</td><td class="" data-col="Element/Attribute Name">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@name</td><td class="" data-col="Requ.">r</td><td class="" data-col="Occ."></td><td class="" data-col="Datatype"><a href="ILCD_Common_DataTypes.html#string" target="_blank">string</a></td><td class="" data-col="Definition">Name of the classification system.</td><td class="" data-col="eDoc ID">1-1-2-7-2-a</td></tr><tr data-tooltip="sourceDataSet/sourceInformation/dataSetInformation/classificationInformation/classification/classes"><td data-col="View Attribute"><button class="view-attr-btn" onclick="openAttributePage('sourceDataSet_sourceInformation_dataSetInformation_classificationInformation_classification_classes')" title="View detailed information">View Attribute</button></td><td class="" data-col="Field Name">Classes</td><td class="" data-col="Element/Attribute Name">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@classes</td><td class="" data-col="Requ.">r</td><td class="" data-col="Occ."></td><td class="" data-col="Datatype"><a href="ILCD_Common_DataTypes.html#anyURI" target="_blank">anyURI</a></td><td class="" data-col="Definition">URL or file name of a file listing all classes of this classification system. [Notes: the referenced file has to be in form of the &quot;ILCDClassification.xml&quot; format. If a classification file is specified, the &quot;class&quot; entry should correspond to the classes defined in the classification file.]</td><td class="" data-col="eDoc ID">1-1-2-7-2-b</td></tr><tr data-tooltip="sourceDataSet/sourceInformation/dataSetInformation/classificationInformation/classification/class"><td data-col="View Attribute"><button class="view-attr-btn" onclick="openAttributePage('sourceDataSet_sourceInformation_dataSetInformation_classificationInformation_classification_class')" title="View detailed information">View Attribute</button></td><td class="" data-col="Field Name">Class name</td><td class="" data-col="Element/Attribute Name">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;class</td><td class="" data-col="Requ.">r</td><td class="" data-col="Occ.">[1,n]</td><td class="" data-col="Datatype"></td><td class="" data-col="Definition">Name of the class.</td><td class="" data-col="eDoc ID">1-1-2-7-2-1</td></tr><tr data-tooltip="sourceDataSet/sourceInformation/dataSetInformation/classificationInformation/classification/class/level"><td data-col="View Attribute"><button class="view-attr-btn" onclick="openAttributePage('sourceDataSet_sourceInformation_dataSetInformation_classificationInformation_classification_class_level')" title="View detailed information">View Attribute</button></td><td class="" data-col="Field Name">Hierarchy level</td><td class="" data-col="Element/Attribute Name">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@level</td><td class="" data-col="Requ.">r</td><td class="" data-col="Occ."></td><td class="" data-col="Datatype"><a href="ILCD_Common_DataTypes.html#LevelType" target="_blank">LevelType</a></td><td class="" data-col="Definition">If more than one class is specified in a hierachical classification system, the hierarchy level (1,2,...) could be specified with this attribute of class.</td><td class="" data-col="eDoc ID">1-1-2-7-2-1-a</td></tr><tr data-tooltip="sourceDataSet/sourceInformation/dataSetInformation/classificationInformation/classification/class/classId"><td data-col="View Attribute"><button class="view-attr-btn" onclick="openAttributePage('sourceDataSet_sourceInformation_dataSetInformation_classificationInformation_classification_class_classId')" title="View detailed information">View Attribute</button></td><td class="" data-col="Field Name">Unique class identifier</td><td class="" data-col="Element/Attribute Name">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@classId</td><td class="" data-col="Requ.">r</td><td class="" data-col="Occ."></td><td class="" data-col="Datatype"><a href="ILCD_Common_DataTypes.html#string" target="_blank">string</a></td><td class="" data-col="Definition">Unique identifier for the class. [Notes: If such identifiers are also defined in the referenced category file, they should be identical. Identifiers can be UUID&#x27;s, but also other forms are allowed.]</td><td class="" data-col="eDoc ID">1-1-2-7-2-1-b</td></tr><tr data-tooltip="sourceDataSet/sourceInformation/dataSetInformation/classificationInformation/classification/other"><td data-col="View Attribute"><button class="view-attr-btn" onclick="openAttributePage('sourceDataSet_sourceInformation_dataSetInformation_classificationInformation_classification_other')" title="View detailed information">View Attribute</button></td><td class="" data-col="Field Name">Other content</td><td class="" data-col="Element/Attribute Name">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;other</td><td class="" data-col="Requ.">o</td><td class="" data-col="Occ.">[0,1]</td><td class="" data-col="Datatype"></td><td class="" data-col="Definition">May contain arbitrary content.</td><td class="" data-col="eDoc ID">0</td></tr><tr data-tooltip="sourceDataSet/sourceInformation/dataSetInformation/sourceCitation"><td data-col="View Attribute"><button class="view-attr-btn" onclick="openAttributePage('sourceDataSet_sourceInformation_dataSetInformation_sourceCitation')" title="View detailed information">View Attribute</button></td><td class="" data-col="Field Name">Source citation</td><td class="" data-col="Element/Attribute Name">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sourceCitation</td><td class="" data-col="Requ.">r</td><td class="" data-col="Occ.">[0,1]</td><td class="" data-col="Datatype"><a href="ILCD_Common_DataTypes.html#ST" target="_blank">ST</a></td><td class="" data-col="Definition">Bibliographical reference or reference to internal data source. Also used in order to reference to databases and tools, data set formats, conformity systems, pictures etc..</td><td class="" data-col="eDoc ID">7-43-174-356</td></tr><tr data-tooltip="sourceDataSet/sourceInformation/dataSetInformation/publicationType"><td data-col="View Attribute"><button class="view-attr-btn" onclick="openAttributePage('sourceDataSet_sourceInformation_dataSetInformation_publicationType')" title="View detailed information">View Attribute</button></td><td class="" data-col="Field Name">Publication type</td><td class="" data-col="Element/Attribute Name">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;publicationType</td><td class="" data-col="Requ.">o</td><td class="" data-col="Occ.">[0,1]</td><td class="" data-col="Datatype"><a href="ILCD_Common_EnumerationValues.html#PublicationTypeValues" target="_blank">PublicationTypeValues</a></td><td class="" data-col="Definition">Bibliographic publication type of the source.</td><td class="" data-col="eDoc ID">7-43-174-359</td></tr><tr data-tooltip="sourceDataSet/sourceInformation/dataSetInformation/sourceDescriptionOrComment"><td data-col="View Attribute"><button class="view-attr-btn" onclick="openAttributePage('sourceDataSet_sourceInformation_dataSetInformation_sourceDescriptionOrComment')" title="View detailed information">View Attribute</button></td><td class="" data-col="Field Name">Source description or comment</td><td class="" data-col="Element/Attribute Name">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sourceDescriptionOrComment</td><td class="" data-col="Requ.">o</td><td class="" data-col="Occ.">[0,1]</td><td class="" data-col="Datatype"><a href="ILCD_Common_DataTypes.html#FTMultiLang" target="_blank">FTMultiLang</a></td><td class="" data-col="Definition">Free text for additional description of the source. In case of use of published data it may contain a brief summary of the publication and the kind of medium used (e.g. CD-ROM, hard copy).</td><td class="" data-col="eDoc ID">7-43-174-360</td></tr><tr data-tooltip="sourceDataSet/sourceInformation/dataSetInformation/referenceToDigitalFile"><td data-col="View Attribute"><button class="view-attr-btn" onclick="openAttributePage('sourceDataSet_sourceInformation_dataSetInformation_referenceToDigitalFile')" title="View detailed information">View Attribute</button></td><td class="" data-col="Field Name">Link to digital file</td><td class="" data-col="Element/Attribute Name">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;referenceToDigitalFile</td><td class="" data-col="Requ.">o</td><td class="" data-col="Occ.">[0,n]</td><td class="" data-col="Datatype"></td><td class="" data-col="Definition">Link to a digital file of the source (www-address or intranet-path; relative or absolue path). (Info: Allows direct access to e.g. complete reports of further documentation, which may also be digitally attached to this data set and exchanged jointly with the XML file.)</td><td class="" data-col="eDoc ID">7-43-174-361</td></tr><tr data-tooltip="sourceDataSet/sourceInformation/dataSetInformation/referenceToDigitalFile/uri"><td data-col="View Attribute"><button class="view-attr-btn" onclick="openAttributePage('sourceDataSet_sourceInformation_dataSetInformation_referenceToDigitalFile_uri')" title="View detailed information">View Attribute</button></td><td class="" data-col="Field Name"></td><td class="" data-col="Element/Attribute Name">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@uri</td><td class="" data-col="Requ.">o</td><td class="" data-col="Occ."></td><td class="" data-col="Datatype"><a href="ILCD_Common_DataTypes.html#anyURI" target="_blank">anyURI</a></td><td class="" data-col="Definition"></td><td class="" data-col="eDoc ID"></td></tr><tr data-tooltip="sourceDataSet/sourceInformation/dataSetInformation/referenceToContact"><td data-col="View Attribute"><button class="view-attr-btn" onclick="openAttributePage('sourceDataSet_sourceInformation_dataSetInformation_referenceToContact')" title="View detailed information">View Attribute</button></td><td class="" data-col="Field Name">Belongs to:</td><td class="" data-col="Element/Attribute Name">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;referenceToContact</td><td class="" data-col="Requ.">o</td><td class="" data-col="Occ.">[0,n]</td><td class="" data-col="Datatype"><a href="ILCD_Common_DataTypes.html#GlobalReferenceType" target="_blank">GlobalReferenceType</a></td><td class="" data-col="Definition">&quot;Contact data set&quot;s of working groups, organisations or database networks to which EITHER this person or entity OR this database, data set format, or compliance system belongs. [Note: This does not necessarily imply a legally binding relationship, but may also be a voluntary membership.]</td><td class="" data-col="eDoc ID">6-41-172-344</td></tr><tr data-tooltip="sourceDataSet/sourceInformation/dataSetInformation/referenceToLogo"><td data-col="View Attribute"><button class="view-attr-btn" onclick="openAttributePage('sourceDataSet_sourceInformation_dataSetInformation_referenceToLogo')" title="View detailed information">View Attribute</button></td><td class="" data-col="Field Name">Logo of organisation or source</td><td class="" data-col="Element/Attribute Name">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;referenceToLogo</td><td class="" data-col="Requ.">o</td><td class="" data-col="Occ.">[0,1]</td><td class="" data-col="Datatype"><a href="ILCD_Common_DataTypes.html#GlobalReferenceType" target="_blank">GlobalReferenceType</a></td><td class="" data-col="Definition">&quot;Source data set&quot; of the logo of the organisation or source to be used in reports etc.</td><td class="" data-col="eDoc ID">6-41-172-346</td></tr><tr data-tooltip="sourceDataSet/sourceInformation/dataSetInformation/other"><td data-col="View Attribute"><button class="view-attr-btn" onclick="openAttributePage('sourceDataSet_sourceInformation_dataSetInformation_other')" title="View detailed information">View Attribute</button></td><td class="" data-col="Field Name">Other content</td><td class="" data-col="Element/Attribute Name">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;other</td><td class="" data-col="Requ.">o</td><td class="" data-col="Occ.">[0,1]</td><td class="" data-col="Datatype"></td><td class="" data-col="Definition">May contain arbitrary content.</td><td class="" data-col="eDoc ID">0</td></tr><tr data-tooltip="sourceDataSet/sourceInformation/other"><td data-col="View Attribute"><button class="view-attr-btn" onclick="openAttributePage('sourceDataSet_sourceInformation_other')" title="View detailed information">View Attribute</button></td><td class="" data-col="Field Name">Other content</td><td class="" data-col="Element/Attribute Name">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;other</td><td class="" data-col="Requ.">o</td><td class="" data-col="Occ.">[0,1]</td><td class="" data-col="Datatype"></td><td class="" data-col="Definition">May contain arbitrary content.</td><td class="" data-col="eDoc ID">0</td></tr><tr data-tooltip="sourceDataSet/administrativeInformation"><td data-col="View Attribute"><button class="view-attr-btn" onclick="openAttributePage('sourceDataSet_administrativeInformation')" title="View detailed information">View Attribute</button></td><td class="" data-col="Field Name">Administrative information</td><td class="" data-col="Element/Attribute Name">&nbsp;&nbsp;&nbsp;&nbsp;administrativeInformation</td><td class="" data-col="Requ.">r</td><td class="" data-col="Occ.">[0,1]</td><td class="" data-col="Datatype"></td><td class="" data-col="Definition">Information on data set management and administration.</td><td class="" data-col="eDoc ID">1-5</td></tr><tr data-tooltip="sourceDataSet/administrativeInformation/dataEntryBy"><td data-col="View Attribute"><button class="view-attr-btn" onclick="openAttributePage('sourceDataSet_administrativeInformation_dataEntryBy')" title="View detailed information">View Attribute</button></td><td class="" data-col="Field Name">Data entry by</td><td class="" data-col="Element/Attribute Name">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dataEntryBy</td><td class="" data-col="Requ.">r</td><td class="" data-col="Occ.">[0,1]</td><td class="" data-col="Datatype"></td><td class="" data-col="Definition">Staff or entity, that documented the generated data set, entering the information into the database; plus administrative information linked to the data entry activity.</td><td class="" data-col="eDoc ID">1-5-28</td></tr><tr data-tooltip="sourceDataSet/administrativeInformation/dataEntryBy/timeStamp"><td data-col="View Attribute"><button class="view-attr-btn" onclick="openAttributePage('sourceDataSet_administrativeInformation_dataEntryBy_timeStamp')" title="View detailed information">View Attribute</button></td><td class="" data-col="Field Name">Time stamp (last saved)</td><td class="" data-col="Element/Attribute Name">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;timeStamp</td><td class="" data-col="Requ.">r</td><td class="" data-col="Occ.">[0,1]</td><td class="" data-col="Datatype"><a href="ILCD_Common_DataTypes.html#dateTime" target="_blank">dateTime</a></td><td class="" data-col="Definition">Date and time stamp of data set generation, typically an automated entry (&quot;last saved&quot;).</td><td class="" data-col="eDoc ID">1-5-28-104</td></tr><tr data-tooltip="sourceDataSet/administrativeInformation/dataEntryBy/referenceToDataSetFormat"><td data-col="View Attribute"><button class="view-attr-btn" onclick="openAttributePage('sourceDataSet_administrativeInformation_dataEntryBy_referenceToDataSetFormat')" title="View detailed information">View Attribute</button></td><td class="" data-col="Field Name">Data set format(s)</td><td class="" data-col="Element/Attribute Name">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;referenceToDataSetFormat</td><td class="" data-col="Requ.">r</td><td class="" data-col="Occ.">[0,n]</td><td class="" data-col="Datatype"><a href="ILCD_Common_DataTypes.html#GlobalReferenceType" target="_blank">GlobalReferenceType</a></td><td class="" data-col="Definition">&quot;Source data set&quot; of the used version of the ILCD format. If additional data format fields have been integrated into the data set file, using the &quot;namespace&quot; option, the used format namespace(s) are to be given. This is the case if the data sets carries additional information as specified by other, particular LCA formats, e.g. of other database networks or LCA softwares.</td><td class="" data-col="eDoc ID">1-5-28-105</td></tr><tr data-tooltip="sourceDataSet/administrativeInformation/dataEntryBy/other"><td data-col="View Attribute"><button class="view-attr-btn" onclick="openAttributePage('sourceDataSet_administrativeInformation_dataEntryBy_other')" title="View detailed information">View Attribute</button></td><td class="" data-col="Field Name">Other content</td><td class="" data-col="Element/Attribute Name">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;other</td><td class="" data-col="Requ.">o</td><td class="" data-col="Occ.">[0,1]</td><td class="" data-col="Datatype"></td><td class="" data-col="Definition">May contain arbitrary content.</td><td class="" data-col="eDoc ID">0</td></tr><tr data-tooltip="sourceDataSet/administrativeInformation/publicationAndOwnership"><td data-col="View Attribute"><button class="view-attr-btn" onclick="openAttributePage('sourceDataSet_administrativeInformation_publicationAndOwnership')" title="View detailed information">View Attribute</button></td><td class="" data-col="Field Name">Publication and ownership</td><td class="" data-col="Element/Attribute Name">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;publicationAndOwnership</td><td class="" data-col="Requ.">r</td><td class="" data-col="Occ.">[0,1]</td><td class="" data-col="Datatype"></td><td class="" data-col="Definition">Information related to publication and version management of the data set including copyright and access restrictions.</td><td class="" data-col="eDoc ID">1-5-30</td></tr><tr data-tooltip="sourceDataSet/administrativeInformation/publicationAndOwnership/dataSetVersion"><td data-col="View Attribute"><button class="view-attr-btn" onclick="openAttributePage('sourceDataSet_administrativeInformation_publicationAndOwnership_dataSetVersion')" title="View detailed information">View Attribute</button></td><td class="" data-col="Field Name">Data set version</td><td class="" data-col="Element/Attribute Name">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dataSetVersion</td><td class="" data-col="Requ.">m</td><td class="" data-col="Occ.">[1,1]</td><td class="" data-col="Datatype"><a href="ILCD_Common_DataTypes.html#Version" target="_blank">Version</a></td><td class="" data-col="Definition">Version number of data set. First two digits refer to major updates, the second two digits to minor revisions and error corrections etc. The third three digits are intended for automatic and internal counting of versions during data set development. Together with the data set&#x27;s UUID, the &quot;Data set version&quot; uniquely identifies each data set.</td><td class="" data-col="eDoc ID">1-5-30-111</td></tr><tr data-tooltip="sourceDataSet/administrativeInformation/publicationAndOwnership/referenceToPrecedingDataSetVersion"><td data-col="View Attribute"><button class="view-attr-btn" onclick="openAttributePage('sourceDataSet_administrativeInformation_publicationAndOwnership_referenceToPrecedingDataSetVersion')" title="View detailed information">View Attribute</button></td><td class="" data-col="Field Name">Preceding data set version</td><td class="" data-col="Element/Attribute Name">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;referenceToPrecedingDataSetVersion</td><td class="" data-col="Requ.">o</td><td class="" data-col="Occ.">[0,n]</td><td class="" data-col="Datatype"><a href="ILCD_Common_DataTypes.html#GlobalReferenceType" target="_blank">GlobalReferenceType</a></td><td class="" data-col="Definition">Last preceding data set, which was replaced by this version. Either a URI of that data set (i.e. an internet address) or its UUID plus version number is given (or both).</td><td class="" data-col="eDoc ID">1-5-30-112</td></tr><tr data-tooltip="sourceDataSet/administrativeInformation/publicationAndOwnership/permanentDataSetURI"><td data-col="View Attribute"><button class="view-attr-btn" onclick="openAttributePage('sourceDataSet_administrativeInformation_publicationAndOwnership_permanentDataSetURI')" title="View detailed information">View Attribute</button></td><td class="" data-col="Field Name">Permanent data set URI</td><td class="" data-col="Element/Attribute Name">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;permanentDataSetURI</td><td class="" data-col="Requ.">r</td><td class="" data-col="Occ.">[0,1]</td><td class="" data-col="Datatype"><a href="ILCD_Common_DataTypes.html#anyURI" target="_blank">anyURI</a></td><td class="" data-col="Definition">URI (i.e. an internet address) of the original of this data set. [Note: This equally globally unique identifier supports users and software tools to identify and retrieve the original version of a data set via the internet or to check for available updates. The URI must not represent an existing WWW address, but it should be unique and point to the data access point, e.g. by combining the data owner&#x27;s www path with the data set&#x27;s UUID, e.g. http://www.mycompany.com/lca/processes/50f12420-8855-12db-b606-0900210c9a66.]</td><td class="" data-col="eDoc ID">1-5-30-300</td></tr><tr data-tooltip="sourceDataSet/administrativeInformation/publicationAndOwnership/referenceToOwnershipOfDataSet"><td data-col="View Attribute"><button class="view-attr-btn" onclick="openAttributePage('sourceDataSet_administrativeInformation_publicationAndOwnership_referenceToOwnershipOfDataSet')" title="View detailed information">View Attribute</button></td><td class="" data-col="Field Name">Owner of data set</td><td class="" data-col="Element/Attribute Name">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;referenceToOwnershipOfDataSet</td><td class="" data-col="Requ.">r</td><td class="" data-col="Occ.">[0,1]</td><td class="" data-col="Datatype"><a href="ILCD_Common_DataTypes.html#GlobalReferenceType" target="_blank">GlobalReferenceType</a></td><td class="" data-col="Definition">&quot;Contact data set&quot; of the person or entity who owns this data set. (Note: this is not necessarily the publisher of the data set.)</td><td class="" data-col="eDoc ID">1-5-30-115</td></tr><tr data-tooltip="sourceDataSet/administrativeInformation/publicationAndOwnership/other"><td data-col="View Attribute"><button class="view-attr-btn" onclick="openAttributePage('sourceDataSet_administrativeInformation_publicationAndOwnership_other')" title="View detailed information">View Attribute</button></td><td class="" data-col="Field Name">Other content</td><td class="" data-col="Element/Attribute Name">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;other</td><td class="" data-col="Requ.">o</td><td class="" data-col="Occ.">[0,1]</td><td class="" data-col="Datatype"></td><td class="" data-col="Definition">May contain arbitrary content.</td><td class="" data-col="eDoc ID">0</td></tr><tr data-tooltip="sourceDataSet/administrativeInformation/other"><td data-col="View Attribute"><button class="view-attr-btn" onclick="openAttributePage('sourceDataSet_administrativeInformation_other')" title="View detailed information">View Attribute</button></td><td class="" data-col="Field Name">Other content</td><td class="" data-col="Element/Attribute Name">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;other</td><td class="" data-col="Requ.">o</td><td class="" data-col="Occ.">[0,1]</td><td class="" data-col="Datatype"></td><td class="" data-col="Definition">May contain arbitrary content.</td><td class="" data-col="eDoc ID">0</td></tr><tr data-tooltip="sourceDataSet/other"><td data-col="View Attribute"><button class="view-attr-btn" onclick="openAttributePage('sourceDataSet_other')" title="View detailed information">View Attribute</button></td><td class="" data-col="Field Name">Other content</td><td class="" data-col="Element/Attribute Name">&nbsp;&nbsp;&nbsp;&nbsp;other</td><td class="" data-col="Requ.">o</td><td class="" data-col="Occ.">[0,1]</td><td class="" data-col="Datatype"></td><td class="" data-col="Definition">May contain arbitrary content.</td><td class="" data-col="eDoc ID">0</td></tr></tbody></table>
+    <table id="report-table">
+        <thead>
+            <tr>
+                <th data-col="View Attribute">View Attribute</th>
+                <th data-col="Field Name">Field Name</th>
+                <th data-col="Element/Attribute Name">Element/Attribute Name</th>
+                <th data-col="Requ.">Requ.</th>
+                <th data-col="Occ.">Occ.</th>
+                <th data-col="Datatype">Datatype</th>
+                <th data-col="Definition">Definition</th>
+                <th data-col="eDoc ID">eDoc ID</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr data-tooltip="sourceDataSet">
+                <td data-col="View Attribute">
+                    <button class="view-attr-btn" onclick="openAttributePage('sourceDataSet')" title="View detailed information">View Attribute</button>
+                </td>
+                <td data-col="Field Name">Source data set</td>
+                <td data-col="Element/Attribute Name">sourceDataSet</td>
+                <td data-col="Requ.">m</td>
+                <td data-col="Occ.">[1,1]</td>
+                <td data-col="Datatype"></td>
+                <td data-col="Definition">Data set for bibliographical references to sources used, but also for reference to data set formats, databases, conformity systems etc.</td>
+                <td data-col="eDoc ID">7</td>
+            </tr>
+            <tr data-tooltip="sourceDataSet/version">
+                <td data-col="View Attribute">
+                    <button class="view-attr-btn" onclick="openAttributePage('sourceDataSet_version')" title="View detailed information">View Attribute</button>
+                </td>
+                <td data-col="Field Name">version</td>
+                <td data-col="Element/Attribute Name">&nbsp;&nbsp;&nbsp;&nbsp;@version</td>
+                <td data-col="Requ.">m</td>
+                <td data-col="Occ."></td>
+                
+                <td data-col="Datatype"><a href="ILCD_Common_DataTypes.html#SchemaVersion" target="_blank">SchemaVersion</a></td>
+                <td data-col="Definition">Indicates, which version of the ILCD format is used</td>
+                <td data-col="eDoc ID">1-a</td>
+            </tr>
+            <tr data-tooltip="sourceDataSet/sourceInformation">
+                <td data-col="View Attribute">
+                    <button class="view-attr-btn" onclick="openAttributePage('sourceDataSet_sourceInformation')" title="View detailed information">View Attribute</button>
+                </td>
+                <td data-col="Field Name">Source information</td>
+                <td data-col="Element/Attribute Name">&nbsp;&nbsp;&nbsp;&nbsp;sourceInformation</td>
+                <td data-col="Requ.">m</td>
+                <td data-col="Occ.">[1,1]</td>
+                <td data-col="Datatype"></td>
+                <td data-col="Definition"></td>
+                <td data-col="eDoc ID">7-43</td>
+            </tr>
+            <tr data-tooltip="sourceDataSet/sourceInformation/dataSetInformation">
+                <td data-col="View Attribute">
+                    <button class="view-attr-btn" onclick="openAttributePage('sourceDataSet_sourceInformation_dataSetInformation')" title="View detailed information">View Attribute</button>
+                </td>
+                <td data-col="Field Name">Data set information</td>
+                <td data-col="Element/Attribute Name">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dataSetInformation</td>
+                <td data-col="Requ.">m</td>
+                <td data-col="Occ.">[1,1]</td>
+                <td data-col="Datatype"></td>
+                <td data-col="Definition"></td>
+                <td data-col="eDoc ID">7-43-174</td>
+            </tr>
+            <tr data-tooltip="sourceDataSet/sourceInformation/dataSetInformation/UUID">
+                <td data-col="View Attribute">
+                    <button class="view-attr-btn" onclick="openAttributePage('sourceDataSet_sourceInformation_dataSetInformation_UUID')" title="View detailed information">View Attribute</button>
+                </td>
+                <td data-col="Field Name">UUID of source data set</td>
+                <td data-col="Element/Attribute Name">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;UUID</td>
+                <td data-col="Requ.">m</td>
+                <td data-col="Occ.">[1,1]</td>
+                
+                <td data-col="Datatype"><a href="ILCD_Common_DataTypes.html#UUID" target="_blank">UUID</a></td>
+                <td data-col="Definition">Automatically generated Universally Unique Identifier of this data set. Together with the &#34;Data set version&#34;, the UUID uniquely identifies each data set.</td>
+                <td data-col="eDoc ID">7-43-174-354</td>
+            </tr>
+            <tr data-tooltip="sourceDataSet/sourceInformation/dataSetInformation/shortName">
+                <td data-col="View Attribute">
+                    <button class="view-attr-btn" onclick="openAttributePage('sourceDataSet_sourceInformation_dataSetInformation_shortName')" title="View detailed information">View Attribute</button>
+                </td>
+                <td data-col="Field Name">Short name of source</td>
+                <td data-col="Element/Attribute Name">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;shortName</td>
+                <td data-col="Requ.">r</td>
+                <td data-col="Occ.">[0,1]</td>
+                
+                <td data-col="Datatype"><a href="ILCD_Common_DataTypes.html#StringMultiLang" target="_blank">StringMultiLang</a></td>
+                <td data-col="Definition">Short name for the &#34;Source citation&#34;, i.e. for the bibliographical reference or reference to internal data sources used.</td>
+                <td data-col="eDoc ID">7-43-174-355</td>
+            </tr>
+            <tr data-tooltip="sourceDataSet/sourceInformation/dataSetInformation/classificationInformation">
+                <td data-col="View Attribute">
+                    <button class="view-attr-btn" onclick="openAttributePage('sourceDataSet_sourceInformation_dataSetInformation_classificationInformation')" title="View detailed information">View Attribute</button>
+                </td>
+                <td data-col="Field Name">Classification information</td>
+                <td data-col="Element/Attribute Name">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;classificationInformation</td>
+                <td data-col="Requ.">r</td>
+                <td data-col="Occ.">[0,1]</td>
+                <td data-col="Datatype"></td>
+                <td data-col="Definition">Hierachical classification of the Source foreseen to be used to structure the Source content of the database. (Note: This entry is NOT required for the identification of a Source. It should nevertheless be avoided to use identical names for Source in the same class.</td>
+                <td data-col="eDoc ID">7-43-174-357</td>
+            </tr>
+            <tr data-tooltip="sourceDataSet/sourceInformation/dataSetInformation/classificationInformation/classification">
+                <td data-col="View Attribute">
+                    <button class="view-attr-btn" onclick="openAttributePage('sourceDataSet_sourceInformation_dataSetInformation_classificationInformation_classification')" title="View detailed information">View Attribute</button>
+                </td>
+                <td data-col="Field Name">Classification</td>
+                <td data-col="Element/Attribute Name">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;classification</td>
+                <td data-col="Requ.">r</td>
+                <td data-col="Occ.">[0,n]</td>
+                <td data-col="Datatype"></td>
+                <td data-col="Definition">Optional statistical or other classification of the data set. Typically also used for structuring LCA databases.</td>
+                <td data-col="eDoc ID">1-1-2-7-2</td>
+            </tr>
+            <tr data-tooltip="sourceDataSet/sourceInformation/dataSetInformation/classificationInformation/classification/name">
+                <td data-col="View Attribute">
+                    <button class="view-attr-btn" onclick="openAttributePage('sourceDataSet_sourceInformation_dataSetInformation_classificationInformation_classification_name')" title="View detailed information">View Attribute</button>
+                </td>
+                <td data-col="Field Name">Classification system name</td>
+                <td data-col="Element/Attribute Name">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@name</td>
+                <td data-col="Requ.">r</td>
+                <td data-col="Occ."></td>
+                
+                <td data-col="Datatype"><a href="ILCD_Common_DataTypes.html#string" target="_blank">string</a></td>
+                <td data-col="Definition">Name of the classification system.</td>
+                <td data-col="eDoc ID">1-1-2-7-2-a</td>
+            </tr>
+            <tr data-tooltip="sourceDataSet/sourceInformation/dataSetInformation/classificationInformation/classification/classes">
+                <td data-col="View Attribute">
+                    <button class="view-attr-btn" onclick="openAttributePage('sourceDataSet_sourceInformation_dataSetInformation_classificationInformation_classification_classes')" title="View detailed information">View Attribute</button>
+                </td>
+                <td data-col="Field Name">Classes</td>
+                <td data-col="Element/Attribute Name">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@classes</td>
+                <td data-col="Requ.">r</td>
+                <td data-col="Occ."></td>
+                
+                <td data-col="Datatype"><a href="ILCD_Common_DataTypes.html#anyURI" target="_blank">anyURI</a></td>
+                <td data-col="Definition">URL or file name of a file listing all classes of this classification system. [Notes: the referenced file has to be in form of the &#34;ILCDClassification.xml&#34; format. If a classification file is specified, the &#34;class&#34; entry should correspond to the classes defined in the classification file.]</td>
+                <td data-col="eDoc ID">1-1-2-7-2-b</td>
+            </tr>
+            <tr data-tooltip="sourceDataSet/sourceInformation/dataSetInformation/classificationInformation/classification/class">
+                <td data-col="View Attribute">
+                    <button class="view-attr-btn" onclick="openAttributePage('sourceDataSet_sourceInformation_dataSetInformation_classificationInformation_classification_class')" title="View detailed information">View Attribute</button>
+                </td>
+                <td data-col="Field Name">Class name</td>
+                <td data-col="Element/Attribute Name">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;class</td>
+                <td data-col="Requ.">r</td>
+                <td data-col="Occ.">[1,n]</td>
+                <td data-col="Datatype"></td>
+                <td data-col="Definition">Name of the class.</td>
+                <td data-col="eDoc ID">1-1-2-7-2-1</td>
+            </tr>
+            <tr data-tooltip="sourceDataSet/sourceInformation/dataSetInformation/classificationInformation/classification/class/level">
+                <td data-col="View Attribute">
+                    <button class="view-attr-btn" onclick="openAttributePage('sourceDataSet_sourceInformation_dataSetInformation_classificationInformation_classification_class_level')" title="View detailed information">View Attribute</button>
+                </td>
+                <td data-col="Field Name">Hierarchy level</td>
+                <td data-col="Element/Attribute Name">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@level</td>
+                <td data-col="Requ.">r</td>
+                <td data-col="Occ."></td>
+                
+                <td data-col="Datatype"><a href="ILCD_Common_DataTypes.html#LevelType" target="_blank">LevelType</a></td>
+                <td data-col="Definition">If more than one class is specified in a hierachical classification system, the hierarchy level (1,2,...) could be specified with this attribute of class.</td>
+                <td data-col="eDoc ID">1-1-2-7-2-1-a</td>
+            </tr>
+            <tr data-tooltip="sourceDataSet/sourceInformation/dataSetInformation/classificationInformation/classification/class/classId">
+                <td data-col="View Attribute">
+                    <button class="view-attr-btn" onclick="openAttributePage('sourceDataSet_sourceInformation_dataSetInformation_classificationInformation_classification_class_classId')" title="View detailed information">View Attribute</button>
+                </td>
+                <td data-col="Field Name">Unique class identifier</td>
+                <td data-col="Element/Attribute Name">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@classId</td>
+                <td data-col="Requ.">r</td>
+                <td data-col="Occ."></td>
+                
+                <td data-col="Datatype"><a href="ILCD_Common_DataTypes.html#string" target="_blank">string</a></td>
+                <td data-col="Definition">Unique identifier for the class. [Notes: If such identifiers are also defined in the referenced category file, they should be identical. Identifiers can be UUID&#39;s, but also other forms are allowed.]</td>
+                <td data-col="eDoc ID">1-1-2-7-2-1-b</td>
+            </tr>
+            <tr data-tooltip="sourceDataSet/sourceInformation/dataSetInformation/classificationInformation/classification/other">
+                <td data-col="View Attribute">
+                    <button class="view-attr-btn" onclick="openAttributePage('sourceDataSet_sourceInformation_dataSetInformation_classificationInformation_classification_other')" title="View detailed information">View Attribute</button>
+                </td>
+                <td data-col="Field Name">Other content</td>
+                <td data-col="Element/Attribute Name">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;other</td>
+                <td data-col="Requ.">o</td>
+                <td data-col="Occ.">[0,1]</td>
+                <td data-col="Datatype"></td>
+                <td data-col="Definition">May contain arbitrary content.</td>
+                <td data-col="eDoc ID">0</td>
+            </tr>
+            <tr data-tooltip="sourceDataSet/sourceInformation/dataSetInformation/sourceCitation">
+                <td data-col="View Attribute">
+                    <button class="view-attr-btn" onclick="openAttributePage('sourceDataSet_sourceInformation_dataSetInformation_sourceCitation')" title="View detailed information">View Attribute</button>
+                </td>
+                <td data-col="Field Name">Source citation</td>
+                <td data-col="Element/Attribute Name">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sourceCitation</td>
+                <td data-col="Requ.">r</td>
+                <td data-col="Occ.">[0,1]</td>
+                
+                <td data-col="Datatype"><a href="ILCD_Common_DataTypes.html#ST" target="_blank">ST</a></td>
+                <td data-col="Definition">Bibliographical reference or reference to internal data source. Also used in order to reference to databases and tools, data set formats, conformity systems, pictures etc..</td>
+                <td data-col="eDoc ID">7-43-174-356</td>
+            </tr>
+            <tr data-tooltip="sourceDataSet/sourceInformation/dataSetInformation/publicationType">
+                <td data-col="View Attribute">
+                    <button class="view-attr-btn" onclick="openAttributePage('sourceDataSet_sourceInformation_dataSetInformation_publicationType')" title="View detailed information">View Attribute</button>
+                </td>
+                <td data-col="Field Name">Publication type</td>
+                <td data-col="Element/Attribute Name">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;publicationType</td>
+                <td data-col="Requ.">o</td>
+                <td data-col="Occ.">[0,1]</td>
+                
+                <td data-col="Datatype"><a href="ILCD_Common_EnumerationValues.html#PublicationTypeValues" target="_blank">PublicationTypeValues</a></td>
+                <td data-col="Definition">Bibliographic publication type of the source.</td>
+                <td data-col="eDoc ID">7-43-174-359</td>
+            </tr>
+            <tr data-tooltip="sourceDataSet/sourceInformation/dataSetInformation/sourceDescriptionOrComment">
+                <td data-col="View Attribute">
+                    <button class="view-attr-btn" onclick="openAttributePage('sourceDataSet_sourceInformation_dataSetInformation_sourceDescriptionOrComment')" title="View detailed information">View Attribute</button>
+                </td>
+                <td data-col="Field Name">Source description or comment</td>
+                <td data-col="Element/Attribute Name">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sourceDescriptionOrComment</td>
+                <td data-col="Requ.">o</td>
+                <td data-col="Occ.">[0,1]</td>
+                
+                <td data-col="Datatype"><a href="ILCD_Common_DataTypes.html#FTMultiLang" target="_blank">FTMultiLang</a></td>
+                <td data-col="Definition">Free text for additional description of the source. In case of use of published data it may contain a brief summary of the publication and the kind of medium used (e.g. CD-ROM, hard copy).</td>
+                <td data-col="eDoc ID">7-43-174-360</td>
+            </tr>
+            <tr data-tooltip="sourceDataSet/sourceInformation/dataSetInformation/referenceToDigitalFile">
+                <td data-col="View Attribute">
+                    <button class="view-attr-btn" onclick="openAttributePage('sourceDataSet_sourceInformation_dataSetInformation_referenceToDigitalFile')" title="View detailed information">View Attribute</button>
+                </td>
+                <td data-col="Field Name">Link to digital file</td>
+                <td data-col="Element/Attribute Name">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;referenceToDigitalFile</td>
+                <td data-col="Requ.">o</td>
+                <td data-col="Occ.">[0,n]</td>
+                <td data-col="Datatype"></td>
+                <td data-col="Definition">Link to a digital file of the source (www-address or intranet-path; relative or absolue path). (Info: Allows direct access to e.g. complete reports of further documentation, which may also be digitally attached to this data set and exchanged jointly with the XML file.)</td>
+                <td data-col="eDoc ID">7-43-174-361</td>
+            </tr>
+            <tr data-tooltip="sourceDataSet/sourceInformation/dataSetInformation/referenceToDigitalFile/uri">
+                <td data-col="View Attribute">
+                    <button class="view-attr-btn" onclick="openAttributePage('sourceDataSet_sourceInformation_dataSetInformation_referenceToDigitalFile_uri')" title="View detailed information">View Attribute</button>
+                </td>
+                <td data-col="Field Name"></td>
+                <td data-col="Element/Attribute Name">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@uri</td>
+                <td data-col="Requ.">o</td>
+                <td data-col="Occ."></td>
+                
+                <td data-col="Datatype"><a href="ILCD_Common_DataTypes.html#anyURI" target="_blank">anyURI</a></td>
+                <td data-col="Definition"></td>
+                <td data-col="eDoc ID"></td>
+            </tr>
+            <tr data-tooltip="sourceDataSet/sourceInformation/dataSetInformation/referenceToContact">
+                <td data-col="View Attribute">
+                    <button class="view-attr-btn" onclick="openAttributePage('sourceDataSet_sourceInformation_dataSetInformation_referenceToContact')" title="View detailed information">View Attribute</button>
+                </td>
+                <td data-col="Field Name">Belongs to:</td>
+                <td data-col="Element/Attribute Name">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;referenceToContact</td>
+                <td data-col="Requ.">o</td>
+                <td data-col="Occ.">[0,n]</td>
+                
+                <td data-col="Datatype"><a href="ILCD_Common_DataTypes.html#GlobalReferenceType" target="_blank">GlobalReferenceType</a></td>
+                <td data-col="Definition">&#34;Contact data set&#34;s of working groups, organisations or database networks to which EITHER this person or entity OR this database, data set format, or compliance system belongs. [Note: This does not necessarily imply a legally binding relationship, but may also be a voluntary membership.]</td>
+                <td data-col="eDoc ID">6-41-172-344</td>
+            </tr>
+            <tr data-tooltip="sourceDataSet/sourceInformation/dataSetInformation/referenceToLogo">
+                <td data-col="View Attribute">
+                    <button class="view-attr-btn" onclick="openAttributePage('sourceDataSet_sourceInformation_dataSetInformation_referenceToLogo')" title="View detailed information">View Attribute</button>
+                </td>
+                <td data-col="Field Name">Logo of organisation or source</td>
+                <td data-col="Element/Attribute Name">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;referenceToLogo</td>
+                <td data-col="Requ.">o</td>
+                <td data-col="Occ.">[0,1]</td>
+                
+                <td data-col="Datatype"><a href="ILCD_Common_DataTypes.html#GlobalReferenceType" target="_blank">GlobalReferenceType</a></td>
+                <td data-col="Definition">&#34;Source data set&#34; of the logo of the organisation or source to be used in reports etc.</td>
+                <td data-col="eDoc ID">6-41-172-346</td>
+            </tr>
+            <tr data-tooltip="sourceDataSet/sourceInformation/dataSetInformation/other">
+                <td data-col="View Attribute">
+                    <button class="view-attr-btn" onclick="openAttributePage('sourceDataSet_sourceInformation_dataSetInformation_other')" title="View detailed information">View Attribute</button>
+                </td>
+                <td data-col="Field Name">Other content</td>
+                <td data-col="Element/Attribute Name">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;other</td>
+                <td data-col="Requ.">o</td>
+                <td data-col="Occ.">[0,1]</td>
+                <td data-col="Datatype"></td>
+                <td data-col="Definition">May contain arbitrary content.</td>
+                <td data-col="eDoc ID">0</td>
+            </tr>
+            <tr data-tooltip="sourceDataSet/sourceInformation/other">
+                <td data-col="View Attribute">
+                    <button class="view-attr-btn" onclick="openAttributePage('sourceDataSet_sourceInformation_other')" title="View detailed information">View Attribute</button>
+                </td>
+                <td data-col="Field Name">Other content</td>
+                <td data-col="Element/Attribute Name">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;other</td>
+                <td data-col="Requ.">o</td>
+                <td data-col="Occ.">[0,1]</td>
+                <td data-col="Datatype"></td>
+                <td data-col="Definition">May contain arbitrary content.</td>
+                <td data-col="eDoc ID">0</td>
+            </tr>
+            <tr data-tooltip="sourceDataSet/administrativeInformation">
+                <td data-col="View Attribute">
+                    <button class="view-attr-btn" onclick="openAttributePage('sourceDataSet_administrativeInformation')" title="View detailed information">View Attribute</button>
+                </td>
+                <td data-col="Field Name">Administrative information</td>
+                <td data-col="Element/Attribute Name">&nbsp;&nbsp;&nbsp;&nbsp;administrativeInformation</td>
+                <td data-col="Requ.">r</td>
+                <td data-col="Occ.">[0,1]</td>
+                <td data-col="Datatype"></td>
+                <td data-col="Definition">Information on data set management and administration.</td>
+                <td data-col="eDoc ID">1-5</td>
+            </tr>
+            <tr data-tooltip="sourceDataSet/administrativeInformation/dataEntryBy">
+                <td data-col="View Attribute">
+                    <button class="view-attr-btn" onclick="openAttributePage('sourceDataSet_administrativeInformation_dataEntryBy')" title="View detailed information">View Attribute</button>
+                </td>
+                <td data-col="Field Name">Data entry by</td>
+                <td data-col="Element/Attribute Name">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dataEntryBy</td>
+                <td data-col="Requ.">r</td>
+                <td data-col="Occ.">[0,1]</td>
+                <td data-col="Datatype"></td>
+                <td data-col="Definition">Staff or entity, that documented the generated data set, entering the information into the database; plus administrative information linked to the data entry activity.</td>
+                <td data-col="eDoc ID">1-5-28</td>
+            </tr>
+            <tr data-tooltip="sourceDataSet/administrativeInformation/dataEntryBy/timeStamp">
+                <td data-col="View Attribute">
+                    <button class="view-attr-btn" onclick="openAttributePage('sourceDataSet_administrativeInformation_dataEntryBy_timeStamp')" title="View detailed information">View Attribute</button>
+                </td>
+                <td data-col="Field Name">Time stamp (last saved)</td>
+                <td data-col="Element/Attribute Name">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;timeStamp</td>
+                <td data-col="Requ.">r</td>
+                <td data-col="Occ.">[0,1]</td>
+                
+                <td data-col="Datatype"><a href="ILCD_Common_DataTypes.html#dateTime" target="_blank">dateTime</a></td>
+                <td data-col="Definition">Date and time stamp of data set generation, typically an automated entry (&#34;last saved&#34;).</td>
+                <td data-col="eDoc ID">1-5-28-104</td>
+            </tr>
+            <tr data-tooltip="sourceDataSet/administrativeInformation/dataEntryBy/referenceToDataSetFormat">
+                <td data-col="View Attribute">
+                    <button class="view-attr-btn" onclick="openAttributePage('sourceDataSet_administrativeInformation_dataEntryBy_referenceToDataSetFormat')" title="View detailed information">View Attribute</button>
+                </td>
+                <td data-col="Field Name">Data set format(s)</td>
+                <td data-col="Element/Attribute Name">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;referenceToDataSetFormat</td>
+                <td data-col="Requ.">r</td>
+                <td data-col="Occ.">[0,n]</td>
+                
+                <td data-col="Datatype"><a href="ILCD_Common_DataTypes.html#GlobalReferenceType" target="_blank">GlobalReferenceType</a></td>
+                <td data-col="Definition">&#34;Source data set&#34; of the used version of the ILCD format. If additional data format fields have been integrated into the data set file, using the &#34;namespace&#34; option, the used format namespace(s) are to be given. This is the case if the data sets carries additional information as specified by other, particular LCA formats, e.g. of other database networks or LCA softwares.</td>
+                <td data-col="eDoc ID">1-5-28-105</td>
+            </tr>
+            <tr data-tooltip="sourceDataSet/administrativeInformation/dataEntryBy/other">
+                <td data-col="View Attribute">
+                    <button class="view-attr-btn" onclick="openAttributePage('sourceDataSet_administrativeInformation_dataEntryBy_other')" title="View detailed information">View Attribute</button>
+                </td>
+                <td data-col="Field Name">Other content</td>
+                <td data-col="Element/Attribute Name">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;other</td>
+                <td data-col="Requ.">o</td>
+                <td data-col="Occ.">[0,1]</td>
+                <td data-col="Datatype"></td>
+                <td data-col="Definition">May contain arbitrary content.</td>
+                <td data-col="eDoc ID">0</td>
+            </tr>
+            <tr data-tooltip="sourceDataSet/administrativeInformation/publicationAndOwnership">
+                <td data-col="View Attribute">
+                    <button class="view-attr-btn" onclick="openAttributePage('sourceDataSet_administrativeInformation_publicationAndOwnership')" title="View detailed information">View Attribute</button>
+                </td>
+                <td data-col="Field Name">Publication and ownership</td>
+                <td data-col="Element/Attribute Name">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;publicationAndOwnership</td>
+                <td data-col="Requ.">r</td>
+                <td data-col="Occ.">[0,1]</td>
+                <td data-col="Datatype"></td>
+                <td data-col="Definition">Information related to publication and version management of the data set including copyright and access restrictions.</td>
+                <td data-col="eDoc ID">1-5-30</td>
+            </tr>
+            <tr data-tooltip="sourceDataSet/administrativeInformation/publicationAndOwnership/dataSetVersion">
+                <td data-col="View Attribute">
+                    <button class="view-attr-btn" onclick="openAttributePage('sourceDataSet_administrativeInformation_publicationAndOwnership_dataSetVersion')" title="View detailed information">View Attribute</button>
+                </td>
+                <td data-col="Field Name">Data set version</td>
+                <td data-col="Element/Attribute Name">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dataSetVersion</td>
+                <td data-col="Requ.">m</td>
+                <td data-col="Occ.">[1,1]</td>
+                
+                <td data-col="Datatype"><a href="ILCD_Common_DataTypes.html#Version" target="_blank">Version</a></td>
+                <td data-col="Definition">Version number of data set. First two digits refer to major updates, the second two digits to minor revisions and error corrections etc. The third three digits are intended for automatic and internal counting of versions during data set development. Together with the data set&#39;s UUID, the &#34;Data set version&#34; uniquely identifies each data set.</td>
+                <td data-col="eDoc ID">1-5-30-111</td>
+            </tr>
+            <tr data-tooltip="sourceDataSet/administrativeInformation/publicationAndOwnership/referenceToPrecedingDataSetVersion">
+                <td data-col="View Attribute">
+                    <button class="view-attr-btn" onclick="openAttributePage('sourceDataSet_administrativeInformation_publicationAndOwnership_referenceToPrecedingDataSetVersion')" title="View detailed information">View Attribute</button>
+                </td>
+                <td data-col="Field Name">Preceding data set version</td>
+                <td data-col="Element/Attribute Name">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;referenceToPrecedingDataSetVersion</td>
+                <td data-col="Requ.">o</td>
+                <td data-col="Occ.">[0,n]</td>
+                
+                <td data-col="Datatype"><a href="ILCD_Common_DataTypes.html#GlobalReferenceType" target="_blank">GlobalReferenceType</a></td>
+                <td data-col="Definition">Last preceding data set, which was replaced by this version. Either a URI of that data set (i.e. an internet address) or its UUID plus version number is given (or both).</td>
+                <td data-col="eDoc ID">1-5-30-112</td>
+            </tr>
+            <tr data-tooltip="sourceDataSet/administrativeInformation/publicationAndOwnership/permanentDataSetURI">
+                <td data-col="View Attribute">
+                    <button class="view-attr-btn" onclick="openAttributePage('sourceDataSet_administrativeInformation_publicationAndOwnership_permanentDataSetURI')" title="View detailed information">View Attribute</button>
+                </td>
+                <td data-col="Field Name">Permanent data set URI</td>
+                <td data-col="Element/Attribute Name">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;permanentDataSetURI</td>
+                <td data-col="Requ.">r</td>
+                <td data-col="Occ.">[0,1]</td>
+                
+                <td data-col="Datatype"><a href="ILCD_Common_DataTypes.html#anyURI" target="_blank">anyURI</a></td>
+                <td data-col="Definition">URI (i.e. an internet address) of the original of this data set. [Note: This equally globally unique identifier supports users and software tools to identify and retrieve the original version of a data set via the internet or to check for available updates. The URI must not represent an existing WWW address, but it should be unique and point to the data access point, e.g. by combining the data owner&#39;s www path with the data set&#39;s UUID, e.g. http://www.mycompany.com/lca/processes/50f12420-8855-12db-b606-0900210c9a66.]</td>
+                <td data-col="eDoc ID">1-5-30-300</td>
+            </tr>
+            <tr data-tooltip="sourceDataSet/administrativeInformation/publicationAndOwnership/referenceToOwnershipOfDataSet">
+                <td data-col="View Attribute">
+                    <button class="view-attr-btn" onclick="openAttributePage('sourceDataSet_administrativeInformation_publicationAndOwnership_referenceToOwnershipOfDataSet')" title="View detailed information">View Attribute</button>
+                </td>
+                <td data-col="Field Name">Owner of data set</td>
+                <td data-col="Element/Attribute Name">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;referenceToOwnershipOfDataSet</td>
+                <td data-col="Requ.">r</td>
+                <td data-col="Occ.">[0,1]</td>
+                
+                <td data-col="Datatype"><a href="ILCD_Common_DataTypes.html#GlobalReferenceType" target="_blank">GlobalReferenceType</a></td>
+                <td data-col="Definition">&#34;Contact data set&#34; of the person or entity who owns this data set. (Note: this is not necessarily the publisher of the data set.)</td>
+                <td data-col="eDoc ID">1-5-30-115</td>
+            </tr>
+            <tr data-tooltip="sourceDataSet/administrativeInformation/publicationAndOwnership/other">
+                <td data-col="View Attribute">
+                    <button class="view-attr-btn" onclick="openAttributePage('sourceDataSet_administrativeInformation_publicationAndOwnership_other')" title="View detailed information">View Attribute</button>
+                </td>
+                <td data-col="Field Name">Other content</td>
+                <td data-col="Element/Attribute Name">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;other</td>
+                <td data-col="Requ.">o</td>
+                <td data-col="Occ.">[0,1]</td>
+                <td data-col="Datatype"></td>
+                <td data-col="Definition">May contain arbitrary content.</td>
+                <td data-col="eDoc ID">0</td>
+            </tr>
+            <tr data-tooltip="sourceDataSet/administrativeInformation/other">
+                <td data-col="View Attribute">
+                    <button class="view-attr-btn" onclick="openAttributePage('sourceDataSet_administrativeInformation_other')" title="View detailed information">View Attribute</button>
+                </td>
+                <td data-col="Field Name">Other content</td>
+                <td data-col="Element/Attribute Name">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;other</td>
+                <td data-col="Requ.">o</td>
+                <td data-col="Occ.">[0,1]</td>
+                <td data-col="Datatype"></td>
+                <td data-col="Definition">May contain arbitrary content.</td>
+                <td data-col="eDoc ID">0</td>
+            </tr>
+            <tr data-tooltip="sourceDataSet/other">
+                <td data-col="View Attribute">
+                    <button class="view-attr-btn" onclick="openAttributePage('sourceDataSet_other')" title="View detailed information">View Attribute</button>
+                </td>
+                <td data-col="Field Name">Other content</td>
+                <td data-col="Element/Attribute Name">&nbsp;&nbsp;&nbsp;&nbsp;other</td>
+                <td data-col="Requ.">o</td>
+                <td data-col="Occ.">[0,1]</td>
+                <td data-col="Datatype"></td>
+                <td data-col="Definition">May contain arbitrary content.</td>
+                <td data-col="eDoc ID">0</td>
+            </tr>
+        </tbody>
+    </table>
+
+    
     <script src="js/schemadoc_script.js"></script>
+
 </body>
 </html>
