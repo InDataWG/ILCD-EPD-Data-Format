@@ -1,0 +1,468 @@
+= Flow property data set Documentation
+:doctype: book
+:stylesheet: ilcd.css
+:source-highlighter: highlightjs
+
+This document is generated from the schemadoc HTML file.
+
+.Namespace legend
+[cols="1,1,3", frame="all", grid="rows"]
+|===
+| Information in the EntityIds (2024) namespace is displayed with
+| [role="fieldname_epd24"]#green background#
+| (Namespace URI: "http://www.indata.network/EntityIds/2024", prefix "e")
+|===
+
+.Flow property data set Data Structure
+[cols="1,1,1,1,1,1,1,1,1", options="header"]
+|===
+| [role="title"]##Field Name##
+| [role="title"]##Element/Attribute Name##
+| [role="title"]##Requ.##
+| [role="title"]##Occ.##
+| [role="title"]##Datatype##
+| [role="title"]##Definition##
+| [role="title"]##eDoc ID##
+| [role="title"]##Indent##
+| [role="title"]##Path##
+
+| ##Flow property data set##
+| ##flowPropertyDataSet##
+| ##m##
+| ##[1,1]##
+| ##{nbsp}##
+| ##{nbsp}##
+| ##4##
+| ##0##
+| ##flowPropertyDataSet##
+
+| ##{nbsp}##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}@version##
+| ##m##
+| ##{nbsp}##
+| ##link:ILCD_Common_DataTypes.html#SchemaVersion[SchemaVersion]##
+| ##{nbsp}##
+| ##{nbsp}##
+| ##1##
+| ##flowPropertyDataSet/version##
+
+| ##Flow property information##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}flowPropertiesInformation##
+| ##m##
+| ##[1,1]##
+| ##{nbsp}##
+| ##{nbsp}##
+| ##4-25##
+| ##1##
+| ##flowPropertyDataSet/flowPropertiesInformation##
+
+| ##Data set information##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}dataSetInformation##
+| ##m##
+| ##[1,1]##
+| ##{nbsp}##
+| ##{nbsp}##
+| ##4-25-104##
+| ##2##
+| ##flowPropertyDataSet/flowPropertiesInformation/dataSetInformation##
+
+| ##UUID of flow property data set##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}UUID##
+| ##m##
+| ##[1,1]##
+| ##link:ILCD_Common_DataTypes.html#UUID[UUID]##
+| ##Automatically generated Universally Unique Identifier of this data set. Together with the "Data set version", the UUID uniquely identifies each data set.##
+| ##4-25-104-273##
+| ##3##
+| ##flowPropertyDataSet/flowPropertiesInformation/dataSetInformation/UUID##
+
+| ##Name of flow property##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}name##
+| ##r##
+| ##[0,1]##
+| ##link:ILCD_Common_DataTypes.html#StringMultiLang[StringMultiLang]##
+| ##Name of flow property.##
+| ##4-25-104-274##
+| ##3##
+| ##flowPropertyDataSet/flowPropertiesInformation/dataSetInformation/name##
+
+| ##Synonyms##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}synonyms##
+| ##o##
+| ##[0,1]##
+| ##link:ILCD_Common_DataTypes.html#FTMultiLang[FTMultiLang]##
+| ##Synonyms are alternative names for the "Name" of the Flow property.##
+| ##4-25-104-275##
+| ##3##
+| ##flowPropertyDataSet/flowPropertiesInformation/dataSetInformation/synonyms##
+
+| ##Classification information##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}classificationInformation##
+| ##r##
+| ##[0,1]##
+| ##{nbsp}##
+| ##Hierachical classification of the Flow property foreseen to be used to structure the Flow property content of the database. (Note: This entry is NOT required for the identification of the Flow property data set. It should nevertheless be avoided to use identical names for Flow properties in the same class.##
+| ##4-25-104-276##
+| ##3##
+| ##flowPropertyDataSet/flowPropertiesInformation/dataSetInformation/classificationInformation##
+
+| ##Classification##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}classification##
+| ##r##
+| ##[0,n]##
+| ##{nbsp}##
+| ##Optional statistical or other classification of the data set. Typically also used for structuring LCA databases.##
+| ##1-1-2-7-2##
+| ##4##
+| ##flowPropertyDataSet/flowPropertiesInformation/dataSetInformation/classificationInformation/classification##
+
+| ##Classification system name##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}@name##
+| ##r##
+| ##{nbsp}##
+| ##link:ILCD_Common_DataTypes.html#string[string]##
+| ##Name of the classification system.##
+| ##1-1-2-7-2-a##
+| ##5##
+| ##flowPropertyDataSet/flowPropertiesInformation/dataSetInformation/classificationInformation/classification/name##
+
+| ##Classes##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}@classes##
+| ##r##
+| ##{nbsp}##
+| ##link:ILCD_Common_DataTypes.html#anyURI[anyURI]##
+| ##URL or file name of a file listing all classes of this classification system. [Notes: the referenced file has to be in form of the "ILCDClassification.xml" format. If a classification file is specified, the "class" entry should correspond to the classes defined in the classification file.]##
+| ##1-1-2-7-2-b##
+| ##5##
+| ##flowPropertyDataSet/flowPropertiesInformation/dataSetInformation/classificationInformation/classification/classes##
+
+| ##Class name##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}class##
+| ##r##
+| ##[1,n]##
+| ##{nbsp}##
+| ##Name of the class.##
+| ##1-1-2-7-2-1##
+| ##5##
+| ##flowPropertyDataSet/flowPropertiesInformation/dataSetInformation/classificationInformation/classification/class##
+
+| ##Hierarchy level##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}@level##
+| ##r##
+| ##{nbsp}##
+| ##link:ILCD_Common_DataTypes.html#LevelType[LevelType]##
+| ##If more than one class is specified in a hierachical classification system, the hierarchy level (1,2,...) could be specified with this attribute of class.##
+| ##1-1-2-7-2-1-a##
+| ##6##
+| ##flowPropertyDataSet/flowPropertiesInformation/dataSetInformation/classificationInformation/classification/class/level##
+
+| ##Unique class identifier##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}@classId##
+| ##r##
+| ##{nbsp}##
+| ##link:ILCD_Common_DataTypes.html#string[string]##
+| ##Unique identifier for the class. [Notes: If such identifiers are also defined in the referenced category file, they should be identical. Identifiers can be UUID's, but also other forms are allowed.]##
+| ##1-1-2-7-2-1-b##
+| ##6##
+| ##flowPropertyDataSet/flowPropertiesInformation/dataSetInformation/classificationInformation/classification/class/classId##
+
+| ##Other content##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}other##
+| ##o##
+| ##[0,1]##
+| ##{nbsp}##
+| ##May contain arbitrary content.##
+| ##0##
+| ##5##
+| ##flowPropertyDataSet/flowPropertiesInformation/dataSetInformation/classificationInformation/classification/other##
+
+| ##General comment on data set##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}generalComment##
+| ##o##
+| ##[0,1]##
+| ##link:ILCD_Common_DataTypes.html#FTMultiLang[FTMultiLang]##
+| ##Free text for general information about the data set. It may contain comments on e.g. information sources used as well as general (internal, not reviewed) quality statements.##
+| ##4-25-104-278##
+| ##3##
+| ##flowPropertyDataSet/flowPropertiesInformation/dataSetInformation/generalComment##
+
+| ##Other content##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}other##
+| ##o##
+| ##[0,1]##
+| ##{nbsp}##
+| ##May contain arbitrary content.##
+| ##0##
+| ##3##
+| ##flowPropertyDataSet/flowPropertiesInformation/dataSetInformation/other##
+
+| ##Quantitative reference##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}quantitativeReference##
+| ##r##
+| ##[0,1]##
+| ##{nbsp}##
+| ##This section allows to refer to the Flow property's quantitative reference, which is always a unit (i.e. that unit, in which the property is measured, e.g. "MJ" for energy-related Flow properties).##
+| ##4-25-106##
+| ##2##
+| ##flowPropertyDataSet/flowPropertiesInformation/quantitativeReference##
+
+| ##Reference unit##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}referenceToReferenceUnitGroup##
+| ##r##
+| ##[1,1]##
+| ##link:ILCD_Common_DataTypes.html#GlobalReferenceType[GlobalReferenceType]##
+| ##"Unit group data set" and its reference unit, in which the Flow property is measured.##
+| ##4-25-106-279##
+| ##3##
+| ##flowPropertyDataSet/flowPropertiesInformation/quantitativeReference/referenceToReferenceUnitGroup##
+
+| ##Other content##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}other##
+| ##o##
+| ##[0,1]##
+| ##{nbsp}##
+| ##May contain arbitrary content.##
+| ##0##
+| ##3##
+| ##flowPropertyDataSet/flowPropertiesInformation/quantitativeReference/other##
+
+| ##Other content##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}other##
+| ##o##
+| ##[0,1]##
+| ##{nbsp}##
+| ##May contain arbitrary content.##
+| ##0##
+| ##2##
+| ##flowPropertyDataSet/flowPropertiesInformation/other##
+
+| ##Modelling and validation##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}modellingAndValidation##
+| ##o##
+| ##[0,1]##
+| ##{nbsp}##
+| ##Covers the five sub-sections 1) LCI method (not used), 2) Data sources, treatment and representativeness (only 3 fields), 3) Completeness (not used), 4) Validation, and 5) Compliance.##
+| ##4-27##
+| ##1##
+| ##flowPropertyDataSet/modellingAndValidation##
+
+| ##Data sources, treatment and representativeness##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}dataSourcesTreatmentAndRepresentativeness##
+| ##o##
+| ##[0,1]##
+| ##{nbsp}##
+| ##{nbsp}##
+| ##4-27-118##
+| ##2##
+| ##flowPropertyDataSet/modellingAndValidation/dataSourcesTreatmentAndRepresentativeness##
+
+| ##Data source##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}referenceToDataSource##
+| ##o##
+| ##[0,n]##
+| ##link:ILCD_Common_DataTypes.html#GlobalReferenceType[GlobalReferenceType]##
+| ##"Source data set" of data source(s) used for the data set e.g. a paper, a questionnaire, a monography etc. The main raw data sources should be named, too. [Note: relevant especially for market price data.]##
+| ##4-27-118-280##
+| ##3##
+| ##flowPropertyDataSet/modellingAndValidation/dataSourcesTreatmentAndRepresentativeness/referenceToDataSource##
+
+| ##Other content##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}other##
+| ##o##
+| ##[0,1]##
+| ##{nbsp}##
+| ##May contain arbitrary content.##
+| ##0##
+| ##3##
+| ##flowPropertyDataSet/modellingAndValidation/dataSourcesTreatmentAndRepresentativeness/other##
+
+| ##Compliance declarations##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}complianceDeclarations##
+| ##r##
+| ##[0,1]##
+| ##{nbsp}##
+| ##Statements on compliance of several data set aspects with compliance requirements as defined by the referenced compliance system (e.g. an EPD scheme, handbook of a national or international data network such as the ILCD, etc.).##
+| ##1-3-22##
+| ##2##
+| ##flowPropertyDataSet/modellingAndValidation/complianceDeclarations##
+
+| ##Compliance##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}compliance##
+| ##r##
+| ##[1,n]##
+| ##{nbsp}##
+| ##one compliance declaration##
+| ##1-3-22-1##
+| ##3##
+| ##flowPropertyDataSet/modellingAndValidation/complianceDeclarations/compliance##
+
+| ##Compliance system name##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}referenceToComplianceSystem##
+| ##r##
+| ##[1,1]##
+| ##link:ILCD_Common_DataTypes.html#GlobalReferenceType[GlobalReferenceType]##
+| ##"Source data set" of the "Compliance system" that is declared to be met by the data set.##
+| ##1-3-22-90##
+| ##4##
+| ##flowPropertyDataSet/modellingAndValidation/complianceDeclarations/compliance/referenceToComplianceSystem##
+
+| ##Approval of overall compliance##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}approvalOfOverallCompliance##
+| ##o##
+| ##[0,1]##
+| ##link:ILCD_Common_EnumerationValues.html#ComplianceValues[ComplianceValues]##
+| ##Official approval whether or not and in how far the data set meets all the requirements of the "Compliance system" refered to. This approval should be issued/confirmed by the owner of that compliance system, who is identified via the respective "Contact data set".##
+| ##1-3-22-95##
+| ##4##
+| ##flowPropertyDataSet/modellingAndValidation/complianceDeclarations/compliance/approvalOfOverallCompliance##
+
+| ##Other content##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}other##
+| ##o##
+| ##[0,1]##
+| ##{nbsp}##
+| ##May contain arbitrary content.##
+| ##0##
+| ##3##
+| ##flowPropertyDataSet/modellingAndValidation/complianceDeclarations/other##
+
+| ##Other content##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}other##
+| ##o##
+| ##[0,1]##
+| ##{nbsp}##
+| ##May contain arbitrary content.##
+| ##0##
+| ##2##
+| ##flowPropertyDataSet/modellingAndValidation/other##
+
+| ##Administrative information##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}administrativeInformation##
+| ##r##
+| ##[0,1]##
+| ##{nbsp}##
+| ##Information on data set management and administration.##
+| ##4-29##
+| ##1##
+| ##flowPropertyDataSet/administrativeInformation##
+
+| ##Data entry by##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}dataEntryBy##
+| ##r##
+| ##[0,1]##
+| ##{nbsp}##
+| ##Staff or entity, that documented the generated data set, entering the information into the database; plus administrative information linked to the data entry activity.##
+| ##4-29-130##
+| ##2##
+| ##flowPropertyDataSet/administrativeInformation/dataEntryBy##
+
+| ##Time stamp (last saved)##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}timeStamp##
+| ##r##
+| ##[0,1]##
+| ##link:ILCD_Common_DataTypes.html#dateTime[dateTime]##
+| ##Date and time stamp of data set generation, typically an automated entry ("last saved").##
+| ##1-5-28-104##
+| ##3##
+| ##flowPropertyDataSet/administrativeInformation/dataEntryBy/timeStamp##
+
+| ##Data set format(s)##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}referenceToDataSetFormat##
+| ##r##
+| ##[0,n]##
+| ##link:ILCD_Common_DataTypes.html#GlobalReferenceType[GlobalReferenceType]##
+| ##"Source data set" of the used version of the ILCD format. If additional data format fields have been integrated into the data set file, using the "namespace" option, the used format namespace(s) are to be given. This is the case if the data sets carries additional information as specified by other, particular LCA formats, e.g. of other database networks or LCA softwares.##
+| ##1-5-28-105##
+| ##3##
+| ##flowPropertyDataSet/administrativeInformation/dataEntryBy/referenceToDataSetFormat##
+
+| ##Other content##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}other##
+| ##o##
+| ##[0,1]##
+| ##{nbsp}##
+| ##May contain arbitrary content.##
+| ##0##
+| ##3##
+| ##flowPropertyDataSet/administrativeInformation/dataEntryBy/other##
+
+| ##Publication and ownership##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}publicationAndOwnership##
+| ##r##
+| ##[0,1]##
+| ##{nbsp}##
+| ##Information related to publication and version management of the data set including copyright and access restrictions.##
+| ##4-29-132##
+| ##2##
+| ##flowPropertyDataSet/administrativeInformation/publicationAndOwnership##
+
+| ##Data set version##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}dataSetVersion##
+| ##m##
+| ##[1,1]##
+| ##link:ILCD_Common_DataTypes.html#Version[Version]##
+| ##Version number of data set. First two digits refer to major updates, the second two digits to minor revisions and error corrections etc. The third three digits are intended for automatic and internal counting of versions during data set development. Together with the data set's UUID, the "Data set version" uniquely identifies each data set.##
+| ##1-5-30-111##
+| ##3##
+| ##flowPropertyDataSet/administrativeInformation/publicationAndOwnership/dataSetVersion##
+
+| ##Preceding data set version##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}referenceToPrecedingDataSetVersion##
+| ##o##
+| ##[0,n]##
+| ##link:ILCD_Common_DataTypes.html#GlobalReferenceType[GlobalReferenceType]##
+| ##Last preceding data set, which was replaced by this version. Either a URI of that data set (i.e. an internet address) or its UUID plus version number is given (or both).##
+| ##1-5-30-112##
+| ##3##
+| ##flowPropertyDataSet/administrativeInformation/publicationAndOwnership/referenceToPrecedingDataSetVersion##
+
+| ##Permanent data set URI##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}permanentDataSetURI##
+| ##r##
+| ##[0,1]##
+| ##link:ILCD_Common_DataTypes.html#anyURI[anyURI]##
+| ##URI (i.e. an internet address) of the original of this data set. [Note: This equally globally unique identifier supports users and software tools to identify and retrieve the original version of a data set via the internet or to check for available updates. The URI must not represent an existing WWW address, but it should be unique and point to the data access point, e.g. by combining the data owner's www path with the data set's UUID, e.g. http://www.mycompany.com/lca/processes/50f12420-8855-12db-b606-0900210c9a66.]##
+| ##1-5-30-300##
+| ##3##
+| ##flowPropertyDataSet/administrativeInformation/publicationAndOwnership/permanentDataSetURI##
+
+| ##Owner of data set##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}referenceToOwnershipOfDataSet##
+| ##r##
+| ##[0,1]##
+| ##link:ILCD_Common_DataTypes.html#GlobalReferenceType[GlobalReferenceType]##
+| ##"Contact data set" of the person or entity who owns this data set. (Note: this is not necessarily the publisher of the data set.)##
+| ##1-5-30-115##
+| ##3##
+| ##flowPropertyDataSet/administrativeInformation/publicationAndOwnership/referenceToOwnershipOfDataSet##
+
+| ##Other content##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}other##
+| ##o##
+| ##[0,1]##
+| ##{nbsp}##
+| ##May contain arbitrary content.##
+| ##0##
+| ##3##
+| ##flowPropertyDataSet/administrativeInformation/publicationAndOwnership/other##
+
+| ##Other content##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}other##
+| ##o##
+| ##[0,1]##
+| ##{nbsp}##
+| ##May contain arbitrary content.##
+| ##0##
+| ##2##
+| ##flowPropertyDataSet/administrativeInformation/other##
+
+| ##Other content##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}other##
+| ##o##
+| ##[0,1]##
+| ##{nbsp}##
+| ##May contain arbitrary content.##
+| ##0##
+| ##1##
+| ##flowPropertyDataSet/other##
+|===
