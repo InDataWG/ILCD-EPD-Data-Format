@@ -31,7 +31,7 @@ jobs:
           git diff --quiet README.md || (git add README.md && git commit -m "chore: update README links for ${{ github.ref_name }}" && git push)
 
       - name: Setup Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v6
         with:
           python-version: '3.10'
           cache: 'pip'
