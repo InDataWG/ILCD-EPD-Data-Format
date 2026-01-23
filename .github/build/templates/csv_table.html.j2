@@ -1,0 +1,31 @@
+{# CSV to HTML table template with Bootstrap styling #}
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <title>{{ display_name | e }}</title>
+</head>
+<body>
+    <div class="container">
+        <h1>{{ display_name | e }}</h1>
+        <table class="table table-striped" id="{{ display_name | e }}">
+            <thead>
+                <tr>
+                    {%- for col in columns %}
+                    <th>{{ col | e }}</th>
+                    {%- endfor %}
+                </tr>
+            </thead>
+            <tbody>
+                {%- for row in rows %}
+                <tr>
+                    {%- for col in columns %}
+                    <td>{{ row.get(col, '') | e }}</td>
+                    {%- endfor %}
+                </tr>
+                {%- endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

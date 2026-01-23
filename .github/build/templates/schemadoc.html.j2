@@ -1,0 +1,72 @@
+{# Schemadoc report template #}
+{% extends "base.html.j2" %}
+
+{% block title %}{{ title | e }}{% endblock %}
+
+{% block head %}
+    <link rel="stylesheet" href="css/style.css">
+{% endblock %}
+
+{% block content %}
+    <h1>{{ title | e }}</h1>
+    <div class="controls">
+        <input type="text" id="search-bar" placeholder="Search by Name, Path, or Definition...">
+        <div class="download-buttons">
+            <button id="download-csv-btn">Download CSV</button>
+            <button id="download-adoc-btn">Download AsciiDoc</button>
+        </div>
+        <div class="view-options">
+            <button id="toggle-stripes-btn">Toggle Stripes</button>
+        </div>
+        <div class="col-toggles">
+            {%- for col in columns %}
+            {%- set col_id = col | replace(' ', '-') | replace('.', '') | replace('(', '') | replace(')', '') %}
+            <label for="toggle-{{ col_id }}"><input type="checkbox" id="toggle-{{ col_id }}" data-col="{{ col | e }}" checked>{{ col | e }}</label>
+            {%- endfor %}
+        </div>
+    </div>
+    <table id="report-table">
+        <thead>
+            <tr>
+                <th data-col="View Attribute">View Attribute</th>
+                {%- for col in columns %}
+                <th data-col="{{ col | e }}">{{ col | e }}</th>
+                {%- endfor %}
+            </tr>
+        </thead>
+        <tbody>
+            {%- for row in rows %}
+            {%- set path = row.get('Path', '') %}
+            {%- set path_tooltip = path | e %}
+            {%- set attribute_path = path | replace('/', '_') %}
+            <tr data-tooltip="{{ path_tooltip }}">
+                <td data-col="View Attribute">
+                    <button class="view-attr-btn" onclick="openAttributePage('{{ attribute_path | e }}')" title="View detailed information">View Attribute</button>
+                </td>
+                {%- for col in columns %}
+                {%- set cell_value = row.get(col, '') | string %}
+                {%- if col == 'Element/Attribute Name' %}
+                {%- set indent = row.get('Indent', 0) | int %}
+                {%- set indentation = '&nbsp;&nbsp;&nbsp;&nbsp;' * indent %}
+                <td data-col="{{ col | e }}">{{ indentation | safe }}{{ cell_value | e }}</td>
+                {%- elif col == 'Datatype' and 'link:' in cell_value %}
+                {# Handle AsciiDoc links in Datatype column #}
+                {%- set link_match = cell_value | regex_match('link:([^\\[]+)\\[([^\\]]+)\\]') %}
+                {%- if link_match %}
+                <td data-col="{{ col | e }}"><a href="{{ link_match[0] | e }}" target="_blank">{{ link_match[1] | e }}</a></td>
+                {%- else %}
+                <td data-col="{{ col | e }}">{{ cell_value | e }}</td>
+                {%- endif %}
+                {%- else %}
+                <td data-col="{{ col | e }}">{{ cell_value | e }}</td>
+                {%- endif %}
+                {%- endfor %}
+            </tr>
+            {%- endfor %}
+        </tbody>
+    </table>
+{% endblock %}
+
+{% block scripts %}
+    <script src="js/schemadoc_script.js"></script>
+{% endblock %}

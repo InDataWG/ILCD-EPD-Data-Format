@@ -1,0 +1,87 @@
+{# Main ILCD+EPD report template #}
+{% extends "base.html.j2" %}
+
+{% block title %}ILCD+EPD v1.3 Process Dataset{% endblock %}
+
+{% block body_class %}show-en{% endblock %}
+
+{% block content %}
+    <h1>ILCD+EPD v1.3 Process Dataset</h1>
+    <div class="controls">
+        <input type="text" id="search-bar" placeholder="Search by Name, Path (e.g. 'proc/name'), or Regex (e.g. '^process')">
+        <div class="lang-buttons">
+            <button id="show-en-btn">Show English</button>
+            <button id="show-de-btn">Show German</button>
+            <button id="show-all-btn">Show Both</button>
+        </div>
+        <div class="download-buttons">
+            <button id="download-csv-btn">Download CSV</button>
+            <button id="download-adoc-btn">Download AsciiDoc</button>
+        </div>
+        <div class="view-options">
+            <button id="toggle-stripes-btn">Toggle Stripes</button>
+        </div>
+        <div class="col-toggles">
+            {%- for col in columns if col not in ['Element/Attribute Name', 'Original ILCD Format Definition (en)'] %}
+            {%- set col_id = col | replace(' ', '-') | replace('(', '') | replace(')', '') %}
+            {%- set col_class = 'lang-de' if '(de)' in col else ('lang-en' if '(en)' in col else '') %}
+            <label for="toggle-{{ col_id }}" class="{{ col_class }}"><input type="checkbox" id="toggle-{{ col_id }}" data-col="{{ col | e }}" checked>{{ col | e }}</label>
+            {%- endfor %}
+        </div>
+    </div>
+    <table id="report-table">
+        <thead>
+            <tr>
+                <th data-col="View Attribute">View Attribute</th>
+                {%- for col in columns %}
+                {%- set col_class = 'lang-de' if '(de)' in col else ('lang-en' if '(en)' in col else '') %}
+                <th class="{{ col_class }}" data-col="{{ col | e }}">{{ col | e }}</th>
+                {%- endfor %}
+            </tr>
+        </thead>
+        <tbody>
+            {%- set ns = namespace(skip_until=-1) %}
+            {%- for row in rows %}
+            {%- if loop.index0 > ns.skip_until %}
+            {%- set path = row.get('Path', 'row_' ~ loop.index0) %}
+            {%- set path_tooltip = path | e %}
+            {%- set is_definitions_identical = row.get('_definitions_identical', false) %}
+            {# Check if this row starts an enum group #}
+            {%- set enum_group = enum_groups.get(loop.index0) %}
+            <tr data-tooltip="{{ path_tooltip }}">
+                <td data-col="View Attribute">
+                    <button class="view-attr-btn" onclick="openAttributePage('{{ path | e }}')" title="View detailed information for this attribute">View Attribute</button>
+                </td>
+                {%- for col in columns %}
+                {%- set col_class = 'lang-de' if '(de)' in col else ('lang-en' if '(en)' in col else '') %}
+                {%- set cell_value = row.get(col, '') | string %}
+                {%- if col == 'Datatype' and enum_group %}
+                {# Render enum list for datatype column #}
+                {%- set header_text = cell_value | e if cell_value.strip() else 'Enumeration:' %}
+                <td class="{{ col_class }}" data-col="{{ col | e }}">{{ header_text }}<ul>{% for val in enum_group.values %}<li>{{ val | e }}</li>{% endfor %}</ul></td>
+                {%- set ns.skip_until = enum_group.end_idx %}
+                {%- elif col == 'Element/Attribute Name' %}
+                {%- set indent = row.get('Indent', 0) | int %}
+                {%- set indentation = '&nbsp;&nbsp;&nbsp;&nbsp;' * indent %}
+                <td class="{{ col_class }}" data-col="{{ col | e }}">
+                    <div class="tooltip-wrapper">
+                        {{ indentation | safe }}{{ cell_value | e }}
+                        <span class="tooltip-text">{{ path_tooltip }}</span>
+                    </div>
+                </td>
+                {%- elif col == 'Original ILCD Format Definition (en)' and is_definitions_identical %}
+                <td class="{{ col_class }} gray-definition" data-col="{{ col | e }}"><span class="gray-definition">{{ cell_value | e }}</span></td>
+                {%- else %}
+                <td class="{{ col_class }}" data-col="{{ col | e }}">{{ cell_value | e }}</td>
+                {%- endif %}
+                {%- endfor %}
+            </tr>
+            {%- endif %}
+            {%- endfor %}
+        </tbody>
+    </table>
+{% endblock %}
+
+{% block scripts %}
+    <script src="js/script.js"></script>
+{% endblock %}

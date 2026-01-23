@@ -43,23 +43,18 @@ jobs:
         run: |
           cd .github/build
 
-          # Generate main docs (for /doc/)
-          python generate_html_report.py
-          python generate_attribute_pages.py
-          python generate_csv_from_adoc.py
-          python generate_schemadoc_html_report.py
-          python generate_schemadoc_attribute_pages.py
+          # Generate main documentation (index.html, attribute pages, CSV, static assets)
+          python build_docs.py
 
-          # Copy static assets to doc/
-          cp -r css ../../doc/
-          cp -r js ../../doc/
+          # Generate schema documentation
+          python build_schemadoc.py
 
           # Copy full doc content to preview folder for branch deployment
           mkdir -p "../../preview/${{ github.ref_name }}"
           cp -r ../../doc/* "../../preview/${{ github.ref_name }}/"
 
-          # Generate CSV→HTML for branch preview (overwrites with branch-specific identifiers)
-          python convert_csv_to_html.py "../../preview/${{ github.ref_name }}/identifiers"
+          # Generate CSV→HTML for branch preview
+          python build_csv_pages.py "../../preview/${{ github.ref_name }}/identifiers"
 
           # Create /data/ directory with legacy filenames for backwards compatibility
           mkdir -p ../../data

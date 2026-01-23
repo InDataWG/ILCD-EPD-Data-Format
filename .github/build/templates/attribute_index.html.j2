@@ -1,0 +1,34 @@
+{# Attribute pages index template #}
+{% extends "base.html.j2" %}
+
+{% block title %}ILCD+EPD v1.3 Attribute Pages Index{% endblock %}
+
+{% block head %}
+    <link rel="stylesheet" href="../css/style.css">
+{% endblock %}
+
+{% block body_class %}attribute-page{% endblock %}
+
+{% block content %}
+    <h1>ILCD+EPD v1.3 Attribute Pages</h1>
+
+    <div class="controls">
+        <div class="download-buttons">
+            <button id="download-csv-btn">Download as CSV</button>
+            <button id="download-adoc-btn">Download as AsciiDoc</button>
+        </div>
+    </div>
+
+    <div class="pages-list">
+        <p>Click on any attribute below to view its detailed information:</p>
+        {%- for page in pages %}
+        <a href="{{ page.filename | e }}" class="page-link" target="_blank">
+            <div class="path">{{ page.path | e }}</div>
+        </a>
+        {%- endfor %}
+    </div>
+{% endblock %}
+
+{% block scripts %}
+    <script src="../js/attribute_script.js"></script>
+{% endblock %}

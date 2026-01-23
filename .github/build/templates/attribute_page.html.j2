@@ -1,0 +1,88 @@
+{# Individual attribute detail page template #}
+{% extends "base.html.j2" %}
+
+{% block title %}{{ element_name | e }} - ILCD+EPD Attribute{% endblock %}
+
+{% block head %}
+    <link rel="stylesheet" href="../css/style.css">
+{% endblock %}
+
+{% block body_class %}attribute-page show-both{% endblock %}
+
+{% block content %}
+    <a href="javascript:history.back()" class="back-link">&larr; Back</a>
+
+    <div class="controls">
+        <div class="lang-buttons">
+            <button id="show-en-btn">Show English</button>
+            <button id="show-de-btn">Show German</button>
+            <button id="show-both-btn" class="active">Show Both</button>
+        </div>
+        <div class="download-buttons">
+            <button id="download-csv-btn">Download as CSV</button>
+            <button id="download-adoc-btn">Download as AsciiDoc</button>
+        </div>
+    </div>
+
+    <div class="header">
+        <h1>{{ element_name | e }}</h1>
+        <div class="path">Path: {{ path | e }}</div>
+    </div>
+
+    <div class="content">
+        {%- for field_name, field_value in fields.items() %}
+        {%- if field_name not in ['Path', 'Indent', 'Element/Attribute Name'] %}
+        {%- set value_str = field_value | string if field_value is not none else '' %}
+        {# Determine language class #}
+        {%- set lang_indicator = '' %}
+        {%- set clean_field_name = field_name %}
+        {%- set field_class = 'field' %}
+        {%- if '(en)' in field_name %}
+        {%- set lang_indicator = ' <span class="lang-indicator">(English)</span>' %}
+        {%- set clean_field_name = field_name | replace(' (en)', '') %}
+        {%- set field_class = field_class ~ ' lang-en' %}
+        {%- elif '(de)' in field_name %}
+        {%- set lang_indicator = ' <span class="lang-indicator">(German)</span>' %}
+        {%- set clean_field_name = field_name | replace(' (de)', '') %}
+        {%- set field_class = field_class ~ ' lang-de' %}
+        {%- endif %}
+        {# Handle boolean fields #}
+        {%- if field_name == 'Technically Required' %}
+        {%- if value_str | lower in ['true', 'yes', '1'] %}
+        {%- set value_str = 'Yes' %}
+        {%- elif value_str | lower in ['false', 'no', '0'] %}
+        {%- set value_str = 'No' %}
+        {%- endif %}
+        {%- endif %}
+        {# Build field value HTML #}
+        {%- if not value_str.strip() %}
+        {%- set field_class = field_class ~ ' empty' %}
+        <div class="{{ field_class }}">
+            <div class="field-label">{{ clean_field_name | e }}{{ lang_indicator | safe }}</div>
+            <div class="field-value">&mdash;</div>
+        </div>
+        {%- elif '\n' in value_str %}
+        <div class="{{ field_class }}">
+            <div class="field-label">{{ clean_field_name | e }}{{ lang_indicator | safe }}</div>
+            <div class="field-value">
+                <ul>
+                    {%- for item in value_str.split('\n') if item.strip() %}
+                    <li>{{ item.strip() | e }}</li>
+                    {%- endfor %}
+                </ul>
+            </div>
+        </div>
+        {%- else %}
+        <div class="{{ field_class }}">
+            <div class="field-label">{{ clean_field_name | e }}{{ lang_indicator | safe }}</div>
+            <div class="field-value">{{ value_str | e }}</div>
+        </div>
+        {%- endif %}
+        {%- endif %}
+        {%- endfor %}
+    </div>
+{% endblock %}
+
+{% block scripts %}
+    <script src="../js/attribute_script.js"></script>
+{% endblock %}
