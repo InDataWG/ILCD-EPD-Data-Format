@@ -1,0 +1,888 @@
+= Flow data set Documentation
+:doctype: book
+:stylesheet: ilcd.css
+:source-highlighter: highlightjs
+
+This document is generated from the schemadoc HTML file.
+
+.Namespace legend
+[cols="1,1,3", frame="all", grid="rows"]
+|===
+| Information in the EntityIds (2024) namespace is displayed with
+| [role="fieldname_epd24"]#green background#
+| (Namespace URI: "http://www.indata.network/EntityIds/2024", prefix "e")
+|===
+
+.Flow data set Data Structure
+[cols="1,1,1,1,1,1,1,1,1", options="header"]
+|===
+| [role="title"]##Field Name##
+| [role="title"]##Element/Attribute Name##
+| [role="title"]##Requ.##
+| [role="title"]##Occ.##
+| [role="title"]##Datatype##
+| [role="title"]##Definition##
+| [role="title"]##eDoc ID##
+| [role="title"]##Indent##
+| [role="title"]##Path##
+
+| ##{nbsp}##
+| ##Flow data set##
+| ##flowDataSet##
+| ##m##
+| ##[1,1]##
+| ##{nbsp}##
+| ##{nbsp}##
+| ##0##
+| ##Flow data set##
+
+| ##{nbsp}##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}##
+| ##@version##
+| ##m##
+| ##{nbsp}##
+| ##SchemaVersion##
+| ##{nbsp}##
+| ##1##
+| ##Flow data set/##
+
+| ##{nbsp}##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}##
+| ##@locations##
+| ##o##
+| ##{nbsp}##
+| ##String##
+| ##{nbsp}##
+| ##1##
+| ##Flow data set/##
+
+| ##{nbsp}##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}Flow information##
+| ##flowInformation##
+| ##m##
+| ##[1,1]##
+| ##{nbsp}##
+| ##{nbsp}##
+| ##1##
+| ##Flow data set/Flow information##
+
+| ##{nbsp}##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Data set information##
+| ##dataSetInformation##
+| ##m##
+| ##[1,1]##
+| ##{nbsp}##
+| ##{nbsp}##
+| ##2##
+| ##Flow data set/Flow information/Data set information##
+
+| ##{nbsp}##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}UUID of flow data set##
+| ##UUID##
+| ##m##
+| ##[1,1]##
+| ##UUID##
+| ##{nbsp}##
+| ##3##
+| ##Flow data set/Flow information/Data set information/UUID of flow data set##
+
+| ##{nbsp}##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Name##
+| ##name##
+| ##r##
+| ##[0,1]##
+| ##{nbsp}##
+| ##{nbsp}##
+| ##3##
+| ##Flow data set/Flow information/Data set information/Name##
+
+| ##{nbsp}##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Base name##
+| ##baseName##
+| ##r##
+| ##[1,1]##
+| ##StringMultiLang##
+| ##{nbsp}##
+| ##4##
+| ##Flow data set/Flow information/Data set information/Name/Base name##
+
+| ##{nbsp}##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Treatment, standards, routes##
+| ##treatmentStandardsRoutes##
+| ##o##
+| ##[0,1]##
+| ##StringMultiLang##
+| ##{nbsp}##
+| ##4##
+| ##Flow data set/Flow information/Data set information/Name/Treatment, standards, routes##
+
+| ##{nbsp}##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Mix and location types##
+| ##mixAndLocationTypes##
+| ##o##
+| ##[0,1]##
+| ##StringMultiLang##
+| ##{nbsp}##
+| ##4##
+| ##Flow data set/Flow information/Data set information/Name/Mix and location types##
+
+| ##{nbsp}##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Quantitative flow properties##
+| ##flowProperties##
+| ##o##
+| ##[0,1]##
+| ##StringMultiLang##
+| ##{nbsp}##
+| ##4##
+| ##Flow data set/Flow information/Data set information/Name/Quantitative flow properties##
+
+| ##{nbsp}##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Other content##
+| ##other##
+| ##o##
+| ##[0,1]##
+| ##{nbsp}##
+| ##{nbsp}##
+| ##4##
+| ##Flow data set/Flow information/Data set information/Name/Other content##
+
+| ##{nbsp}##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Synonyms##
+| ##synonyms##
+| ##o##
+| ##[0,1]##
+| ##FTMultiLang##
+| ##{nbsp}##
+| ##3##
+| ##Flow data set/Flow information/Data set information/Synonyms##
+
+| ##{nbsp}##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Category and classification information##
+| ##classificationInformation##
+| ##r##
+| ##[0,1]##
+| ##{nbsp}##
+| ##{nbsp}##
+| ##3##
+| ##Flow data set/Flow information/Data set information/Category and classification information##
+
+| ##{nbsp}##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Elementary flow categorization##
+| ##elementaryFlowCategorization##
+| ##r##
+| ##[0,n]##
+| ##{nbsp}##
+| ##{nbsp}##
+| ##4##
+| ##Flow data set/Flow information/Data set information/Category and classification information/Elementary flow categorization##
+
+| ##{nbsp}##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Name of categorization system##
+| ##@name##
+| ##r##
+| ##{nbsp}##
+| ##string##
+| ##{nbsp}##
+| ##5##
+| ##Flow data set/Flow information/Data set information/Category and classification information/Elementary flow categorization/Name of categorization system##
+
+| ##{nbsp}##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Categories file##
+| ##@categories##
+| ##o##
+| ##{nbsp}##
+| ##anyURI##
+| ##{nbsp}##
+| ##5##
+| ##Flow data set/Flow information/Data set information/Category and classification information/Elementary flow categorization/Categories file##
+
+| ##{nbsp}##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Category name##
+| ##category##
+| ##r##
+| ##[1,n]##
+| ##{nbsp}##
+| ##{nbsp}##
+| ##5##
+| ##Flow data set/Flow information/Data set information/Category and classification information/Elementary flow categorization/Category name##
+
+| ##{nbsp}##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Hierarchy level##
+| ##@level##
+| ##r##
+| ##{nbsp}##
+| ##LevelType##
+| ##{nbsp}##
+| ##6##
+| ##Flow data set/Flow information/Data set information/Category and classification information/Elementary flow categorization/Category name/Hierarchy level##
+
+| ##{nbsp}##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Unique category identifier##
+| ##@catId##
+| ##r##
+| ##{nbsp}##
+| ##string##
+| ##{nbsp}##
+| ##6##
+| ##Flow data set/Flow information/Data set information/Category and classification information/Elementary flow categorization/Category name/Unique category identifier##
+
+| ##{nbsp}##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Other content##
+| ##other##
+| ##o##
+| ##[0,1]##
+| ##{nbsp}##
+| ##{nbsp}##
+| ##5##
+| ##Flow data set/Flow information/Data set information/Category and classification information/Elementary flow categorization/Other content##
+
+| ##{nbsp}##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Classification##
+| ##classification##
+| ##r##
+| ##[0,n]##
+| ##{nbsp}##
+| ##{nbsp}##
+| ##4##
+| ##Flow data set/Flow information/Data set information/Category and classification information/Classification##
+
+| ##{nbsp}##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Classification system name##
+| ##@name##
+| ##r##
+| ##{nbsp}##
+| ##string##
+| ##{nbsp}##
+| ##5##
+| ##Flow data set/Flow information/Data set information/Category and classification information/Classification/Classification system name##
+
+| ##{nbsp}##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Classes##
+| ##@classes##
+| ##r##
+| ##{nbsp}##
+| ##anyURI##
+| ##{nbsp}##
+| ##5##
+| ##Flow data set/Flow information/Data set information/Category and classification information/Classification/Classes##
+
+| ##{nbsp}##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Class name##
+| ##class##
+| ##r##
+| ##[1,n]##
+| ##{nbsp}##
+| ##{nbsp}##
+| ##5##
+| ##Flow data set/Flow information/Data set information/Category and classification information/Classification/Class name##
+
+| ##{nbsp}##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Hierarchy level##
+| ##@level##
+| ##r##
+| ##{nbsp}##
+| ##LevelType##
+| ##{nbsp}##
+| ##6##
+| ##Flow data set/Flow information/Data set information/Category and classification information/Classification/Class name/Hierarchy level##
+
+| ##{nbsp}##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Unique class identifier##
+| ##@classId##
+| ##r##
+| ##{nbsp}##
+| ##string##
+| ##{nbsp}##
+| ##6##
+| ##Flow data set/Flow information/Data set information/Category and classification information/Classification/Class name/Unique class identifier##
+
+| ##{nbsp}##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Other content##
+| ##other##
+| ##o##
+| ##[0,1]##
+| ##{nbsp}##
+| ##{nbsp}##
+| ##5##
+| ##Flow data set/Flow information/Data set information/Category and classification information/Classification/Other content##
+
+| ##{nbsp}##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}CAS Number##
+| ##CASNumber##
+| ##o##
+| ##[0,1]##
+| ##CASNumber##
+| ##{nbsp}##
+| ##3##
+| ##Flow data set/Flow information/Data set information/CAS Number##
+
+| ##{nbsp}##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Sum formula##
+| ##sumFormula##
+| ##o##
+| ##[0,1]##
+| ##String##
+| ##{nbsp}##
+| ##3##
+| ##Flow data set/Flow information/Data set information/Sum formula##
+
+| ##{nbsp}##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}General comment on data set##
+| ##generalComment##
+| ##o##
+| ##[0,1]##
+| ##FTMultiLang##
+| ##{nbsp}##
+| ##3##
+| ##Flow data set/Flow information/Data set information/General comment on data set##
+
+| ##{nbsp}##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Other content##
+| ##other##
+| ##o##
+| ##[0,1]##
+| ##{nbsp}##
+| ##{nbsp}##
+| ##3##
+| ##Flow data set/Flow information/Data set information/Other content##
+
+| ##ist ein##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}is a##
+| ##epd:isA##
+| ##o##
+| ##[0,1]##
+| ##GlobalReferenceType##
+| ##Referenz auf ein zugehöriges generisches Produkt ("Flow"-Datensatz)##
+| ##4##
+| ##Flow data set/Flow information/Data set information/Other content/is a##
+
+| ##Materialeigenschaften (eingebettetes MatML)##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Material properties (embedded MatML)##
+| ##matml:MatML_Doc##
+| ##o##
+| ##[0,1]##
+| ##{nbsp}##
+| ##Hier können mittels MatML-Markup beliebige physikalische oder chemische Produkteigenschaften wie Dichte etc. beschrieben werden##
+| ##4##
+| ##Flow data set/Flow information/Data set information/Other content/Material properties (embedded MatML)##
+
+| ##{nbsp}##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Quantitative reference##
+| ##quantitativeReference##
+| ##r##
+| ##[0,1]##
+| ##{nbsp}##
+| ##{nbsp}##
+| ##2##
+| ##Flow data set/Flow information/Quantitative reference##
+
+| ##{nbsp}##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Reference flow property##
+| ##referenceToReferenceFlowProperty##
+| ##r##
+| ##[1,1]##
+| ##Int5##
+| ##{nbsp}##
+| ##3##
+| ##Flow data set/Flow information/Quantitative reference/Reference flow property##
+
+| ##{nbsp}##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Other content##
+| ##other##
+| ##o##
+| ##[0,1]##
+| ##{nbsp}##
+| ##{nbsp}##
+| ##3##
+| ##Flow data set/Flow information/Quantitative reference/Other content##
+
+| ##{nbsp}##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Geography##
+| ##geography##
+| ##o##
+| ##[0,1]##
+| ##{nbsp}##
+| ##{nbsp}##
+| ##2##
+| ##Flow data set/Flow information/Geography##
+
+| ##{nbsp}##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Location of supply##
+| ##locationOfSupply##
+| ##o##
+| ##[1,1]##
+| ##StringMultiLang##
+| ##{nbsp}##
+| ##3##
+| ##Flow data set/Flow information/Geography/Location of supply##
+
+| ##{nbsp}##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Other content##
+| ##other##
+| ##o##
+| ##[0,1]##
+| ##{nbsp}##
+| ##{nbsp}##
+| ##3##
+| ##Flow data set/Flow information/Geography/Other content##
+
+| ##{nbsp}##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Technological representativeness##
+| ##technology##
+| ##o##
+| ##[0,1]##
+| ##{nbsp}##
+| ##{nbsp}##
+| ##2##
+| ##Flow data set/Flow information/Technological representativeness##
+
+| ##{nbsp}##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Technical purpose of product or waste##
+| ##technologicalApplicability##
+| ##o##
+| ##[0,1]##
+| ##FTMultiLang##
+| ##{nbsp}##
+| ##3##
+| ##Flow data set/Flow information/Technological representativeness/Technical purpose of product or waste##
+
+| ##{nbsp}##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Technical specification##
+| ##referenceToTechnicalSpecification##
+| ##o##
+| ##[0,n]##
+| ##GlobalReferenceType##
+| ##{nbsp}##
+| ##3##
+| ##Flow data set/Flow information/Technological representativeness/Technical specification##
+
+| ##{nbsp}##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Other content##
+| ##other##
+| ##o##
+| ##[0,1]##
+| ##{nbsp}##
+| ##{nbsp}##
+| ##3##
+| ##Flow data set/Flow information/Technological representativeness/Other content##
+
+| ##{nbsp}##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Other content##
+| ##other##
+| ##o##
+| ##[0,1]##
+| ##{nbsp}##
+| ##{nbsp}##
+| ##2##
+| ##Flow data set/Flow information/Other content##
+
+| ##{nbsp}##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}Modelling and validation##
+| ##modellingAndValidation##
+| ##r##
+| ##[0,1]##
+| ##{nbsp}##
+| ##{nbsp}##
+| ##1##
+| ##Flow data set/Modelling and validation##
+
+| ##{nbsp}##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}LCI method##
+| ##LCIMethod##
+| ##r##
+| ##[0,1]##
+| ##{nbsp}##
+| ##{nbsp}##
+| ##2##
+| ##Flow data set/Modelling and validation/LCI method##
+
+| ##{nbsp}##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Type of flow##
+| ##typeOfDataSet##
+| ##r##
+| ##[1,1]##
+| ##FlowTypeValuesElementary flowExchange between nature (ecosphere) and technosphere, e.g. an emission, resource.Product flowExchange of goods or services within technosphere, with a positive economic/market value.Waste flowExchange of matters within the technosphere, with a economic/market value equal or below "0".Other flowExchange of other type, e.g. dummy or modelling support flows.##
+| ##{nbsp}##
+| ##3##
+| ##Flow data set/Modelling and validation/LCI method/Type of flow##
+
+| ##{nbsp}##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Other content##
+| ##other##
+| ##o##
+| ##[0,1]##
+| ##{nbsp}##
+| ##{nbsp}##
+| ##3##
+| ##Flow data set/Modelling and validation/LCI method/Other content##
+
+| ##herstellerspezifisches Produkt##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}vendor specific product##
+| ##epd:vendorSpecificProduct##
+| ##o##
+| ##[0,1]##
+| ##boolean##
+| ##Gibt an ob es sich um ein spezifisches Produkt von einem konkreten Hersteller (true) oder um ein generisches (false) handelt. Wenn dieses Feld fehlt, gilt der Datensatz als generisches Produkt.##
+| ##4##
+| ##Flow data set/Modelling and validation/LCI method/Other content/vendor specific product##
+
+| ##Verweis auf Hersteller##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Reference to vendor##
+| ##epd:referenceToVendor##
+| ##o##
+| ##[0,1]##
+| ##GlobalReferenceType##
+| ##Referenz auf den Hersteller des Produkts ("Contact"-Datensatz)##
+| ##4##
+| ##Flow data set/Modelling and validation/LCI method/Other content/Reference to vendor##
+
+| ##Verweis auf Quelle##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Reference to source##
+| ##epd:referenceToSource##
+| ##o##
+| ##[0,1]##
+| ##GlobalReferenceType##
+| ##Referenz auf eine zugehörige Quelle (z.B. Produktdatenblatt oder -katalog, "Source"-Datensatz)##
+| ##4##
+| ##Flow data set/Modelling and validation/LCI method/Other content/Reference to source##
+
+| ##{nbsp}##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Compliance declarations##
+| ##complianceDeclarations##
+| ##o##
+| ##[0,1]##
+| ##{nbsp}##
+| ##{nbsp}##
+| ##2##
+| ##Flow data set/Modelling and validation/Compliance declarations##
+
+| ##{nbsp}##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Compliance##
+| ##compliance##
+| ##r##
+| ##[1,n]##
+| ##{nbsp}##
+| ##{nbsp}##
+| ##3##
+| ##Flow data set/Modelling and validation/Compliance declarations/Compliance##
+
+| ##{nbsp}##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Compliance system name##
+| ##referenceToComplianceSystem##
+| ##r##
+| ##[1,1]##
+| ##GlobalReferenceType##
+| ##{nbsp}##
+| ##4##
+| ##Flow data set/Modelling and validation/Compliance declarations/Compliance/Compliance system name##
+
+| ##{nbsp}##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Approval of overall compliance##
+| ##approvalOfOverallCompliance##
+| ##o##
+| ##[0,1]##
+| ##ComplianceValuesFully compliantMeets all requirements of this compliance aspect as defined in the respective "Compliance system".Not compliantDoes not meet all requirements of this compliance aspect, as defined for the respective "Compliance system".Not definedFor this compliance aspect the named "Compliance system" has not defined compliance requirements.##
+| ##{nbsp}##
+| ##4##
+| ##Flow data set/Modelling and validation/Compliance declarations/Compliance/Approval of overall compliance##
+
+| ##{nbsp}##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Other content##
+| ##other##
+| ##o##
+| ##[0,1]##
+| ##{nbsp}##
+| ##{nbsp}##
+| ##4##
+| ##Flow data set/Modelling and validation/Compliance declarations/Compliance/Other content##
+
+| ##{nbsp}##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Other content##
+| ##other##
+| ##o##
+| ##[0,1]##
+| ##{nbsp}##
+| ##{nbsp}##
+| ##3##
+| ##Flow data set/Modelling and validation/Compliance declarations/Other content##
+
+| ##{nbsp}##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Other content##
+| ##other##
+| ##o##
+| ##[0,1]##
+| ##{nbsp}##
+| ##{nbsp}##
+| ##2##
+| ##Flow data set/Modelling and validation/Other content##
+
+| ##{nbsp}##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}Administrative information##
+| ##administrativeInformation##
+| ##r##
+| ##[0,1]##
+| ##{nbsp}##
+| ##{nbsp}##
+| ##1##
+| ##Flow data set/Administrative information##
+
+| ##{nbsp}##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Data entry by##
+| ##dataEntryBy##
+| ##r##
+| ##[0,1]##
+| ##{nbsp}##
+| ##{nbsp}##
+| ##2##
+| ##Flow data set/Administrative information/Data entry by##
+
+| ##{nbsp}##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Time stamp (last saved)##
+| ##timeStamp##
+| ##r##
+| ##[0,1]##
+| ##dateTime##
+| ##{nbsp}##
+| ##3##
+| ##Flow data set/Administrative information/Data entry by/Time stamp (last saved)##
+
+| ##{nbsp}##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Data set format(s)##
+| ##referenceToDataSetFormat##
+| ##r##
+| ##[0,n]##
+| ##GlobalReferenceType##
+| ##{nbsp}##
+| ##3##
+| ##Flow data set/Administrative information/Data entry by/Data set format(s)##
+
+| ##{nbsp}##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Data entry by:##
+| ##referenceToPersonOrEntityEnteringTheData##
+| ##o##
+| ##[0,1]##
+| ##GlobalReferenceType##
+| ##{nbsp}##
+| ##3##
+| ##Flow data set/Administrative information/Data entry by/Data entry by:##
+
+| ##{nbsp}##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Other content##
+| ##other##
+| ##o##
+| ##[0,1]##
+| ##{nbsp}##
+| ##{nbsp}##
+| ##3##
+| ##Flow data set/Administrative information/Data entry by/Other content##
+
+| ##{nbsp}##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Publication and ownership##
+| ##publicationAndOwnership##
+| ##r##
+| ##[0,1]##
+| ##{nbsp}##
+| ##{nbsp}##
+| ##2##
+| ##Flow data set/Administrative information/Publication and ownership##
+
+| ##{nbsp}##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Data set version##
+| ##dataSetVersion##
+| ##m##
+| ##[1,1]##
+| ##Version##
+| ##{nbsp}##
+| ##3##
+| ##Flow data set/Administrative information/Publication and ownership/Data set version##
+
+| ##{nbsp}##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Preceding data set version##
+| ##referenceToPrecedingDataSetVersion##
+| ##o##
+| ##[0,n]##
+| ##GlobalReferenceType##
+| ##{nbsp}##
+| ##3##
+| ##Flow data set/Administrative information/Publication and ownership/Preceding data set version##
+
+| ##{nbsp}##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Permanent data set URI##
+| ##permanentDataSetURI##
+| ##r##
+| ##[0,1]##
+| ##anyURI##
+| ##{nbsp}##
+| ##3##
+| ##Flow data set/Administrative information/Publication and ownership/Permanent data set URI##
+
+| ##{nbsp}##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Owner of data set##
+| ##referenceToOwnershipOfDataSet##
+| ##r##
+| ##[0,1]##
+| ##GlobalReferenceType##
+| ##{nbsp}##
+| ##3##
+| ##Flow data set/Administrative information/Publication and ownership/Owner of data set##
+
+| ##{nbsp}##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Other content##
+| ##other##
+| ##o##
+| ##[0,1]##
+| ##{nbsp}##
+| ##{nbsp}##
+| ##3##
+| ##Flow data set/Administrative information/Publication and ownership/Other content##
+
+| ##{nbsp}##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Other content##
+| ##other##
+| ##o##
+| ##[0,1]##
+| ##{nbsp}##
+| ##{nbsp}##
+| ##2##
+| ##Flow data set/Administrative information/Other content##
+
+| ##{nbsp}##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}Flow properties##
+| ##flowProperties##
+| ##r##
+| ##[0,1]##
+| ##{nbsp}##
+| ##{nbsp}##
+| ##1##
+| ##Flow data set/Flow properties##
+
+| ##{nbsp}##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Flow property##
+| ##flowProperty##
+| ##r##
+| ##[1,n]##
+| ##{nbsp}##
+| ##{nbsp}##
+| ##2##
+| ##Flow data set/Flow properties/Flow property##
+
+| ##{nbsp}##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Data set internal ID##
+| ##@dataSetInternalID##
+| ##r##
+| ##{nbsp}##
+| ##Int5##
+| ##{nbsp}##
+| ##3##
+| ##Flow data set/Flow properties/Flow property/Data set internal ID##
+
+| ##{nbsp}##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Flow property##
+| ##referenceToFlowPropertyDataSet##
+| ##r##
+| ##[1,1]##
+| ##GlobalReferenceType##
+| ##{nbsp}##
+| ##3##
+| ##Flow data set/Flow properties/Flow property/Flow property##
+
+| ##{nbsp}##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Mean value (of flow property)##
+| ##meanValue##
+| ##r##
+| ##[1,1]##
+| ##Real##
+| ##{nbsp}##
+| ##3##
+| ##Flow data set/Flow properties/Flow property/Mean value (of flow property)##
+
+| ##{nbsp}##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Minimum value##
+| ##minimumValue##
+| ##r##
+| ##[0,1]##
+| ##Real##
+| ##{nbsp}##
+| ##3##
+| ##Flow data set/Flow properties/Flow property/Minimum value##
+
+| ##{nbsp}##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Maximum value##
+| ##maximumValue##
+| ##r##
+| ##[0,1]##
+| ##Real##
+| ##{nbsp}##
+| ##3##
+| ##Flow data set/Flow properties/Flow property/Maximum value##
+
+| ##{nbsp}##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Uncertainty distribution type##
+| ##uncertaintyDistributionType##
+| ##o##
+| ##[0,1]##
+| ##UncertaintyDistributionTypeValuesundefinedProbability distribution information not available.log-normalProbability distribution of any random parameter whose logarithm is normally distributed.normalProbability distribution of any random parameter whose value is normally distributed around the mean of zero.triangularProbability distribution of any random parameter between minimum value and maximum value with the highest probability at the average value of minimum plus maximum value. Linear change of probability between minimum, maximum and average value.uniformContinuous uniform probability distribution between minimum value and maximum value and "0" probability beyond these.##
+| ##{nbsp}##
+| ##3##
+| ##Flow data set/Flow properties/Flow property/Uncertainty distribution type##
+
+| ##{nbsp}##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Relative StdDev in %##
+| ##relativeStandardDeviation95In##
+| ##r##
+| ##[0,1]##
+| ##Perc##
+| ##{nbsp}##
+| ##3##
+| ##Flow data set/Flow properties/Flow property/Relative StdDev in %##
+
+| ##{nbsp}##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Data derivation type / status##
+| ##dataDerivationTypeStatus##
+| ##r##
+| ##[0,1]##
+| ##FlowDataDerivationTypeStatusValuesMeasuredAll data was measured for the purpose of LCA or is meeting the related requirements (e.g. being quantiatively and qualitatively related to unit process and its quantitative reference/products, etc.). This includes calculated data with models based on measured plant data (but not exclusively theoretical calculations) as used e.g. in parameterised unit processes.CalculatedStochiometric or other theoretical relations were used to calculate the amount of this flow. [Note: Calculations that include quantiatively relevant expert judgement are of the type "Expert judgement".]EstimatedExpert judgement was used to derive the quantity of this flow. This includes the unmodified or corrected use of data from similar processes / technologies, times, or locations, as well as calculated values where the formulas/parameters include quantitatively relevant expert judgement.Unknown derivationData derivation type information fully or at least for quantiatively relevant parts unavailable.##
+| ##{nbsp}##
+| ##3##
+| ##Flow data set/Flow properties/Flow property/Data derivation type / status##
+
+| ##{nbsp}##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Comment##
+| ##generalComment##
+| ##o##
+| ##[0,1]##
+| ##StringMultiLang##
+| ##{nbsp}##
+| ##3##
+| ##Flow data set/Flow properties/Flow property/Comment##
+
+| ##{nbsp}##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Other content##
+| ##other##
+| ##o##
+| ##[0,1]##
+| ##{nbsp}##
+| ##{nbsp}##
+| ##3##
+| ##Flow data set/Flow properties/Flow property/Other content##
+
+| ##{nbsp}##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Other content##
+| ##other##
+| ##o##
+| ##[0,1]##
+| ##{nbsp}##
+| ##{nbsp}##
+| ##2##
+| ##Flow data set/Flow properties/Other content##
+
+| ##{nbsp}##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}Other content##
+| ##other##
+| ##o##
+| ##[0,1]##
+| ##{nbsp}##
+| ##{nbsp}##
+| ##1##
+| ##Flow data set/Other content##
+|===
