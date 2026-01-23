@@ -1,0 +1,518 @@
+= Unit group data set Documentation
+:doctype: book
+:stylesheet: ilcd.css
+:source-highlighter: highlightjs
+
+This document is generated from the schemadoc HTML file.
+
+.Namespace legend
+[cols="1,1,3", frame="all", grid="rows"]
+|===
+| Information in the EntityIds (2024) namespace is displayed with
+| [role="fieldname_epd24"]#green background#
+| (Namespace URI: "http://www.indata.network/EntityIds/2024", prefix "e")
+|===
+
+.Unit group data set Data Structure
+[cols="1,1,1,1,1,1,1,1,1", options="header"]
+|===
+| [role="title"]##Field Name##
+| [role="title"]##Element/Attribute Name##
+| [role="title"]##Requ.##
+| [role="title"]##Occ.##
+| [role="title"]##Datatype##
+| [role="title"]##Definition##
+| [role="title"]##eDoc ID##
+| [role="title"]##Indent##
+| [role="title"]##Path##
+
+| ##Unit group data set##
+| ##unitGroupDataSet##
+| ##m##
+| ##[1,1]##
+| ##{nbsp}##
+| ##{nbsp}##
+| ##5##
+| ##0##
+| ##unitGroupDataSet##
+
+| ##{nbsp}##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}@version##
+| ##m##
+| ##{nbsp}##
+| ##link:ILCD_Common_DataTypes.html#SchemaVersion[SchemaVersion]##
+| ##{nbsp}##
+| ##{nbsp}##
+| ##1##
+| ##unitGroupDataSet/version##
+
+| ##Unit group information##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}unitGroupInformation##
+| ##m##
+| ##[1,1]##
+| ##{nbsp}##
+| ##{nbsp}##
+| ##5-33##
+| ##1##
+| ##unitGroupDataSet/unitGroupInformation##
+
+| ##Data set information##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}dataSetInformation##
+| ##m##
+| ##[1,1]##
+| ##{nbsp}##
+| ##{nbsp}##
+| ##5-33-138##
+| ##2##
+| ##unitGroupDataSet/unitGroupInformation/dataSetInformation##
+
+| ##UUID of unit group data set##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}UUID##
+| ##m##
+| ##[1,1]##
+| ##link:ILCD_Common_DataTypes.html#UUID[UUID]##
+| ##Automatically generated Universally Unique Identifier of this data set. Together with the "Data set version", the UUID uniquely identifies each data set.##
+| ##5-33-138-306##
+| ##3##
+| ##unitGroupDataSet/unitGroupInformation/dataSetInformation/UUID##
+
+| ##Name of unit group##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}name##
+| ##r##
+| ##[0,1]##
+| ##link:ILCD_Common_DataTypes.html#StringMultiLang[StringMultiLang]##
+| ##Name of the unit group, typically indicating for which flow property or group of flow properties it is used. The individual units are named in the "Units" section of the "Unit group data set"##
+| ##5-33-138-307##
+| ##3##
+| ##unitGroupDataSet/unitGroupInformation/dataSetInformation/name##
+
+| ##Classification Information##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}classificationInformation##
+| ##r##
+| ##[0,1]##
+| ##{nbsp}##
+| ##Hierachical classification of the Unit groups; foreseen to be used to structure the Unit group content of the database. (Note: This entry is NOT required for the identification of the Unit group data set. It should nevertheless be avoided to use identical names for Unit groups in the same class.##
+| ##5-33-138-308##
+| ##3##
+| ##unitGroupDataSet/unitGroupInformation/dataSetInformation/classificationInformation##
+
+| ##Classification##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}classification##
+| ##r##
+| ##[0,n]##
+| ##{nbsp}##
+| ##Optional statistical or other classification of the data set. Typically also used for structuring LCA databases.##
+| ##1-1-2-7-2##
+| ##4##
+| ##unitGroupDataSet/unitGroupInformation/dataSetInformation/classificationInformation/classification##
+
+| ##Classification system name##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}@name##
+| ##r##
+| ##{nbsp}##
+| ##link:ILCD_Common_DataTypes.html#string[string]##
+| ##Name of the classification system.##
+| ##1-1-2-7-2-a##
+| ##5##
+| ##unitGroupDataSet/unitGroupInformation/dataSetInformation/classificationInformation/classification/name##
+
+| ##Classes##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}@classes##
+| ##r##
+| ##{nbsp}##
+| ##link:ILCD_Common_DataTypes.html#anyURI[anyURI]##
+| ##URL or file name of a file listing all classes of this classification system. [Notes: the referenced file has to be in form of the "ILCDClassification.xml" format. If a classification file is specified, the "class" entry should correspond to the classes defined in the classification file.]##
+| ##1-1-2-7-2-b##
+| ##5##
+| ##unitGroupDataSet/unitGroupInformation/dataSetInformation/classificationInformation/classification/classes##
+
+| ##Class name##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}class##
+| ##r##
+| ##[1,n]##
+| ##{nbsp}##
+| ##Name of the class.##
+| ##1-1-2-7-2-1##
+| ##5##
+| ##unitGroupDataSet/unitGroupInformation/dataSetInformation/classificationInformation/classification/class##
+
+| ##Hierarchy level##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}@level##
+| ##r##
+| ##{nbsp}##
+| ##link:ILCD_Common_DataTypes.html#LevelType[LevelType]##
+| ##If more than one class is specified in a hierachical classification system, the hierarchy level (1,2,...) could be specified with this attribute of class.##
+| ##1-1-2-7-2-1-a##
+| ##6##
+| ##unitGroupDataSet/unitGroupInformation/dataSetInformation/classificationInformation/classification/class/level##
+
+| ##Unique class identifier##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}@classId##
+| ##r##
+| ##{nbsp}##
+| ##link:ILCD_Common_DataTypes.html#string[string]##
+| ##Unique identifier for the class. [Notes: If such identifiers are also defined in the referenced category file, they should be identical. Identifiers can be UUID's, but also other forms are allowed.]##
+| ##1-1-2-7-2-1-b##
+| ##6##
+| ##unitGroupDataSet/unitGroupInformation/dataSetInformation/classificationInformation/classification/class/classId##
+
+| ##Other content##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}other##
+| ##o##
+| ##[0,1]##
+| ##{nbsp}##
+| ##May contain arbitrary content.##
+| ##0##
+| ##5##
+| ##unitGroupDataSet/unitGroupInformation/dataSetInformation/classificationInformation/classification/other##
+
+| ##General comment##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}generalComment##
+| ##o##
+| ##[0,1]##
+| ##link:ILCD_Common_DataTypes.html#FTMultiLang[FTMultiLang]##
+| ##Free text for general information about the data set. E.g. coverage of different unit systems, information sources used, etc.##
+| ##5-33-138-309##
+| ##3##
+| ##unitGroupDataSet/unitGroupInformation/dataSetInformation/generalComment##
+
+| ##Other content##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}other##
+| ##o##
+| ##[0,1]##
+| ##{nbsp}##
+| ##May contain arbitrary content.##
+| ##0##
+| ##3##
+| ##unitGroupDataSet/unitGroupInformation/dataSetInformation/other##
+
+| ##Quantitative reference##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}quantitativeReference##
+| ##r##
+| ##[0,1]##
+| ##{nbsp}##
+| ##This section identifies the quantitative reference of this data set, i.e. the "reference unit" in which the data set is expressed. It is the basis for the conversion to other units in the data set (e.g. for mass-related units "kg" as basis for conversion to and among "g", "ounces", "short tons", etc.).##
+| ##5-33-140##
+| ##2##
+| ##unitGroupDataSet/unitGroupInformation/quantitativeReference##
+
+| ##Reference unit##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}referenceToReferenceUnit##
+| ##r##
+| ##[1,1]##
+| ##link:ILCD_Common_DataTypes.html#Int5[Int5]##
+| ##The Unit group's unit in which the data set is expressed (data set internal reference).##
+| ##5-33-140-310##
+| ##3##
+| ##unitGroupDataSet/unitGroupInformation/quantitativeReference/referenceToReferenceUnit##
+
+| ##Other content##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}other##
+| ##o##
+| ##[0,1]##
+| ##{nbsp}##
+| ##May contain arbitrary content.##
+| ##0##
+| ##3##
+| ##unitGroupDataSet/unitGroupInformation/quantitativeReference/other##
+
+| ##Other content##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}other##
+| ##o##
+| ##[0,1]##
+| ##{nbsp}##
+| ##May contain arbitrary content.##
+| ##0##
+| ##2##
+| ##unitGroupDataSet/unitGroupInformation/other##
+
+| ##Modelling and validation##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}modellingAndValidation##
+| ##r##
+| ##[0,1]##
+| ##{nbsp}##
+| ##Sections used to a very limited degree; covers the five sub-sections 1) LCI method and allocation (not used for unit groups), 2) Data sources, treatment and representativeness (not used for unit groups), 3) Completeness (not used for unit groups), 4) Validation (not used for unit groups), and 5) Compliance.##
+| ##5-35##
+| ##1##
+| ##unitGroupDataSet/modellingAndValidation##
+
+| ##Compliance declarations##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}complianceDeclarations##
+| ##r##
+| ##[0,1]##
+| ##{nbsp}##
+| ##Statements on compliance of several data set aspects with compliance requirements as defined by the referenced compliance system (e.g. an EPD scheme, handbook of a national or international data network such as the ILCD, etc.).##
+| ##5-35-158##
+| ##2##
+| ##unitGroupDataSet/modellingAndValidation/complianceDeclarations##
+
+| ##Compliance##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}compliance##
+| ##r##
+| ##[1,n]##
+| ##{nbsp}##
+| ##one compliance declaration##
+| ##1-3-22-1##
+| ##3##
+| ##unitGroupDataSet/modellingAndValidation/complianceDeclarations/compliance##
+
+| ##Compliance system name##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}referenceToComplianceSystem##
+| ##r##
+| ##[1,1]##
+| ##link:ILCD_Common_DataTypes.html#GlobalReferenceType[GlobalReferenceType]##
+| ##"Source data set" of the "Compliance system" that is declared to be met by the data set.##
+| ##1-3-22-90##
+| ##4##
+| ##unitGroupDataSet/modellingAndValidation/complianceDeclarations/compliance/referenceToComplianceSystem##
+
+| ##Approval of overall compliance##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}approvalOfOverallCompliance##
+| ##o##
+| ##[0,1]##
+| ##link:ILCD_Common_EnumerationValues.html#ComplianceValues[ComplianceValues]##
+| ##Official approval whether or not and in how far the data set meets all the requirements of the "Compliance system" refered to. This approval should be issued/confirmed by the owner of that compliance system, who is identified via the respective "Contact data set".##
+| ##1-3-22-95##
+| ##4##
+| ##unitGroupDataSet/modellingAndValidation/complianceDeclarations/compliance/approvalOfOverallCompliance##
+
+| ##Other content##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}other##
+| ##o##
+| ##[0,1]##
+| ##{nbsp}##
+| ##May contain arbitrary content.##
+| ##0##
+| ##4##
+| ##unitGroupDataSet/modellingAndValidation/complianceDeclarations/compliance/other##
+
+| ##Other content##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}other##
+| ##o##
+| ##[0,1]##
+| ##{nbsp}##
+| ##May contain arbitrary content.##
+| ##0##
+| ##3##
+| ##unitGroupDataSet/modellingAndValidation/complianceDeclarations/other##
+
+| ##Other content##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}other##
+| ##o##
+| ##[0,1]##
+| ##{nbsp}##
+| ##May contain arbitrary content.##
+| ##0##
+| ##2##
+| ##unitGroupDataSet/modellingAndValidation/other##
+
+| ##Administrative information##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}administrativeInformation##
+| ##r##
+| ##[0,1]##
+| ##{nbsp}##
+| ##Information on data set management and administration.##
+| ##5-37##
+| ##1##
+| ##unitGroupDataSet/administrativeInformation##
+
+| ##Data entry by##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}dataEntryBy##
+| ##r##
+| ##[0,1]##
+| ##{nbsp}##
+| ##Staff or entity, that documented the generated data set, entering the information into the database; plus administrative information linked to the data entry activity.##
+| ##5-37-164##
+| ##2##
+| ##unitGroupDataSet/administrativeInformation/dataEntryBy##
+
+| ##Time stamp (last saved)##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}timeStamp##
+| ##r##
+| ##[0,1]##
+| ##link:ILCD_Common_DataTypes.html#dateTime[dateTime]##
+| ##Date and time stamp of data set generation, typically an automated entry ("last saved").##
+| ##1-5-28-104##
+| ##3##
+| ##unitGroupDataSet/administrativeInformation/dataEntryBy/timeStamp##
+
+| ##Data set format(s)##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}referenceToDataSetFormat##
+| ##r##
+| ##[0,n]##
+| ##link:ILCD_Common_DataTypes.html#GlobalReferenceType[GlobalReferenceType]##
+| ##"Source data set" of the used version of the ILCD format. If additional data format fields have been integrated into the data set file, using the "namespace" option, the used format namespace(s) are to be given. This is the case if the data sets carries additional information as specified by other, particular LCA formats, e.g. of other database networks or LCA softwares.##
+| ##1-5-28-105##
+| ##3##
+| ##unitGroupDataSet/administrativeInformation/dataEntryBy/referenceToDataSetFormat##
+
+| ##Other content##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}other##
+| ##o##
+| ##[0,1]##
+| ##{nbsp}##
+| ##May contain arbitrary content.##
+| ##0##
+| ##3##
+| ##unitGroupDataSet/administrativeInformation/dataEntryBy/other##
+
+| ##Publication and ownership##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}publicationAndOwnership##
+| ##r##
+| ##[0,1]##
+| ##{nbsp}##
+| ##Information related to publication and version management of the data set including copyright and access restrictions.##
+| ##5-37-166##
+| ##2##
+| ##unitGroupDataSet/administrativeInformation/publicationAndOwnership##
+
+| ##Data set version##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}dataSetVersion##
+| ##m##
+| ##[1,1]##
+| ##link:ILCD_Common_DataTypes.html#Version[Version]##
+| ##Version number of data set. First two digits refer to major updates, the second two digits to minor revisions and error corrections etc. The third three digits are intended for automatic and internal counting of versions during data set development. Together with the data set's UUID, the "Data set version" uniquely identifies each data set.##
+| ##1-5-30-111##
+| ##3##
+| ##unitGroupDataSet/administrativeInformation/publicationAndOwnership/dataSetVersion##
+
+| ##Preceding data set version##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}referenceToPrecedingDataSetVersion##
+| ##o##
+| ##[0,n]##
+| ##link:ILCD_Common_DataTypes.html#GlobalReferenceType[GlobalReferenceType]##
+| ##Last preceding data set, which was replaced by this version. Either a URI of that data set (i.e. an internet address) or its UUID plus version number is given (or both).##
+| ##1-5-30-112##
+| ##3##
+| ##unitGroupDataSet/administrativeInformation/publicationAndOwnership/referenceToPrecedingDataSetVersion##
+
+| ##Permanent data set URI##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}permanentDataSetURI##
+| ##r##
+| ##[0,1]##
+| ##link:ILCD_Common_DataTypes.html#anyURI[anyURI]##
+| ##URI (i.e. an internet address) of the original of this data set. [Note: This equally globally unique identifier supports users and software tools to identify and retrieve the original version of a data set via the internet or to check for available updates. The URI must not represent an existing WWW address, but it should be unique and point to the data access point, e.g. by combining the data owner's www path with the data set's UUID, e.g. http://www.mycompany.com/lca/processes/50f12420-8855-12db-b606-0900210c9a66.]##
+| ##1-5-30-300##
+| ##3##
+| ##unitGroupDataSet/administrativeInformation/publicationAndOwnership/permanentDataSetURI##
+
+| ##Owner of data set##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}referenceToOwnershipOfDataSet##
+| ##r##
+| ##[0,1]##
+| ##link:ILCD_Common_DataTypes.html#GlobalReferenceType[GlobalReferenceType]##
+| ##"Contact data set" of the person or entity who owns this data set. (Note: this is not necessarily the publisher of the data set.)##
+| ##1-5-30-115##
+| ##3##
+| ##unitGroupDataSet/administrativeInformation/publicationAndOwnership/referenceToOwnershipOfDataSet##
+
+| ##Other content##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}other##
+| ##o##
+| ##[0,1]##
+| ##{nbsp}##
+| ##May contain arbitrary content.##
+| ##0##
+| ##3##
+| ##unitGroupDataSet/administrativeInformation/publicationAndOwnership/other##
+
+| ##Other content##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}other##
+| ##o##
+| ##[0,1]##
+| ##{nbsp}##
+| ##May contain arbitrary content.##
+| ##0##
+| ##2##
+| ##unitGroupDataSet/administrativeInformation/other##
+
+| ##Units##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}units##
+| ##r##
+| ##[0,1]##
+| ##{nbsp}##
+| ##List of units that belong to this Unit group and are interconvertible among each other with a fixed factor, such as this can be done e.g. for kg, g, ounces, pounds etc. of the Unit group "Units of mass".##
+| ##5-39##
+| ##1##
+| ##unitGroupDataSet/units##
+
+| ##Unit##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}unit##
+| ##r##
+| ##[1,n]##
+| ##{nbsp}##
+| ##{nbsp}##
+| ##5-39-168##
+| ##2##
+| ##unitGroupDataSet/units/unit##
+
+| ##Data set internal ID##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}@dataSetInternalID##
+| ##r##
+| ##{nbsp}##
+| ##link:ILCD_Common_DataTypes.html#Int5[Int5]##
+| ##Automated entry: internal ID, used in the "Quantitative reference" section to identify the reference unit.##
+| ##5-39-168-324##
+| ##3##
+| ##unitGroupDataSet/units/unit/dataSetInternalID##
+
+| ##Name of unit##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}name##
+| ##r##
+| ##[1,1]##
+| ##link:ILCD_Common_DataTypes.html#String[String]##
+| ##Name of the individual unit.##
+| ##5-39-168-323##
+| ##3##
+| ##unitGroupDataSet/units/unit/name##
+
+| ##Mean value (of unit)##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}meanValue##
+| ##r##
+| ##[1,1]##
+| ##link:ILCD_Common_DataTypes.html#Real[Real]##
+| ##Mean value of this unit in relationship to the reference unit of this Unit group (see field "Reference unit" in the "Quantitative reference" section). [Notes and Examples: This vale is i.e. the linear conversion factor for this unit. E.g., if the Unit group would be "Units of mass" and the selected reference unit "kg", then the value stated here for an additional unit "g" would be 0.001, as 1 g is 0.001 times 1 kg. It is recommended to report only significant digits of the value.]##
+| ##5-39-168-325##
+| ##3##
+| ##unitGroupDataSet/units/unit/meanValue##
+
+| ##Comment##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}generalComment##
+| ##o##
+| ##[0,1]##
+| ##link:ILCD_Common_DataTypes.html#StringMultiLang[StringMultiLang]##
+| ##General comment on each single unit, typically giving the long name and unit system from which this unit stems, and (if necessary) referring to specifc data sources used, or for workflow purposes about status of "finalisation" of an entry etc.##
+| ##5-39-168-326##
+| ##3##
+| ##unitGroupDataSet/units/unit/generalComment##
+
+| ##Other content##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}other##
+| ##o##
+| ##[0,1]##
+| ##{nbsp}##
+| ##May contain arbitrary content.##
+| ##0##
+| ##3##
+| ##unitGroupDataSet/units/unit/other##
+
+| ##Other content##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}other##
+| ##o##
+| ##[0,1]##
+| ##{nbsp}##
+| ##May contain arbitrary content.##
+| ##0##
+| ##2##
+| ##unitGroupDataSet/units/other##
+
+| ##Other content##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}other##
+| ##o##
+| ##[0,1]##
+| ##{nbsp}##
+| ##May contain arbitrary content.##
+| ##0##
+| ##1##
+| ##unitGroupDataSet/other##
+|===
