@@ -1,0 +1,2288 @@
+= Process data set Documentation
+:doctype: book
+:stylesheet: ilcd.css
+:source-highlighter: highlightjs
+
+This document is generated from the schemadoc HTML file.
+
+.Namespace legend
+[cols="1,1,3", frame="all", grid="rows"]
+|===
+| Information in the EntityIds (2024) namespace is displayed with
+| [role="fieldname_epd24"]#green background#
+| (Namespace URI: "http://www.indata.network/EntityIds/2024", prefix "e")
+|===
+
+.Process data set Data Structure
+[cols="1,1,1,1,1,1,1,1,1", options="header"]
+|===
+| [role="title"]##Field Name##
+| [role="title"]##Element/Attribute Name##
+| [role="title"]##Requ.##
+| [role="title"]##Occ.##
+| [role="title"]##Datatype##
+| [role="title"]##Definition##
+| [role="title"]##eDoc ID##
+| [role="title"]##Indent##
+| [role="title"]##Path##
+
+| ##Prozeßdatensatz##
+| ##Process data set##
+| ##processDataSet##
+| ##m##
+| ##[1,1]##
+| ##{nbsp}##
+| ##Datensatz für die Dokumentation von EPD-Daten##
+| ##0##
+| ##Process data set##
+
+| ##Version##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}version##
+| ##@version##
+| ##m##
+| ##{nbsp}##
+| ##SchemaVersion##
+| ##ILCD-Formatversion##
+| ##1##
+| ##Process data set/version##
+
+| ##EPD-Format-Version##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}EPD format version##
+| ##@epd2:epd-version##
+| ##m##
+| ##{nbsp}##
+| ##SchemaVersion##
+| ##Formatversion der EPD-Erweiterungen. "1.2" für ILCD+EPD 1.2.##
+| ##1##
+| ##Process data set/EPD format version##
+
+| ##Orte##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}location##
+| ##@locations##
+| ##m##
+| ##{nbsp}##
+| ##String##
+| ##Referenz auf Dokument mit Ortscodes##
+| ##1##
+| ##Process data set/location##
+
+| ##Nur Metadaten##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}Meta data only##
+| ##@metaDataOnly##
+| ##o##
+| ##{nbsp}##
+| ##boolean##
+| ##Gibt an, ob dieser Datensatz nur Metadaten enthält (kein Abschnitt Exchanges und keine LCIAResults)##
+| ##1##
+| ##Process data set/Meta data only##
+
+| ##Datensatzinformation##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}Process information##
+| ##processInformation##
+| ##m##
+| ##[1,1]##
+| ##{nbsp}##
+| ##Datensatzinformation##
+| ##1##
+| ##Process data set/Process information##
+
+| ##Kerninformationen des Datensatzes##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Key Data Set Information##
+| ##dataSetInformation##
+| ##m##
+| ##[1,1]##
+| ##{nbsp}##
+| ##Allgemeine Informationen zum Datensatz##
+| ##2##
+| ##Process data set/Process information/Key Data Set Information##
+
+| ##UUID des Datensatzes##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}UUID of Process data set##
+| ##UUID##
+| ##m##
+| ##[1,1]##
+| ##UUID##
+| ##UUID des Datensatzes. Zusammen mit der Versionsnummer in "Datensatzversion" wird der Datensatz damit eindeutig identifizert##
+| ##3##
+| ##Process data set/Process information/Key Data Set Information/UUID of Process data set##
+
+| ##Name##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Name##
+| ##name##
+| ##r##
+| ##[0,1]##
+| ##{nbsp}##
+| ##Beschreibender spezifischer Name des Produkts/Systems##
+| ##3##
+| ##Process data set/Process information/Key Data Set Information/Name##
+
+| ##Name##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Name##
+| ##baseName##
+| ##r##
+| ##[1,1]##
+| ##StringMultiLang##
+| ##Allgemeiner Name des Produkts oder Systems##
+| ##4##
+| ##Process data set/Process information/Key Data Set Information/Name/Name##
+
+| ##Quantitative Produkt-/ Prozeßeigenschaften##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Quantitative product or process properties##
+| ##functionalUnitFlowProperties##
+| ##o##
+| ##[0,1]##
+| ##StringMultiLang##
+| ##(nicht verwendet)##
+| ##4##
+| ##Process data set/Process information/Key Data Set Information/Name/Quantitative product or process properties##
+
+| ##Anderer Inhalt##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Other content##
+| ##other##
+| ##o##
+| ##[0,1]##
+| ##{nbsp}##
+| ##{nbsp}##
+| ##4##
+| ##Process data set/Process information/Key Data Set Information/Name/Other content##
+
+| ##Synonyme##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Synonyms##
+| ##synonyms##
+| ##o##
+| ##[0,1]##
+| ##FTMultiLang##
+| ##Synonyme oder alternative Bezeichnungen, durch Semikolon getrennt##
+| ##3##
+| ##Process data set/Process information/Key Data Set Information/Synonyms##
+
+| ##Klassifizierungsinformation##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Classification information##
+| ##classificationInformation##
+| ##r##
+| ##[0,1]##
+| ##{nbsp}##
+| ##Zuordnung zu hierarchischen Produktkategorien. Zuordnungen können für beliebig viele Kategoriesysteme vorgenommen werden.##
+| ##3##
+| ##Process data set/Process information/Key Data Set Information/Classification information##
+
+| ##Klassifizierung##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Classification##
+| ##classification##
+| ##r##
+| ##[0,n]##
+| ##{nbsp}##
+| ##ein Gliederungssystem mit Gliederungsklassen##
+| ##4##
+| ##Process data set/Process information/Key Data Set Information/Classification information/Classification##
+
+| ##Gliederungssystem##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Classification system name##
+| ##@name##
+| ##r##
+| ##{nbsp}##
+| ##string##
+| ##Name des Gliederungssystems, z.B. "OEKOBAU.DAT"##
+| ##5##
+| ##Process data set/Process information/Key Data Set Information/Classification information/Classification/Classification system name##
+
+| ##Gliederungsklassen##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Classes##
+| ##@classes##
+| ##r##
+| ##{nbsp}##
+| ##anyURI##
+| ##URL oder Dateiname der Datei, die alle Klassen dieses Gliederungssystems beschreibt.##
+| ##5##
+| ##Process data set/Process information/Key Data Set Information/Classification information/Classification/Classes##
+
+| ##Klassenname##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Class name##
+| ##class##
+| ##r##
+| ##[1,n]##
+| ##{nbsp}##
+| ##Name der Gliederungsklasse##
+| ##5##
+| ##Process data set/Process information/Key Data Set Information/Classification information/Classification/Class name##
+
+| ##Hierarchieebene##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Hierarchy level##
+| ##@level##
+| ##r##
+| ##{nbsp}##
+| ##LevelType##
+| ##Wenn in einem hierarchischen Gliederungssystem mehr als eine Klasse angegeben ist, wird hiermit die Hierarchiestufe angegeben. Die oberste Hierarchiestufe ist 0.##
+| ##6##
+| ##Process data set/Process information/Key Data Set Information/Classification information/Classification/Class name/Hierarchy level##
+
+| ##Eindeutiger Klassenidentifizierer##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Unique class identifier##
+| ##@classId##
+| ##r##
+| ##{nbsp}##
+| ##string##
+| ##Eindeutiger Identifizierer für die Klasse. Dieser sollte mit der Angabe im Beschreibungsdokument übereinstimmen und kann eine UUID oder ein beliebiger anderer Bezeichner sein.##
+| ##6##
+| ##Process data set/Process information/Key Data Set Information/Classification information/Classification/Class name/Unique class identifier##
+
+| ##Allgemeine Anmerkungen zum Datensatz##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}General comment on data set##
+| ##generalComment##
+| ##r##
+| ##[0,1]##
+| ##FTMultiLang##
+| ##Sofern relevant: Allgemeine Erläuterungen zum Datensatz einschließlich Beschreibung der Qualitätssicherung (z.B. interne Prüfung, nicht verifiziert) und der Referenzen. Anmerkung: Bitte nur die zentralen Aspekte des Datensatzes zusammenfassen ("Synopsis zum Datensatz") und Redundanzen mit Datensatz "Anwendungshinweis für Datensatz" vermeiden.##
+| ##3##
+| ##Process data set/Process information/Key Data Set Information/General comment on data set##
+
+| ##Hintergrundbericht##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Data set LCA report, background info##
+| ##referenceToExternalDocumentation##
+| ##o##
+| ##[0,n]##
+| ##GlobalReferenceType##
+| ##Hier können relevante Dokumente wie z.B. Sicherheitsdatenblätter, Hintergrundbericht, erläuterndes Material o.ä. angehängt werden##
+| ##3##
+| ##Process data set/Process information/Key Data Set Information/Data set LCA report, background info##
+
+| ##Anderer Inhalt##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Other content##
+| ##other##
+| ##o##
+| ##[0,1]##
+| ##{nbsp}##
+| ##{nbsp}##
+| ##3##
+| ##Process data set/Process information/Key Data Set Information/Other content##
+
+| ##Referenz-Nutzungsdauer in Jahren##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Reference Service Life in years##
+| ##epd24:referenceServiceLife##
+| ##o##
+| ##[0,1]##
+| ##{nbsp}##
+| ##Beschreibt die Referenz-Nutzungsdauer in Jahren, inklusive der eingegangenen Nutzungsbedingungen, vgl. ISO 15686-8, EN 15804+A2, ISO 22057.##
+| ##4##
+| ##Process data set/Process information/Key Data Set Information/Other content/Reference Service Life in years##
+
+| ##Jahre##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Years##
+| ##@epd24:years##
+| ##m##
+| ##[1]##
+| ##xs:double##
+| ##Anzahl der Jahre##
+| ##5##
+| ##Process data set/Process information/Key Data Set Information/Other content/Reference Service Life in years/Years##
+
+| ##Nutzungsbedingungsfaktor##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Use Condition factor##
+| ##epd24:useConditionFactor##
+| ##o##
+| ##[0,n]##
+| ##{nbsp}##
+| ##Angabe eines bei der Berechnung der Referenz-Nutzungsdauer zugrunde gelegten Faktors.##
+| ##5##
+| ##Process data set/Process information/Key Data Set Information/Other content/Reference Service Life in years/Use Condition factor##
+
+| ##Faktor-Kategorie##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Factor category##
+| ##@epd24:factorCategory##
+| ##m##
+| ##[1,1]##
+| ##Restricted xs:string: A - inherent quality B - design level C - work execution D - indoor environment E - outdoor environment F - usage conditions G - maintenance level##
+| ##Deklaration des Faktors bzw. der Faktor-Kategorie##
+| ##6##
+| ##Process data set/Process information/Key Data Set Information/Other content/Reference Service Life in years/Use Condition factor/Factor category##
+
+| ##Objekt-spezifischer Nutzungsgrad##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Object specific use condition grade##
+| ##@epd24:objectSpecificGrade##
+| ##o##
+| ##[0,1]##
+| ##Restricted xs:int: 0 1 2 3 4 5##
+| ##Objekt-spezifischer Nutzungsgrad im Sinne der ISO 15686-8##
+| ##6##
+| ##Process data set/Process information/Key Data Set Information/Other content/Reference Service Life in years/Use Condition factor/Object specific use condition grade##
+
+| ##Referenzgrad der Nutzung##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Reference use condition grade##
+| ##@epd24:referenceGrade##
+| ##o##
+| ##[0,1]##
+| ##Restricted xs:int: 0 1 2 3 4 5##
+| ##Referenznutzungsgrad im Sinne der ISO 15686-8##
+| ##6##
+| ##Process data set/Process information/Key Data Set Information/Other content/Reference Service Life in years/Use Condition factor/Reference use condition grade##
+
+| ##Faktor##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Factor##
+| ##@epd24:factor##
+| ##0##
+| ##[0,1]##
+| ##xs:double##
+| ##Faktor, der in die Berechnung der Referenznutzungsdauer eingegangen ist.##
+| ##6##
+| ##Process data set/Process information/Key Data Set Information/Other content/Reference Service Life in years/Use Condition factor/Factor##
+
+| ##Kommentar##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Comment##
+| ##epd24:comment##
+| ##o##
+| ##[0,n]##
+| ##FTMultiLang##
+| ##Textfeld für Bemerkungen bspw. genauere Angaben zu den zugrundeliegenden Annahmen##
+| ##6##
+| ##Process data set/Process information/Key Data Set Information/Other content/Reference Service Life in years/Use Condition factor/Comment##
+
+| ##Referenz zum Standard##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Reference to standard##
+| ##epd24:referenceToStandard##
+| ##o##
+| ##[0,1]##
+| ##GlobalReferenceType##
+| ##"Source"-Datensatz mit dem der Schätzung/Berechnung zugrundeliegenden Standard##
+| ##5##
+| ##Process data set/Process information/Key Data Set Information/Other content/Reference Service Life in years/Reference to standard##
+
+| ##Referenz zur Dokumentation der Einbaubedingungen##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Reference to use conditions documentation##
+| ##epd24:referenceToUseConditionsDocumentation##
+| ##o##
+| ##[0,n]##
+| ##GlobalReferenceType##
+| ##"Source"-Datensatz mit Dokumentation der Einbaubedingungen, die der Schätzung/Berechnung der angegebenen Lebensdauer zugrundeliegen##
+| ##5##
+| ##Process data set/Process information/Key Data Set Information/Other content/Reference Service Life in years/Reference to use conditions documentation##
+
+| ##Kommentar##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Comment##
+| ##epd24:comment##
+| ##o##
+| ##[0,n]##
+| ##FTMultiLang##
+| ##Kommentarfeld##
+| ##5##
+| ##Process data set/Process information/Key Data Set Information/Other content/Reference Service Life in years/Comment##
+
+| ##Angenommene Nutzungsdauer in Jahren##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Estimated Service Life in years##
+| ##epd24:estimatedServiceLife##
+| ##o##
+| ##[0,1]##
+| ##{nbsp}##
+| ##Beschreibt die erwartete Nutzungsdauer in Jahren, vgl. ISO 22057 'Estimated Service Life (ESL)' und ISO 15686-8.##
+| ##4##
+| ##Process data set/Process information/Key Data Set Information/Other content/Estimated Service Life in years##
+
+| ##Jahre##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Years##
+| ##@epd24:years##
+| ##m##
+| ##[1]##
+| ##xs:double##
+| ##Anzahl der Jahre##
+| ##5##
+| ##Process data set/Process information/Key Data Set Information/Other content/Estimated Service Life in years/Years##
+
+| ##Nutzungsbedingungsfaktor##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Use Condition factor##
+| ##epd24:useConditionFactor##
+| ##o##
+| ##[0,n]##
+| ##{nbsp}##
+| ##Angabe eines bei der Berechnung der Referenz-Nutzungsdauer zugrunde gelegten Faktors.##
+| ##5##
+| ##Process data set/Process information/Key Data Set Information/Other content/Estimated Service Life in years/Use Condition factor##
+
+| ##Faktor-Kategorie##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Factor category##
+| ##@epd24:factorCategory##
+| ##m##
+| ##[1,1]##
+| ##Restricted xs:string: A - inherent quality B - design level C - work execution D - indoor environment E - outdoor environment F - usage conditions G - maintenance level##
+| ##Deklaration des Faktors bzw. der Faktor-Kategorie##
+| ##6##
+| ##Process data set/Process information/Key Data Set Information/Other content/Estimated Service Life in years/Use Condition factor/Factor category##
+
+| ##Objekt-spezifischer Nutzungsgrad##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Object specific use condition grade##
+| ##@epd24:objectSpecificGrade##
+| ##o##
+| ##[0,1]##
+| ##Restricted xs:int: 0 1 2 3 4 5##
+| ##Objekt-spezifischer Nutzungsgrad im Sinne der ISO 15686-8##
+| ##6##
+| ##Process data set/Process information/Key Data Set Information/Other content/Estimated Service Life in years/Use Condition factor/Object specific use condition grade##
+
+| ##Referenzgrad der Nutzung##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Reference use condition grade##
+| ##@epd24:referenceGrade##
+| ##o##
+| ##[0,1]##
+| ##Restricted xs:int: 0 1 2 3 4 5##
+| ##Referenznutzungsgrad im Sinne der ISO 15686-8##
+| ##6##
+| ##Process data set/Process information/Key Data Set Information/Other content/Estimated Service Life in years/Use Condition factor/Reference use condition grade##
+
+| ##Faktor##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Factor##
+| ##@epd24:factor##
+| ##0##
+| ##[0,1]##
+| ##xs:double##
+| ##Faktor, der in die Berechnung der Referenznutzungsdauer eingegangen ist.##
+| ##6##
+| ##Process data set/Process information/Key Data Set Information/Other content/Estimated Service Life in years/Use Condition factor/Factor##
+
+| ##Kommentar##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Comment##
+| ##epd24:comment##
+| ##o##
+| ##[0,n]##
+| ##FTMultiLang##
+| ##Textfeld für Bemerkungen bspw. genauere Angaben zu den zugrundeliegenden Annahmen##
+| ##6##
+| ##Process data set/Process information/Key Data Set Information/Other content/Estimated Service Life in years/Use Condition factor/Comment##
+
+| ##Referenz zum Standard##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Reference to standard##
+| ##epd24:referenceToStandard##
+| ##o##
+| ##[0,1]##
+| ##GlobalReferenceType##
+| ##"Source"-Datensatz mit dem der Schätzung/Berechnung zugrundeliegenden Standard##
+| ##5##
+| ##Process data set/Process information/Key Data Set Information/Other content/Estimated Service Life in years/Reference to standard##
+
+| ##Referenz zur Dokumentation der Einbaubedingungen##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Reference to use conditions documentation##
+| ##epd24:referenceToUseConditionsDocumentation##
+| ##o##
+| ##[0,n]##
+| ##GlobalReferenceType##
+| ##"Source"-Datensatz mit Dokumentation der Einbaubedingungen, die der Schätzung/Berechnung der angegebenen Lebensdauer zugrundeliegen##
+| ##5##
+| ##Process data set/Process information/Key Data Set Information/Other content/Estimated Service Life in years/Reference to use conditions documentation##
+
+| ##Kommentar##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Comment##
+| ##epd24:comment##
+| ##o##
+| ##[0,n]##
+| ##FTMultiLang##
+| ##Kommentarfeld##
+| ##5##
+| ##Process data set/Process information/Key Data Set Information/Other content/Estimated Service Life in years/Comment##
+
+| ##Produktkennungen##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Product identifiers##
+| ##epd24:productIds##
+| ##r##
+| ##[0,1]##
+| ##{nbsp}##
+| ##Liste verschiedener Produktkennungen, bspw. entsprechende GTIN- / GMN-Kennungen, Handelsnamen, ...##
+| ##4##
+| ##Process data set/Process information/Key Data Set Information/Other content/Product identifiers##
+
+| ##Produktkennung##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Product identifier##
+| ##epd24:productId##
+| ##m##
+| ##[1]##
+| ##String##
+| ##Produktkennung##
+| ##5##
+| ##Process data set/Process information/Key Data Set Information/Other content/Product identifiers/Product identifier##
+
+| ##Kennungstyp##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Identifier type##
+| ##@epd24:type##
+| ##m##
+| ##[1]##
+| ##String##
+| ##Art der Produktkennung, z.B. 'GTIN', 'GMN' etc.##
+| ##6##
+| ##Process data set/Process information/Key Data Set Information/Other content/Product identifiers/Product identifier/Identifier type##
+
+| ##Sicherheitszuschläge##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Generic data uncertainty penalties##
+| ##epd:safetyMargins##
+| ##o##
+| ##[0,1]##
+| ##{nbsp}##
+| ##Ausweis enthaltener Sicherheitszuschläge##
+| ##4##
+| ##Process data set/Process information/Key Data Set Information/Other content/Generic data uncertainty penalties##
+
+| ##Sicherheitszuschläge##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Uncertainty penalties##
+| ##epd:margins##
+| ##o##
+| ##[0,1]##
+| ##Percentage##
+| ##Die Höhe der enthaltenen Zuschläge in Prozent##
+| ##5##
+| ##Process data set/Process information/Key Data Set Information/Other content/Generic data uncertainty penalties/Uncertainty penalties##
+
+| ##Beschreibung##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Description##
+| ##epd:description##
+| ##o##
+| ##[0,1]##
+| ##FTMultiLang##
+| ##Begründung und Regeln für die Sicherheitszuschläge##
+| ##5##
+| ##Process data set/Process information/Key Data Set Information/Other content/Generic data uncertainty penalties/Description##
+
+| ##Szenarien##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Scenarios##
+| ##epd:scenarios##
+| ##o##
+| ##[0,1]##
+| ##{nbsp}##
+| ##Deklaration der einzelnen Szenarien. Es können mehrere voneinander unabhängige Gruppen von Szenarien deklariert werden, die durch den optionalen Gruppenbezeichner voneinander unterschieden werden können. Dabei kann jeweils ein Szenario als Standardszenario markiert werden.##
+| ##4##
+| ##Process data set/Process information/Key Data Set Information/Other content/Scenarios##
+
+| ##Szenario##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Scenario##
+| ##epd:scenario##
+| ##o##
+| ##[0,n]##
+| ##{nbsp}##
+| ##Ein Szenario##
+| ##5##
+| ##Process data set/Process information/Key Data Set Information/Other content/Scenarios/Scenario##
+
+| ##Name##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Name##
+| ##@epd:name##
+| ##m##
+| ##{nbsp}##
+| ##string##
+| ##Name des Szenarios##
+| ##6##
+| ##Process data set/Process information/Key Data Set Information/Other content/Scenarios/Scenario/Name##
+
+| ##Standardszenario##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Default##
+| ##@epd:default##
+| ##o##
+| ##{nbsp}##
+| ##boolean##
+| ##"true" wenn dieses das Standardszenario ist##
+| ##6##
+| ##Process data set/Process information/Key Data Set Information/Other content/Scenarios/Scenario/Default##
+
+| ##Gruppe##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Group##
+| ##@epd:group##
+| ##o##
+| ##{nbsp}##
+| ##string##
+| ##Bezeichner für eine Gruppe von Szenarien##
+| ##6##
+| ##Process data set/Process information/Key Data Set Information/Other content/Scenarios/Scenario/Group##
+
+| ##Beschreibung##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Description##
+| ##epd:description##
+| ##o##
+| ##[0,1]##
+| ##FTMultiLang##
+| ##Beschreibung des Szenarios##
+| ##6##
+| ##Process data set/Process information/Key Data Set Information/Other content/Scenarios/Scenario/Description##
+
+| ##Module##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Modules##
+| ##epd:modules##
+| ##o##
+| ##[0,1]##
+| ##{nbsp}##
+| ##Optionale Deklaration der einzelnen Module, um diese auf der Seite der generierenden Anwendung mit Produktsystemen verknüpfen zu können. Dies ist nützlich, falls der Datensatz später mit dem Werkzeug, welches zur Generierung benutzt wurde, eingelesen und bearbeitet werden soll.##
+| ##4##
+| ##Process data set/Process information/Key Data Set Information/Other content/Modules##
+
+| ##Modul##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Module##
+| ##epd:module##
+| ##o##
+| ##[0,n]##
+| ##{nbsp}##
+| ##Ein Modul##
+| ##5##
+| ##Process data set/Process information/Key Data Set Information/Other content/Modules/Module##
+
+| ##Name##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Name##
+| ##@epd:name##
+| ##m##
+| ##{nbsp}##
+| ##string##
+| ##Name des Moduls##
+| ##6##
+| ##Process data set/Process information/Key Data Set Information/Other content/Modules/Module/Name##
+
+| ##Produktsystem-ID##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Product system ID##
+| ##@epd:productsystem-id##
+| ##m##
+| ##{nbsp}##
+| ##string##
+| ##ID des diesem Modul zugrundeliegenden Produktsystems##
+| ##6##
+| ##Process data set/Process information/Key Data Set Information/Other content/Modules/Module/Product system ID##
+
+| ##Inhaltsangabe##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Content Declaration##
+| ##epd2:contentDeclaration##
+| ##o##
+| ##[0,1]##
+| ##{nbsp}##
+| ##Inhaltsangabe gemäss EN 15804/ISO 21930.##
+| ##4##
+| ##Process data set/Process information/Key Data Set Information/Other content/Content Declaration##
+
+| ##Komponente##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Component##
+| ##epd2:component##
+| ##o##
+| ##[0,n]##
+| ##{nbsp}##
+| ##Beschreibt eine Komponente.##
+| ##5##
+| ##Process data set/Process information/Key Data Set Information/Other content/Content Declaration/Component##
+
+| ##Name##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Name##
+| ##epd2:name##
+| ##m##
+| ##[1,1]##
+| ##StringMultiLang##
+| ##Name der Komponente.##
+| ##6##
+| ##Process data set/Process information/Key Data Set Information/Other content/Content Declaration/Component/Name##
+
+| ##Massenanteil in %##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Mass percentage##
+| ##epd2:weightPerc##
+| ##m##
+| ##[1,1]##
+| ##{nbsp}##
+| ##Massenanteil in % des Gesamtprodukts. Ein diskreter Wert oder ein Wertebereich muß angegeben werden.##
+| ##6##
+| ##Process data set/Process information/Key Data Set Information/Other content/Content Declaration/Component/Mass percentage##
+
+| ##Diskreter Wert##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Discrete value##
+| ##@epd2:value##
+| ##o##
+| ##{nbsp}##
+| ##Real##
+| ##Zur Angabe eines diskreten Zahlenwerts: der Wert##
+| ##7##
+| ##Process data set/Process information/Key Data Set Information/Other content/Content Declaration/Component/Mass percentage/Discrete value##
+
+| ##Wertebereich: unterer Wert##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Range: lower value##
+| ##@epd2:lowerValue##
+| ##o##
+| ##{nbsp}##
+| ##Real##
+| ##Zur Angabe eines Wertebereich: unterer Wert des Wertebereichs##
+| ##7##
+| ##Process data set/Process information/Key Data Set Information/Other content/Content Declaration/Component/Mass percentage/Range: lower value##
+
+| ##Wertebereich: oberer Wert##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Range: upper value##
+| ##@epd2:upperValue##
+| ##o##
+| ##{nbsp}##
+| ##Real##
+| ##Zur Angabe eines Wertebereich: oberer Wert des Wertebereichs##
+| ##7##
+| ##Process data set/Process information/Key Data Set Information/Other content/Content Declaration/Component/Mass percentage/Range: upper value##
+
+| ##Masse in kg##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Mass in kg##
+| ##epd2:mass##
+| ##o##
+| ##[0,1]##
+| ##{nbsp}##
+| ##Absolute Masse dieses Anteils in kg. Ein diskreter Wert oder ein Wertebereich muß angegeben werden.##
+| ##6##
+| ##Process data set/Process information/Key Data Set Information/Other content/Content Declaration/Component/Mass in kg##
+
+| ##Diskreter Wert##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Discrete value##
+| ##@epd2:value##
+| ##o##
+| ##{nbsp}##
+| ##Real##
+| ##Zur Angabe eines diskreten Zahlenwerts: der Wert##
+| ##7##
+| ##Process data set/Process information/Key Data Set Information/Other content/Content Declaration/Component/Mass in kg/Discrete value##
+
+| ##Wertebereich: unterer Wert##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Range: lower value##
+| ##@epd2:lowerValue##
+| ##o##
+| ##{nbsp}##
+| ##Real##
+| ##Zur Angabe eines Wertebereich: unterer Wert des Wertebereichs##
+| ##7##
+| ##Process data set/Process information/Key Data Set Information/Other content/Content Declaration/Component/Mass in kg/Range: lower value##
+
+| ##Wertebereich: oberer Wert##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Range: upper value##
+| ##@epd2:upperValue##
+| ##o##
+| ##{nbsp}##
+| ##Real##
+| ##Zur Angabe eines Wertebereich: oberer Wert des Wertebereichs##
+| ##7##
+| ##Process data set/Process information/Key Data Set Information/Other content/Content Declaration/Component/Mass in kg/Range: upper value##
+
+| ##Bemerkungen##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Comment##
+| ##epd2:comment##
+| ##o##
+| ##[0,n]##
+| ##FTMultiLang##
+| ##{nbsp}##
+| ##6##
+| ##Process data set/Process information/Key Data Set Information/Other content/Content Declaration/Component/Comment##
+
+| ##Material \| Substanz##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Material \| Substance##
+| ##epd2:material \| epd2:substance##
+| ##o##
+| ##[0,n]##
+| ##{nbsp}##
+| ##Beschreibt ein Material oder eine Substanz. substance-Elemente können in material-Elementen geschachtelt sein.##
+| ##6##
+| ##Process data set/Process information/Key Data Set Information/Other content/Content Declaration/Component/Material | Substance##
+
+| ##Name##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Name##
+| ##epd2:name##
+| ##m##
+| ##[1,1]##
+| ##StringMultiLang##
+| ##Name des Materials/der Substanz.##
+| ##6##
+| ##Process data set/Process information/Key Data Set Information/Other content/Content Declaration/Component/Name##
+
+| ##Massenanteil in %##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Mass percentage##
+| ##epd2:weightPerc##
+| ##m##
+| ##[1,1]##
+| ##{nbsp}##
+| ##Massenanteil in % des Gesamtprodukts. Ein diskreter Wert oder ein Wertebereich muß angegeben werden.##
+| ##7##
+| ##Process data set/Process information/Key Data Set Information/Other content/Content Declaration/Component/Name/Mass percentage##
+
+| ##Diskreter Wert##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Discrete value##
+| ##@epd2:value##
+| ##o##
+| ##{nbsp}##
+| ##Real##
+| ##Zur Angabe eines diskreten Zahlenwerts: der Wert##
+| ##8##
+| ##Process data set/Process information/Key Data Set Information/Other content/Content Declaration/Component/Name/Mass percentage/Discrete value##
+
+| ##Wertebereich: unterer Wert##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Range: lower value##
+| ##@epd2:lowerValue##
+| ##o##
+| ##{nbsp}##
+| ##Real##
+| ##Zur Angabe eines Wertebereich: unterer Wert des Wertebereichs##
+| ##8##
+| ##Process data set/Process information/Key Data Set Information/Other content/Content Declaration/Component/Name/Mass percentage/Range: lower value##
+
+| ##Wertebereich: oberer Wert##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Range: upper value##
+| ##@epd2:upperValue##
+| ##o##
+| ##{nbsp}##
+| ##Real##
+| ##Zur Angabe eines Wertebereich: oberer Wert des Wertebereichs##
+| ##8##
+| ##Process data set/Process information/Key Data Set Information/Other content/Content Declaration/Component/Name/Mass percentage/Range: upper value##
+
+| ##Masse in kg##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Mass in kg##
+| ##epd2:mass##
+| ##o##
+| ##[0,1]##
+| ##{nbsp}##
+| ##Absolute Masse dieses Anteils in kg. Ein diskreter Wert oder ein Wertebereich muß angegeben werden.##
+| ##7##
+| ##Process data set/Process information/Key Data Set Information/Other content/Content Declaration/Component/Name/Mass in kg##
+
+| ##Diskreter Wert##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Discrete value##
+| ##@epd2:value##
+| ##o##
+| ##{nbsp}##
+| ##Real##
+| ##Zur Angabe eines diskreten Zahlenwerts: der Wert##
+| ##8##
+| ##Process data set/Process information/Key Data Set Information/Other content/Content Declaration/Component/Name/Mass in kg/Discrete value##
+
+| ##Wertebereich: unterer Wert##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Range: lower value##
+| ##@epd2:lowerValue##
+| ##o##
+| ##{nbsp}##
+| ##Real##
+| ##Zur Angabe eines Wertebereich: unterer Wert des Wertebereichs##
+| ##8##
+| ##Process data set/Process information/Key Data Set Information/Other content/Content Declaration/Component/Name/Mass in kg/Range: lower value##
+
+| ##Wertebereich: oberer Wert##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Range: upper value##
+| ##@epd2:upperValue##
+| ##o##
+| ##{nbsp}##
+| ##Real##
+| ##Zur Angabe eines Wertebereich: oberer Wert des Wertebereichs##
+| ##8##
+| ##Process data set/Process information/Key Data Set Information/Other content/Content Declaration/Component/Name/Mass in kg/Range: upper value##
+
+| ##CAS-Nummer##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}CAS number##
+| ##@epd2:CASNumber##
+| ##o##
+| ##{nbsp}##
+| ##CAS Number##
+| ##CAS-Nummer des Materials oder der Substanz##
+| ##7##
+| ##Process data set/Process information/Key Data Set Information/Other content/Content Declaration/Component/Name/CAS number##
+
+| ##EC-Nummer##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}EC number##
+| ##@epd2:ECNumber##
+| ##o##
+| ##{nbsp}##
+| ##String with pattern 000-000-0##
+| ##EC-Nummer des Materials oder der Substanz##
+| ##7##
+| ##Process data set/Process information/Key Data Set Information/Other content/Content Declaration/Component/Name/EC number##
+
+| ##Gefahrencode##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Hazard code##
+| ##@epd2:hazardCode##
+| ##o##
+| ##{nbsp}##
+| ##String##
+| ##Gefahrencode(s) des Materials oder der Substanz. Mehrere Codes können durch Semikolon getrennt angegeben werden. Sofern die Substanz als SVHC klassifiziert ist, ist der Liste SVHC; voranzustellen.##
+| ##7##
+| ##Process data set/Process information/Key Data Set Information/Other content/Content Declaration/Component/Name/Hazard code##
+
+| ##Anteil erneuerbarer Ressourcen##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Percentage of renewable resources##
+| ##@epd2:renewable##
+| ##o##
+| ##{nbsp}##
+| ##Percentage##
+| ##Der enthaltene Anteil erneuerbarer Ressourcen##
+| ##7##
+| ##Process data set/Process information/Key Data Set Information/Other content/Content Declaration/Component/Name/Percentage of renewable resources##
+
+| ##Anteil recycelter Materialien##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Percentage of recycled materials##
+| ##@epd2:recycled##
+| ##o##
+| ##{nbsp}##
+| ##Percentage##
+| ##Der enthaltene Anteil recycelter Materialien##
+| ##7##
+| ##Process data set/Process information/Key Data Set Information/Other content/Content Declaration/Component/Name/Percentage of recycled materials##
+
+| ##Anteil recycelbarer Materialien##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Percentage of potentially recyclable materials##
+| ##@epd2:recyclable##
+| ##o##
+| ##{nbsp}##
+| ##Percentage##
+| ##Der enthaltene Anteil recycelbarer Materialien##
+| ##7##
+| ##Process data set/Process information/Key Data Set Information/Other content/Content Declaration/Component/Name/Percentage of potentially recyclable materials##
+
+| ##Verpackung##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Packaging##
+| ##@epd2:packaging##
+| ##o##
+| ##{nbsp}##
+| ##boolean##
+| ##Diese(s) Material oder Substanz Ist Bestandteil der Produktverpackung##
+| ##7##
+| ##Process data set/Process information/Key Data Set Information/Other content/Content Declaration/Component/Name/Packaging##
+
+| ##Bemerkungen##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Comment##
+| ##epd2:comment##
+| ##o##
+| ##[0,n]##
+| ##FTMultiLang##
+| ##{nbsp}##
+| ##7##
+| ##Process data set/Process information/Key Data Set Information/Other content/Content Declaration/Component/Name/Comment##
+
+| ##Enthält SVHC##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Contains SVHC##
+| ##epd24:SVHC##
+| ##m##
+| ##[1,1]##
+| ##boolean##
+| ##Hinweis, falls das Produkt SVHC (substances of very high concern) enthält.##
+| ##4##
+| ##Process data set/Process information/Key Data Set Information/Other content/Contains SVHC##
+
+| ##Quantitative Angaben zu Szenarien##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Quantitative scenario data##
+| ##epd24:scenarioData##
+| ##o##
+| ##[0,n]##
+| ##{nbsp}##
+| ##Quantitative Angaben zu oben deklarierten Szenarien##
+| ##4##
+| ##Process data set/Process information/Key Data Set Information/Other content/Quantitative scenario data##
+
+| ##Angaben zu Use-Stage-Szenarien##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Use stage scenario data##
+| ##epd24:useStageScenarioData##
+| ##o##
+| ##[0,n]##
+| ##{nbsp}##
+| ##Angaben zu Use-Stage-Szenarien##
+| ##5##
+| ##Process data set/Process information/Key Data Set Information/Other content/Quantitative scenario data/Use stage scenario data##
+
+| ##Szenario-Name##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}scenario name##
+| ##@epd24:scenario##
+| ##o##
+| ##[0,1]##
+| ##string##
+| ##Name des Szenarios (Referenziert ein bereits oben unter scenario/@name deklariertes Szenario). Wenn nur ein Szenario verwendet wird, kann die Deklaration entfallen.##
+| ##6##
+| ##Process data set/Process information/Key Data Set Information/Other content/Quantitative scenario data/Use stage scenario data/scenario name##
+
+| ##Wirkungen auf Boden und Wasser##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Impacts on soil and water##
+| ##epd24:soilAndWaterImpacts##
+| ##o##
+| ##[0,1]##
+| ##{nbsp}##
+| ##Daten zu den Wirkungen auf Wasser und Boden während der Nutzungsphase.##
+| ##6##
+| ##Process data set/Process information/Key Data Set Information/Other content/Quantitative scenario data/Use stage scenario data/Impacts on soil and water##
+
+| ##Beschreibung der Wirkungen auf Boden und Wasser##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Description of impacts on soil and water##
+| ##epd24:soilAndWaterImpactsDescription##
+| ##o##
+| ##[0,1]##
+| ##FTMultiLang##
+| ##Beschreibung der Wirkungen auf Boden und Wasser währende der Nutzungsphase##
+| ##7##
+| ##Process data set/Process information/Key Data Set Information/Other content/Quantitative scenario data/Use stage scenario data/Impacts on soil and water/Description of impacts on soil and water##
+
+| ##Angaben zu EoL-Szenarien##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}EoL scenario data##
+| ##epd24:eolScenarioData##
+| ##o##
+| ##[0,n]##
+| ##{nbsp}##
+| ##Angaben zu End-of-life-Szenarien##
+| ##5##
+| ##Process data set/Process information/Key Data Set Information/Other content/Quantitative scenario data/EoL scenario data##
+
+| ##Szenario-Name##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}scenario name##
+| ##@epd24:scenario##
+| ##o##
+| ##[0,1]##
+| ##string##
+| ##Name des Szenarios (Referenziert ein bereits oben unter scenario/@name deklariertes Szenario). Wenn nur ein Szenario verwendet wird, kann die Deklaration entfallen.##
+| ##6##
+| ##Process data set/Process information/Key Data Set Information/Other content/Quantitative scenario data/EoL scenario data/scenario name##
+
+| ##Sammlung##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Collection##
+| ##epd24:collection##
+| ##o##
+| ##[0,1]##
+| ##{nbsp}##
+| ##Die Anteile der einzelnen gesammelten Fraktionen##
+| ##6##
+| ##Process data set/Process information/Key Data Set Information/Other content/Quantitative scenario data/EoL scenario data/Collection##
+
+| ##getrennt##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}separate##
+| ##@epd24:separate##
+| ##o##
+| ##[0,1]##
+| ##xs:double##
+| ##Getrennt gesammelter Anteil, in kg##
+| ##7##
+| ##Process data set/Process information/Key Data Set Information/Other content/Quantitative scenario data/EoL scenario data/Collection/separate##
+
+| ##als gemischter Abfall##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}with mixed waste##
+| ##@epd24:withMixedWaste##
+| ##o##
+| ##[0,1]##
+| ##xs:double##
+| ##als gemischter Abfall gesammelter Anteil, in kg##
+| ##7##
+| ##Process data set/Process information/Key Data Set Information/Other content/Quantitative scenario data/EoL scenario data/Collection/with mixed waste##
+
+| ##Rückholung##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Recovery##
+| ##epd24:recovery##
+| ##o##
+| ##[0,1]##
+| ##{nbsp}##
+| ##Die Anteile der einzelnen rückgewonnenen Fraktionen##
+| ##6##
+| ##Process data set/Process information/Key Data Set Information/Other content/Quantitative scenario data/EoL scenario data/Recovery##
+
+| ##zur Wiederverwendung##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}for re-use##
+| ##@epd24:reuse##
+| ##o##
+| ##[0,1]##
+| ##xs:double##
+| ##kg zur Wiederverwendung##
+| ##7##
+| ##Process data set/Process information/Key Data Set Information/Other content/Quantitative scenario data/EoL scenario data/Recovery/for re-use##
+
+| ##zum Recycling##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}for recycling##
+| ##@epd24:recycling##
+| ##o##
+| ##[0,1]##
+| ##xs:double##
+| ##kg zum Recycling##
+| ##7##
+| ##Process data set/Process information/Key Data Set Information/Other content/Quantitative scenario data/EoL scenario data/Recovery/for recycling##
+
+| ##zur Energierückgewinnung##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}for energy recovery##
+| ##@epd24:energyRecovery##
+| ##o##
+| ##[0,1]##
+| ##xs:double##
+| ##kg zur Energierückgewinnung##
+| ##7##
+| ##Process data set/Process information/Key Data Set Information/Other content/Quantitative scenario data/EoL scenario data/Recovery/for energy recovery##
+
+| ##Beseitigung##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Disposal##
+| ##epd24:disposal##
+| ##o##
+| ##[0,1]##
+| ##{nbsp}##
+| ##Der Anteil zur Beseitigung##
+| ##6##
+| ##Process data set/Process information/Key Data Set Information/Other content/Quantitative scenario data/EoL scenario data/Disposal##
+
+| ##zur Deponierung##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}for final deposition##
+| ##@epd24:finalDeposition##
+| ##o##
+| ##[0,1]##
+| ##xs:double##
+| ##kg Produkt oder Stoff zur Deponierung##
+| ##7##
+| ##Process data set/Process information/Key Data Set Information/Other content/Quantitative scenario data/EoL scenario data/Disposal/for final deposition##
+
+| ##Quantitative Referenz##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Quantitative reference##
+| ##quantitativeReference##
+| ##r##
+| ##[0,1]##
+| ##{nbsp}##
+| ##In diesem Abschnitt wird die quantitative Referenz für diesen Datensatz angegeben##
+| ##2##
+| ##Process data set/Process information/Quantitative reference##
+
+| ##Art der quantitativen Referenz##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Type of quantitative reference##
+| ##@type##
+| ##r##
+| ##{nbsp}##
+| ##TypeOfQuantitativeReferenceValuesReference flow(s) One or more of the data set's inputs or outputs is identified as quantiative reference flow. This covers the 14048 types of quantitative references "Reference flow of process", "Outgoing product flow", "Incoming product flow", "Other flow". E.g. ['Electricity; 220V; to consumer; AC' - '1 MJ']. E.g. for multi-functional processes e.g. ['Wheat grains; at farm; 16% H2O' - '1 kg'] and also ['Wheat straw; at farm; 14% H2O' - '0.9 kg']. Functional unit The functional unit of the process may relate to the process' performance expressed without referring to a flow. E.g. "Protective coating of 1 m2 of car surface acc. to XY specifications for 15 years". One or more functional unit entries can be given in addition to a reference flow. Other parameter Other information items quantify the process' reference. E.g. "Input of 1 MJ fuel oils" into an energy conversion process, which might be represented by two different fuels in the inputs/outputs, but which are inventoried individually and in kg (e.g. as 0.015 kg light fuel oil and 0,018 kg heavy fuel oil). Production period Time period of operation that a process represents, e.g. "January 2003 to including June 2003".##
+| ##Art der quantitativen Referenz, in der Regel ist dies "Reference flow(s)"##
+| ##3##
+| ##Process data set/Process information/Quantitative reference/Type of quantitative reference##
+
+| ##Referenzfluß##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Reference flow(s)##
+| ##referenceToReferenceFlow##
+| ##r##
+| ##[0,n]##
+| ##Int6##
+| ##Verweis auf den Referenzfluß des Datensatzes (interne ID des entsprechenden Outputs im Abschnitt "Exchanges")##
+| ##3##
+| ##Process data set/Process information/Quantitative reference/Reference flow(s)##
+
+| ##Funktionelle Einheit##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Functional unit, Production period, or Other parameter##
+| ##functionalUnitOrOther##
+| ##r##
+| ##[0,n]##
+| ##StringMultiLang##
+| ##Menge, Name, Eigenschaft und Meßgröße der funktionellen Einheit.##
+| ##3##
+| ##Process data set/Process information/Quantitative reference/Functional unit, Production period, or Other parameter##
+
+| ##Anderer Inhalt##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Other content##
+| ##other##
+| ##o##
+| ##[0,1]##
+| ##{nbsp}##
+| ##{nbsp}##
+| ##3##
+| ##Process data set/Process information/Quantitative reference/Other content##
+
+| ##Zeitliche Repräsentativität##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Time representativeness##
+| ##time##
+| ##r##
+| ##[0,1]##
+| ##{nbsp}##
+| ##Informationen zur zeitlichen Repräsentativität des Datensatzes##
+| ##2##
+| ##Process data set/Process information/Time representativeness##
+
+| ##Referenzjahr##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Reference year##
+| ##referenceYear##
+| ##r##
+| ##[0,1]##
+| ##Year##
+| ##Das erste Jahr der Gültigkeits des Datensatzes.##
+| ##3##
+| ##Process data set/Process information/Time representativeness/Reference year##
+
+| ##Gültig bis##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Data set valid until:##
+| ##dataSetValidUntil##
+| ##r##
+| ##[0,1]##
+| ##Year##
+| ##Ende des Zeitabschnitts, bis zu dem der Datensatz gültig ist.##
+| ##3##
+| ##Process data set/Process information/Time representativeness/Data set valid until:##
+
+| ##Erläuterungen zur zeitlichen Repräsentativität##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Time representativeness description##
+| ##timeRepresentativenessDescription##
+| ##r##
+| ##[0,1]##
+| ##FTMultiLang##
+| ##Beschreibung der gültigen Betrachtungszeit für den Datensatz einschließlich Information über allfällige zeitliche Begrenzungen (z.B. Sommer/Winter)##
+| ##3##
+| ##Process data set/Process information/Time representativeness/Time representativeness description##
+
+| ##Anderer Inhalt##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Other content##
+| ##other##
+| ##o##
+| ##[0,1]##
+| ##{nbsp}##
+| ##{nbsp}##
+| ##3##
+| ##Process data set/Process information/Time representativeness/Other content##
+
+| ##Veröffentlichungsdatum der EPD##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Publication date of EPD##
+| ##epd2:publicationDateOfEPD##
+| ##o##
+| ##[0,1]##
+| ##xs:date##
+| ##Datum der Veröffentlichung der EPD in der Form "YYYY-MM-DD".##
+| ##4##
+| ##Process data set/Process information/Time representativeness/Other content/Publication date of EPD##
+
+| ##Ablaufdatum der EPD##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Expiration date of EPD##
+| ##epd2:expirationDateOfEPD##
+| ##o##
+| ##[0,1]##
+| ##xs:date##
+| ##Das Datum ("YYYY-MM-DD") an dem die Gültigkeit der EPD abläuft.##
+| ##4##
+| ##Process data set/Process information/Time representativeness/Other content/Expiration date of EPD##
+
+| ##Geographische Repräsentativität##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Geographical representativeness##
+| ##geography##
+| ##r##
+| ##[0,1]##
+| ##{nbsp}##
+| ##Informationen zur geographischen Repräsentativität des Datensatzes##
+| ##2##
+| ##Process data set/Process information/Geographical representativeness##
+
+| ##Ort##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Location##
+| ##locationOfOperationSupplyOrProduction##
+| ##r##
+| ##[0,1]##
+| ##{nbsp}##
+| ##{nbsp}##
+| ##3##
+| ##Process data set/Process information/Geographical representativeness/Location##
+
+| ##Ort##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Location##
+| ##@location##
+| ##r##
+| ##{nbsp}##
+| ##NullableString##
+| ##Region, für die der Datensatz repräsentativ ist ISO 3166-Ländercode oder Regionalcode##
+| ##4##
+| ##Process data set/Process information/Geographical representativeness/Location/Location##
+
+| ##Erläuterungen zur geographischen Repräsentativität##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Geographical representativeness description##
+| ##descriptionOfRestrictions##
+| ##o##
+| ##[0,1]##
+| ##FTMultiLang##
+| ##Erläuterungen zum Feld "Ort" sofern relevant##
+| ##4##
+| ##Process data set/Process information/Geographical representativeness/Location/Geographical representativeness description##
+
+| ##Anderer Inhalt##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Other content##
+| ##other##
+| ##o##
+| ##[0,1]##
+| ##{nbsp}##
+| ##{nbsp}##
+| ##4##
+| ##Process data set/Process information/Geographical representativeness/Location/Other content##
+
+| ##Technische Repräsentativität##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Technological representativeness##
+| ##technology##
+| ##r##
+| ##[0,1]##
+| ##{nbsp}##
+| ##Informationen zur technischen Repräsentativität des Datensatzes##
+| ##2##
+| ##Process data set/Process information/Technological representativeness##
+
+| ##Technische Beschreibung inklusive der Hintergrundsysteme##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Technology description including background system##
+| ##technologyDescriptionAndIncludedProcesses##
+| ##r##
+| ##[0,1]##
+| ##FTMultiLang##
+| ##Beschreibung der wesentlichen technischen Eigenschaften des Produkts bzw. Prozesses (inkl. Nutzungsbedingungen). Falls wesentlich für techn. Repräsentativität, sind auch die relevanten vor- und nachgelagerten Prozesse ("Hintergrundsysteme"), die im Datensatz enthalten sind, zu beschreiben. Hinweis auf ausführliche Beschreibung im EPD-Dokument, falls vorhanden, kann angeführt werden. Alternativ kann auch ein Verweis auf "Anwendungshinweis für Datensatz" und "Technisches Anwendungsgebiet des Produkts oder Prozesses" gemacht werden. Bitte keine allgemeinen Ausführungen zu den Systemgrenzen gemäß EN 15804.##
+| ##3##
+| ##Process data set/Process information/Technological representativeness/Technology description including background system##
+
+| ##Technisches Anwendungsgebiet##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Technical purpose of product or process##
+| ##technologicalApplicability##
+| ##r##
+| ##[0,1]##
+| ##FTMultiLang##
+| ##Kurze Beschreibung der beabsichtigten bzw. möglichen Anwendung des Produkts, der Dienstleistung oder des Prozesses. Beispiele "Die hochreine Chemikalie wird ausschließlich von analytischen Laboratorien genutzt." Oder: "Diese Chemikalie in technischer Massenqualität wird für großmaßstäbliche Synthesen in der chemischen Industrie genutzt". Oder: "Dieser LKW wird nur für Langstreckentransporte von flüssigen Massenchemikalien genutzt."##
+| ##3##
+| ##Process data set/Process information/Technological representativeness/Technical purpose of product or process##
+
+| ##Piktogramm##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Pictogramme of technology##
+| ##referenceToTechnologyPictogramme##
+| ##o##
+| ##[0,1]##
+| ##GlobalReferenceType##
+| ##"Source"-Datensatz mit Piktogramm des Produkts, der Dienstleistung, des Prozesses etc.##
+| ##3##
+| ##Process data set/Process information/Technological representativeness/Pictogramme of technology##
+
+| ##Flußdiagramm(e) oder Abbildung(en)##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Flow diagramm(s) or picture(s)##
+| ##referenceToTechnologyFlowDiagrammOrPicture##
+| ##o##
+| ##[0,n]##
+| ##GlobalReferenceType##
+| ##"Source"-Datensätze des/der Flußdiagramm(e) bzw. Abbildung(en) für eine anschauliche Erläuterung und Dokumentations des Datensatzes##
+| ##3##
+| ##Process data set/Process information/Technological representativeness/Flow diagramm(s) or picture(s)##
+
+| ##Anderer Inhalt##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Other content##
+| ##other##
+| ##o##
+| ##[0,1]##
+| ##{nbsp}##
+| ##{nbsp}##
+| ##3##
+| ##Process data set/Process information/Technological representativeness/Other content##
+
+| ##Modellierung und Validierung##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}Modelling and validation##
+| ##modellingAndValidation##
+| ##r##
+| ##[0,1]##
+| ##{nbsp}##
+| ##Modellierung und Validierung##
+| ##1##
+| ##Process data set/Modelling and validation##
+
+| ##LCI-Methode und Allokation##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}LCI method and allocation##
+| ##LCIMethodAndAllocation##
+| ##r##
+| ##[0,1]##
+| ##{nbsp}##
+| ##LCI-Methode und Allokation##
+| ##2##
+| ##Process data set/Modelling and validation/LCI method and allocation##
+
+| ##Art des Datensatzes##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Type of data set##
+| ##typeOfDataSet##
+| ##r##
+| ##[0,1]##
+| ##EPD##
+| ##Für EPD-Datensätze (dazu zählen auch generische) ist der Wert dieses Feldes immer "EPD"##
+| ##3##
+| ##Process data set/Modelling and validation/LCI method and allocation/Type of data set##
+
+| ##LCA-Methodenbericht##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}LCA methodology report##
+| ##referenceToLCAMethodDetails##
+| ##o##
+| ##[0,n]##
+| ##GlobalReferenceType##
+| ##Hier kann ein "Source"-Datensatz mit der Referenz zum PCR-Dokument angehängt werden.##
+| ##3##
+| ##Process data set/Modelling and validation/LCI method and allocation/LCA methodology report##
+
+| ##Anderer Inhalt##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Other content##
+| ##other##
+| ##o##
+| ##[0,1]##
+| ##{nbsp}##
+| ##{nbsp}##
+| ##3##
+| ##Process data set/Modelling and validation/LCI method and allocation/Other content##
+
+| ##Subtyp##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Subtype##
+| ##epd:subType##
+| ##r##
+| ##[0,1]##
+| ##generic datasetGenerischer Datensatzrepresentative datasetRepräsentativer Datensatzaverage datasetDurchschnittsdatensatzspecific dataset(Hersteller-) Spezifischer Datensatztemplate datasetMusterdatensatz##
+| ##Gibt den Datensatztypen hinsichtlich Repräsentativität an. Einer der folgenden vordefinierten Datensatztypen muss ausgewählt werden: - specific dataset (spezifischer Datensatz) - hersteller-(unternehmens-) spezifischer Datensatz für ein konkretes Produkt eines Werkes - average dataset (Durchschnittsdatensatz) - durchschnittliche Datensätze von Industrieverbänden, mehreren Firmen, mehreren Werken oder mehreren Produkten (d.h. auf Grundlage von Daten der Industrieproduktion von Unternehmen) - representative dataset (repräsentativer Datensatz) - representative dataset – Daten, die repräsentativ für ein Land / eine Region sind (z.B. Durchschnitt DE) - template dataset (Muster-EPD-Datensatz) - unspezifische Datensätze für spezifische Produkte, die auf Basis einer „Muster-EPD“ erstellt wurden - generic dataset (generischer Datensatz) - generische Daten gemäß EN 15804 sowie andere, nicht auf Basis von Industriedaten modellierte Daten (z.B. auf der Basis von Literatur, Expertenwissen etc.)##
+| ##4##
+| ##Process data set/Modelling and validation/LCI method and allocation/Other content/Subtype##
+
+| ##PCR-Konformität##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}PCR Compliance##
+| ##epd24:pcrCompliance##
+| ##o##
+| ##[0,1]##
+| ##{nbsp}##
+| ##{nbsp}##
+| ##4##
+| ##Process data set/Modelling and validation/LCI method and allocation/Other content/PCR Compliance##
+
+| ##Allokation##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Allocation##
+| ##@epd24:allocation##
+| ##o##
+| ##[0,1]##
+| ##boolean##
+| ##Allokation entspricht der Standard-PCR##
+| ##5##
+| ##Process data set/Modelling and validation/LCI method and allocation/Other content/PCR Compliance/Allocation##
+
+| ##Abschneidekriterien##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Cut-off rules##
+| ##@epd24:cutOffRules##
+| ##o##
+| ##[0,1]##
+| ##boolean##
+| ##Abschneidekriterien entsprechen der Standard-PCR##
+| ##5##
+| ##Process data set/Modelling and validation/LCI method and allocation/Other content/PCR Compliance/Cut-off rules##
+
+| ##Vorgelagerte Daten abweichend##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Upstream data deviating##
+| ##@epd24:upstreamDataDeviatingFromAllocationPrinciples##
+| ##o##
+| ##[0,1]##
+| ##boolean##
+| ##Nutzung von vorgelagerten Daten, welche nicht den Allokationsregeln der Kern-PCR entsprechen##
+| ##5##
+| ##Process data set/Modelling and validation/LCI method and allocation/Other content/PCR Compliance/Upstream data deviating##
+
+| ##Variabilität##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Variability##
+| ##epd24:variability##
+| ##o##
+| ##[0,1]##
+| ##{nbsp}##
+| ##Angaben zur Spanne/Variabilität der LCIA-Resultate, bspw. falls es sich bei den Resultate um Mittel über verschiedene Produkte oder Produktionsstätten handelt.##
+| ##4##
+| ##Process data set/Modelling and validation/LCI method and allocation/Other content/Variability##
+
+| ##Herstellervariabilität##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Manufacturer variability##
+| ##epd24:manufacturerVariability##
+| ##m##
+| ##[1]##
+| ##{nbsp}##
+| ##Variabilität bzgl. verschiedener Hersteller/Produktionssttätten##
+| ##5##
+| ##Process data set/Modelling and validation/LCI method and allocation/Other content/Variability/Manufacturer variability##
+
+| ##Art der Variabilität##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Type of variability##
+| ##@epd24:type##
+| ##m##
+| ##[1]##
+| ##Single production site Single manufacturer with multiple production sites Multiple manufacturers##
+| ##Angaben zur genauen Art der Variabilität##
+| ##6##
+| ##Process data set/Modelling and validation/LCI method and allocation/Other content/Variability/Manufacturer variability/Type of variability##
+
+| ##Variation##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Variation##
+| ##@epd24:variation##
+| ##0##
+| ##[0,1]##
+| ##common:Perc##
+| ##Die Variabilität angegeben in Prozent.##
+| ##6##
+| ##Process data set/Modelling and validation/LCI method and allocation/Other content/Variability/Manufacturer variability/Variation##
+
+| ##Variationsspanne##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Variation range##
+| ##@epd24:variationRange##
+| ##0##
+| ##[0,1]##
+| ##Restricted xs:string: A - less than 2,5% B - between 2,5% and 10% C - between 10% and 25% D - between 25% and 50% E - more than 50%##
+| ##Grob abgeschätzte Angabe der Variation (s. ISO 14044 Annex B)##
+| ##6##
+| ##Process data set/Modelling and validation/LCI method and allocation/Other content/Variability/Manufacturer variability/Variation range##
+
+| ##Produktvariabilität##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Product variability##
+| ##epd24:productVariability##
+| ##m##
+| ##[1]##
+| ##{nbsp}##
+| ##Variabilität bzgl. verschiedener Produkte/Produkttypen##
+| ##5##
+| ##Process data set/Modelling and validation/LCI method and allocation/Other content/Variability/Product variability##
+
+| ##Art der Variabilität##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Type of variability##
+| ##@epd24:type##
+| ##m##
+| ##[1]##
+| ##Single product Range of products where variability is described##
+| ##Angabe zur Art der Variabilität##
+| ##6##
+| ##Process data set/Modelling and validation/LCI method and allocation/Other content/Variability/Product variability/Type of variability##
+
+| ##Variation##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Variation##
+| ##@epd24:variation##
+| ##0##
+| ##[0,1]##
+| ##common:Perc##
+| ##Die Variabilität angegeben in Prozent.##
+| ##6##
+| ##Process data set/Modelling and validation/LCI method and allocation/Other content/Variability/Product variability/Variation##
+
+| ##Variationsspanne##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Variation range##
+| ##@epd24:variationRange##
+| ##0##
+| ##[0,1]##
+| ##Restricted xs:string: A - less than 2,5% B - between 2,5% and 10% C - between 10% and 25% D - between 25% and 50% E - more than 50%##
+| ##Grob abgeschätzte Angabe der Variation (s. ISO 14044 Annex B)##
+| ##6##
+| ##Process data set/Modelling and validation/LCI method and allocation/Other content/Variability/Product variability/Variation range##
+
+| ##Variabilitätsbeschreibung##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Variability description##
+| ##epd24:variabilityDescription##
+| ##o##
+| ##[0,1]##
+| ##FTMultiLang##
+| ##Zusätzliche Beschreibungen, Erläuterungen und Anmerkungen, bspw. zu Aussagekraft und Methodik##
+| ##5##
+| ##Process data set/Modelling and validation/LCI method and allocation/Other content/Variability/Variability description##
+
+| ##Datenquellen und Repräsentativität##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Data sources, treatment, and representativeness##
+| ##dataSourcesTreatmentAndRepresentativeness##
+| ##r##
+| ##[0,1]##
+| ##{nbsp}##
+| ##{nbsp}##
+| ##2##
+| ##Process data set/Modelling and validation/Data sources, treatment, and representativeness##
+
+| ##Dokumentation des Datenqualitätsmanagements##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Documentation of data quality management##
+| ##referenceToDataHandlingPrinciples##
+| ##o##
+| ##[0,n]##
+| ##GlobalReferenceType##
+| ##Dokument(e) können als Quelle(n) angehängt werden.##
+| ##3##
+| ##Process data set/Modelling and validation/Data sources, treatment, and representativeness/Documentation of data quality management##
+
+| ##Datenquellen##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Data source(s) used for this data set##
+| ##referenceToDataSource##
+| ##r##
+| ##[0,n]##
+| ##GlobalReferenceType##
+| ##Hier können die Datenquellen für die verwendeten Hintergrund-Daten, z.B. GaBi oder ecoinvent, referenziert werden.##
+| ##3##
+| ##Process data set/Modelling and validation/Data sources, treatment, and representativeness/Data source(s) used for this data set##
+
+| ##Anwendungshinweis für Datensatz##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Use advice for data set##
+| ##useAdviceForDataSet##
+| ##r##
+| ##[0,1]##
+| ##FTMultiLang##
+| ##Besondere methodische Hinweise zur Verwendung des Datensatzes wie Anwendungsmöglichkeiten (z.B. Datensatz geeignet für die Ökobilanz von Gebäuden) oder -einschränkungen (z.B. Datensatz gilt nicht für Produkte, die im Nassverfahren hergestellt wurden). Ein Verweis auf geeignete koppelbare Datensätze kann angebracht werden.##
+| ##3##
+| ##Process data set/Modelling and validation/Data sources, treatment, and representativeness/Use advice for data set##
+
+| ##Anderer Inhalt##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Other content##
+| ##other##
+| ##o##
+| ##[0,1]##
+| ##{nbsp}##
+| ##{nbsp}##
+| ##3##
+| ##Process data set/Modelling and validation/Data sources, treatment, and representativeness/Other content##
+
+| ##Liste der Hersteller##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}List of manufacturers##
+| ##epd24:manufacturers##
+| ##r##
+| ##[0,1]##
+| ##{nbsp}##
+| ##Liste der Hersteller des/der beschriebenen Produkte(s).##
+| ##4##
+| ##Process data set/Modelling and validation/Data sources, treatment, and representativeness/Other content/List of manufacturers##
+
+| ##Hersteller##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}manufacturer##
+| ##epd24:manufacturer##
+| ##r##
+| ##[0,n]##
+| ##{nbsp}##
+| ##Hersteller des/der beschriebenen Produkte(s)##
+| ##5##
+| ##Process data set/Modelling and validation/Data sources, treatment, and representativeness/Other content/List of manufacturers/manufacturer##
+
+| ##Kontaktdatenreferenz des Herstellers##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Contact data reference of the manufacturer##
+| ##epd24:contact##
+| ##r##
+| ##[0,1]##
+| ##GlobalReferenceType##
+| ##Referenz auf den Kontaktdatensatz des Herstellers##
+| ##6##
+| ##Process data set/Modelling and validation/Data sources, treatment, and representativeness/Other content/List of manufacturers/manufacturer/Contact data reference of the manufacturer##
+
+| ##Produktionsstätten##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Manufacturing sites##
+| ##epd24:sites##
+| ##o##
+| ##[0,1]##
+| ##{nbsp}##
+| ##Liste der Produktionsstätten dieses Herstellers für das/die beschriebene(n) Produkt(e)##
+| ##6##
+| ##Process data set/Modelling and validation/Data sources, treatment, and representativeness/Other content/List of manufacturers/manufacturer/Manufacturing sites##
+
+| ##Produktionsstätte##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Manufacturing site##
+| ##epd24:site##
+| ##r##
+| ##[0,n]##
+| ##{nbsp}##
+| ##Produktionsstätte dieses Herstellers für das/die beschriebene(n) Produkt(e)##
+| ##7##
+| ##Process data set/Modelling and validation/Data sources, treatment, and representativeness/Other content/List of manufacturers/manufacturer/Manufacturing sites/Manufacturing site##
+
+| ##Name##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Name##
+| ##epd24:name##
+| ##m##
+| ##[1]##
+| ##xs:string##
+| ##Name der Produktionsstätte##
+| ##8##
+| ##Process data set/Modelling and validation/Data sources, treatment, and representativeness/Other content/List of manufacturers/manufacturer/Manufacturing sites/Manufacturing site/Name##
+
+| ##Kennung der Produktionsstätte##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Facility identifier##
+| ##epd24:facilityIdentifier##
+| ##o##
+| ##[0,1]##
+| ##xs:string##
+| ##Kennung der Produktionsstätte##
+| ##8##
+| ##Process data set/Modelling and validation/Data sources, treatment, and representativeness/Other content/List of manufacturers/manufacturer/Manufacturing sites/Manufacturing site/Facility identifier##
+
+| ##OLC Standortkennung##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}OLC Location code##
+| ##epd24:olc##
+| ##m##
+| ##[1]##
+| ##xs:string (Open Location Code)##
+| ##Kennung, die den Standort der Produktionsstätte nach dem Pluscode/Open Location Code-System ausweist.##
+| ##8##
+| ##Process data set/Modelling and validation/Data sources, treatment, and representativeness/Other content/List of manufacturers/manufacturer/Manufacturing sites/Manufacturing site/OLC Location code##
+
+| ##Länderkennung##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Countrycode##
+| ##epd24:geoCode##
+| ##r##
+| ##[0,1]##
+| ##xs:string##
+| ##2-buchstabige Kennung, die das Land oder die Region der Produktionsstätte identifiziert (s. ISO 3166 alpha-2)##
+| ##8##
+| ##Process data set/Modelling and validation/Data sources, treatment, and representativeness/Other content/List of manufacturers/manufacturer/Manufacturing sites/Manufacturing site/Countrycode##
+
+| ##Anschrift##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Street address##
+| ##epd24:streetAddress##
+| ##r##
+| ##[0,1]##
+| ##xs:string##
+| ##Postanschrift der Produktionsstätte##
+| ##8##
+| ##Process data set/Modelling and validation/Data sources, treatment, and representativeness/Other content/List of manufacturers/manufacturer/Manufacturing sites/Manufacturing site/Street address##
+
+| ##Original-EPD##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Original EPD##
+| ##epd2:referenceToOriginalEPD##
+| ##r##
+| ##[0,n]##
+| ##GlobalReferenceType##
+| ##Hier können die zum Datensatz zugehörigen EPD-Dokumente als Quellen angehängt werden.##
+| ##4##
+| ##Process data set/Modelling and validation/Data sources, treatment, and representativeness/Other content/Original EPD##
+
+| ##Validierung##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Validation##
+| ##validation##
+| ##r##
+| ##[0,1]##
+| ##{nbsp}##
+| ##Validierungsinformationen##
+| ##2##
+| ##Process data set/Modelling and validation/Validation##
+
+| ##Review##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Review##
+| ##review##
+| ##r##
+| ##[0,n]##
+| ##{nbsp}##
+| ##Reviewinformationen##
+| ##3##
+| ##Process data set/Modelling and validation/Validation/Review##
+
+| ##Art der Prüfung##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Type of review##
+| ##@type##
+| ##r##
+| ##{nbsp}##
+| ##TypeOfReviewValuesDependent internal reviewReviewer(s)/verifier(s) have been involved in collecting, modelling, or entering the data set information or inventory, have commissioned or financed the work, or represent the process or product system (or quantiatitively relevant parts of it).Independent internal reviewReviewer(s)/verifier(s) have NOT been involved in collecting, modelling, or entering the data set information or inventory, have not commissioned or financed the work, and do not represent the process or product system (or quantiatitively relevant parts of it). But the reviewer(s) belong(s) to the organisation(s) or legally linked organisation(s) that have been involved in the above.Independent external reviewReviewer(s)/verifier(s) do not belong to the organisations or legally linked organisations that have been involved in collecting, modelling, or entering the data set information or inventory, have not commissioned or financed the work, or represent the process or product system (or quantiatitively relevant parts of it).Accredited third party reviewReviewer(s)/verifier(s) do not belong to the organisations or legally linked organisations that have been involved in collecting, modelling, or entering the data set information or inventory, have not commissioned or financed the work, or represent the process or product system (or quantiatitively relevant parts of it). The reviewer(s)/verifier(s) are accredited by an accreditation body, that is independent of the reviewer(s)/verifier(s) and the scheme operator or standardisation party.Independent review panelPanel of at least three independent internal or external reviewers/verfiers. Chairperson is independent external reviewer/verifier. Chairperson may invite interested parties affected by the conclusions drawn from the LCA, such as government agencies, non-governmental groups, competitors and affected industries. [Notes: "Independent": Reviewer(s)/verifier(s) have NOT been involved in collecting, modelling, or entering the data set information or inventory, have not commissioned or financed the work, and do not represent the process or product system (or quantiatitively relevant parts of it). "External": Reviewer(s)/verifier(s) do not belong to the organisations or legally linked organisations that have been involved in collecting, modelling, or entering the data set information or inventory, have not commissioned or financed the work, or represent the process or product system (or quantiatitively relevant parts of it).Not reviewedThe data set was not / not yet reviewed.##
+| ##Art der Prüfung##
+| ##4##
+| ##Process data set/Modelling and validation/Validation/Review/Type of review##
+
+| ##Prüfungsdetails##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Review details##
+| ##reviewDetails##
+| ##r##
+| ##[0,1]##
+| ##FTMultiLang##
+| ##Zusammenfassung der Prüfergebnisse (Verifizierung oder critical review) falls von allgemeinem Interesse##
+| ##4##
+| ##Process data set/Modelling and validation/Validation/Review/Review details##
+
+| ##Name von Prüfer und Prüfinstitution##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Reviewer name and institution##
+| ##referenceToNameOfReviewerAndInstitution##
+| ##r##
+| ##[0,n]##
+| ##GlobalReferenceType##
+| ##"Contact"-Datensatz zur Person und Organisation, welche die Prüfung durchgeführt hat##
+| ##4##
+| ##Process data set/Modelling and validation/Validation/Review/Reviewer name and institution##
+
+| ##vollständiger Prüfbericht##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Complete review report##
+| ##referenceToCompleteReviewReport##
+| ##r##
+| ##[0,1]##
+| ##GlobalReferenceType##
+| ##"Source"-Datensatz mit dem vollständigen Prüfbericht falls von allgemeinem Interesse##
+| ##4##
+| ##Process data set/Modelling and validation/Validation/Review/Complete review report##
+
+| ##Anderer Inhalt##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Other content##
+| ##other##
+| ##o##
+| ##[0,1]##
+| ##{nbsp}##
+| ##{nbsp}##
+| ##3##
+| ##Process data set/Modelling and validation/Validation/Other content##
+
+| ##Konformitätsdeklarationen##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Compliance declarations##
+| ##complianceDeclarations##
+| ##r##
+| ##[0,1]##
+| ##{nbsp}##
+| ##Hier können Normen und/oder Compliance-Systeme angeführt werden, mit denen der Datensatz konform ist. In der Regel wird für EN 15804-konforme EPDs hier ein Verweis auf einen "Source"-Datensatz der EN 15804 angehängt werden##
+| ##2##
+| ##Process data set/Modelling and validation/Compliance declarations##
+
+| ##Konformität##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Compliance##
+| ##compliance##
+| ##r##
+| ##[1,n]##
+| ##{nbsp}##
+| ##eine Konformitätsdeklaration##
+| ##3##
+| ##Process data set/Modelling and validation/Compliance declarations/Compliance##
+
+| ##Name des Konformitätssystems##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Compliance system name##
+| ##referenceToComplianceSystem##
+| ##r##
+| ##[1,1]##
+| ##GlobalReferenceType##
+| ##"Source"-Datensatz des Konformitätssystems##
+| ##4##
+| ##Process data set/Modelling and validation/Compliance declarations/Compliance/Compliance system name##
+
+| ##Anderer Inhalt##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Other content##
+| ##other##
+| ##o##
+| ##[0,1]##
+| ##{nbsp}##
+| ##{nbsp}##
+| ##2##
+| ##Process data set/Modelling and validation/Other content##
+
+| ##Administrative Informationen##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}Administrative information##
+| ##administrativeInformation##
+| ##r##
+| ##[0,1]##
+| ##{nbsp}##
+| ##Informationen zu Datensatzmanagement und -administration##
+| ##1##
+| ##Process data set/Administrative information##
+
+| ##Auftraggeber und Ziel##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Commissioner and goal##
+| ##commissionerAndGoal##
+| ##r##
+| ##[0,1]##
+| ##{nbsp}##
+| ##{nbsp}##
+| ##2##
+| ##Process data set/Administrative information/Commissioner and goal##
+
+| ##Auftraggeber##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Commissioner of data set##
+| ##referenceToCommissioner##
+| ##r##
+| ##[0,n]##
+| ##GlobalReferenceType##
+| ##[needs translation]##
+| ##3##
+| ##Process data set/Administrative information/Commissioner and goal/Commissioner of data set##
+
+| ##Projekt##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Project##
+| ##project##
+| ##o##
+| ##[0,1]##
+| ##StringMultiLang##
+| ##[needs translation]##
+| ##3##
+| ##Process data set/Administrative information/Commissioner and goal/Project##
+
+| ##Anwendungen##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Intended applications##
+| ##intendedApplications##
+| ##r##
+| ##[0,1]##
+| ##FTMultiLang##
+| ##[needs translation]##
+| ##3##
+| ##Process data set/Administrative information/Commissioner and goal/Intended applications##
+
+| ##Anderer Inhalt##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Other content##
+| ##other##
+| ##o##
+| ##[0,1]##
+| ##{nbsp}##
+| ##{nbsp}##
+| ##3##
+| ##Process data set/Administrative information/Commissioner and goal/Other content##
+
+| ##Generierer/Modellierer des Datensatzes##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Data set generator / modeller##
+| ##dataGenerator##
+| ##r##
+| ##[0,1]##
+| ##{nbsp}##
+| ##{nbsp}##
+| ##2##
+| ##Process data set/Administrative information/Data set generator / modeller##
+
+| ##Generierer/Modellierer des Datensatzes##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Data set generator / modeller##
+| ##referenceToPersonOrEntityGeneratingTheDataSet##
+| ##r##
+| ##[0,n]##
+| ##GlobalReferenceType##
+| ##[needs translation]##
+| ##3##
+| ##Process data set/Administrative information/Data set generator / modeller/Data set generator / modeller##
+
+| ##Anderer Inhalt##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Other content##
+| ##other##
+| ##o##
+| ##[0,1]##
+| ##{nbsp}##
+| ##{nbsp}##
+| ##3##
+| ##Process data set/Administrative information/Data set generator / modeller/Other content##
+
+| ##Dateneingabe##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Data entry by##
+| ##dataEntryBy##
+| ##r##
+| ##[0,1]##
+| ##{nbsp}##
+| ##Informationen zur Dateneingabe##
+| ##2##
+| ##Process data set/Administrative information/Data entry by##
+
+| ##Zeitstempel (zuletzt gespeichert)##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Time stamp (last saved)##
+| ##timeStamp##
+| ##r##
+| ##[0,1]##
+| ##dateTime##
+| ##Zeitstempel der letzten Änderung des Datensatzes##
+| ##3##
+| ##Process data set/Administrative information/Data entry by/Time stamp (last saved)##
+
+| ##Datenformat##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Data set format(s)##
+| ##referenceToDataSetFormat##
+| ##r##
+| ##[0,n]##
+| ##GlobalReferenceType##
+| ##"Source"-Datensatz der verwendeten ILCD-Formatversion EPD-Datensätze müssen hier zusätzlich auf den "Source"-Datensatz der EPD-Formaterweiterungen verweisen##
+| ##3##
+| ##Process data set/Administrative information/Data entry by/Data set format(s)##
+
+| ##Anderer Inhalt##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Other content##
+| ##other##
+| ##o##
+| ##[0,1]##
+| ##{nbsp}##
+| ##{nbsp}##
+| ##3##
+| ##Process data set/Administrative information/Data entry by/Other content##
+
+| ##Veröffentlichung und Eigentümer##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Publication and ownership##
+| ##publicationAndOwnership##
+| ##r##
+| ##[0,1]##
+| ##{nbsp}##
+| ##Informationen zur Veröffentlichung und Version des Datensatzes##
+| ##2##
+| ##Process data set/Administrative information/Publication and ownership##
+
+| ##Datensatzversion##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Data set version##
+| ##dataSetVersion##
+| ##m##
+| ##[1,1]##
+| ##Version##
+| ##Versionsnummer des Datensatzes##
+| ##3##
+| ##Process data set/Administrative information/Publication and ownership/Data set version##
+
+| ##Vorhergehende Datensatzversion##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Preceding data set version##
+| ##referenceToPrecedingDataSetVersion##
+| ##o##
+| ##[0,n]##
+| ##GlobalReferenceType##
+| ##{nbsp}##
+| ##3##
+| ##Process data set/Administrative information/Publication and ownership/Preceding data set version##
+
+| ##Permanente Datensatz-URI##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Permanent data set URI##
+| ##permanentDataSetURI##
+| ##r##
+| ##[0,1]##
+| ##anyURI##
+| ##URI zum Original dieses Datensatzes##
+| ##3##
+| ##Process data set/Administrative information/Publication and ownership/Permanent data set URI##
+
+| ##Zeitpunkt der letzten Änderung##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Date of last revision##
+| ##dateOfLastRevision##
+| ##r##
+| ##[0,1]##
+| ##dateTime##
+| ##Zeitpunkt der letzten Änderung des Datensatzes; typischerweise manuell gesetzt##
+| ##3##
+| ##Process data set/Administrative information/Publication and ownership/Date of last revision##
+
+| ##Herausgeber##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Issuer##
+| ##referenceToRegistrationAuthority##
+| ##o##
+| ##[0,1]##
+| ##GlobalReferenceType##
+| ##Kontaktdaten des Herausgebers des Datensatzes (z.B. EPD-Programmbetreiber)##
+| ##3##
+| ##Process data set/Administrative information/Publication and ownership/Issuer##
+
+| ##Registrierungsnummer##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Registration number##
+| ##registrationNumber##
+| ##o##
+| ##[0,1]##
+| ##String##
+| ##ID-Nummer der EPD oder des Projekts##
+| ##3##
+| ##Process data set/Administrative information/Publication and ownership/Registration number##
+
+| ##Eigner des Datensatzes##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Owner of data set##
+| ##referenceToOwnershipOfDataSet##
+| ##r##
+| ##[0,1]##
+| ##GlobalReferenceType##
+| ##"Contact"-Datensatz zum Eigentümer des Datensatzes##
+| ##3##
+| ##Process data set/Administrative information/Publication and ownership/Owner of data set##
+
+| ##Copyright?##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Copyright?##
+| ##copyright##
+| ##r##
+| ##[0,1]##
+| ##boolean##
+| ##[translation needed]##
+| ##3##
+| ##Process data set/Administrative information/Publication and ownership/Copyright?##
+
+| ##Lizenztyp##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}License type##
+| ##licenseType##
+| ##r##
+| ##[0,1]##
+| ##LicenseTypeValuesFree of charge for all users and usesThis data set can be freely accessed and used by all user types and for all uses, including for commercial purposesFree of charge for some user types or use typesThis data set can be accessed free of charge for certain user types, such as academic institutions, students, public administration/government, etc., or for certain types of uses, e.g. not-for-profit. Details and license conditions are to be obtained from the "Data set owner" or electronically via the "Permanent URI", if implemented by data owner. Also see "Access and use restrictions".Free of charge for members onlyData set is accessible free of charge only for members. Membership itself must be for free, while not all user types may be able to become member. Membership conditions are to be obtained from the "Data set owner" or electronically via the "Permanent URI", if implemented by data owner. Also see "Access and use restrictions".License feeData set is accessible for a license fee. This can be a fee per data set, for a group of data sets, a whole database, or for obtaining a membership to get access to the data. Details and license conditions are to be obtained from the "Data set owner" or electronically via the "Permanent URI", if implemented by data owner. Also see "Access and use restrictions".OtherAnother LCI method approach is used. This is named in "Deviations from LCI method approaches / explanations" where also additional information is given.##
+| ##[translation needed]##
+| ##3##
+| ##Process data set/Administrative information/Publication and ownership/License type##
+
+| ##Zugriffs- und Nutzungsbeschränkungen##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Access and use restrictions##
+| ##accessRestrictions##
+| ##r##
+| ##[0,1]##
+| ##FTMultiLang##
+| ##[translation needed]##
+| ##3##
+| ##Process data set/Administrative information/Publication and ownership/Access and use restrictions##
+
+| ##Anderer Inhalt##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Other content##
+| ##other##
+| ##o##
+| ##[0,1]##
+| ##{nbsp}##
+| ##{nbsp}##
+| ##2##
+| ##Process data set/Administrative information/Other content##
+
+| ##Datensatz veröffentlicht bei##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}publisher of the data set##
+| ##referenceToPublisher##
+| ##o##
+| ##[0,n]##
+| ##GlobalReferenceType##
+| ##Organisation, welche den EPD-Datensatz publiziert.##
+| ##4##
+| ##Process data set/Administrative information/Other content/publisher of the data set##
+
+| ##Inputs und Outputs##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}Inputs and Outputs##
+| ##exchanges##
+| ##r##
+| ##[0,1]##
+| ##{nbsp}##
+| ##Liste der Exchanges (Inputs und Outputs)##
+| ##1##
+| ##Process data set/Inputs and Outputs##
+
+| ##Inputs und Outputs##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Inputs and Outputs##
+| ##exchange##
+| ##r##
+| ##[0,n]##
+| ##{nbsp}##
+| ##Einzelner Exchange (Input oder Output)##
+| ##2##
+| ##Process data set/Inputs and Outputs/Inputs and Outputs##
+
+| ##datensatzinterne ID##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Data set internal ID##
+| ##@dataSetInternalID##
+| ##r##
+| ##{nbsp}##
+| ##Int6##
+| ##Automatisch vergebener interner Identifizierer, wird von "Quantitative Referenz" verwendet, um den Referenzfluß anzugeben##
+| ##3##
+| ##Process data set/Inputs and Outputs/Inputs and Outputs/Data set internal ID##
+
+| ##Referenz zum Flußdatensatz##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Flow##
+| ##referenceToFlowDataSet##
+| ##r##
+| ##[1,1]##
+| ##GlobalReferenceType##
+| ##Referenz zum Flußdatensatz.##
+| ##3##
+| ##Process data set/Inputs and Outputs/Inputs and Outputs/Flow##
+
+| ##Funktionstyp##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Exchange Function Type##
+| ##functionType##
+| ##o##
+| ##[0,1]##
+| ##ExchangeFunctionTypeValuesGeneral reminder flowReminder flow on the amount of (selected) product and waste flows of included processes. Purely informative flow for additional reporting that has already been fully considered in the inventory of the data set. Serves to document e.g. the total amount of hazardous waste generated over the life cycle of a product system.Allocation reminder flowReminder flow on allocated co-products that have been excluded during allocation when calculating the LCI results. Purely informative flow for additional reporting that has already been fully considered in the inventory of the data set.System expansion reminder flowReminder flow on excluded co-products that have been excluded in consequential modelling e.g. by system expansion / substitution when calculating the LCI results.##
+| ##Funktionstyp des Exchanges. Angabe "General reminder flow" obligatorisch für alle Exchanges, die LCI-Indikatoren abbilden (d.h. alle außer dem Referenzfluß).##
+| ##3##
+| ##Process data set/Inputs and Outputs/Inputs and Outputs/Exchange Function Type##
+
+| ##Richtung##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Exchange direction##
+| ##exchangeDirection##
+| ##r##
+| ##[0,1]##
+| ##ExchangeDirectionValuesInputFlow in input list of the process, e.g. resources from nature or energy carriers, or commodities and services entering from the technosphere. (In case the flow has an negative "resulting amount" value this is equivalent to belonging to the output list of the process.)OutputFlow in output list of the process, e.g. emissions to nature, or products and waste going to the technosphere into another process. (In case the flow has a negative "resulting amount" value this is equivalent to belonging to the input list of the process.)##
+| ##Richtung des Flusses (Input oder Output)##
+| ##3##
+| ##Process data set/Inputs and Outputs/Inputs and Outputs/Exchange direction##
+
+| ##Mittelwert##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Mean amount##
+| ##meanAmount##
+| ##r##
+| ##[1,1]##
+| ##Real##
+| ##Mittelwert des Inputs bzw. Outputs (Angabe nur für den Referenzfluß, i.d.R. 1).##
+| ##3##
+| ##Process data set/Inputs and Outputs/Inputs and Outputs/Mean amount##
+
+| ##Allgemeine Erläuterungen##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Comment##
+| ##generalComment##
+| ##o##
+| ##[0,1]##
+| ##StringMultiLang##
+| ##Allgemeine Erläuterungen##
+| ##3##
+| ##Process data set/Inputs and Outputs/Inputs and Outputs/Comment##
+
+| ##Anderer Inhalt##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Other content##
+| ##other##
+| ##o##
+| ##[0,1]##
+| ##{nbsp}##
+| ##{nbsp}##
+| ##3##
+| ##Process data set/Inputs and Outputs/Inputs and Outputs/Other content##
+
+| ##Wert##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}##
+| ##epd:amount##
+| ##m##
+| ##[0,n]##
+| ##Real##
+| ##Zahlenmäßiger Wert für diesen Parameter##
+| ##4##
+| ##Process data set/Inputs and Outputs/Inputs and Outputs/Other content/##
+
+| ##Modul/Phase##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Module/Phase##
+| ##@epd:module##
+| ##m##
+| ##{nbsp}##
+| ##String##
+| ##Modul oder Phase (z.B. "A1-A3")##
+| ##5##
+| ##Process data set/Inputs and Outputs/Inputs and Outputs/Other content//Module/Phase##
+
+| ##Szenario##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Scenario##
+| ##@epd:scenario##
+| ##o##
+| ##{nbsp}##
+| ##String##
+| ##Verweis auf die oben definierte ID eines Szenarios (falls definiert), für das dieser Wert gilt.##
+| ##5##
+| ##Process data set/Inputs and Outputs/Inputs and Outputs/Other content//Scenario##
+
+| ##Einheitengruppe##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Unit group##
+| ##epd:referenceToUnitGroupDataSet##
+| ##m##
+| ##[1,1]##
+| ##GlobalReferenceType##
+| ##Verweis auf den Einheitengruppen-Datensatz##
+| ##4##
+| ##Process data set/Inputs and Outputs/Inputs and Outputs/Other content/Unit group##
+
+| ##Wirkbilanz-Ergebnisse##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}LCIA results##
+| ##LCIAResults##
+| ##o##
+| ##[0,1]##
+| ##{nbsp}##
+| ##Liste der Wirkbilanz-Ergebnisse##
+| ##1##
+| ##Process data set/LCIA results##
+
+| ##Wirkbilanz-Ergebnis##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}LCIA result##
+| ##LCIAResult##
+| ##o##
+| ##[0,n]##
+| ##{nbsp}##
+| ##Einzelnes Wirkbilanz-Ergebnis##
+| ##2##
+| ##Process data set/LCIA results/LCIA result##
+
+| ##LCIA-Methode##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}LCIA method##
+| ##referenceToLCIAMethodDataSet##
+| ##o##
+| ##[1,1]##
+| ##GlobalReferenceType##
+| ##Verweis auf die LCIA-Methode##
+| ##3##
+| ##Process data set/LCIA results/LCIA result/LCIA method##
+
+| ##Erläuterungen##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Comment##
+| ##generalComment##
+| ##o##
+| ##[0,1]##
+| ##StringMultiLang##
+| ##Allgemeine Erläuterungen##
+| ##3##
+| ##Process data set/LCIA results/LCIA result/Comment##
+
+| ##Anderer Inhalt##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Other content##
+| ##other##
+| ##o##
+| ##[0,1]##
+| ##{nbsp}##
+| ##{nbsp}##
+| ##3##
+| ##Process data set/LCIA results/LCIA result/Other content##
+
+| ##Wert##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}##
+| ##epd:amount##
+| ##m##
+| ##[0,n]##
+| ##Real##
+| ##Zahlenmäßiger Wert für diesen Parameter##
+| ##4##
+| ##Process data set/LCIA results/LCIA result/Other content/##
+
+| ##Modul/Phase##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Module/Phase##
+| ##@epd:module##
+| ##m##
+| ##{nbsp}##
+| ##String##
+| ##Modul oder Phase (z.B. "A1-A3")##
+| ##5##
+| ##Process data set/LCIA results/LCIA result/Other content//Module/Phase##
+
+| ##Szenario##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Scenario##
+| ##@epd:scenario##
+| ##o##
+| ##{nbsp}##
+| ##String##
+| ##Verweis auf die oben definierte ID eines Szenarios (falls definiert), für das dieser Wert gilt.##
+| ##5##
+| ##Process data set/LCIA results/LCIA result/Other content//Scenario##
+
+| ##Einheitengruppe##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}Unit group##
+| ##epd:referenceToUnitGroupDataSet##
+| ##m##
+| ##[1,1]##
+| ##GlobalReferenceType##
+| ##Verweis auf den Einheitengruppen-Datensatz##
+| ##4##
+| ##Process data set/LCIA results/LCIA result/Other content/Unit group##
+|===

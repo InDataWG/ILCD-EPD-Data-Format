@@ -1,0 +1,1087 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flow data set</title>
+    
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+<body class="">
+    
+    <h1>Flow data set</h1>
+    <div class="controls">
+        <input type="text" id="search-bar" placeholder="Search by Name, Path, or Definition...">
+        <div class="download-buttons">
+            <button id="download-csv-btn">Download CSV</button>
+            <button id="download-adoc-btn">Download AsciiDoc</button>
+        </div>
+        <div class="view-options">
+            <button id="toggle-stripes-btn">Toggle Stripes</button>
+        </div>
+        <div class="col-toggles">
+            <label for="toggle-Field-Name"><input type="checkbox" id="toggle-Field-Name" data-col="Field Name" checked>Field Name</label>
+            <label for="toggle-Element/Attribute-Name"><input type="checkbox" id="toggle-Element/Attribute-Name" data-col="Element/Attribute Name" checked>Element/Attribute Name</label>
+            <label for="toggle-Requ"><input type="checkbox" id="toggle-Requ" data-col="Requ." checked>Requ.</label>
+            <label for="toggle-Occ"><input type="checkbox" id="toggle-Occ" data-col="Occ." checked>Occ.</label>
+            <label for="toggle-Datatype"><input type="checkbox" id="toggle-Datatype" data-col="Datatype" checked>Datatype</label>
+            <label for="toggle-Definition"><input type="checkbox" id="toggle-Definition" data-col="Definition" checked>Definition</label>
+            <label for="toggle-eDoc-ID"><input type="checkbox" id="toggle-eDoc-ID" data-col="eDoc ID" checked>eDoc ID</label>
+        </div>
+    </div>
+    <table id="report-table">
+        <thead>
+            <tr>
+                <th data-col="View Attribute">View Attribute</th>
+                <th data-col="Field Name">Field Name</th>
+                <th data-col="Element/Attribute Name">Element/Attribute Name</th>
+                <th data-col="Requ.">Requ.</th>
+                <th data-col="Occ.">Occ.</th>
+                <th data-col="Datatype">Datatype</th>
+                <th data-col="Definition">Definition</th>
+                <th data-col="eDoc ID">eDoc ID</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr data-tooltip="Flow data set">
+                <td data-col="View Attribute">
+                    <button class="view-attr-btn" onclick="openAttributePage('Flow data set')" title="View detailed information">View Attribute</button>
+                </td>
+                <td data-col="Field Name"></td>
+                <td data-col="Element/Attribute Name">Flow data set</td>
+                <td data-col="Requ.">flowDataSet</td>
+                <td data-col="Occ.">m</td>
+                <td data-col="Datatype">[1,1]</td>
+                <td data-col="Definition"></td>
+                <td data-col="eDoc ID"></td>
+            </tr>
+            <tr data-tooltip="Flow data set/">
+                <td data-col="View Attribute">
+                    <button class="view-attr-btn" onclick="openAttributePage('Flow data set_')" title="View detailed information">View Attribute</button>
+                </td>
+                <td data-col="Field Name"></td>
+                <td data-col="Element/Attribute Name">&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                <td data-col="Requ.">@version</td>
+                <td data-col="Occ.">m</td>
+                <td data-col="Datatype"></td>
+                <td data-col="Definition">SchemaVersion</td>
+                <td data-col="eDoc ID"></td>
+            </tr>
+            <tr data-tooltip="Flow data set/">
+                <td data-col="View Attribute">
+                    <button class="view-attr-btn" onclick="openAttributePage('Flow data set_')" title="View detailed information">View Attribute</button>
+                </td>
+                <td data-col="Field Name"></td>
+                <td data-col="Element/Attribute Name">&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                <td data-col="Requ.">@locations</td>
+                <td data-col="Occ.">o</td>
+                <td data-col="Datatype"></td>
+                <td data-col="Definition">String</td>
+                <td data-col="eDoc ID"></td>
+            </tr>
+            <tr data-tooltip="Flow data set/Flow information">
+                <td data-col="View Attribute">
+                    <button class="view-attr-btn" onclick="openAttributePage('Flow data set_Flow information')" title="View detailed information">View Attribute</button>
+                </td>
+                <td data-col="Field Name"></td>
+                <td data-col="Element/Attribute Name">&nbsp;&nbsp;&nbsp;&nbsp;Flow information</td>
+                <td data-col="Requ.">flowInformation</td>
+                <td data-col="Occ.">m</td>
+                <td data-col="Datatype">[1,1]</td>
+                <td data-col="Definition"></td>
+                <td data-col="eDoc ID"></td>
+            </tr>
+            <tr data-tooltip="Flow data set/Flow information/Data set information">
+                <td data-col="View Attribute">
+                    <button class="view-attr-btn" onclick="openAttributePage('Flow data set_Flow information_Data set information')" title="View detailed information">View Attribute</button>
+                </td>
+                <td data-col="Field Name"></td>
+                <td data-col="Element/Attribute Name">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Data set information</td>
+                <td data-col="Requ.">dataSetInformation</td>
+                <td data-col="Occ.">m</td>
+                <td data-col="Datatype">[1,1]</td>
+                <td data-col="Definition"></td>
+                <td data-col="eDoc ID"></td>
+            </tr>
+            <tr data-tooltip="Flow data set/Flow information/Data set information/UUID of flow data set">
+                <td data-col="View Attribute">
+                    <button class="view-attr-btn" onclick="openAttributePage('Flow data set_Flow information_Data set information_UUID of flow data set')" title="View detailed information">View Attribute</button>
+                </td>
+                <td data-col="Field Name"></td>
+                <td data-col="Element/Attribute Name">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;UUID of flow data set</td>
+                <td data-col="Requ.">UUID</td>
+                <td data-col="Occ.">m</td>
+                <td data-col="Datatype">[1,1]</td>
+                <td data-col="Definition">UUID</td>
+                <td data-col="eDoc ID"></td>
+            </tr>
+            <tr data-tooltip="Flow data set/Flow information/Data set information/Name">
+                <td data-col="View Attribute">
+                    <button class="view-attr-btn" onclick="openAttributePage('Flow data set_Flow information_Data set information_Name')" title="View detailed information">View Attribute</button>
+                </td>
+                <td data-col="Field Name"></td>
+                <td data-col="Element/Attribute Name">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Name</td>
+                <td data-col="Requ.">name</td>
+                <td data-col="Occ.">r</td>
+                <td data-col="Datatype">[0,1]</td>
+                <td data-col="Definition"></td>
+                <td data-col="eDoc ID"></td>
+            </tr>
+            <tr data-tooltip="Flow data set/Flow information/Data set information/Name/Base name">
+                <td data-col="View Attribute">
+                    <button class="view-attr-btn" onclick="openAttributePage('Flow data set_Flow information_Data set information_Name_Base name')" title="View detailed information">View Attribute</button>
+                </td>
+                <td data-col="Field Name"></td>
+                <td data-col="Element/Attribute Name">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Base name</td>
+                <td data-col="Requ.">baseName</td>
+                <td data-col="Occ.">r</td>
+                <td data-col="Datatype">[1,1]</td>
+                <td data-col="Definition">StringMultiLang</td>
+                <td data-col="eDoc ID"></td>
+            </tr>
+            <tr data-tooltip="Flow data set/Flow information/Data set information/Name/Treatment, standards, routes">
+                <td data-col="View Attribute">
+                    <button class="view-attr-btn" onclick="openAttributePage('Flow data set_Flow information_Data set information_Name_Treatment, standards, routes')" title="View detailed information">View Attribute</button>
+                </td>
+                <td data-col="Field Name"></td>
+                <td data-col="Element/Attribute Name">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Treatment, standards, routes</td>
+                <td data-col="Requ.">treatmentStandardsRoutes</td>
+                <td data-col="Occ.">o</td>
+                <td data-col="Datatype">[0,1]</td>
+                <td data-col="Definition">StringMultiLang</td>
+                <td data-col="eDoc ID"></td>
+            </tr>
+            <tr data-tooltip="Flow data set/Flow information/Data set information/Name/Mix and location types">
+                <td data-col="View Attribute">
+                    <button class="view-attr-btn" onclick="openAttributePage('Flow data set_Flow information_Data set information_Name_Mix and location types')" title="View detailed information">View Attribute</button>
+                </td>
+                <td data-col="Field Name"></td>
+                <td data-col="Element/Attribute Name">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Mix and location types</td>
+                <td data-col="Requ.">mixAndLocationTypes</td>
+                <td data-col="Occ.">o</td>
+                <td data-col="Datatype">[0,1]</td>
+                <td data-col="Definition">StringMultiLang</td>
+                <td data-col="eDoc ID"></td>
+            </tr>
+            <tr data-tooltip="Flow data set/Flow information/Data set information/Name/Quantitative flow properties">
+                <td data-col="View Attribute">
+                    <button class="view-attr-btn" onclick="openAttributePage('Flow data set_Flow information_Data set information_Name_Quantitative flow properties')" title="View detailed information">View Attribute</button>
+                </td>
+                <td data-col="Field Name"></td>
+                <td data-col="Element/Attribute Name">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Quantitative flow properties</td>
+                <td data-col="Requ.">flowProperties</td>
+                <td data-col="Occ.">o</td>
+                <td data-col="Datatype">[0,1]</td>
+                <td data-col="Definition">StringMultiLang</td>
+                <td data-col="eDoc ID"></td>
+            </tr>
+            <tr data-tooltip="Flow data set/Flow information/Data set information/Name/Other content">
+                <td data-col="View Attribute">
+                    <button class="view-attr-btn" onclick="openAttributePage('Flow data set_Flow information_Data set information_Name_Other content')" title="View detailed information">View Attribute</button>
+                </td>
+                <td data-col="Field Name"></td>
+                <td data-col="Element/Attribute Name">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Other content</td>
+                <td data-col="Requ.">other</td>
+                <td data-col="Occ.">o</td>
+                <td data-col="Datatype">[0,1]</td>
+                <td data-col="Definition"></td>
+                <td data-col="eDoc ID"></td>
+            </tr>
+            <tr data-tooltip="Flow data set/Flow information/Data set information/Synonyms">
+                <td data-col="View Attribute">
+                    <button class="view-attr-btn" onclick="openAttributePage('Flow data set_Flow information_Data set information_Synonyms')" title="View detailed information">View Attribute</button>
+                </td>
+                <td data-col="Field Name"></td>
+                <td data-col="Element/Attribute Name">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Synonyms</td>
+                <td data-col="Requ.">synonyms</td>
+                <td data-col="Occ.">o</td>
+                <td data-col="Datatype">[0,1]</td>
+                <td data-col="Definition">FTMultiLang</td>
+                <td data-col="eDoc ID"></td>
+            </tr>
+            <tr data-tooltip="Flow data set/Flow information/Data set information/Category and classification information">
+                <td data-col="View Attribute">
+                    <button class="view-attr-btn" onclick="openAttributePage('Flow data set_Flow information_Data set information_Category and classification information')" title="View detailed information">View Attribute</button>
+                </td>
+                <td data-col="Field Name"></td>
+                <td data-col="Element/Attribute Name">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Category and classification information</td>
+                <td data-col="Requ.">classificationInformation</td>
+                <td data-col="Occ.">r</td>
+                <td data-col="Datatype">[0,1]</td>
+                <td data-col="Definition"></td>
+                <td data-col="eDoc ID"></td>
+            </tr>
+            <tr data-tooltip="Flow data set/Flow information/Data set information/Category and classification information/Elementary flow categorization">
+                <td data-col="View Attribute">
+                    <button class="view-attr-btn" onclick="openAttributePage('Flow data set_Flow information_Data set information_Category and classification information_Elementary flow categorization')" title="View detailed information">View Attribute</button>
+                </td>
+                <td data-col="Field Name"></td>
+                <td data-col="Element/Attribute Name">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Elementary flow categorization</td>
+                <td data-col="Requ.">elementaryFlowCategorization</td>
+                <td data-col="Occ.">r</td>
+                <td data-col="Datatype">[0,n]</td>
+                <td data-col="Definition"></td>
+                <td data-col="eDoc ID"></td>
+            </tr>
+            <tr data-tooltip="Flow data set/Flow information/Data set information/Category and classification information/Elementary flow categorization/Name of categorization system">
+                <td data-col="View Attribute">
+                    <button class="view-attr-btn" onclick="openAttributePage('Flow data set_Flow information_Data set information_Category and classification information_Elementary flow categorization_Name of categorization system')" title="View detailed information">View Attribute</button>
+                </td>
+                <td data-col="Field Name"></td>
+                <td data-col="Element/Attribute Name">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Name of categorization system</td>
+                <td data-col="Requ.">@name</td>
+                <td data-col="Occ.">r</td>
+                <td data-col="Datatype"></td>
+                <td data-col="Definition">string</td>
+                <td data-col="eDoc ID"></td>
+            </tr>
+            <tr data-tooltip="Flow data set/Flow information/Data set information/Category and classification information/Elementary flow categorization/Categories file">
+                <td data-col="View Attribute">
+                    <button class="view-attr-btn" onclick="openAttributePage('Flow data set_Flow information_Data set information_Category and classification information_Elementary flow categorization_Categories file')" title="View detailed information">View Attribute</button>
+                </td>
+                <td data-col="Field Name"></td>
+                <td data-col="Element/Attribute Name">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Categories file</td>
+                <td data-col="Requ.">@categories</td>
+                <td data-col="Occ.">o</td>
+                <td data-col="Datatype"></td>
+                <td data-col="Definition">anyURI</td>
+                <td data-col="eDoc ID"></td>
+            </tr>
+            <tr data-tooltip="Flow data set/Flow information/Data set information/Category and classification information/Elementary flow categorization/Category name">
+                <td data-col="View Attribute">
+                    <button class="view-attr-btn" onclick="openAttributePage('Flow data set_Flow information_Data set information_Category and classification information_Elementary flow categorization_Category name')" title="View detailed information">View Attribute</button>
+                </td>
+                <td data-col="Field Name"></td>
+                <td data-col="Element/Attribute Name">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Category name</td>
+                <td data-col="Requ.">category</td>
+                <td data-col="Occ.">r</td>
+                <td data-col="Datatype">[1,n]</td>
+                <td data-col="Definition"></td>
+                <td data-col="eDoc ID"></td>
+            </tr>
+            <tr data-tooltip="Flow data set/Flow information/Data set information/Category and classification information/Elementary flow categorization/Category name/Hierarchy level">
+                <td data-col="View Attribute">
+                    <button class="view-attr-btn" onclick="openAttributePage('Flow data set_Flow information_Data set information_Category and classification information_Elementary flow categorization_Category name_Hierarchy level')" title="View detailed information">View Attribute</button>
+                </td>
+                <td data-col="Field Name"></td>
+                <td data-col="Element/Attribute Name">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Hierarchy level</td>
+                <td data-col="Requ.">@level</td>
+                <td data-col="Occ.">r</td>
+                <td data-col="Datatype"></td>
+                <td data-col="Definition">LevelType</td>
+                <td data-col="eDoc ID"></td>
+            </tr>
+            <tr data-tooltip="Flow data set/Flow information/Data set information/Category and classification information/Elementary flow categorization/Category name/Unique category identifier">
+                <td data-col="View Attribute">
+                    <button class="view-attr-btn" onclick="openAttributePage('Flow data set_Flow information_Data set information_Category and classification information_Elementary flow categorization_Category name_Unique category identifier')" title="View detailed information">View Attribute</button>
+                </td>
+                <td data-col="Field Name"></td>
+                <td data-col="Element/Attribute Name">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Unique category identifier</td>
+                <td data-col="Requ.">@catId</td>
+                <td data-col="Occ.">r</td>
+                <td data-col="Datatype"></td>
+                <td data-col="Definition">string</td>
+                <td data-col="eDoc ID"></td>
+            </tr>
+            <tr data-tooltip="Flow data set/Flow information/Data set information/Category and classification information/Elementary flow categorization/Other content">
+                <td data-col="View Attribute">
+                    <button class="view-attr-btn" onclick="openAttributePage('Flow data set_Flow information_Data set information_Category and classification information_Elementary flow categorization_Other content')" title="View detailed information">View Attribute</button>
+                </td>
+                <td data-col="Field Name"></td>
+                <td data-col="Element/Attribute Name">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Other content</td>
+                <td data-col="Requ.">other</td>
+                <td data-col="Occ.">o</td>
+                <td data-col="Datatype">[0,1]</td>
+                <td data-col="Definition"></td>
+                <td data-col="eDoc ID"></td>
+            </tr>
+            <tr data-tooltip="Flow data set/Flow information/Data set information/Category and classification information/Classification">
+                <td data-col="View Attribute">
+                    <button class="view-attr-btn" onclick="openAttributePage('Flow data set_Flow information_Data set information_Category and classification information_Classification')" title="View detailed information">View Attribute</button>
+                </td>
+                <td data-col="Field Name"></td>
+                <td data-col="Element/Attribute Name">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Classification</td>
+                <td data-col="Requ.">classification</td>
+                <td data-col="Occ.">r</td>
+                <td data-col="Datatype">[0,n]</td>
+                <td data-col="Definition"></td>
+                <td data-col="eDoc ID"></td>
+            </tr>
+            <tr data-tooltip="Flow data set/Flow information/Data set information/Category and classification information/Classification/Classification system name">
+                <td data-col="View Attribute">
+                    <button class="view-attr-btn" onclick="openAttributePage('Flow data set_Flow information_Data set information_Category and classification information_Classification_Classification system name')" title="View detailed information">View Attribute</button>
+                </td>
+                <td data-col="Field Name"></td>
+                <td data-col="Element/Attribute Name">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Classification system name</td>
+                <td data-col="Requ.">@name</td>
+                <td data-col="Occ.">r</td>
+                <td data-col="Datatype"></td>
+                <td data-col="Definition">string</td>
+                <td data-col="eDoc ID"></td>
+            </tr>
+            <tr data-tooltip="Flow data set/Flow information/Data set information/Category and classification information/Classification/Classes">
+                <td data-col="View Attribute">
+                    <button class="view-attr-btn" onclick="openAttributePage('Flow data set_Flow information_Data set information_Category and classification information_Classification_Classes')" title="View detailed information">View Attribute</button>
+                </td>
+                <td data-col="Field Name"></td>
+                <td data-col="Element/Attribute Name">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Classes</td>
+                <td data-col="Requ.">@classes</td>
+                <td data-col="Occ.">r</td>
+                <td data-col="Datatype"></td>
+                <td data-col="Definition">anyURI</td>
+                <td data-col="eDoc ID"></td>
+            </tr>
+            <tr data-tooltip="Flow data set/Flow information/Data set information/Category and classification information/Classification/Class name">
+                <td data-col="View Attribute">
+                    <button class="view-attr-btn" onclick="openAttributePage('Flow data set_Flow information_Data set information_Category and classification information_Classification_Class name')" title="View detailed information">View Attribute</button>
+                </td>
+                <td data-col="Field Name"></td>
+                <td data-col="Element/Attribute Name">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Class name</td>
+                <td data-col="Requ.">class</td>
+                <td data-col="Occ.">r</td>
+                <td data-col="Datatype">[1,n]</td>
+                <td data-col="Definition"></td>
+                <td data-col="eDoc ID"></td>
+            </tr>
+            <tr data-tooltip="Flow data set/Flow information/Data set information/Category and classification information/Classification/Class name/Hierarchy level">
+                <td data-col="View Attribute">
+                    <button class="view-attr-btn" onclick="openAttributePage('Flow data set_Flow information_Data set information_Category and classification information_Classification_Class name_Hierarchy level')" title="View detailed information">View Attribute</button>
+                </td>
+                <td data-col="Field Name"></td>
+                <td data-col="Element/Attribute Name">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Hierarchy level</td>
+                <td data-col="Requ.">@level</td>
+                <td data-col="Occ.">r</td>
+                <td data-col="Datatype"></td>
+                <td data-col="Definition">LevelType</td>
+                <td data-col="eDoc ID"></td>
+            </tr>
+            <tr data-tooltip="Flow data set/Flow information/Data set information/Category and classification information/Classification/Class name/Unique class identifier">
+                <td data-col="View Attribute">
+                    <button class="view-attr-btn" onclick="openAttributePage('Flow data set_Flow information_Data set information_Category and classification information_Classification_Class name_Unique class identifier')" title="View detailed information">View Attribute</button>
+                </td>
+                <td data-col="Field Name"></td>
+                <td data-col="Element/Attribute Name">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Unique class identifier</td>
+                <td data-col="Requ.">@classId</td>
+                <td data-col="Occ.">r</td>
+                <td data-col="Datatype"></td>
+                <td data-col="Definition">string</td>
+                <td data-col="eDoc ID"></td>
+            </tr>
+            <tr data-tooltip="Flow data set/Flow information/Data set information/Category and classification information/Classification/Other content">
+                <td data-col="View Attribute">
+                    <button class="view-attr-btn" onclick="openAttributePage('Flow data set_Flow information_Data set information_Category and classification information_Classification_Other content')" title="View detailed information">View Attribute</button>
+                </td>
+                <td data-col="Field Name"></td>
+                <td data-col="Element/Attribute Name">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Other content</td>
+                <td data-col="Requ.">other</td>
+                <td data-col="Occ.">o</td>
+                <td data-col="Datatype">[0,1]</td>
+                <td data-col="Definition"></td>
+                <td data-col="eDoc ID"></td>
+            </tr>
+            <tr data-tooltip="Flow data set/Flow information/Data set information/CAS Number">
+                <td data-col="View Attribute">
+                    <button class="view-attr-btn" onclick="openAttributePage('Flow data set_Flow information_Data set information_CAS Number')" title="View detailed information">View Attribute</button>
+                </td>
+                <td data-col="Field Name"></td>
+                <td data-col="Element/Attribute Name">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CAS Number</td>
+                <td data-col="Requ.">CASNumber</td>
+                <td data-col="Occ.">o</td>
+                <td data-col="Datatype">[0,1]</td>
+                <td data-col="Definition">CASNumber</td>
+                <td data-col="eDoc ID"></td>
+            </tr>
+            <tr data-tooltip="Flow data set/Flow information/Data set information/Sum formula">
+                <td data-col="View Attribute">
+                    <button class="view-attr-btn" onclick="openAttributePage('Flow data set_Flow information_Data set information_Sum formula')" title="View detailed information">View Attribute</button>
+                </td>
+                <td data-col="Field Name"></td>
+                <td data-col="Element/Attribute Name">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sum formula</td>
+                <td data-col="Requ.">sumFormula</td>
+                <td data-col="Occ.">o</td>
+                <td data-col="Datatype">[0,1]</td>
+                <td data-col="Definition">String</td>
+                <td data-col="eDoc ID"></td>
+            </tr>
+            <tr data-tooltip="Flow data set/Flow information/Data set information/General comment on data set">
+                <td data-col="View Attribute">
+                    <button class="view-attr-btn" onclick="openAttributePage('Flow data set_Flow information_Data set information_General comment on data set')" title="View detailed information">View Attribute</button>
+                </td>
+                <td data-col="Field Name"></td>
+                <td data-col="Element/Attribute Name">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;General comment on data set</td>
+                <td data-col="Requ.">generalComment</td>
+                <td data-col="Occ.">o</td>
+                <td data-col="Datatype">[0,1]</td>
+                <td data-col="Definition">FTMultiLang</td>
+                <td data-col="eDoc ID"></td>
+            </tr>
+            <tr data-tooltip="Flow data set/Flow information/Data set information/Other content">
+                <td data-col="View Attribute">
+                    <button class="view-attr-btn" onclick="openAttributePage('Flow data set_Flow information_Data set information_Other content')" title="View detailed information">View Attribute</button>
+                </td>
+                <td data-col="Field Name"></td>
+                <td data-col="Element/Attribute Name">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Other content</td>
+                <td data-col="Requ.">other</td>
+                <td data-col="Occ.">o</td>
+                <td data-col="Datatype">[0,1]</td>
+                <td data-col="Definition"></td>
+                <td data-col="eDoc ID"></td>
+            </tr>
+            <tr data-tooltip="Flow data set/Flow information/Data set information/Other content/is a">
+                <td data-col="View Attribute">
+                    <button class="view-attr-btn" onclick="openAttributePage('Flow data set_Flow information_Data set information_Other content_is a')" title="View detailed information">View Attribute</button>
+                </td>
+                <td data-col="Field Name">ist ein</td>
+                <td data-col="Element/Attribute Name">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;is a</td>
+                <td data-col="Requ.">epd:isA</td>
+                <td data-col="Occ.">o</td>
+                <td data-col="Datatype">[0,1]</td>
+                <td data-col="Definition">GlobalReferenceType</td>
+                <td data-col="eDoc ID">Referenz auf ein zugehöriges generisches Produkt (&#34;Flow&#34;-Datensatz)</td>
+            </tr>
+            <tr data-tooltip="Flow data set/Flow information/Data set information/Other content/Material properties (embedded MatML)">
+                <td data-col="View Attribute">
+                    <button class="view-attr-btn" onclick="openAttributePage('Flow data set_Flow information_Data set information_Other content_Material properties (embedded MatML)')" title="View detailed information">View Attribute</button>
+                </td>
+                <td data-col="Field Name">Materialeigenschaften (eingebettetes MatML)</td>
+                <td data-col="Element/Attribute Name">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Material properties (embedded MatML)</td>
+                <td data-col="Requ.">matml:MatML_Doc</td>
+                <td data-col="Occ.">o</td>
+                <td data-col="Datatype">[0,1]</td>
+                <td data-col="Definition"></td>
+                <td data-col="eDoc ID">Hier können mittels MatML-Markup beliebige physikalische oder chemische Produkteigenschaften wie Dichte etc. beschrieben werden</td>
+            </tr>
+            <tr data-tooltip="Flow data set/Flow information/Quantitative reference">
+                <td data-col="View Attribute">
+                    <button class="view-attr-btn" onclick="openAttributePage('Flow data set_Flow information_Quantitative reference')" title="View detailed information">View Attribute</button>
+                </td>
+                <td data-col="Field Name"></td>
+                <td data-col="Element/Attribute Name">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Quantitative reference</td>
+                <td data-col="Requ.">quantitativeReference</td>
+                <td data-col="Occ.">r</td>
+                <td data-col="Datatype">[0,1]</td>
+                <td data-col="Definition"></td>
+                <td data-col="eDoc ID"></td>
+            </tr>
+            <tr data-tooltip="Flow data set/Flow information/Quantitative reference/Reference flow property">
+                <td data-col="View Attribute">
+                    <button class="view-attr-btn" onclick="openAttributePage('Flow data set_Flow information_Quantitative reference_Reference flow property')" title="View detailed information">View Attribute</button>
+                </td>
+                <td data-col="Field Name"></td>
+                <td data-col="Element/Attribute Name">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Reference flow property</td>
+                <td data-col="Requ.">referenceToReferenceFlowProperty</td>
+                <td data-col="Occ.">r</td>
+                <td data-col="Datatype">[1,1]</td>
+                <td data-col="Definition">Int5</td>
+                <td data-col="eDoc ID"></td>
+            </tr>
+            <tr data-tooltip="Flow data set/Flow information/Quantitative reference/Other content">
+                <td data-col="View Attribute">
+                    <button class="view-attr-btn" onclick="openAttributePage('Flow data set_Flow information_Quantitative reference_Other content')" title="View detailed information">View Attribute</button>
+                </td>
+                <td data-col="Field Name"></td>
+                <td data-col="Element/Attribute Name">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Other content</td>
+                <td data-col="Requ.">other</td>
+                <td data-col="Occ.">o</td>
+                <td data-col="Datatype">[0,1]</td>
+                <td data-col="Definition"></td>
+                <td data-col="eDoc ID"></td>
+            </tr>
+            <tr data-tooltip="Flow data set/Flow information/Geography">
+                <td data-col="View Attribute">
+                    <button class="view-attr-btn" onclick="openAttributePage('Flow data set_Flow information_Geography')" title="View detailed information">View Attribute</button>
+                </td>
+                <td data-col="Field Name"></td>
+                <td data-col="Element/Attribute Name">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Geography</td>
+                <td data-col="Requ.">geography</td>
+                <td data-col="Occ.">o</td>
+                <td data-col="Datatype">[0,1]</td>
+                <td data-col="Definition"></td>
+                <td data-col="eDoc ID"></td>
+            </tr>
+            <tr data-tooltip="Flow data set/Flow information/Geography/Location of supply">
+                <td data-col="View Attribute">
+                    <button class="view-attr-btn" onclick="openAttributePage('Flow data set_Flow information_Geography_Location of supply')" title="View detailed information">View Attribute</button>
+                </td>
+                <td data-col="Field Name"></td>
+                <td data-col="Element/Attribute Name">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Location of supply</td>
+                <td data-col="Requ.">locationOfSupply</td>
+                <td data-col="Occ.">o</td>
+                <td data-col="Datatype">[1,1]</td>
+                <td data-col="Definition">StringMultiLang</td>
+                <td data-col="eDoc ID"></td>
+            </tr>
+            <tr data-tooltip="Flow data set/Flow information/Geography/Other content">
+                <td data-col="View Attribute">
+                    <button class="view-attr-btn" onclick="openAttributePage('Flow data set_Flow information_Geography_Other content')" title="View detailed information">View Attribute</button>
+                </td>
+                <td data-col="Field Name"></td>
+                <td data-col="Element/Attribute Name">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Other content</td>
+                <td data-col="Requ.">other</td>
+                <td data-col="Occ.">o</td>
+                <td data-col="Datatype">[0,1]</td>
+                <td data-col="Definition"></td>
+                <td data-col="eDoc ID"></td>
+            </tr>
+            <tr data-tooltip="Flow data set/Flow information/Technological representativeness">
+                <td data-col="View Attribute">
+                    <button class="view-attr-btn" onclick="openAttributePage('Flow data set_Flow information_Technological representativeness')" title="View detailed information">View Attribute</button>
+                </td>
+                <td data-col="Field Name"></td>
+                <td data-col="Element/Attribute Name">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Technological representativeness</td>
+                <td data-col="Requ.">technology</td>
+                <td data-col="Occ.">o</td>
+                <td data-col="Datatype">[0,1]</td>
+                <td data-col="Definition"></td>
+                <td data-col="eDoc ID"></td>
+            </tr>
+            <tr data-tooltip="Flow data set/Flow information/Technological representativeness/Technical purpose of product or waste">
+                <td data-col="View Attribute">
+                    <button class="view-attr-btn" onclick="openAttributePage('Flow data set_Flow information_Technological representativeness_Technical purpose of product or waste')" title="View detailed information">View Attribute</button>
+                </td>
+                <td data-col="Field Name"></td>
+                <td data-col="Element/Attribute Name">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Technical purpose of product or waste</td>
+                <td data-col="Requ.">technologicalApplicability</td>
+                <td data-col="Occ.">o</td>
+                <td data-col="Datatype">[0,1]</td>
+                <td data-col="Definition">FTMultiLang</td>
+                <td data-col="eDoc ID"></td>
+            </tr>
+            <tr data-tooltip="Flow data set/Flow information/Technological representativeness/Technical specification">
+                <td data-col="View Attribute">
+                    <button class="view-attr-btn" onclick="openAttributePage('Flow data set_Flow information_Technological representativeness_Technical specification')" title="View detailed information">View Attribute</button>
+                </td>
+                <td data-col="Field Name"></td>
+                <td data-col="Element/Attribute Name">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Technical specification</td>
+                <td data-col="Requ.">referenceToTechnicalSpecification</td>
+                <td data-col="Occ.">o</td>
+                <td data-col="Datatype">[0,n]</td>
+                <td data-col="Definition">GlobalReferenceType</td>
+                <td data-col="eDoc ID"></td>
+            </tr>
+            <tr data-tooltip="Flow data set/Flow information/Technological representativeness/Other content">
+                <td data-col="View Attribute">
+                    <button class="view-attr-btn" onclick="openAttributePage('Flow data set_Flow information_Technological representativeness_Other content')" title="View detailed information">View Attribute</button>
+                </td>
+                <td data-col="Field Name"></td>
+                <td data-col="Element/Attribute Name">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Other content</td>
+                <td data-col="Requ.">other</td>
+                <td data-col="Occ.">o</td>
+                <td data-col="Datatype">[0,1]</td>
+                <td data-col="Definition"></td>
+                <td data-col="eDoc ID"></td>
+            </tr>
+            <tr data-tooltip="Flow data set/Flow information/Other content">
+                <td data-col="View Attribute">
+                    <button class="view-attr-btn" onclick="openAttributePage('Flow data set_Flow information_Other content')" title="View detailed information">View Attribute</button>
+                </td>
+                <td data-col="Field Name"></td>
+                <td data-col="Element/Attribute Name">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Other content</td>
+                <td data-col="Requ.">other</td>
+                <td data-col="Occ.">o</td>
+                <td data-col="Datatype">[0,1]</td>
+                <td data-col="Definition"></td>
+                <td data-col="eDoc ID"></td>
+            </tr>
+            <tr data-tooltip="Flow data set/Modelling and validation">
+                <td data-col="View Attribute">
+                    <button class="view-attr-btn" onclick="openAttributePage('Flow data set_Modelling and validation')" title="View detailed information">View Attribute</button>
+                </td>
+                <td data-col="Field Name"></td>
+                <td data-col="Element/Attribute Name">&nbsp;&nbsp;&nbsp;&nbsp;Modelling and validation</td>
+                <td data-col="Requ.">modellingAndValidation</td>
+                <td data-col="Occ.">r</td>
+                <td data-col="Datatype">[0,1]</td>
+                <td data-col="Definition"></td>
+                <td data-col="eDoc ID"></td>
+            </tr>
+            <tr data-tooltip="Flow data set/Modelling and validation/LCI method">
+                <td data-col="View Attribute">
+                    <button class="view-attr-btn" onclick="openAttributePage('Flow data set_Modelling and validation_LCI method')" title="View detailed information">View Attribute</button>
+                </td>
+                <td data-col="Field Name"></td>
+                <td data-col="Element/Attribute Name">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;LCI method</td>
+                <td data-col="Requ.">LCIMethod</td>
+                <td data-col="Occ.">r</td>
+                <td data-col="Datatype">[0,1]</td>
+                <td data-col="Definition"></td>
+                <td data-col="eDoc ID"></td>
+            </tr>
+            <tr data-tooltip="Flow data set/Modelling and validation/LCI method/Type of flow">
+                <td data-col="View Attribute">
+                    <button class="view-attr-btn" onclick="openAttributePage('Flow data set_Modelling and validation_LCI method_Type of flow')" title="View detailed information">View Attribute</button>
+                </td>
+                <td data-col="Field Name"></td>
+                <td data-col="Element/Attribute Name">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Type of flow</td>
+                <td data-col="Requ.">typeOfDataSet</td>
+                <td data-col="Occ.">r</td>
+                <td data-col="Datatype">[1,1]</td>
+                <td data-col="Definition">FlowTypeValuesElementary flowExchange between nature (ecosphere) and technosphere, e.g. an emission, resource.Product flowExchange of goods or services within technosphere, with a positive economic/market value.Waste flowExchange of matters within the technosphere, with a economic/market value equal or below &#34;0&#34;.Other flowExchange of other type, e.g. dummy or modelling support flows.</td>
+                <td data-col="eDoc ID"></td>
+            </tr>
+            <tr data-tooltip="Flow data set/Modelling and validation/LCI method/Other content">
+                <td data-col="View Attribute">
+                    <button class="view-attr-btn" onclick="openAttributePage('Flow data set_Modelling and validation_LCI method_Other content')" title="View detailed information">View Attribute</button>
+                </td>
+                <td data-col="Field Name"></td>
+                <td data-col="Element/Attribute Name">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Other content</td>
+                <td data-col="Requ.">other</td>
+                <td data-col="Occ.">o</td>
+                <td data-col="Datatype">[0,1]</td>
+                <td data-col="Definition"></td>
+                <td data-col="eDoc ID"></td>
+            </tr>
+            <tr data-tooltip="Flow data set/Modelling and validation/LCI method/Other content/vendor specific product">
+                <td data-col="View Attribute">
+                    <button class="view-attr-btn" onclick="openAttributePage('Flow data set_Modelling and validation_LCI method_Other content_vendor specific product')" title="View detailed information">View Attribute</button>
+                </td>
+                <td data-col="Field Name">herstellerspezifisches Produkt</td>
+                <td data-col="Element/Attribute Name">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;vendor specific product</td>
+                <td data-col="Requ.">epd:vendorSpecificProduct</td>
+                <td data-col="Occ.">o</td>
+                <td data-col="Datatype">[0,1]</td>
+                <td data-col="Definition">boolean</td>
+                <td data-col="eDoc ID">Gibt an ob es sich um ein spezifisches Produkt von einem konkreten Hersteller (true) oder um ein generisches (false) handelt. Wenn dieses Feld fehlt, gilt der Datensatz als generisches Produkt.</td>
+            </tr>
+            <tr data-tooltip="Flow data set/Modelling and validation/LCI method/Other content/Reference to vendor">
+                <td data-col="View Attribute">
+                    <button class="view-attr-btn" onclick="openAttributePage('Flow data set_Modelling and validation_LCI method_Other content_Reference to vendor')" title="View detailed information">View Attribute</button>
+                </td>
+                <td data-col="Field Name">Verweis auf Hersteller</td>
+                <td data-col="Element/Attribute Name">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Reference to vendor</td>
+                <td data-col="Requ.">epd:referenceToVendor</td>
+                <td data-col="Occ.">o</td>
+                <td data-col="Datatype">[0,1]</td>
+                <td data-col="Definition">GlobalReferenceType</td>
+                <td data-col="eDoc ID">Referenz auf den Hersteller des Produkts (&#34;Contact&#34;-Datensatz)</td>
+            </tr>
+            <tr data-tooltip="Flow data set/Modelling and validation/LCI method/Other content/Reference to source">
+                <td data-col="View Attribute">
+                    <button class="view-attr-btn" onclick="openAttributePage('Flow data set_Modelling and validation_LCI method_Other content_Reference to source')" title="View detailed information">View Attribute</button>
+                </td>
+                <td data-col="Field Name">Verweis auf Quelle</td>
+                <td data-col="Element/Attribute Name">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Reference to source</td>
+                <td data-col="Requ.">epd:referenceToSource</td>
+                <td data-col="Occ.">o</td>
+                <td data-col="Datatype">[0,1]</td>
+                <td data-col="Definition">GlobalReferenceType</td>
+                <td data-col="eDoc ID">Referenz auf eine zugehörige Quelle (z.B. Produktdatenblatt oder -katalog, &#34;Source&#34;-Datensatz)</td>
+            </tr>
+            <tr data-tooltip="Flow data set/Modelling and validation/Compliance declarations">
+                <td data-col="View Attribute">
+                    <button class="view-attr-btn" onclick="openAttributePage('Flow data set_Modelling and validation_Compliance declarations')" title="View detailed information">View Attribute</button>
+                </td>
+                <td data-col="Field Name"></td>
+                <td data-col="Element/Attribute Name">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Compliance declarations</td>
+                <td data-col="Requ.">complianceDeclarations</td>
+                <td data-col="Occ.">o</td>
+                <td data-col="Datatype">[0,1]</td>
+                <td data-col="Definition"></td>
+                <td data-col="eDoc ID"></td>
+            </tr>
+            <tr data-tooltip="Flow data set/Modelling and validation/Compliance declarations/Compliance">
+                <td data-col="View Attribute">
+                    <button class="view-attr-btn" onclick="openAttributePage('Flow data set_Modelling and validation_Compliance declarations_Compliance')" title="View detailed information">View Attribute</button>
+                </td>
+                <td data-col="Field Name"></td>
+                <td data-col="Element/Attribute Name">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Compliance</td>
+                <td data-col="Requ.">compliance</td>
+                <td data-col="Occ.">r</td>
+                <td data-col="Datatype">[1,n]</td>
+                <td data-col="Definition"></td>
+                <td data-col="eDoc ID"></td>
+            </tr>
+            <tr data-tooltip="Flow data set/Modelling and validation/Compliance declarations/Compliance/Compliance system name">
+                <td data-col="View Attribute">
+                    <button class="view-attr-btn" onclick="openAttributePage('Flow data set_Modelling and validation_Compliance declarations_Compliance_Compliance system name')" title="View detailed information">View Attribute</button>
+                </td>
+                <td data-col="Field Name"></td>
+                <td data-col="Element/Attribute Name">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Compliance system name</td>
+                <td data-col="Requ.">referenceToComplianceSystem</td>
+                <td data-col="Occ.">r</td>
+                <td data-col="Datatype">[1,1]</td>
+                <td data-col="Definition">GlobalReferenceType</td>
+                <td data-col="eDoc ID"></td>
+            </tr>
+            <tr data-tooltip="Flow data set/Modelling and validation/Compliance declarations/Compliance/Approval of overall compliance">
+                <td data-col="View Attribute">
+                    <button class="view-attr-btn" onclick="openAttributePage('Flow data set_Modelling and validation_Compliance declarations_Compliance_Approval of overall compliance')" title="View detailed information">View Attribute</button>
+                </td>
+                <td data-col="Field Name"></td>
+                <td data-col="Element/Attribute Name">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Approval of overall compliance</td>
+                <td data-col="Requ.">approvalOfOverallCompliance</td>
+                <td data-col="Occ.">o</td>
+                <td data-col="Datatype">[0,1]</td>
+                <td data-col="Definition">ComplianceValuesFully compliantMeets all requirements of this compliance aspect as defined in the respective &#34;Compliance system&#34;.Not compliantDoes not meet all requirements of this compliance aspect, as defined for the respective &#34;Compliance system&#34;.Not definedFor this compliance aspect the named &#34;Compliance system&#34; has not defined compliance requirements.</td>
+                <td data-col="eDoc ID"></td>
+            </tr>
+            <tr data-tooltip="Flow data set/Modelling and validation/Compliance declarations/Compliance/Other content">
+                <td data-col="View Attribute">
+                    <button class="view-attr-btn" onclick="openAttributePage('Flow data set_Modelling and validation_Compliance declarations_Compliance_Other content')" title="View detailed information">View Attribute</button>
+                </td>
+                <td data-col="Field Name"></td>
+                <td data-col="Element/Attribute Name">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Other content</td>
+                <td data-col="Requ.">other</td>
+                <td data-col="Occ.">o</td>
+                <td data-col="Datatype">[0,1]</td>
+                <td data-col="Definition"></td>
+                <td data-col="eDoc ID"></td>
+            </tr>
+            <tr data-tooltip="Flow data set/Modelling and validation/Compliance declarations/Other content">
+                <td data-col="View Attribute">
+                    <button class="view-attr-btn" onclick="openAttributePage('Flow data set_Modelling and validation_Compliance declarations_Other content')" title="View detailed information">View Attribute</button>
+                </td>
+                <td data-col="Field Name"></td>
+                <td data-col="Element/Attribute Name">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Other content</td>
+                <td data-col="Requ.">other</td>
+                <td data-col="Occ.">o</td>
+                <td data-col="Datatype">[0,1]</td>
+                <td data-col="Definition"></td>
+                <td data-col="eDoc ID"></td>
+            </tr>
+            <tr data-tooltip="Flow data set/Modelling and validation/Other content">
+                <td data-col="View Attribute">
+                    <button class="view-attr-btn" onclick="openAttributePage('Flow data set_Modelling and validation_Other content')" title="View detailed information">View Attribute</button>
+                </td>
+                <td data-col="Field Name"></td>
+                <td data-col="Element/Attribute Name">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Other content</td>
+                <td data-col="Requ.">other</td>
+                <td data-col="Occ.">o</td>
+                <td data-col="Datatype">[0,1]</td>
+                <td data-col="Definition"></td>
+                <td data-col="eDoc ID"></td>
+            </tr>
+            <tr data-tooltip="Flow data set/Administrative information">
+                <td data-col="View Attribute">
+                    <button class="view-attr-btn" onclick="openAttributePage('Flow data set_Administrative information')" title="View detailed information">View Attribute</button>
+                </td>
+                <td data-col="Field Name"></td>
+                <td data-col="Element/Attribute Name">&nbsp;&nbsp;&nbsp;&nbsp;Administrative information</td>
+                <td data-col="Requ.">administrativeInformation</td>
+                <td data-col="Occ.">r</td>
+                <td data-col="Datatype">[0,1]</td>
+                <td data-col="Definition"></td>
+                <td data-col="eDoc ID"></td>
+            </tr>
+            <tr data-tooltip="Flow data set/Administrative information/Data entry by">
+                <td data-col="View Attribute">
+                    <button class="view-attr-btn" onclick="openAttributePage('Flow data set_Administrative information_Data entry by')" title="View detailed information">View Attribute</button>
+                </td>
+                <td data-col="Field Name"></td>
+                <td data-col="Element/Attribute Name">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Data entry by</td>
+                <td data-col="Requ.">dataEntryBy</td>
+                <td data-col="Occ.">r</td>
+                <td data-col="Datatype">[0,1]</td>
+                <td data-col="Definition"></td>
+                <td data-col="eDoc ID"></td>
+            </tr>
+            <tr data-tooltip="Flow data set/Administrative information/Data entry by/Time stamp (last saved)">
+                <td data-col="View Attribute">
+                    <button class="view-attr-btn" onclick="openAttributePage('Flow data set_Administrative information_Data entry by_Time stamp (last saved)')" title="View detailed information">View Attribute</button>
+                </td>
+                <td data-col="Field Name"></td>
+                <td data-col="Element/Attribute Name">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Time stamp (last saved)</td>
+                <td data-col="Requ.">timeStamp</td>
+                <td data-col="Occ.">r</td>
+                <td data-col="Datatype">[0,1]</td>
+                <td data-col="Definition">dateTime</td>
+                <td data-col="eDoc ID"></td>
+            </tr>
+            <tr data-tooltip="Flow data set/Administrative information/Data entry by/Data set format(s)">
+                <td data-col="View Attribute">
+                    <button class="view-attr-btn" onclick="openAttributePage('Flow data set_Administrative information_Data entry by_Data set format(s)')" title="View detailed information">View Attribute</button>
+                </td>
+                <td data-col="Field Name"></td>
+                <td data-col="Element/Attribute Name">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Data set format(s)</td>
+                <td data-col="Requ.">referenceToDataSetFormat</td>
+                <td data-col="Occ.">r</td>
+                <td data-col="Datatype">[0,n]</td>
+                <td data-col="Definition">GlobalReferenceType</td>
+                <td data-col="eDoc ID"></td>
+            </tr>
+            <tr data-tooltip="Flow data set/Administrative information/Data entry by/Data entry by:">
+                <td data-col="View Attribute">
+                    <button class="view-attr-btn" onclick="openAttributePage('Flow data set_Administrative information_Data entry by_Data entry by:')" title="View detailed information">View Attribute</button>
+                </td>
+                <td data-col="Field Name"></td>
+                <td data-col="Element/Attribute Name">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Data entry by:</td>
+                <td data-col="Requ.">referenceToPersonOrEntityEnteringTheData</td>
+                <td data-col="Occ.">o</td>
+                <td data-col="Datatype">[0,1]</td>
+                <td data-col="Definition">GlobalReferenceType</td>
+                <td data-col="eDoc ID"></td>
+            </tr>
+            <tr data-tooltip="Flow data set/Administrative information/Data entry by/Other content">
+                <td data-col="View Attribute">
+                    <button class="view-attr-btn" onclick="openAttributePage('Flow data set_Administrative information_Data entry by_Other content')" title="View detailed information">View Attribute</button>
+                </td>
+                <td data-col="Field Name"></td>
+                <td data-col="Element/Attribute Name">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Other content</td>
+                <td data-col="Requ.">other</td>
+                <td data-col="Occ.">o</td>
+                <td data-col="Datatype">[0,1]</td>
+                <td data-col="Definition"></td>
+                <td data-col="eDoc ID"></td>
+            </tr>
+            <tr data-tooltip="Flow data set/Administrative information/Publication and ownership">
+                <td data-col="View Attribute">
+                    <button class="view-attr-btn" onclick="openAttributePage('Flow data set_Administrative information_Publication and ownership')" title="View detailed information">View Attribute</button>
+                </td>
+                <td data-col="Field Name"></td>
+                <td data-col="Element/Attribute Name">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Publication and ownership</td>
+                <td data-col="Requ.">publicationAndOwnership</td>
+                <td data-col="Occ.">r</td>
+                <td data-col="Datatype">[0,1]</td>
+                <td data-col="Definition"></td>
+                <td data-col="eDoc ID"></td>
+            </tr>
+            <tr data-tooltip="Flow data set/Administrative information/Publication and ownership/Data set version">
+                <td data-col="View Attribute">
+                    <button class="view-attr-btn" onclick="openAttributePage('Flow data set_Administrative information_Publication and ownership_Data set version')" title="View detailed information">View Attribute</button>
+                </td>
+                <td data-col="Field Name"></td>
+                <td data-col="Element/Attribute Name">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Data set version</td>
+                <td data-col="Requ.">dataSetVersion</td>
+                <td data-col="Occ.">m</td>
+                <td data-col="Datatype">[1,1]</td>
+                <td data-col="Definition">Version</td>
+                <td data-col="eDoc ID"></td>
+            </tr>
+            <tr data-tooltip="Flow data set/Administrative information/Publication and ownership/Preceding data set version">
+                <td data-col="View Attribute">
+                    <button class="view-attr-btn" onclick="openAttributePage('Flow data set_Administrative information_Publication and ownership_Preceding data set version')" title="View detailed information">View Attribute</button>
+                </td>
+                <td data-col="Field Name"></td>
+                <td data-col="Element/Attribute Name">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Preceding data set version</td>
+                <td data-col="Requ.">referenceToPrecedingDataSetVersion</td>
+                <td data-col="Occ.">o</td>
+                <td data-col="Datatype">[0,n]</td>
+                <td data-col="Definition">GlobalReferenceType</td>
+                <td data-col="eDoc ID"></td>
+            </tr>
+            <tr data-tooltip="Flow data set/Administrative information/Publication and ownership/Permanent data set URI">
+                <td data-col="View Attribute">
+                    <button class="view-attr-btn" onclick="openAttributePage('Flow data set_Administrative information_Publication and ownership_Permanent data set URI')" title="View detailed information">View Attribute</button>
+                </td>
+                <td data-col="Field Name"></td>
+                <td data-col="Element/Attribute Name">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Permanent data set URI</td>
+                <td data-col="Requ.">permanentDataSetURI</td>
+                <td data-col="Occ.">r</td>
+                <td data-col="Datatype">[0,1]</td>
+                <td data-col="Definition">anyURI</td>
+                <td data-col="eDoc ID"></td>
+            </tr>
+            <tr data-tooltip="Flow data set/Administrative information/Publication and ownership/Owner of data set">
+                <td data-col="View Attribute">
+                    <button class="view-attr-btn" onclick="openAttributePage('Flow data set_Administrative information_Publication and ownership_Owner of data set')" title="View detailed information">View Attribute</button>
+                </td>
+                <td data-col="Field Name"></td>
+                <td data-col="Element/Attribute Name">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Owner of data set</td>
+                <td data-col="Requ.">referenceToOwnershipOfDataSet</td>
+                <td data-col="Occ.">r</td>
+                <td data-col="Datatype">[0,1]</td>
+                <td data-col="Definition">GlobalReferenceType</td>
+                <td data-col="eDoc ID"></td>
+            </tr>
+            <tr data-tooltip="Flow data set/Administrative information/Publication and ownership/Other content">
+                <td data-col="View Attribute">
+                    <button class="view-attr-btn" onclick="openAttributePage('Flow data set_Administrative information_Publication and ownership_Other content')" title="View detailed information">View Attribute</button>
+                </td>
+                <td data-col="Field Name"></td>
+                <td data-col="Element/Attribute Name">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Other content</td>
+                <td data-col="Requ.">other</td>
+                <td data-col="Occ.">o</td>
+                <td data-col="Datatype">[0,1]</td>
+                <td data-col="Definition"></td>
+                <td data-col="eDoc ID"></td>
+            </tr>
+            <tr data-tooltip="Flow data set/Administrative information/Other content">
+                <td data-col="View Attribute">
+                    <button class="view-attr-btn" onclick="openAttributePage('Flow data set_Administrative information_Other content')" title="View detailed information">View Attribute</button>
+                </td>
+                <td data-col="Field Name"></td>
+                <td data-col="Element/Attribute Name">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Other content</td>
+                <td data-col="Requ.">other</td>
+                <td data-col="Occ.">o</td>
+                <td data-col="Datatype">[0,1]</td>
+                <td data-col="Definition"></td>
+                <td data-col="eDoc ID"></td>
+            </tr>
+            <tr data-tooltip="Flow data set/Flow properties">
+                <td data-col="View Attribute">
+                    <button class="view-attr-btn" onclick="openAttributePage('Flow data set_Flow properties')" title="View detailed information">View Attribute</button>
+                </td>
+                <td data-col="Field Name"></td>
+                <td data-col="Element/Attribute Name">&nbsp;&nbsp;&nbsp;&nbsp;Flow properties</td>
+                <td data-col="Requ.">flowProperties</td>
+                <td data-col="Occ.">r</td>
+                <td data-col="Datatype">[0,1]</td>
+                <td data-col="Definition"></td>
+                <td data-col="eDoc ID"></td>
+            </tr>
+            <tr data-tooltip="Flow data set/Flow properties/Flow property">
+                <td data-col="View Attribute">
+                    <button class="view-attr-btn" onclick="openAttributePage('Flow data set_Flow properties_Flow property')" title="View detailed information">View Attribute</button>
+                </td>
+                <td data-col="Field Name"></td>
+                <td data-col="Element/Attribute Name">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Flow property</td>
+                <td data-col="Requ.">flowProperty</td>
+                <td data-col="Occ.">r</td>
+                <td data-col="Datatype">[1,n]</td>
+                <td data-col="Definition"></td>
+                <td data-col="eDoc ID"></td>
+            </tr>
+            <tr data-tooltip="Flow data set/Flow properties/Flow property/Data set internal ID">
+                <td data-col="View Attribute">
+                    <button class="view-attr-btn" onclick="openAttributePage('Flow data set_Flow properties_Flow property_Data set internal ID')" title="View detailed information">View Attribute</button>
+                </td>
+                <td data-col="Field Name"></td>
+                <td data-col="Element/Attribute Name">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Data set internal ID</td>
+                <td data-col="Requ.">@dataSetInternalID</td>
+                <td data-col="Occ.">r</td>
+                <td data-col="Datatype"></td>
+                <td data-col="Definition">Int5</td>
+                <td data-col="eDoc ID"></td>
+            </tr>
+            <tr data-tooltip="Flow data set/Flow properties/Flow property/Flow property">
+                <td data-col="View Attribute">
+                    <button class="view-attr-btn" onclick="openAttributePage('Flow data set_Flow properties_Flow property_Flow property')" title="View detailed information">View Attribute</button>
+                </td>
+                <td data-col="Field Name"></td>
+                <td data-col="Element/Attribute Name">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Flow property</td>
+                <td data-col="Requ.">referenceToFlowPropertyDataSet</td>
+                <td data-col="Occ.">r</td>
+                <td data-col="Datatype">[1,1]</td>
+                <td data-col="Definition">GlobalReferenceType</td>
+                <td data-col="eDoc ID"></td>
+            </tr>
+            <tr data-tooltip="Flow data set/Flow properties/Flow property/Mean value (of flow property)">
+                <td data-col="View Attribute">
+                    <button class="view-attr-btn" onclick="openAttributePage('Flow data set_Flow properties_Flow property_Mean value (of flow property)')" title="View detailed information">View Attribute</button>
+                </td>
+                <td data-col="Field Name"></td>
+                <td data-col="Element/Attribute Name">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Mean value (of flow property)</td>
+                <td data-col="Requ.">meanValue</td>
+                <td data-col="Occ.">r</td>
+                <td data-col="Datatype">[1,1]</td>
+                <td data-col="Definition">Real</td>
+                <td data-col="eDoc ID"></td>
+            </tr>
+            <tr data-tooltip="Flow data set/Flow properties/Flow property/Minimum value">
+                <td data-col="View Attribute">
+                    <button class="view-attr-btn" onclick="openAttributePage('Flow data set_Flow properties_Flow property_Minimum value')" title="View detailed information">View Attribute</button>
+                </td>
+                <td data-col="Field Name"></td>
+                <td data-col="Element/Attribute Name">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Minimum value</td>
+                <td data-col="Requ.">minimumValue</td>
+                <td data-col="Occ.">r</td>
+                <td data-col="Datatype">[0,1]</td>
+                <td data-col="Definition">Real</td>
+                <td data-col="eDoc ID"></td>
+            </tr>
+            <tr data-tooltip="Flow data set/Flow properties/Flow property/Maximum value">
+                <td data-col="View Attribute">
+                    <button class="view-attr-btn" onclick="openAttributePage('Flow data set_Flow properties_Flow property_Maximum value')" title="View detailed information">View Attribute</button>
+                </td>
+                <td data-col="Field Name"></td>
+                <td data-col="Element/Attribute Name">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Maximum value</td>
+                <td data-col="Requ.">maximumValue</td>
+                <td data-col="Occ.">r</td>
+                <td data-col="Datatype">[0,1]</td>
+                <td data-col="Definition">Real</td>
+                <td data-col="eDoc ID"></td>
+            </tr>
+            <tr data-tooltip="Flow data set/Flow properties/Flow property/Uncertainty distribution type">
+                <td data-col="View Attribute">
+                    <button class="view-attr-btn" onclick="openAttributePage('Flow data set_Flow properties_Flow property_Uncertainty distribution type')" title="View detailed information">View Attribute</button>
+                </td>
+                <td data-col="Field Name"></td>
+                <td data-col="Element/Attribute Name">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Uncertainty distribution type</td>
+                <td data-col="Requ.">uncertaintyDistributionType</td>
+                <td data-col="Occ.">o</td>
+                <td data-col="Datatype">[0,1]</td>
+                <td data-col="Definition">UncertaintyDistributionTypeValuesundefinedProbability distribution information not available.log-normalProbability distribution of any random parameter whose logarithm is normally distributed.normalProbability distribution of any random parameter whose value is normally distributed around the mean of zero.triangularProbability distribution of any random parameter between minimum value and maximum value with the highest probability at the average value of minimum plus maximum value. Linear change of probability between minimum, maximum and average value.uniformContinuous uniform probability distribution between minimum value and maximum value and &#34;0&#34; probability beyond these.</td>
+                <td data-col="eDoc ID"></td>
+            </tr>
+            <tr data-tooltip="Flow data set/Flow properties/Flow property/Relative StdDev in %">
+                <td data-col="View Attribute">
+                    <button class="view-attr-btn" onclick="openAttributePage('Flow data set_Flow properties_Flow property_Relative StdDev in %')" title="View detailed information">View Attribute</button>
+                </td>
+                <td data-col="Field Name"></td>
+                <td data-col="Element/Attribute Name">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Relative StdDev in %</td>
+                <td data-col="Requ.">relativeStandardDeviation95In</td>
+                <td data-col="Occ.">r</td>
+                <td data-col="Datatype">[0,1]</td>
+                <td data-col="Definition">Perc</td>
+                <td data-col="eDoc ID"></td>
+            </tr>
+            <tr data-tooltip="Flow data set/Flow properties/Flow property/Data derivation type / status">
+                <td data-col="View Attribute">
+                    <button class="view-attr-btn" onclick="openAttributePage('Flow data set_Flow properties_Flow property_Data derivation type _ status')" title="View detailed information">View Attribute</button>
+                </td>
+                <td data-col="Field Name"></td>
+                <td data-col="Element/Attribute Name">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Data derivation type / status</td>
+                <td data-col="Requ.">dataDerivationTypeStatus</td>
+                <td data-col="Occ.">r</td>
+                <td data-col="Datatype">[0,1]</td>
+                <td data-col="Definition">FlowDataDerivationTypeStatusValuesMeasuredAll data was measured for the purpose of LCA or is meeting the related requirements (e.g. being quantiatively and qualitatively related to unit process and its quantitative reference/products, etc.). This includes calculated data with models based on measured plant data (but not exclusively theoretical calculations) as used e.g. in parameterised unit processes.CalculatedStochiometric or other theoretical relations were used to calculate the amount of this flow. [Note: Calculations that include quantiatively relevant expert judgement are of the type &#34;Expert judgement&#34;.]EstimatedExpert judgement was used to derive the quantity of this flow. This includes the unmodified or corrected use of data from similar processes / technologies, times, or locations, as well as calculated values where the formulas/parameters include quantitatively relevant expert judgement.Unknown derivationData derivation type information fully or at least for quantiatively relevant parts unavailable.</td>
+                <td data-col="eDoc ID"></td>
+            </tr>
+            <tr data-tooltip="Flow data set/Flow properties/Flow property/Comment">
+                <td data-col="View Attribute">
+                    <button class="view-attr-btn" onclick="openAttributePage('Flow data set_Flow properties_Flow property_Comment')" title="View detailed information">View Attribute</button>
+                </td>
+                <td data-col="Field Name"></td>
+                <td data-col="Element/Attribute Name">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Comment</td>
+                <td data-col="Requ.">generalComment</td>
+                <td data-col="Occ.">o</td>
+                <td data-col="Datatype">[0,1]</td>
+                <td data-col="Definition">StringMultiLang</td>
+                <td data-col="eDoc ID"></td>
+            </tr>
+            <tr data-tooltip="Flow data set/Flow properties/Flow property/Other content">
+                <td data-col="View Attribute">
+                    <button class="view-attr-btn" onclick="openAttributePage('Flow data set_Flow properties_Flow property_Other content')" title="View detailed information">View Attribute</button>
+                </td>
+                <td data-col="Field Name"></td>
+                <td data-col="Element/Attribute Name">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Other content</td>
+                <td data-col="Requ.">other</td>
+                <td data-col="Occ.">o</td>
+                <td data-col="Datatype">[0,1]</td>
+                <td data-col="Definition"></td>
+                <td data-col="eDoc ID"></td>
+            </tr>
+            <tr data-tooltip="Flow data set/Flow properties/Other content">
+                <td data-col="View Attribute">
+                    <button class="view-attr-btn" onclick="openAttributePage('Flow data set_Flow properties_Other content')" title="View detailed information">View Attribute</button>
+                </td>
+                <td data-col="Field Name"></td>
+                <td data-col="Element/Attribute Name">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Other content</td>
+                <td data-col="Requ.">other</td>
+                <td data-col="Occ.">o</td>
+                <td data-col="Datatype">[0,1]</td>
+                <td data-col="Definition"></td>
+                <td data-col="eDoc ID"></td>
+            </tr>
+            <tr data-tooltip="Flow data set/Other content">
+                <td data-col="View Attribute">
+                    <button class="view-attr-btn" onclick="openAttributePage('Flow data set_Other content')" title="View detailed information">View Attribute</button>
+                </td>
+                <td data-col="Field Name"></td>
+                <td data-col="Element/Attribute Name">&nbsp;&nbsp;&nbsp;&nbsp;Other content</td>
+                <td data-col="Requ.">other</td>
+                <td data-col="Occ.">o</td>
+                <td data-col="Datatype">[0,1]</td>
+                <td data-col="Definition"></td>
+                <td data-col="eDoc ID"></td>
+            </tr>
+        </tbody>
+    </table>
+
+    
+    <script src="js/schemadoc_script.js"></script>
+
+</body>
+</html>
