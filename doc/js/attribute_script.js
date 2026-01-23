@@ -52,9 +52,9 @@ document.addEventListener('DOMContentLoaded', function() {
     if (downloadCsvBtn) {
         downloadCsvBtn.addEventListener('click', function() {
             const link = document.createElement('a');
-            // The path is relative to the docs/attribute_pages/ folder
-            link.href = '../../data/epd_documentation.csv';
-            link.download = 'epd_documentation.csv';
+            // The path is relative to the doc/attribute_pages/ folder
+            link.href = '../ilcd-epd-v1.3.csv';
+            link.download = 'ilcd-epd-v1.3.csv';
             document.body.appendChild(link);
             link.click();
             document.body.removeChild(link);
@@ -64,9 +64,9 @@ document.addEventListener('DOMContentLoaded', function() {
     if (downloadAdocBtn) {
         downloadAdocBtn.addEventListener('click', function() {
             const link = document.createElement('a');
-            // The path is relative to the docs/attribute_pages/ folder
-            link.href = '../../data/epd_documentation_from_xlsx_combined.adoc';
-            link.download = 'epd_documentation_from_xlsx_combined.adoc';
+            // The path is relative to the doc/attribute_pages/ folder
+            link.href = '../asciidoc/ilcd-epd-v1.3.adoc';
+            link.download = 'ilcd-epd-v1.3.adoc';
             document.body.appendChild(link);
             link.click();
             document.body.removeChild(link);
