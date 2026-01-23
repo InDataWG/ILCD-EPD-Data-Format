@@ -1,0 +1,388 @@
+= Source data set Documentation
+:doctype: book
+:stylesheet: ilcd.css
+:source-highlighter: highlightjs
+
+This document is generated from the schemadoc HTML file.
+
+.Namespace legend
+[cols="1,1,3", frame="all", grid="rows"]
+|===
+| Information in the EntityIds (2024) namespace is displayed with
+| [role="fieldname_epd24"]#green background#
+| (Namespace URI: "http://www.indata.network/EntityIds/2024", prefix "e")
+|===
+
+.Source data set Data Structure
+[cols="1,1,1,1,1,1,1,1,1", options="header"]
+|===
+| [role="title"]##Field Name##
+| [role="title"]##Element/Attribute Name##
+| [role="title"]##Requ.##
+| [role="title"]##Occ.##
+| [role="title"]##Datatype##
+| [role="title"]##Definition##
+| [role="title"]##eDoc ID##
+| [role="title"]##Indent##
+| [role="title"]##Path##
+
+| ##Source data set##
+| ##sourceDataSet##
+| ##m##
+| ##[1,1]##
+| ##{nbsp}##
+| ##Data set for bibliographical references to sources used, but also for reference to data set formats, databases, conformity systems etc.##
+| ##7##
+| ##0##
+| ##sourceDataSet##
+
+| ##version##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}@version##
+| ##m##
+| ##{nbsp}##
+| ##link:ILCD_Common_DataTypes.html#SchemaVersion[SchemaVersion]##
+| ##Indicates, which version of the ILCD format is used##
+| ##1-a##
+| ##1##
+| ##sourceDataSet/version##
+
+| ##Source information##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}sourceInformation##
+| ##m##
+| ##[1,1]##
+| ##{nbsp}##
+| ##{nbsp}##
+| ##7-43##
+| ##1##
+| ##sourceDataSet/sourceInformation##
+
+| ##Data set information##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}dataSetInformation##
+| ##m##
+| ##[1,1]##
+| ##{nbsp}##
+| ##{nbsp}##
+| ##7-43-174##
+| ##2##
+| ##sourceDataSet/sourceInformation/dataSetInformation##
+
+| ##UUID of source data set##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}UUID##
+| ##m##
+| ##[1,1]##
+| ##link:ILCD_Common_DataTypes.html#UUID[UUID]##
+| ##Automatically generated Universally Unique Identifier of this data set. Together with the "Data set version", the UUID uniquely identifies each data set.##
+| ##7-43-174-354##
+| ##3##
+| ##sourceDataSet/sourceInformation/dataSetInformation/UUID##
+
+| ##Short name of source##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}shortName##
+| ##r##
+| ##[0,1]##
+| ##link:ILCD_Common_DataTypes.html#StringMultiLang[StringMultiLang]##
+| ##Short name for the "Source citation", i.e. for the bibliographical reference or reference to internal data sources used.##
+| ##7-43-174-355##
+| ##3##
+| ##sourceDataSet/sourceInformation/dataSetInformation/shortName##
+
+| ##Classification information##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}classificationInformation##
+| ##r##
+| ##[0,1]##
+| ##{nbsp}##
+| ##Hierachical classification of the Source foreseen to be used to structure the Source content of the database. (Note: This entry is NOT required for the identification of a Source. It should nevertheless be avoided to use identical names for Source in the same class.##
+| ##7-43-174-357##
+| ##3##
+| ##sourceDataSet/sourceInformation/dataSetInformation/classificationInformation##
+
+| ##Classification##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}classification##
+| ##r##
+| ##[0,n]##
+| ##{nbsp}##
+| ##Optional statistical or other classification of the data set. Typically also used for structuring LCA databases.##
+| ##1-1-2-7-2##
+| ##4##
+| ##sourceDataSet/sourceInformation/dataSetInformation/classificationInformation/classification##
+
+| ##Classification system name##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}@name##
+| ##r##
+| ##{nbsp}##
+| ##link:ILCD_Common_DataTypes.html#string[string]##
+| ##Name of the classification system.##
+| ##1-1-2-7-2-a##
+| ##5##
+| ##sourceDataSet/sourceInformation/dataSetInformation/classificationInformation/classification/name##
+
+| ##Classes##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}@classes##
+| ##r##
+| ##{nbsp}##
+| ##link:ILCD_Common_DataTypes.html#anyURI[anyURI]##
+| ##URL or file name of a file listing all classes of this classification system. [Notes: the referenced file has to be in form of the "ILCDClassification.xml" format. If a classification file is specified, the "class" entry should correspond to the classes defined in the classification file.]##
+| ##1-1-2-7-2-b##
+| ##5##
+| ##sourceDataSet/sourceInformation/dataSetInformation/classificationInformation/classification/classes##
+
+| ##Class name##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}class##
+| ##r##
+| ##[1,n]##
+| ##{nbsp}##
+| ##Name of the class.##
+| ##1-1-2-7-2-1##
+| ##5##
+| ##sourceDataSet/sourceInformation/dataSetInformation/classificationInformation/classification/class##
+
+| ##Hierarchy level##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}@level##
+| ##r##
+| ##{nbsp}##
+| ##link:ILCD_Common_DataTypes.html#LevelType[LevelType]##
+| ##If more than one class is specified in a hierachical classification system, the hierarchy level (1,2,...) could be specified with this attribute of class.##
+| ##1-1-2-7-2-1-a##
+| ##6##
+| ##sourceDataSet/sourceInformation/dataSetInformation/classificationInformation/classification/class/level##
+
+| ##Unique class identifier##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}@classId##
+| ##r##
+| ##{nbsp}##
+| ##link:ILCD_Common_DataTypes.html#string[string]##
+| ##Unique identifier for the class. [Notes: If such identifiers are also defined in the referenced category file, they should be identical. Identifiers can be UUID's, but also other forms are allowed.]##
+| ##1-1-2-7-2-1-b##
+| ##6##
+| ##sourceDataSet/sourceInformation/dataSetInformation/classificationInformation/classification/class/classId##
+
+| ##Other content##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}other##
+| ##o##
+| ##[0,1]##
+| ##{nbsp}##
+| ##May contain arbitrary content.##
+| ##0##
+| ##5##
+| ##sourceDataSet/sourceInformation/dataSetInformation/classificationInformation/classification/other##
+
+| ##Source citation##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}sourceCitation##
+| ##r##
+| ##[0,1]##
+| ##link:ILCD_Common_DataTypes.html#ST[ST]##
+| ##Bibliographical reference or reference to internal data source. Also used in order to reference to databases and tools, data set formats, conformity systems, pictures etc..##
+| ##7-43-174-356##
+| ##3##
+| ##sourceDataSet/sourceInformation/dataSetInformation/sourceCitation##
+
+| ##Publication type##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}publicationType##
+| ##o##
+| ##[0,1]##
+| ##link:ILCD_Common_EnumerationValues.html#PublicationTypeValues[PublicationTypeValues]##
+| ##Bibliographic publication type of the source.##
+| ##7-43-174-359##
+| ##3##
+| ##sourceDataSet/sourceInformation/dataSetInformation/publicationType##
+
+| ##Source description or comment##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}sourceDescriptionOrComment##
+| ##o##
+| ##[0,1]##
+| ##link:ILCD_Common_DataTypes.html#FTMultiLang[FTMultiLang]##
+| ##Free text for additional description of the source. In case of use of published data it may contain a brief summary of the publication and the kind of medium used (e.g. CD-ROM, hard copy).##
+| ##7-43-174-360##
+| ##3##
+| ##sourceDataSet/sourceInformation/dataSetInformation/sourceDescriptionOrComment##
+
+| ##Link to digital file##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}referenceToDigitalFile##
+| ##o##
+| ##[0,n]##
+| ##{nbsp}##
+| ##Link to a digital file of the source (www-address or intranet-path; relative or absolue path). (Info: Allows direct access to e.g. complete reports of further documentation, which may also be digitally attached to this data set and exchanged jointly with the XML file.)##
+| ##7-43-174-361##
+| ##3##
+| ##sourceDataSet/sourceInformation/dataSetInformation/referenceToDigitalFile##
+
+| ##{nbsp}##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}@uri##
+| ##o##
+| ##{nbsp}##
+| ##link:ILCD_Common_DataTypes.html#anyURI[anyURI]##
+| ##{nbsp}##
+| ##{nbsp}##
+| ##4##
+| ##sourceDataSet/sourceInformation/dataSetInformation/referenceToDigitalFile/uri##
+
+| ##Belongs to:##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}referenceToContact##
+| ##o##
+| ##[0,n]##
+| ##link:ILCD_Common_DataTypes.html#GlobalReferenceType[GlobalReferenceType]##
+| ##"Contact data set"s of working groups, organisations or database networks to which EITHER this person or entity OR this database, data set format, or compliance system belongs. [Note: This does not necessarily imply a legally binding relationship, but may also be a voluntary membership.]##
+| ##6-41-172-344##
+| ##3##
+| ##sourceDataSet/sourceInformation/dataSetInformation/referenceToContact##
+
+| ##Logo of organisation or source##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}referenceToLogo##
+| ##o##
+| ##[0,1]##
+| ##link:ILCD_Common_DataTypes.html#GlobalReferenceType[GlobalReferenceType]##
+| ##"Source data set" of the logo of the organisation or source to be used in reports etc.##
+| ##6-41-172-346##
+| ##3##
+| ##sourceDataSet/sourceInformation/dataSetInformation/referenceToLogo##
+
+| ##Other content##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}other##
+| ##o##
+| ##[0,1]##
+| ##{nbsp}##
+| ##May contain arbitrary content.##
+| ##0##
+| ##3##
+| ##sourceDataSet/sourceInformation/dataSetInformation/other##
+
+| ##Other content##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}other##
+| ##o##
+| ##[0,1]##
+| ##{nbsp}##
+| ##May contain arbitrary content.##
+| ##0##
+| ##2##
+| ##sourceDataSet/sourceInformation/other##
+
+| ##Administrative information##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}administrativeInformation##
+| ##r##
+| ##[0,1]##
+| ##{nbsp}##
+| ##Information on data set management and administration.##
+| ##1-5##
+| ##1##
+| ##sourceDataSet/administrativeInformation##
+
+| ##Data entry by##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}dataEntryBy##
+| ##r##
+| ##[0,1]##
+| ##{nbsp}##
+| ##Staff or entity, that documented the generated data set, entering the information into the database; plus administrative information linked to the data entry activity.##
+| ##1-5-28##
+| ##2##
+| ##sourceDataSet/administrativeInformation/dataEntryBy##
+
+| ##Time stamp (last saved)##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}timeStamp##
+| ##r##
+| ##[0,1]##
+| ##link:ILCD_Common_DataTypes.html#dateTime[dateTime]##
+| ##Date and time stamp of data set generation, typically an automated entry ("last saved").##
+| ##1-5-28-104##
+| ##3##
+| ##sourceDataSet/administrativeInformation/dataEntryBy/timeStamp##
+
+| ##Data set format(s)##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}referenceToDataSetFormat##
+| ##r##
+| ##[0,n]##
+| ##link:ILCD_Common_DataTypes.html#GlobalReferenceType[GlobalReferenceType]##
+| ##"Source data set" of the used version of the ILCD format. If additional data format fields have been integrated into the data set file, using the "namespace" option, the used format namespace(s) are to be given. This is the case if the data sets carries additional information as specified by other, particular LCA formats, e.g. of other database networks or LCA softwares.##
+| ##1-5-28-105##
+| ##3##
+| ##sourceDataSet/administrativeInformation/dataEntryBy/referenceToDataSetFormat##
+
+| ##Other content##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}other##
+| ##o##
+| ##[0,1]##
+| ##{nbsp}##
+| ##May contain arbitrary content.##
+| ##0##
+| ##3##
+| ##sourceDataSet/administrativeInformation/dataEntryBy/other##
+
+| ##Publication and ownership##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}publicationAndOwnership##
+| ##r##
+| ##[0,1]##
+| ##{nbsp}##
+| ##Information related to publication and version management of the data set including copyright and access restrictions.##
+| ##1-5-30##
+| ##2##
+| ##sourceDataSet/administrativeInformation/publicationAndOwnership##
+
+| ##Data set version##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}dataSetVersion##
+| ##m##
+| ##[1,1]##
+| ##link:ILCD_Common_DataTypes.html#Version[Version]##
+| ##Version number of data set. First two digits refer to major updates, the second two digits to minor revisions and error corrections etc. The third three digits are intended for automatic and internal counting of versions during data set development. Together with the data set's UUID, the "Data set version" uniquely identifies each data set.##
+| ##1-5-30-111##
+| ##3##
+| ##sourceDataSet/administrativeInformation/publicationAndOwnership/dataSetVersion##
+
+| ##Preceding data set version##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}referenceToPrecedingDataSetVersion##
+| ##o##
+| ##[0,n]##
+| ##link:ILCD_Common_DataTypes.html#GlobalReferenceType[GlobalReferenceType]##
+| ##Last preceding data set, which was replaced by this version. Either a URI of that data set (i.e. an internet address) or its UUID plus version number is given (or both).##
+| ##1-5-30-112##
+| ##3##
+| ##sourceDataSet/administrativeInformation/publicationAndOwnership/referenceToPrecedingDataSetVersion##
+
+| ##Permanent data set URI##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}permanentDataSetURI##
+| ##r##
+| ##[0,1]##
+| ##link:ILCD_Common_DataTypes.html#anyURI[anyURI]##
+| ##URI (i.e. an internet address) of the original of this data set. [Note: This equally globally unique identifier supports users and software tools to identify and retrieve the original version of a data set via the internet or to check for available updates. The URI must not represent an existing WWW address, but it should be unique and point to the data access point, e.g. by combining the data owner's www path with the data set's UUID, e.g. http://www.mycompany.com/lca/processes/50f12420-8855-12db-b606-0900210c9a66.]##
+| ##1-5-30-300##
+| ##3##
+| ##sourceDataSet/administrativeInformation/publicationAndOwnership/permanentDataSetURI##
+
+| ##Owner of data set##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}referenceToOwnershipOfDataSet##
+| ##r##
+| ##[0,1]##
+| ##link:ILCD_Common_DataTypes.html#GlobalReferenceType[GlobalReferenceType]##
+| ##"Contact data set" of the person or entity who owns this data set. (Note: this is not necessarily the publisher of the data set.)##
+| ##1-5-30-115##
+| ##3##
+| ##sourceDataSet/administrativeInformation/publicationAndOwnership/referenceToOwnershipOfDataSet##
+
+| ##Other content##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}other##
+| ##o##
+| ##[0,1]##
+| ##{nbsp}##
+| ##May contain arbitrary content.##
+| ##0##
+| ##3##
+| ##sourceDataSet/administrativeInformation/publicationAndOwnership/other##
+
+| ##Other content##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}other##
+| ##o##
+| ##[0,1]##
+| ##{nbsp}##
+| ##May contain arbitrary content.##
+| ##0##
+| ##2##
+| ##sourceDataSet/administrativeInformation/other##
+
+| ##Other content##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}other##
+| ##o##
+| ##[0,1]##
+| ##{nbsp}##
+| ##May contain arbitrary content.##
+| ##0##
+| ##1##
+| ##sourceDataSet/other##
+|===
