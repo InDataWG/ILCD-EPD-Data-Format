@@ -1,0 +1,448 @@
+= Contact data set Documentation
+:doctype: book
+:stylesheet: ilcd.css
+:source-highlighter: highlightjs
+
+This document is generated from the schemadoc HTML file.
+
+.Namespace legend
+[cols="1,1,3", frame="all", grid="rows"]
+|===
+| Information in the EntityIds (2024) namespace is displayed with
+| [role="fieldname_epd24"]#green background#
+| (Namespace URI: "http://www.indata.network/EntityIds/2024", prefix "e")
+|===
+
+.Contact data set Data Structure
+[cols="1,1,1,1,1,1,1,1,1", options="header"]
+|===
+| [role="title"]##Field Name##
+| [role="title"]##Element/Attribute Name##
+| [role="title"]##Requ.##
+| [role="title"]##Occ.##
+| [role="title"]##Datatype##
+| [role="title"]##Definition##
+| [role="title"]##eDoc ID##
+| [role="title"]##Indent##
+| [role="title"]##Path##
+
+| ##Contact data set##
+| ##contactDataSet##
+| ##m##
+| ##[1,1]##
+| ##{nbsp}##
+| ##{nbsp}##
+| ##6##
+| ##0##
+| ##contactDataSet##
+
+| ##version##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}@version##
+| ##m##
+| ##{nbsp}##
+| ##link:ILCD_Common_DataTypes.html#SchemaVersion[SchemaVersion]##
+| ##Indicates, which version of the ILCD format is used##
+| ##1-a##
+| ##1##
+| ##contactDataSet/version##
+
+| ##Contact information##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}contactInformation##
+| ##m##
+| ##[1,1]##
+| ##{nbsp}##
+| ##{nbsp}##
+| ##6-41##
+| ##1##
+| ##contactDataSet/contactInformation##
+
+| ##Data set information##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}dataSetInformation##
+| ##m##
+| ##[1,1]##
+| ##{nbsp}##
+| ##{nbsp}##
+| ##6-41-172##
+| ##2##
+| ##contactDataSet/contactInformation/dataSetInformation##
+
+| ##UUID of Contact data set##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}UUID##
+| ##m##
+| ##[1,1]##
+| ##link:ILCD_Common_DataTypes.html#UUID[UUID]##
+| ##Automatically generated Universally Unique Identifier of this data set. Together with the "Data set version", the UUID uniquely identifies each data set.##
+| ##6-41-172-327##
+| ##3##
+| ##contactDataSet/contactInformation/dataSetInformation/UUID##
+
+| ##Short name for contact##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}shortName##
+| ##r##
+| ##[0,1]##
+| ##link:ILCD_Common_DataTypes.html#StringMultiLang[StringMultiLang]##
+| ##Short name for the contact, that is used for display e.g. of links to this data set (especially in case the full name of the contact is rather long, e.g. "FAO" for "Food and Agriculture Organization").##
+| ##6-41-172-328##
+| ##3##
+| ##contactDataSet/contactInformation/dataSetInformation/shortName##
+
+| ##Name of contact##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}name##
+| ##r##
+| ##[0,1]##
+| ##link:ILCD_Common_DataTypes.html#StringMultiLang[StringMultiLang]##
+| ##Name of the person, working group, organisation, or database network, which is represented by this contact data set.##
+| ##6-41-172-329##
+| ##3##
+| ##contactDataSet/contactInformation/dataSetInformation/name##
+
+| ##Classification Information##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}classificationInformation##
+| ##r##
+| ##[0,1]##
+| ##{nbsp}##
+| ##Hierachical classification of the contact foreseen to be used to structure the contact content of the database. (Note: This entry is NOT required for the identification of the contact data set. It should nevertheless be avoided to use identical names for contacts in the same class.##
+| ##6-41-172-336##
+| ##3##
+| ##contactDataSet/contactInformation/dataSetInformation/classificationInformation##
+
+| ##Classification##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}classification##
+| ##r##
+| ##[0,n]##
+| ##{nbsp}##
+| ##Optional statistical or other classification of the data set. Typically also used for structuring LCA databases.##
+| ##1-1-2-7-2##
+| ##4##
+| ##contactDataSet/contactInformation/dataSetInformation/classificationInformation/classification##
+
+| ##Classification system name##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}@name##
+| ##r##
+| ##{nbsp}##
+| ##link:ILCD_Common_DataTypes.html#string[string]##
+| ##Name of the classification system.##
+| ##1-1-2-7-2-a##
+| ##5##
+| ##contactDataSet/contactInformation/dataSetInformation/classificationInformation/classification/name##
+
+| ##Classes##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}@classes##
+| ##r##
+| ##{nbsp}##
+| ##link:ILCD_Common_DataTypes.html#anyURI[anyURI]##
+| ##URL or file name of a file listing all classes of this classification system. [Notes: the referenced file has to be in form of the "ILCDClassification.xml" format. If a classification file is specified, the "class" entry should correspond to the classes defined in the classification file.]##
+| ##1-1-2-7-2-b##
+| ##5##
+| ##contactDataSet/contactInformation/dataSetInformation/classificationInformation/classification/classes##
+
+| ##Class name##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}class##
+| ##r##
+| ##[1,n]##
+| ##{nbsp}##
+| ##Name of the class.##
+| ##1-1-2-7-2-1##
+| ##5##
+| ##contactDataSet/contactInformation/dataSetInformation/classificationInformation/classification/class##
+
+| ##Hierarchy level##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}@level##
+| ##r##
+| ##{nbsp}##
+| ##link:ILCD_Common_DataTypes.html#LevelType[LevelType]##
+| ##If more than one class is specified in a hierachical classification system, the hierarchy level (1,2,...) could be specified with this attribute of class.##
+| ##1-1-2-7-2-1-a##
+| ##6##
+| ##contactDataSet/contactInformation/dataSetInformation/classificationInformation/classification/class/level##
+
+| ##Unique class identifier##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}@classId##
+| ##r##
+| ##{nbsp}##
+| ##link:ILCD_Common_DataTypes.html#string[string]##
+| ##Unique identifier for the class. [Notes: If such identifiers are also defined in the referenced category file, they should be identical. Identifiers can be UUID's, but also other forms are allowed.]##
+| ##1-1-2-7-2-1-b##
+| ##6##
+| ##contactDataSet/contactInformation/dataSetInformation/classificationInformation/classification/class/classId##
+
+| ##Other content##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}other##
+| ##o##
+| ##[0,1]##
+| ##{nbsp}##
+| ##May contain arbitrary content.##
+| ##0##
+| ##5##
+| ##contactDataSet/contactInformation/dataSetInformation/classificationInformation/classification/other##
+
+| ##Contact address##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}contactAddress##
+| ##o##
+| ##[0,1]##
+| ##link:ILCD_Common_DataTypes.html#STMultiLang[STMultiLang]##
+| ##Mail address of the contact; specific for the person, working group, or department. [Note: A general contact point to the organisation is to be given in "General contact point".]##
+| ##6-41-172-338##
+| ##3##
+| ##contactDataSet/contactInformation/dataSetInformation/contactAddress##
+
+| ##Telephone##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}telephone##
+| ##o##
+| ##[0,1]##
+| ##link:ILCD_Common_DataTypes.html#String[String]##
+| ##Contact's phone number(s) including country and regional codes.##
+| ##6-41-172-339##
+| ##3##
+| ##contactDataSet/contactInformation/dataSetInformation/telephone##
+
+| ##Telefax##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}telefax##
+| ##o##
+| ##[0,1]##
+| ##link:ILCD_Common_DataTypes.html#String[String]##
+| ##Contact's fax number(s) including country and regional codes.##
+| ##6-41-172-340##
+| ##3##
+| ##contactDataSet/contactInformation/dataSetInformation/telefax##
+
+| ##E-mail##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}email##
+| ##o##
+| ##[0,1]##
+| ##link:ILCD_Common_DataTypes.html#String[String]##
+| ##Contact's e-mail address.##
+| ##6-41-172-341##
+| ##3##
+| ##contactDataSet/contactInformation/dataSetInformation/email##
+
+| ##WWW-Address##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}WWWAddress##
+| ##r##
+| ##[0,1]##
+| ##link:ILCD_Common_DataTypes.html#ST[ST]##
+| ##Web-address of the person, working group, organisation or database network.##
+| ##6-41-172-342##
+| ##3##
+| ##contactDataSet/contactInformation/dataSetInformation/WWWAddress##
+
+| ##Central contact point##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}centralContactPoint##
+| ##r##
+| ##[0,1]##
+| ##link:ILCD_Common_DataTypes.html#STMultiLang[STMultiLang]##
+| ##Alternative address / contact details for the contact. Provides contact information in case e.g. the person or group represented by this contact has left the organisation or changed office/telephone. This alternative contact point can hence contain also a central telephone number, e-mail, www-address etc. of the organisation.##
+| ##6-41-172-343##
+| ##3##
+| ##contactDataSet/contactInformation/dataSetInformation/centralContactPoint##
+
+| ##Contact description or comment##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}contactDescriptionOrComment##
+| ##o##
+| ##[0,1]##
+| ##link:ILCD_Common_DataTypes.html#STMultiLang[STMultiLang]##
+| ##Free text for additional description of the organisation or person of the contact, such as organisational profile, person responsibilities, etc.##
+| ##6-41-172-345##
+| ##3##
+| ##contactDataSet/contactInformation/dataSetInformation/contactDescriptionOrComment##
+
+| ##Belongs to:##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}referenceToContact##
+| ##o##
+| ##[0,n]##
+| ##link:ILCD_Common_DataTypes.html#GlobalReferenceType[GlobalReferenceType]##
+| ##"Contact data set"s of working groups, organisations or database networks to which EITHER this person or entity OR this database, data set format, or compliance system belongs. [Note: This does not necessarily imply a legally binding relationship, but may also be a voluntary membership.]##
+| ##6-41-172-344##
+| ##3##
+| ##contactDataSet/contactInformation/dataSetInformation/referenceToContact##
+
+| ##Logo of organisation or source##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}referenceToLogo##
+| ##o##
+| ##[0,1]##
+| ##link:ILCD_Common_DataTypes.html#GlobalReferenceType[GlobalReferenceType]##
+| ##"Source data set" of the logo of the organisation or source to be used in reports etc.##
+| ##6-41-172-346##
+| ##3##
+| ##contactDataSet/contactInformation/dataSetInformation/referenceToLogo##
+
+| ##Other content##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}other##
+| ##o##
+| ##[0,1]##
+| ##{nbsp}##
+| ##May contain arbitrary content.##
+| ##0##
+| ##3##
+| ##contactDataSet/contactInformation/dataSetInformation/other##
+
+| ##Entity identifiers##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}e:entityIds##
+| ##o##
+| ##[0,1]##
+| ##{nbsp}##
+| ##Identifiers which uniquely identify the entity (person or organization). Different identifiers commonly used, such as VAT ID or Tax Identification Number (TIN).##
+| ##{nbsp}##
+| ##4##
+| ##contactDataSet/contactInformation/dataSetInformation/other/e:entityIds##
+
+| ##Entity identifier##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}e:entityId##
+| ##o##
+| ##[0,1]##
+| ##{nbsp}##
+| ##Identifier which uniquely identifies the entity (person or organization).##
+| ##{nbsp}##
+| ##5##
+| ##contactDataSet/contactInformation/dataSetInformation/other/e:entityIds/e:entityId##
+
+| ##Identifier type##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}@e:type##
+| ##o##
+| ##[0,1]##
+| ##xs:string##
+| ##Type of identifier (e.g. 'VATID', 'TIN').##
+| ##{nbsp}##
+| ##6##
+| ##contactDataSet/contactInformation/dataSetInformation/other/e:entityIds/e:entityId/e:type##
+
+| ##Other content##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}other##
+| ##o##
+| ##[0,1]##
+| ##{nbsp}##
+| ##May contain arbitrary content.##
+| ##0##
+| ##2##
+| ##contactDataSet/contactInformation/other##
+
+| ##Administrative information##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}administrativeInformation##
+| ##r##
+| ##[0,1]##
+| ##{nbsp}##
+| ##Information on data set management and administration.##
+| ##1-5##
+| ##1##
+| ##contactDataSet/administrativeInformation##
+
+| ##Data entry by##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}dataEntryBy##
+| ##r##
+| ##[0,1]##
+| ##{nbsp}##
+| ##Staff or entity, that documented the generated data set, entering the information into the database; plus administrative information linked to the data entry activity.##
+| ##1-5-28##
+| ##2##
+| ##contactDataSet/administrativeInformation/dataEntryBy##
+
+| ##Time stamp (last saved)##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}timeStamp##
+| ##r##
+| ##[0,1]##
+| ##link:ILCD_Common_DataTypes.html#dateTime[dateTime]##
+| ##Date and time stamp of data set generation, typically an automated entry ("last saved").##
+| ##1-5-28-104##
+| ##3##
+| ##contactDataSet/administrativeInformation/dataEntryBy/timeStamp##
+
+| ##Data set format(s)##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}referenceToDataSetFormat##
+| ##r##
+| ##[0,n]##
+| ##link:ILCD_Common_DataTypes.html#GlobalReferenceType[GlobalReferenceType]##
+| ##"Source data set" of the used version of the ILCD format. If additional data format fields have been integrated into the data set file, using the "namespace" option, the used format namespace(s) are to be given. This is the case if the data sets carries additional information as specified by other, particular LCA formats, e.g. of other database networks or LCA softwares.##
+| ##1-5-28-105##
+| ##3##
+| ##contactDataSet/administrativeInformation/dataEntryBy/referenceToDataSetFormat##
+
+| ##Other content##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}other##
+| ##o##
+| ##[0,1]##
+| ##{nbsp}##
+| ##May contain arbitrary content.##
+| ##0##
+| ##3##
+| ##contactDataSet/administrativeInformation/dataEntryBy/other##
+
+| ##Publication and ownership##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}publicationAndOwnership##
+| ##r##
+| ##[0,1]##
+| ##{nbsp}##
+| ##Information related to publication and version management of the data set including copyright and access restrictions.##
+| ##1-5-30##
+| ##2##
+| ##contactDataSet/administrativeInformation/publicationAndOwnership##
+
+| ##Data set version##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}dataSetVersion##
+| ##m##
+| ##[1,1]##
+| ##link:ILCD_Common_DataTypes.html#Version[Version]##
+| ##Version number of data set. First two digits refer to major updates, the second two digits to minor revisions and error corrections etc. The third three digits are intended for automatic and internal counting of versions during data set development. Together with the data set's UUID, the "Data set version" uniquely identifies each data set.##
+| ##1-5-30-111##
+| ##3##
+| ##contactDataSet/administrativeInformation/publicationAndOwnership/dataSetVersion##
+
+| ##Preceding data set version##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}referenceToPrecedingDataSetVersion##
+| ##o##
+| ##[0,n]##
+| ##link:ILCD_Common_DataTypes.html#GlobalReferenceType[GlobalReferenceType]##
+| ##Last preceding data set, which was replaced by this version. Either a URI of that data set (i.e. an internet address) or its UUID plus version number is given (or both).##
+| ##1-5-30-112##
+| ##3##
+| ##contactDataSet/administrativeInformation/publicationAndOwnership/referenceToPrecedingDataSetVersion##
+
+| ##Permanent data set URI##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}permanentDataSetURI##
+| ##r##
+| ##[0,1]##
+| ##link:ILCD_Common_DataTypes.html#anyURI[anyURI]##
+| ##URI (i.e. an internet address) of the original of this data set. [Note: This equally globally unique identifier supports users and software tools to identify and retrieve the original version of a data set via the internet or to check for available updates. The URI must not represent an existing WWW address, but it should be unique and point to the data access point, e.g. by combining the data owner's www path with the data set's UUID, e.g. http://www.mycompany.com/lca/processes/50f12420-8855-12db-b606-0900210c9a66.]##
+| ##1-5-30-300##
+| ##3##
+| ##contactDataSet/administrativeInformation/publicationAndOwnership/permanentDataSetURI##
+
+| ##Owner of data set##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}referenceToOwnershipOfDataSet##
+| ##r##
+| ##[0,1]##
+| ##link:ILCD_Common_DataTypes.html#GlobalReferenceType[GlobalReferenceType]##
+| ##"Contact data set" of the person or entity who owns this data set. (Note: this is not necessarily the publisher of the data set.)##
+| ##1-5-30-115##
+| ##3##
+| ##contactDataSet/administrativeInformation/publicationAndOwnership/referenceToOwnershipOfDataSet##
+
+| ##Other content##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}other##
+| ##o##
+| ##[0,1]##
+| ##{nbsp}##
+| ##May contain arbitrary content.##
+| ##0##
+| ##3##
+| ##contactDataSet/administrativeInformation/publicationAndOwnership/other##
+
+| ##Other content##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}other##
+| ##o##
+| ##[0,1]##
+| ##{nbsp}##
+| ##May contain arbitrary content.##
+| ##0##
+| ##2##
+| ##contactDataSet/administrativeInformation/other##
+
+| ##Other content##
+| ##{nbsp}{nbsp}{nbsp}{nbsp}other##
+| ##o##
+| ##[0,1]##
+| ##{nbsp}##
+| ##May contain arbitrary content.##
+| ##0##
+| ##1##
+| ##contactDataSet/other##
+|===
