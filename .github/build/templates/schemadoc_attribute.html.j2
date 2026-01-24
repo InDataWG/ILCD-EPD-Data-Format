@@ -1,0 +1,85 @@
+{# Schemadoc individual attribute page template #}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ element_name | e }} - {{ doc_title | e }}</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        body.attribute-page {
+            max-width: 900px;
+            margin: 20px auto;
+        }
+        .attribute-page-container {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .back-link { margin-bottom: 20px; }
+        .back-link a { color: #007bff; text-decoration: none; font-weight: 500; }
+        .back-link a:hover { text-decoration: underline; }
+        .breadcrumb { margin-bottom: 20px; color: #666; font-size: 0.95em; }
+        .breadcrumb a { color: #007bff; text-decoration: none; }
+        .breadcrumb a:hover { text-decoration: underline; }
+        .field-name-display { color: #666; font-size: 0.95em; margin-bottom: 20px; }
+        h1 { margin-top: 0; margin-bottom: 10px; color: #2c3e50; }
+        .attribute-details { margin-top: 30px; }
+        .field-row { display: flex; border-bottom: 1px solid #eee; padding: 15px 0; }
+        .field-row:last-child { border-bottom: none; }
+        .field-label { width: 200px; font-weight: bold; color: #333; flex-shrink: 0; }
+        .field-value { flex: 1; color: #555; word-break: break-word; }
+        .empty { color: #999; font-style: italic; }
+        .children-section { margin-top: 40px; padding-top: 30px; border-top: 2px solid #eee; }
+        .children-section h2 { margin-top: 0; color: #2c3e50; }
+        .children-list { list-style-type: none; padding-left: 0; }
+        .children-list li { padding: 8px 0; }
+        .children-list a { color: #007bff; text-decoration: none; }
+        .children-list a:hover { text-decoration: underline; }
+    </style>
+</head>
+<body class="attribute-page">
+    <div class="attribute-page-container">
+        <div class="back-link"><a href="../{{ back_link_file | e }}.html">&larr; Back to {{ doc_title | e }}</a></div>
+        <div class="breadcrumb">Path: {{ breadcrumb | safe }}</div>
+        <h1>{{ element_name | e }}</h1>
+        <p class="field-name-display"><em>{{ field_name | e }}</em></p>
+
+        <div class="attribute-details">
+            {%- for col in display_columns %}
+            {%- set value = row.get(col, '') | string %}
+            {%- if not value or value == '{nbsp}' %}
+            {%- set value = '<span class="empty">-</span>' | safe %}
+            {%- elif col == 'Datatype' and 'link:' in value %}
+            {# Handle AsciiDoc links #}
+            {%- set link_match = value | regex_match('link:([^\\[]+)\\[([^\\]]+)\\]') %}
+            {%- if link_match %}
+            {%- set value = '<a href="../' ~ (link_match[0] | e) ~ '" target="_blank">' ~ (link_match[1] | e) ~ '</a>' | safe %}
+            {%- else %}
+            {%- set value = value | e %}
+            {%- endif %}
+            {%- else %}
+            {%- set value = value | e %}
+            {%- endif %}
+            <div class="field-row">
+                <div class="field-label">{{ col | e }}</div>
+                <div class="field-value">{{ value }}</div>
+            </div>
+            {%- endfor %}
+        </div>
+
+        {%- if children %}
+        <div class="children-section">
+            <h2>Child Elements</h2>
+            <ul class="children-list">
+                {%- for child in children %}
+                <li><a href="{{ child.safe_path | e }}.html">{{ child.element_name | e }}</a> - {{ child.field_name | e }}</li>
+                {%- endfor %}
+            </ul>
+        </div>
+        {%- endif %}
+    </div>
+
+    <script src="../js/schemadoc_script.js"></script>
+</body>
+</html>

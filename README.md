@@ -14,14 +14,14 @@ Browse the complete ILCD+EPD v1.3 format specification with an interactive table
 | Schema Name | Source (XSD) | Interactive Documentation |
 |-------------|--------------|---------------------------|
 | EPD Dataset | [Source](./schemas/EPD_DataSet.xsd) | [View Documentation](https://indatawg.github.io/ILCD-EPD-Data-Format/doc/) |
-| EPD Flow Dataset | [Source](./schemas/ILCD_FlowDataSet.xsd) | [View Documentation](https://InDataWG.github.io/ILCD-EPD-Data-Format/preview/reafctor/workflows/schemadoc/EPD_FlowDataSet.html) |
-| ILCD Contact Dataset | [Source](./schemas/ILCD_ContactDataSet.xsd) | [View Documentation](https://InDataWG.github.io/ILCD-EPD-Data-Format/preview/reafctor/workflows/schemadoc/ILCD_ContactDataSet.html) |
-| ILCD Flow Property Dataset | [Source](./schemas/ILCD_FlowPropertyDataSet.xsd) | [View Documentation](https://InDataWG.github.io/ILCD-EPD-Data-Format/preview/reafctor/workflows/schemadoc/ILCD_FlowPropertyDataSet.html) |
-| ILCD LCIA Method Dataset | [Source](./schemas/ILCD_LCIAMethodDataSet.xsd) | [View Documentation](https://InDataWG.github.io/ILCD-EPD-Data-Format/preview/reafctor/workflows/schemadoc/ILCD_LCIAMethodDataSet.html) |
-| ILCD Source Dataset | [Source](./schemas/ILCD_SourceDataSet.xsd) | [View Documentation](https://InDataWG.github.io/ILCD-EPD-Data-Format/preview/reafctor/workflows/schemadoc/ILCD_SourceDataSet.html) |
-| ILCD Unit Group Dataset | [Source](./schemas/ILCD_UnitGroupDataSet.xsd) | [View Documentation](https://InDataWG.github.io/ILCD-EPD-Data-Format/preview/reafctor/workflows/schemadoc/ILCD_UnitGroupDataSet.html) |
-| ILCD Common Data Types | [Source](./schemas/ILCD_Common_DataTypes.xsd) | [View Documentation](https://InDataWG.github.io/ILCD-EPD-Data-Format/preview/reafctor/workflows/schemadoc/ILCD_Common_DataTypes.html) |
-| ILCD Common Enumeration Values | [Source](./schemas/ILCD_Common_EnumerationValues.xsd) | [View Documentation](https://InDataWG.github.io/ILCD-EPD-Data-Format/preview/reafctor/workflows/schemadoc/ILCD_Common_EnumerationValues.html) |
+| EPD Flow Dataset | [Source](./schemas/ILCD_FlowDataSet.xsd) | [View Documentation](https://InDataWG.github.io/ILCD-EPD-Data-Format/gitBranches/release/v1.3/schemadoc/EPD_FlowDataSet.html) |
+| ILCD Contact Dataset | [Source](./schemas/ILCD_ContactDataSet.xsd) | [View Documentation](https://InDataWG.github.io/ILCD-EPD-Data-Format/gitBranches/release/v1.3/schemadoc/ILCD_ContactDataSet.html) |
+| ILCD Flow Property Dataset | [Source](./schemas/ILCD_FlowPropertyDataSet.xsd) | [View Documentation](https://InDataWG.github.io/ILCD-EPD-Data-Format/gitBranches/release/v1.3/schemadoc/ILCD_FlowPropertyDataSet.html) |
+| ILCD LCIA Method Dataset | [Source](./schemas/ILCD_LCIAMethodDataSet.xsd) | [View Documentation](https://InDataWG.github.io/ILCD-EPD-Data-Format/gitBranches/release/v1.3/schemadoc/ILCD_LCIAMethodDataSet.html) |
+| ILCD Source Dataset | [Source](./schemas/ILCD_SourceDataSet.xsd) | [View Documentation](https://InDataWG.github.io/ILCD-EPD-Data-Format/gitBranches/release/v1.3/schemadoc/ILCD_SourceDataSet.html) |
+| ILCD Unit Group Dataset | [Source](./schemas/ILCD_UnitGroupDataSet.xsd) | [View Documentation](https://InDataWG.github.io/ILCD-EPD-Data-Format/gitBranches/release/v1.3/schemadoc/ILCD_UnitGroupDataSet.html) |
+| ILCD Common Data Types | [Source](./schemas/ILCD_Common_DataTypes.xsd) | [View Documentation](https://InDataWG.github.io/ILCD-EPD-Data-Format/gitBranches/release/v1.3/schemadoc/ILCD_Common_DataTypes.html) |
+| ILCD Common Enumeration Values | [Source](./schemas/ILCD_Common_EnumerationValues.xsd) | [View Documentation](https://InDataWG.github.io/ILCD-EPD-Data-Format/gitBranches/release/v1.3/schemadoc/ILCD_Common_EnumerationValues.html) |
 
 ## ILCD+EPD Guides
 
@@ -42,14 +42,14 @@ All master data can be found in a dedicated [repository](https://github.com/InDa
 
 | Reference Type                         | Go to Source Code                              | Viewable Table                                 |
 |----------------------------------------|--------------------------------------------------|------------------------------------------------|
-| Common references                      | [Source Code](./doc/identifiers/Common_references.csv)       | [Viewable Table](https://InDataWG.github.io/ILCD-EPD-Data-Format/preview/reafctor/workflows/identifiers/Common_references.html)     |
-| Flow properties and unit groups        | [Source Code](./doc/identifiers/Flow_properties_and_unit_groups.csv)| [Viewable Table](https://InDataWG.github.io/ILCD-EPD-Data-Format/preview/reafctor/workflows/identifiers/Flow_properties_and_unit_groups.html) |
-| EN15804+A1 indicators                  | [Source Code](./doc/identifiers/EN15804+A1_indicators.csv)| [Viewable Table](https://InDataWG.github.io/ILCD-EPD-Data-Format/preview/reafctor/workflows/identifiers/EN15804+A1_indicators.html) |
-| EN15804+A2 (EF3.0) indicators          | [Source Code](./doc/identifiers/EN15804+A2_EF3.0_indicators.csv)| [Viewable Table](https://InDataWG.github.io/ILCD-EPD-Data-Format/preview/reafctor/workflows/identifiers/EN15804+A2_EF3.0_indicators.html) |
-| EN15804+A2 (EF3.1) indicators          | [Source Code](./doc/identifiers/EN15804+A2_EF3.1_indicators.csv)| [Viewable Table](https://InDataWG.github.io/ILCD-EPD-Data-Format/preview/reafctor/workflows/identifiers/EN15804+A2_EF3.1_indicators.html) |
-| Country-specific indicators            | [Source Code](./doc/identifiers/Country-specific_indicators.csv) | [Viewable Table](https://InDataWG.github.io/ILCD-EPD-Data-Format/preview/reafctor/workflows/identifiers/Country-specific_indicators.html)  |
-| ecoinvent database: source data sets   | [Source Code](./doc/identifiers/BackgroundDB_SourceDatasets_ecoinvent.csv)    | [Viewable Table](https://InDataWG.github.io/ILCD-EPD-Data-Format/preview/reafctor/workflows/identifiers/BackgroundDB_SourceDatasets_ecoinvent.html)  |
-| GaBi database: source data sets        | [Source Code](./doc/identifiers/BackgroundDB_SourceDatasets_GaBi.csv)  | [Viewable Table](https://InDataWG.github.io/ILCD-EPD-Data-Format/preview/reafctor/workflows/identifiers/BackgroundDB_SourceDatasets_GaBi.html) |
+| Common references                      | [Source Code](./doc/identifiers/Common_references.csv)       | [Viewable Table](https://InDataWG.github.io/ILCD-EPD-Data-Format/gitBranches/release/v1.3/identifiers/Common_references.html)     |
+| Flow properties and unit groups        | [Source Code](./doc/identifiers/Flow_properties_and_unit_groups.csv)| [Viewable Table](https://InDataWG.github.io/ILCD-EPD-Data-Format/gitBranches/release/v1.3/identifiers/Flow_properties_and_unit_groups.html) |
+| EN15804+A1 indicators                  | [Source Code](./doc/identifiers/EN15804+A1_indicators.csv)| [Viewable Table](https://InDataWG.github.io/ILCD-EPD-Data-Format/gitBranches/release/v1.3/identifiers/EN15804+A1_indicators.html) |
+| EN15804+A2 (EF3.0) indicators          | [Source Code](./doc/identifiers/EN15804+A2_EF3.0_indicators.csv)| [Viewable Table](https://InDataWG.github.io/ILCD-EPD-Data-Format/gitBranches/release/v1.3/identifiers/EN15804+A2_EF3.0_indicators.html) |
+| EN15804+A2 (EF3.1) indicators          | [Source Code](./doc/identifiers/EN15804+A2_EF3.1_indicators.csv)| [Viewable Table](https://InDataWG.github.io/ILCD-EPD-Data-Format/gitBranches/release/v1.3/identifiers/EN15804+A2_EF3.1_indicators.html) |
+| Country-specific indicators            | [Source Code](./doc/identifiers/Country-specific_indicators.csv) | [Viewable Table](https://InDataWG.github.io/ILCD-EPD-Data-Format/gitBranches/release/v1.3/identifiers/Country-specific_indicators.html)  |
+| ecoinvent database: source data sets   | [Source Code](./doc/identifiers/BackgroundDB_SourceDatasets_ecoinvent.csv)    | [Viewable Table](https://InDataWG.github.io/ILCD-EPD-Data-Format/gitBranches/release/v1.3/identifiers/BackgroundDB_SourceDatasets_ecoinvent.html)  |
+| GaBi database: source data sets        | [Source Code](./doc/identifiers/BackgroundDB_SourceDatasets_GaBi.csv)  | [Viewable Table](https://InDataWG.github.io/ILCD-EPD-Data-Format/gitBranches/release/v1.3/identifiers/BackgroundDB_SourceDatasets_GaBi.html) |
 
 ## Example dataset
 

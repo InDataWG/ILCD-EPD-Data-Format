@@ -6,11 +6,8 @@ updates:
     schedule:
       interval: "monthly"
     open-pull-requests-limit: 10
-    labels:
-      - "dependencies"
-      - "github-actions"
     commit-message:
-      prefix: "chore(deps)"
+      prefix: "chore"
       include: "scope"
 
   # Maintain Python dependencies
@@ -19,9 +16,6 @@ updates:
     schedule:
       interval: "monthly"
     open-pull-requests-limit: 10
-    labels:
-      - "dependencies"
-      - "python"
     commit-message:
-      prefix: "chore(deps)"
+      prefix: "chore"
       include: "scope"
