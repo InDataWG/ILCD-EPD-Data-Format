@@ -22,8 +22,11 @@ jobs:
 
       - name: Update README links for current branch
         run: |
-          # Replace release/v1.3 paths with current branch
-          sed -i "s|preview/release/v1\.3/|preview/${{ github.ref_name }}/|g" README.md
+          # Replace gitBranches/*/schemadoc/ with gitBranches/{branch}/schemadoc/
+          sed -E -i 's|(github\.io/[^/]+/)gitBranches/[^/]+(/[^/]+)?/schemadoc/|\1gitBranches/${{ github.ref_name }}/schemadoc/|g' README.md
+
+          # Replace gitBranches/*/identifiers/ with gitBranches/{branch}/identifiers/
+          sed -E -i 's|(github\.io/[^/]+/)gitBranches/[^/]+(/[^/]+)?/identifiers/|\1gitBranches/${{ github.ref_name }}/identifiers/|g' README.md
 
           # Commit if there are changes
           git config user.name "github-actions[bot]"
@@ -49,12 +52,13 @@ jobs:
           # Generate schema documentation
           python build_schemadoc.py
 
-          # Copy full doc content to preview folder for branch deployment
-          mkdir -p "../../preview/${{ github.ref_name }}"
-          cp -r ../../doc/* "../../preview/${{ github.ref_name }}/"
+          # Create gitBranches/{branch} with schemadoc and identifiers
+          mkdir -p "../../gitBranches/${{ github.ref_name }}/schemadoc"
+          mkdir -p "../../gitBranches/${{ github.ref_name }}/identifiers"
+          cp -r ../../doc/schemadoc/* "../../gitBranches/${{ github.ref_name }}/schemadoc/"
 
-          # Generate CSV→HTML for branch preview
-          python build_csv_pages.py "../../preview/${{ github.ref_name }}/identifiers"
+          # Generate CSV→HTML for branch
+          python build_csv_pages.py "../../gitBranches/${{ github.ref_name }}/identifiers"
 
           # Create /data/ directory with legacy filenames for backwards compatibility
           mkdir -p ../../data
@@ -83,12 +87,12 @@ jobs:
           destination_dir: doc
           keep_files: true
 
-      # Deploy branch-specific docs to /preview/{branch}/
+      # Deploy branch-specific docs to /gitBranches/{branch}/
       - name: Deploy branch documentation
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_branch: gitActions
-          publish_dir: "./preview/${{ github.ref_name }}"
-          destination_dir: "preview/${{ github.ref_name }}"
+          publish_dir: "./gitBranches/${{ github.ref_name }}"
+          destination_dir: "gitBranches/${{ github.ref_name }}"
           keep_files: true

@@ -21,7 +21,7 @@ jobs:
       - name: Remove branch directory
         run: |
           BRANCH_NAME="${{ github.event.ref }}"
-          rm -rf "preview/$BRANCH_NAME"
+          rm -rf "gitBranches/$BRANCH_NAME"
 
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
