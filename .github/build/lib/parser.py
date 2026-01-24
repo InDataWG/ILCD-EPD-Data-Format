@@ -56,6 +56,11 @@ def parse_asciidoc_table(filename: str, table_pattern: str = r'\.EPD Data Struct
     # Clean up AsciiDoc artifacts
     df.replace('{nbsp}', '', regex=True, inplace=True)
 
+    # Strip whitespace from all string columns after {nbsp} removal
+    for col in df.columns:
+        if df[col].dtype == 'object':
+            df[col] = df[col].str.strip()
+
     # Convert Indent column to numeric
     if 'Indent' in df.columns:
         df['Indent'] = pd.to_numeric(df['Indent'], errors='coerce').fillna(0).astype(int)

@@ -61,11 +61,9 @@
                 <td class="{{ col_class }}" data-col="{{ col | e }}">{{ header_text }}<ul>{% for val in enum_group.values %}<li>{{ val | e }}</li>{% endfor %}</ul></td>
                 {%- set ns.skip_until = enum_group.end_idx %}
                 {%- elif col == 'Element/Attribute Name' %}
-                {%- set indent = row.get('Indent', 0) | int %}
-                {%- set indentation = '&nbsp;&nbsp;&nbsp;&nbsp;' * indent %}
                 <td class="{{ col_class }}" data-col="{{ col | e }}">
                     <div class="tooltip-wrapper">
-                        {{ indentation | safe }}{{ cell_value | e }}
+                        {{ cell_value | e }}
                         <span class="tooltip-text">{{ path_tooltip }}</span>
                     </div>
                 </td>
