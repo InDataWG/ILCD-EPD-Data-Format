@@ -106,7 +106,7 @@ document.addEventListener('DOMContentLoaded', function() {
     colToggles.forEach(function(checkbox) {
         checkbox.addEventListener('change', function() {
             const colName = this.dataset.col;
-            const cells = document.querySelectorAll(`[data-col="${colName}"]`);
+            const cells = document.querySelectorAll(`td[data-col="${colName}"], th[data-col="${colName}"]`);
             cells.forEach(cell => {
                 cell.style.display = this.checked ? '' : 'none';
             });
