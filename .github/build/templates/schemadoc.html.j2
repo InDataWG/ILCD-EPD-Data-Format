@@ -46,9 +46,7 @@
                 {%- for col in columns %}
                 {%- set cell_value = row.get(col, '') | string %}
                 {%- if col == 'Element/Attribute Name' %}
-                {%- set indent = row.get('Indent', 0) | int %}
-                {%- set indentation = '&nbsp;&nbsp;&nbsp;&nbsp;' * indent %}
-                <td data-col="{{ col | e }}">{{ indentation | safe }}{{ cell_value | e }}</td>
+                <td data-col="{{ col | e }}">{{ cell_value | e }}</td>
                 {%- elif col == 'Datatype' and 'link:' in cell_value %}
                 {# Handle AsciiDoc links in Datatype column #}
                 {%- set link_match = cell_value | regex_match('link:([^\\[]+)\\[([^\\]]+)\\]') %}
