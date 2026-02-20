@@ -8,41 +8,24 @@ This document provides additional information for software developers who want t
 
 The following modules according to EN 15804 are supported:
 
-A1
-
-A2
-
-A3
-
-A1-A3
-
-A4
-
-A5
-
-B1
-
-B2
-
-B3
-
-B4
-
-B5
-
-B6
-
-B7
-
-C1
-
-C2
-
-C3
-
-C4
-
-D
+- A1
+- A2
+- A3
+- A1-A3
+- A4
+- A5
+- B1
+- B2
+- B3
+- B4
+- B5
+- B6
+- B7
+- C1
+- C2
+- C3
+- C4
+- D
 
 These values are binding for use in the @module attribute.
 
@@ -50,24 +33,23 @@ These values are binding for use in the @module attribute.
 
 Physical product or material properties can be modelled by embedding MatML (http://www.matml.org/) markup as shown in the examples below.
 
-The following property name identifiers are currently supported for declaring non-scaling material properties (property name like „grammage“ and „gross density“ are binding; there are single spaces between multiple words):
+The following property name identifiers are currently supported for declaring non-scaling material properties (property names like „grammage“ and „gross density“ are binding; there are single spaces between multiple words):
 
 | **property identifier** | **unit** | **description** |
 | --- | --- | --- |
-| *bulk density* | kg/m^3 | kilograms per cubic metre |
-| *grammage* | kg/m^2 | kilograms per square metre |
-| *gross density* | kg/m^3 | kilograms per cubic metre |
+| *bulk density* | kg/m³ | kilograms per cubic metre |
+| *grammage* | kg/m² | kilograms per square metre |
+| *gross density* | kg/m³ | kilograms per cubic metre |
 | *layer thickness* | m | metres |
-| *productiveness* | m^2 | square metres |
+| *productiveness* | m² | square metres |
 | *linear density* | kg/m | kilograms per metre |
 | *conversion factor to 1 kg* |  |  |
 
-The following examples show how to express the individual properties. *(Material)* can be any text and *(Value)* the decimal value with a dot (.) as decimal separator (e.g.  *42.1*).
+The following examples show how to express the individual properties. *(Material)* can be any text and *(Value)* the decimal value with a dot (.) as decimal separator (e.g.  `42.1`).
 
-grammage
+### grammage
 
 ```xml
-
 <mat:MatML_Doc xmlns:mat="http://www.matml.org/">
    <mat:Material>
       <mat:BulkDetails>
@@ -91,13 +73,11 @@ grammage
       </mat:PropertyDetails>
    </mat:Metadata>
 </mat:MatML_Doc>
-
 ```
 
-gross density
+### gross density
 
 ```xml
-
 <mat:MatML_Doc xmlns:mat="http://www.matml.org/">
    <mat:Material>
       <mat:BulkDetails>
@@ -121,11 +101,11 @@ gross density
       </mat:PropertyDetails>
    </mat:Metadata>
 </mat:MatML_Doc>
-
 ```
 
-bulk density
+### bulk density
 
+```xml
 <mat:MatML_Doc xmlns:mat="http://www.matml.org/">
    <mat:Material>
       <mat:BulkDetails>
@@ -149,11 +129,11 @@ bulk density
       </mat:PropertyDetails>
    </mat:Metadata>
 </mat:MatML_Doc>
+```
 
-layer thickness
+### layer thickness
 
 ```xml
-
 <mat:MatML_Doc xmlns:mat="http://www.matml.org/">
    <mat:Material>
       <mat:BulkDetails>
@@ -174,13 +154,11 @@ layer thickness
       </mat:PropertyDetails>
    </mat:Metadata>
 </mat:MatML_Doc>
-
 ```
 
-productiveness
+### productiveness
 
 ```xml
-
 <mat:MatML_Doc xmlns:mat="http://www.matml.org/">
    <mat:Material>
       <mat:BulkDetails>
@@ -201,13 +179,11 @@ productiveness
       </mat:PropertyDetails>
    </mat:Metadata>
 </mat:MatML_Doc>
-
 ```
 
-linear density
+### linear density
 
 ```xml
-
 <mat:MatML_Doc xmlns:mat="http://www.matml.org/">
    <mat:Material>
       <mat:BulkDetails>
@@ -231,13 +207,11 @@ linear density
       </mat:PropertyDetails>
    </mat:Metadata>
 </mat:MatML_Doc>
-
 ```
 
-conversion factor to 1 kg
+### conversion factor to 1 kg
 
 ```xml
-
 <mat:MatML_Doc xmlns:mat="http://www.matml.org/">
    <mat:Material>
       <mat:BulkDetails>
@@ -258,5 +232,4 @@ conversion factor to 1 kg
       </mat:PropertyDetails>
    </mat:Metadata>
 </mat:MatML_Doc>
-
 ```
